@@ -1,0 +1,19 @@
+# KLIC KLIC 블루 글로우 카드 로그인 (KLIC Classic Card Login)
+
+Selected block: auth-enterprise-sso-login
+
+License index: https://design.klic.co.kr/licenses/README.md (preserve per-file notices).
+
+Read DESIGN.md and KLIC-DESIGN-SYSTEM.json before implementation; their revision matches the API, CLI and MCP policy snapshot.
+
+This standalone workspace includes shared runtime files to preserve relative imports, tokens, styles and license notices. Multiple variants share source modules; it is not a minimal dependency tree.
+
+## Run
+
+Review source and per-file notices, then run bun install, bun run dev to preview, or bun run build to build. These commands are never executed by the KLIC CLI.
+
+## Scope
+
+Interactive sample data only. Connect your application's backend separately. Build output is build/. Fonts and portraits are included in public/ and copied by Vite into build/.
+
+Reference: https://design.klic.co.kr/#blocks/auth-enterprise-sso-login/preview

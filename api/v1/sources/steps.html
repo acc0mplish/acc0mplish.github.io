@@ -1,0 +1,46 @@
+<!-- KLIC 사이트의 HTML 데모: Steps -->
+<!-- 전체 데모는 브라우저의 native API와 app.js를 사용합니다. -->
+<div class="x-demo xc-steps" data-klic-component="steps">
+<ol class="x-steps" data-step="1">
+<li >
+<span>✓</span>
+<small>기본 정보</small>
+</li>
+<li aria-current="step">
+<span>2</span>
+<small>팀 초대</small>
+</li>
+<li >
+<span>3</span>
+<small>시작하기</small>
+</li>
+</ol>
+<button type="button" class="btn secondary sm" data-cmp-action="next-step" >다음 단계</button>
+<p class="x-status" data-cmp-status role="status" aria-live="polite">
+</p>
+</div>
+
+<style>
+/* 기준 프로필 A의 높이: 2rem (root 16px일 때 32px) */
+:root {
+  --klic-component-button-size-default-height: 2rem;
+  --klic-component-input-size-default-height: 2rem;
+  --klic-semantic-color-accent: #245fc2;
+}
+.btn {
+  min-height: var(--klic-component-button-size-default-height);
+  padding: .35rem .7rem;
+  border-radius: .3125rem;
+  border: 1px solid transparent;
+  background: var(--klic-semantic-color-accent);
+  color: white;
+  font: inherit;
+}
+</style>
+
+<!-- 완전한 스타일: ./styles.css + ./brand.css
+     확장 컴포넌트: ./component-expansion.mjs + ./component-expansion.css
+     확장 동작: ./component-interactions.mjs의 initComponentInteractions()
+     아이콘: ./lucide.min.js (ISC)
+     상호작용: ./app.js
+     이 코드는 별도 npm 패키지가 아닌 이 사이트의 예제입니다. -->

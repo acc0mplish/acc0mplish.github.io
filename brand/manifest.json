@@ -1,0 +1,23 @@
+{
+  "source": {
+    "attachment": "KL_Logo_Expanded_40_v2_Pure_SVG.zip",
+    "entry": "KL_Logo_Expanded_v2/00_originals/KL_Logo_원본.svg",
+    "sha256": "f9073d3e770155ca4f15066ca34d2ab64f3051f8cd992df42dd25e0c7a71239d"
+  },
+  "geometry": {
+    "paths": 3,
+    "polylines": 2,
+    "frontCoordinates": "unchanged",
+    "masterViewBox": "0 0 300 300",
+    "webViewBox": "8 42 286 216"
+  },
+  "technique": "Local SVG uses, gradients, masks and vector satin pattern; 3-unit shallow depth",
+  "files": {
+    "klic-favicon.svg": "0911249575db3e6b01641a2348df4519a157d25a16a8571823b316dcb3600114",
+    "klic-logo-dark.svg": "e8e33ac2026cba3cb695086573672196175e2bdafee9be67ccccf07a946a5f39",
+    "klic-logo-light.svg": "073b1af2793b3a27335fc4395591d315d9034eb3f5d5ec83064b62fc129cb20a",
+    "klic-logo-original.svg": "f9073d3e770155ca4f15066ca34d2ab64f3051f8cd992df42dd25e0c7a71239d",
+    "klic-wordmark-dark.svg": "a176e634efaf8408d1b0efc084d3f90c5c813ff93c2242e4eb2eb85e4d803fcd",
+    "klic-wordmark-light.svg": "d11de331ed74927c8e45f2ac04630f73feb23f81032f0c46cfcbb163db96793d"
+  }
+}

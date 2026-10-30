@@ -1,0 +1,271 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "klic",
+  "homepage": "https://design.klic.co.kr",
+  "items": [
+    {
+      "name": "affect-agent-review",
+      "type": "registry:block",
+      "title": "에이전트 검토 워크스페이스",
+      "description": "KLIC의 실제 React 블록과 샘플 데이터. 서버나 AI 서비스에 연결되지 않습니다.",
+      "files": [
+        {
+          "path": "components/klic/blocks/AffectShowcaseBlock.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/blocks/AffectShowcaseBlock.tsx"
+        },
+        {
+          "path": "components/klic/blocks/AffectShowcaseBlock.css",
+          "type": "registry:file",
+          "target": "~/components/klic/blocks/AffectShowcaseBlock.css"
+        },
+        {
+          "path": "components/klic/adopted/decision-inbox.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/decision-inbox.tsx"
+        },
+        {
+          "path": "components/klic/adopted/tool-call-card.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/tool-call-card.tsx"
+        },
+        {
+          "path": "components/klic/adopted/smart-recommendation.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/smart-recommendation.tsx"
+        },
+        {
+          "path": "components/klic/adopted/message-actions.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/message-actions.tsx"
+        },
+        {
+          "path": "components/klic/adopted/logo-marquee.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/logo-marquee.tsx"
+        },
+        {
+          "path": "components/klic/adopted/testimonial-wall.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/testimonial-wall.tsx"
+        },
+        {
+          "path": "components/klic/affect-tokens.css",
+          "type": "registry:file",
+          "target": "~/components/klic/affect-tokens.css"
+        },
+        {
+          "path": "components/klic/LICENSE-affectui.txt",
+          "type": "registry:file",
+          "target": "~/components/klic/LICENSE-affectui.txt"
+        },
+        {
+          "path": "components/klic/affect-agent-review.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/affect-agent-review.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react@0.546.0"
+      ]
+    },
+    {
+      "name": "affect-response-workspace",
+      "type": "registry:block",
+      "title": "응답 편집 워크스페이스",
+      "description": "KLIC의 실제 React 블록과 샘플 데이터. 서버나 AI 서비스에 연결되지 않습니다.",
+      "files": [
+        {
+          "path": "components/klic/blocks/AffectShowcaseBlock.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/blocks/AffectShowcaseBlock.tsx"
+        },
+        {
+          "path": "components/klic/blocks/AffectShowcaseBlock.css",
+          "type": "registry:file",
+          "target": "~/components/klic/blocks/AffectShowcaseBlock.css"
+        },
+        {
+          "path": "components/klic/adopted/decision-inbox.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/decision-inbox.tsx"
+        },
+        {
+          "path": "components/klic/adopted/tool-call-card.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/tool-call-card.tsx"
+        },
+        {
+          "path": "components/klic/adopted/smart-recommendation.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/smart-recommendation.tsx"
+        },
+        {
+          "path": "components/klic/adopted/message-actions.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/message-actions.tsx"
+        },
+        {
+          "path": "components/klic/adopted/logo-marquee.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/logo-marquee.tsx"
+        },
+        {
+          "path": "components/klic/adopted/testimonial-wall.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/testimonial-wall.tsx"
+        },
+        {
+          "path": "components/klic/affect-tokens.css",
+          "type": "registry:file",
+          "target": "~/components/klic/affect-tokens.css"
+        },
+        {
+          "path": "components/klic/LICENSE-affectui.txt",
+          "type": "registry:file",
+          "target": "~/components/klic/LICENSE-affectui.txt"
+        },
+        {
+          "path": "components/klic/affect-response-workspace.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/affect-response-workspace.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react@0.546.0"
+      ]
+    },
+    {
+      "name": "affect-logo-marquee",
+      "type": "registry:block",
+      "title": "시스템 로고 마키",
+      "description": "KLIC의 실제 React 블록과 샘플 데이터. 서버나 AI 서비스에 연결되지 않습니다.",
+      "files": [
+        {
+          "path": "components/klic/blocks/AffectShowcaseBlock.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/blocks/AffectShowcaseBlock.tsx"
+        },
+        {
+          "path": "components/klic/blocks/AffectShowcaseBlock.css",
+          "type": "registry:file",
+          "target": "~/components/klic/blocks/AffectShowcaseBlock.css"
+        },
+        {
+          "path": "components/klic/adopted/decision-inbox.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/decision-inbox.tsx"
+        },
+        {
+          "path": "components/klic/adopted/tool-call-card.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/tool-call-card.tsx"
+        },
+        {
+          "path": "components/klic/adopted/smart-recommendation.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/smart-recommendation.tsx"
+        },
+        {
+          "path": "components/klic/adopted/message-actions.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/message-actions.tsx"
+        },
+        {
+          "path": "components/klic/adopted/logo-marquee.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/logo-marquee.tsx"
+        },
+        {
+          "path": "components/klic/adopted/testimonial-wall.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/testimonial-wall.tsx"
+        },
+        {
+          "path": "components/klic/affect-tokens.css",
+          "type": "registry:file",
+          "target": "~/components/klic/affect-tokens.css"
+        },
+        {
+          "path": "components/klic/LICENSE-affectui.txt",
+          "type": "registry:file",
+          "target": "~/components/klic/LICENSE-affectui.txt"
+        },
+        {
+          "path": "components/klic/affect-logo-marquee.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/affect-logo-marquee.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react@0.546.0"
+      ]
+    },
+    {
+      "name": "affect-testimonial-wall",
+      "type": "registry:block",
+      "title": "후기 카드 월",
+      "description": "KLIC의 실제 React 블록과 샘플 데이터. 서버나 AI 서비스에 연결되지 않습니다.",
+      "files": [
+        {
+          "path": "components/klic/blocks/AffectShowcaseBlock.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/blocks/AffectShowcaseBlock.tsx"
+        },
+        {
+          "path": "components/klic/blocks/AffectShowcaseBlock.css",
+          "type": "registry:file",
+          "target": "~/components/klic/blocks/AffectShowcaseBlock.css"
+        },
+        {
+          "path": "components/klic/adopted/decision-inbox.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/decision-inbox.tsx"
+        },
+        {
+          "path": "components/klic/adopted/tool-call-card.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/tool-call-card.tsx"
+        },
+        {
+          "path": "components/klic/adopted/smart-recommendation.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/smart-recommendation.tsx"
+        },
+        {
+          "path": "components/klic/adopted/message-actions.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/message-actions.tsx"
+        },
+        {
+          "path": "components/klic/adopted/logo-marquee.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/logo-marquee.tsx"
+        },
+        {
+          "path": "components/klic/adopted/testimonial-wall.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/adopted/testimonial-wall.tsx"
+        },
+        {
+          "path": "components/klic/affect-tokens.css",
+          "type": "registry:file",
+          "target": "~/components/klic/affect-tokens.css"
+        },
+        {
+          "path": "components/klic/LICENSE-affectui.txt",
+          "type": "registry:file",
+          "target": "~/components/klic/LICENSE-affectui.txt"
+        },
+        {
+          "path": "components/klic/affect-testimonial-wall.tsx",
+          "type": "registry:file",
+          "target": "~/components/klic/affect-testimonial-wall.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react@0.546.0"
+      ]
+    }
+  ]
+}

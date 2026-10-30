@@ -1,0 +1,86 @@
+<!-- KLIC 사이트의 HTML 데모: Calendar -->
+<!-- 전체 데모는 브라우저의 native API와 app.js를 사용합니다. -->
+<div class="x-demo xc-calendar" data-klic-component="calendar">
+<div class="x-calendar" data-year="2026" data-month="9">
+<div class="x-calendar-head">
+<button type="button" class="btn secondary sm" data-cmp-action="calendar-prev" aria-label="이전 달">‹</button>
+<strong data-calendar-heading>2026년 10월</strong>
+<button type="button" class="btn secondary sm" data-cmp-action="calendar-next" aria-label="다음 달">›</button>
+</div>
+<div class="x-calendar-grid">
+<span>일</span>
+<span>월</span>
+<span>화</span>
+<span>수</span>
+<span>목</span>
+<span>금</span>
+<span>토</span>
+<span aria-hidden="true">
+</span>
+<span aria-hidden="true">
+</span>
+<span aria-hidden="true">
+</span>
+<span aria-hidden="true">
+</span>
+<button type="button" data-cmp-action="calendar-day" data-day="1" aria-label="2026년 10월 1일" aria-pressed="false">1</button>
+<button type="button" data-cmp-action="calendar-day" data-day="2" aria-label="2026년 10월 2일" aria-pressed="false">2</button>
+<button type="button" data-cmp-action="calendar-day" data-day="3" aria-label="2026년 10월 3일" aria-pressed="false">3</button>
+<button type="button" data-cmp-action="calendar-day" data-day="4" aria-label="2026년 10월 4일" aria-pressed="false">4</button>
+<button type="button" data-cmp-action="calendar-day" data-day="5" aria-label="2026년 10월 5일" aria-pressed="false">5</button>
+<button type="button" data-cmp-action="calendar-day" data-day="6" aria-label="2026년 10월 6일" aria-pressed="false">6</button>
+<button type="button" data-cmp-action="calendar-day" data-day="7" aria-label="2026년 10월 7일" aria-pressed="false">7</button>
+<button type="button" data-cmp-action="calendar-day" data-day="8" aria-label="2026년 10월 8일" aria-pressed="false">8</button>
+<button type="button" data-cmp-action="calendar-day" data-day="9" aria-label="2026년 10월 9일" aria-pressed="false">9</button>
+<button type="button" data-cmp-action="calendar-day" data-day="10" aria-label="2026년 10월 10일" aria-pressed="false">10</button>
+<button type="button" data-cmp-action="calendar-day" data-day="11" aria-label="2026년 10월 11일" aria-pressed="false">11</button>
+<button type="button" data-cmp-action="calendar-day" data-day="12" aria-label="2026년 10월 12일" aria-pressed="false">12</button>
+<button type="button" data-cmp-action="calendar-day" data-day="13" aria-label="2026년 10월 13일" aria-pressed="false">13</button>
+<button type="button" data-cmp-action="calendar-day" data-day="14" aria-label="2026년 10월 14일" aria-pressed="false">14</button>
+<button type="button" data-cmp-action="calendar-day" data-day="15" aria-label="2026년 10월 15일" aria-pressed="false">15</button>
+<button type="button" data-cmp-action="calendar-day" data-day="16" aria-label="2026년 10월 16일" aria-pressed="false">16</button>
+<button type="button" data-cmp-action="calendar-day" data-day="17" aria-label="2026년 10월 17일" aria-pressed="false">17</button>
+<button type="button" data-cmp-action="calendar-day" data-day="18" aria-label="2026년 10월 18일" aria-pressed="false">18</button>
+<button type="button" data-cmp-action="calendar-day" data-day="19" aria-label="2026년 10월 19일" aria-pressed="false">19</button>
+<button type="button" data-cmp-action="calendar-day" data-day="20" aria-label="2026년 10월 20일" aria-pressed="false">20</button>
+<button type="button" data-cmp-action="calendar-day" data-day="21" aria-label="2026년 10월 21일" aria-pressed="false">21</button>
+<button type="button" data-cmp-action="calendar-day" data-day="22" aria-label="2026년 10월 22일" aria-pressed="false">22</button>
+<button type="button" data-cmp-action="calendar-day" data-day="23" aria-label="2026년 10월 23일" aria-pressed="false">23</button>
+<button type="button" data-cmp-action="calendar-day" data-day="24" aria-label="2026년 10월 24일" aria-pressed="true">24</button>
+<button type="button" data-cmp-action="calendar-day" data-day="25" aria-label="2026년 10월 25일" aria-pressed="false">25</button>
+<button type="button" data-cmp-action="calendar-day" data-day="26" aria-label="2026년 10월 26일" aria-pressed="false">26</button>
+<button type="button" data-cmp-action="calendar-day" data-day="27" aria-label="2026년 10월 27일" aria-pressed="false">27</button>
+<button type="button" data-cmp-action="calendar-day" data-day="28" aria-label="2026년 10월 28일" aria-pressed="false">28</button>
+<button type="button" data-cmp-action="calendar-day" data-day="29" aria-label="2026년 10월 29일" aria-pressed="false">29</button>
+<button type="button" data-cmp-action="calendar-day" data-day="30" aria-label="2026년 10월 30일" aria-pressed="false">30</button>
+<button type="button" data-cmp-action="calendar-day" data-day="31" aria-label="2026년 10월 31일" aria-pressed="false">31</button>
+</div>
+</div>
+<p class="x-status" data-cmp-status role="status" aria-live="polite">
+</p>
+</div>
+
+<style>
+/* 기준 프로필 A의 높이: 2rem (root 16px일 때 32px) */
+:root {
+  --klic-component-button-size-default-height: 2rem;
+  --klic-component-input-size-default-height: 2rem;
+  --klic-semantic-color-accent: #245fc2;
+}
+.btn {
+  min-height: var(--klic-component-button-size-default-height);
+  padding: .35rem .7rem;
+  border-radius: .3125rem;
+  border: 1px solid transparent;
+  background: var(--klic-semantic-color-accent);
+  color: white;
+  font: inherit;
+}
+</style>
+
+<!-- 완전한 스타일: ./styles.css + ./brand.css
+     확장 컴포넌트: ./component-expansion.mjs + ./component-expansion.css
+     확장 동작: ./component-interactions.mjs의 initComponentInteractions()
+     아이콘: ./lucide.min.js (ISC)
+     상호작용: ./app.js
+     이 코드는 별도 npm 패키지가 아닌 이 사이트의 예제입니다. -->

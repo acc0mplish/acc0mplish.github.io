@@ -1,0 +1,45 @@
+<!-- KLIC 사이트의 HTML 데모: Stepper -->
+<!-- 전체 데모는 브라우저의 native API와 app.js를 사용합니다. -->
+<div class="x-demo xc-stepper" data-klic-component="stepper">
+<form class="x-step-form" data-wizard-step="0">
+<div data-wizard-panel>
+<label class="x-label" for="klic-example-project">1. 프로젝트 이름</label>
+<input class="demo-input" id="klic-example-project" required placeholder="프로젝트 이름">
+</div>
+<div data-wizard-panel hidden>
+<label class="x-label" for="klic-example-team-name">2. 팀 이름</label>
+<input class="demo-input" id="klic-example-team-name" required disabled placeholder="팀 이름">
+</div>
+<div class="x-button-row">
+<button type="button" class="btn secondary sm" data-cmp-action="wizard-back" disabled>이전</button>
+<button type="button" class="btn secondary sm" data-cmp-action="wizard-next" >다음</button>
+</div>
+<p class="x-status" data-cmp-status role="status" aria-live="polite">
+</p>
+</form>
+</div>
+
+<style>
+/* 기준 프로필 A의 높이: 2rem (root 16px일 때 32px) */
+:root {
+  --klic-component-button-size-default-height: 2rem;
+  --klic-component-input-size-default-height: 2rem;
+  --klic-semantic-color-accent: #245fc2;
+}
+.btn {
+  min-height: var(--klic-component-button-size-default-height);
+  padding: .35rem .7rem;
+  border-radius: .3125rem;
+  border: 1px solid transparent;
+  background: var(--klic-semantic-color-accent);
+  color: white;
+  font: inherit;
+}
+</style>
+
+<!-- 완전한 스타일: ./styles.css + ./brand.css
+     확장 컴포넌트: ./component-expansion.mjs + ./component-expansion.css
+     확장 동작: ./component-interactions.mjs의 initComponentInteractions()
+     아이콘: ./lucide.min.js (ISC)
+     상호작용: ./app.js
+     이 코드는 별도 npm 패키지가 아닌 이 사이트의 예제입니다. -->

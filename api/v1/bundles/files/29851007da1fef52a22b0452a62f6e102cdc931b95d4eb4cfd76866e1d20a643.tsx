@@ -1,0 +1,13 @@
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import {AffectShowcaseBlock} from './components/blocks/AffectShowcaseBlock';
+import {createTokens,resolveTokens,formatValue} from '../../dist/tokens.mjs';
+import {fontFaceCSS} from '../../dist/font-registry.mjs';
+import {materialStylesCSS} from '../../dist/materials.mjs';
+const params=new URLSearchParams(location.search),mode=params.get('theme')==='dark'?'dark':'light',material=['flat','glass','solid-glass','liquid-glass'].includes(params.get('material'))?params.get('material'):'flat';
+const context={colorTheme:'klic',material};
+for(const [key,value] of Object.entries(resolveTokens(createTokens('a',mode,context))))document.documentElement.style.setProperty('--'+key.replaceAll('.','-'),formatValue(value));
+document.documentElement.dataset.theme=mode;document.documentElement.dataset.material=material;
+document.documentElement.style.setProperty('--runtime-font','KlicPretendard,system-ui');
+const style=document.createElement('style');style.textContent=fontFaceCSS('./fonts/')+materialStylesCSS()+'*{box-sizing:border-box}body{margin:0;padding:24px;background:var(--klic-component-block-color-panel);color:var(--klic-component-block-color-text)}button{font:inherit}';document.head.append(style);
+createRoot(document.getElementById('root')).render(<AffectShowcaseBlock mode='response'/>);

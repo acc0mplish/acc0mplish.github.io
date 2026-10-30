@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 140" width="900" height="140" role="img" aria-labelledby="korean-color-title korean-color-desc"><title id="korean-color-title">KLIC · Korean name · color</title><desc id="korean-color-desc">Original KLiC SVG contours; arrangement based on klic.co.kr/logo. Korean name is editable Paperlogy text, not the original lettering outline.</desc><defs xmlns="http://www.w3.org/2000/svg">
+    <style>
+      .korean-color-st0 {
+        fill: url(#korean-color-accent);
+      }
+
+      .korean-color-st1 {
+        fill: url(#korean-color-main);
+      }
+
+      .korean-color-st2 {
+        fill: #1d2088;
+      }
+    </style>
+    <linearGradient id="korean-color-accent" x1="194.91" y1="-1200.62" x2="217.12" y2="-1200.62" gradientTransform="translate(0 -1139.78) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00479d" />
+      <stop offset="1" stop-color="#7dcdf4" />
+    </linearGradient>
+    <linearGradient id="korean-color-main" x1="109.97" y1="-1314.36" x2="219.31" y2="-1314.36" gradientTransform="translate(0 -1139.78) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00479d" />
+      <stop offset="1" stop-color="#7dcdf4" />
+    </linearGradient>
+  </defs>
+  <text data-editable-company-name="true" x="20" y="108" font-family="'Paperlogy 7 Bold', KlicPaperlogy, sans-serif" font-weight="400" font-size="108" textLength="860" lengthAdjust="spacing" fill="#231f20">케이엘정보통신 ㈜</text></svg>

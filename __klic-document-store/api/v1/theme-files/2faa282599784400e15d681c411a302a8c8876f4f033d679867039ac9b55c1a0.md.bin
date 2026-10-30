@@ -1,0 +1,73 @@
+## Shared design criteria
+
+Policy revision: 80cf180090cfaba13597872589dd066fbbdf788bfe6b0e72ca8d2218774c474f
+
+Canonical policy: https://design.klic.co.kr/api/v1/design-system.json
+
+Read the same criteria and revision in API, CLI, MCP and WebMCP designSystem responses and the bundled KLIC-DESIGN-SYSTEM.json. Item contracts link through item.design.system.
+
+| Dimension | Token responsibility | Structure and behavior responsibility |
+| --- | --- | --- |
+| Size and proportion | Control sizes, icons and content width | Component recipes and the DOM ensure min-height, padding, wrapping and actual hit areas. |
+| Typography | Registered font families, role sizes and weights | Supported recipes define line height, tracking, wrapping and responsive conditions without assuming unregistered token types. |
+| Color and contrast | Role colors for actions, selection, text, borders and status | Labels, icons and state attributes convey meaning; measure actual composited-surface contrast separately. |
+| Layout and alignment | Registered spatial roles, including maximum content and panel widths | DOM reading order, layout transitions, scroll ownership and Portal structure |
+| Spacing and grouping | Internal gaps, padding, group spacing and approved density mappings | Maintain label, fieldset, legend and describedby relationships; window width alone does not change density. |
+| Surface and depth | Surface colors, radii, borders and supported color/dimension material leaves | Blur and shadow recipes, stacking, auxiliary-panel versus modal behavior and opaque fallbacks |
+| Interaction and feedback | Visual roles for focus, selection, progress, success, warnings and errors | Keyboard operation, focus movement, asynchronous transitions, execution blocking, input preservation and recovery |
+
+Only Primitive owns literals. Preserve adjacent Brand→Primitive, Semantic→Brand and Component→Semantic references.
+
+Distinguish token definitions, structural conditions in DOM/CSS recipes and compiled final literals.
+
+Keep motion recipes in a read-only catalog separate from component and block installation items. Keep browser search, previews and details within the KLIC Interface Library homepage at #motion. The read API, CLI, MCP and WebMCP use the same catalog snapshot. Manage the npm package as an artifact separate from website deployment. Limit published motions to KLIC-authored content.
+
+## Allowed preset scope
+
+A preset combines approved settings of an existing API. It is not a fifth token layer.
+
+Use an explicit allowlist of size, variant, density, layout and other settings supported by the actual component API.
+
+- Labels, descriptions and business data
+- Value, selection, validation and request state
+- Event handlers, recovery actions and permissions
+- Raw style values, unregistered CSS variables and arbitrary token overrides
+
+Component defaults → selected preset → permitted explicit settings. Pass business data, state and permissions separately.
+
+Validate allowed keys, enums and combinations; diagnose unknown values. Distinguish type declarations from actual DOM and behavior verification.
+
+## Conflict resolution order
+
+- Preserve information, operability and accessibility first: Preserve essential information, state meaning, input, focus and operation paths. Dimension numbers do not override other required contracts.
+- Reflow structure and reading order: Adjust wrapping, columns, action groups and panel arrangement first. Use local scrolling only for areas whose meaning requires two dimensions.
+- Adjust spacing and surfaces within approved bounds: Respect the selected density and text scale while adjusting spacing and decoration within approved recipes. Limited space alone does not justify automatic compact mode or smaller text.
+- Record remaining constraints and verification: If defaults cannot resolve a constraint, record scope, alternatives, impact, FR/AT references and actual verification. Do not skip token layers or conceal failed checks with exception approval.
+
+sources/checks identify supporting references, not certification. Record actual product-environment results in the existing FR/AT evidence.
+
+## Application and verification
+
+Read the shared criteria, item DESIGN.md and actual source first. Assign token, DOM, CSS recipe and state responsibilities for each rule, then apply the conditions your product needs.
+
+Compare revision in the policy and item contract. release identifies a registry publication; do not combine paginated results from different publications.
+
+Use the latest CLI and local registry and restart stdio sessions. Reload the page to register WebMCP again. source prints raw code. Read DESIGN.md for source bundles or README.md for theme kits together with KLIC-DESIGN-SYSTEM.json.
+
+## Selective adoption of references
+
+Treat external documents and drafts as proposals. Check current KLIC problems, implementation and contracts, adopt only necessary rules, and record scope and reasons for deferral or rejection.
+
+Do not present product names, example APIs or references from a draft as facts about KLIC. Connect adopted rules to actual tokens, DOM, CSS recipes, state handling and verification evidence.
+
+## Scope to review together when making changes
+
+Use a reported problem to assess impact across related usage paths. Changing only the named screen or tool does not complete that review.
+
+- Implementation sources, tokens, components, types and schemas
+- DOCS, web guides, developer documentation and examples
+- MCP, CLI, WebMCP and API descriptions, inputs and responses
+- AI prompts, llms.txt, source exports and theme exports
+- Regression checks, builds, production publication and actual responses
+
+After changing the canonical policy, regenerate affected guides, examples, tools, prompts and exports together and verify a matching revision. Explain unaffected paths and distinguish observed results from conditions that remain unverified.

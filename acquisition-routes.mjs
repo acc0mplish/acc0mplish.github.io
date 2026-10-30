@@ -1,0 +1,8 @@
+export const ACQUISITION_ROUTES=[
+ {path:'/logo',ko:'KLIC 브랜드 아이덴티티 · CI 가이드라인',en:'KLIC brand identity · CI guidelines',description:'KLIC 로고의 원형, 공간, 색상, 서체와 매체별 적용을 하나의 시각 체계로 정의합니다.',enDescription:'One visual system for the KLIC mark: master geometry, clear space, color, typography and applications.',og:'logo'},
+ {path:'/start',ko:'AI와 KLIC으로 화면 시작하기',en:'Start a screen with AI and KLIC',description:'화면 종류를 선택하고 실제 블록·토큰·사용 원칙을 포함한 설계 요청서를 복사하세요.',enDescription:'Choose a screen and copy a design brief grounded in actual blocks, tokens and usage principles.',og:'start'},
+ {path:'/solutions/dashboards',ko:'업무 대시보드 디자인 시작점',en:'A starting point for workspace dashboards',description:'지식 관리, 규칙 검토와 빈 상태 예제를 비교하고 대시보드에 적용할 설계 기준을 가져가세요.',enDescription:'Compare knowledge management, rule review and empty-state examples, then take a concrete dashboard design brief.',og:'dashboards'},
+ {path:'/solutions/admin',ko:'관리자·데이터 관리 UI 시작점',en:'A starting point for admin and data interfaces',description:'고객 지원 티켓, 접근 권한 매트릭스와 데이터 가져오기 예제로 업무 화면을 설계하세요.',enDescription:'Design a work interface using support tickets, permission matrices and data-import examples.',og:'admin'},
+ {path:'/solutions/diagrams',ko:'워크플로·다이어그램 UI 시작점',en:'A starting point for workflows and diagrams',description:'관계 탐색, 상태 전이와 리드 라우팅 예제로 연결의 의미를 명확하게 표현하세요.',enDescription:'Make relationships explicit with inspection, state transitions and lead-routing examples.',og:'diagrams'},
+ {path:'/about',ko:'KLIC 디자인 시스템 소개',en:'About the KLIC design system',description:'KLIC의 7 디멘션, 4계층 토큰, 실행 예제와 실제 제공 범위를 한곳에서 확인하세요.',enDescription:'Understand KLIC’s seven dimensions, four token layers, working examples and actual delivery scope.',og:'about'}
+];

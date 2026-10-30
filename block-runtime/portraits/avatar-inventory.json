@@ -1,0 +1,3758 @@
+{
+  "people": [
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/components/SharedDriveGrid.tsx",
+      "line": 355
+    },
+    {
+      "name": "정유진 재무 총괄",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/AppShellShowcaseBlock.tsx",
+      "line": 547
+    },
+    {
+      "name": "강태우 수석 아키텍트",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/AppShellShowcaseBlock.tsx",
+      "line": 557
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 76
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-2ca18b045556.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 81
+    },
+    {
+      "name": "박지민",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 86
+    },
+    {
+      "name": "최수아",
+      "url": "./placeholders/avatar-32b9a55c6abe.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 91
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 99
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-2ca18b045556.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 113
+    },
+    {
+      "name": "박지민",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 127
+    },
+    {
+      "name": "최수아",
+      "url": "./placeholders/avatar-32b9a55c6abe.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 141
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 155
+    },
+    {
+      "name": "한지훈",
+      "url": "./placeholders/avatar-3a010bc432b4.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 390
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 402
+    },
+    {
+      "name": "박지민",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 414
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-2ca18b045556.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 426
+    },
+    {
+      "name": "최수아",
+      "url": "./placeholders/avatar-32b9a55c6abe.svg",
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 438
+    },
+    {
+      "name": "김도훈",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/components/blocks/CatalogBlock.tsx",
+      "line": 51
+    },
+    {
+      "name": "박지훈",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/components/blocks/CatalogBlock.tsx",
+      "line": 57
+    },
+    {
+      "name": "윤서연",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/components/blocks/CatalogBlock.tsx",
+      "line": 63
+    },
+    {
+      "name": "최도윤",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/components/blocks/CatalogBlock.tsx",
+      "line": 69
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-2ca18b045556.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 119
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 124
+    },
+    {
+      "name": "박지민",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 129
+    },
+    {
+      "name": "최수아",
+      "url": "./placeholders/avatar-32b9a55c6abe.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 134
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-2ca18b045556.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 142
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 156
+    },
+    {
+      "name": "박지민",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 170
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-2ca18b045556.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 184
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-2ca18b045556.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 198
+    },
+    {
+      "name": "박지민",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 212
+    },
+    {
+      "name": "박지민",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 226
+    },
+    {
+      "name": "박지민",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 240
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 254
+    },
+    {
+      "name": "최수아",
+      "url": "./placeholders/avatar-32b9a55c6abe.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 268
+    },
+    {
+      "name": "최수아",
+      "url": "./placeholders/avatar-32b9a55c6abe.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 282
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-2ca18b045556.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 591
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 603
+    },
+    {
+      "name": "박지민",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 615
+    },
+    {
+      "name": "김지훈 수석 프로덕트 매니저",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/DialogShowcaseBlock.tsx",
+      "line": 286
+    },
+    {
+      "name": "이서연 리드 디자이너",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/DialogShowcaseBlock.tsx",
+      "line": 294
+    },
+    {
+      "name": "박현우 데이터 엔지니어",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/DialogShowcaseBlock.tsx",
+      "line": 302
+    },
+    {
+      "name": "김민준",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/components/blocks/EnvironmentPipelineBlock.tsx",
+      "line": 54
+    },
+    {
+      "name": "이서연",
+      "url": "./placeholders/avatar-db5dd4b3926d.svg",
+      "file": "block-runtime/src/components/blocks/EnvironmentPipelineBlock.tsx",
+      "line": 81
+    },
+    {
+      "name": "오태양",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/components/blocks/EnvironmentPipelineBlock.tsx",
+      "line": 108
+    },
+    {
+      "name": "최소연",
+      "url": "./placeholders/avatar-157a5491730e.svg",
+      "file": "block-runtime/src/components/blocks/EnvironmentPipelineBlock.tsx",
+      "line": 135
+    },
+    {
+      "name": "박지훈",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/components/blocks/EnvironmentPipelineBlock.tsx",
+      "line": 162
+    },
+    {
+      "name": "최소연",
+      "url": "./placeholders/avatar-157a5491730e.svg",
+      "file": "block-runtime/src/components/blocks/EnvironmentPipelineBlock.tsx",
+      "line": 189
+    },
+    {
+      "name": "윤서연 PM",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/components/blocks/FluxMainWbsGantt.tsx",
+      "line": 57
+    },
+    {
+      "name": "최도윤 HW 엔지니어",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/components/blocks/FluxMainWbsGantt.tsx",
+      "line": 64
+    },
+    {
+      "name": "문소민 DBA",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/components/blocks/FluxMainWbsGantt.tsx",
+      "line": 71
+    },
+    {
+      "name": "강지훈 네트워크 아키텍트",
+      "url": "./placeholders/avatar-273f4a3f306b.svg",
+      "file": "block-runtime/src/components/blocks/FluxMainWbsGantt.tsx",
+      "line": 78
+    },
+    {
+      "name": "한유진 보안 아키텍트",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/components/blocks/FluxMainWbsGantt.tsx",
+      "line": 85
+    },
+    {
+      "name": "박성민 조달 매니저",
+      "url": "./placeholders/avatar-db5dd4b3926d.svg",
+      "file": "block-runtime/src/components/blocks/FluxMainWbsGantt.tsx",
+      "line": 92
+    },
+    {
+      "name": "김민수",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 157
+    },
+    {
+      "name": "이지은",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 158
+    },
+    {
+      "name": "박서준",
+      "url": "./placeholders/avatar-9c0e45372483.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 171
+    },
+    {
+      "name": "최유나",
+      "url": "./placeholders/avatar-c501831a6e92.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 186
+    },
+    {
+      "name": "김민수",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 187
+    },
+    {
+      "name": "정현우",
+      "url": "./placeholders/avatar-173d1edd1220.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 188
+    },
+    {
+      "name": "최유나",
+      "url": "./placeholders/avatar-c501831a6e92.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 202
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-d3a1756e9408.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 228
+    },
+    {
+      "name": "박서준",
+      "url": "./placeholders/avatar-9c0e45372483.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 242
+    },
+    {
+      "name": "정현우",
+      "url": "./placeholders/avatar-173d1edd1220.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 243
+    },
+    {
+      "name": "김민수",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 256
+    },
+    {
+      "name": "이지은",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 280
+    },
+    {
+      "name": "박서준",
+      "url": "./placeholders/avatar-9c0e45372483.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 281
+    },
+    {
+      "name": "최유나",
+      "url": "./placeholders/avatar-c501831a6e92.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 294
+    },
+    {
+      "name": "정현우",
+      "url": "./placeholders/avatar-173d1edd1220.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 320
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 363
+    },
+    {
+      "name": "노윤아",
+      "url": "./placeholders/avatar-c501831a6e92.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 398
+    },
+    {
+      "name": "박태오",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 421
+    },
+    {
+      "name": "이건우",
+      "url": "./placeholders/avatar-9c0e45372483.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 459
+    },
+    {
+      "name": "안재현",
+      "url": "./placeholders/avatar-173d1edd1220.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 494
+    },
+    {
+      "name": "박수빈",
+      "url": "./placeholders/avatar-d3a1756e9408.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 517
+    },
+    {
+      "name": "박사나",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 540
+    },
+    {
+      "name": "이지은",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 677
+    },
+    {
+      "name": "김도윤 수석",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 84
+    },
+    {
+      "name": "박지훈 리드",
+      "url": "./placeholders/avatar-9c0e45372483.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 99
+    },
+    {
+      "name": "최서연 엔지니어",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 115
+    },
+    {
+      "name": "한소희 보안리드",
+      "url": "./placeholders/avatar-d3a1756e9408.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 131
+    },
+    {
+      "name": "정민규 아키텍트",
+      "url": "./placeholders/avatar-c89f2b7981ee.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 146
+    },
+    {
+      "name": "한소희 보안리드",
+      "url": "./placeholders/avatar-d3a1756e9408.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 162
+    },
+    {
+      "name": "이하은 PM",
+      "url": "./placeholders/avatar-c501831a6e92.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 178
+    },
+    {
+      "name": "김도윤 수석",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 193
+    },
+    {
+      "name": "이하은 PM",
+      "url": "./placeholders/avatar-c501831a6e92.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 209
+    },
+    {
+      "name": "김도윤 수석",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 302
+    },
+    {
+      "name": "박지훈",
+      "url": "./placeholders/avatar-9c0e45372483.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 904
+    },
+    {
+      "name": "정민규",
+      "url": "./placeholders/avatar-c89f2b7981ee.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 919
+    },
+    {
+      "name": "박지훈",
+      "url": "./placeholders/avatar-9c0e45372483.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 935
+    },
+    {
+      "name": "최서연",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 951
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-d3a1756e9408.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 966
+    },
+    {
+      "name": "최서연",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 982
+    },
+    {
+      "name": "김도윤",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 998
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-c501831a6e92.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 1013
+    },
+    {
+      "name": "김도윤",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 1029
+    },
+    {
+      "name": "김도윤 수석",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 1429
+    },
+    {
+      "name": "최서연 리드",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 1441
+    },
+    {
+      "name": "이하은 PM",
+      "url": "./placeholders/avatar-c501831a6e92.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 1454
+    },
+    {
+      "name": "박지훈 리드",
+      "url": "./placeholders/avatar-9c0e45372483.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 1466
+    },
+    {
+      "name": "정민규 엔지니어",
+      "url": "./placeholders/avatar-c89f2b7981ee.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 1479
+    },
+    {
+      "name": "한소희 리드",
+      "url": "./placeholders/avatar-d3a1756e9408.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 1492
+    },
+    {
+      "name": "최서연 리드",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 1504
+    },
+    {
+      "name": "김도윤 수석",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 1517
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 63
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 64
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 65
+    },
+    {
+      "name": "최수빈",
+      "url": "./placeholders/avatar-d81ac24457b6.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 66
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 67
+    },
+    {
+      "name": "윤도현",
+      "url": "./placeholders/avatar-b26d2e28f816.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 68
+    },
+    {
+      "name": "오민재",
+      "url": "./placeholders/avatar-932f878a6ef4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 69
+    },
+    {
+      "name": "송하린",
+      "url": "./placeholders/avatar-c6cee086c134.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 70
+    },
+    {
+      "name": "임성진",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 71
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 72
+    },
+    {
+      "name": "문채원",
+      "url": "./placeholders/avatar-acee4a0e6577.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 73
+    },
+    {
+      "name": "서강준",
+      "url": "./placeholders/avatar-98c120807312.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 74
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 174
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 195
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 206
+    },
+    {
+      "name": "송하린",
+      "url": "./placeholders/avatar-c6cee086c134.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 216
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 229
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 243
+    },
+    {
+      "name": "오민재",
+      "url": "./placeholders/avatar-932f878a6ef4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 254
+    },
+    {
+      "name": "윤도현",
+      "url": "./placeholders/avatar-b26d2e28f816.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 266
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 279
+    },
+    {
+      "name": "임성진",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 292
+    },
+    {
+      "name": "윤도현",
+      "url": "./placeholders/avatar-b26d2e28f816.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 305
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 320
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 335
+    },
+    {
+      "name": "최수빈",
+      "url": "./placeholders/avatar-d81ac24457b6.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 349
+    },
+    {
+      "name": "서강준",
+      "url": "./placeholders/avatar-98c120807312.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 363
+    },
+    {
+      "name": "문채원",
+      "url": "./placeholders/avatar-acee4a0e6577.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 377
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 390
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 404
+    },
+    {
+      "name": "송하린",
+      "url": "./placeholders/avatar-c6cee086c134.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 419
+    },
+    {
+      "name": "임성진",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 429
+    },
+    {
+      "name": "윤도현",
+      "url": "./placeholders/avatar-b26d2e28f816.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 613
+    },
+    {
+      "name": "오민재",
+      "url": "./placeholders/avatar-932f878a6ef4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 629
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 645
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 661
+    },
+    {
+      "name": "오민재",
+      "url": "./placeholders/avatar-932f878a6ef4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 679
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 697
+    },
+    {
+      "name": "윤도현",
+      "url": "./placeholders/avatar-b26d2e28f816.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 713
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 731
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 749
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 767
+    },
+    {
+      "name": "임성진",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 785
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 803
+    },
+    {
+      "name": "결제 & 정산 코어 스쿼드",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 851
+    },
+    {
+      "name": "클라우드 인프라 & SRE 스쿼드",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 859
+    },
+    {
+      "name": "코어 플랫폼 & 디자인 시스템 스쿼드",
+      "url": "./placeholders/avatar-932f878a6ef4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 867
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 885
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 897
+    },
+    {
+      "name": "최수빈",
+      "url": "./placeholders/avatar-d81ac24457b6.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 909
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 921
+    },
+    {
+      "name": "임성진",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 933
+    },
+    {
+      "name": "윤도현",
+      "url": "./placeholders/avatar-b26d2e28f816.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 945
+    },
+    {
+      "name": "임성진",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 958
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 970
+    },
+    {
+      "name": "오민재",
+      "url": "./placeholders/avatar-932f878a6ef4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 982
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 994
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1006
+    },
+    {
+      "name": "오민재",
+      "url": "./placeholders/avatar-932f878a6ef4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1018
+    },
+    {
+      "name": "김태형 AE",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1066
+    },
+    {
+      "name": "박지훈 AE",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1080
+    },
+    {
+      "name": "이서연 수석",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1094
+    },
+    {
+      "name": "김태형 AE",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1109
+    },
+    {
+      "name": "이서연 수석",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1123
+    },
+    {
+      "name": "박지훈 AE",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1138
+    },
+    {
+      "name": "이서연 수석",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1152
+    },
+    {
+      "name": "김태형 AE",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1167
+    },
+    {
+      "name": "이서연 수석",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1181
+    },
+    {
+      "name": "박지훈 AE",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1195
+    },
+    {
+      "name": "정현우",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1394
+    },
+    {
+      "name": "김소연",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1408
+    },
+    {
+      "name": "백승민",
+      "url": "./placeholders/avatar-932f878a6ef4.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1422
+    },
+    {
+      "name": "이도윤",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1436
+    },
+    {
+      "name": "최윤서",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1450
+    },
+    {
+      "name": "문지훈",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1464
+    },
+    {
+      "name": "한지원",
+      "url": "./placeholders/avatar-b26d2e28f816.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1478
+    },
+    {
+      "name": "서유나",
+      "url": "./placeholders/avatar-c6cee086c134.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1492
+    },
+    {
+      "name": "권태현",
+      "url": "./placeholders/avatar-98c120807312.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1506
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1620
+    },
+    {
+      "name": "이서연 수석",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 1686
+    },
+    {
+      "name": "한소희 총괄",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/ListShowcaseBlock.tsx",
+      "line": 226
+    },
+    {
+      "name": "이서연 리드",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/ListShowcaseBlock.tsx",
+      "line": 241
+    },
+    {
+      "name": "김지훈 수석",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/ListShowcaseBlock.tsx",
+      "line": 256
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/ListShowcaseBlock.tsx",
+      "line": 274
+    },
+    {
+      "name": "강동원",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/ListShowcaseBlock.tsx",
+      "line": 286
+    },
+    {
+      "name": "이서연",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/ListShowcaseBlock.tsx",
+      "line": 298
+    },
+    {
+      "name": "박현우",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/ListShowcaseBlock.tsx",
+      "line": 310
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 75
+    },
+    {
+      "name": "박지민",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 91
+    },
+    {
+      "name": "이준혁",
+      "url": "./placeholders/avatar-3a010bc432b4.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 108
+    },
+    {
+      "name": "최수아",
+      "url": "./placeholders/avatar-32b9a55c6abe.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 124
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 142
+    },
+    {
+      "name": "이준혁",
+      "url": "./placeholders/avatar-3a010bc432b4.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 160
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 187
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 204
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 240
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-3a010bc432b4.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 258
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-2ca18b045556.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 276
+    },
+    {
+      "name": "오지훈",
+      "url": "./placeholders/avatar-18461dc5a323.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 294
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-72e24f34ec07.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 462
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-3a010bc432b4.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1302
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1312
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-72e24f34ec07.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1322
+    },
+    {
+      "name": "최수아",
+      "url": "./placeholders/avatar-32b9a55c6abe.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1391
+    },
+    {
+      "name": "이준혁",
+      "url": "./placeholders/avatar-3a010bc432b4.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1399
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1415
+    },
+    {
+      "name": "박지민",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1431
+    },
+    {
+      "name": "최수아",
+      "url": "./placeholders/avatar-32b9a55c6abe.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1466
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1476
+    },
+    {
+      "name": "박지민",
+      "url": "./placeholders/avatar-ed36204aee6b.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1486
+    },
+    {
+      "name": "이준혁 배정",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1744
+    },
+    {
+      "name": "김서연 요청",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1751
+    },
+    {
+      "name": "최수아 멘션",
+      "url": "./placeholders/avatar-d81ac24457b6.svg",
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1758
+    },
+    {
+      "name": "김서연",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 85
+    },
+    {
+      "name": "박준혁",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 118
+    },
+    {
+      "name": "이지아",
+      "url": "./placeholders/avatar-d23e1dc07c81.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 152
+    },
+    {
+      "name": "정현우",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 193
+    },
+    {
+      "name": "최도윤",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 218
+    },
+    {
+      "name": "박시은",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 251
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-d81ac24457b6.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 276
+    },
+    {
+      "name": "장하늘",
+      "url": "./placeholders/avatar-acee4a0e6577.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 302
+    },
+    {
+      "name": "송하린",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 319
+    },
+    {
+      "name": "김민솔",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 422
+    },
+    {
+      "name": "오수진",
+      "url": "./placeholders/avatar-d23e1dc07c81.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 457
+    },
+    {
+      "name": "문다빈",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 475
+    },
+    {
+      "name": "노은비",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 519
+    },
+    {
+      "name": "배희원",
+      "url": "./placeholders/avatar-d81ac24457b6.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 563
+    },
+    {
+      "name": "임태사",
+      "url": "./placeholders/avatar-c6cee086c134.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 598
+    },
+    {
+      "name": "모하나",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 616
+    },
+    {
+      "name": "하민준",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 660
+    },
+    {
+      "name": "구보나",
+      "url": "./placeholders/avatar-acee4a0e6577.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 695
+    },
+    {
+      "name": "홍건우",
+      "url": "./placeholders/avatar-b26d2e28f816.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 740
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 62
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 63
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 64
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 65
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 78
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 91
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 92
+    },
+    {
+      "name": "최수빈",
+      "url": "./placeholders/avatar-d81ac24457b6.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 93
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 107
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 108
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 109
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 123
+    },
+    {
+      "name": "임성진",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 124
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 162
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 381
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 388
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 395
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 402
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 555
+    },
+    {
+      "name": "임성진",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 567
+    },
+    {
+      "name": "최수빈",
+      "url": "./placeholders/avatar-d81ac24457b6.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 579
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 591
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 717
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 718
+    },
+    {
+      "name": "오민재",
+      "url": "./placeholders/avatar-932f878a6ef4.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 719
+    },
+    {
+      "name": "최수빈",
+      "url": "./placeholders/avatar-d81ac24457b6.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 728
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 729
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 738
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 739
+    },
+    {
+      "name": "임성진 (대체 투입)",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 756
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-0cbdeb5e5e6f.svg",
+      "file": "block-runtime/src/components/blocks/SettingsShowcaseBlock.tsx",
+      "line": 75
+    },
+    {
+      "name": "박태준",
+      "url": "./placeholders/avatar-3a010bc432b4.svg",
+      "file": "block-runtime/src/components/blocks/SettingsShowcaseBlock.tsx",
+      "line": 88
+    },
+    {
+      "name": "김수진",
+      "url": "./placeholders/avatar-72e24f34ec07.svg",
+      "file": "block-runtime/src/components/blocks/SettingsShowcaseBlock.tsx",
+      "line": 99
+    },
+    {
+      "name": "정민호",
+      "url": "./placeholders/avatar-2ca18b045556.svg",
+      "file": "block-runtime/src/components/blocks/SettingsShowcaseBlock.tsx",
+      "line": 109
+    },
+    {
+      "name": "최유리",
+      "url": "./placeholders/avatar-d622a75d40fa.svg",
+      "file": "block-runtime/src/components/blocks/SettingsShowcaseBlock.tsx",
+      "line": 119
+    },
+    {
+      "name": "이서연 리드",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 68
+    },
+    {
+      "name": "한소희 총괄",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 83
+    },
+    {
+      "name": "강태우 수석",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 98
+    },
+    {
+      "name": "정유진 총괄",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 113
+    },
+    {
+      "name": "이서연 리드",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 131
+    },
+    {
+      "name": "한소희 총괄",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 132
+    },
+    {
+      "name": "강태우 수석",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 133
+    },
+    {
+      "name": "정유진 총괄",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 134
+    },
+    {
+      "name": "한소희 총괄",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 162
+    },
+    {
+      "name": "이서연 리드",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 170
+    },
+    {
+      "name": "한소희 총괄",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 564
+    },
+    {
+      "name": "김서연 프로덕트 리드",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 825
+    },
+    {
+      "name": "정도윤 부사장",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 836
+    },
+    {
+      "name": "박하늘 수석",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 837
+    },
+    {
+      "name": "이서연 리드",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 844
+    },
+    {
+      "name": "최현우 대표",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 855
+    },
+    {
+      "name": "윤서아 팀장",
+      "url": "./placeholders/avatar-d81ac24457b6.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 856
+    },
+    {
+      "name": "정유진 총괄",
+      "url": "./placeholders/avatar-8c2580aea9a4.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 863
+    },
+    {
+      "name": "강민석 전무",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 874
+    },
+    {
+      "name": "한지민 매니저",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 875
+    },
+    {
+      "name": "한소희 총괄 아키텍트",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 1324
+    },
+    {
+      "name": "윤도현 보안 아키텍트",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 1349
+    },
+    {
+      "name": "이승우 수석",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/components/blocks/StripedRowsBlock.tsx",
+      "line": 171
+    },
+    {
+      "name": "아틀라스",
+      "url": "./placeholders/avatar-d36430bc2634.svg",
+      "file": "block-runtime/src/components/blocks/TaskLifecycleBlock.tsx",
+      "line": 71
+    },
+    {
+      "name": "레저",
+      "url": "./placeholders/avatar-576a55580552.svg",
+      "file": "block-runtime/src/components/blocks/TaskLifecycleBlock.tsx",
+      "line": 80
+    },
+    {
+      "name": "미아",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/components/blocks/TaskLifecycleBlock.tsx",
+      "line": 89
+    },
+    {
+      "name": "노바",
+      "url": "./placeholders/avatar-352373979408.svg",
+      "file": "block-runtime/src/components/blocks/TaskLifecycleBlock.tsx",
+      "line": 98
+    },
+    {
+      "name": "Datadog Watchdog",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/components/blocks/TimelineShowcaseBlock.tsx",
+      "line": 72
+    },
+    {
+      "name": "김태호",
+      "url": "./placeholders/avatar-b4131e0b7eff.svg",
+      "file": "block-runtime/src/components/blocks/TimelineShowcaseBlock.tsx",
+      "line": 88
+    },
+    {
+      "name": "박지훈",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/components/blocks/TimelineShowcaseBlock.tsx",
+      "line": 104
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-157a5491730e.svg",
+      "file": "block-runtime/src/components/blocks/TimelineShowcaseBlock.tsx",
+      "line": 120
+    },
+    {
+      "name": "김태호",
+      "url": "./placeholders/avatar-b4131e0b7eff.svg",
+      "file": "block-runtime/src/components/blocks/TimelineShowcaseBlock.tsx",
+      "line": 136
+    },
+    {
+      "name": "김태호",
+      "url": "./placeholders/avatar-b4131e0b7eff.svg",
+      "file": "block-runtime/src/components/blocks/TimelineShowcaseBlock.tsx",
+      "line": 521
+    },
+    {
+      "name": "KLIC CI Runner",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/components/blocks/TimelineShowcaseBlock.tsx",
+      "line": 534
+    },
+    {
+      "name": "박지훈",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/components/blocks/TimelineShowcaseBlock.tsx",
+      "line": 547
+    },
+    {
+      "name": "한소희 · 박지훈",
+      "url": "./placeholders/avatar-157a5491730e.svg",
+      "file": "block-runtime/src/components/blocks/TimelineShowcaseBlock.tsx",
+      "line": 566
+    },
+    {
+      "name": "박지훈",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/components/blocks/TimelineShowcaseBlock.tsx",
+      "line": 642
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 1876
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 1900
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 1924
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 1948
+    },
+    {
+      "name": "최수빈",
+      "url": "./placeholders/avatar-0d1a1f59113e.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 1972
+    },
+    {
+      "name": "윤도현",
+      "url": "./placeholders/avatar-48a2cd0f9f6d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 1996
+    },
+    {
+      "name": "송하린",
+      "url": "./placeholders/avatar-db5dd4b3926d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2020
+    },
+    {
+      "name": "임성진",
+      "url": "./placeholders/avatar-273f4a3f306b.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2044
+    },
+    {
+      "name": "한소희",
+      "url": "./placeholders/avatar-157a5491730e.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2068
+    },
+    {
+      "name": "오민재",
+      "url": "./placeholders/avatar-de781bccc9ec.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2092
+    },
+    {
+      "name": "김민수",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2125
+    },
+    {
+      "name": "이준호",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2126
+    },
+    {
+      "name": "박서연",
+      "url": "./placeholders/avatar-d3a1756e9408.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2140
+    },
+    {
+      "name": "정우성",
+      "url": "./placeholders/avatar-9c0e45372483.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2154
+    },
+    {
+      "name": "최현우",
+      "url": "./placeholders/avatar-c794808c28af.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2168
+    },
+    {
+      "name": "강지훈",
+      "url": "./placeholders/avatar-55c57c9b582d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2169
+    },
+    {
+      "name": "윤서아",
+      "url": "./placeholders/avatar-c501831a6e92.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2183
+    },
+    {
+      "name": "한도윤",
+      "url": "./placeholders/avatar-173d1edd1220.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2184
+    },
+    {
+      "name": "신유나",
+      "url": "./placeholders/avatar-ff10242ca54d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2210
+    },
+    {
+      "name": "임재현",
+      "url": "./placeholders/avatar-177f8c7848ea.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2224
+    },
+    {
+      "name": "오하은",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2225
+    },
+    {
+      "name": "송지아",
+      "url": "./placeholders/avatar-538a76ac3b66.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2239
+    },
+    {
+      "name": "배성민",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2240
+    },
+    {
+      "name": "조민석",
+      "url": "./placeholders/avatar-e23e5ed6f102.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2254
+    },
+    {
+      "name": "백승호",
+      "url": "./placeholders/avatar-9c0e45372483.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2255
+    },
+    {
+      "name": "남궁혁",
+      "url": "./placeholders/avatar-55c57c9b582d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2269
+    },
+    {
+      "name": "문채원",
+      "url": "./placeholders/avatar-f8d9b12c26c1.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2283
+    },
+    {
+      "name": "서강준",
+      "url": "./placeholders/avatar-173d1edd1220.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2284
+    },
+    {
+      "name": "권지용",
+      "url": "./placeholders/avatar-8fe47254ee6c.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2298
+    },
+    {
+      "name": "유재석",
+      "url": "./placeholders/avatar-9c0e45372483.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2299
+    },
+    {
+      "name": "김태리",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2313
+    },
+    {
+      "name": "박보검",
+      "url": "./placeholders/avatar-177f8c7848ea.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2314
+    },
+    {
+      "name": "손예진",
+      "url": "./placeholders/avatar-ff10242ca54d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2340
+    },
+    {
+      "name": "현빈",
+      "url": "./placeholders/avatar-c794808c28af.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2341
+    },
+    {
+      "name": "아이유",
+      "url": "./placeholders/avatar-d3a1756e9408.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2355
+    },
+    {
+      "name": "공유",
+      "url": "./placeholders/avatar-55c57c9b582d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2369
+    },
+    {
+      "name": "박민영",
+      "url": "./placeholders/avatar-5be6073573fc.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2383
+    },
+    {
+      "name": "윤서연",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2473
+    },
+    {
+      "name": "윤서연",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2487
+    },
+    {
+      "name": "박지훈",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2499
+    },
+    {
+      "name": "최도윤",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2511
+    },
+    {
+      "name": "윤서연",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2523
+    },
+    {
+      "name": "박지훈",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2537
+    },
+    {
+      "name": "강민규",
+      "url": "./placeholders/avatar-273f4a3f306b.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2552
+    },
+    {
+      "name": "강민규",
+      "url": "./placeholders/avatar-273f4a3f306b.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2566
+    },
+    {
+      "name": "윤서연",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2578
+    },
+    {
+      "name": "김도훈",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2604
+    },
+    {
+      "name": "김도훈",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2618
+    },
+    {
+      "name": "강민규",
+      "url": "./placeholders/avatar-273f4a3f306b.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2630
+    },
+    {
+      "name": "최도윤",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2656
+    },
+    {
+      "name": "최도윤",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2670
+    },
+    {
+      "name": "박수빈",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2682
+    },
+    {
+      "name": "이준호",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2698
+    },
+    {
+      "name": "정하윤",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2708
+    },
+    {
+      "name": "박수빈",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2718
+    },
+    {
+      "name": "오태양",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2728
+    },
+    {
+      "name": "이준호",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2738
+    },
+    {
+      "name": "오태양",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2750
+    },
+    {
+      "name": "오태양",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2766
+    },
+    {
+      "name": "이준호",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2776
+    },
+    {
+      "name": "박수빈",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2786
+    },
+    {
+      "name": "이준호",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2798
+    },
+    {
+      "name": "이준호",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2814
+    },
+    {
+      "name": "정하윤",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2824
+    },
+    {
+      "name": "정하윤",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2836
+    },
+    {
+      "name": "정하윤",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2852
+    },
+    {
+      "name": "박수빈",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2862
+    },
+    {
+      "name": "오태양",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2874
+    },
+    {
+      "name": "오태양",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2890
+    },
+    {
+      "name": "이준호",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2902
+    },
+    {
+      "name": "이준호",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2918
+    },
+    {
+      "name": "정하윤",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2930
+    },
+    {
+      "name": "정하윤",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2946
+    },
+    {
+      "name": "박수빈",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2958
+    },
+    {
+      "name": "오태양",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2975
+    },
+    {
+      "name": "이준호",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 2992
+    },
+    {
+      "name": "정하윤",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3009
+    },
+    {
+      "name": "김태현",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3359
+    },
+    {
+      "name": "오민수",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3378
+    },
+    {
+      "name": "박미라",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3397
+    },
+    {
+      "name": "안지아",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3416
+    },
+    {
+      "name": "김사랑",
+      "url": "./placeholders/avatar-0d1a1f59113e.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3435
+    },
+    {
+      "name": "노승현",
+      "url": "./placeholders/avatar-273f4a3f306b.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3454
+    },
+    {
+      "name": "송하린",
+      "url": "./placeholders/avatar-157a5491730e.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3473
+    },
+    {
+      "name": "류민재",
+      "url": "./placeholders/avatar-de781bccc9ec.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3492
+    },
+    {
+      "name": "장소희",
+      "url": "./placeholders/avatar-6e14258f9afa.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3511
+    },
+    {
+      "name": "임성진",
+      "url": "./placeholders/avatar-f1fae37b5ea6.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3530
+    },
+    {
+      "name": "한나연",
+      "url": "./placeholders/avatar-e448e272d6ac.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3549
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3584
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3590
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3614
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3638
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3644
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3650
+    },
+    {
+      "name": "최도윤",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3674
+    },
+    {
+      "name": "윤서연",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3698
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3722
+    },
+    {
+      "name": "강민규",
+      "url": "./placeholders/avatar-273f4a3f306b.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3728
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3752
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3758
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3782
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3788
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3794
+    },
+    {
+      "name": "강민규",
+      "url": "./placeholders/avatar-273f4a3f306b.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3818
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3842
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3866
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3890
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3917
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3923
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3947
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3971
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3977
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 3983
+    },
+    {
+      "name": "강민규",
+      "url": "./placeholders/avatar-273f4a3f306b.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4007
+    },
+    {
+      "name": "윤서연",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4031
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4055
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4061
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4085
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4091
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4115
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4121
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4127
+    },
+    {
+      "name": "이하은",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4151
+    },
+    {
+      "name": "박준영",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4175
+    },
+    {
+      "name": "정유진",
+      "url": "./placeholders/avatar-76c628dee7cb.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4199
+    },
+    {
+      "name": "강태우",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4223
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4237
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4247
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4257
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4267
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4277
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4287
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4297
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4307
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4317
+    },
+    {
+      "name": "박사나",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4329
+    },
+    {
+      "name": "박사나",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4339
+    },
+    {
+      "name": "박사나",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4349
+    },
+    {
+      "name": "박사나",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4359
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4371
+    },
+    {
+      "name": "이준서",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4383
+    },
+    {
+      "name": "이준서",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4393
+    },
+    {
+      "name": "이준서",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4403
+    },
+    {
+      "name": "이준서",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4413
+    },
+    {
+      "name": "이준서",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4423
+    },
+    {
+      "name": "이준서",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4433
+    },
+    {
+      "name": "박사나",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4445
+    },
+    {
+      "name": "박사나",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4455
+    },
+    {
+      "name": "박사나",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4465
+    },
+    {
+      "name": "박사나",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4475
+    },
+    {
+      "name": "박사나",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4485
+    },
+    {
+      "name": "노윤아",
+      "url": "./placeholders/avatar-0d1a1f59113e.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4497
+    },
+    {
+      "name": "노윤아",
+      "url": "./placeholders/avatar-0d1a1f59113e.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4507
+    },
+    {
+      "name": "노윤아",
+      "url": "./placeholders/avatar-0d1a1f59113e.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4517
+    },
+    {
+      "name": "노윤아",
+      "url": "./placeholders/avatar-0d1a1f59113e.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4527
+    },
+    {
+      "name": "박수빈",
+      "url": "./placeholders/avatar-db5dd4b3926d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4539
+    },
+    {
+      "name": "박수빈",
+      "url": "./placeholders/avatar-db5dd4b3926d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4549
+    },
+    {
+      "name": "박수빈",
+      "url": "./placeholders/avatar-db5dd4b3926d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4559
+    },
+    {
+      "name": "박수빈",
+      "url": "./placeholders/avatar-db5dd4b3926d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4569
+    },
+    {
+      "name": "박수빈",
+      "url": "./placeholders/avatar-db5dd4b3926d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4579
+    },
+    {
+      "name": "이건우",
+      "url": "./placeholders/avatar-48a2cd0f9f6d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4591
+    },
+    {
+      "name": "강동원",
+      "url": "./placeholders/avatar-932f878a6ef4.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4615
+    },
+    {
+      "name": "배다연",
+      "url": "./placeholders/avatar-d81ac24457b6.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4623
+    },
+    {
+      "name": "박시은",
+      "url": "./placeholders/avatar-c6cee086c134.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4649
+    },
+    {
+      "name": "이오성",
+      "url": "./placeholders/avatar-98c120807312.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4657
+    },
+    {
+      "name": "조현우",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4665
+    },
+    {
+      "name": "조현우",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4691
+    },
+    {
+      "name": "강동원",
+      "url": "./placeholders/avatar-932f878a6ef4.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4699
+    },
+    {
+      "name": "박시은",
+      "url": "./placeholders/avatar-c6cee086c134.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4725
+    },
+    {
+      "name": "조현우",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4733
+    },
+    {
+      "name": "이오성",
+      "url": "./placeholders/avatar-98c120807312.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4741
+    },
+    {
+      "name": "강동원",
+      "url": "./placeholders/avatar-932f878a6ef4.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4767
+    },
+    {
+      "name": "배다연",
+      "url": "./placeholders/avatar-d81ac24457b6.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4775
+    },
+    {
+      "name": "태민호",
+      "url": "./placeholders/avatar-b26d2e28f816.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4801
+    },
+    {
+      "name": "조현우",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4809
+    },
+    {
+      "name": "조현우",
+      "url": "./placeholders/avatar-f0911aecec62.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4836
+    },
+    {
+      "name": "김아린",
+      "url": "./placeholders/avatar-ef94a3ac14b1.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4844
+    },
+    {
+      "name": "류병헌",
+      "url": "./placeholders/avatar-491195549485.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 4852
+    },
+    {
+      "name": "이승우 수석",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 5179
+    },
+    {
+      "name": "안수민 수석",
+      "url": "./placeholders/avatar-6e14258f9afa.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 5206
+    },
+    {
+      "name": "강동원 수석",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 5233
+    },
+    {
+      "name": "강지석 수석",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 5260
+    },
+    {
+      "name": "자동 시스템 봇",
+      "url": "./placeholders/avatar-b4131e0b7eff.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 5287
+    },
+    {
+      "name": "박시은 수석",
+      "url": "./placeholders/avatar-db5dd4b3926d.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 5315
+    },
+    {
+      "name": "조현우 수석",
+      "url": "./placeholders/avatar-90553ff9b83e.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 5342
+    },
+    {
+      "name": "AI 이상 탐지 엔진",
+      "url": "./placeholders/avatar-b4131e0b7eff.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 5369
+    },
+    {
+      "name": "이하은 총괄",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 5397
+    },
+    {
+      "name": "박준영 수석",
+      "url": "./placeholders/avatar-51747f419874.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 5424
+    },
+    {
+      "name": "최민지 매니저",
+      "url": "./placeholders/avatar-6e14258f9afa.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 5451
+    },
+    {
+      "name": "태민호 수석",
+      "url": "./placeholders/avatar-591f5c8ec067.svg",
+      "file": "block-runtime/src/data/componentsData.ts",
+      "line": 5478
+    },
+    {
+      "name": "이소연",
+      "url": "./placeholders/avatar-27ccdef6fa6f.svg",
+      "file": "block-runtime/src/utils/catalog.ts",
+      "line": 251
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-1eb387290b68.svg",
+      "file": "block-runtime/src/utils/driveTree.test.ts",
+      "line": 19
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-1eb387290b68.svg",
+      "file": "block-runtime/src/utils/driveTree.test.ts",
+      "line": 29
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-1eb387290b68.svg",
+      "file": "block-runtime/src/utils/driveTree.test.ts",
+      "line": 39
+    },
+    {
+      "name": "김미라",
+      "url": "./placeholders/avatar-1eb387290b68.svg",
+      "file": "block-runtime/src/utils/driveTree.test.ts",
+      "line": 51
+    },
+    {
+      "name": "이건우",
+      "url": "./placeholders/avatar-9403b33134aa.svg",
+      "file": "block-runtime/src/utils/driveTree.test.ts",
+      "line": 63
+    }
+  ],
+  "images": [
+    {
+      "file": "block-runtime/src/components/SharedDriveGrid.tsx",
+      "line": 840,
+      "src": "{row.ownerAvatar}",
+      "alt": "{row.ownerName}",
+      "className": "\"w-5 h-5 rounded-full object-cover ring-1 ring-zinc-200 \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/AccessPermissionsBlock.tsx",
+      "line": 419,
+      "src": "{member.avatar}",
+      "alt": "{member.name}",
+      "className": "\"w-9 h-9 rounded-full object-cover ring-1 ring-zinc-200 \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/AppShellShowcaseBlock.tsx",
+      "line": 218,
+      "src": "{AVATARS.sohee}",
+      "alt": "\"한소희\"",
+      "className": "\"w-7 h-7 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/AppShellShowcaseBlock.tsx",
+      "line": 361,
+      "src": "{AVATARS.seoyeon}",
+      "alt": "\"이서연\"",
+      "className": "\"w-7 h-7 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/AppShellShowcaseBlock.tsx",
+      "line": 494,
+      "src": "{AVATARS.yujin}",
+      "alt": "\"정유진\"",
+      "className": "\"w-7 h-7 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/AppShellShowcaseBlock.tsx",
+      "line": 627,
+      "src": "{t.avatar}",
+      "alt": "{t.sender}",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/AppShellShowcaseBlock.tsx",
+      "line": 645,
+      "src": "{activeThread.avatar}",
+      "alt": "{activeThread.sender}",
+      "className": "\"w-8 h-8 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/AppShellShowcaseBlock.tsx",
+      "line": 715,
+      "src": "{AVATARS.sohee}",
+      "alt": "\"한소희\"",
+      "className": "\"w-6 h-6 rounded-full ring-2 ring-white  object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/AppShellShowcaseBlock.tsx",
+      "line": 716,
+      "src": "{AVATARS.seoyeon}",
+      "alt": "\"이서연\"",
+      "className": "\"w-6 h-6 rounded-full ring-2 ring-white  object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/AppShellShowcaseBlock.tsx",
+      "line": 717,
+      "src": "{AVATARS.taewoo}",
+      "alt": "\"강태우\"",
+      "className": "\"w-6 h-6 rounded-full ring-2 ring-white  object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 878,
+      "src": "{acc.csmAvatar}",
+      "alt": "{acc.csmName}",
+      "className": "\"w-5 h-5 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 912,
+      "src": "{csm.avatar}",
+      "alt": "{csm.name}",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 1952,
+      "src": "{ctrl.ownerAvatar}",
+      "alt": "{ctrl.owner}",
+      "className": "\"w-5 h-5 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ApplicationTemplatesBlock.tsx",
+      "line": 1986,
+      "src": "{p.avatar}",
+      "alt": "{p.name}",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/CardShowcaseBlock.tsx",
+      "line": 948,
+      "key": "{idx}",
+      "src": "{src}",
+      "alt": "\"참석자 프로필\"",
+      "className": "\"w-7 h-7 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/CatalogBlock.tsx",
+      "line": 736,
+      "src": "{item.thumbnail}",
+      "alt": "{item.title}",
+      "className": "\"w-15 h-10 rounded-md object-cover shrink-0 border border-zinc-200/80  bg-zinc-100\"",
+      "loading": "\"lazy\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/CatalogBlock.tsx",
+      "line": 832,
+      "key": "{person.id}",
+      "src": "{person.avatar}",
+      "alt": "{person.name}",
+      "title": "{person.name}",
+      "className": "\"w-6 h-6 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/CatalogBlock.tsx",
+      "line": 893,
+      "src": "{cand.avatar}",
+      "alt": "{cand.name}",
+      "className": "\"w-5 h-5 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/DashboardWorkspaceBlock.tsx",
+      "line": 666,
+      "src": "\"./placeholders/avatar-576a55580552.svg\"",
+      "alt": "\"프로필\"",
+      "className": "\"w-7 h-7 rounded-full object-cover border border-[color:var(--klic-component-block-color-border)]\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 2042,
+      "src": "{row.buyerAvatar}",
+      "alt": "{row.buyerName}",
+      "className": "\"w-5 h-5 rounded-full object-cover shrink-0 ring-1 ring-zinc-200/60 \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 2071,
+      "src": "{b.avatar}",
+      "alt": "{b.name}",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 2289,
+      "src": "{rec.avatar}",
+      "alt": "{rec.owner}",
+      "className": "\"w-6 h-6 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 2314,
+      "src": "{activeSplitItem.avatar}",
+      "alt": "{activeSplitItem.owner}",
+      "className": "\"w-9 h-9 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/DataEditingShowcaseBlock.tsx",
+      "line": 2552,
+      "src": "{row.avatar}",
+      "alt": "{row.manager}",
+      "className": "\"w-6 h-6 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/DialogShowcaseBlock.tsx",
+      "line": 675,
+      "src": "{member.avatar}",
+      "alt": "{member.name}",
+      "className": "\"w-8 h-8 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/EmptyStateShowcaseBlock.tsx",
+      "line": 300,
+      "src": "\"./placeholders/avatar-576a55580552.svg\"",
+      "alt": "\"승인권자\"",
+      "className": "\"w-7 h-7 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/EmptyStateShowcaseBlock.tsx",
+      "line": 305,
+      "src": "\"./placeholders/avatar-8c2580aea9a4.svg\"",
+      "alt": "\"승인권자\"",
+      "className": "\"w-7 h-7 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/EnvironmentPipelineBlock.tsx",
+      "line": 737,
+      "src": "{stage.authorAvatar}",
+      "alt": "{stage.authorName}",
+      "className": "\"w-5 h-5 rounded-full object-cover ring-1 ring-zinc-200  shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/FlowShowcaseBlock.tsx",
+      "line": 460,
+      "src": "{AVATARS.sohee}",
+      "alt": "\"한소희\"",
+      "className": "\"w-4 h-4 rounded-full object-cover ring-1 ring-zinc-200 \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/FlowShowcaseBlock.tsx",
+      "line": 753,
+      "src": "{node.avatar}",
+      "alt": "\"\"",
+      "className": "\"w-4 h-4 rounded-full object-cover ring-1 ring-zinc-200 \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/FlowShowcaseBlock.tsx",
+      "line": 3167,
+      "src": "{AVATARS.seoyeon}",
+      "alt": "\"이서연\"",
+      "className": "\"w-5 h-5 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/FlowShowcaseBlock.tsx",
+      "line": 3186,
+      "src": "{AVATARS.sohee}",
+      "alt": "\"한소희\"",
+      "className": "\"w-5 h-5 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/FlowShowcaseBlock.tsx",
+      "line": 3206,
+      "src": "{AVATARS.yujin}",
+      "alt": "\"정유진\"",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/FlowShowcaseBlock.tsx",
+      "line": 3223,
+      "src": "{AVATARS.taewoo}",
+      "alt": "\"강태우\"",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/FluxMainWbsGantt.tsx",
+      "line": 994,
+      "key": "{a.id}",
+      "src": "{a.avatar}",
+      "alt": "{a.name}",
+      "className": "\"w-5 h-5 rounded-full object-cover ring-1 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/FluxMainWbsGantt.tsx",
+      "line": 1031,
+      "src": "{person.avatar}",
+      "alt": "{person.name}",
+      "className": "\"w-9 h-9 rounded-full object-cover border border-zinc-200  shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/FluxMainWbsGantt.tsx",
+      "line": 1229,
+      "key": "{av.id}",
+      "src": "{av.avatar}",
+      "alt": "{av.name}",
+      "className": "\"w-5 h-5 rounded-full object-cover ring-1 ring-white/90 shadow-2xs\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 1032,
+      "key": "{i}",
+      "src": "{src}",
+      "alt": "\"팀원\"",
+      "className": "\"w-6 h-6 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 1170,
+      "key": "{idx}",
+      "src": "{a.avatar}",
+      "alt": "{a.name}",
+      "title": "{a.name}",
+      "className": "\"w-5 h-5 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 1674,
+      "src": "{res.avatar}",
+      "alt": "{res.name}",
+      "className": "\"w-6 h-6 rounded-full object-cover shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/GanttChartBlock.tsx",
+      "line": 1868,
+      "key": "{i}",
+      "src": "{av}",
+      "alt": "\"담당\"",
+      "className": "\"w-4 h-4 rounded-full object-cover ring-1 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 471,
+      "src": "{item.avatar}",
+      "alt": "{item.owner}",
+      "className": "\"w-5 h-5 rounded-full object-cover shrink-0 ring-1 ring-zinc-200 \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 1366,
+      "src": "{epic.avatar}",
+      "alt": "{epic.owner}",
+      "className": "\"w-4 h-4 rounded-full object-cover shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/GanttExtendedModes.tsx",
+      "line": 1671,
+      "src": "{task.avatar}",
+      "alt": "{task.owner}",
+      "className": "\"w-5 h-5 rounded-full object-cover shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/KanbanBoardBlock.tsx",
+      "line": 97,
+      "src": "{src}",
+      "alt": "{name}",
+      "title": "{name}",
+      "onError": "{() => setImgErr(true)}",
+      "className": "{`${sizeClass} rounded-full object-cover ring-1 ring-zinc-200/90  shrink-0`}"
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ListShowcaseBlock.tsx",
+      "line": 463,
+      "src": "{log.avatar}",
+      "alt": "{log.actorName}",
+      "className": "\"w-7 h-7 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ListShowcaseBlock.tsx",
+      "line": 586,
+      "src": "{item.avatar}",
+      "alt": "{item.senderName}",
+      "className": "\"w-9 h-9 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ListShowcaseBlock.tsx",
+      "line": 762,
+      "src": "{dep.authorAvatar}",
+      "alt": "{dep.authorName}",
+      "className": "\"w-5 h-5 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ListShowcaseBlock.tsx",
+      "line": 834,
+      "src": "{member.avatar}",
+      "alt": "{member.name}",
+      "className": "\"w-10 h-10 rounded-full object-cover ring-2 ring-zinc-100 \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NavbarShowcaseBlock.tsx",
+      "line": 362,
+      "src": "\"./placeholders/avatar-576a55580552.svg\"",
+      "alt": "\"관리자 프로필\"",
+      "className": "\"w-8 h-8 rounded-full object-cover ring-2 ring-zinc-100 \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 659,
+      "src": "{item.avatarUrl}",
+      "alt": "{item.actorName}",
+      "className": "\"w-10 h-10 rounded-full object-cover ring-2 ring-white  shadow-xs\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 754,
+      "src": "{item.avatarUrl}",
+      "alt": "{item.actorName}",
+      "className": "\"w-10 h-10 rounded-full object-cover ring-2 ring-white  shadow-xs shrink-0 mt-0.5\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 854,
+      "src": "\"./placeholders/avatar-0cbdeb5e5e6f.svg\"",
+      "alt": "\"이하은\"",
+      "className": "\"w-11 h-11 rounded-full object-cover ring-2 ring-blue-400\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 888,
+      "src": "\"./placeholders/avatar-d36430bc2634.svg\"",
+      "alt": "\"이준혁\"",
+      "className": "\"w-6 h-6 rounded-full object-cover ring-2 ring-zinc-900\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 893,
+      "src": "\"./placeholders/avatar-ef94a3ac14b1.svg\"",
+      "alt": "\"박지민\"",
+      "className": "\"w-6 h-6 rounded-full object-cover ring-2 ring-zinc-900\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 898,
+      "src": "\"./placeholders/avatar-d81ac24457b6.svg\"",
+      "alt": "\"최수아\"",
+      "className": "\"w-6 h-6 rounded-full object-cover ring-2 ring-zinc-900\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 932,
+      "src": "\"./placeholders/avatar-2ca18b045556.svg\"",
+      "alt": "\"강태우\"",
+      "className": "\"w-10 h-10 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 995,
+      "src": "\"./placeholders/avatar-72e24f34ec07.svg\"",
+      "alt": "\"신예은\"",
+      "className": "\"w-10 h-10 rounded-full object-cover ring-2 ring-blue-100\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1113,
+      "src": "{card.requesterAvatar}",
+      "alt": "{card.requesterName}",
+      "className": "\"w-10 h-10 rounded-full object-cover ring-2 ring-zinc-100 \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1356,
+      "src": "{responder.avatar}",
+      "alt": "{responder.name}",
+      "className": "\"w-11 h-11 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1510,
+      "src": "{item.avatar}",
+      "alt": "{item.sender}",
+      "className": "\"w-9 h-9 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1563,
+      "src": "{c.avatar}",
+      "alt": "{c.author}",
+      "className": "\"w-8 h-8 rounded-full object-cover shrink-0 mt-0.5\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1587,
+      "src": "{reply.avatar}",
+      "alt": "{reply.author}",
+      "className": "\"w-8 h-8 rounded-full object-cover shrink-0 mt-0.5\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1612,
+      "src": "\"./placeholders/avatar-72e24f34ec07.svg\"",
+      "alt": "\"한소희\"",
+      "className": "\"w-8 h-8 rounded-full object-cover shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1671,
+      "src": "\"./placeholders/avatar-576a55580552.svg\"",
+      "alt": "\"김서연\"",
+      "className": "\"w-8 h-8 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1676,
+      "src": "\"./placeholders/avatar-d36430bc2634.svg\"",
+      "alt": "\"이준혁\"",
+      "className": "\"w-8 h-8 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1681,
+      "src": "\"./placeholders/avatar-ef94a3ac14b1.svg\"",
+      "alt": "\"박지민\"",
+      "className": "\"w-8 h-8 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1686,
+      "src": "\"./placeholders/avatar-d81ac24457b6.svg\"",
+      "alt": "\"최수아\"",
+      "className": "\"w-8 h-8 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/NotificationShowcaseBlock.tsx",
+      "line": 1799,
+      "src": "{row.avatar}",
+      "alt": "{row.owner}",
+      "className": "\"w-5 h-5 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ReleaseApprovalsBlock.tsx",
+      "line": 527,
+      "src": "{rel.ownerAvatar}",
+      "alt": "{rel.ownerName}",
+      "className": "\"w-7 h-7 rounded-full object-cover shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ReleaseApprovalsBlock.tsx",
+      "line": 688,
+      "src": "{card.assigneeAvatar}",
+      "alt": "{card.assigneeName}",
+      "className": "\"w-4 h-4 rounded-full object-cover shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ReportsManagementBlock.tsx",
+      "line": 800,
+      "src": "{rec.avatarUrl}",
+      "alt": "{rec.name}",
+      "className": "\"w-6 h-6 rounded-full object-cover ring-2 ring-white  shadow-2xs shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ReportsManagementBlock.tsx",
+      "line": 923,
+      "src": "{rec.avatarUrl}",
+      "alt": "{rec.name}",
+      "className": "\"w-6 h-6 rounded-full object-cover ring-2 ring-white  shrink-0 shadow-2xs hover:scale-110 hover:z-10 transition-transform\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/RoadmapBlock.tsx",
+      "line": 391,
+      "src": "{a.avatar}",
+      "alt": "{a.name}",
+      "className": "\"w-5 h-5 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 1239,
+      "src": "{row.avatar}",
+      "alt": "{row.name}",
+      "className": "\"w-8 h-8 rounded-full object-cover ring-1 ring-zinc-200  shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 1498,
+      "src": "{sp.avatar}",
+      "alt": "{sp.name}",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ScheduleBlock.tsx",
+      "line": 1683,
+      "src": "{sp.avatar}",
+      "alt": "{sp.name}",
+      "className": "\"w-9 h-9 rounded-full object-cover ring-1 ring-zinc-200  shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 302,
+      "key": "{idx}",
+      "src": "{p.avatar}",
+      "alt": "{p.name}",
+      "title": "{p.name}",
+      "className": "\"w-6 h-6 rounded-full object-cover ring-2 ring-white \""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 498,
+      "src": "{iv.avatar}",
+      "alt": "{iv.name}",
+      "className": "\"w-8 h-8 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 684,
+      "src": "{w.avatar}",
+      "alt": "{w.commander}",
+      "className": "\"w-6 h-6 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/ScheduleExtendedModes.tsx",
+      "line": 807,
+      "src": "{ag.avatar}",
+      "alt": "{ag.name}",
+      "className": "\"w-7 h-7 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SettingsShowcaseBlock.tsx",
+      "line": 435,
+      "src": "\"./placeholders/avatar-0cbdeb5e5e6f.svg\"",
+      "alt": "\"이하은\"",
+      "className": "\"w-8 h-8 rounded-full object-cover ring-1 ring-zinc-200 shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SettingsShowcaseBlock.tsx",
+      "line": 612,
+      "src": "{member.avatar}",
+      "alt": "{member.name}",
+      "className": "\"w-9 h-9 rounded-full object-cover ring-1 ring-zinc-200 shadow-2xs\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 283,
+      "src": "{item.assigneeAvatar}",
+      "alt": "{item.assigneeName}",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 424,
+      "src": "{activeIssue.assigneeAvatar}",
+      "alt": "{activeIssue.assigneeName}",
+      "className": "\"w-4 h-4 rounded-full object-cover shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 454,
+      "src": "{person.avatar}",
+      "alt": "{person.name}",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 536,
+      "src": "{cm.avatar}",
+      "alt": "{cm.author}",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 986,
+      "src": "{activeCust.csmAvatar}",
+      "alt": "{activeCust.csmName}",
+      "className": "\"w-5 h-5 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 1029,
+      "src": "{person.avatar}",
+      "alt": "{person.name}",
+      "className": "\"w-8 h-8 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 1405,
+      "src": "{a.avatar}",
+      "alt": "{a.actor}",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SheetShowcaseBlock.tsx",
+      "line": 1440,
+      "src": "{activeAudit.avatar}",
+      "alt": "{activeAudit.actor}",
+      "className": "\"w-5 h-5 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/StripedRowsBlock.tsx",
+      "line": 570,
+      "src": "{trx.auditor.avatarUrl}",
+      "alt": "{trx.auditor.name}",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/StripedRowsBlock.tsx",
+      "line": 775,
+      "src": "{trx.auditor.avatarUrl}",
+      "alt": "{trx.auditor.name}",
+      "className": "\"w-5 h-5 rounded-full object-cover ring-1 ring-zinc-300  shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/StripedRowsBlock.tsx",
+      "line": 914,
+      "src": "{activeDetailItem.auditor.avatarUrl}",
+      "alt": "{activeDetailItem.auditor.name}",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SubTaskTrackerBlock.tsx",
+      "line": 595,
+      "src": "{parent.assignee.avatar}",
+      "alt": "{parent.assignee.name}",
+      "className": "\"w-5 h-5 rounded-full object-cover shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SubTaskTrackerBlock.tsx",
+      "line": 751,
+      "src": "{sub.assignee.avatar}",
+      "alt": "{sub.assignee.name}",
+      "className": "\"w-5 h-5 rounded-full object-cover shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/SupportTicketsBlock.tsx",
+      "line": 777,
+      "src": "{item.requesterAvatar}",
+      "alt": "{item.requesterName}",
+      "className": "\"w-7 h-7 rounded-full object-cover border border-zinc-200  shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/TaskLifecycleBlock.tsx",
+      "line": 1061,
+      "src": "{ag.avatar}",
+      "alt": "{ag.name}",
+      "className": "\"w-4 h-4 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/TaskLifecycleBlock.tsx",
+      "line": 1220,
+      "src": "{agent.avatar}",
+      "alt": "{agent.name}",
+      "className": "\"w-6 h-6 rounded-full object-cover ring-1 ring-zinc-200  shrink-0\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/TaskLifecycleBlock.tsx",
+      "line": 1403,
+      "src": "{agent.avatar}",
+      "alt": "{agent.name}",
+      "className": "\"w-5 h-5 rounded-full object-cover\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/TimelineShowcaseBlock.tsx",
+      "line": 996,
+      "src": "{step.avatar}",
+      "alt": "{step.actor}",
+      "className": "\"w-5 h-5 rounded-full object-cover border border-zinc-200\""
+    },
+    {
+      "file": "block-runtime/src/components/blocks/TimelineShowcaseBlock.tsx",
+      "line": 1607,
+      "src": "{step.avatar}",
+      "alt": "{step.author}",
+      "className": "\"w-5 h-5 rounded-full object-cover border border-zinc-200\""
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "representation": "Static screenshots of actual public KLIC block previews with sample data; not customer case studies.",
+  "capturedAt": "2026-10-25",
+  "images": [
+    {
+      "file": "dashboard.png",
+      "source": "/block-thumbnails/dashboard-exec-revenue",
+      "blockId": "dashboard-exec-revenue"
+    },
+    {
+      "file": "admin.png",
+      "source": "/block-thumbnails/support-tickets",
+      "blockId": "support-tickets"
+    },
+    {
+      "file": "diagrams.png",
+      "source": "/block-thumbnails/flow-connector-interaction",
+      "blockId": "flow-connector-interaction"
+    }
+  ]
+}

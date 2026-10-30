@@ -1,0 +1,390 @@
+/** SPDX-License-Identifier: Apache-2.0 */
+@import "tailwindcss" source(none);
+@source "./**/*.{ts,tsx}";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* The supplied utilities are adapters for KLIC component tokens. Every contextual
+   variable below resolves through primitive → brand → semantic → component. */
+@theme inline {
+  --spacing: calc(var(--klic-component-block-container-padding) / 4);
+  --font-sans: var(--runtime-font);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --color-white: var(--klic-component-block-color-panel);
+  --color-klic-inverse: var(--runtime-inverse-surface);
+  --color-klic-on-emphasis: var(--runtime-emphasis-ink);
+  --color-klic-muted: var(--runtime-muted-ink);
+  --color-black: var(--klic-component-block-color-text);
+  --color-zinc-50: var(--klic-component-block-color-soft);
+  --color-zinc-100: var(--klic-component-block-color-soft);
+  --color-zinc-200: var(--klic-component-block-color-border);
+  --color-zinc-300: var(--klic-component-block-color-control-border);
+  --color-zinc-400: var(--klic-component-block-color-muted);
+  --color-zinc-500: var(--klic-component-block-color-muted);
+  --color-zinc-600: var(--klic-component-block-color-muted);
+  --color-zinc-700: var(--klic-component-block-color-text);
+  --color-zinc-750: var(--klic-component-block-color-text);
+  --color-zinc-800: var(--klic-component-block-color-text);
+  --color-zinc-900: var(--klic-component-block-color-text);
+  --color-zinc-950: var(--klic-component-block-color-text);
+  --color-blue-50: var(--klic-component-block-color-selected);
+  --color-blue-100: var(--klic-component-block-color-selected);
+  --color-blue-200: color-mix(in srgb, var(--klic-component-block-color-accent) 28%, var(--klic-component-block-color-panel));
+  --color-blue-300: color-mix(in srgb, var(--klic-component-block-color-accent) 56%, var(--klic-component-block-color-panel));
+  --color-blue-400: var(--klic-component-block-color-accent);
+  --color-blue-500: var(--klic-component-block-color-accent);
+  --color-blue-600: var(--klic-component-block-color-accent);
+  --color-blue-700: var(--klic-component-block-color-accent-hover);
+  --color-blue-800: var(--klic-component-block-color-accent-hover);
+  --color-blue-900: var(--klic-component-block-color-accent-hover);
+  --color-blue-950: var(--klic-component-block-color-accent-hover);
+  --color-amber-50: var(--klic-component-block-color-warning-surface);
+  --color-amber-100: var(--klic-component-block-color-warning-surface);
+  --color-amber-200: color-mix(in srgb, var(--klic-component-block-color-warning) 25%, var(--klic-component-block-color-warning-surface));
+  --color-amber-300: var(--klic-component-block-color-warning);
+  --color-amber-400: var(--klic-component-block-color-warning);
+  --color-amber-500: var(--klic-component-block-color-warning);
+  --color-amber-600: var(--klic-component-block-color-warning);
+  --color-amber-700: var(--klic-component-block-color-warning);
+  --color-amber-800: var(--klic-component-block-color-warning);
+  --color-amber-900: var(--klic-component-block-color-warning);
+  --color-amber-950: var(--klic-component-block-color-warning);
+  --color-red-50: var(--klic-component-block-color-danger-surface);
+  --color-red-100: var(--klic-component-block-color-danger-surface);
+  --color-red-200: color-mix(in srgb, var(--klic-component-block-color-danger) 25%, var(--klic-component-block-color-danger-surface));
+  --color-red-300: var(--klic-component-block-color-danger);
+  --color-red-400: var(--klic-component-block-color-danger);
+  --color-red-500: var(--klic-component-block-color-danger);
+  --color-red-600: var(--klic-component-block-color-danger);
+  --color-red-700: var(--klic-component-block-color-danger);
+  --color-red-800: var(--klic-component-block-color-danger);
+  --color-red-900: var(--klic-component-block-color-danger);
+  --color-red-950: var(--klic-component-block-color-danger);
+  --radius-xl: var(--klic-component-block-surface-radius);
+  --radius-2xl: calc(var(--klic-component-block-surface-radius) * 1.5);
+  --radius-3xl: calc(var(--klic-component-block-surface-radius) * 2);
+}
+
+:root {
+  font-family: var(--runtime-font, system-ui, sans-serif);
+  font-synthesis: none;
+  color: var(--klic-component-block-color-text);
+  background: var(--klic-component-block-color-surface);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  --runtime-density-space: 1;
+  --runtime-inverse-surface: var(--klic-component-block-color-text);
+  --runtime-inverse-ink: var(--klic-component-block-color-panel);
+  --runtime-emphasis-ink: var(--klic-component-block-color-on-accent);
+  --runtime-muted-ink: var(--klic-component-block-color-muted);
+}
+/* Inverse demo cards have explicit foreground/surface pairs in each theme.
+   Neutral text utilities no longer infer a foreground from a shared color scale. */
+:root.dark {
+  --runtime-inverse-surface: var(--klic-component-block-color-soft);
+  --runtime-inverse-ink: var(--klic-component-block-color-text);
+}
+:is([class~="bg-klic-inverse"], [class^="bg-klic-inverse/"], [class*=" bg-klic-inverse/"]) {
+  --runtime-emphasis-ink: var(--runtime-inverse-ink);
+  --runtime-muted-ink: color-mix(in srgb, var(--runtime-inverse-ink) 80%, var(--runtime-inverse-surface));
+}
+:is([class~="bg-white"], [class~="bg-zinc-50"], [class~="bg-zinc-100"]) {
+  --runtime-emphasis-ink: var(--klic-component-block-color-on-accent);
+  --runtime-muted-ink: var(--klic-component-block-color-muted);
+}
+:is([class~="bg-[var(--klic-component-block-color-accent)]"],
+  [class~="bg-[var(--klic-component-block-color-warning)]"],
+  [class~="bg-[var(--klic-component-block-color-danger)]"],
+  [class~="bg-blue-400"],
+  [class^="bg-blue-400/"],
+  [class*=" bg-blue-400/"],
+  [class~="bg-blue-500"],
+  [class^="bg-blue-500/"],
+  [class*=" bg-blue-500/"],
+  [class~="bg-blue-600"],
+  [class^="bg-blue-600/"],
+  [class*=" bg-blue-600/"],
+  [class~="bg-blue-700"],
+  [class^="bg-blue-700/"],
+  [class*=" bg-blue-700/"],
+  [class~="bg-blue-800"],
+  [class^="bg-blue-800/"],
+  [class*=" bg-blue-800/"],
+  [class~="bg-blue-900"],
+  [class^="bg-blue-900/"],
+  [class*=" bg-blue-900/"],
+  [class~="bg-blue-950"],
+  [class^="bg-blue-950/"],
+  [class*=" bg-blue-950/"],
+  [class~="bg-red-400"],
+  [class^="bg-red-400/"],
+  [class*=" bg-red-400/"],
+  [class~="bg-red-500"],
+  [class^="bg-red-500/"],
+  [class*=" bg-red-500/"],
+  [class~="bg-red-600"],
+  [class^="bg-red-600/"],
+  [class*=" bg-red-600/"],
+  [class~="bg-red-700"],
+  [class^="bg-red-700/"],
+  [class*=" bg-red-700/"],
+  [class~="bg-red-800"],
+  [class^="bg-red-800/"],
+  [class*=" bg-red-800/"],
+  [class~="bg-red-900"],
+  [class^="bg-red-900/"],
+  [class*=" bg-red-900/"],
+  [class~="bg-red-950"],
+  [class^="bg-red-950/"],
+  [class*=" bg-red-950/"],
+  [class~="bg-amber-400"],
+  [class^="bg-amber-400/"],
+  [class*=" bg-amber-400/"],
+  [class~="bg-amber-500"],
+  [class^="bg-amber-500/"],
+  [class*=" bg-amber-500/"],
+  [class~="bg-amber-600"],
+  [class^="bg-amber-600/"],
+  [class*=" bg-amber-600/"],
+  [class~="bg-amber-700"],
+  [class^="bg-amber-700/"],
+  [class*=" bg-amber-700/"],
+  [class~="bg-amber-800"],
+  [class^="bg-amber-800/"],
+  [class*=" bg-amber-800/"],
+  [class~="bg-amber-900"],
+  [class^="bg-amber-900/"],
+  [class*=" bg-amber-900/"],
+  [class~="bg-amber-950"],
+  [class^="bg-amber-950/"],
+  [class*=" bg-amber-950/"]) {
+  --runtime-emphasis-ink: var(--klic-component-block-color-on-accent);
+}
+:root[data-density="compact"] { --runtime-density-space: .75; }
+:root[data-density="relaxed"] { --runtime-density-space: 1.25; }
+html, body, #root { margin: 0; width: 100%; min-width: 0; min-height: 100%; }
+body { font-size: var(--klic-component-block-typography-body-font-size, 1rem); line-height: 1.5; }
+*, *::before, *::after { box-sizing: border-box; }
+button, input, textarea, select { font-family: inherit; font-synthesis: none; }
+button, a, input, select, textarea, [tabindex] { -webkit-tap-highlight-color: transparent; }
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--klic-component-block-color-accent);
+  outline-offset: 3px;
+}
+:where(input, select, textarea) {
+  color: var(--klic-component-block-color-text);
+  min-height: var(--klic-component-block-control-height);
+  accent-color: var(--klic-component-block-color-accent);
+}
+:where(input[type="checkbox"], input[type="radio"], input[type="range"]) { min-height: 0; }
+:where(button) { touch-action: manipulation; min-height: var(--klic-component-block-control-height); }
+:where(button > svg.lucide) { width: var(--klic-component-block-icon-size); height: var(--klic-component-block-icon-size); }
+:where(button):disabled { cursor: not-allowed; }
+:where(img, video, canvas) { max-width: 100%; }
+::selection { background: var(--klic-component-block-color-selected); color: var(--klic-component-block-color-text); }
+.runtime-note {
+  margin: 0;
+  padding: .5rem var(--klic-component-block-container-padding);
+  border-bottom: 1px solid var(--klic-component-block-color-border);
+  color: var(--klic-component-block-color-muted);
+  background: var(--klic-component-block-color-panel);
+  font-size: max(.75rem, var(--klic-component-block-typography-label-font-size));
+  line-height: 1.6;
+}
+.runtime-surface {
+  width: 100%;
+  max-width: var(--klic-component-block-content-max-width);
+  margin-inline: auto;
+  padding: var(--klic-component-block-container-padding);
+  display: grid;
+  gap: var(--klic-component-block-section-gap);
+  min-width: 0;
+}
+.runtime-surface > * { min-width: 0; max-width: 100%; }
+.runtime-surface :where(.overflow-x-auto, .overflow-auto) { overscroll-behavior-inline: contain; }
+.runtime-surface :where(table) { font-variant-numeric: tabular-nums; }
+.runtime-unavailable {
+  width: 100%; padding: 2rem; border: 1px solid var(--klic-component-block-color-border);
+  border-radius: var(--klic-component-block-surface-radius);
+  background: var(--klic-component-block-color-panel);
+}
+.runtime-unavailable h1 { font-size: 1.25rem; font-weight: 700; }
+.runtime-unavailable p { margin-block: .75rem; color: var(--klic-component-block-color-muted); }
+.runtime-unavailable code { overflow-wrap: anywhere; word-break: break-word; }
+.runtime-unavailable pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.runtime-unavailable button {
+  padding: .6rem 1rem; margin-block: .75rem;
+  border-radius: var(--klic-component-block-surface-radius);
+  color: var(--klic-component-block-color-on-accent); background: var(--klic-component-block-color-accent);
+}
+@media (max-width: 640px) {
+  body { font-size: max(16px, calc(16px * var(--runtime-text-scale,1))); }
+  .runtime-surface { padding: .5rem; }
+  :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) { font-size: max(16px, calc(16px * var(--runtime-text-scale,1))) !important; }
+  .runtime-surface p { font-size: max(16px, calc(16px * var(--runtime-text-scale,1))); }
+  .runtime-note { font-size: calc(12px * var(--runtime-text-scale,1)); padding-inline: .75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+/* Appearance controls share the host's preferences, without double-applying UI zoom. */
+:root{font-size:16px}h1,h2,h3,h4{font-family:var(--runtime-heading-font,var(--runtime-font))}svg.lucide{stroke-width:var(--runtime-icon-stroke,1.8)}button,input:not([type=checkbox]),select,textarea,[class~="rounded-xl"],[class~="rounded-2xl"],[class~="rounded-lg"]{border-radius:var(--runtime-radius,8px)}
+
+[class~="text-[8px]"]{font-size:calc(8px * var(--runtime-text-scale,1))}
+[class~="text-[9px]"]{font-size:calc(9px * var(--runtime-text-scale,1))}
+[class~="text-[10px]"]{font-size:calc(10px * var(--runtime-text-scale,1))}
+[class~="text-[11px]"]{font-size:calc(11px * var(--runtime-text-scale,1))}
+[class~="text-[12px]"]{font-size:calc(12px * var(--runtime-text-scale,1))}
+[class~="text-[13px]"]{font-size:calc(13px * var(--runtime-text-scale,1))}
+[class~="text-[14px]"]{font-size:calc(14px * var(--runtime-text-scale,1))}
+[class~="text-[15px]"]{font-size:calc(15px * var(--runtime-text-scale,1))}
+[class~="text-[16px]"]{font-size:calc(16px * var(--runtime-text-scale,1))}
+[class~="text-[17px]"]{font-size:calc(17px * var(--runtime-text-scale,1))}
+[class~="text-[18px]"]{font-size:calc(18px * var(--runtime-text-scale,1))}
+[class~="text-[19px]"]{font-size:calc(19px * var(--runtime-text-scale,1))}
+[class~="text-[20px]"]{font-size:calc(20px * var(--runtime-text-scale,1))}
+[class~="text-[21px]"]{font-size:calc(21px * var(--runtime-text-scale,1))}
+[class~="text-[22px]"]{font-size:calc(22px * var(--runtime-text-scale,1))}
+[class~="text-[23px]"]{font-size:calc(23px * var(--runtime-text-scale,1))}
+[class~="text-[24px]"]{font-size:calc(24px * var(--runtime-text-scale,1))}
+[class~="text-[25px]"]{font-size:calc(25px * var(--runtime-text-scale,1))}
+[class~="text-[26px]"]{font-size:calc(26px * var(--runtime-text-scale,1))}
+[class~="text-[27px]"]{font-size:calc(27px * var(--runtime-text-scale,1))}
+[class~="text-[28px]"]{font-size:calc(28px * var(--runtime-text-scale,1))}
+[class~="text-[29px]"]{font-size:calc(29px * var(--runtime-text-scale,1))}
+[class~="text-[30px]"]{font-size:calc(30px * var(--runtime-text-scale,1))}
+[class~="text-[31px]"]{font-size:calc(31px * var(--runtime-text-scale,1))}
+[class~="text-[32px]"]{font-size:calc(32px * var(--runtime-text-scale,1))}
+[class~="text-[33px]"]{font-size:calc(33px * var(--runtime-text-scale,1))}
+[class~="text-[34px]"]{font-size:calc(34px * var(--runtime-text-scale,1))}
+[class~="text-[35px]"]{font-size:calc(35px * var(--runtime-text-scale,1))}
+[class~="text-[36px]"]{font-size:calc(36px * var(--runtime-text-scale,1))}
+[class~="text-[37px]"]{font-size:calc(37px * var(--runtime-text-scale,1))}
+[class~="text-[38px]"]{font-size:calc(38px * var(--runtime-text-scale,1))}
+[class~="text-[39px]"]{font-size:calc(39px * var(--runtime-text-scale,1))}
+[class~="text-[40px]"]{font-size:calc(40px * var(--runtime-text-scale,1))}
+[class~="text-[41px]"]{font-size:calc(41px * var(--runtime-text-scale,1))}
+[class~="text-[42px]"]{font-size:calc(42px * var(--runtime-text-scale,1))}
+[class~="text-[43px]"]{font-size:calc(43px * var(--runtime-text-scale,1))}
+[class~="text-[44px]"]{font-size:calc(44px * var(--runtime-text-scale,1))}
+[class~="text-[45px]"]{font-size:calc(45px * var(--runtime-text-scale,1))}
+[class~="text-[46px]"]{font-size:calc(46px * var(--runtime-text-scale,1))}
+[class~="text-[47px]"]{font-size:calc(47px * var(--runtime-text-scale,1))}
+[class~="text-[48px]"]{font-size:calc(48px * var(--runtime-text-scale,1))}
+[class~="text-[49px]"]{font-size:calc(49px * var(--runtime-text-scale,1))}
+[class~="text-[50px]"]{font-size:calc(50px * var(--runtime-text-scale,1))}
+[class~="text-[51px]"]{font-size:calc(51px * var(--runtime-text-scale,1))}
+[class~="text-[52px]"]{font-size:calc(52px * var(--runtime-text-scale,1))}
+[class~="text-[53px]"]{font-size:calc(53px * var(--runtime-text-scale,1))}
+[class~="text-[54px]"]{font-size:calc(54px * var(--runtime-text-scale,1))}
+[class~="text-[55px]"]{font-size:calc(55px * var(--runtime-text-scale,1))}
+[class~="text-[56px]"]{font-size:calc(56px * var(--runtime-text-scale,1))}
+[class~="text-[57px]"]{font-size:calc(57px * var(--runtime-text-scale,1))}
+[class~="text-[58px]"]{font-size:calc(58px * var(--runtime-text-scale,1))}
+[class~="text-[59px]"]{font-size:calc(59px * var(--runtime-text-scale,1))}
+[class~="text-[60px]"]{font-size:calc(60px * var(--runtime-text-scale,1))}
+[class~="text-[61px]"]{font-size:calc(61px * var(--runtime-text-scale,1))}
+[class~="text-[62px]"]{font-size:calc(62px * var(--runtime-text-scale,1))}
+[class~="text-[63px]"]{font-size:calc(63px * var(--runtime-text-scale,1))}
+[class~="text-[64px]"]{font-size:calc(64px * var(--runtime-text-scale,1))}
+[class~="text-[65px]"]{font-size:calc(65px * var(--runtime-text-scale,1))}
+[class~="text-[66px]"]{font-size:calc(66px * var(--runtime-text-scale,1))}
+[class~="text-[67px]"]{font-size:calc(67px * var(--runtime-text-scale,1))}
+[class~="text-[68px]"]{font-size:calc(68px * var(--runtime-text-scale,1))}
+[class~="text-[69px]"]{font-size:calc(69px * var(--runtime-text-scale,1))}
+[class~="text-[70px]"]{font-size:calc(70px * var(--runtime-text-scale,1))}
+[class~="text-[71px]"]{font-size:calc(71px * var(--runtime-text-scale,1))}
+[class~="text-[72px]"]{font-size:calc(72px * var(--runtime-text-scale,1))}
+
+:root{--text-xs:calc(0.75rem * var(--runtime-text-scale,1));--text-sm:calc(0.875rem * var(--runtime-text-scale,1));--text-base:calc(1rem * var(--runtime-text-scale,1));--text-lg:calc(1.125rem * var(--runtime-text-scale,1));--text-xl:calc(1.25rem * var(--runtime-text-scale,1));--text-2xl:calc(1.5rem * var(--runtime-text-scale,1));--text-3xl:calc(1.875rem * var(--runtime-text-scale,1));--text-4xl:calc(2.25rem * var(--runtime-text-scale,1));--text-5xl:calc(3rem * var(--runtime-text-scale,1));--text-6xl:calc(3.75rem * var(--runtime-text-scale,1));--text-7xl:calc(4.5rem * var(--runtime-text-scale,1));}
+
+/* Preview chrome is hidden; native wheel, touch and keyboard scrolling remains. */
+* { scrollbar-width:none; scrollbar-gutter:auto; }
+*::-webkit-scrollbar { display:none; width:0; height:0; }
+
+/* Modal surface policy: expand the original dialog width by 50%, bounded by
+   the iframe viewport. Only audited centered-backdrop immediate panels match;
+   sheets, fullscreen layouts and anchored popovers retain their own geometry. */
+:where(.fixed.inset-0.flex.items-center.justify-center) > .w-full:is(.max-w-sm,.max-w-md,.max-w-lg,.max-w-xl,.max-w-2xl){
+  width:min(100%,calc(var(--klic-modal-base-width) * 1.5),calc(100vw - 32px));
+  max-width:min(calc(var(--klic-modal-base-width) * 1.5),calc(100vw - 32px));
+  max-height:calc(100dvh - 32px);
+  overflow:auto;
+  overscroll-behavior:contain;
+}
+:where(.fixed.inset-0.flex.items-center.justify-center) > .max-w-sm{--klic-modal-base-width:24rem}
+:where(.fixed.inset-0.flex.items-center.justify-center) > .max-w-md{--klic-modal-base-width:28rem}
+:where(.fixed.inset-0.flex.items-center.justify-center) > .max-w-lg{--klic-modal-base-width:32rem}
+:where(.fixed.inset-0.flex.items-center.justify-center) > .max-w-xl{--klic-modal-base-width:36rem}
+:where(.fixed.inset-0.flex.items-center.justify-center) > .max-w-2xl{--klic-modal-base-width:42rem}
+/* Inline dialog gallery examples use the same width policy inside their canvas. */
+.klic-dialog-example{width:100%;max-width:min(100%,calc(var(--klic-modal-base-width) * 1.5),calc(100vw - 32px))}
+.klic-dialog-example[class~="max-w-[660px]"]{--klic-modal-base-width:660px}
+.klic-dialog-example[class~="max-w-[500px]"]{--klic-modal-base-width:500px}
+.klic-dialog-example[class~="max-w-[540px]"]{--klic-modal-base-width:540px}
+.klic-dialog-example[class~="max-w-[520px]"]{--klic-modal-base-width:520px}
+.klic-dialog-example[class~="max-w-[580px]"]{--klic-modal-base-width:580px}
+
+/* Validation meaning survives decorative materials and utility-layer borders. */
+[data-klic-surface="field"][aria-invalid="true"] {
+  border-color: var(--klic-component-block-color-danger);
+  color: var(--klic-component-block-color-danger);
+}
+[data-klic-surface="field"][aria-invalid="true"]:focus-visible {
+  outline: 3px solid var(--klic-component-block-color-danger);
+  outline-color: var(--klic-component-block-color-danger);
+  outline-offset: 3px;
+}
+
+/* Shared chart presentation. Dense plots stay opaque across material recipes. */
+.kc-chart-shell { width:100%; min-width:0; padding:calc(clamp(16px,3vw,28px) * var(--runtime-density-space,1)); border:1px solid var(--klic-component-block-color-border); border-radius:var(--klic-component-block-surface-radius); background:var(--klic-component-block-color-panel); color:var(--klic-component-block-color-text); font-family:var(--runtime-font,system-ui,sans-serif); }
+.kc-chart-heading { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:20px; }
+.kc-chart-heading h2 { margin:5px 0; font-size:calc(22px * var(--runtime-text-scale,1)); font-weight:650; line-height:1.3; }
+.kc-chart-heading p,.kc-chart-footnote { color:var(--klic-component-block-color-muted); font-size:calc(12px * var(--runtime-text-scale,1)); line-height:1.6; margin:0; }
+.kc-chart-tag,.kc-chart-signature { color:var(--klic-component-block-color-accent); font-size:calc(10px * var(--runtime-text-scale,1)); font-weight:600; letter-spacing:.1em; }
+.kc-chart-signature { white-space:nowrap; padding-top:8px; }
+.kc-chart-controls { display:flex; flex-wrap:wrap; gap:12px 16px; align-items:center; margin:0 0 20px; padding:12px; border:1px solid var(--klic-component-block-color-border); border-radius:8px; background:var(--klic-component-block-color-soft); font-size:calc(12px * var(--runtime-text-scale,1)); }
+.kc-chart-controls label { display:inline-flex; flex-wrap:wrap; align-items:center; gap:8px; min-width:0; }
+.kc-chart-controls :is(select,button,input[type=number]) { border:1px solid var(--klic-component-block-color-control-border); border-radius:6px; background:var(--klic-component-block-color-panel); color:var(--klic-component-block-color-text); padding:6px 9px; font:inherit; min-height:32px; max-width:100%; }
+.kc-chart-controls button { cursor:pointer; }
+.kc-chart-controls button:hover { background:var(--klic-component-block-color-selected); }
+.kc-chart-controls input[type=range] { accent-color:var(--klic-component-block-color-accent); max-width:100%; }
+.kc-chart-shell :focus-visible { outline:2px solid var(--klic-component-block-color-accent); outline-offset:3px; }
+.kc-chart-metrics { display:flex; flex-wrap:wrap; gap:16px 32px; margin:0 0 20px; }
+.kc-chart-metrics dt { color:var(--klic-component-block-color-muted); font-size:calc(11px * var(--runtime-text-scale,1)); }
+.kc-chart-metrics dd { margin:3px 0 0; font-size:calc(20px * var(--runtime-text-scale,1)); font-weight:600; font-variant-numeric:tabular-nums; }
+.kc-chart-shell [role=status] { margin:12px 0; font-size:calc(12px * var(--runtime-text-scale,1)); line-height:1.6; }
+.kc-chart-plot { overflow:auto; max-width:100%; border:1px solid var(--klic-component-block-color-border); border-radius:8px; background:var(--klic-component-block-color-panel); }
+.kc-chart-svg { display:block; width:100%; height:auto; font-family:inherit; }
+.kc-chart-legend { display:flex; flex-wrap:wrap; gap:8px 20px; padding:0; margin:14px 0; list-style:none; color:var(--klic-component-block-color-muted); font-size:calc(11px * var(--runtime-text-scale,1)); }
+.kc-chart-legend li { display:flex; gap:7px; align-items:center; }
+.kc-chart-legend li span { width:9px; height:9px; border-radius:2px; flex:none; }
+.kc-chart-shell summary { padding:12px 0; cursor:pointer; font-size:calc(12px * var(--runtime-text-scale,1)); color:var(--klic-component-block-color-muted); }
+.kc-chart-table-scroll { overflow:auto; max-width:100%; background:var(--klic-component-block-color-panel); }
+.kc-chart-data table { width:100%; border-collapse:collapse; font-size:calc(12px * var(--runtime-text-scale,1)); font-variant-numeric:tabular-nums; }
+.kc-chart-data caption { text-align:left; color:var(--klic-component-block-color-muted); padding:8px; font-size:calc(11px * var(--runtime-text-scale,1)); }
+.kc-chart-data :is(th,td) { text-align:left; padding:9px 12px; border-bottom:1px solid var(--klic-component-block-color-border); white-space:nowrap; }
+.kc-chart-data th { font-weight:600; background:var(--klic-component-block-color-soft); }
+.kc-chart-footnote { margin-top:18px; padding-top:12px; border-top:1px solid var(--klic-component-block-color-border); }
+@media(max-width:500px){ .kc-chart-signature{display:none} .kc-chart-heading h2{font-size:calc(19px * var(--runtime-text-scale,1))} .kc-chart-controls{gap:12px} .kc-chart-metrics dd{font-size:calc(17px * var(--runtime-text-scale,1))} }
+
+/* Full fidelity analytical renderers: original geometry, KLIC token ownership. */
+.klic-chart-showcase { padding:24px; width:100%; min-width:0; border:1px solid var(--klic-component-block-color-border); border-radius:var(--klic-component-block-surface-radius); color:var(--klic-component-block-color-text); background:var(--klic-component-block-color-panel); }
+.klic-chart-showcase header { margin-bottom:20px; }
+.klic-chart-eyebrow { font-size:9px; letter-spacing:.14em; font-weight:600; color:var(--klic-component-block-color-muted); margin:0 0 8px; }
+.klic-chart-showcase h2 { font-size:20px; line-height:1.35; letter-spacing:-.025em; font-weight:600; margin:0 0 6px; }
+.klic-chart-description { font-size:12px; line-height:1.6; color:var(--klic-component-block-color-muted); margin:0; }
+.klic-chart-controls { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; font-size:11px; margin:0 0 20px; }
+.klic-chart-controls label { display:inline-flex; gap:7px; align-items:center; flex-wrap:wrap; }
+.klic-chart-controls :is(select,button) { padding:6px 9px; border:1px solid var(--klic-component-block-color-border); border-radius:6px; background:var(--klic-component-block-color-panel); color:inherit; font:inherit; cursor:pointer; min-height:30px; }
+.klic-chart-controls button:hover { background:var(--klic-component-block-color-selected); }
+.klic-chart-controls input { accent-color:var(--klic-component-block-color-accent); }
+.klic-chart-controls input[type=range] { width:90px; }
+.klic-chart-showcase :focus-visible { outline:2px solid var(--klic-component-block-color-accent); outline-offset:3px; }
+.klic-chart-stage { min-width:0; padding:10px 6px; border-radius:10px; background:var(--klic-component-block-color-panel); }
+.klic-chart-showcase footer { display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; margin-top:16px; font-size:10px; color:var(--klic-component-block-color-muted); }
+.klic-chart-showcase footer a { text-decoration:underline; text-underline-offset:3px; }
+.klic-chart-showcase [data-chart-table] { margin-top:8px; max-width:100%; overflow:auto; font-size:11px; }
+.klic-chart-showcase [data-chart-table] summary { cursor:pointer; color:var(--klic-component-block-color-muted); padding:8px 0; }
+.klic-chart-showcase [data-chart-table] table { border-collapse:collapse; width:100%; font-variant-numeric:tabular-nums; }
+.klic-chart-showcase [data-chart-table] :is(td,th) { border-bottom:1px solid var(--klic-component-block-color-border); padding:7px 10px; text-align:left; white-space:nowrap; }
+@media(max-width:520px){.klic-chart-showcase{padding:16px 12px}.klic-chart-stage{padding:4px 0}.klic-chart-showcase h2{font-size:18px}.klic-chart-controls{gap:9px}.klic-chart-description{font-size:11px}}

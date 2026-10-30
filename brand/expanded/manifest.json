@@ -1,0 +1,566 @@
+{
+  "source": "KL_Logo_Expanded_40_v2_Pure_SVG.zip",
+  "archiveSha256": "0fbf288fa2fd7b4c2ede099f3c88f3fedca25d6b0635b221448374a1ede26d6c",
+  "logoCount": 40,
+  "paletteCount": 10,
+  "palettes": [
+    {
+      "id": "signature_blue",
+      "ko": "시그니처 블루",
+      "en": "Signature Blue",
+      "solid": "#245ADA"
+    },
+    {
+      "id": "mint_teal",
+      "ko": "민트 · 틸",
+      "en": "Mint Teal",
+      "solid": "#0F8F82"
+    },
+    {
+      "id": "royal_violet",
+      "ko": "로열 바이올렛",
+      "en": "Royal Violet",
+      "solid": "#7C3AED"
+    },
+    {
+      "id": "coral_orange",
+      "ko": "코럴 · 오렌지",
+      "en": "Coral Orange",
+      "solid": "#D95947"
+    },
+    {
+      "id": "forest_emerald",
+      "ko": "포레스트 에메랄드",
+      "en": "Forest Emerald",
+      "solid": "#18825B"
+    },
+    {
+      "id": "champagne_gold",
+      "ko": "샴페인 골드",
+      "en": "Champagne Gold",
+      "solid": "#9F742F"
+    },
+    {
+      "id": "dusty_rose",
+      "ko": "더스티 로즈",
+      "en": "Dusty Rose",
+      "solid": "#AD4C79"
+    },
+    {
+      "id": "graphite_silver",
+      "ko": "그라파이트 실버",
+      "en": "Graphite Silver",
+      "solid": "#4B5B6E"
+    },
+    {
+      "id": "navy_ice",
+      "ko": "네이비 · 아이스",
+      "en": "Navy Ice",
+      "solid": "#243E63"
+    },
+    {
+      "id": "arctic_cyan",
+      "ko": "아틱 시안",
+      "en": "Arctic Cyan",
+      "solid": "#0899B7"
+    }
+  ],
+  "variants": [
+    {
+      "code": "G01",
+      "palette": "signature_blue",
+      "colors": [
+        "#143CA6",
+        "#2C75ED",
+        "#75CAF6"
+      ],
+      "file": "01_gradient/KL_G01_signature_blue.svg",
+      "sha256": "5451f9ccaae73f7971704a470e1f3c884513d7250d0ea9541fc1fbd6ec511ded",
+      "url": "/brand/expanded/01_gradient/KL_G01_signature_blue.svg",
+      "type": "G"
+    },
+    {
+      "code": "G02",
+      "palette": "mint_teal",
+      "colors": [
+        "#075A59",
+        "#159F91",
+        "#8AE8CD"
+      ],
+      "file": "01_gradient/KL_G02_mint_teal.svg",
+      "sha256": "af534f64097249f37c59fc5276806f0a20683a40afd8177cc43caa115a134680",
+      "url": "/brand/expanded/01_gradient/KL_G02_mint_teal.svg",
+      "type": "G"
+    },
+    {
+      "code": "G03",
+      "palette": "royal_violet",
+      "colors": [
+        "#D7C3FF",
+        "#9B6AF0",
+        "#472987"
+      ],
+      "file": "01_gradient/KL_G03_royal_violet.svg",
+      "sha256": "507854ce95a70b82958ce95edf0a2a8e8c704cd55793bcf29506129108771640",
+      "url": "/brand/expanded/01_gradient/KL_G03_royal_violet.svg",
+      "type": "G"
+    },
+    {
+      "code": "G04",
+      "palette": "coral_orange",
+      "colors": [
+        "#AE3155",
+        "#E96656",
+        "#F79E65",
+        "#FFCE91"
+      ],
+      "file": "01_gradient/KL_G04_coral_orange.svg",
+      "sha256": "d29775338f0d3da990c0428d3eed0abbf937365f650fda6a872d59c3444cf91d",
+      "url": "/brand/expanded/01_gradient/KL_G04_coral_orange.svg",
+      "type": "G"
+    },
+    {
+      "code": "G05",
+      "palette": "forest_emerald",
+      "colors": [
+        "#A1DCA9",
+        "#32A875",
+        "#115C42"
+      ],
+      "file": "01_gradient/KL_G05_forest_emerald.svg",
+      "sha256": "60feb46142d89b7416d66da148e557ed43841eadf42b68013846d94cd8597412",
+      "url": "/brand/expanded/01_gradient/KL_G05_forest_emerald.svg",
+      "type": "G"
+    },
+    {
+      "code": "G06",
+      "palette": "champagne_gold",
+      "colors": [
+        "#70502C",
+        "#BD9349",
+        "#EFDCAB",
+        "#C49E55",
+        "#78542C"
+      ],
+      "file": "01_gradient/KL_G06_champagne_gold.svg",
+      "sha256": "ec82d58c6848dcf93ef466086f5521466050d4917982ae25f0ee39cc05f6b6dd",
+      "url": "/brand/expanded/01_gradient/KL_G06_champagne_gold.svg",
+      "type": "G"
+    },
+    {
+      "code": "G07",
+      "palette": "dusty_rose",
+      "colors": [
+        "#782D5C",
+        "#C6638C",
+        "#F0BCCF"
+      ],
+      "file": "01_gradient/KL_G07_dusty_rose.svg",
+      "sha256": "1a9be1b36583c5d9b79464a35f9c90bbe38d4eb33971f63de0a4c06e0f370a0e",
+      "url": "/brand/expanded/01_gradient/KL_G07_dusty_rose.svg",
+      "type": "G"
+    },
+    {
+      "code": "G08",
+      "palette": "graphite_silver",
+      "colors": [
+        "#39495D",
+        "#9CAEBF",
+        "#D5E0E9",
+        "#8397AB",
+        "#354559"
+      ],
+      "file": "01_gradient/KL_G08_graphite_silver.svg",
+      "sha256": "d247e641bf93e438ac2d0ebd052ca722d3ec27d8892feae9a8597b4ab31b4942",
+      "url": "/brand/expanded/01_gradient/KL_G08_graphite_silver.svg",
+      "type": "G"
+    },
+    {
+      "code": "G09",
+      "palette": "navy_ice",
+      "colors": [
+        "#152E4D",
+        "#3A6898",
+        "#B7D6EE"
+      ],
+      "file": "01_gradient/KL_G09_navy_ice.svg",
+      "sha256": "30ba96d8998997629899961ab043e72f55151cd0c42c24eb188e13dc16066173",
+      "url": "/brand/expanded/01_gradient/KL_G09_navy_ice.svg",
+      "type": "G"
+    },
+    {
+      "code": "G10",
+      "palette": "arctic_cyan",
+      "colors": [
+        "#087D9A",
+        "#21B8CF",
+        "#4D87D9",
+        "#6755B4"
+      ],
+      "file": "01_gradient/KL_G10_arctic_cyan.svg",
+      "sha256": "b3c00a6c94600874faa79d8859c56aa8850ec2b508babd4e032d8fb814ffabc9",
+      "url": "/brand/expanded/01_gradient/KL_G10_arctic_cyan.svg",
+      "type": "G"
+    },
+    {
+      "code": "F01",
+      "palette": "signature_blue",
+      "colors": [
+        "#83CCFF",
+        "#2563EB",
+        "#123D9F"
+      ],
+      "file": "02_front_texture/KL_F01_signature_blue.svg",
+      "sha256": "c1e3ef35b83351ca1551e7afd242d68427cca1fe71e26ce6b18d86911a74e528",
+      "url": "/brand/expanded/02_front_texture/KL_F01_signature_blue.svg",
+      "type": "F"
+    },
+    {
+      "code": "F02",
+      "palette": "mint_teal",
+      "colors": [
+        "#89EDD3",
+        "#10998B",
+        "#075A59"
+      ],
+      "file": "02_front_texture/KL_F02_mint_teal.svg",
+      "sha256": "8d565adcc6683a2e1e5f039d91d6d0c98c059ee39ebe58d19ceb59321b7e3075",
+      "url": "/brand/expanded/02_front_texture/KL_F02_mint_teal.svg",
+      "type": "F"
+    },
+    {
+      "code": "F03",
+      "palette": "royal_violet",
+      "colors": [
+        "#CDB3FF",
+        "#7C3AED",
+        "#43227F"
+      ],
+      "file": "02_front_texture/KL_F03_royal_violet.svg",
+      "sha256": "313974f16d2fffa362f2bb5c7dcdd1539613f9a7d88026e45ed39fd608dc97e8",
+      "url": "/brand/expanded/02_front_texture/KL_F03_royal_violet.svg",
+      "type": "F"
+    },
+    {
+      "code": "F04",
+      "palette": "coral_orange",
+      "colors": [
+        "#FFC189",
+        "#E66A4B",
+        "#A43847"
+      ],
+      "file": "02_front_texture/KL_F04_coral_orange.svg",
+      "sha256": "7a6379f293d4dab79e090ac10ba543745518b28b8f07aba2970c4466e7d576a7",
+      "url": "/brand/expanded/02_front_texture/KL_F04_coral_orange.svg",
+      "type": "F"
+    },
+    {
+      "code": "F05",
+      "palette": "forest_emerald",
+      "colors": [
+        "#A5DFB4",
+        "#26966A",
+        "#16523E"
+      ],
+      "file": "02_front_texture/KL_F05_forest_emerald.svg",
+      "sha256": "1b5aac9c7b73d44015e559a5471240f0d68de0260c17000b5648ce1dfe266c98",
+      "url": "/brand/expanded/02_front_texture/KL_F05_forest_emerald.svg",
+      "type": "F"
+    },
+    {
+      "code": "F06",
+      "palette": "champagne_gold",
+      "colors": [
+        "#F2DDA8",
+        "#BE9147",
+        "#75512B"
+      ],
+      "file": "02_front_texture/KL_F06_champagne_gold.svg",
+      "sha256": "9cf4d5a8c095ded33979afb9de9a63659fdbe46e15d97d25364d3f3c468dafa1",
+      "url": "/brand/expanded/02_front_texture/KL_F06_champagne_gold.svg",
+      "type": "F"
+    },
+    {
+      "code": "F07",
+      "palette": "dusty_rose",
+      "colors": [
+        "#F0B7CD",
+        "#BE5C86",
+        "#752D59"
+      ],
+      "file": "02_front_texture/KL_F07_dusty_rose.svg",
+      "sha256": "39e51cfb9367bb44d1ecb79bba40f82f0b21b982573840eb4923f5dd8893efa2",
+      "url": "/brand/expanded/02_front_texture/KL_F07_dusty_rose.svg",
+      "type": "F"
+    },
+    {
+      "code": "F08",
+      "palette": "graphite_silver",
+      "colors": [
+        "#DBE5EF",
+        "#7C8CA0",
+        "#344152"
+      ],
+      "file": "02_front_texture/KL_F08_graphite_silver.svg",
+      "sha256": "5827653ce052c06d7f5e87c531d510b6fe4a70515563ccd481b764ae880c6e85",
+      "url": "/brand/expanded/02_front_texture/KL_F08_graphite_silver.svg",
+      "type": "F"
+    },
+    {
+      "code": "F09",
+      "palette": "navy_ice",
+      "colors": [
+        "#B9D7EF",
+        "#315C8D",
+        "#152D4C"
+      ],
+      "file": "02_front_texture/KL_F09_navy_ice.svg",
+      "sha256": "5734e660496266d91f44ae1ba87a136cc533e1e8b1573eb75501df773fd293c5",
+      "url": "/brand/expanded/02_front_texture/KL_F09_navy_ice.svg",
+      "type": "F"
+    },
+    {
+      "code": "F10",
+      "palette": "arctic_cyan",
+      "colors": [
+        "#89E5EA",
+        "#159EBB",
+        "#23467D"
+      ],
+      "file": "02_front_texture/KL_F10_arctic_cyan.svg",
+      "sha256": "c2fe1bea269cba43d5a283b1e5a47e0da895f9c7e3605486b6ffcd01ef231b59",
+      "url": "/brand/expanded/02_front_texture/KL_F10_arctic_cyan.svg",
+      "type": "F"
+    },
+    {
+      "code": "S01",
+      "palette": "signature_blue",
+      "colors": [
+        "#245ADA"
+      ],
+      "file": "03_solid/KL_S01_signature_blue.svg",
+      "sha256": "1e7a3e6cc7603ea2c619d6cb013e066eff5aed2fee238f4a2d7dad1bc8313d70",
+      "url": "/brand/expanded/03_solid/KL_S01_signature_blue.svg",
+      "type": "S"
+    },
+    {
+      "code": "S02",
+      "palette": "mint_teal",
+      "colors": [
+        "#0F8F82"
+      ],
+      "file": "03_solid/KL_S02_mint_teal.svg",
+      "sha256": "41009f04ce4081955a553d85bdb8e8913e86181dcfcf875cb946869e27b9c851",
+      "url": "/brand/expanded/03_solid/KL_S02_mint_teal.svg",
+      "type": "S"
+    },
+    {
+      "code": "S03",
+      "palette": "royal_violet",
+      "colors": [
+        "#7C3AED"
+      ],
+      "file": "03_solid/KL_S03_royal_violet.svg",
+      "sha256": "a42b3033ec38e7ce8dd30d0ba161a24dd8acd8392a80b4b7fd6ea08264bd7dd8",
+      "url": "/brand/expanded/03_solid/KL_S03_royal_violet.svg",
+      "type": "S"
+    },
+    {
+      "code": "S04",
+      "palette": "coral_orange",
+      "colors": [
+        "#D95947"
+      ],
+      "file": "03_solid/KL_S04_coral_orange.svg",
+      "sha256": "628057f6c749956d8faffb2c2b6efa8ebb55c9b734ce361b7a582b8ce407597b",
+      "url": "/brand/expanded/03_solid/KL_S04_coral_orange.svg",
+      "type": "S"
+    },
+    {
+      "code": "S05",
+      "palette": "forest_emerald",
+      "colors": [
+        "#18825B"
+      ],
+      "file": "03_solid/KL_S05_forest_emerald.svg",
+      "sha256": "eb0c7b2878719b7574d444ab939a03281b74fbbd128663107ffba30ed0b33dbf",
+      "url": "/brand/expanded/03_solid/KL_S05_forest_emerald.svg",
+      "type": "S"
+    },
+    {
+      "code": "S06",
+      "palette": "champagne_gold",
+      "colors": [
+        "#9F742F"
+      ],
+      "file": "03_solid/KL_S06_champagne_gold.svg",
+      "sha256": "793f60c4318f5de10bf8cd5d8f7f90b6098a5fd2462d386129be9c538aa274a4",
+      "url": "/brand/expanded/03_solid/KL_S06_champagne_gold.svg",
+      "type": "S"
+    },
+    {
+      "code": "S07",
+      "palette": "dusty_rose",
+      "colors": [
+        "#AD4C79"
+      ],
+      "file": "03_solid/KL_S07_dusty_rose.svg",
+      "sha256": "6166c434546db80370fa118a98331378cb08d602c078b4501f24604d9356570a",
+      "url": "/brand/expanded/03_solid/KL_S07_dusty_rose.svg",
+      "type": "S"
+    },
+    {
+      "code": "S08",
+      "palette": "graphite_silver",
+      "colors": [
+        "#4B5B6E"
+      ],
+      "file": "03_solid/KL_S08_graphite_silver.svg",
+      "sha256": "1e41019bd3dc1d14f6a7a8910755a3da62df2e113bc3f1b6f939459765d96b86",
+      "url": "/brand/expanded/03_solid/KL_S08_graphite_silver.svg",
+      "type": "S"
+    },
+    {
+      "code": "S09",
+      "palette": "navy_ice",
+      "colors": [
+        "#243E63"
+      ],
+      "file": "03_solid/KL_S09_navy_ice.svg",
+      "sha256": "4ef6481010b0f9215273ca32bf2197ea72eadcf56248e71cea1984563097b926",
+      "url": "/brand/expanded/03_solid/KL_S09_navy_ice.svg",
+      "type": "S"
+    },
+    {
+      "code": "S10",
+      "palette": "arctic_cyan",
+      "colors": [
+        "#0899B7"
+      ],
+      "file": "03_solid/KL_S10_arctic_cyan.svg",
+      "sha256": "e8d095dd74ffd7e6328babbad3c85c8aef7e833661a18290b1151b9818b9beef",
+      "url": "/brand/expanded/03_solid/KL_S10_arctic_cyan.svg",
+      "type": "S"
+    },
+    {
+      "code": "T01",
+      "palette": "signature_blue",
+      "colors": [
+        "#172B4D",
+        "#22AEEA"
+      ],
+      "file": "04_duotone/KL_T01_signature_blue.svg",
+      "sha256": "fd534747f075764cd7f6c230d7f4d09c25690de0ddafd61871247c8d77d8e7f7",
+      "url": "/brand/expanded/04_duotone/KL_T01_signature_blue.svg",
+      "type": "T"
+    },
+    {
+      "code": "T02",
+      "palette": "mint_teal",
+      "colors": [
+        "#173F45",
+        "#21C4A8"
+      ],
+      "file": "04_duotone/KL_T02_mint_teal.svg",
+      "sha256": "0f33036849d6dbff503c41c4de90d4ac257e1b0d5192c6bf9881de39fa31e072",
+      "url": "/brand/expanded/04_duotone/KL_T02_mint_teal.svg",
+      "type": "T"
+    },
+    {
+      "code": "T03",
+      "palette": "royal_violet",
+      "colors": [
+        "#342C56",
+        "#A774EC"
+      ],
+      "file": "04_duotone/KL_T03_royal_violet.svg",
+      "sha256": "057e0e555d452a2f528133c474746c4fc04f5a3baaec6caa9eab669b809e0483",
+      "url": "/brand/expanded/04_duotone/KL_T03_royal_violet.svg",
+      "type": "T"
+    },
+    {
+      "code": "T04",
+      "palette": "coral_orange",
+      "colors": [
+        "#3C3545",
+        "#ED735C"
+      ],
+      "file": "04_duotone/KL_T04_coral_orange.svg",
+      "sha256": "69097c1322b138bef20e73e1b664611d549e91f43e0daafd9ae2e34028c39032",
+      "url": "/brand/expanded/04_duotone/KL_T04_coral_orange.svg",
+      "type": "T"
+    },
+    {
+      "code": "T05",
+      "palette": "forest_emerald",
+      "colors": [
+        "#1F493F",
+        "#69B58B"
+      ],
+      "file": "04_duotone/KL_T05_forest_emerald.svg",
+      "sha256": "7c7d868cbde290d29f45ef05e9f3adb1e0c11e802fc042e9565e4358b1b7e1dc",
+      "url": "/brand/expanded/04_duotone/KL_T05_forest_emerald.svg",
+      "type": "T"
+    },
+    {
+      "code": "T06",
+      "palette": "champagne_gold",
+      "colors": [
+        "#34383C",
+        "#B89653"
+      ],
+      "file": "04_duotone/KL_T06_champagne_gold.svg",
+      "sha256": "f7df50b3bc3a71633c02ae8e9515b6fd42b53382954759ceb5a81426379ae712",
+      "url": "/brand/expanded/04_duotone/KL_T06_champagne_gold.svg",
+      "type": "T"
+    },
+    {
+      "code": "T07",
+      "palette": "dusty_rose",
+      "colors": [
+        "#432C42",
+        "#D780A2"
+      ],
+      "file": "04_duotone/KL_T07_dusty_rose.svg",
+      "sha256": "0bdfa4b3a6ec52687a0c9c6c10bf465a7e67c5aae0d0d4808b843d9dd29be3c0",
+      "url": "/brand/expanded/04_duotone/KL_T07_dusty_rose.svg",
+      "type": "T"
+    },
+    {
+      "code": "T08",
+      "palette": "graphite_silver",
+      "colors": [
+        "#313C4B",
+        "#A0AEBC"
+      ],
+      "file": "04_duotone/KL_T08_graphite_silver.svg",
+      "sha256": "90ed864798a43d8a67adaea6b0d28f836e44701bed34931446ff011aafc2b0ff",
+      "url": "/brand/expanded/04_duotone/KL_T08_graphite_silver.svg",
+      "type": "T"
+    },
+    {
+      "code": "T09",
+      "palette": "navy_ice",
+      "colors": [
+        "#193653",
+        "#7FAFD2"
+      ],
+      "file": "04_duotone/KL_T09_navy_ice.svg",
+      "sha256": "aa930cc639d933b7acab95956b66b606db9b3c61b39d2b3809af569ea165787c",
+      "url": "/brand/expanded/04_duotone/KL_T09_navy_ice.svg",
+      "type": "T"
+    },
+    {
+      "code": "T10",
+      "palette": "arctic_cyan",
+      "colors": [
+        "#394281",
+        "#44BCD2"
+      ],
+      "file": "04_duotone/KL_T10_arctic_cyan.svg",
+      "sha256": "c0dd9964a76d4a7e1eefbe3ca92709034a8ef52494a5f0ff984a1e2dfb80e197",
+      "url": "/brand/expanded/04_duotone/KL_T10_arctic_cyan.svg",
+      "type": "T"
+    }
+  ]
+}

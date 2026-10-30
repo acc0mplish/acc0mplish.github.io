@@ -1,0 +1,2238 @@
+{
+  "revision": "00b894618fe1338a",
+  "width": 1200,
+  "height": 630,
+  "representation": "Typographic design summary, not a screenshot",
+  "items": [
+    {
+      "id": "accordion",
+      "kind": "component",
+      "path": "/og/component/accordion.png"
+    },
+    {
+      "id": "alert",
+      "kind": "component",
+      "path": "/og/component/alert.png"
+    },
+    {
+      "id": "alert-dialog",
+      "kind": "component",
+      "path": "/og/component/alert-dialog.png"
+    },
+    {
+      "id": "anchor",
+      "kind": "component",
+      "path": "/og/component/anchor.png"
+    },
+    {
+      "id": "aspect-ratio",
+      "kind": "component",
+      "path": "/og/component/aspect-ratio.png"
+    },
+    {
+      "id": "autocomplete",
+      "kind": "component",
+      "path": "/og/component/autocomplete.png"
+    },
+    {
+      "id": "avatar",
+      "kind": "component",
+      "path": "/og/component/avatar.png"
+    },
+    {
+      "id": "avatar-group",
+      "kind": "component",
+      "path": "/og/component/avatar-group.png"
+    },
+    {
+      "id": "badge",
+      "kind": "component",
+      "path": "/og/component/badge.png"
+    },
+    {
+      "id": "banner",
+      "kind": "component",
+      "path": "/og/component/banner.png"
+    },
+    {
+      "id": "bar-chart",
+      "kind": "component",
+      "path": "/og/component/bar-chart.png"
+    },
+    {
+      "id": "blockquote",
+      "kind": "component",
+      "path": "/og/component/blockquote.png"
+    },
+    {
+      "id": "bottom-navigation",
+      "kind": "component",
+      "path": "/og/component/bottom-navigation.png"
+    },
+    {
+      "id": "breadcrumb",
+      "kind": "component",
+      "path": "/og/component/breadcrumb.png"
+    },
+    {
+      "id": "button",
+      "kind": "component",
+      "path": "/og/component/button.png"
+    },
+    {
+      "id": "button-group",
+      "kind": "component",
+      "path": "/og/component/button-group.png"
+    },
+    {
+      "id": "calendar",
+      "kind": "component",
+      "path": "/og/component/calendar.png"
+    },
+    {
+      "id": "card",
+      "kind": "component",
+      "path": "/og/component/card.png"
+    },
+    {
+      "id": "carousel",
+      "kind": "component",
+      "path": "/og/component/carousel.png"
+    },
+    {
+      "id": "cascader",
+      "kind": "component",
+      "path": "/og/component/cascader.png"
+    },
+    {
+      "id": "checkbox",
+      "kind": "component",
+      "path": "/og/component/checkbox.png"
+    },
+    {
+      "id": "chip",
+      "kind": "component",
+      "path": "/og/component/chip.png"
+    },
+    {
+      "id": "code-block",
+      "kind": "component",
+      "path": "/og/component/code-block.png"
+    },
+    {
+      "id": "collapsible",
+      "kind": "component",
+      "path": "/og/component/collapsible.png"
+    },
+    {
+      "id": "color-picker",
+      "kind": "component",
+      "path": "/og/component/color-picker.png"
+    },
+    {
+      "id": "combobox",
+      "kind": "component",
+      "path": "/og/component/combobox.png"
+    },
+    {
+      "id": "command",
+      "kind": "component",
+      "path": "/og/component/command.png"
+    },
+    {
+      "id": "context-menu",
+      "kind": "component",
+      "path": "/og/component/context-menu.png"
+    },
+    {
+      "id": "data-grid",
+      "kind": "component",
+      "path": "/og/component/data-grid.png"
+    },
+    {
+      "id": "date-picker",
+      "kind": "component",
+      "path": "/og/component/date-picker.png"
+    },
+    {
+      "id": "date-range-picker",
+      "kind": "component",
+      "path": "/og/component/date-range-picker.png"
+    },
+    {
+      "id": "decision-inbox",
+      "kind": "component",
+      "path": "/og/component/decision-inbox.png"
+    },
+    {
+      "id": "descriptions",
+      "kind": "component",
+      "path": "/og/component/descriptions.png"
+    },
+    {
+      "id": "dialog",
+      "kind": "component",
+      "path": "/og/component/dialog.png"
+    },
+    {
+      "id": "donut-chart",
+      "kind": "component",
+      "path": "/og/component/donut-chart.png"
+    },
+    {
+      "id": "dropdown-menu",
+      "kind": "component",
+      "path": "/og/component/dropdown-menu.png"
+    },
+    {
+      "id": "dropzone",
+      "kind": "component",
+      "path": "/og/component/dropzone.png"
+    },
+    {
+      "id": "empty-state",
+      "kind": "component",
+      "path": "/og/component/empty-state.png"
+    },
+    {
+      "id": "field",
+      "kind": "component",
+      "path": "/og/component/field.png"
+    },
+    {
+      "id": "file-upload",
+      "kind": "component",
+      "path": "/og/component/file-upload.png"
+    },
+    {
+      "id": "form",
+      "kind": "component",
+      "path": "/og/component/form.png"
+    },
+    {
+      "id": "hover-card",
+      "kind": "component",
+      "path": "/og/component/hover-card.png"
+    },
+    {
+      "id": "icon",
+      "kind": "component",
+      "path": "/og/component/icon.png"
+    },
+    {
+      "id": "image",
+      "kind": "component",
+      "path": "/og/component/image.png"
+    },
+    {
+      "id": "input",
+      "kind": "component",
+      "path": "/og/component/input.png"
+    },
+    {
+      "id": "input-group",
+      "kind": "component",
+      "path": "/og/component/input-group.png"
+    },
+    {
+      "id": "input-otp",
+      "kind": "component",
+      "path": "/og/component/input-otp.png"
+    },
+    {
+      "id": "kbd",
+      "kind": "component",
+      "path": "/og/component/kbd.png"
+    },
+    {
+      "id": "line-chart",
+      "kind": "component",
+      "path": "/og/component/line-chart.png"
+    },
+    {
+      "id": "link",
+      "kind": "component",
+      "path": "/og/component/link.png"
+    },
+    {
+      "id": "list",
+      "kind": "component",
+      "path": "/og/component/list.png"
+    },
+    {
+      "id": "loading-overlay",
+      "kind": "component",
+      "path": "/og/component/loading-overlay.png"
+    },
+    {
+      "id": "mentions",
+      "kind": "component",
+      "path": "/og/component/mentions.png"
+    },
+    {
+      "id": "menubar",
+      "kind": "component",
+      "path": "/og/component/menubar.png"
+    },
+    {
+      "id": "message-actions",
+      "kind": "component",
+      "path": "/og/component/message-actions.png"
+    },
+    {
+      "id": "multi-select",
+      "kind": "component",
+      "path": "/og/component/multi-select.png"
+    },
+    {
+      "id": "navigation-menu",
+      "kind": "component",
+      "path": "/og/component/navigation-menu.png"
+    },
+    {
+      "id": "notification",
+      "kind": "component",
+      "path": "/og/component/notification.png"
+    },
+    {
+      "id": "number-input",
+      "kind": "component",
+      "path": "/og/component/number-input.png"
+    },
+    {
+      "id": "pagination",
+      "kind": "component",
+      "path": "/og/component/pagination.png"
+    },
+    {
+      "id": "password-input",
+      "kind": "component",
+      "path": "/og/component/password-input.png"
+    },
+    {
+      "id": "popconfirm",
+      "kind": "component",
+      "path": "/og/component/popconfirm.png"
+    },
+    {
+      "id": "popover",
+      "kind": "component",
+      "path": "/og/component/popover.png"
+    },
+    {
+      "id": "progress",
+      "kind": "component",
+      "path": "/og/component/progress.png"
+    },
+    {
+      "id": "radio-group",
+      "kind": "component",
+      "path": "/og/component/radio-group.png"
+    },
+    {
+      "id": "range-slider",
+      "kind": "component",
+      "path": "/og/component/range-slider.png"
+    },
+    {
+      "id": "rating",
+      "kind": "component",
+      "path": "/og/component/rating.png"
+    },
+    {
+      "id": "resizable",
+      "kind": "component",
+      "path": "/og/component/resizable.png"
+    },
+    {
+      "id": "result",
+      "kind": "component",
+      "path": "/og/component/result.png"
+    },
+    {
+      "id": "scroll-area",
+      "kind": "component",
+      "path": "/og/component/scroll-area.png"
+    },
+    {
+      "id": "search-input",
+      "kind": "component",
+      "path": "/og/component/search-input.png"
+    },
+    {
+      "id": "segmented-control",
+      "kind": "component",
+      "path": "/og/component/segmented-control.png"
+    },
+    {
+      "id": "select",
+      "kind": "component",
+      "path": "/og/component/select.png"
+    },
+    {
+      "id": "separator",
+      "kind": "component",
+      "path": "/og/component/separator.png"
+    },
+    {
+      "id": "sheet",
+      "kind": "component",
+      "path": "/og/component/sheet.png"
+    },
+    {
+      "id": "sidebar",
+      "kind": "component",
+      "path": "/og/component/sidebar.png"
+    },
+    {
+      "id": "skeleton",
+      "kind": "component",
+      "path": "/og/component/skeleton.png"
+    },
+    {
+      "id": "slider",
+      "kind": "component",
+      "path": "/og/component/slider.png"
+    },
+    {
+      "id": "smart-recommendation",
+      "kind": "component",
+      "path": "/og/component/smart-recommendation.png"
+    },
+    {
+      "id": "sparkline",
+      "kind": "component",
+      "path": "/og/component/sparkline.png"
+    },
+    {
+      "id": "spinner",
+      "kind": "component",
+      "path": "/og/component/spinner.png"
+    },
+    {
+      "id": "splitter",
+      "kind": "component",
+      "path": "/og/component/splitter.png"
+    },
+    {
+      "id": "statistic",
+      "kind": "component",
+      "path": "/og/component/statistic.png"
+    },
+    {
+      "id": "stepper",
+      "kind": "component",
+      "path": "/og/component/stepper.png"
+    },
+    {
+      "id": "steps",
+      "kind": "component",
+      "path": "/og/component/steps.png"
+    },
+    {
+      "id": "switch",
+      "kind": "component",
+      "path": "/og/component/switch.png"
+    },
+    {
+      "id": "table",
+      "kind": "component",
+      "path": "/og/component/table.png"
+    },
+    {
+      "id": "tabs",
+      "kind": "component",
+      "path": "/og/component/tabs.png"
+    },
+    {
+      "id": "tag",
+      "kind": "component",
+      "path": "/og/component/tag.png"
+    },
+    {
+      "id": "tag-input",
+      "kind": "component",
+      "path": "/og/component/tag-input.png"
+    },
+    {
+      "id": "textarea",
+      "kind": "component",
+      "path": "/og/component/textarea.png"
+    },
+    {
+      "id": "time-picker",
+      "kind": "component",
+      "path": "/og/component/time-picker.png"
+    },
+    {
+      "id": "timeline",
+      "kind": "component",
+      "path": "/og/component/timeline.png"
+    },
+    {
+      "id": "toast",
+      "kind": "component",
+      "path": "/og/component/toast.png"
+    },
+    {
+      "id": "toggle",
+      "kind": "component",
+      "path": "/og/component/toggle.png"
+    },
+    {
+      "id": "toggle-group",
+      "kind": "component",
+      "path": "/og/component/toggle-group.png"
+    },
+    {
+      "id": "tool-call-card",
+      "kind": "component",
+      "path": "/og/component/tool-call-card.png"
+    },
+    {
+      "id": "toolbar",
+      "kind": "component",
+      "path": "/og/component/toolbar.png"
+    },
+    {
+      "id": "tooltip",
+      "kind": "component",
+      "path": "/og/component/tooltip.png"
+    },
+    {
+      "id": "transfer",
+      "kind": "component",
+      "path": "/og/component/transfer.png"
+    },
+    {
+      "id": "tree",
+      "kind": "component",
+      "path": "/og/component/tree.png"
+    },
+    {
+      "id": "tree-select",
+      "kind": "component",
+      "path": "/og/component/tree-select.png"
+    },
+    {
+      "id": "typography",
+      "kind": "component",
+      "path": "/og/component/typography.png"
+    },
+    {
+      "id": "watermark",
+      "kind": "component",
+      "path": "/og/component/watermark.png"
+    },
+    {
+      "id": "deploy-pipeline",
+      "kind": "block",
+      "path": "/og/block/deploy-pipeline.png"
+    },
+    {
+      "id": "log-stream",
+      "kind": "block",
+      "path": "/og/block/log-stream.png"
+    },
+    {
+      "id": "trace-waterfall",
+      "kind": "block",
+      "path": "/og/block/trace-waterfall.png"
+    },
+    {
+      "id": "file-upload",
+      "kind": "block",
+      "path": "/og/block/file-upload.png"
+    },
+    {
+      "id": "tree-view",
+      "kind": "block",
+      "path": "/og/block/tree-view.png"
+    },
+    {
+      "id": "multi-select",
+      "kind": "block",
+      "path": "/og/block/multi-select.png"
+    },
+    {
+      "id": "dashboard-delivery-tracker",
+      "kind": "block",
+      "path": "/og/block/dashboard-delivery-tracker.png"
+    },
+    {
+      "id": "dashboard-project-tracker",
+      "kind": "block",
+      "path": "/og/block/dashboard-project-tracker.png"
+    },
+    {
+      "id": "dashboard-payment-authorizations",
+      "kind": "block",
+      "path": "/og/block/dashboard-payment-authorizations.png"
+    },
+    {
+      "id": "dashboard-ai-mail",
+      "kind": "block",
+      "path": "/og/block/dashboard-ai-mail.png"
+    },
+    {
+      "id": "dashboard-deal-momentum",
+      "kind": "block",
+      "path": "/og/block/dashboard-deal-momentum.png"
+    },
+    {
+      "id": "dashboard-sales-pipeline",
+      "kind": "block",
+      "path": "/og/block/dashboard-sales-pipeline.png"
+    },
+    {
+      "id": "dashboard-report-center",
+      "kind": "block",
+      "path": "/og/block/dashboard-report-center.png"
+    },
+    {
+      "id": "dashboard-activation-goals",
+      "kind": "block",
+      "path": "/og/block/dashboard-activation-goals.png"
+    },
+    {
+      "id": "dashboard-flow-operations",
+      "kind": "block",
+      "path": "/og/block/dashboard-flow-operations.png"
+    },
+    {
+      "id": "dashboard-personal-finance",
+      "kind": "block",
+      "path": "/og/block/dashboard-personal-finance.png"
+    },
+    {
+      "id": "panel-risk-review",
+      "kind": "block",
+      "path": "/og/block/panel-risk-review.png"
+    },
+    {
+      "id": "panel-task-discussion",
+      "kind": "block",
+      "path": "/og/block/panel-task-discussion.png"
+    },
+    {
+      "id": "panel-customer-inspector",
+      "kind": "block",
+      "path": "/og/block/panel-customer-inspector.png"
+    },
+    {
+      "id": "panel-timeline-context",
+      "kind": "block",
+      "path": "/og/block/panel-timeline-context.png"
+    },
+    {
+      "id": "dashboard-automation-ops",
+      "kind": "block",
+      "path": "/og/block/dashboard-automation-ops.png"
+    },
+    {
+      "id": "dashboard-ai-workspace",
+      "kind": "block",
+      "path": "/og/block/dashboard-ai-workspace.png"
+    },
+    {
+      "id": "dashboard-sales-analytics",
+      "kind": "block",
+      "path": "/og/block/dashboard-sales-analytics.png"
+    },
+    {
+      "id": "affect-testimonial-wall",
+      "kind": "block",
+      "path": "/og/block/affect-testimonial-wall.png"
+    },
+    {
+      "id": "affect-logo-marquee",
+      "kind": "block",
+      "path": "/og/block/affect-logo-marquee.png"
+    },
+    {
+      "id": "affect-response-workspace",
+      "kind": "block",
+      "path": "/og/block/affect-response-workspace.png"
+    },
+    {
+      "id": "affect-agent-review",
+      "kind": "block",
+      "path": "/og/block/affect-agent-review.png"
+    },
+    {
+      "id": "chart-bullet",
+      "kind": "block",
+      "path": "/og/block/chart-bullet.png"
+    },
+    {
+      "id": "chart-calendar-heatmap",
+      "kind": "block",
+      "path": "/og/block/chart-calendar-heatmap.png"
+    },
+    {
+      "id": "chart-cohort-retention",
+      "kind": "block",
+      "path": "/og/block/chart-cohort-retention.png"
+    },
+    {
+      "id": "chart-correlation",
+      "kind": "block",
+      "path": "/og/block/chart-correlation.png"
+    },
+    {
+      "id": "chart-dumbbell",
+      "kind": "block",
+      "path": "/og/block/chart-dumbbell.png"
+    },
+    {
+      "id": "chart-streamgraph",
+      "kind": "block",
+      "path": "/og/block/chart-streamgraph.png"
+    },
+    {
+      "id": "chart-treemap",
+      "kind": "block",
+      "path": "/og/block/chart-treemap.png"
+    },
+    {
+      "id": "chart-waterfall",
+      "kind": "block",
+      "path": "/og/block/chart-waterfall.png"
+    },
+    {
+      "id": "chart-spark-table",
+      "kind": "block",
+      "path": "/og/block/chart-spark-table.png"
+    },
+    {
+      "id": "chart-state-timeline",
+      "kind": "block",
+      "path": "/og/block/chart-state-timeline.png"
+    },
+    {
+      "id": "chart-orderbook",
+      "kind": "block",
+      "path": "/og/block/chart-orderbook.png"
+    },
+    {
+      "id": "chart-market-depth",
+      "kind": "block",
+      "path": "/og/block/chart-market-depth.png"
+    },
+    {
+      "id": "chart-drawdown",
+      "kind": "block",
+      "path": "/og/block/chart-drawdown.png"
+    },
+    {
+      "id": "chart-forecast-fan",
+      "kind": "block",
+      "path": "/og/block/chart-forecast-fan.png"
+    },
+    {
+      "id": "chart-candlestick",
+      "kind": "block",
+      "path": "/og/block/chart-candlestick.png"
+    },
+    {
+      "id": "chart-calibration",
+      "kind": "block",
+      "path": "/og/block/chart-calibration.png"
+    },
+    {
+      "id": "chart-scatter-brush",
+      "kind": "block",
+      "path": "/og/block/chart-scatter-brush.png"
+    },
+    {
+      "id": "chart-beeswarm",
+      "kind": "block",
+      "path": "/og/block/chart-beeswarm.png"
+    },
+    {
+      "id": "chart-violin",
+      "kind": "block",
+      "path": "/og/block/chart-violin.png"
+    },
+    {
+      "id": "chart-distribution",
+      "kind": "block",
+      "path": "/og/block/chart-distribution.png"
+    },
+    {
+      "id": "timeline-release-gates",
+      "kind": "block",
+      "path": "/og/block/timeline-release-gates.png"
+    },
+    {
+      "id": "timeline-milestone-delta",
+      "kind": "block",
+      "path": "/og/block/timeline-milestone-delta.png"
+    },
+    {
+      "id": "timeline-team-swimlane",
+      "kind": "block",
+      "path": "/og/block/timeline-team-swimlane.png"
+    },
+    {
+      "id": "timeline-execution-waterfall",
+      "kind": "block",
+      "path": "/og/block/timeline-execution-waterfall.png"
+    },
+    {
+      "id": "timeline-plan-actual",
+      "kind": "block",
+      "path": "/og/block/timeline-plan-actual.png"
+    },
+    {
+      "id": "flow-connector-interaction",
+      "kind": "block",
+      "path": "/og/block/flow-connector-interaction.png"
+    },
+    {
+      "id": "flow-connector-retry",
+      "kind": "block",
+      "path": "/og/block/flow-connector-retry.png"
+    },
+    {
+      "id": "flow-connector-state",
+      "kind": "block",
+      "path": "/og/block/flow-connector-state.png"
+    },
+    {
+      "id": "flow-connector-parallel",
+      "kind": "block",
+      "path": "/og/block/flow-connector-parallel.png"
+    },
+    {
+      "id": "flow-connector-decision",
+      "kind": "block",
+      "path": "/og/block/flow-connector-decision.png"
+    },
+    {
+      "id": "flow-connector-taper",
+      "kind": "block",
+      "path": "/og/block/flow-connector-taper.png"
+    },
+    {
+      "id": "flow-connector-labels",
+      "kind": "block",
+      "path": "/og/block/flow-connector-labels.png"
+    },
+    {
+      "id": "flow-connector-feedback",
+      "kind": "block",
+      "path": "/og/block/flow-connector-feedback.png"
+    },
+    {
+      "id": "flow-connector-hyperedge",
+      "kind": "block",
+      "path": "/og/block/flow-connector-hyperedge.png"
+    },
+    {
+      "id": "flow-connector-ports",
+      "kind": "block",
+      "path": "/og/block/flow-connector-ports.png"
+    },
+    {
+      "id": "flow-connector-rounded",
+      "kind": "block",
+      "path": "/og/block/flow-connector-rounded.png"
+    },
+    {
+      "id": "flow-connector-bidirectional",
+      "kind": "block",
+      "path": "/og/block/flow-connector-bidirectional.png"
+    },
+    {
+      "id": "flow-connector-dashed",
+      "kind": "block",
+      "path": "/og/block/flow-connector-dashed.png"
+    },
+    {
+      "id": "flow-connector-step",
+      "kind": "block",
+      "path": "/og/block/flow-connector-step.png"
+    },
+    {
+      "id": "flow-connector-curve",
+      "kind": "block",
+      "path": "/og/block/flow-connector-curve.png"
+    },
+    {
+      "id": "flow-connector-elbow",
+      "kind": "block",
+      "path": "/og/block/flow-connector-elbow.png"
+    },
+    {
+      "id": "flow-connector-straight",
+      "kind": "block",
+      "path": "/og/block/flow-connector-straight.png"
+    },
+    {
+      "id": "flow-connector-radial",
+      "kind": "block",
+      "path": "/og/block/flow-connector-radial.png"
+    },
+    {
+      "id": "flow-connector-ribbons",
+      "kind": "block",
+      "path": "/og/block/flow-connector-ribbons.png"
+    },
+    {
+      "id": "flow-connector-bridges",
+      "kind": "block",
+      "path": "/og/block/flow-connector-bridges.png"
+    },
+    {
+      "id": "flow-connector-bus",
+      "kind": "block",
+      "path": "/og/block/flow-connector-bus.png"
+    },
+    {
+      "id": "flow-connector-bundle",
+      "kind": "block",
+      "path": "/og/block/flow-connector-bundle.png"
+    },
+    {
+      "id": "flow-connector-containers",
+      "kind": "block",
+      "path": "/og/block/flow-connector-containers.png"
+    },
+    {
+      "id": "flow-connector-loops",
+      "kind": "block",
+      "path": "/og/block/flow-connector-loops.png"
+    },
+    {
+      "id": "flow-connector-multiedge",
+      "kind": "block",
+      "path": "/og/block/flow-connector-multiedge.png"
+    },
+    {
+      "id": "flow-connector-metro",
+      "kind": "block",
+      "path": "/og/block/flow-connector-metro.png"
+    },
+    {
+      "id": "flow-connector-obstacle",
+      "kind": "block",
+      "path": "/og/block/flow-connector-obstacle.png"
+    },
+    {
+      "id": "diagram-service-flow",
+      "kind": "block",
+      "path": "/og/block/diagram-service-flow.png"
+    },
+    {
+      "id": "template-advisor-knowledge",
+      "kind": "block",
+      "path": "/og/block/template-advisor-knowledge.png"
+    },
+    {
+      "id": "template-autonomous-task-lifecycle",
+      "kind": "block",
+      "path": "/og/block/template-autonomous-task-lifecycle.png"
+    },
+    {
+      "id": "template-smart-reorder-supplychain",
+      "kind": "block",
+      "path": "/og/block/template-smart-reorder-supplychain.png"
+    },
+    {
+      "id": "template-proforma-financial-roi",
+      "kind": "block",
+      "path": "/og/block/template-proforma-financial-roi.png"
+    },
+    {
+      "id": "template-enterprise-reports-center",
+      "kind": "block",
+      "path": "/og/block/template-enterprise-reports-center.png"
+    },
+    {
+      "id": "agent-task-lifecycle",
+      "kind": "block",
+      "path": "/og/block/agent-task-lifecycle.png"
+    },
+    {
+      "id": "kanban-sprint-board",
+      "kind": "block",
+      "path": "/og/block/kanban-sprint-board.png"
+    },
+    {
+      "id": "kanban-swimlane-squad",
+      "kind": "block",
+      "path": "/og/block/kanban-swimlane-squad.png"
+    },
+    {
+      "id": "kanban-crm-deal",
+      "kind": "block",
+      "path": "/og/block/kanban-crm-deal.png"
+    },
+    {
+      "id": "kanban-incident-triage",
+      "kind": "block",
+      "path": "/og/block/kanban-incident-triage.png"
+    },
+    {
+      "id": "kanban-hiring-ats",
+      "kind": "block",
+      "path": "/og/block/kanban-hiring-ats.png"
+    },
+    {
+      "id": "card-saas-metric",
+      "kind": "block",
+      "path": "/og/block/card-saas-metric.png"
+    },
+    {
+      "id": "card-project-health",
+      "kind": "block",
+      "path": "/og/block/card-project-health.png"
+    },
+    {
+      "id": "card-pricing-tier",
+      "kind": "block",
+      "path": "/og/block/card-pricing-tier.png"
+    },
+    {
+      "id": "card-api-integration",
+      "kind": "block",
+      "path": "/og/block/card-api-integration.png"
+    },
+    {
+      "id": "card-approval-request",
+      "kind": "block",
+      "path": "/og/block/card-approval-request.png"
+    },
+    {
+      "id": "card-meeting-schedule",
+      "kind": "block",
+      "path": "/og/block/card-meeting-schedule.png"
+    },
+    {
+      "id": "dashboard-exec-revenue",
+      "kind": "block",
+      "path": "/og/block/dashboard-exec-revenue.png"
+    },
+    {
+      "id": "dashboard-sre-observability",
+      "kind": "block",
+      "path": "/og/block/dashboard-sre-observability.png"
+    },
+    {
+      "id": "dashboard-product-analytics",
+      "kind": "block",
+      "path": "/og/block/dashboard-product-analytics.png"
+    },
+    {
+      "id": "dashboard-finops-cost",
+      "kind": "block",
+      "path": "/og/block/dashboard-finops-cost.png"
+    },
+    {
+      "id": "dashboard-cx-support",
+      "kind": "block",
+      "path": "/og/block/dashboard-cx-support.png"
+    },
+    {
+      "id": "dialog-command-palette",
+      "kind": "block",
+      "path": "/og/block/dialog-command-palette.png"
+    },
+    {
+      "id": "dialog-destructive-confirm",
+      "kind": "block",
+      "path": "/og/block/dialog-destructive-confirm.png"
+    },
+    {
+      "id": "dialog-share-permissions",
+      "kind": "block",
+      "path": "/og/block/dialog-share-permissions.png"
+    },
+    {
+      "id": "dialog-api-token-create",
+      "kind": "block",
+      "path": "/og/block/dialog-api-token-create.png"
+    },
+    {
+      "id": "dialog-bulk-import-csv",
+      "kind": "block",
+      "path": "/og/block/dialog-bulk-import-csv.png"
+    },
+    {
+      "id": "navbar-workspace-header",
+      "kind": "block",
+      "path": "/og/block/navbar-workspace-header.png"
+    },
+    {
+      "id": "navbar-contextual-subnav",
+      "kind": "block",
+      "path": "/og/block/navbar-contextual-subnav.png"
+    },
+    {
+      "id": "navbar-floating-dock",
+      "kind": "block",
+      "path": "/og/block/navbar-floating-dock.png"
+    },
+    {
+      "id": "navbar-mega-menu",
+      "kind": "block",
+      "path": "/og/block/navbar-mega-menu.png"
+    },
+    {
+      "id": "navbar-incident-banner",
+      "kind": "block",
+      "path": "/og/block/navbar-incident-banner.png"
+    },
+    {
+      "id": "rte-slash-document",
+      "kind": "block",
+      "path": "/og/block/rte-slash-document.png"
+    },
+    {
+      "id": "rte-markdown-tech-spec",
+      "kind": "block",
+      "path": "/og/block/rte-markdown-tech-spec.png"
+    },
+    {
+      "id": "rte-collaborative-comment",
+      "kind": "block",
+      "path": "/og/block/rte-collaborative-comment.png"
+    },
+    {
+      "id": "rte-incident-postmortem",
+      "kind": "block",
+      "path": "/og/block/rte-incident-postmortem.png"
+    },
+    {
+      "id": "rte-email-campaign",
+      "kind": "block",
+      "path": "/og/block/rte-email-campaign.png"
+    },
+    {
+      "id": "list-agent-tasks",
+      "kind": "block",
+      "path": "/og/block/list-agent-tasks.png"
+    },
+    {
+      "id": "list-audit-activity",
+      "kind": "block",
+      "path": "/og/block/list-audit-activity.png"
+    },
+    {
+      "id": "list-notification-inbox",
+      "kind": "block",
+      "path": "/og/block/list-notification-inbox.png"
+    },
+    {
+      "id": "list-git-deployments",
+      "kind": "block",
+      "path": "/og/block/list-git-deployments.png"
+    },
+    {
+      "id": "list-team-directory",
+      "kind": "block",
+      "path": "/og/block/list-team-directory.png"
+    },
+    {
+      "id": "list-api-webhooks",
+      "kind": "block",
+      "path": "/og/block/list-api-webhooks.png"
+    },
+    {
+      "id": "empty-search-filter",
+      "kind": "block",
+      "path": "/og/block/empty-search-filter.png"
+    },
+    {
+      "id": "empty-first-project",
+      "kind": "block",
+      "path": "/og/block/empty-first-project.png"
+    },
+    {
+      "id": "empty-permission-locked",
+      "kind": "block",
+      "path": "/og/block/empty-permission-locked.png"
+    },
+    {
+      "id": "empty-integration-disconnected",
+      "kind": "block",
+      "path": "/og/block/empty-integration-disconnected.png"
+    },
+    {
+      "id": "empty-inbox-zero",
+      "kind": "block",
+      "path": "/og/block/empty-inbox-zero.png"
+    },
+    {
+      "id": "settings-team-permissions",
+      "kind": "block",
+      "path": "/og/block/settings-team-permissions.png"
+    },
+    {
+      "id": "settings-workspace-general",
+      "kind": "block",
+      "path": "/og/block/settings-workspace-general.png"
+    },
+    {
+      "id": "settings-security-sso",
+      "kind": "block",
+      "path": "/og/block/settings-security-sso.png"
+    },
+    {
+      "id": "settings-notification-routing",
+      "kind": "block",
+      "path": "/og/block/settings-notification-routing.png"
+    },
+    {
+      "id": "settings-api-webhooks",
+      "kind": "block",
+      "path": "/og/block/settings-api-webhooks.png"
+    },
+    {
+      "id": "settings-billing-plan",
+      "kind": "block",
+      "path": "/og/block/settings-billing-plan.png"
+    },
+    {
+      "id": "notif-project-updates",
+      "kind": "block",
+      "path": "/og/block/notif-project-updates.png"
+    },
+    {
+      "id": "notif-floating-toast",
+      "kind": "block",
+      "path": "/og/block/notif-floating-toast.png"
+    },
+    {
+      "id": "notif-approval-center",
+      "kind": "block",
+      "path": "/og/block/notif-approval-center.png"
+    },
+    {
+      "id": "notif-incident-pager",
+      "kind": "block",
+      "path": "/og/block/notif-incident-pager.png"
+    },
+    {
+      "id": "notif-mention-thread",
+      "kind": "block",
+      "path": "/og/block/notif-mention-thread.png"
+    },
+    {
+      "id": "notif-daily-digest",
+      "kind": "block",
+      "path": "/og/block/notif-daily-digest.png"
+    },
+    {
+      "id": "cell-inline-input",
+      "kind": "block",
+      "path": "/og/block/cell-inline-input.png"
+    },
+    {
+      "id": "popover-date-picker",
+      "kind": "block",
+      "path": "/og/block/popover-date-picker.png"
+    },
+    {
+      "id": "tag-multiselect-editor",
+      "kind": "block",
+      "path": "/og/block/tag-multiselect-editor.png"
+    },
+    {
+      "id": "numeric-stepper-cell",
+      "kind": "block",
+      "path": "/og/block/numeric-stepper-cell.png"
+    },
+    {
+      "id": "optimistic-cell-save",
+      "kind": "block",
+      "path": "/og/block/optimistic-cell-save.png"
+    },
+    {
+      "id": "sheet-issue-detail",
+      "kind": "block",
+      "path": "/og/block/sheet-issue-detail.png"
+    },
+    {
+      "id": "sheet-trace-inspector",
+      "kind": "block",
+      "path": "/og/block/sheet-trace-inspector.png"
+    },
+    {
+      "id": "sheet-customer-360",
+      "kind": "block",
+      "path": "/og/block/sheet-customer-360.png"
+    },
+    {
+      "id": "sheet-advanced-filter",
+      "kind": "block",
+      "path": "/og/block/sheet-advanced-filter.png"
+    },
+    {
+      "id": "sheet-audit-diff",
+      "kind": "block",
+      "path": "/og/block/sheet-audit-diff.png"
+    },
+    {
+      "id": "flow-react-lead-routing",
+      "kind": "block",
+      "path": "/og/block/flow-react-lead-routing.png"
+    },
+    {
+      "id": "flow-react-fds-routing",
+      "kind": "block",
+      "path": "/og/block/flow-react-fds-routing.png"
+    },
+    {
+      "id": "flow-react-vip-defense",
+      "kind": "block",
+      "path": "/og/block/flow-react-vip-defense.png"
+    },
+    {
+      "id": "flow-cicd-pipeline",
+      "kind": "block",
+      "path": "/og/block/flow-cicd-pipeline.png"
+    },
+    {
+      "id": "flow-webhook-automation",
+      "kind": "block",
+      "path": "/og/block/flow-webhook-automation.png"
+    },
+    {
+      "id": "flow-etl-lineage",
+      "kind": "block",
+      "path": "/og/block/flow-etl-lineage.png"
+    },
+    {
+      "id": "flow-microservice-topology",
+      "kind": "block",
+      "path": "/og/block/flow-microservice-topology.png"
+    },
+    {
+      "id": "flow-approval-routing",
+      "kind": "block",
+      "path": "/og/block/flow-approval-routing.png"
+    },
+    {
+      "id": "shell-enterprise-sidebar",
+      "kind": "block",
+      "path": "/og/block/shell-enterprise-sidebar.png"
+    },
+    {
+      "id": "shell-dual-rail-ide",
+      "kind": "block",
+      "path": "/og/block/shell-dual-rail-ide.png"
+    },
+    {
+      "id": "shell-top-nav-portal",
+      "kind": "block",
+      "path": "/og/block/shell-top-nav-portal.png"
+    },
+    {
+      "id": "shell-master-detail-inbox",
+      "kind": "block",
+      "path": "/og/block/shell-master-detail-inbox.png"
+    },
+    {
+      "id": "shell-canvas-studio",
+      "kind": "block",
+      "path": "/og/block/shell-canvas-studio.png"
+    },
+    {
+      "id": "gantt-flux-wbs-svg",
+      "kind": "block",
+      "path": "/og/block/gantt-flux-wbs-svg.png"
+    },
+    {
+      "id": "gantt-project-tasks",
+      "kind": "block",
+      "path": "/og/block/gantt-project-tasks.png"
+    },
+    {
+      "id": "gantt-resource-capacity",
+      "kind": "block",
+      "path": "/og/block/gantt-resource-capacity.png"
+    },
+    {
+      "id": "gantt-milestone-roadmap",
+      "kind": "block",
+      "path": "/og/block/gantt-milestone-roadmap.png"
+    },
+    {
+      "id": "gantt-sprint-release",
+      "kind": "block",
+      "path": "/og/block/gantt-sprint-release.png"
+    },
+    {
+      "id": "gantt-critical-path",
+      "kind": "block",
+      "path": "/og/block/gantt-critical-path.png"
+    },
+    {
+      "id": "onboarding-checklist-hub",
+      "kind": "block",
+      "path": "/og/block/onboarding-checklist-hub.png"
+    },
+    {
+      "id": "onboarding-role-personalize",
+      "kind": "block",
+      "path": "/og/block/onboarding-role-personalize.png"
+    },
+    {
+      "id": "onboarding-interactive-tour",
+      "kind": "block",
+      "path": "/og/block/onboarding-interactive-tour.png"
+    },
+    {
+      "id": "onboarding-sdk-quickstart",
+      "kind": "block",
+      "path": "/og/block/onboarding-sdk-quickstart.png"
+    },
+    {
+      "id": "onboarding-data-migration",
+      "kind": "block",
+      "path": "/og/block/onboarding-data-migration.png"
+    },
+    {
+      "id": "wizard-cloud-provisioning",
+      "kind": "block",
+      "path": "/og/block/wizard-cloud-provisioning.png"
+    },
+    {
+      "id": "wizard-enterprise-contract",
+      "kind": "block",
+      "path": "/og/block/wizard-enterprise-contract.png"
+    },
+    {
+      "id": "wizard-rbac-role-builder",
+      "kind": "block",
+      "path": "/og/block/wizard-rbac-role-builder.png"
+    },
+    {
+      "id": "wizard-report-scheduler",
+      "kind": "block",
+      "path": "/og/block/wizard-report-scheduler.png"
+    },
+    {
+      "id": "wizard-sso-saml-setup",
+      "kind": "block",
+      "path": "/og/block/wizard-sso-saml-setup.png"
+    },
+    {
+      "id": "calendar-release-freeze",
+      "kind": "block",
+      "path": "/og/block/calendar-release-freeze.png"
+    },
+    {
+      "id": "calendar-marketing-campaign",
+      "kind": "block",
+      "path": "/og/block/calendar-marketing-campaign.png"
+    },
+    {
+      "id": "calendar-oncall-rotation",
+      "kind": "block",
+      "path": "/og/block/calendar-oncall-rotation.png"
+    },
+    {
+      "id": "calendar-resource-booking",
+      "kind": "block",
+      "path": "/og/block/calendar-resource-booking.png"
+    },
+    {
+      "id": "calendar-compliance-audit",
+      "kind": "block",
+      "path": "/og/block/calendar-compliance-audit.png"
+    },
+    {
+      "id": "auth-enterprise-sso-login",
+      "kind": "block",
+      "path": "/og/block/auth-enterprise-sso-login.png"
+    },
+    {
+      "id": "auth-mfa-totp-verify",
+      "kind": "block",
+      "path": "/og/block/auth-mfa-totp-verify.png"
+    },
+    {
+      "id": "auth-workspace-signup",
+      "kind": "block",
+      "path": "/og/block/auth-workspace-signup.png"
+    },
+    {
+      "id": "auth-session-device-manager",
+      "kind": "block",
+      "path": "/og/block/auth-session-device-manager.png"
+    },
+    {
+      "id": "auth-step-up-reauth",
+      "kind": "block",
+      "path": "/og/block/auth-step-up-reauth.png"
+    },
+    {
+      "id": "schedule-shift-optimize",
+      "kind": "block",
+      "path": "/og/block/schedule-shift-optimize.png"
+    },
+    {
+      "id": "schedule-field-dispatch",
+      "kind": "block",
+      "path": "/og/block/schedule-field-dispatch.png"
+    },
+    {
+      "id": "schedule-daily-agenda",
+      "kind": "block",
+      "path": "/og/block/schedule-daily-agenda.png"
+    },
+    {
+      "id": "schedule-interview-slots",
+      "kind": "block",
+      "path": "/og/block/schedule-interview-slots.png"
+    },
+    {
+      "id": "schedule-maintenance-window",
+      "kind": "block",
+      "path": "/og/block/schedule-maintenance-window.png"
+    },
+    {
+      "id": "schedule-shift-planner",
+      "kind": "block",
+      "path": "/og/block/schedule-shift-planner.png"
+    },
+    {
+      "id": "schedule-batch-cron-agenda",
+      "kind": "block",
+      "path": "/og/block/schedule-batch-cron-agenda.png"
+    },
+    {
+      "id": "stats-executive-kpi-strip",
+      "kind": "block",
+      "path": "/og/block/stats-executive-kpi-strip.png"
+    },
+    {
+      "id": "stats-sla-uptime-summary",
+      "kind": "block",
+      "path": "/og/block/stats-sla-uptime-summary.png"
+    },
+    {
+      "id": "stats-usage-quota-meters",
+      "kind": "block",
+      "path": "/og/block/stats-usage-quota-meters.png"
+    },
+    {
+      "id": "stats-conversion-benchmark",
+      "kind": "block",
+      "path": "/og/block/stats-conversion-benchmark.png"
+    },
+    {
+      "id": "stats-dora-engineering",
+      "kind": "block",
+      "path": "/og/block/stats-dora-engineering.png"
+    },
+    {
+      "id": "timeline-incident-response",
+      "kind": "block",
+      "path": "/og/block/timeline-incident-response.png"
+    },
+    {
+      "id": "timeline-order-fulfillment",
+      "kind": "block",
+      "path": "/og/block/timeline-order-fulfillment.png"
+    },
+    {
+      "id": "timeline-release-changelog",
+      "kind": "block",
+      "path": "/og/block/timeline-release-changelog.png"
+    },
+    {
+      "id": "timeline-contract-lifecycle",
+      "kind": "block",
+      "path": "/og/block/timeline-contract-lifecycle.png"
+    },
+    {
+      "id": "timeline-pr-review-chain",
+      "kind": "block",
+      "path": "/og/block/timeline-pr-review-chain.png"
+    },
+    {
+      "id": "form-incident-report",
+      "kind": "block",
+      "path": "/og/block/form-incident-report.png"
+    },
+    {
+      "id": "form-procurement-request",
+      "kind": "block",
+      "path": "/og/block/form-procurement-request.png"
+    },
+    {
+      "id": "form-webhook-endpoint",
+      "kind": "block",
+      "path": "/og/block/form-webhook-endpoint.png"
+    },
+    {
+      "id": "form-database-connection",
+      "kind": "block",
+      "path": "/og/block/form-database-connection.png"
+    },
+    {
+      "id": "form-feature-flag-rule",
+      "kind": "block",
+      "path": "/og/block/form-feature-flag-rule.png"
+    },
+    {
+      "id": "profile-engineer-scorecard",
+      "kind": "block",
+      "path": "/og/block/profile-engineer-scorecard.png"
+    },
+    {
+      "id": "profile-enterprise-account",
+      "kind": "block",
+      "path": "/og/block/profile-enterprise-account.png"
+    },
+    {
+      "id": "profile-security-identity",
+      "kind": "block",
+      "path": "/og/block/profile-security-identity.png"
+    },
+    {
+      "id": "profile-personal-preferences",
+      "kind": "block",
+      "path": "/og/block/profile-personal-preferences.png"
+    },
+    {
+      "id": "profile-vendor-compliance",
+      "kind": "block",
+      "path": "/og/block/profile-vendor-compliance.png"
+    },
+    {
+      "id": "whiteboard-system-architecture",
+      "kind": "block",
+      "path": "/og/block/whiteboard-system-architecture.png"
+    },
+    {
+      "id": "whiteboard-sprint-retro",
+      "kind": "block",
+      "path": "/og/block/whiteboard-sprint-retro.png"
+    },
+    {
+      "id": "whiteboard-user-journey-map",
+      "kind": "block",
+      "path": "/og/block/whiteboard-user-journey-map.png"
+    },
+    {
+      "id": "whiteboard-erd-schema",
+      "kind": "block",
+      "path": "/og/block/whiteboard-erd-schema.png"
+    },
+    {
+      "id": "whiteboard-incident-warroom",
+      "kind": "block",
+      "path": "/og/block/whiteboard-incident-warroom.png"
+    },
+    {
+      "id": "funnel-flow",
+      "kind": "block",
+      "path": "/og/block/funnel-flow.png"
+    },
+    {
+      "id": "trial-flow",
+      "kind": "block",
+      "path": "/og/block/trial-flow.png"
+    },
+    {
+      "id": "b2b-deals-flow",
+      "kind": "block",
+      "path": "/og/block/b2b-deals-flow.png"
+    },
+    {
+      "id": "cloud-cost-sankey",
+      "kind": "block",
+      "path": "/og/block/cloud-cost-sankey.png"
+    },
+    {
+      "id": "traffic-attribution-sankey",
+      "kind": "block",
+      "path": "/og/block/traffic-attribution-sankey.png"
+    },
+    {
+      "id": "error-budget-slope",
+      "kind": "block",
+      "path": "/og/block/error-budget-slope.png"
+    },
+    {
+      "id": "arr-growth-slope",
+      "kind": "block",
+      "path": "/og/block/arr-growth-slope.png"
+    },
+    {
+      "id": "nps-cohort-slope",
+      "kind": "block",
+      "path": "/og/block/nps-cohort-slope.png"
+    },
+    {
+      "id": "conversion-tier-slope",
+      "kind": "block",
+      "path": "/og/block/conversion-tier-slope.png"
+    },
+    {
+      "id": "latency-region-slope",
+      "kind": "block",
+      "path": "/og/block/latency-region-slope.png"
+    },
+    {
+      "id": "cash-inflows-radial",
+      "kind": "block",
+      "path": "/og/block/cash-inflows-radial.png"
+    },
+    {
+      "id": "api-health-radial",
+      "kind": "block",
+      "path": "/og/block/api-health-radial.png"
+    },
+    {
+      "id": "quota-attainment-radial",
+      "kind": "block",
+      "path": "/og/block/quota-attainment-radial.png"
+    },
+    {
+      "id": "cluster-cpu-radial",
+      "kind": "block",
+      "path": "/og/block/cluster-cpu-radial.png"
+    },
+    {
+      "id": "security-posture-radial",
+      "kind": "block",
+      "path": "/og/block/security-posture-radial.png"
+    },
+    {
+      "id": "live-mrr-sparkline",
+      "kind": "block",
+      "path": "/og/block/live-mrr-sparkline.png"
+    },
+    {
+      "id": "kpi-mini-trend",
+      "kind": "block",
+      "path": "/og/block/kpi-mini-trend.png"
+    },
+    {
+      "id": "latency-sparkline",
+      "kind": "block",
+      "path": "/og/block/latency-sparkline.png"
+    },
+    {
+      "id": "error-rate-sparkline",
+      "kind": "block",
+      "path": "/og/block/error-rate-sparkline.png"
+    },
+    {
+      "id": "active-session-sparkline",
+      "kind": "block",
+      "path": "/og/block/active-session-sparkline.png"
+    },
+    {
+      "id": "error-budget-burn",
+      "kind": "block",
+      "path": "/og/block/error-budget-burn.png"
+    },
+    {
+      "id": "env-promotion-pipeline",
+      "kind": "block",
+      "path": "/og/block/env-promotion-pipeline.png"
+    },
+    {
+      "id": "cron-run-history-tracker",
+      "kind": "block",
+      "path": "/og/block/cron-run-history-tracker.png"
+    },
+    {
+      "id": "uptime-sla-tracker",
+      "kind": "block",
+      "path": "/og/block/uptime-sla-tracker.png"
+    },
+    {
+      "id": "incident-health-bars",
+      "kind": "block",
+      "path": "/og/block/incident-health-bars.png"
+    },
+    {
+      "id": "capital-inflows-bar",
+      "kind": "block",
+      "path": "/og/block/capital-inflows-bar.png"
+    },
+    {
+      "id": "revenue-breakdown-bar",
+      "kind": "block",
+      "path": "/og/block/revenue-breakdown-bar.png"
+    },
+    {
+      "id": "headcount-cost-bar",
+      "kind": "block",
+      "path": "/og/block/headcount-cost-bar.png"
+    },
+    {
+      "id": "cohort-retention-bar",
+      "kind": "block",
+      "path": "/og/block/cohort-retention-bar.png"
+    },
+    {
+      "id": "cloud-spend-variance-bar",
+      "kind": "block",
+      "path": "/og/block/cloud-spend-variance-bar.png"
+    },
+    {
+      "id": "daily-active-users-area",
+      "kind": "block",
+      "path": "/og/block/daily-active-users-area.png"
+    },
+    {
+      "id": "latency-percentiles-line",
+      "kind": "block",
+      "path": "/og/block/latency-percentiles-line.png"
+    },
+    {
+      "id": "net-revenue-retention-area",
+      "kind": "block",
+      "path": "/og/block/net-revenue-retention-area.png"
+    },
+    {
+      "id": "token-throughput-line",
+      "kind": "block",
+      "path": "/og/block/token-throughput-line.png"
+    },
+    {
+      "id": "concurrent-connections-area",
+      "kind": "block",
+      "path": "/og/block/concurrent-connections-area.png"
+    },
+    {
+      "id": "customer-segment-donut",
+      "kind": "block",
+      "path": "/og/block/customer-segment-donut.png"
+    },
+    {
+      "id": "expense-allocation-pie",
+      "kind": "block",
+      "path": "/og/block/expense-allocation-pie.png"
+    },
+    {
+      "id": "cloud-provider-share-donut",
+      "kind": "block",
+      "path": "/og/block/cloud-provider-share-donut.png"
+    },
+    {
+      "id": "ticket-severity-pie",
+      "kind": "block",
+      "path": "/og/block/ticket-severity-pie.png"
+    },
+    {
+      "id": "license-seat-utilization-donut",
+      "kind": "block",
+      "path": "/og/block/license-seat-utilization-donut.png"
+    },
+    {
+      "id": "self-serve-funnel",
+      "kind": "block",
+      "path": "/og/block/self-serve-funnel.png"
+    },
+    {
+      "id": "churn-retention-funnel",
+      "kind": "block",
+      "path": "/og/block/churn-retention-funnel.png"
+    },
+    {
+      "id": "enterprise-poc-funnel",
+      "kind": "block",
+      "path": "/og/block/enterprise-poc-funnel.png"
+    },
+    {
+      "id": "checkout-drop-funnel",
+      "kind": "block",
+      "path": "/og/block/checkout-drop-funnel.png"
+    },
+    {
+      "id": "activation-milestone-funnel",
+      "kind": "block",
+      "path": "/og/block/activation-milestone-funnel.png"
+    },
+    {
+      "id": "competitor-feature-radar",
+      "kind": "block",
+      "path": "/og/block/competitor-feature-radar.png"
+    },
+    {
+      "id": "team-velocity-polar",
+      "kind": "block",
+      "path": "/og/block/team-velocity-polar.png"
+    },
+    {
+      "id": "dora-metrics-radar",
+      "kind": "block",
+      "path": "/og/block/dora-metrics-radar.png"
+    },
+    {
+      "id": "incident-response-polar",
+      "kind": "block",
+      "path": "/og/block/incident-response-polar.png"
+    },
+    {
+      "id": "system-resilience-radar",
+      "kind": "block",
+      "path": "/og/block/system-resilience-radar.png"
+    },
+    {
+      "id": "support-tickets",
+      "kind": "block",
+      "path": "/og/block/support-tickets.png"
+    },
+    {
+      "id": "striped-rows",
+      "kind": "block",
+      "path": "/og/block/striped-rows.png"
+    },
+    {
+      "id": "bordered-table",
+      "kind": "block",
+      "path": "/og/block/bordered-table.png"
+    },
+    {
+      "id": "selectable-grid",
+      "kind": "block",
+      "path": "/og/block/selectable-grid.png"
+    },
+    {
+      "id": "sortable-headers",
+      "kind": "block",
+      "path": "/og/block/sortable-headers.png"
+    },
+    {
+      "id": "fixed-header",
+      "kind": "block",
+      "path": "/og/block/fixed-header.png"
+    },
+    {
+      "id": "empty-states",
+      "kind": "block",
+      "path": "/og/block/empty-states.png"
+    },
+    {
+      "id": "loading-skeletons",
+      "kind": "block",
+      "path": "/og/block/loading-skeletons.png"
+    },
+    {
+      "id": "sla-risk-index",
+      "kind": "block",
+      "path": "/og/block/sla-risk-index.png"
+    },
+    {
+      "id": "faceted-filter-grid",
+      "kind": "block",
+      "path": "/og/block/faceted-filter-grid.png"
+    },
+    {
+      "id": "inline-row-actions",
+      "kind": "block",
+      "path": "/og/block/inline-row-actions.png"
+    },
+    {
+      "id": "cell-formula-eval",
+      "kind": "block",
+      "path": "/og/block/cell-formula-eval.png"
+    },
+    {
+      "id": "nested-subgrids",
+      "kind": "block",
+      "path": "/og/block/nested-subgrids.png"
+    },
+    {
+      "id": "multi-level-headers",
+      "kind": "block",
+      "path": "/og/block/multi-level-headers.png"
+    },
+    {
+      "id": "batch-bulk-update",
+      "kind": "block",
+      "path": "/og/block/batch-bulk-update.png"
+    },
+    {
+      "id": "export-csv-excel",
+      "kind": "block",
+      "path": "/og/block/export-csv-excel.png"
+    },
+    {
+      "id": "dynamic-height-cells",
+      "kind": "block",
+      "path": "/og/block/dynamic-height-cells.png"
+    },
+    {
+      "id": "undo-redo-history",
+      "kind": "block",
+      "path": "/og/block/undo-redo-history.png"
+    },
+    {
+      "id": "course-catalog",
+      "kind": "block",
+      "path": "/og/block/course-catalog.png"
+    },
+    {
+      "id": "product-catalog",
+      "kind": "block",
+      "path": "/og/block/product-catalog.png"
+    },
+    {
+      "id": "access-permissions-matrix",
+      "kind": "block",
+      "path": "/og/block/access-permissions-matrix.png"
+    },
+    {
+      "id": "column-visibility",
+      "kind": "block",
+      "path": "/og/block/column-visibility.png"
+    },
+    {
+      "id": "column-reordering",
+      "kind": "block",
+      "path": "/og/block/column-reordering.png"
+    },
+    {
+      "id": "column-pinning",
+      "kind": "block",
+      "path": "/og/block/column-pinning.png"
+    },
+    {
+      "id": "resizable-headers",
+      "kind": "block",
+      "path": "/og/block/resizable-headers.png"
+    },
+    {
+      "id": "auto-fit-columns",
+      "kind": "block",
+      "path": "/og/block/auto-fit-columns.png"
+    },
+    {
+      "id": "shared-drive-folders",
+      "kind": "block",
+      "path": "/og/block/shared-drive-folders.png"
+    },
+    {
+      "id": "row-reorder-handle",
+      "kind": "block",
+      "path": "/og/block/row-reorder-handle.png"
+    },
+    {
+      "id": "kanban-interchange",
+      "kind": "block",
+      "path": "/og/block/kanban-interchange.png"
+    },
+    {
+      "id": "cross-table-dnd",
+      "kind": "block",
+      "path": "/og/block/cross-table-dnd.png"
+    },
+    {
+      "id": "hierarchy-tree-reorder",
+      "kind": "block",
+      "path": "/og/block/hierarchy-tree-reorder.png"
+    },
+    {
+      "id": "release-approvals",
+      "kind": "block",
+      "path": "/og/block/release-approvals.png"
+    },
+    {
+      "id": "subtask-tracker",
+      "kind": "block",
+      "path": "/og/block/subtask-tracker.png"
+    },
+    {
+      "id": "detail-panel-row",
+      "kind": "block",
+      "path": "/og/block/detail-panel-row.png"
+    },
+    {
+      "id": "lazy-child-loader",
+      "kind": "block",
+      "path": "/og/block/lazy-child-loader.png"
+    },
+    {
+      "id": "master-detail-split",
+      "kind": "block",
+      "path": "/og/block/master-detail-split.png"
+    },
+    {
+      "id": "billing-upgrade",
+      "kind": "block",
+      "path": "/og/block/billing-upgrade.png"
+    },
+    {
+      "id": "integrations-hub",
+      "kind": "block",
+      "path": "/og/block/integrations-hub.png"
+    },
+    {
+      "id": "reports-schedule",
+      "kind": "block",
+      "path": "/og/block/reports-schedule.png"
+    },
+    {
+      "id": "billing-transactions",
+      "kind": "block",
+      "path": "/og/block/billing-transactions.png"
+    },
+    {
+      "id": "automation-library",
+      "kind": "block",
+      "path": "/og/block/automation-library.png"
+    },
+    {
+      "id": "renewal-reassignment",
+      "kind": "block",
+      "path": "/og/block/renewal-reassignment.png"
+    },
+    {
+      "id": "at-risk-renewals",
+      "kind": "block",
+      "path": "/og/block/at-risk-renewals.png"
+    },
+    {
+      "id": "workspace-overview",
+      "kind": "block",
+      "path": "/og/block/workspace-overview.png"
+    },
+    {
+      "id": "roadmap-stage",
+      "kind": "block",
+      "path": "/og/block/roadmap-stage.png"
+    },
+    {
+      "id": "revenue-region",
+      "kind": "block",
+      "path": "/og/block/revenue-region.png"
+    },
+    {
+      "id": "patient-access",
+      "kind": "block",
+      "path": "/og/block/patient-access.png"
+    },
+    {
+      "id": "bill-materials",
+      "kind": "block",
+      "path": "/og/block/bill-materials.png"
+    },
+    {
+      "id": "reporting-hierarchy",
+      "kind": "block",
+      "path": "/og/block/reporting-hierarchy.png"
+    },
+    {
+      "id": "editorial-pipeline",
+      "kind": "block",
+      "path": "/og/block/editorial-pipeline.png"
+    },
+    {
+      "id": "studio-delivery",
+      "kind": "block",
+      "path": "/og/block/studio-delivery.png"
+    },
+    {
+      "id": "card-payments-ledger",
+      "kind": "block",
+      "path": "/og/block/card-payments-ledger.png"
+    },
+    {
+      "id": "shipment-exceptions",
+      "kind": "block",
+      "path": "/og/block/shipment-exceptions.png"
+    },
+    {
+      "id": "audit-log-stream",
+      "kind": "block",
+      "path": "/og/block/audit-log-stream.png"
+    },
+    {
+      "id": "iot-sensor-matrix",
+      "kind": "block",
+      "path": "/og/block/iot-sensor-matrix.png"
+    },
+    {
+      "id": "order-book-depth",
+      "kind": "block",
+      "path": "/og/block/order-book-depth.png"
+    },
+    {
+      "id": "diagrams",
+      "kind": "guides",
+      "path": "/og/guides/diagrams.png"
+    },
+    {
+      "id": "tokens",
+      "kind": "guides",
+      "path": "/og/guides/tokens.png"
+    },
+    {
+      "id": "fonts",
+      "kind": "guides",
+      "path": "/og/guides/fonts.png"
+    },
+    {
+      "id": "mcp-cli",
+      "kind": "guides",
+      "path": "/og/guides/mcp-cli.png"
+    },
+    {
+      "id": "mcp-recipes",
+      "kind": "guides",
+      "path": "/og/guides/mcp-recipes.png"
+    },
+    {
+      "id": "density",
+      "kind": "guides",
+      "path": "/og/guides/density.png"
+    },
+    {
+      "id": "starters",
+      "kind": "guides",
+      "path": "/og/guides/starters.png"
+    },
+    {
+      "id": "accessibility",
+      "kind": "guides",
+      "path": "/og/guides/accessibility.png"
+    },
+    {
+      "id": "home",
+      "kind": "acquisition",
+      "path": "/og/acquisition/home.png"
+    },
+    {
+      "id": "logo",
+      "kind": "acquisition",
+      "path": "/og/acquisition/logo.png"
+    },
+    {
+      "id": "start",
+      "kind": "acquisition",
+      "path": "/og/acquisition/start.png"
+    },
+    {
+      "id": "dashboards",
+      "kind": "acquisition",
+      "path": "/og/acquisition/dashboards.png"
+    },
+    {
+      "id": "admin",
+      "kind": "acquisition",
+      "path": "/og/acquisition/admin.png"
+    },
+    {
+      "id": "diagrams",
+      "kind": "acquisition",
+      "path": "/og/acquisition/diagrams.png"
+    },
+    {
+      "id": "about",
+      "kind": "acquisition",
+      "path": "/og/acquisition/about.png"
+    }
+  ]
+}

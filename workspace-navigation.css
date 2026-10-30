@@ -1,0 +1,52 @@
+/* Workspace surfaces grow by 50% from the original 550 / 440 / 380 px widths.
+   Viewport caps include the workspace zoom so enlarged UI remains reachable. */
+#search-dialog.command-dialog{width:min(825px,calc(100vw / var(--klic-ui-scale,1) - 32px));max-width:calc(100vw / var(--klic-ui-scale,1) - 32px);margin:clamp(16px,8vh,100px) auto auto;max-height:calc(100dvh / var(--klic-ui-scale,1) - 32px)}
+#search-dialog .command-results{max-height:min(585px,calc(100dvh / var(--klic-ui-scale,1) - 170px))}
+#search-dialog .command-result{min-width:0;flex-wrap:wrap;row-gap:4px}
+#search-dialog .command-result>strong{overflow-wrap:anywhere}
+#search-dialog .command-result>span{min-width:0;overflow-wrap:anywhere}
+#demo-dialog.demo-dialog:not(.sheet){width:min(660px,calc(100vw / var(--klic-ui-scale,1) - 32px));max-width:calc(100vw / var(--klic-ui-scale,1) - 32px);max-height:calc(100dvh / var(--klic-ui-scale,1) - 32px)}
+#demo-dialog.demo-dialog.sheet{width:min(570px,calc(100vw / var(--klic-ui-scale,1)));max-width:calc(100vw / var(--klic-ui-scale,1));height:calc(100dvh / var(--klic-ui-scale,1));max-height:calc(100dvh / var(--klic-ui-scale,1))}
+.workspace-help-dialog{width:min(825px,calc(100vw / var(--klic-ui-scale,1) - 32px));max-width:calc(100vw / var(--klic-ui-scale,1) - 32px);max-height:calc(100dvh / var(--klic-ui-scale,1) - 32px);padding:0;margin:auto;border-radius:14px;overflow:auto}
+.workspace-help-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:28px 30px 24px;border-bottom:1px solid var(--klic-semantic-color-border)}
+.workspace-help-head .eyebrow{display:block;margin:0 0 12px;font-size:10px;letter-spacing:1px;color:var(--klic-semantic-color-accent)}
+.workspace-help-head h2{font-size:calc(23px * var(--klic-text-scale,1));line-height:1.35;letter-spacing:-.6px;font-weight:650}
+.workspace-help-head p{margin:9px 0 0;font-size:calc(12px * var(--klic-text-scale,1));line-height:1.65;color:var(--klic-semantic-color-muted)}
+.workspace-help-head>.icon-button{flex-shrink:0}
+.workspace-help-body{padding:26px 30px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:30px}
+.workspace-help-body h3{font-size:calc(12px * var(--klic-text-scale,1));font-weight:650;margin:0 0 13px}
+.shortcut-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--klic-semantic-color-border);padding:10px 0;font-size:calc(11px * var(--klic-text-scale,1))}
+.shortcut-keys{display:flex;align-items:center;gap:4px;flex-shrink:0}.shortcut-keys small{font-size:9px;color:var(--klic-semantic-color-muted)}
+.workspace-help-dialog kbd{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--klic-semantic-color-border);border-bottom-width:2px;border-radius:5px;padding:3px 6px;min-width:24px;min-height:23px;font:10px var(--klic-ui-mono);background:var(--klic-semantic-color-surface)}
+.help-caption{font-size:calc(10px * var(--klic-text-scale,1));line-height:1.85;color:var(--klic-semantic-color-muted);margin-top:16px}
+.help-links :is(a,button){width:100%;display:flex;text-align:left;align-items:center;gap:12px;padding:14px 12px;margin:0 0 8px;background:var(--klic-semantic-color-surface);border:1px solid var(--klic-semantic-color-border);border-radius:8px}
+.help-links :is(a,button):hover{background:var(--klic-semantic-color-surface-selected);border-color:var(--klic-semantic-color-accent)}
+.help-links svg{width:16px;height:16px;flex-shrink:0;color:var(--klic-semantic-color-accent)}.help-links svg:last-child{width:12px;margin-left:auto}
+.help-links strong{display:block;font-size:calc(11px * var(--klic-text-scale,1));line-height:1.5}.help-links small{display:block;margin-top:3px;font-size:calc(10px * var(--klic-text-scale,1));line-height:1.6;color:var(--klic-semantic-color-muted)}
+.workspace-help-foot{padding:14px 30px;border-top:1px solid var(--klic-semantic-color-border);display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:calc(10px * var(--klic-text-scale,1));color:var(--klic-semantic-color-muted)}
+.workspace-help-button{font-family:var(--klic-ui-font);font-size:15px;font-weight:650;border:1px solid var(--klic-semantic-color-border);border-radius:50%;width:25px;height:25px}
+.topbar{gap:14px}.breadcrumbs{flex:1;min-width:0;gap:10px}.topbar-status{display:none}.topbar-tools{gap:12px}.search-trigger>span{display:none}.search-trigger kbd{margin-left:0}
+#breadcrumb{display:block;min-width:0;overflow:auto;white-space:nowrap;scrollbar-width:none;font-size:calc(11px * var(--klic-text-scale,1));line-height:1.6}
+#breadcrumb ol{display:flex;align-items:center;gap:0;list-style:none;margin:0;padding:4px 1px;width:max-content;min-width:100%}
+#breadcrumb li{display:flex;align-items:center;flex-shrink:0;gap:8px}#breadcrumb li+li{padding-left:8px}#breadcrumb a{color:var(--klic-semantic-color-muted)}#breadcrumb a:hover{color:var(--klic-semantic-color-accent);text-decoration:underline;text-underline-offset:3px}#breadcrumb [aria-current=page]{color:var(--klic-semantic-color-text);font-weight:600}.breadcrumb-separator{color:var(--klic-semantic-color-muted);opacity:.5;font-size:10px}
+:root[data-narrow=true] #breadcrumb{text-overflow:clip;overflow:auto}
+@media(max-width:720px){.workspace-help-body{grid-template-columns:minmax(0,1fr);gap:25px}.workspace-help-head,.workspace-help-body{padding:22px}.workspace-help-foot{padding:14px 22px}.workspace-help-head h2{font-size:20px}.breadcrumbs>.breadcrumb-icon,.breadcrumbs>.crumb-divider{display:none}.topbar .topbar-tools{gap:5px}.topbar{gap:8px}.breadcrumbs{gap:6px}#breadcrumb{font-size:10px}#breadcrumb li+li{padding-left:6px}#breadcrumb li{gap:6px}}
+:root[data-narrow=true] .workspace-help-body{grid-template-columns:minmax(0,1fr)}
+/* Native Alert Dialog example uses the same 1.5× surface policy (400 → 600 px). */
+dialog.x-confirm{width:min(600px,calc(100vw / var(--klic-ui-scale,1) - 36px));max-width:calc(100vw / var(--klic-ui-scale,1) - 36px);max-height:calc(100dvh / var(--klic-ui-scale,1) - 36px)}
+#breadcrumb a{max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:720px){#breadcrumb a{max-width:125px}}
+/* Equal line boxes keep ancestors, separators and current location on one axis. */
+.breadcrumbs{align-items:center;min-width:0}#breadcrumb{flex:1;min-width:0}#breadcrumb ol{display:flex;flex-wrap:nowrap;align-items:center;padding-block:0;min-height:28px}#breadcrumb li{display:inline-flex;align-items:center;min-height:28px;line-height:20px}#breadcrumb li>a,#breadcrumb li>[aria-current=page],#breadcrumb .breadcrumb-separator{display:inline-flex;align-items:center;min-height:28px;line-height:20px;margin:0;padding-block:0;white-space:nowrap}#breadcrumb li>a{max-width:180px}#breadcrumb .breadcrumb-separator{flex:0 0 auto;justify-content:center;font-size:11px}.breadcrumbs>.crumb-divider{display:inline-flex;align-items:center;min-height:28px;line-height:20px}.breadcrumbs>.breadcrumb-icon{align-self:center;height:16px!important;width:16px!important;flex:none}
+@media(max-width:720px){#breadcrumb li>a{max-width:125px}.breadcrumbs>.crumb-divider{display:none}}
+
+/* Preserve every breadcrumb when browser text is enlarged. */
+.topbar{height:auto;min-height:73px;padding-block:8px;flex-wrap:wrap}
+.breadcrumbs{flex:1 1 12rem;overflow:visible}
+#breadcrumb,:root[data-narrow=true] #breadcrumb{overflow:visible;white-space:normal}
+#breadcrumb ol{width:auto;min-width:0;flex-wrap:wrap}
+#breadcrumb li,#breadcrumb li>a,#breadcrumb li>[aria-current=page]{white-space:normal;line-height:1.4}
+#breadcrumb li{max-width:100%}
+#breadcrumb li>a{max-width:none;overflow:visible;overflow-wrap:anywhere}
+.workspace-help-button{width:max(25px,2em);height:max(25px,2em)}
+@media(max-width:720px){.topbar{min-height:64px}}

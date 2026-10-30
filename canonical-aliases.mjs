@@ -1,0 +1,2 @@
+// Generated canonical alias map; original IDs remain supported.
+export const BLOCK_CANONICAL_ALIASES={"trial-flow":"funnel-flow","b2b-deals-flow":"funnel-flow","arr-growth-slope":"error-budget-slope","api-health-radial":"cash-inflows-radial","uptime-sla-tracker":"cron-run-history-tracker","incident-health-bars":"cron-run-history-tracker","revenue-breakdown-bar":"capital-inflows-bar","headcount-cost-bar":"capital-inflows-bar","competitor-feature-radar":"cash-inflows-radial","team-velocity-polar":"cash-inflows-radial"};

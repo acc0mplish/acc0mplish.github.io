@@ -1,0 +1,14 @@
+.klic-brand-mark,.ka-logo>.klic-brand-mark,.admin-logo>.klic-brand-mark,.discovery-logo>.klic-brand-mark{display:inline-grid;grid-template-columns:1fr;align-items:center;flex:none;width:94px;height:71px;padding:0;margin:0;border:0;line-height:0;letter-spacing:normal;vertical-align:middle}
+.klic-brand-mark>img{grid-area:1/1;display:block;width:100%;height:100%;object-fit:contain;max-width:none}
+.klic-brand-mark>.klic-logo-dark{display:none}
+[data-theme="dark"] .klic-brand-mark:not([data-logo-surface="light"])>.klic-logo-light,.klic-brand-mark[data-logo-surface="dark"]>.klic-logo-light{display:none}
+[data-theme="dark"] .klic-brand-mark:not([data-logo-surface="light"])>.klic-logo-dark,.klic-brand-mark[data-logo-surface="dark"]>.klic-logo-dark{display:block}
+.brand:has(.klic-brand-mark){gap:12px;padding-top:0;padding-bottom:18px}.brand>.klic-brand-mark{width:100px;height:76px}.brand .brand-caption{margin-left:0}
+.ka-logo:has(.klic-brand-mark){gap:0;letter-spacing:normal}.ka-logo small{margin-left:15px;padding-left:15px}
+.ka-footer .klic-brand-mark,.page-footer .klic-brand-mark{width:76px;height:58px}
+.discovery-logo:has(.klic-brand-mark){display:flex;align-items:center;gap:14px;letter-spacing:normal}.discovery-logo>.brand-descriptor{font-size:8px;line-height:1.8;letter-spacing:1.4px}
+.admin-logo>.brand-descriptor{padding-left:14px}.admin-logo>.klic-brand-mark{width:76px;height:58px}
+@media(max-width:650px){.ka-header .klic-brand-mark,.discovery-logo>.klic-brand-mark{width:76px;height:57px}.admin-logo>.klic-brand-mark{display:inline-grid;width:66px;height:50px}.discovery-logo>.brand-descriptor{display:none}.brand>.klic-brand-mark{width:94px;height:71px}}
+
+.sidebar .brand-simple{font-size:19px;font-weight:650;letter-spacing:-.6px;line-height:1.2;white-space:normal;overflow-wrap:anywhere;padding:22px 18px 24px;min-height:0;height:auto;color:var(--klic-semantic-color-text)}
+.ka-header .klic-brand-mark{width:60px;height:46px}.ka-header.ka-header{min-height:76px;height:auto}.ka-logo small{font-size:9px}

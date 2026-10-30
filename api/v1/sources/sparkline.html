@@ -1,0 +1,35 @@
+<!-- KLIC 사이트의 HTML 데모: Sparkline -->
+<!-- 전체 데모는 브라우저의 native API와 app.js를 사용합니다. -->
+<div class="x-demo xc-sparkline" data-klic-component="sparkline">
+<svg class="x-line-chart" viewBox="0 0 260 100" role="img" aria-label="주간 작업 추세: 42, 68, 51, 86, 72, 94건">
+<path class="x-chart-grid" d="M10 25H250M10 50H250M10 75H250"/>
+<path class="x-chart-area" d="M10 75L58 49L106 66L154 31L202 45L250 23V90H10Z"/>
+<path class="x-chart-line" d="M10 75L58 49L106 66L154 31L202 45L250 23"/>
+</svg>
+<p class="x-hint">주간 완료 42 → 94건 · 증가 추세</p>
+</div>
+
+<style>
+/* 기준 프로필 A의 높이: 2rem (root 16px일 때 32px) */
+:root {
+  --klic-component-button-size-default-height: 2rem;
+  --klic-component-input-size-default-height: 2rem;
+  --klic-semantic-color-accent: #245fc2;
+}
+.btn {
+  min-height: var(--klic-component-button-size-default-height);
+  padding: .35rem .7rem;
+  border-radius: .3125rem;
+  border: 1px solid transparent;
+  background: var(--klic-semantic-color-accent);
+  color: white;
+  font: inherit;
+}
+</style>
+
+<!-- 완전한 스타일: ./styles.css + ./brand.css
+     확장 컴포넌트: ./component-expansion.mjs + ./component-expansion.css
+     확장 동작: ./component-interactions.mjs의 initComponentInteractions()
+     아이콘: ./lucide.min.js (ISC)
+     상호작용: ./app.js
+     이 코드는 별도 npm 패키지가 아닌 이 사이트의 예제입니다. -->

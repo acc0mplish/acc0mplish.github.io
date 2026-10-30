@@ -1,0 +1,24 @@
+# KLIC block source reference
+
+이 디렉터리에는 사용자 제공 remix-component-library-&-ui-block-studio.zip ZIP에서 가져와 KLIC 사이트에 맞춘 실제 프로젝트 소스가 들어 있습니다. 현재 block-runtime/src의 TS·TSX·CSS 파일을 경로와 바이트 그대로 내보냅니다. 테스트·비공개 파일은 포함하지 않습니다.
+
+## 출처와 동작 범위
+
+- components/adopted/*: Affect UI Classic, Copyright (c) 2026 Florian Höller (adfects). MIT. 전체 고지는 각 파일에 보존되어 있습니다.
+
+- components/charts/bjork의 차트와 공용 도구는 Björk UI의 공개 MIT 소스를 KLIC에 맞춰 적용했습니다. Copyright (c) 2026 Isaiah Bjork. 전체 MIT 고지는 각 소스 파일에 포함되어 있습니다. 출처: https://github.com/isaiahbjork/ui 및 https://ui.isaiahbjork.com/ .
+- 이 차트의 원본 렌더링·툴팁·브러시·키보드 동작을 보존하며 KLIC의 토큰·테마·표면 어댑터를 적용했습니다. framer-motion은 package.json에 고정한 실제 런타임 의존성입니다.
+
+- 원본 ZIP SHA-256: 90dd1e8e9b4e9c2f5b391fd7e885ed0d003f28239d7908fb09de2dfd9ab95405
+- 파일별 bytes와 SHA-256은 manifest.json에서 확인할 수 있습니다. 이 값은 내보낸 스냅샷의 동일성을 확인하기 위한 정보입니다.
+- KLIC 변경에는 회사 블루, Primitive → Brand → Semantic → Component 토큰 연결, 테마·material·폰트·밀도 문맥과 미리보기 통합이 포함됩니다.
+- 예제는 로컬 샘플·mock 상태로 동작합니다. 실제 서버 저장, 결제, 인증 또는 외부 서비스 연동의 완료를 의미하지 않습니다. 재사용 시 각 동작과 데이터 연결을 별도로 구현하고 확인해야 합니다.
+- 원본 파일의 라이선스와 출처 헤더는 그대로 보존합니다. 카탈로그의 여러 항목이 같은 구현 모듈을 공유할 수 있습니다.
+
+## 프로젝트에서 읽기
+
+파일 경로는 block-runtime/src를 기준으로 합니다. components/blocks의 파일 외에도 main.tsx, BlockApp.tsx, index.css, data, types, utils 및 공용 컴포넌트를 함께 제공합니다. 각 상대 import는 원래 프로젝트 구조에 의존합니다. 파일 하나를 복사해도 필요한 모듈과 스타일이 자동 설치되지는 않습니다.
+
+main.tsx의 ../../dist/tokens.mjs, ../../dist/materials.mjs와 ../../dist/preferences.mjs는 기존 KLIC 프로젝트의 토큰·설정 엔진을 참조합니다. PersonAvatar.tsx의 ../../public/portraits/registry.mjs는 배포 사이트 /block-runtime/portraits/registry.mjs에서, 생성 프로필 원본은 같은 portraits 폴더에서 확인할 수 있습니다. 배포 사이트의 /tokens.mjs에서 해당 파일을 확인할 수 있습니다. CSS가 참조하는 폰트·이미지·정적 자산과 package.json의 React·React DOM·Lucide·Vite·Tailwind 등 실제 프로젝트 의존성도 함께 필요합니다. 통합 klic-design 패키지의 blocks/* 경로는 React 실행 예제를 제공하며, 이 참고 소스 스냅샷과 CLI plan/add 경로도 유지합니다.
+
+블록 뷰어는 ./block-sources/<sourceFile>을 읽습니다. 내보낸 코드는 원본 구조를 보존하는 참고 소스이며, 이 정적 디렉터리 자체를 브라우저 실행 entry로 사용하는 구성은 아닙니다. 실제 미리보기는 프로젝트의 Vite 빌드 결과를 사용합니다.

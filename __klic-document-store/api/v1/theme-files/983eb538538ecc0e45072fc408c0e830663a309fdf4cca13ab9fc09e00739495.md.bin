@@ -1,0 +1,40 @@
+# Integrations theme kit
+
+Selected profile: studio. Material: glass. Mode: dark.
+
+## Use in a website
+
+Serve this folder with your existing static server and open index.html for the working example. Include theme.css, then apply the theme to the document or a nested element:
+
+```html
+<link rel="stylesheet" href="./theme.css">
+<script type="module">
+  import {applyTheme} from './apply-theme.mjs';
+  const theme = applyTheme(document.documentElement);
+  theme.update({mode:'dark'});
+  theme.update({material:'glass'});
+  // Call theme.destroy() when the boundary is removed to clean up its OS listener.
+</script>
+```
+
+The module uses native ES modules and CSS custom properties. It has no package installation, framework, icon, chart, server API, or network dependency. getThemeContext(preferences, prefersDark) resolves a context without a DOM. Preferences accept colorTheme / brandProfile / theme and the convenient id / profile / mode aliases.
+
+For CSS only, set data-klic-theme="integrations", data-brand-profile="studio", and data-material="glass" on a boundary. Set data-theme="light" or "dark" for an explicit mode; omit data-theme for the operating system preference. Runtime application writes the actual resolved light/dark value to data-theme while keeping system in controller.context.preferences.theme.
+
+Use the optional klic-theme, klic-theme-card, klic-theme-heading, klic-theme-muted, klic-theme-button, and klic-theme-input classes. Existing application buttons and inputs are styled only when you add a helper class. Add data-klic-surface="card", "chrome", "overlay", "field", "dense", or "control" to opt into material effects. All four materials remain available through data-material or theme.update(). Native CSS @scope prevents effects from crossing nested material boundaries; unsupported browsers keep the base opaque surface. Reduced transparency, forced colors, and browsers without backdrop filters receive readable fallbacks.
+
+Each CSS file contains this palette/profile in light and dark. Nested boundaries get their own complete resolved color variables. For CSS-only manual boundaries using another palette/profile, include its generated theme.css as well. The JavaScript runtime already includes the canonical palette/profile engine, so theme.update({id:'paper',profile:'data'}) resolves another selection without an additional stylesheet. Keep semantic.material variables at the boundary: component.surface aliases are intentionally owned by the material selector so material switching remains live.
+
+## Token graph
+
+tokens.light.json and tokens.dark.json contain flat, typed DTCG leaves with the original klic paths. Every Component token and every Semantic material token is retained together with its transitive alias dependencies. Unused Primitive inventory is excluded from delivery; the canonical graph remains complete in the engine. theme.config.json records both the full inventory counts and the smaller exported counts. Aliases still traverse Component → Semantic → Brand → Primitive.
+
+KLIC action, selected navigation, focus, and successful results remain blue. Palette secondary colors support classification; warning stays amber and danger stays red.
+
+## Fonts
+
+All 21 registered font files are included locally. CSS declares only the weights present in each bundled file; the browser may synthesize a requested weight when no matching file is bundled. See fonts/FONT-NOTICES.md for per-file sources, license notices and checksums.
+
+## Shared design criteria
+License index: https://design.klic.co.kr/licenses/README.md; preserve bundled font and per-file notices.
+Read DESIGN-GUIDE.md and KLIC-DESIGN-SYSTEM.json before implementation. The guide covers implementation responsibilities, preset boundaries and conflict resolution. Compare policy revisions before implementation.

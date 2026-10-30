@@ -1,0 +1,808 @@
+{
+  "version": 1,
+  "description": "AI-generated fictional adult demo characters. Stable by canonical name, never by a reused legacy photo URL.",
+  "grid": {
+    "columns": 6,
+    "rows": 6,
+    "width": 1254,
+    "height": 1254
+  },
+  "aliases": {
+    "한소희": "한소윤",
+    "강동원": "강도원",
+    "박서준": "박선준",
+    "문채원": "문채린",
+    "서강준": "서강윤",
+    "정우성": "정우진",
+    "권지용": "권지훈",
+    "유재석": "유진석",
+    "김태리": "김태린",
+    "박보검": "박보현",
+    "손예진": "손예원",
+    "현빈": "현민",
+    "아이유": "이유나",
+    "공유": "공지훈",
+    "박민영": "박민서",
+    "김태형": "김태율",
+    "한지민": "한지우",
+    "윤도현": "윤도원",
+    "김사랑": "김서랑",
+    "신예은": "신예린"
+  },
+  "people": {
+    "강태우": {
+      "atlas": "a",
+      "cell": 0,
+      "row": 0,
+      "column": 0
+    },
+    "박준영": {
+      "atlas": "a",
+      "cell": 2,
+      "row": 0,
+      "column": 2
+    },
+    "이하은": {
+      "atlas": "a",
+      "cell": 1,
+      "row": 0,
+      "column": 1
+    },
+    "한소윤": {
+      "atlas": "a",
+      "cell": 3,
+      "row": 0,
+      "column": 3
+    },
+    "정유진": {
+      "atlas": "a",
+      "cell": 5,
+      "row": 0,
+      "column": 5
+    },
+    "김서연": {
+      "atlas": "a",
+      "cell": 7,
+      "row": 1,
+      "column": 1
+    },
+    "김미라": {
+      "atlas": "a",
+      "cell": 9,
+      "row": 1,
+      "column": 3
+    },
+    "박지훈": {
+      "atlas": "a",
+      "cell": 4,
+      "row": 0,
+      "column": 4
+    },
+    "이서연": {
+      "atlas": "a",
+      "cell": 12,
+      "row": 2,
+      "column": 0
+    },
+    "박지민": {
+      "atlas": "a",
+      "cell": 14,
+      "row": 2,
+      "column": 2
+    },
+    "박수빈": {
+      "atlas": "a",
+      "cell": 16,
+      "row": 2,
+      "column": 4
+    },
+    "임성진": {
+      "atlas": "a",
+      "cell": 6,
+      "row": 1,
+      "column": 0
+    },
+    "박사나": {
+      "atlas": "a",
+      "cell": 19,
+      "row": 3,
+      "column": 1
+    },
+    "최수아": {
+      "atlas": "a",
+      "cell": 21,
+      "row": 3,
+      "column": 3
+    },
+    "이준호": {
+      "atlas": "a",
+      "cell": 8,
+      "row": 1,
+      "column": 2
+    },
+    "오민재": {
+      "atlas": "a",
+      "cell": 10,
+      "row": 1,
+      "column": 4
+    },
+    "윤도원": {
+      "atlas": "a",
+      "cell": 11,
+      "row": 1,
+      "column": 5
+    },
+    "윤서연": {
+      "atlas": "a",
+      "cell": 23,
+      "row": 3,
+      "column": 5
+    },
+    "김도윤": {
+      "atlas": "a",
+      "cell": 13,
+      "row": 2,
+      "column": 1
+    },
+    "오태양": {
+      "atlas": "a",
+      "cell": 15,
+      "row": 2,
+      "column": 3
+    },
+    "정하윤": {
+      "atlas": "a",
+      "cell": 25,
+      "row": 4,
+      "column": 1
+    },
+    "최도윤": {
+      "atlas": "a",
+      "cell": 17,
+      "row": 2,
+      "column": 5
+    },
+    "최수빈": {
+      "atlas": "a",
+      "cell": 27,
+      "row": 4,
+      "column": 3
+    },
+    "강민규": {
+      "atlas": "a",
+      "cell": 18,
+      "row": 3,
+      "column": 0
+    },
+    "송하린": {
+      "atlas": "a",
+      "cell": 28,
+      "row": 4,
+      "column": 4
+    },
+    "이준서": {
+      "atlas": "a",
+      "cell": 20,
+      "row": 3,
+      "column": 2
+    },
+    "조현우": {
+      "atlas": "a",
+      "cell": 22,
+      "row": 3,
+      "column": 4
+    },
+    "강도원": {
+      "atlas": "a",
+      "cell": 24,
+      "row": 4,
+      "column": 0
+    },
+    "노윤아": {
+      "atlas": "a",
+      "cell": 31,
+      "row": 5,
+      "column": 1
+    },
+    "정현우": {
+      "atlas": "a",
+      "cell": 26,
+      "row": 4,
+      "column": 2
+    },
+    "최서연": {
+      "atlas": "a",
+      "cell": 33,
+      "row": 5,
+      "column": 3
+    },
+    "김민수": {
+      "atlas": "a",
+      "cell": 29,
+      "row": 4,
+      "column": 5
+    },
+    "박시은": {
+      "atlas": "a",
+      "cell": 35,
+      "row": 5,
+      "column": 5
+    },
+    "이준혁": {
+      "atlas": "a",
+      "cell": 30,
+      "row": 5,
+      "column": 0
+    },
+    "김도훈": {
+      "atlas": "a",
+      "cell": 32,
+      "row": 5,
+      "column": 2
+    },
+    "김태율": {
+      "atlas": "a",
+      "cell": 34,
+      "row": 5,
+      "column": 4
+    },
+    "김태호": {
+      "atlas": "b",
+      "cell": 0,
+      "row": 0,
+      "column": 0
+    },
+    "문채린": {
+      "atlas": "b",
+      "cell": 1,
+      "row": 0,
+      "column": 1
+    },
+    "박선준": {
+      "atlas": "b",
+      "cell": 2,
+      "row": 0,
+      "column": 2
+    },
+    "서강윤": {
+      "atlas": "b",
+      "cell": 4,
+      "row": 0,
+      "column": 4
+    },
+    "이건우": {
+      "atlas": "b",
+      "cell": 6,
+      "row": 1,
+      "column": 0
+    },
+    "이지은": {
+      "atlas": "b",
+      "cell": 3,
+      "row": 0,
+      "column": 3
+    },
+    "정민규": {
+      "atlas": "b",
+      "cell": 8,
+      "row": 1,
+      "column": 2
+    },
+    "최유나": {
+      "atlas": "b",
+      "cell": 5,
+      "row": 0,
+      "column": 5
+    },
+    "강지훈": {
+      "atlas": "b",
+      "cell": 10,
+      "row": 1,
+      "column": 4
+    },
+    "김지훈": {
+      "atlas": "b",
+      "cell": 12,
+      "row": 2,
+      "column": 0
+    },
+    "박현우": {
+      "atlas": "b",
+      "cell": 14,
+      "row": 2,
+      "column": 2
+    },
+    "배다연": {
+      "atlas": "b",
+      "cell": 7,
+      "row": 1,
+      "column": 1
+    },
+    "윤서아": {
+      "atlas": "b",
+      "cell": 9,
+      "row": 1,
+      "column": 3
+    },
+    "이승우": {
+      "atlas": "b",
+      "cell": 16,
+      "row": 2,
+      "column": 4
+    },
+    "이오성": {
+      "atlas": "b",
+      "cell": 18,
+      "row": 3,
+      "column": 0
+    },
+    "최소연": {
+      "atlas": "b",
+      "cell": 11,
+      "row": 1,
+      "column": 5
+    },
+    "최현우": {
+      "atlas": "b",
+      "cell": 20,
+      "row": 3,
+      "column": 2
+    },
+    "태민호": {
+      "atlas": "b",
+      "cell": 22,
+      "row": 3,
+      "column": 4
+    },
+    "강민석": {
+      "atlas": "b",
+      "cell": 24,
+      "row": 4,
+      "column": 0
+    },
+    "강지석": {
+      "atlas": "b",
+      "cell": 26,
+      "row": 4,
+      "column": 2
+    },
+    "공지훈": {
+      "atlas": "b",
+      "cell": 28,
+      "row": 4,
+      "column": 4
+    },
+    "구보나": {
+      "atlas": "b",
+      "cell": 13,
+      "row": 2,
+      "column": 1
+    },
+    "권지훈": {
+      "atlas": "b",
+      "cell": 30,
+      "row": 5,
+      "column": 0
+    },
+    "권태현": {
+      "atlas": "b",
+      "cell": 32,
+      "row": 5,
+      "column": 2
+    },
+    "김민솔": {
+      "atlas": "b",
+      "cell": 15,
+      "row": 2,
+      "column": 3
+    },
+    "김민준": {
+      "atlas": "b",
+      "cell": 34,
+      "row": 5,
+      "column": 4
+    },
+    "김서랑": {
+      "atlas": "b",
+      "cell": 17,
+      "row": 2,
+      "column": 5
+    },
+    "김소연": {
+      "atlas": "b",
+      "cell": 19,
+      "row": 3,
+      "column": 1
+    },
+    "김수진": {
+      "atlas": "b",
+      "cell": 21,
+      "row": 3,
+      "column": 3
+    },
+    "김아린": {
+      "atlas": "b",
+      "cell": 23,
+      "row": 3,
+      "column": 5
+    },
+    "김태린": {
+      "atlas": "b",
+      "cell": 25,
+      "row": 4,
+      "column": 1
+    },
+    "김태현": {
+      "atlas": "c",
+      "cell": 0,
+      "row": 0,
+      "column": 0
+    },
+    "남궁혁": {
+      "atlas": "c",
+      "cell": 2,
+      "row": 0,
+      "column": 2
+    },
+    "노승현": {
+      "atlas": "c",
+      "cell": 4,
+      "row": 0,
+      "column": 4
+    },
+    "노은비": {
+      "atlas": "b",
+      "cell": 27,
+      "row": 4,
+      "column": 3
+    },
+    "류민재": {
+      "atlas": "c",
+      "cell": 7,
+      "row": 1,
+      "column": 1
+    },
+    "류병헌": {
+      "atlas": "c",
+      "cell": 9,
+      "row": 1,
+      "column": 3
+    },
+    "모하나": {
+      "atlas": "b",
+      "cell": 29,
+      "row": 4,
+      "column": 5
+    },
+    "문다빈": {
+      "atlas": "b",
+      "cell": 31,
+      "row": 5,
+      "column": 1
+    },
+    "문소민": {
+      "atlas": "b",
+      "cell": 33,
+      "row": 5,
+      "column": 3
+    },
+    "문지훈": {
+      "atlas": "c",
+      "cell": 11,
+      "row": 1,
+      "column": 5
+    },
+    "박미라": {
+      "atlas": "b",
+      "cell": 35,
+      "row": 5,
+      "column": 5
+    },
+    "박민서": {
+      "atlas": "c",
+      "cell": 1,
+      "row": 0,
+      "column": 1
+    },
+    "박보현": {
+      "atlas": "c",
+      "cell": 12,
+      "row": 2,
+      "column": 0
+    },
+    "박서연": {
+      "atlas": "c",
+      "cell": 3,
+      "row": 0,
+      "column": 3
+    },
+    "박성민": {
+      "atlas": "c",
+      "cell": 14,
+      "row": 2,
+      "column": 2
+    },
+    "박준혁": {
+      "atlas": "c",
+      "cell": 16,
+      "row": 2,
+      "column": 4
+    },
+    "박태오": {
+      "atlas": "c",
+      "cell": 18,
+      "row": 3,
+      "column": 0
+    },
+    "박태준": {
+      "atlas": "c",
+      "cell": 20,
+      "row": 3,
+      "column": 2
+    },
+    "박하늘": {
+      "atlas": "c",
+      "cell": 5,
+      "row": 0,
+      "column": 5
+    },
+    "배성민": {
+      "atlas": "c",
+      "cell": 22,
+      "row": 3,
+      "column": 4
+    },
+    "배희원": {
+      "atlas": "c",
+      "cell": 6,
+      "row": 1,
+      "column": 0
+    },
+    "백승민": {
+      "atlas": "c",
+      "cell": 25,
+      "row": 4,
+      "column": 1
+    },
+    "백승호": {
+      "atlas": "c",
+      "cell": 27,
+      "row": 4,
+      "column": 3
+    },
+    "서유나": {
+      "atlas": "c",
+      "cell": 8,
+      "row": 1,
+      "column": 2
+    },
+    "손예원": {
+      "atlas": "c",
+      "cell": 10,
+      "row": 1,
+      "column": 4
+    },
+    "송지아": {
+      "atlas": "c",
+      "cell": 13,
+      "row": 2,
+      "column": 1
+    },
+    "신유나": {
+      "atlas": "c",
+      "cell": 15,
+      "row": 2,
+      "column": 3
+    },
+    "안수민": {
+      "atlas": "c",
+      "cell": 17,
+      "row": 2,
+      "column": 5
+    },
+    "안재현": {
+      "atlas": "c",
+      "cell": 29,
+      "row": 4,
+      "column": 5
+    },
+    "안지아": {
+      "atlas": "c",
+      "cell": 19,
+      "row": 3,
+      "column": 1
+    },
+    "오민수": {
+      "atlas": "c",
+      "cell": 30,
+      "row": 5,
+      "column": 0
+    },
+    "오수진": {
+      "atlas": "c",
+      "cell": 21,
+      "row": 3,
+      "column": 3
+    },
+    "오지훈": {
+      "atlas": "c",
+      "cell": 32,
+      "row": 5,
+      "column": 2
+    },
+    "오하은": {
+      "atlas": "c",
+      "cell": 23,
+      "row": 3,
+      "column": 5
+    },
+    "유진석": {
+      "atlas": "c",
+      "cell": 34,
+      "row": 5,
+      "column": 4
+    },
+    "이도윤": {
+      "atlas": "d",
+      "cell": 0,
+      "row": 0,
+      "column": 0
+    },
+    "이소연": {
+      "atlas": "c",
+      "cell": 24,
+      "row": 4,
+      "column": 0
+    },
+    "이유나": {
+      "atlas": "c",
+      "cell": 26,
+      "row": 4,
+      "column": 2
+    },
+    "이지아": {
+      "atlas": "c",
+      "cell": 28,
+      "row": 4,
+      "column": 4
+    },
+    "임재현": {
+      "atlas": "d",
+      "cell": 2,
+      "row": 0,
+      "column": 2
+    },
+    "임태사": {
+      "atlas": "d",
+      "cell": 4,
+      "row": 0,
+      "column": 4
+    },
+    "장소희": {
+      "atlas": "c",
+      "cell": 31,
+      "row": 5,
+      "column": 1
+    },
+    "장하늘": {
+      "atlas": "c",
+      "cell": 33,
+      "row": 5,
+      "column": 3
+    },
+    "정도윤": {
+      "atlas": "d",
+      "cell": 6,
+      "row": 1,
+      "column": 0
+    },
+    "정민호": {
+      "atlas": "d",
+      "cell": 8,
+      "row": 1,
+      "column": 2
+    },
+    "정우진": {
+      "atlas": "d",
+      "cell": 10,
+      "row": 1,
+      "column": 4
+    },
+    "조민석": {
+      "atlas": "d",
+      "cell": 12,
+      "row": 2,
+      "column": 0
+    },
+    "최민지": {
+      "atlas": "c",
+      "cell": 35,
+      "row": 5,
+      "column": 5
+    },
+    "최유리": {
+      "atlas": "d",
+      "cell": 1,
+      "row": 0,
+      "column": 1
+    },
+    "최윤서": {
+      "atlas": "d",
+      "cell": 3,
+      "row": 0,
+      "column": 3
+    },
+    "하민준": {
+      "atlas": "d",
+      "cell": 14,
+      "row": 2,
+      "column": 2
+    },
+    "한나연": {
+      "atlas": "d",
+      "cell": 5,
+      "row": 0,
+      "column": 5
+    },
+    "한도윤": {
+      "atlas": "d",
+      "cell": 16,
+      "row": 2,
+      "column": 4
+    },
+    "한유진": {
+      "atlas": "d",
+      "cell": 7,
+      "row": 1,
+      "column": 1
+    },
+    "한지우": {
+      "atlas": "d",
+      "cell": 9,
+      "row": 1,
+      "column": 3
+    },
+    "한지원": {
+      "atlas": "d",
+      "cell": 11,
+      "row": 1,
+      "column": 5
+    },
+    "한지훈": {
+      "atlas": "d",
+      "cell": 18,
+      "row": 3,
+      "column": 0
+    },
+    "현민": {
+      "atlas": "d",
+      "cell": 20,
+      "row": 3,
+      "column": 2
+    },
+    "홍건우": {
+      "atlas": "d",
+      "cell": 22,
+      "row": 3,
+      "column": 4
+    },
+    "신예린": {
+      "atlas": "d",
+      "cell": 13,
+      "row": 2,
+      "column": 1
+    },
+    "김하늘": {
+      "atlas": "d",
+      "cell": 15,
+      "row": 2,
+      "column": 3
+    },
+    "이지원": {
+      "atlas": "d",
+      "cell": 17,
+      "row": 2,
+      "column": 5
+    }
+  }
+}

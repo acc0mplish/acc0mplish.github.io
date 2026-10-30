@@ -1,0 +1,41 @@
+<!-- KLIC 사이트의 HTML 데모: Donut Chart -->
+<!-- 전체 데모는 브라우저의 native API와 app.js를 사용합니다. -->
+<div class="x-demo xc-donut-chart" data-klic-component="donut-chart">
+<div class="x-donut" role="img" aria-label="디자인 50%, 개발 30%, 기획 20%">
+<strong>100<small>전체 작업</small>
+</strong>
+</div>
+<ul class="x-legend">
+<li>디자인 <b>50%</b>
+</li>
+<li>개발 <b>30%</b>
+</li>
+<li>기획 <b>20%</b>
+</li>
+</ul>
+</div>
+
+<style>
+/* 기준 프로필 A의 높이: 2rem (root 16px일 때 32px) */
+:root {
+  --klic-component-button-size-default-height: 2rem;
+  --klic-component-input-size-default-height: 2rem;
+  --klic-semantic-color-accent: #245fc2;
+}
+.btn {
+  min-height: var(--klic-component-button-size-default-height);
+  padding: .35rem .7rem;
+  border-radius: .3125rem;
+  border: 1px solid transparent;
+  background: var(--klic-semantic-color-accent);
+  color: white;
+  font: inherit;
+}
+</style>
+
+<!-- 완전한 스타일: ./styles.css + ./brand.css
+     확장 컴포넌트: ./component-expansion.mjs + ./component-expansion.css
+     확장 동작: ./component-interactions.mjs의 initComponentInteractions()
+     아이콘: ./lucide.min.js (ISC)
+     상호작용: ./app.js
+     이 코드는 별도 npm 패키지가 아닌 이 사이트의 예제입니다. -->

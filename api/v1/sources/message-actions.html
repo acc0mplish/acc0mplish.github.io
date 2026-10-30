@@ -1,0 +1,57 @@
+<!-- KLIC 사이트의 HTML 데모: Message Actions -->
+<!-- 전체 데모는 브라우저의 native API와 app.js를 사용합니다. -->
+<section class="af-demo af-message-actions" data-af-family="message-actions" data-af-uid="klic-example-message-actions-0" data-af-initial="{&quot;family&quot;:&quot;message-actions&quot;,&quot;form&quot;:0,&quot;title&quot;:&quot;기본 응답&quot;,&quot;versions&quot;:[&quot;접근성 검토가 완료되었습니다. 키보드 탐색과 명확한 레이블을 먼저 확인하세요.&quot;],&quot;version&quot;:0,&quot;vote&quot;:null,&quot;panel&quot;:false,&quot;reason&quot;:null,&quot;feedback&quot;:&quot;&quot;,&quot;sent&quot;:false,&quot;busy&quot;:false,&quot;speaking&quot;:false,&quot;notice&quot;:&quot;&quot;}" aria-label="기본 응답">
+<header class="af-tray-head">
+<span class="af-avatar" aria-hidden="true">K</span>
+<span>KLIC Assistant</span>
+<span class="af-tag">기본 응답</span>
+</header>
+<div class="af-card af-message" data-klic-surface="card">
+<p class="af-message-text" >접근성 검토가 완료되었습니다. 키보드 탐색과 명확한 레이블을 먼저 확인하세요.</p>
+<div class="af-message-bar" role="group" aria-label="응답 동작">
+<button type="button" class="af-btn" data-af-action="copy-message" data-af-value="" >⧉ 복사</button>
+<button type="button" class="af-btn" data-af-action="regenerate" data-af-value="" >↻ 재생성</button>
+<button type="button" class="af-btn" data-af-action="vote" data-af-value="up" aria-pressed="false">좋아요</button>
+<button type="button" class="af-btn" data-af-action="vote" data-af-value="down" aria-pressed="false" aria-expanded="false" aria-controls="af-6b-6c-69-63-2d-65-78-61-6d-70-6c-65-2d-6d-65-73-73-61-67-65-2d-61-63-74-69-6f-6e-73-2d-30-feedback">아쉬워요</button>
+<button type="button" class="af-btn" data-af-action="speech" data-af-value="" aria-pressed="false">◖ 읽어주기</button>
+</div>
+<section class="af-feedback" id="af-6b-6c-69-63-2d-65-78-61-6d-70-6c-65-2d-6d-65-73-73-61-67-65-2d-61-63-74-69-6f-6e-73-2d-30-feedback" hidden aria-label="응답 피드백">
+<div class="af-feedback-head">
+<strong>어떤 점이 아쉬웠나요?</strong>
+<button type="button" class="af-btn" data-af-action="close-feedback" data-af-value="" aria-label="피드백 닫기">닫기</button>
+</div>
+<div class="af-actions">
+<button type="button" class="af-btn" data-af-action="reason" data-af-value="정확하지 않음" aria-pressed="false" >정확하지 않음</button>
+<button type="button" class="af-btn" data-af-action="reason" data-af-value="도움이 안 됨" aria-pressed="false" >도움이 안 됨</button>
+<button type="button" class="af-btn" data-af-action="reason" data-af-value="기타" aria-pressed="false" >기타</button>
+</div>
+<button type="button" class="af-btn" data-af-action="send-feedback" data-af-value="" data-primary disabled>로컬 피드백 기록</button>
+</section>
+</div>
+<p class="af-status" role="status" aria-live="polite">로컬 데모 · 외부 작업 없음</p>
+</section>
+
+<style>
+/* 기준 프로필 A의 높이: 2rem (root 16px일 때 32px) */
+:root {
+  --klic-component-button-size-default-height: 2rem;
+  --klic-component-input-size-default-height: 2rem;
+  --klic-semantic-color-accent: #245fc2;
+}
+.btn {
+  min-height: var(--klic-component-button-size-default-height);
+  padding: .35rem .7rem;
+  border-radius: .3125rem;
+  border: 1px solid transparent;
+  background: var(--klic-semantic-color-accent);
+  color: white;
+  font: inherit;
+}
+</style>
+
+<!-- 완전한 스타일: ./styles.css + ./brand.css
+     확장 컴포넌트: ./component-expansion.mjs + ./component-expansion.css
+     확장 동작: ./component-interactions.mjs의 initComponentInteractions()
+     아이콘: ./lucide.min.js (ISC)
+     상호작용: ./app.js
+     이 코드는 별도 npm 패키지가 아닌 이 사이트의 예제입니다. -->

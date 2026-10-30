@@ -1,0 +1,1 @@
+import{r as d}from"./index-DG-jJ_vk.js";function o(){const[r,n]=d.useState(()=>typeof window<"u"&&window.matchMedia("(prefers-reduced-motion: reduce)").matches);return d.useEffect(()=>{const e=window.matchMedia("(prefers-reduced-motion: reduce)"),t=()=>n(e.matches);return e.addEventListener("change",t),t(),()=>e.removeEventListener("change",t)},[]),r}export{o as u};

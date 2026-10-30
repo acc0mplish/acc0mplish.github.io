@@ -1,0 +1,19 @@
+# KLIC Collapsible
+
+Selected component: collapsible
+
+License index: https://design.klic.co.kr/licenses/README.md (preserve per-file notices).
+
+Read DESIGN.md and KLIC-DESIGN-SYSTEM.json before implementation; their revision matches the API, CLI and MCP policy snapshot.
+
+This standalone workspace includes shared runtime files to preserve relative imports, tokens, styles and license notices. Multiple variants share source modules; it is not a minimal dependency tree.
+
+## Run
+
+Review source and per-file notices, then run bun install, bun run dev to preview, or bun run build to build. These commands are never executed by the KLIC CLI.
+
+## Scope
+
+Interactive sample data only. Connect your application's backend separately. The selected HTML component runs within the supplied library runtime. bun run dev and bun run build generate all component variant HTML source routes from the included renderer via prepare.mjs. React block previews are available on the original site, not in this component workspace.
+
+Reference: https://design.klic.co.kr/#component/collapsible/preview

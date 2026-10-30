@@ -1,0 +1,61 @@
+@import url('./design-guidance.css');
+/* KLIC documentation foundations. These selectors exclude live demo internals. */
+.framework-guide{font-size:calc(16px * var(--klic-text-scale,1));line-height:1.5;color:var(--klic-semantic-color-text);min-width:0}
+.framework-heading{margin:0 0 32px;max-width:76ch}
+.framework-heading .eyebrow{display:block;margin:0 0 12px}
+.framework-heading h2{font-size:clamp(32px,4vw,48px);line-height:1.166667;letter-spacing:-.04em;margin:0 0 16px;font-weight:650}
+.framework-heading .framework-lead{font-size:calc(20px * var(--klic-text-scale,1));line-height:1.5;color:var(--klic-semantic-color-text);margin:0 0 16px;max-width:48ch}
+.framework-guide p{margin:12px 0;color:var(--klic-semantic-color-muted);overflow-wrap:anywhere;max-width:76ch}
+.framework-section{margin:32px 0;padding-top:24px;border-top:1px solid var(--klic-semantic-color-border);min-width:0}
+.framework-section h3{font-size:calc(24px * var(--klic-text-scale,1));line-height:1.333333;margin:0 0 16px;font-weight:600;letter-spacing:-.025em}
+.framework-section h4{font-size:calc(16px * var(--klic-text-scale,1));line-height:1.5;margin:0 0 8px;font-weight:600}
+.framework-dimensions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.framework-dimension{display:flex;align-items:flex-start;gap:16px;padding:24px;background:var(--klic-semantic-color-panel);border:1px solid var(--klic-semantic-color-border);border-radius:16px;min-width:0}
+.framework-number{color:var(--klic-semantic-color-accent);font:500 14px/24px var(--klic-ui-mono);flex-shrink:0}
+.framework-dimension p{font-size:calc(14px * var(--klic-text-scale,1));line-height:1.428572;margin:0}
+.framework-layers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:0 0 16px}
+.framework-layers li{min-width:0;border:1px solid var(--klic-semantic-color-border);border-radius:16px;padding:20px;background:var(--klic-semantic-color-panel)}
+.framework-layers strong,.framework-layers span,.framework-layers code{display:block;overflow-wrap:anywhere}
+.framework-layers strong{font-size:16px;line-height:24px;margin-bottom:4px}.framework-layers span{font-size:14px;line-height:20px;color:var(--klic-semantic-color-muted)}
+.framework-layers code{font:12px/20px var(--klic-ui-mono);color:var(--klic-semantic-color-accent);margin-top:12px}
+.framework-layers p{font-size:14px;line-height:20px;margin:12px 0 0}
+.framework-validation{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+.framework-validation>div{padding:20px;min-width:0;background:var(--klic-ui-soft);border-radius:12px}
+.framework-validation h4{margin:8px 0}.framework-validation small{display:block;font-size:13px;line-height:18px;font-weight:400;color:var(--klic-semantic-color-muted);margin-top:4px}
+.framework-validation p{font-size:14px;line-height:20px;margin:0}
+.framework-checks{margin:0}.framework-checks>div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:20px 0;border-bottom:1px solid var(--klic-semantic-color-border)}
+.framework-checks dt{font-weight:600}.framework-checks dd{margin:0;color:var(--klic-semantic-color-muted);overflow-wrap:anywhere}
+.framework-guide a{color:var(--klic-semantic-color-accent);text-underline-offset:3px}.framework-guide a:hover{text-decoration:underline}.framework-guide a:focus-visible{outline:2px solid var(--klic-semantic-color-accent);outline-offset:3px}
+.framework-references li{margin:10px 0}.framework-references p{font-size:14px;line-height:20px;padding:16px;background:var(--klic-ui-selected);border-radius:12px}
+/* Readable prose without changing controls, charts, or specimens inside demos. */
+.doc-section>p,.doc-prose>p,.integration-doc-content>section>p,.agent-section>p{font-size:calc(16px * var(--klic-text-scale,1));line-height:1.5;max-width:76ch}
+.component-guide>p,.component-guide .component-guide-lead{font-size:calc(16px * var(--klic-text-scale,1));line-height:1.5}
+.component-guide-decisions li,.component-guide-anatomy dd,.component-guide .component-guide-scope,.component-guide-application-notes p{font-size:calc(14px * var(--klic-text-scale,1));line-height:1.428572}
+.component-guide-decisions h3,.component-guide-anatomy dt,.component-guide-application-notes h3{font-size:calc(16px * var(--klic-text-scale,1));line-height:1.5}
+.doc-section>h2,.agent-section>h2{font-size:calc(24px * var(--klic-text-scale,1));line-height:1.333333;letter-spacing:-.025em}
+.doc-section>h3,.agent-section>h3{font-size:calc(18px * var(--klic-text-scale,1));line-height:1.444445}
+.page-description,.page-heading>p,.detail-heading>div>p,.block-detail-heading>div>p{font-size:calc(16px * var(--klic-text-scale,1));line-height:1.5}
+.sidebar :is(.nav-item,.library-item,.library-group>summary,.library-overview){font-size:calc(13px * var(--klic-text-scale,1));line-height:1.384616;min-height:32px}
+.sidebar-resources>summary,.preview-field,.preview-checkbox{font-size:calc(13px * var(--klic-text-scale,1));line-height:1.384616}
+.sidebar :is(button,a,summary),.topbar :is(button,a),.preview-settings :is(button,select,input[type=checkbox]),.framework-guide .text-link{min-height:24px}
+.preview-settings input[type=checkbox]{min-width:24px;margin:0}.preview-settings input[type=range]{min-height:24px}
+.sidebar .icon-button,.topbar .icon-button,.preview-settings .icon-button,.library-fold{min-width:32px;min-height:32px}
+.sidebar :is(button,a,summary,select,input):focus-visible,.topbar :is(button,a,select):focus-visible,.preview-settings :is(button,select,input):focus-visible{outline:2px solid var(--klic-semantic-color-accent);outline-offset:3px}
+.sidebar,.sidebar *{scrollbar-width:none;scrollbar-gutter:auto}
+.sidebar::-webkit-scrollbar,.sidebar *::-webkit-scrollbar{display:none;width:0;height:0}
+.component-guide-decisions>div,.component-guide-anatomy,.agent-columns>div,.integration-principles>div{border-radius:16px}
+.framework-guide :is(code,pre),.agent-section code,.doc-section>p code{overflow-wrap:anywhere}
+@media(max-width:900px){.framework-layers{grid-template-columns:repeat(2,minmax(0,1fr))}.framework-validation{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){
+ .framework-heading h2{font-size:32px;line-height:40px}.framework-heading .framework-lead{font-size:18px;line-height:28px}
+ .framework-dimensions,.framework-validation,.framework-layers{grid-template-columns:minmax(0,1fr)}
+ .framework-dimension{padding:20px;gap:12px}.framework-section{margin-block:24px;padding-top:20px}.framework-section h3{font-size:22px;line-height:30px}
+ .framework-checks>div{grid-template-columns:minmax(0,1fr);gap:8px;padding-block:16px}.framework-checks dt{font-size:16px}
+ .agent-toolbar,.block-detail-actions,.preview-workbench-actions{flex-wrap:wrap;min-width:0}.preview-workbench-head{flex-wrap:wrap}
+ .command-filter-row{flex-wrap:wrap}.command-filter-row>*{min-width:0;max-width:100%}
+ .page-heading-row,.block-detail-heading{flex-wrap:wrap}.page-heading-row>*{min-width:0}
+}
+@media(forced-colors:active){.framework-dimension,.framework-layers li,.framework-validation>div{border:1px solid CanvasText}.framework-number{color:LinkText}}
+
+/* Shared policy identifiers and canonical URLs must wrap in narrow guides. */
+.design-guidance{min-width:0}.design-guidance :is(p,li){overflow-wrap:anywhere}

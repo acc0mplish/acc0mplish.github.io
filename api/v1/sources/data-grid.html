@@ -1,0 +1,89 @@
+<!-- KLIC 사이트의 HTML 데모: Data Grid -->
+<!-- 전체 데모는 브라우저의 native API와 app.js를 사용합니다. -->
+<div class="grid-preview" data-density="default">
+<div class="mini-grid-toolbar">
+<span>팀 프로젝트 <span class="muted">3</span>
+</span>
+<div class="density-toggle" aria-label="표 밀도">
+<button aria-pressed="true" data-action="density" data-density="default">Default</button>
+<button aria-pressed="false" data-action="density" data-density="dense">Dense</button>
+</div>
+</div>
+<div style="overflow:auto">
+<table class="table-preview">
+<caption class="sr-only">밀도를 변경할 수 있는 3행 예시 표</caption>
+<thead>
+<tr>
+<th scope="col">
+<input type="checkbox" class="row-check" data-action="select-rows" aria-label="모든 행 선택">
+</th>
+<th scope="col">이름</th>
+<th scope="col">상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<input class="row-check" type="checkbox" aria-label="김하늘 선택">
+</td>
+<td>
+<span class="person">
+<span class="person-avatar root-person has-photo" role="img" aria-label="김하늘 · 생성한 가상 인물 프로필" title="김하늘" style="background-image:url('./block-runtime/portraits/team-atlas-d.png');background-size:600% 600%;background-position:60% 40%">하늘</span>김하늘</span>
+</td>
+<td>
+<span class="badge ">진행 중</span>
+</td>
+</tr>
+<tr>
+<td>
+<input class="row-check" type="checkbox" aria-label="이지원 선택">
+</td>
+<td>
+<span class="person">
+<span class="person-avatar root-person has-photo" role="img" aria-label="이지원 · 생성한 가상 인물 프로필" title="이지원" style="background-image:url('./block-runtime/portraits/team-atlas-d.png');background-size:600% 600%;background-position:100% 40%">지원</span>이지원</span>
+</td>
+<td>
+<span class="badge amber">검토 중</span>
+</td>
+</tr>
+<tr>
+<td>
+<input class="row-check" type="checkbox" aria-label="박선준 선택">
+</td>
+<td>
+<span class="person">
+<span class="person-avatar root-person has-photo" role="img" aria-label="박선준 · 생성한 가상 인물 프로필" title="박선준" style="background-image:url('./block-runtime/portraits/team-atlas-b.png');background-size:600% 600%;background-position:40% 0%">선준</span>박선준</span>
+</td>
+<td>
+<span class="badge neutral">대기 중</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<style>
+/* 기준 프로필 A의 높이: 2rem (root 16px일 때 32px) */
+:root {
+  --klic-component-button-size-default-height: 2rem;
+  --klic-component-input-size-default-height: 2rem;
+  --klic-semantic-color-accent: #245fc2;
+}
+.btn {
+  min-height: var(--klic-component-button-size-default-height);
+  padding: .35rem .7rem;
+  border-radius: .3125rem;
+  border: 1px solid transparent;
+  background: var(--klic-semantic-color-accent);
+  color: white;
+  font: inherit;
+}
+</style>
+
+<!-- 완전한 스타일: ./styles.css + ./brand.css
+     확장 컴포넌트: ./component-expansion.mjs + ./component-expansion.css
+     확장 동작: ./component-interactions.mjs의 initComponentInteractions()
+     아이콘: ./lucide.min.js (ISC)
+     상호작용: ./app.js
+     이 코드는 별도 npm 패키지가 아닌 이 사이트의 예제입니다. -->

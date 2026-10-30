@@ -1,0 +1,37 @@
+<!-- KLIC 사이트의 HTML 데모: Range Slider -->
+<!-- 전체 데모는 브라우저의 native API와 app.js를 사용합니다. -->
+<div class="x-demo xc-range-slider" data-klic-component="range-slider">
+<fieldset class="x-options">
+<legend>예산 범위 · 만원</legend>
+<label class="x-label" for="klic-example-start">최소 예산</label>
+<input id="klic-example-start" type="range" min="0" max="100" value="20" data-range="start">
+<label class="x-label" for="klic-example-end">최대 예산</label>
+<input id="klic-example-end" type="range" min="0" max="100" value="80" data-range="end">
+<output data-range-result>20 — 80만원</output>
+</fieldset>
+</div>
+
+<style>
+/* 기준 프로필 A의 높이: 2rem (root 16px일 때 32px) */
+:root {
+  --klic-component-button-size-default-height: 2rem;
+  --klic-component-input-size-default-height: 2rem;
+  --klic-semantic-color-accent: #245fc2;
+}
+.btn {
+  min-height: var(--klic-component-button-size-default-height);
+  padding: .35rem .7rem;
+  border-radius: .3125rem;
+  border: 1px solid transparent;
+  background: var(--klic-semantic-color-accent);
+  color: white;
+  font: inherit;
+}
+</style>
+
+<!-- 완전한 스타일: ./styles.css + ./brand.css
+     확장 컴포넌트: ./component-expansion.mjs + ./component-expansion.css
+     확장 동작: ./component-interactions.mjs의 initComponentInteractions()
+     아이콘: ./lucide.min.js (ISC)
+     상호작용: ./app.js
+     이 코드는 별도 npm 패키지가 아닌 이 사이트의 예제입니다. -->

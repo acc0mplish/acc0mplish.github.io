@@ -1,0 +1,42 @@
+<!-- KLIC 사이트의 HTML 데모: Tabs -->
+<!-- 전체 데모는 브라우저의 native API와 app.js를 사용합니다. -->
+<div class="tabs-demo">
+<div class="demo-tabs" role="tablist" aria-label="프로젝트 보기">
+<button class="demo-tab" role="tab" id="klic-example-tab-0" aria-controls="klic-example-panel" aria-selected="true" tabindex="0" data-action="demo-tab" data-index="0">개요</button>
+<button class="demo-tab" role="tab" id="klic-example-tab-1" aria-controls="klic-example-panel" aria-selected="false" tabindex="-1" data-action="demo-tab" data-index="1">활동</button>
+<button class="demo-tab" role="tab" id="klic-example-tab-2" aria-controls="klic-example-panel" aria-selected="false" tabindex="-1" data-action="demo-tab" data-index="2">설정</button>
+</div>
+<div class="tab-demo-panel" id="klic-example-panel" role="tabpanel" aria-labelledby="klic-example-tab-0" tabindex="0">
+<strong>프로젝트 한눈에 보기</strong>
+<p>지금 진행 중인 작업을 확인하세요.</p>
+<div class="tab-line">
+</div>
+<div class="tab-line" style="width:65%">
+</div>
+</div>
+</div>
+
+<style>
+/* 기준 프로필 A의 높이: 2rem (root 16px일 때 32px) */
+:root {
+  --klic-component-button-size-default-height: 2rem;
+  --klic-component-input-size-default-height: 2rem;
+  --klic-semantic-color-accent: #245fc2;
+}
+.btn {
+  min-height: var(--klic-component-button-size-default-height);
+  padding: .35rem .7rem;
+  border-radius: .3125rem;
+  border: 1px solid transparent;
+  background: var(--klic-semantic-color-accent);
+  color: white;
+  font: inherit;
+}
+</style>
+
+<!-- 완전한 스타일: ./styles.css + ./brand.css
+     확장 컴포넌트: ./component-expansion.mjs + ./component-expansion.css
+     확장 동작: ./component-interactions.mjs의 initComponentInteractions()
+     아이콘: ./lucide.min.js (ISC)
+     상호작용: ./app.js
+     이 코드는 별도 npm 패키지가 아닌 이 사이트의 예제입니다. -->

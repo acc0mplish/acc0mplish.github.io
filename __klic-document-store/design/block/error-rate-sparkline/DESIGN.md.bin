@@ -1,0 +1,154 @@
+# 5xx 에러율 파형 DESIGN
+
+항목: block/error-rate-sparkline
+구현: planned
+범위: 설계 적용 지침. 검증 완료 인증이 아닙니다.
+
+## 공통 디자인 기준
+
+기준 리비전: 80cf180090cfaba13597872589dd066fbbdf788bfe6b0e72ca8d2218774c474f
+
+기준 원문: https://design.klic.co.kr/api/v1/design-system.json
+
+API·CLI·MCP·WebMCP의 designSystem과 동봉된 KLIC-DESIGN-SYSTEM.json에서 이 기준과 리비전을 확인합니다. 항목별 계약은 item.design.system으로 연결합니다.
+
+| 디멘션 | 토큰의 책임 | 구조·행동의 책임 |
+| --- | --- | --- |
+| 크기와 비율 | 컨트롤 크기·아이콘·콘텐츠 폭 | min-height·패딩·줄바꿈·실제 hit area는 컴포넌트 recipe와 DOM에서 보장 |
+| 타이포그래피 | 등록 family·역할별 크기·굵기 | 행간·자간·줄바꿈·반응형 조건은 지원 recipe에서 정의; 등록되지 않은 타입을 가정하지 않음 |
+| 색과 대비 | 행동·선택·텍스트·경계·상태의 역할 색 | 레이블·아이콘·상태 속성으로 의미 전달; 합성 표면의 실제 대비는 토큰 밖에서 측정 |
+| 배치와 정렬 | 콘텐츠 최대 폭·패널 폭 등 등록된 공간 역할 | DOM 읽기 순서·배치 전환·스크롤 소유권·Portal 구조 |
+| 간격과 그룹화 | 내부 gap·padding·그룹 사이 간격과 승인 밀도 매핑 | label·fieldset·legend·describedby 등의 관계; 창 폭만으로 밀도를 변경하지 않음 |
+| 표면과 깊이 | 표면색·반경·경계 및 지원 color/dimension 소재 leaf | blur·shadow 합성 recipe·stacking·보조 패널과 모달 구분·불투명 fallback |
+| 상호작용과 피드백 | focus·선택·진행·성공·경고·오류의 시각 역할 | 키보드·focus 이동·비동기 전이·실행 차단·입력 보존·복구 경로 |
+
+Primitive만 literal 소유. Brand→Primitive, Semantic→Brand, Component→Semantic 인접 참조 유지.
+
+토큰 정의, DOM/CSS recipe의 구조 조건, 컴파일된 최종 literal 출력을 구분한다.
+
+모션 레시피는 컴포넌트·블록 설치 항목과 별도 읽기 카탈로그로 유지하되, 브라우저 검색·미리보기·상세 UI는 KLIC Interface Library 홈페이지의 #motion 메뉴에서 제공한다. 읽기 API·CLI·MCP·WebMCP도 같은 카탈로그 스냅샷을 사용한다. NPM 패키지는 홈페이지 배포와 별도 산출물로 관리한다. 현재 발행하는 모션은 KLIC 자체 제작 콘텐츠로 한정한다.
+
+## 프리셋의 허용 범위
+
+Preset은 기존 API의 승인된 설정 조합이며 토큰의 다섯 번째 계층이 아니다.
+
+해당 컴포넌트 API가 실제 지원하는 size·variant·density·layout 등 명시적 allowlist
+
+- label·설명·업무 데이터
+- value·selection·validation·request 상태
+- 이벤트 핸들러·복구 액션·권한
+- 원시 스타일 값·미등록 CSS 변수·임의 토큰 override
+
+컴포넌트 기본값 → 선택한 preset → 허용된 명시적 설정. 업무 데이터·상태·권한은 별도 입력으로 처리한다.
+
+허용 키·enum·조합을 검사하고 모르는 값은 진단한다. 타입 선언과 실제 DOM·동작 검증을 구분한다.
+
+## 충돌 해결 순서
+
+- 정보·조작·접근성을 먼저 보존: 핵심 정보·상태 의미·입력·focus와 조작 경로를 보존한다. 디멘션 번호로 다른 필수 계약을 무효화하지 않는다.
+- 구조와 읽기 순서를 재배치: 줄바꿈·열 전환·행동 묶음·패널 배치를 먼저 조정한다. 의미상 필요한 2차원 영역만 국소 스크롤을 사용한다.
+- 승인 범위에서 간격·표면 조정: 사용자가 선택한 밀도와 글자 배율을 존중하며 승인된 recipe 안에서 여백·장식을 조정한다. 공간 부족만으로 자동 compact나 글자 축소를 적용하지 않는다.
+- 남는 제약과 검증을 기록: 기본값으로 해결되지 않으면 적용 범위·대안·영향·FR/AT·실제 검증을 기록한다. 토큰 계층을 건너뛰거나 검증 실패를 예외 승인으로 덮지 않는다.
+
+sources/checks는 연결 근거이며 통과 인증이 아니다. 제품별 실제 환경 검증 결과는 기존 FR/AT 기록에서 관리한다.
+
+## 적용과 검증
+
+공통 기준과 항목별 DESIGN.md·실제 소스를 먼저 읽습니다. 규칙마다 토큰·DOM·CSS recipe·상태 처리의 책임을 나누고 제품에 필요한 조건을 적용합니다.
+
+기준 본문과 항목 계약의 revision을 비교합니다. release는 레지스트리 배포를 식별하므로 서로 다른 배포의 페이지 결과를 섞지 않습니다.
+
+최신 CLI와 로컬 레지스트리를 사용하고 stdio 세션을 재시작합니다. WebMCP는 페이지를 새로 읽어 등록합니다. source는 원시 코드만 출력합니다. 소스 묶음은 DESIGN.md, 테마 키트는 README.md를 KLIC-DESIGN-SYSTEM.json과 함께 읽습니다.
+
+## 참고 문서의 선택적 채택
+
+외부 문서와 초안은 검토 후보로 취급한다. KLIC의 현재 문제·구현·계약을 확인하고 필요한 규칙만 채택하며, 보류·기각의 이유와 적용 범위를 남긴다.
+
+참고 문서의 제품명·예제 API·출처를 KLIC의 구현 사실로 옮기지 않는다. 채택한 규칙은 실제 토큰·DOM·CSS recipe·상태 처리와 검증 근거에 연결한다.
+
+## 변경 시 함께 확인할 범위
+
+문제 제기는 관련 사용 경로 전체의 변경 영향을 검토하는 출발점이다. 사용자가 언급한 화면이나 도구만 수정하고 완료로 처리하지 않는다.
+
+- 구현 원본·토큰·컴포넌트·타입·스키마
+- DOCS·웹 가이드·개발자 문서·예제
+- MCP·CLI·WebMCP·API의 설명·입력·응답
+- AI 프롬프트·llms.txt·소스와 테마 내보내기
+- 회귀 검사·빌드·운영 배포와 실제 응답
+
+정본을 수정한 뒤 관련 가이드·예제·도구·프롬프트·내보내기를 함께 재생성하고 같은 리비전을 검사한다. 영향을 받지 않는 경로는 이유를 기록하며, 실제 확인한 결과와 남은 미검증 조건을 구분해 보고한다.
+
+## 사용할 때
+- 「5xx 에러율 파형」의 용도: 임계치 초과 구간을 하이라이트하는 인라인 에러 파형
+- 5xx 에러율 파형 · 스파크라인 분류.
+- 제목·지표·단위·기간·범례·시각화·보조 설명을 연결한다. 값 0·null·알 수 없음의 의미를 구분한다.
+
+## 사용하지 말아야 할 때
+- 좁은 화면을 이유로 수치·단위·범례를 생략하거나 폰트를 일괄 축소하지 않습니다.
+- 샘플 데이터·로컬 상호작용을 실제 저장·인증·운영 기능으로 표시하지 않습니다.
+
+## 접근성
+- 조작 가능한 범례·기간 필터에 이름과 상태를 제공한다. hover로만 표시되는 핵심 수치는 포커스 또는 상시 설명·표로도 제공한다.
+- 모든 조작의 이름·보이는 초점·실제 target 경계를 확인한다. reduced-motion에서도 기능에 필요한 상태 안내를 유지한다.
+- 좁은 컨테이너에서는 범례와 해설을 재배치한다. 레이블이 충돌하는 플롯은 명시적 스크롤·간소화 규칙과 원자료 접근 경로를 제공한다.
+- CSS viewport·실제 콘텐츠 컨테이너·사용자 확대·명시적 density를 별개의 시험 조건으로 기록한다.
+
+## 밀도
+- compact: 데이터 비교·반복 행에 사용하며 셀 padding만 줄입니다. 글자 크기와 단위는 유지합니다.
+- normal: 기본 권장 밀도입니다. 읽기 순서와 레이블·컨트롤·피드백 그룹을 유지합니다.
+- relaxed: 설명 중심·프레젠테이션 화면에 사용합니다. 정보 계층을 유지하며 여백을 늘립니다.
+
+## 상태 변이
+- 데이터 생명주기 / 조합 정책: 최초 로딩·실제 0·결측·빈 기간·갱신 중·부분 실패를 구분한다. 단위·기간·데이터 출처를 유지하고 실제 데이터 갱신 여부와 상태 문구를 일치시킨다.
+- 완료·선택 / 조합 정책: 완료·성공은 블루와 체크·명시적 문구로 전달한다. hover가 selected·invalid·focus 의미를 지우지 않도록 한다.
+
+## 빈 상태와 복구
+- loading: 진행 중임을 알리고 중복 요청을 차단합니다. 기존 데이터가 있으면 갱신 중에도 유지합니다.
+- empty: 처음부터 데이터가 없는 상태에는 생성·연결 행동을 제공합니다.
+- filtered: 검색 결과가 없으면 데이터 없음과 구분하고 필터 초기화 행동을 제공합니다.
+- error: 마지막 정상 데이터를 보존하고 실패 영역에 재시도를 제공합니다.
+
+## 토큰 매핑
+| 경로 | CSS 변수 | 기본 A Light 값 | 용도 | Tailwind 예시 |
+| --- | --- | --- | --- | --- |
+| klic.component.block.color.surface | --klic-component-block-color-surface | #fbfcfe | 페이지 표면 | bg-[var(--klic-component-block-color-surface)] |
+| klic.component.block.color.panel | --klic-component-block-color-panel | #ffffff | 컨테이너 표면 | bg-[var(--klic-component-block-color-panel)] |
+| klic.component.block.color.soft | --klic-component-block-color-soft | #f5f7fb | 보조 표면 | bg-[var(--klic-component-block-color-soft)] |
+| klic.component.block.color.selected | --klic-component-block-color-selected | #eaf0fb | 선택 표면 | bg-[var(--klic-component-block-color-selected)] |
+| klic.component.block.color.text | --klic-component-block-color-text | #132c46 | 본문 | text-[var(--klic-component-block-color-text)] |
+| klic.component.block.color.muted | --klic-component-block-color-muted | #52657b | 보조 문구 | text-[var(--klic-component-block-color-muted)] |
+| klic.component.block.color.border | --klic-component-block-color-border | #dfe5ee | 구분 경계 | border-[var(--klic-component-block-color-border)] |
+| klic.component.block.color.control-border | --klic-component-block-color-control-border | #7e8fa7 | 컨트롤 경계 | border-[var(--klic-component-block-color-control-border)] |
+| klic.component.block.color.accent | --klic-component-block-color-accent | #245fc2 | 주요 행동 | text-[var(--klic-component-block-color-accent)] |
+| klic.component.block.color.accent-hover | --klic-component-block-color-accent-hover | #1c4fa4 | 주요 행동 호버 | text-[var(--klic-component-block-color-accent-hover)] |
+| klic.component.block.color.on-accent | --klic-component-block-color-on-accent | #ffffff | 강조 위 문구 | text-[var(--klic-component-block-color-on-accent)] |
+| klic.component.block.color.success | --klic-component-block-color-success | #1c4fa4 | 완료 의미 | text-[var(--klic-component-block-color-success)] |
+| klic.component.block.color.success-surface | --klic-component-block-color-success-surface | #eaf0fb | 완료 표면 | bg-[var(--klic-component-block-color-success-surface)] |
+| klic.component.block.color.warning | --klic-component-block-color-warning | #835600 | 주의 의미 | text-[var(--klic-component-block-color-warning)] |
+| klic.component.block.color.warning-surface | --klic-component-block-color-warning-surface | #fff4dd | 주의 표면 | bg-[var(--klic-component-block-color-warning-surface)] |
+| klic.component.block.color.danger | --klic-component-block-color-danger | #b13c43 | 오류 의미 | text-[var(--klic-component-block-color-danger)] |
+| klic.component.block.color.danger-surface | --klic-component-block-color-danger-surface | #fff0f0 | 오류 표면 | bg-[var(--klic-component-block-color-danger-surface)] |
+| klic.component.block.content.max-width | --klic-component-block-content-max-width | 80rem | 콘텐츠 최대 폭 | max-w-[var(--klic-component-block-content-max-width)] |
+| klic.component.block.section.gap | --klic-component-block-section-gap | 1.5rem | 섹션 간격 | gap-[var(--klic-component-block-section-gap)] |
+| klic.component.block.container.padding | --klic-component-block-container-padding | 1rem | 컨테이너 안쪽 간격 | p-[var(--klic-component-block-container-padding)] |
+| klic.component.block.control.height | --klic-component-block-control-height | 2rem | 컨트롤 최소 높이 | min-h-[var(--klic-component-block-control-height)] |
+| klic.component.block.surface.radius | --klic-component-block-surface-radius | 0.5rem | 표면 반경 | rounded-[var(--klic-component-block-surface-radius)] |
+| klic.component.block.icon.size | --klic-component-block-icon-size | 1rem | 아이콘 크기 | w-[var(--klic-component-block-icon-size)] |
+| klic.component.block.typography.body.font-size | --klic-component-block-typography-body-font-size | 1rem | 본문 크기 | text-[length:var(--klic-component-block-typography-body-font-size)] |
+| klic.component.block.typography.label.font-size | --klic-component-block-typography-label-font-size | 0.75rem | 레이블 크기 | text-[length:var(--klic-component-block-typography-label-font-size)] |
+
+Tailwind에서는 실제 CSS 속성에 맞는 arbitrary value를 선택하세요. 색상 토큰은 text/bg/border 역할을 구분하고 크기 토큰은 min-h/gap/p 등에 연결합니다. 토큰 값의 하드코딩으로 참조를 끊지 않습니다.
+
+## 구현 범위
+- 이 항목은 전용 구현이 연결되지 않은 카탈로그 예시다. 대체 미리보기를 해당 블록의 기능 검증으로 간주하지 않는다.
+- 각 디멘션의 상태는 정책 채택(policy-adopted)이다. 연결된 소스나 토큰이 존재한다는 사실을 실제 동작 검증 완료로 해석하지 않는다.
+- 실제 200% 브라우저 확대·스크린리더·한글 IME·forced-colors·물리 모바일 키보드는 미검증이다. 지원 환경별 결과와 예외 근거를 별도로 기록한다.
+- 미리보기와 예제 코드는 제공 ZIP을 KLIC에 맞추는 구현 범위다. 제품 저장·인증·외부 연동·배포의 완료를 보장하지 않는다.
+
+## 검수
+- 키보드로 주요 행동을 실행합니다.
+- compact·normal·relaxed와 Light/Dark를 각각 확인합니다.
+- 빈 결과·로딩·오류와 긴 한글 콘텐츠를 확인합니다.
+
+## 에이전트 프롬프트
+KLIC 5xx 에러율 파형 (block/error-rate-sparkline)을 사용해 화면을 구성하세요. klic-design 하나로 AI 지침·components/*·blocks/*·CSS/React motions/*·토큰·테마·폰트·CLI를 제공합니다. Bun(bunx --bun) 우선, Node.js/npx 호환. npm 공개 발행 완료. 먼저 https://design.klic.co.kr/api/v1/design-system.json의 공통 기준(revision 80cf180090cfaba13597872589dd066fbbdf788bfe6b0e72ca8d2218774c474f), DESIGN.md와 실제 소스를 읽고, 구현 책임·프리셋 허용 범위·충돌 해결 순서를 적용하세요. 사용 원칙·금지 사항·접근성·밀도·빈 상태·오류 처리를 준수하세요. 토큰은 klic. 4계층 참조를 보존하고 없는 API나 실제 저장 기능을 만들어내지 마세요.

@@ -1,0 +1,26 @@
+{
+  "licenseSources": [
+    {
+      "repository": "keenthemes/reui",
+      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
+      "license": "MIT",
+      "localFile": "dist/licenses/component-variants/reui-MIT.txt",
+      "sha256": "09592ffefa6512b68dd7aa9031bc50d5d39cfcc9da08288f5eb1f9d236baca66"
+    },
+    {
+      "repository": "shadcn-ui/ui",
+      "commit": "481d523374745e77d0cf9c53a4115ab5dd7c8481",
+      "license": "MIT",
+      "localFile": "dist/licenses/component-variants/ui-MIT.txt",
+      "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f"
+    },
+    {
+      "repository": "mui/base-ui",
+      "commit": "c1294abd3c7ab19fa0fb980373af732315b8a5be",
+      "license": "MIT",
+      "localFile": "dist/licenses/component-variants/base-ui-MIT.txt",
+      "sha256": "07fc1b39d69d14bc7d40482a628f47226258eb01265db68ae684944b916beb2a"
+    }
+  ],
+  "usage": "KLIC may adapt public examples; per-variant provenance must distinguish reference/adaptation from direct reuse. No paid ReUI Pro content included."
+}

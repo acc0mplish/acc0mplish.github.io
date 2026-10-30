@@ -1,0 +1,2 @@
+function update(){const en=document.documentElement.lang==='en',values={href:'/admin'+(en?'?lang=en':''),'aria-label':en?'Site administration':'사이트 관리자',title:en?'Site administration':'사이트 관리자'};for(const link of document.querySelectorAll('[data-klic-admin-entry]'))for(const [key,value]of Object.entries(values))if(link.getAttribute(key)!==value)link.setAttribute(key,value);}
+update();document.addEventListener('klic:locale-changed',update);new MutationObserver(update).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});

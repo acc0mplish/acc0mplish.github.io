@@ -1,0 +1,51 @@
+<!-- KLIC 사이트의 HTML 데모: Menubar -->
+<!-- 전체 데모는 브라우저의 native API와 app.js를 사용합니다. -->
+<div class="x-demo xc-menubar" data-klic-component="menubar">
+<div class="x-menu-bar" role="group" aria-label="문서 메뉴">
+<details>
+<summary>파일</summary>
+<div>
+<button type="button" class="btn secondary sm" data-cmp-action="menu-choice" data-name="파일 옵션">파일 옵션 실행</button>
+</div>
+</details>
+<details>
+<summary>편집</summary>
+<div>
+<button type="button" class="btn secondary sm" data-cmp-action="menu-choice" data-name="편집 옵션">편집 옵션 실행</button>
+</div>
+</details>
+<details>
+<summary>보기</summary>
+<div>
+<button type="button" class="btn secondary sm" data-cmp-action="menu-choice" data-name="보기 옵션">보기 옵션 실행</button>
+</div>
+</details>
+</div>
+<p class="x-status" data-cmp-status role="status" aria-live="polite">
+</p>
+</div>
+
+<style>
+/* 기준 프로필 A의 높이: 2rem (root 16px일 때 32px) */
+:root {
+  --klic-component-button-size-default-height: 2rem;
+  --klic-component-input-size-default-height: 2rem;
+  --klic-semantic-color-accent: #245fc2;
+}
+.btn {
+  min-height: var(--klic-component-button-size-default-height);
+  padding: .35rem .7rem;
+  border-radius: .3125rem;
+  border: 1px solid transparent;
+  background: var(--klic-semantic-color-accent);
+  color: white;
+  font: inherit;
+}
+</style>
+
+<!-- 완전한 스타일: ./styles.css + ./brand.css
+     확장 컴포넌트: ./component-expansion.mjs + ./component-expansion.css
+     확장 동작: ./component-interactions.mjs의 initComponentInteractions()
+     아이콘: ./lucide.min.js (ISC)
+     상호작용: ./app.js
+     이 코드는 별도 npm 패키지가 아닌 이 사이트의 예제입니다. -->

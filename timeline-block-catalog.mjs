@@ -1,0 +1,18 @@
+/** Five KLIC timeline forms adapted from the supplied plan/actual interaction reference. */
+export const TIMELINE_BLOCK_EXAMPLES=[
+ {id:'timeline-plan-actual',mode:'plan-actual',title:'계획 대 실적 라이브 타임라인',enTitle:'Live plan vs actual timeline',description:'계획 점선·실적 막대·초과 구간·비용을 같은 시점으로 비교하고, 의존 연결선과 작업 상세를 탐색합니다.',enDescription:'Compare dashed plans, actual bars, overruns and accrued cost at one instant, with dependency links and task details.'},
+ {id:'timeline-execution-waterfall',mode:'execution-waterfall',title:'에이전트 실행 워터폴',enTitle:'Agent execution waterfall',description:'검색·추론·검증의 병렬 실행과 대기 시간을 워터폴로 비교하고 단계별 경과와 비용을 확인합니다.',enDescription:'Compare parallel retrieval, inference and validation spans in a waterfall with elapsed time and accrued cost.'},
+ {id:'timeline-team-swimlane',mode:'team-swimlane',title:'팀 인계 스윔레인 타임라인',enTitle:'Team handoff swimlane timeline',description:'기획·개발·품질 레인에 작업을 배치해 팀 간 선후행 인계와 병렬 작업을 시간 흐름으로 확인합니다.',enDescription:'Place tasks in product, engineering and quality lanes to inspect cross-team dependencies and parallel work.'},
+ {id:'timeline-milestone-delta',mode:'milestone-delta',title:'마일스톤 일정 편차 타임라인',enTitle:'Milestone baseline variance timeline',description:'세로 마일스톤에서 기준 일정·실제 완료·예상 완료를 구분하고 선택 시점의 일정 편차를 비교합니다.',enDescription:'Compare baseline, actual finish and projected finish on a vertical milestone timeline at the selected instant.'},
+ {id:'timeline-release-gates',mode:'release-gates',title:'릴리즈 게이트 타임라인',enTitle:'Release gate timeline',description:'빌드·테스트·보안·승인·카나리·안정화 게이트의 진행률과 계획 대비 경과를 단계형 레일로 확인합니다.',enDescription:'Inspect build, test, security, approval, canary and stabilization gates on a step rail with plan and elapsed progress.'}
+];
+export const TIMELINE_ADOPTION={
+ composition:[['계획·실적·예상 구간, 현재 시점, 작업 상태와 선택 상세를 하나의 시간 스냅샷으로 연결합니다.','Connect plan, actual, projection, current instant, task status and selected details to one time snapshot.']],
+ interaction:[['재생은 명시적으로 시작하고 일시정지·초기화·시점 탐색·배속·반복을 독립적으로 제공합니다. 작업 선택과 호버·포커스 연결 강조를 구분합니다.','Start playback explicitly. Provide pause, reset, scrubbing, speed and loop independently. Separate selection from hover/focus dependency emphasis.']],
+ keyboard:[['시간 슬라이더의 방향키, 재생·초기화·배속·반복 컨트롤과 작업 버튼으로 같은 상태에 접근합니다.','Use time-slider arrow keys, playback/reset/speed/loop controls and task buttons to reach the same states.'],['연결선은 장식용 SVG입니다. 선행 작업 관계는 선택 상세의 이름 있는 버튼으로도 제공합니다.','SVG connectors are decorative. Named predecessor buttons in the selected detail expose the same relationships.']],
+ responsive:[['표·워터폴·스윔레인은 내부 가로 스크롤을 유지합니다. 바깥 페이지, 툴바와 상세는 좁은 폭에 맞춰 재배치합니다.','Tables, waterfalls and swimlanes retain internal horizontal scrolling. Reflow the outer page, toolbar and detail at narrow widths.']],
+ states:[['대기·진행·완료, 재생·일시정지·반복·종료, 선택과 포커스를 구분합니다. 완료 경계에서 경과·비용·완료 수가 함께 바뀝니다.','Distinguish queued/running/complete, playing/paused/looping/ended, selection and focus. At completion boundaries, elapsed time, cost and completion count change together.']],
+ use:[['실행 순서와 계획 대비 지연, 병렬 작업과 인계 원인을 비교할 때 사용합니다.','Use to compare execution order, schedule drift, parallel work and handoff causes.']],
+ avoid:[['샘플 재생과 알려진 실행 일정을 운영 텔레메트리나 실시간 예측으로 표시하지 않습니다.','Do not present sample replay and known execution schedules as production telemetry or real-time prediction.'],['미래 단계의 예상 완료를 실제 완료로 표시하거나 색상만으로 상태를 구분하지 않습니다.','Do not present projected future finishes as actual completion, or distinguish state by color alone.']],
+ limits:[['예제의 비용은 단계 비용에 경과 비율을 곱해 누적하는 시뮬레이션입니다. 실제 청구·배포·승인·외부 API를 실행하지 않습니다.','Example cost is a simulation accruing each task cost by elapsed fraction. No billing, deployment, approval or external API is executed.']]
+};

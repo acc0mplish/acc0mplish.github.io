@@ -1,0 +1,77 @@
+<!-- KLIC 사이트의 HTML 데모: Tool Call Card -->
+<!-- 전체 데모는 브라우저의 native API와 app.js를 사용합니다. -->
+<section class="af-demo af-tool-call-card" data-af-family="tool-call-card" data-af-uid="klic-example-tool-call-card-0" data-af-initial="{&quot;family&quot;:&quot;tool-call-card&quot;,&quot;form&quot;:0,&quot;title&quot;:&quot;검색 결과&quot;,&quot;calls&quot;:[{&quot;name&quot;:&quot;search_documents&quot;,&quot;summary&quot;:&quot;설계 결정 문서 3개 검색&quot;,&quot;status&quot;:&quot;success&quot;,&quot;open&quot;:false,&quot;args&quot;:{&quot;query&quot;:&quot;접근성 가이드&quot;,&quot;limit&quot;:3},&quot;result&quot;:{&quot;matches&quot;:[&quot;키보드 탐색&quot;,&quot;대비 점검&quot;,&quot;스크린 리더&quot;]},&quot;full&quot;:false}],&quot;groupOpen&quot;:true,&quot;notice&quot;:&quot;&quot;}" aria-label="검색 결과">
+<header class="af-tray-head">
+<span class="af-glyph" aria-hidden="true">⌘</span>
+<span>검색 결과</span>
+<span class="af-tag">TOOL TRACE</span>
+</header>
+<div class="af-tool-group" id="af-6b-6c-69-63-2d-65-78-61-6d-70-6c-65-2d-74-6f-6f-6c-2d-63-61-6c-6c-2d-63-61-72-64-2d-30-group" >
+<article class="af-card af-tool" data-klic-surface="card" data-status="success" aria-busy="false">
+<button class="af-tool-head" type="button" data-af-action="tool-toggle" data-af-value="0" aria-expanded="false" aria-controls="af-6b-6c-69-63-2d-65-78-61-6d-70-6c-65-2d-74-6f-6f-6c-2d-63-61-6c-6c-2d-63-61-72-64-2d-30-tool-0">
+<span class="af-tool-icon" aria-hidden="true">⌘</span>
+<span class="af-tool-title">
+<code>search_documents</code>
+<span>설계 결정 문서 3개 검색</span>
+</span>
+<span class="af-tool-state">✓ 0.9초</span>
+<span aria-hidden="true">⌄</span>
+</button>
+<div class="af-tool-body" id="af-6b-6c-69-63-2d-65-78-61-6d-70-6c-65-2d-74-6f-6f-6c-2d-63-61-6c-6c-2d-63-61-72-64-2d-30-tool-0" hidden>
+<section class="af-code" data-klic-surface="dense">
+<header>
+<span>입력 인수</span>
+<button type="button" class="af-btn" data-af-action="copy-code" data-af-value="0:args" >복사</button>
+</header>
+<pre class="" tabindex="0" aria-label="입력 인수 JSON">
+<code>{
+  &quot;query&quot;: &quot;접근성 가이드&quot;,
+  &quot;limit&quot;: 3
+}</code>
+</pre>
+</section>
+<section class="af-code" data-klic-surface="dense">
+<header>
+<span>실행 결과</span>
+<button type="button" class="af-btn" data-af-action="copy-code" data-af-value="0:result" >복사</button>
+</header>
+<pre class="" tabindex="0" aria-label="실행 결과 JSON">
+<code>{
+  &quot;matches&quot;: [
+    &quot;키보드 탐색&quot;,
+    &quot;대비 점검&quot;,
+    &quot;스크린 리더&quot;
+  ]
+}</code>
+</pre>
+</section>
+</div>
+</article>
+</div>
+<p class="af-status" role="status" aria-live="polite">로컬 데모 · 외부 작업 없음</p>
+</section>
+
+<style>
+/* 기준 프로필 A의 높이: 2rem (root 16px일 때 32px) */
+:root {
+  --klic-component-button-size-default-height: 2rem;
+  --klic-component-input-size-default-height: 2rem;
+  --klic-semantic-color-accent: #245fc2;
+}
+.btn {
+  min-height: var(--klic-component-button-size-default-height);
+  padding: .35rem .7rem;
+  border-radius: .3125rem;
+  border: 1px solid transparent;
+  background: var(--klic-semantic-color-accent);
+  color: white;
+  font: inherit;
+}
+</style>
+
+<!-- 완전한 스타일: ./styles.css + ./brand.css
+     확장 컴포넌트: ./component-expansion.mjs + ./component-expansion.css
+     확장 동작: ./component-interactions.mjs의 initComponentInteractions()
+     아이콘: ./lucide.min.js (ISC)
+     상호작용: ./app.js
+     이 코드는 별도 npm 패키지가 아닌 이 사이트의 예제입니다. -->

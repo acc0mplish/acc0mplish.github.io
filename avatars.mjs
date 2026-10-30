@@ -1,0 +1,3 @@
+import {getPortrait,getInitials} from './block-runtime/portraits/registry.mjs';
+const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function renderAvatar(name){const p=getPortrait(name,'./block-runtime/portraits/');return `<span class="person-avatar root-person ${p?'has-photo':''}" role="img" aria-label="${esc(name)}${p?' · 생성한 가상 인물 프로필':''}" title="${esc(name)}" ${p?`style="background-image:url('${p.url}');background-size:${p.backgroundSize};background-position:${p.backgroundPosition}"`:''}>${esc(getInitials(name))}</span>`;}

@@ -1,0 +1,73 @@
+<!-- KLIC 사이트의 HTML 데모: Smart Recommendation -->
+<!-- 전체 데모는 브라우저의 native API와 app.js를 사용합니다. -->
+<section class="af-demo af-smart-recommendation" data-af-family="smart-recommendation" data-af-uid="klic-example-smart-recommendation-0" data-af-initial="{&quot;family&quot;:&quot;smart-recommendation&quot;,&quot;form&quot;:0,&quot;title&quot;:&quot;동기화 방식 추천&quot;,&quot;options&quot;:[[&quot;증분 동기화&quot;,&quot;최근 변경된 항목만 동기화하면 검토 시간을 줄일 수 있습니다.&quot;,3],[&quot;전체 동기화&quot;,&quot;모든 항목을 다시 확인합니다. 최초 설정에 적합합니다.&quot;,2],[&quot;수동 검토&quot;,&quot;항목별로 직접 선택해 동기화합니다.&quot;,1]],&quot;chosen&quot;:0,&quot;accepted&quot;:false,&quot;open&quot;:true,&quot;alternatives&quot;:false,&quot;notice&quot;:&quot;&quot;}" aria-label="동기화 방식 추천">
+<div class="af-card af-rec-card" data-klic-surface="card">
+<h4>
+<button type="button" class="af-rec-head" data-af-action="rec-toggle" aria-expanded="true" aria-controls="af-6b-6c-69-63-2d-65-78-61-6d-70-6c-65-2d-73-6d-61-72-74-2d-72-65-63-6f-6d-6d-65-6e-64-61-74-69-6f-6e-2d-30-reason">
+<span class="af-glyph" aria-hidden="true">✦</span>
+<span>동기화 방식 추천</span>
+<span class="af-tag">추천</span>
+<span aria-hidden="true">⌃</span>
+</button>
+</h4>
+<div class="af-rec-body" id="af-6b-6c-69-63-2d-65-78-61-6d-70-6c-65-2d-73-6d-61-72-74-2d-72-65-63-6f-6d-6d-65-6e-64-61-74-69-6f-6e-2d-30-reason" >
+<h5>증분 동기화</h5>
+<p>최근 변경된 항목만 동기화하면 검토 시간을 줄일 수 있습니다.</p>
+</div>
+</div>
+<footer class="af-rec-foot">
+<span class="af-signal">
+<span class="af-bars" aria-hidden="true">
+<i data-on>
+</i>
+<i data-on>
+</i>
+<i data-on>
+</i>
+</span>높은 신뢰도</span>
+<div class="af-actions">
+<button type="button" class="af-btn" data-af-action="alternatives" data-af-value="" aria-expanded="false" aria-controls="af-6b-6c-69-63-2d-65-78-61-6d-70-6c-65-2d-73-6d-61-72-74-2d-72-65-63-6f-6d-6d-65-6e-64-61-74-69-6f-6e-2d-30-alternatives">대안 보기</button>
+<button type="button" class="af-btn" data-af-action="accept" data-af-value="" data-primary>증분 동기화 수락</button>
+</div>
+</footer>
+<div class="af-alternatives" id="af-6b-6c-69-63-2d-65-78-61-6d-70-6c-65-2d-73-6d-61-72-74-2d-72-65-63-6f-6d-6d-65-6e-64-61-74-69-6f-6e-2d-30-alternatives" hidden role="group" aria-label="추천 대안">
+<button type="button" class="af-btn" data-af-action="choose" data-af-value="0" aria-pressed="true">
+<strong>증분 동기화</strong>
+<span>최근 변경된 항목만 동기화하면 검토 시간을 줄일 수 있습니다.</span>
+</button>
+<button type="button" class="af-btn" data-af-action="choose" data-af-value="1" aria-pressed="false">
+<strong>전체 동기화</strong>
+<span>모든 항목을 다시 확인합니다. 최초 설정에 적합합니다.</span>
+</button>
+<button type="button" class="af-btn" data-af-action="choose" data-af-value="2" aria-pressed="false">
+<strong>수동 검토</strong>
+<span>항목별로 직접 선택해 동기화합니다.</span>
+</button>
+</div>
+<p class="af-status" role="status" aria-live="polite">로컬 데모 · 외부 작업 없음</p>
+</section>
+
+<style>
+/* 기준 프로필 A의 높이: 2rem (root 16px일 때 32px) */
+:root {
+  --klic-component-button-size-default-height: 2rem;
+  --klic-component-input-size-default-height: 2rem;
+  --klic-semantic-color-accent: #245fc2;
+}
+.btn {
+  min-height: var(--klic-component-button-size-default-height);
+  padding: .35rem .7rem;
+  border-radius: .3125rem;
+  border: 1px solid transparent;
+  background: var(--klic-semantic-color-accent);
+  color: white;
+  font: inherit;
+}
+</style>
+
+<!-- 완전한 스타일: ./styles.css + ./brand.css
+     확장 컴포넌트: ./component-expansion.mjs + ./component-expansion.css
+     확장 동작: ./component-interactions.mjs의 initComponentInteractions()
+     아이콘: ./lucide.min.js (ISC)
+     상호작용: ./app.js
+     이 코드는 별도 npm 패키지가 아닌 이 사이트의 예제입니다. -->
