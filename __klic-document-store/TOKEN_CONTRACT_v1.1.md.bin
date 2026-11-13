@@ -110,7 +110,7 @@ Preset은 실제 API의 허용된 설정 조합으로 관리한다. 토큰의 �
 
 ## 7. 상세 FR과 역사적 출처
 
-다음 절은 v1.0의 세부 행동 요구를 보존한다. ReUI 수치·계열 설명은 이관 검토용이며 현재 설치 사실이 아니다. 현행 지원·소유권·출력 결정은 위 §1–§6과 requirements register가 우선한다. 가상화·모바일·Radix 등은 해당 기능 채택 시에만 적용한다.
+다음 절은 v1.0의 세부 행동 요구를 보존한다. 이전 이관용 수치·계열은 현재 지원 범위나 설치 사실을 뜻하지 않는다. 현행 지원·소유권·출력 결정은 위 §1–§6과 requirements register가 우선한다. 가상화·모바일·Radix 등은 해당 기능 채택 시에만 적용한다.
 
 
 ### FR01–FR10 현행 요구사항
@@ -131,7 +131,7 @@ Preset은 실제 API의 허용된 설정 조합으로 관리한다. 토큰의 �
 
 **FR08 실패와 기본값 — 필수 또는 명시한 도입 조건.** §3·§5 미지원 brand/mode·누락·충돌 실패와 결정적 출력.
 
-**FR09 호환 adapter — 필수 또는 명시한 도입 조건.** ReUI를 도입할 소비 앱에서만 단방향 adapter·writer·로드 순서를 고정한다. 현재 ReUI 미설치.
+**FR09 호환 adapter — 필수 또는 명시한 도입 조건.** 외부 UI 런타임을 사용하는 경계에서만 단방향 adapter·writer·로드 순서를 고정한다. Components 기본 카탈로그와 Native HTML 컴포넌트 패키지는 외부 UI 런타임에 의존하지 않는다. 선택형 upstream importer/gallery는 제거했고 MIT 고지만 보존한다.
 
 **FR10 테마와 Portal — 필수 또는 명시한 도입 조건.** §5 전역 Light/Dark·동일 document Portal. nested theme는 별도 도입.
 
@@ -153,57 +153,13 @@ Preset은 실제 API의 허용된 설정 조합으로 관리한다. 토큰의 �
 
 ## 7 크기와 간격의 이관
 
-### ReUI 이관 참고값 — 예시, Site 기본값 아님
+### 이전 이관 수치의 범위
 
-다음은 Nova와 Tailwind 4.3.1 기본 척도를 바탕으로 확인한 이관 기준이다. px 환산은 root 16px 가정이며 실제 설치본의 override를 우선 확인한다. 브랜드의 새 목표 크기와 혼합하지 않는다. [S02][S06]
-
-| 대상 | 원본 값 | 제안 Semantic |
-| --- | --- | --- |
-| Button xs | 1.5rem | `size.action.xs` |
-| Button sm | 1.75rem | `size.action.sm` |
-| Button default | 2rem | `size.action.default` |
-| Button lg | 2.25rem | `size.action.lg` |
-| Input default | 2rem | `size.input.default` |
-| Button default inline padding | 0.625rem | `space.action.inline.default` |
-| Button default gap | 0.375rem | `space.action.content-gap.default` |
-| Card default와 compact 간격 | 1rem과 0.75rem | `space.container.default`와 `.compact` |
-| Field 내부와 FieldGroup 간격 | 0.5rem과 1.25rem | `space.field.internal`과 `.group` |
-| Popover 폭 | 18rem | `size.overlay.popover` |
-| Sidebar desktop과 mobile과 icon 폭 | 16rem과 18rem과 3rem | `size.navigation.*` |
-
-표의 Semantic 축약 표기는 모두 `klic.semantic.` 아래에 둔다. 실제 alias에는 전체 경로를 쓴다.
-
-**FR12 크기와 간격 보존 — 필수.** size, icon 유무, slot 유무에 따른 조건까지 이관한다. 같은 높이를 유지하더라도 padding·gap·icon 크기가 달라지면 차이를 기록한다. 시각 높이와 실제 hit area는 별도로 검증한다.
-
-### 밀도
-
-Data Grid의 default와 dense는 셀 padding과 header 높이의 별도 계약이다. 기본 inline padding은 step 3 대 step 2, body block padding은 step 2 대 step 1.5, header 높이는 h-10 대 h-8이다. [S07]
-
-**FR13 밀도 독립성 — 필수.** 창이 좁아졌다는 이유만으로 dense와 작은 글자를 자동 적용하지 않는다. 명시적 density 변경은 적용 범위, 글자·padding·행 측정·조작 영역의 영향을 설명해야 한다. 수용 기준은 density 변경이 관련 Data Grid에만 반영되고 다른 폼과 내비게이션을 의도치 않게 줄이지 않는 것이다.
-
-## 8 타이포그래피와 리사이즈
-
-### 역할별 계약
-
-**FR14 타이포 역할 명세 — 필수.** 각 역할에 출처와 결정 상태, 기준, 변화 방식, 크기와 구간, family·weight·line-height·letter-spacing, 한글 fallback, 줄바꿈·말줄임, 동반 기하, fallback과 시험 조건을 기록한다. Brand는 재료를 선택하고 Semantic은 역할의 규칙을 정의하며 Component는 실제 컨테이너·높이·overflow에 적용한다.
-
-| 역할 | 기준과 변화 방식 | 기준안 |
-| --- | --- | --- |
-| 본문과 설명 | 폭 변화에 stable | 역할의 rem 크기를 유지하며 줄바꿈과 열 구성을 조정 |
-| Button label | 명시적 size | 원본 variant를 보존. 긴 문구를 위한 다중 행은 별도 recipe |
-| Input과 Textarea | viewport stepped | 원본 `text-base md:text-sm`와 해당 line-height 전환 보존 |
-| Card title | Card size | default 1rem, compact 0.875rem과 원본 행간 규칙 |
-| Dialog title | 별도 역할 | CardTitle과 같은 크기여도 원본 line-height 차이를 유지 |
-| FileType label | fit-to-artwork | 아이콘 컨테이너와 문자 수에 따른 원본 국소 식을 보존 |
-| PageTitle | container fluid 후보 | 아래의 1.5rem에서 1.875rem 후보를 별도 검증 |
-
-Input은 Tailwind 기본값에서 1rem과 unitless 행간 1.5, md 이상에서는 0.875rem과 행간 1.25/0.875의 조합이다. root 16px 가정 시 16/24px에서 14/20px로 바뀐다. CardTitle의 leading-snug와 DialogTitle의 leading-none을 하나의 공통 제목 스타일로 덮어쓰지 않는다. FileType의 국소 fit 규칙은 해당 구현을 기준으로 보존한다. [S02][S06][S12]
-
-**FR15 네 가지 변화 조건 — 필수.** 창의 CSS viewport, 실제 콘텐츠 컨테이너, 사용자 확대, 명시적 density를 각각 명세하고 시험한다. page zoom도 CSS viewport를 바꿀 수 있으므로 코드가 리사이즈의 원인을 항상 구별할 수 있다고 가정하지 않는다. [S10]
+외부 사례를 검토하며 기록한 수치 표는 현재 Site의 설치·지원 설정이 아니므로 공개 계약에서 제외했다. 현행 KLIC 값과 동작은 위 §1–§6 및 구현 계약을 따른다.
 
 ### PageTitle 후보와 계산 — 예시, DOM 계약은 현행 §6 우선
 
-이 후보는 제품 제목에 대한 신규 제안이다. ReUI 공식 규칙이나 제품 승인값이 아니다. CardTitle과 본문에는 자동 전파하지 않는다.
+이 후보는 제품 제목에 대한 신규 제안이다. 공식 규칙이나 제품 승인값이 아니다. CardTitle과 본문에는 자동 전파하지 않는다.
 
 | 항목 | 후보 |
 | --- | --- |
@@ -246,7 +202,7 @@ font-size: clamp(
 
 ### 서로 다른 breakpoint
 
-**FR18 breakpoint 도메인 분리 — 필수.** 같은 md라는 이름만으로 viewport, container, JS hook의 조건을 합치지 않는다. [S06][S08]
+**FR18 breakpoint 도메인 분리 — 필수.** 같은 md라는 이름만으로 viewport, container, JS hook의 조건을 합치지 않는다. [S06]
 
 | 적용 위치 | 기준값과 의미 |
 | --- | --- |
@@ -256,7 +212,7 @@ font-size: clamp(
 
 소비 앱이 CSS md만 64rem으로 바꾸고 기본 글꼴 16px·viewport 900px을 가정하면 JS는 desktop을 선택하지만 CSS desktop 영역은 숨겨질 수 있다. 이는 조건부 정적 반례이며 현재 제품에서 재현한 장애가 아니다.
 
-경계를 바꾸는 경우 CSS query와 JS matchMedia 조건을 같은 확정 입력에서 생성하거나 동기화 계약을 둔다. media-query의 rem을 computed html font-size와 항상 같다고 가정하지 않는다. 일반적인 `@media` 조건 안의 `var()`로 런타임 테마처럼 breakpoint를 바꾸는 설계를 채택하지 않는다. 수용 기준은 경계 직전·직후, 사용자 기본 글꼴 변경, 열린 Sidebar의 전환에서 내용과 조작이 보존되는 것이다. [S05][S08]
+경계를 바꾸는 경우 CSS query와 JS matchMedia 조건을 같은 확정 입력에서 생성하거나 동기화 계약을 둔다. media-query의 rem을 computed html font-size와 항상 같다고 가정하지 않는다. 일반적인 `@media` 조건 안의 `var()`로 런타임 테마처럼 breakpoint를 바꾸는 설계를 채택하지 않는다. 수용 기준은 경계 직전·직후, 사용자 기본 글꼴 변경, 열린 Sidebar의 전환에서 내용과 조작이 보존되는 것이다. [S05]
 
 ### 배치 규칙
 
@@ -266,7 +222,7 @@ font-size: clamp(
 
 ### 가상화 Data Grid
 
-원본 가상 행의 기본 estimateSize는 48이고 overscan은 10이다. 행 측정 ref는 custom measureElement가 있을 때 연결된다. 이 숫자를 모든 제품의 정답이나 전역 행 높이로 채택하지 않는다. 수평 가상화도 원본의 fixed layout과 단일 비그룹 header 조건을 고려하며 모든 table 조합에 지원된다고 가정하지 않는다. [S07]
+원본 가상 행의 기본 estimateSize는 48이고 overscan은 10이다. 행 측정 ref는 custom measureElement가 있을 때 연결된다. 이 숫자를 모든 제품의 정답이나 전역 행 높이로 채택하지 않는다. 수평 가상화도 원본의 fixed layout과 단일 비그룹 header 조건을 고려하며 모든 table 조합에 지원된다고 가정하지 않는다.
 
 **FR20 가상 행의 기하 계약 — 사용 시 필수.** 고정 높이와 가변 높이 모드를 구분하고 초기 추정, 실제 측정, 폰트·줄바꿈·density·열 폭 변경 후 재측정 조건을 정한다. row identity, scroll owner, 선택, 편집 중 셀, focus 복귀와 스크롤 위치 보존 정책을 명세한다. 실측된 셀 높이와 scroll offset은 런타임 데이터로 유지한다.
 
@@ -274,7 +230,7 @@ font-size: clamp(
 
 ## 10 색과 표면과 깊이
 
-**FR21 색 역할과 대비 — 필수.** Light와 Dark의 action·text·surface·border·status 역할을 구분하고 실제 배경과 alpha 합성 결과에서 대비를 검증한다. Neutral 기준의 Light primary는 `oklch(0.205 0 0)`, Dark primary는 `oklch(0.922 0 0)`이다. 사이트 전용 색을 Registry 테마의 정본과 섞지 않는다. [S02]
+**FR21 색 역할과 대비 — 필수.** Light와 Dark의 action·text·surface·border·status 역할을 구분하고 실제 배경과 alpha 합성 결과에서 대비를 검증한다. Neutral 기준의 Light primary는 `oklch(0.205 0 0)`, Dark primary는 `oklch(0.922 0 0)`이다. 사이트 전용 색을 Registry 테마의 정본과 섞지 않는다.
 
 | 검사 | 기준과 주의점 |
 | --- | --- |
@@ -288,7 +244,7 @@ font-size: clamp(
 
 **FR22 표면과 레이어 — 필수.** radius, border, shadow와 z-order를 구분한다. Card, Dialog, Popover, Sheet, Sidebar의 원본 경계·그림자 관계를 보존하고 overlay·sticky·pinned의 stacking context를 확인한다. 숫자가 큰 z-index 하나를 전역 해결책으로 사용하지 않는다.
 
-수용 기준은 중첩 overlay와 pinned 영역이 의미 있는 내용·focus·조작을 가리지 않고, 투명 표면이 뒤의 행 상태나 콘텐츠를 의도치 않게 비추지 않는 것이다. 원본의 dirty·new 행 배경 등 기능 상태는 제품이 그 기능을 쓰는 경우 함께 보존한다. [S07]
+수용 기준은 중첩 overlay와 pinned 영역이 의미 있는 내용·focus·조작을 가리지 않고, 투명 표면이 뒤의 행 상태나 콘텐츠를 의도치 않게 비추지 않는 것이다. 원본의 dirty·new 행 배경 등 기능 상태는 제품이 그 기능을 쓰는 경우 함께 보존한다.
 
 ## 11 상태와 비동기 동작
 
@@ -304,17 +260,17 @@ font-size: clamp(
 | disabled | HTML disabled와 aria-disabled를 구분하고 실제 실행 차단 여부를 구현함 |
 | busy | 진행 표시, 중복 실행 차단 범위, 취소 가능성, 완료·실패 후 label과 focus 복귀를 지정함 |
 
-`aria-disabled` 선언 자체가 이벤트 실행을 막지는 않는다. 원본 Button의 로딩 예시 조합을 기본 컴포넌트의 기존 loading API로 설명하지 않는다. 제품 async wrapper를 추가하면 신규 API와 동작으로 기록한다. [S12][S15]
+`aria-disabled` 선언 자체가 이벤트 실행을 막지는 않는다. 원본 Button의 로딩 예시 조합을 기본 컴포넌트의 기존 loading API로 설명하지 않는다. 제품 async wrapper를 추가하면 신규 API와 동작으로 기록한다. [S15]
 
 ### 비동기 상태
 
 **FR24 데이터와 처리 피드백 — 필수.** 최초 로딩, 실제 빈 데이터, 검색·필터 0건, 기존 데이터의 갱신, 부분 실패, 추가 로드 실패, 저장과 낙관적 변경을 구분한다. 숫자 0, null, 알 수 없음을 같은 빈 문자열로 합치지 않는다.
 
-수용 기준은 상태 전이가 아래의 내용을 보존하는 것이다. 최초 로딩 중 빈 결과 문구가 먼저 깜박이지 않는다. 검색 0건에는 조건 수정 경로가 있다. 부분 실패는 성공한 결과를 유지할 범위를 설명한다. 재시도와 낙관적 실패 복구는 입력·선택·스크롤을 의도에 맞게 보존한다. 성공·실패·진행 안내는 실제 데이터 및 저장 상태와 일치해야 한다. 필요한 상태 안내는 focus를 강제로 옮기지 않고 프로그램적으로 전달하며 반복 알림을 제어한다. 중요한 입력 오류에는 해당 입력과 연결된 원인·수정 경로를 제공하고 사라지는 toast만으로 처리하지 않는다. [S07][S14]
+수용 기준은 상태 전이가 아래의 내용을 보존하는 것이다. 최초 로딩 중 빈 결과 문구가 먼저 깜박이지 않는다. 검색 0건에는 조건 수정 경로가 있다. 부분 실패는 성공한 결과를 유지할 범위를 설명한다. 재시도와 낙관적 실패 복구는 입력·선택·스크롤을 의도에 맞게 보존한다. 성공·실패·진행 안내는 실제 데이터 및 저장 상태와 일치해야 한다. 필요한 상태 안내는 focus를 강제로 옮기지 않고 프로그램적으로 전달하며 반복 알림을 제어한다. 중요한 입력 오류에는 해당 입력과 연결된 원인·수정 경로를 제공하고 사라지는 toast만으로 처리하지 않는다. [S14]
 
 ### 구현 계열의 차이
 
-**FR25 Base UI와 Radix 보존 — 해당 구현 사용 시 필수.** Button의 render와 asChild, Dialog의 Backdrop·Popup과 Overlay·Content, Sheet의 상태 선택자, Popover의 Positioner 구조를 구분한다. 공통화 대상은 역할과 제품 계약이며 DOM/API/lifecycle까지 같다고 가정하지 않는다. [S12]
+**FR25 Base UI와 Radix 보존 — 해당 구현 사용 시 필수.** Button의 render와 asChild, Dialog의 Backdrop·Popup과 Overlay·Content, Sheet의 상태 선택자, Popover의 Positioner 구조를 구분한다. 공통화 대상은 역할과 제품 계약이며 DOM/API/lifecycle까지 같다고 가정하지 않는다.
 
 수용 기준은 사용하는 구현 계열에서 실제 props 전달, 상태 선택자, open·close lifecycle과 Portal 위치가 검증되는 것이다. wrapper가 어느 props를 Positioner에 넘기고 어느 props를 Popup에 넘기는지도 기록한다.
 
@@ -328,9 +284,9 @@ font-size: clamp(
 
 **FR28 hover와 overlay — 사용 시 필수.** hover·focus로 나타난 추가 정보는 적용 예외를 제외하고 닫을 수 있고 포인터로 이동할 수 있으며 필요한 동안 유지되어야 한다. 포인터나 focus를 옮기지 않고 닫을 수 있는 방식, 공개된 내용 위로 포인터 이동, trigger 해제·사용자 닫기·정보 무효화까지의 유지 규칙을 명세한다. 모바일에서는 hover만으로 필요한 정보를 제공하지 않는다. [S13]
 
-**FR29 모바일 공간 — 지원 환경에서 필수.** 소프트 키보드가 열린 입력, safe area, 동적 viewport, 긴 Dialog·Drawer, 중첩 스크롤에서 입력과 확인·취소 조작에 접근할 수 있어야 한다. scroll owner와 scroll lock 복구를 지정한다. 원본의 dvh나 stacking 처리가 모든 모바일 키보드 시나리오를 보장한다고 단정하지 않는다. 주소창 변화, 가로·세로 전환, 키보드가 열린 채 긴 오류 문구가 표시되는 상황을 실제 지원 환경에서 시험한다. 입력뿐 아니라 도움말·오류·닫기·제출에도 접근할 수 있어야 한다. [S12]
+**FR29 모바일 공간 — 지원 환경에서 필수.** 소프트 키보드가 열린 입력, safe area, 동적 viewport, 긴 Dialog·Drawer, 중첩 스크롤에서 입력과 확인·취소 조작에 접근할 수 있어야 한다. scroll owner와 scroll lock 복구를 지정한다. 원본의 dvh나 stacking 처리가 모든 모바일 키보드 시나리오를 보장한다고 단정하지 않는다. 주소창 변화, 가로·세로 전환, 키보드가 열린 채 긴 오류 문구가 표시되는 상황을 실제 지원 환경에서 시험한다. 입력뿐 아니라 도움말·오류·닫기·제출에도 접근할 수 있어야 한다.
 
-**FR30 모션과 강제 색상 — 필수.** reduced-motion에서는 기능에 필요한 피드백과 닫힘 완료를 유지하면서 불필요한 이동·확대 애니메이션을 줄이는 정책을 적용한다. forced-colors에서는 focus·선택·오류와 필요한 경계가 구분되어야 한다. 원본 ColorPicker에는 관련 부분 대응이 있으므로 대응이 전혀 없었다고 서술하지 않는다. 개별 대응이 제품 전체 지원을 증명하지도 않는다. [S12][S17]
+**FR30 모션과 강제 색상 — 필수.** reduced-motion에서는 기능에 필요한 피드백과 닫힘 완료를 유지하면서 불필요한 이동·확대 애니메이션을 줄이는 정책을 적용한다. forced-colors에서는 focus·선택·오류와 필요한 경계가 구분되어야 한다. 원본 ColorPicker에는 관련 부분 대응이 있으므로 대응이 전혀 없었다고 서술하지 않는다. 개별 대응이 제품 전체 지원을 증명하지도 않는다. [S17]
 
 사용 도중 사용자 선호를 바꾸는 경우를 포함하고 CSS 전환뿐 아니라 이동·scale·스크롤·JS 모션의 대체 동작을 확인한다. animation·transition 종료 이벤트가 발생하지 않아도 닫힘 완료·focus 복귀·상태 안내가 멈추지 않아야 한다.
 
@@ -342,24 +298,22 @@ IME 시험에는 한글 조합 중 Enter, Escape, 방향키, Backspace, 붙여�
 
 번역이 필요한 문구는 외부화하고 긴 문구, 복수형이 필요한 locale, 날짜·숫자·시간대, `lang`과 `dir`을 각각 다룬다. RTL 지원 시 logical properties, 아이콘 방향, 키보드 의미와 Portal 방향 문맥을 검증한다. `lang`과 `dir`을 동일한 설정으로 취급하지 않는다. [S18]
 
-**FR32 드래그 대안 — 사용 시 필수.** 키보드 조작과 별도로 drag 없는 click 또는 tap의 단일 포인터 대안을 제공한다. 2.5.7 AA의 essential 예외는 드래그 방식 자체가 본질적인 경우에 한정해 근거를 기록한다. drag·keyboard·click/tap의 결과, 취소·되돌리기·저장 실패와 focus 복귀를 검증한다. 원본 Sortable에 KeyboardSensor가 있다는 것만으로 단일 포인터 대안을 충족했다고 판단하지 않는다. [S12][S13]
+**FR32 드래그 대안 — 사용 시 필수.** 키보드 조작과 별도로 drag 없는 click 또는 tap의 단일 포인터 대안을 제공한다. 2.5.7 AA의 essential 예외는 드래그 방식 자체가 본질적인 경우에 한정해 근거를 기록한다. drag·keyboard·click/tap의 결과, 취소·되돌리기·저장 실패와 focus 복귀를 검증한다. 원본 Sortable에 KeyboardSensor가 있다는 것만으로 단일 포인터 대안을 충족했다고 판단하지 않는다. [S13]
 
 
 ## 증거·이행·재현성
 
 **FR33 증거와 적용 범위 — 필수.** VALIDATION_PLAN_v1.1.md의 상태·출시 등급·최소 표본·승인 규칙과 requirements-v1.1.json을 적용한다. 문서 검토·정적 검사·브라우저 수동 결과를 분리한다.
 
-**FR34 호환과 폐기 — 소비자가 존재할 때 필수.** 구 klic.ref/sys/cmp를 primitive/semantic/component로 이관할 때 Brand 공유 의도를 검토한다. 사용 목록·전후 값·호환 fixture·이행 상태·제거 조건을 남긴다. ReUI의 --primary는 KLIC 구이름과 구분한다. mutable preview Primitive 경로는 v1.1에서 안정된 값별 경로로 교체했다. 외부 소비자가 해당 내부 경로를 직접 사용했다면 재export·diff와 호환 이행을 먼저 검토한다. 공개 npm 패키지 호환을 주장하지 않는다.
+**FR34 호환과 폐기 — 소비자가 존재할 때 필수.** 구 klic.ref/sys/cmp를 primitive/semantic/component로 이관할 때 Brand 공유 의도를 검토한다. 사용 목록·전후 값·호환 fixture·이행 상태·제거 조건을 남긴다. 외부 --primary는 KLIC 구이름과 구분한다. mutable preview Primitive 경로는 v1.1에서 안정된 값별 경로로 교체했다. 외부 소비자가 해당 내부 경로를 직접 사용했다면 재export·diff와 호환 이행을 먼저 검토한다. 공개 npm 패키지 호환을 주장하지 않는다.
 
 **FR35 재현성과 rollback — 필수.** 입력 순서·소스 commit·lockfile·토큰/profile/schema/compiler 버전·선택 context·정본→CSS map·입출력 hash를 제품 빌드 manifest에 남긴다. 같은 입력 재생성과 이전 호환 토큰/adapter/component 조합 복귀를 검사한다. 현재 Git/source SHA와 Sites version은 배포 근거이며 전체 제품 manifest/rollback 시험 완료를 의미하지 않는다. 부분 증거를 구분한다.
 
 ## 부록 C 근거와 참조
 
-ReUI 링크는 지정한 commit에 고정했다. 표준과 해설은 해당 페이지의 적용 범위와 규범 수준을 함께 읽는다. DTCG 2025.10 문서는 Community Group 보고서이며 W3C Recommendation과 구분한다. APG는 구현 지침으로 활용하며 WCAG의 규범 조항으로 소개하지 않는다.
+표준과 해설은 해당 페이지의 적용 범위와 규범 수준을 함께 읽는다. DTCG 2025.10 문서는 Community Group 보고서이며 W3C Recommendation과 구분한다. APG는 구현 지침으로 활용하며 WCAG의 규범 조항으로 소개하지 않는다.
 
-**S01 ReUI 기준과 설치 경계.** [고정 저장소](https://github.com/keenthemes/reui/tree/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a), [package.json](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/package.json), [DEFAULT_CONFIG](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry/config.ts#L173-L189), [Button 예시 배포 정의](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/public/r/styles/base-nova/c-button-1.json).
 
-**S02 ReUI 테마와 Nova.** [Neutral 테마](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry/themes.ts#L5-L77), [Nova 스타일](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry/styles/style-nova.css), [사이트 전용 값](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/styles/default.css#L1-L8).
 
 **S03 DTCG 저장 형식.** [Design Tokens Format Module 2025.10](https://www.designtokens.org/tr/2025.10/format/), [Color Module 2025.10](https://www.designtokens.org/tr/2025.10/color/).
 
@@ -369,9 +323,7 @@ ReUI 링크는 지정한 commit에 고정했다. 표준과 해설은 해당 페�
 
 **S06 Tailwind 기준 척도.** [v4.3.1 theme.css](https://github.com/tailwindlabs/tailwindcss/blob/v4.3.1/packages/tailwindcss/theme.css), [Responsive design 문서](https://tailwindcss.com/docs/responsive-design).
 
-**S07 ReUI Data Grid.** [가상화 기본값과 지원 조건](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/reui/data-grid/data-grid-table-virtual.tsx#L666-L701), [행 측정 연결](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/reui/data-grid/data-grid-table-virtual.tsx#L843-L850), [Grid API와 상태](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/reui/data-grid/data-grid.tsx), [일반 Table과 density](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/reui/data-grid/data-grid-table.tsx).
 
-**S08 Field와 Sidebar 경계.** [Field container](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry/bases/base/ui/field.tsx#L35-L74), [모바일 hook](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry/bases/base/hooks/use-mobile.ts#L3-L14), [Sidebar 분기](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry/bases/base/ui/sidebar.tsx#L182-L233).
 
 **S09 Container 단위.** [CSS Conditional Rules Level 5의 container lengths](https://drafts.csswg.org/css-conditional-5/#container-lengths). 진행 중인 명세의 해당 동작을 참고한다.
 
@@ -379,7 +331,6 @@ ReUI 링크는 지정한 commit에 고정했다. 표준과 해설은 해당 페�
 
 **S11 대비와 의미.** [Contrast Minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html), [Non Text Contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html), [Use of Color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html).
 
-**S12 컴포넌트 구현.** [Base Button](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry/bases/base/ui/button.tsx), [Radix Button](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry/bases/radix/ui/button.tsx), [Dialog](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry/bases/base/ui/dialog.tsx), [Sheet](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry/bases/base/ui/sheet.tsx), [Popover](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry/bases/base/ui/popover.tsx), [Drawer](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry/bases/base/ui/drawer.tsx), [ColorPicker](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/reui/color-picker.tsx), [FileType](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/reui/file-type.tsx), [Sortable](https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/reui/sortable.tsx).
 
 **S13 조작과 focus.** [Target Size Minimum](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html), [Focus Not Obscured Minimum](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html), [Focus Not Obscured Enhanced](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-enhanced.html), [Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html), [Content on Hover or Focus](https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html), [Dragging Movements](https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html).
 
@@ -393,4 +344,4 @@ ReUI 링크는 지정한 commit에 고정했다. 표준과 해설은 해당 페�
 
 **S18 입력과 언어.** [KeyboardEvent isComposing](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/isComposing), [W3C 언어와 텍스트 방향](https://www.w3.org/International/questions/qa-direction-from-language).
 
-**관련 설계 문서.** [KLIC ReUI 기반 7 디멘션 4계층 디자인 시스템 설계](https://chatgpt.com/space/page_1ad1ea0e814c8191a098a7c22e0f852c).
+**관련 설계 문서.** [KLIC 디자인 시스템 PRD v1.1](./KLIC_Design_System_PRD_v1.1.md).

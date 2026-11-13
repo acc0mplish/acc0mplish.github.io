@@ -1,5 +1,5 @@
 {
-  "revision": "00b894618fe1338a",
+  "revision": "d3959b53f5e9fd79",
   "width": 1200,
   "height": 630,
   "representation": "Typographic design summary, not a screenshot",
@@ -210,6 +210,11 @@
       "path": "/og/component/form.png"
     },
     {
+      "id": "ghostty-terminal",
+      "kind": "component",
+      "path": "/og/component/ghostty-terminal.png"
+    },
+    {
       "id": "hover-card",
       "kind": "component",
       "path": "/og/component/hover-card.png"
@@ -263,6 +268,11 @@
       "id": "loading-overlay",
       "kind": "component",
       "path": "/og/component/loading-overlay.png"
+    },
+    {
+      "id": "macos-terminal",
+      "kind": "component",
+      "path": "/og/component/macos-terminal.png"
     },
     {
       "id": "mentions",
@@ -455,6 +465,11 @@
       "path": "/og/component/tag-input.png"
     },
     {
+      "id": "termius-terminal",
+      "kind": "component",
+      "path": "/og/component/termius-terminal.png"
+    },
+    {
       "id": "textarea",
       "kind": "component",
       "path": "/og/component/textarea.png"
@@ -520,9 +535,199 @@
       "path": "/og/component/typography.png"
     },
     {
+      "id": "ubuntu-terminal",
+      "kind": "component",
+      "path": "/og/component/ubuntu-terminal.png"
+    },
+    {
       "id": "watermark",
       "kind": "component",
       "path": "/og/component/watermark.png"
+    },
+    {
+      "id": "powershell-terminal",
+      "kind": "component",
+      "path": "/og/component/powershell-terminal.png"
+    },
+    {
+      "id": "klic-reusable-chart-types",
+      "kind": "block",
+      "path": "/og/block/klic-reusable-chart-types.png"
+    },
+    {
+      "id": "splitter-canvas-drawer",
+      "kind": "block",
+      "path": "/og/block/splitter-canvas-drawer.png"
+    },
+    {
+      "id": "splitter-master-detail",
+      "kind": "block",
+      "path": "/og/block/splitter-master-detail.png"
+    },
+    {
+      "id": "splitter-diff-compare",
+      "kind": "block",
+      "path": "/og/block/splitter-diff-compare.png"
+    },
+    {
+      "id": "splitter-ide-nested",
+      "kind": "block",
+      "path": "/og/block/splitter-ide-nested.png"
+    },
+    {
+      "id": "splitter-code-preview",
+      "kind": "block",
+      "path": "/og/block/splitter-code-preview.png"
+    },
+    {
+      "id": "chart3d-funnel-slab-cascade",
+      "kind": "block",
+      "path": "/og/block/chart3d-funnel-slab-cascade.png"
+    },
+    {
+      "id": "chart3d-cluster-topology-bars",
+      "kind": "block",
+      "path": "/og/block/chart3d-cluster-topology-bars.png"
+    },
+    {
+      "id": "chart3d-cylinder-donut-stack",
+      "kind": "block",
+      "path": "/og/block/chart3d-cylinder-donut-stack.png"
+    },
+    {
+      "id": "chart3d-voxel-hourly-density",
+      "kind": "block",
+      "path": "/og/block/chart3d-voxel-hourly-density.png"
+    },
+    {
+      "id": "chart3d-isometric-latency",
+      "kind": "block",
+      "path": "/og/block/chart3d-isometric-latency.png"
+    },
+    {
+      "id": "file-upload-basketball-hoop",
+      "kind": "block",
+      "path": "/og/block/file-upload-basketball-hoop.png"
+    },
+    {
+      "id": "file-upload-soccer-goal",
+      "kind": "block",
+      "path": "/og/block/file-upload-soccer-goal.png"
+    },
+    {
+      "id": "file-upload-trash-can",
+      "kind": "block",
+      "path": "/og/block/file-upload-trash-can.png"
+    },
+    {
+      "id": "flowmotion-inbound-lead-routing",
+      "kind": "block",
+      "path": "/og/block/flowmotion-inbound-lead-routing.png"
+    },
+    {
+      "id": "flowmotion-realtime-ai-scoring-hub",
+      "kind": "block",
+      "path": "/og/block/flowmotion-realtime-ai-scoring-hub.png"
+    },
+    {
+      "id": "flowmotion-swimlane-etl-funnel",
+      "kind": "block",
+      "path": "/og/block/flowmotion-swimlane-etl-funnel.png"
+    },
+    {
+      "id": "flowmotion-cyclic-agent-ring",
+      "kind": "block",
+      "path": "/og/block/flowmotion-cyclic-agent-ring.png"
+    },
+    {
+      "id": "flowmotion-vertical-region-tree",
+      "kind": "block",
+      "path": "/og/block/flowmotion-vertical-region-tree.png"
+    },
+    {
+      "id": "flowmotion-ppt-chevron-funnel",
+      "kind": "block",
+      "path": "/og/block/flowmotion-ppt-chevron-funnel.png"
+    },
+    {
+      "id": "flowmotion-ppt-sequence-flowchart",
+      "kind": "block",
+      "path": "/og/block/flowmotion-ppt-sequence-flowchart.png"
+    },
+    {
+      "id": "flowmotion-ppt-flywheel-infographic",
+      "kind": "block",
+      "path": "/og/block/flowmotion-ppt-flywheel-infographic.png"
+    },
+    {
+      "id": "flowmotion-ppt-asis-tobe-bridge",
+      "kind": "block",
+      "path": "/og/block/flowmotion-ppt-asis-tobe-bridge.png"
+    },
+    {
+      "id": "flowmotion-ppt-milestone-roadmap",
+      "kind": "block",
+      "path": "/og/block/flowmotion-ppt-milestone-roadmap.png"
+    },
+    {
+      "id": "flowmotion-creative-zigzag-ribbon",
+      "kind": "block",
+      "path": "/og/block/flowmotion-creative-zigzag-ribbon.png"
+    },
+    {
+      "id": "flowmotion-creative-lightbulb-brainstorm",
+      "kind": "block",
+      "path": "/og/block/flowmotion-creative-lightbulb-brainstorm.png"
+    },
+    {
+      "id": "flowmotion-creative-strategy-pyramid",
+      "kind": "block",
+      "path": "/og/block/flowmotion-creative-strategy-pyramid.png"
+    },
+    {
+      "id": "flowmotion-creative-semicircle-radial-fan",
+      "kind": "block",
+      "path": "/og/block/flowmotion-creative-semicircle-radial-fan.png"
+    },
+    {
+      "id": "flowmotion-creative-hexagon-honeycomb",
+      "kind": "block",
+      "path": "/og/block/flowmotion-creative-hexagon-honeycomb.png"
+    },
+    {
+      "id": "flowmotion-cinematic-node-connect",
+      "kind": "block",
+      "path": "/og/block/flowmotion-cinematic-node-connect.png"
+    },
+    {
+      "id": "flowmotion-editorial-mcp-skill-compare",
+      "kind": "block",
+      "path": "/og/block/flowmotion-editorial-mcp-skill-compare.png"
+    },
+    {
+      "id": "flowmotion-it-pms-project",
+      "kind": "block",
+      "path": "/og/block/flowmotion-it-pms-project.png"
+    },
+    {
+      "id": "flowmotion-it-design-system",
+      "kind": "block",
+      "path": "/og/block/flowmotion-it-design-system.png"
+    },
+    {
+      "id": "flowmotion-it-slack-chatops",
+      "kind": "block",
+      "path": "/og/block/flowmotion-it-slack-chatops.png"
+    },
+    {
+      "id": "flowmotion-it-dev-cicd",
+      "kind": "block",
+      "path": "/og/block/flowmotion-it-dev-cicd.png"
+    },
+    {
+      "id": "flowmotion-it-si-integration",
+      "kind": "block",
+      "path": "/og/block/flowmotion-it-si-integration.png"
     },
     {
       "id": "deploy-pipeline",
@@ -1760,16 +1965,6 @@
       "path": "/og/block/capital-inflows-bar.png"
     },
     {
-      "id": "revenue-breakdown-bar",
-      "kind": "block",
-      "path": "/og/block/revenue-breakdown-bar.png"
-    },
-    {
-      "id": "headcount-cost-bar",
-      "kind": "block",
-      "path": "/og/block/headcount-cost-bar.png"
-    },
-    {
       "id": "cohort-retention-bar",
       "kind": "block",
       "path": "/og/block/cohort-retention-bar.png"
@@ -1815,19 +2010,9 @@
       "path": "/og/block/expense-allocation-pie.png"
     },
     {
-      "id": "cloud-provider-share-donut",
-      "kind": "block",
-      "path": "/og/block/cloud-provider-share-donut.png"
-    },
-    {
       "id": "ticket-severity-pie",
       "kind": "block",
       "path": "/og/block/ticket-severity-pie.png"
-    },
-    {
-      "id": "license-seat-utilization-donut",
-      "kind": "block",
-      "path": "/og/block/license-seat-utilization-donut.png"
     },
     {
       "id": "self-serve-funnel",
@@ -1843,16 +2028,6 @@
       "id": "enterprise-poc-funnel",
       "kind": "block",
       "path": "/og/block/enterprise-poc-funnel.png"
-    },
-    {
-      "id": "checkout-drop-funnel",
-      "kind": "block",
-      "path": "/og/block/checkout-drop-funnel.png"
-    },
-    {
-      "id": "activation-milestone-funnel",
-      "kind": "block",
-      "path": "/og/block/activation-milestone-funnel.png"
     },
     {
       "id": "competitor-feature-radar",
@@ -2228,6 +2403,11 @@
       "id": "diagrams",
       "kind": "acquisition",
       "path": "/og/acquisition/diagrams.png"
+    },
+    {
+      "id": "mcp-connect",
+      "kind": "acquisition",
+      "path": "/og/acquisition/mcp-connect.png"
     },
     {
       "id": "about",

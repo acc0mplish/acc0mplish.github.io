@@ -1,0 +1,2 @@
+<!-- KLIC native HTML example. Styles/interactions: component bundle. KLIC example; preserve bundled per-file license notices. -->
+<div data-klic-component="result" class="kn-result"><div data-part="empty"><i data-part="icon" data-lucide="circle-check" aria-hidden="true"></i><strong>변경사항이 반영됐어요.</strong><p>팀이 같은 내용을 확인할 수 있습니다.</p><a href="#components" data-part="link">컴포넌트로 돌아가기 <i data-part="icon" data-lucide="arrow-right" aria-hidden="true"></i></a></div></div>

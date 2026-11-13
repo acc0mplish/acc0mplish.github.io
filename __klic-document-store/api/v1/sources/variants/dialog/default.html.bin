@@ -1,0 +1,2 @@
+<!-- KLIC native HTML example. Styles/interactions: component bundle. KLIC example; preserve bundled per-file license notices. -->
+<div data-klic-component="dialog" class="kn-dialog"><div data-part="dialog-mini-header">프로젝트를 시작할까요?<i data-part="icon" data-lucide="sparkles"></i></div><p>작은 아이디어를 모아<br>새로운 가능성을 만들어보세요.</p><div data-part="dialog-mini-actions"><button data-action="dialog" class="kv-neutral" data-part="btn">미리보기</button><button data-action="dialog" data-part="btn">시작하기 <i data-part="icon" data-lucide="arrow-up-right"></i></button></div></div>

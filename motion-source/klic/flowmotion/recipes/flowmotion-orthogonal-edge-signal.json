@@ -1,0 +1,253 @@
+{
+  "id": "flowmotion-orthogonal-edge-signal",
+  "category": "particles",
+  "title": {
+    "ko": "직교 경로 신호 입자",
+    "en": "Orthogonal Edge Signal"
+  },
+  "summary": {
+    "ko": "실패 분기의 실제 직교 포트 경로를 따라 신호가 이동합니다.",
+    "en": "Moves a signal along the actual orthogonal port path of a failure branch."
+  },
+  "durationMs": 3600,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "inbound-lead-routing"
+    ],
+    "sourceFile": "src/components/FlowCanvas.tsx",
+    "renderer": "FlowCanvas",
+    "effect": "active-edge-particle-progress",
+    "sourceTimeline": {
+      "durationMs": 3600,
+      "description": "Scenario reference-timeout; source step ends at 1,500ms and target step starts at 1,750ms. travelStart=max(0,1500-80)=1420; travelEnd=max(1420+320,1750+220)=1970; particleProgress=(elapsed-travelStart)/(travelEnd-travelStart).",
+      "frames": [
+        {
+          "progress": 0,
+          "elapsedMs": 0,
+          "particleProgress": 0,
+          "x": 104,
+          "y": 135
+        },
+        {
+          "progress": 0.39444444444444443,
+          "elapsedMs": 1420,
+          "particleProgress": 0,
+          "x": 104,
+          "y": 135
+        },
+        {
+          "progress": 0.4708333333333333,
+          "elapsedMs": 1695,
+          "particleProgress": 0.5,
+          "x": 160,
+          "y": 95
+        },
+        {
+          "progress": 0.5472222222222223,
+          "elapsedMs": 1970.0000000000002,
+          "particleProgress": 1,
+          "x": 216,
+          "y": 55
+        },
+        {
+          "progress": 1,
+          "elapsedMs": 3600,
+          "particleProgress": 1,
+          "x": 216,
+          "y": 55
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"엔터프라이즈 분기에서 조회 노드로 이동\"><path class=\"flow\" d=\"M 104 135 L 133.333 135 Q 160 135 160 130.556 L 160 59.444 Q 160 55 186.667 55 L 216 55\"/><circle class=\"packet\" r=\"5\" cx=\"104\" cy=\"135\"/><rect class=\"node-bg\" x=\"38\" y=\"127\" width=\"66\" height=\"34\" rx=\"8\"/><text class=\"label\" x=\"47\" y=\"141\">분기</text><text class=\"small\" x=\"47\" y=\"154\">예</text><rect class=\"node-bg\" x=\"216\" y=\"38\" width=\"66\" height=\"34\" rx=\"8\"/><text class=\"label\" x=\"225\" y=\"52\">조회</text><text class=\"small\" x=\"225\" y=\"65\">시간 초과</text></svg></div>",
+    "duration": 3600,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 0.72,
+    "tracks": [
+      {
+        "selector": ".packet",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "104px",
+            "cy": "135px"
+          },
+          {
+            "offset": 0.39444444444444443,
+            "cx": "104px",
+            "cy": "135px"
+          },
+          {
+            "offset": 0.39921875,
+            "cx": "122.5px",
+            "cy": "135px"
+          },
+          {
+            "offset": 0.40399305555555554,
+            "cx": "141px",
+            "cy": "135px"
+          },
+          {
+            "offset": 0.4087673611111111,
+            "cx": "159.5px",
+            "cy": "135px"
+          },
+          {
+            "offset": 0.41354166666666664,
+            "cx": "160px",
+            "cy": "132px"
+          },
+          {
+            "offset": 0.4183159722222222,
+            "cx": "160px",
+            "cy": "128.917px"
+          },
+          {
+            "offset": 0.4230902777777778,
+            "cx": "160px",
+            "cy": "125.833px"
+          },
+          {
+            "offset": 0.4278645833333333,
+            "cx": "160px",
+            "cy": "122.75px"
+          },
+          {
+            "offset": 0.4326388888888889,
+            "cx": "160px",
+            "cy": "119.667px"
+          },
+          {
+            "offset": 0.43741319444444443,
+            "cx": "160px",
+            "cy": "116.583px"
+          },
+          {
+            "offset": 0.4421875,
+            "cx": "160px",
+            "cy": "113.5px"
+          },
+          {
+            "offset": 0.44696180555555554,
+            "cx": "160px",
+            "cy": "110.417px"
+          },
+          {
+            "offset": 0.4517361111111111,
+            "cx": "160px",
+            "cy": "107.333px"
+          },
+          {
+            "offset": 0.4565104166666667,
+            "cx": "160px",
+            "cy": "104.25px"
+          },
+          {
+            "offset": 0.4612847222222222,
+            "cx": "160px",
+            "cy": "101.167px"
+          },
+          {
+            "offset": 0.4660590277777778,
+            "cx": "160px",
+            "cy": "98.083px"
+          },
+          {
+            "offset": 0.4708333333333333,
+            "cx": "160px",
+            "cy": "95px"
+          },
+          {
+            "offset": 0.4756076388888889,
+            "cx": "160px",
+            "cy": "91.917px"
+          },
+          {
+            "offset": 0.4803819444444445,
+            "cx": "160px",
+            "cy": "88.833px"
+          },
+          {
+            "offset": 0.48515625,
+            "cx": "160px",
+            "cy": "85.75px"
+          },
+          {
+            "offset": 0.4899305555555556,
+            "cx": "160px",
+            "cy": "82.667px"
+          },
+          {
+            "offset": 0.4947048611111111,
+            "cx": "160px",
+            "cy": "79.583px"
+          },
+          {
+            "offset": 0.4994791666666667,
+            "cx": "160px",
+            "cy": "76.5px"
+          },
+          {
+            "offset": 0.5042534722222223,
+            "cx": "160px",
+            "cy": "73.417px"
+          },
+          {
+            "offset": 0.5090277777777779,
+            "cx": "160px",
+            "cy": "70.333px"
+          },
+          {
+            "offset": 0.5138020833333333,
+            "cx": "160px",
+            "cy": "67.25px"
+          },
+          {
+            "offset": 0.5185763888888889,
+            "cx": "160px",
+            "cy": "64.167px"
+          },
+          {
+            "offset": 0.5233506944444445,
+            "cx": "160px",
+            "cy": "61.083px"
+          },
+          {
+            "offset": 0.5281250000000001,
+            "cx": "160px",
+            "cy": "58px"
+          },
+          {
+            "offset": 0.5328993055555555,
+            "cx": "160.5px",
+            "cy": "55px"
+          },
+          {
+            "offset": 0.5376736111111111,
+            "cx": "179px",
+            "cy": "55px"
+          },
+          {
+            "offset": 0.5424479166666667,
+            "cx": "197.5px",
+            "cy": "55px"
+          },
+          {
+            "offset": 0.5472222222222223,
+            "cx": "216px",
+            "cy": "55px"
+          },
+          {
+            "offset": 1,
+            "cx": "216px",
+            "cy": "55px"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

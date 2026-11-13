@@ -1,7 +1,7 @@
 # KLIC 디자인 시스템 PRD v1.1
 
 개정 기준일: 2026-10-25 (Asia/Seoul; 계약 기준). 이후 개정 이력은 이 기준일을 이동하지 않는다. v1.0의 FR01–FR35·AT01–AT26 식별자를 유지한다.
-개정 이력: 2026-10-31 모션 레시피와 klic-design npm 배포를 현재 구현 범위에 반영했다. 식별자·등급 체계·토큰 계약은 불변이다.
+개정 이력: 2026-10-31 모션 레시피와 klic-design npm 배포를 현재 구현 범위에 반영했다. 2026-11-02 사용자 제공 모션 소스 884개 패턴의 KLIC 각색·공유 런타임·발행 후보와 공개 npm 범위를 구분했다. 2026-11-04 공개 npm 패키지 범위와 109개 컴포넌트 범위를 반영했다. 2026-11-10 About를 공용 도움말·문서 진입점으로 정리하고, 블록 전용 가이드 제거와 요청서·토큰 매핑 UI 동작을 반영했다. 2026-11-11 항목별 토큰 해석 문맥·variant 근거, CLI 검색 우선순위와 Bun/npx 실행 경로, 입력 오류 연결 기준을 보강했다. 같은 날 고정 토큰 예시를 A/Light/Normal로 명시해 Primitive 경로와 탐색기 기준을 일치시켰다. 2026-11-12 Flint MCP 유형 비교를 반영해 KLIC 소유 재사용 차트 스펙·SVG 엔진과 stdio 전용 데이터 도구, 메타데이터 전용 원격 도구 범위를 추가했다. 같은 날 블록 미리보기 iframe을 실제 콘텐츠 높이에 맞춰 확장하고 전체화면만 뷰포트 높이로 제한했다. 모션 제목·분류와 컴포넌트·블록 이름·분류의 ko/en 값을 정본 카탈로그에 반영해 브라우저·API·CLI·MCP·WebMCP가 같은 번역을 공유한다. 식별자·등급 체계·토큰 계약은 불변이다.
 
 ## 1. 문서의 효력
 
@@ -27,8 +27,14 @@
 | 항목 | 확정한 Site 기준선 | 제품 도입 시 추가 조건 |
 | --- | --- | --- |
 | 컴포넌트 | native HTML/CSS와 React 블록 | 도입한 컴포넌트·업무 목록 등록 |
-| 모션 레시피 | 280종 모션 레시피·13 카테고리(entrance·exit·movement·feedback·disclosure·loading·scroll·interaction·text-reveal·text-kinetic·text-emphasis·text-style·text-transition). Site 카탈로그·즐겨찾기·`klic-design/motions/*` 서브패스로 제공 | 도입 모션의 재현 검증, `prefers-reduced-motion` 대응, 재생 환경 지정 |
-| 패키지 배포 | 공개 npm `klic-design`(0.0.1·0.0.2 발행, bin `klic`, SKILL.md 동봉). 배포 계약의 정본은 [KLIC_Gateway_Distribution_PRD_v0.0.1.md](KLIC_Gateway_Distribution_PRD_v0.0.1.md)이다 | 지원 Node/Bun 버전·peer 의존성·설치 경로 고정 |
+| 블록 미리보기 높이 | iframe과 캔버스는 블록 문서 높이에 맞춰 자연스럽게 확장하고 최소 미리보기 높이를 유지한다. 세로 스크롤은 페이지가 소유하며 전체화면만 뷰포트에 맞춘다. | 긴 콘텐츠·반응형 너비·전체화면 전환에서 내부 세로 스크롤 trap이 없고 콘텐츠가 잘리지 않음 |
+| 사용자 도움말·문서 | `/about`가 FAQ·전체 문서·공용 시작/연동 안내의 진입점이다. 블록 전용 `#blocks/guide`는 `/about`로 이동하며 블록 화면은 공용 `#docs/*`로 연결한다. | 모든 링크가 실제 경로를 가리키고 ko/en에서 유지 |
+| 요청서·토큰 매핑 UI | `/start`의 Markdown 다운로드는 어두운 요청서 카드에서도 읽을 수 있는 대비를 유지한다. CSS/Tailwind 매핑은 기본 접힘이며 HEX 색상값에만 색상 견본을 표시한다. | disclosure는 키보드로 열 수 있고 비색상 기본값에는 견본을 표시하지 않음 |
+| 항목 계약·CLI 검색 | 항목 계약은 토큰 값의 높이 fixture·모드·밀도와 고정 예시 여부, 근거가 확인된 variant 축을 제공한다. 고정 매핑은 A/Light/Normal이며 사용자의 실험실 선택과 구분한다. forms는 미리보기 예시로 표시한다. `klic-design` 패키지 CLI는 Bun `bunx`와 Node `npx`로 직접 실행한다. | CLI·API·MCP·WebMCP 검색 순서와 페이지네이션이 같고 `get` 결과의 토큰 경로·값이 A/Light/Normal 탐색기와 일치 |
+| 모션 레시피 | 현재 카탈로그 범위는 사용자 제공 참조 소스 884개 패턴(원본 ID 883개, 67개 분류) 전부다. `source id + pattern`이 정체성이며 중복 ID도 별도 canonical route를 가진다. 각 모션과 분류는 분리된 `ko`·`en` 이름을 정본 카탈로그에 보관한다. 브라우저·API·CLI·MCP는 같은 제목과 분류 값을 사용하며 언어명을 괄호로 합치지 않는다. 67개 분류는 기존 KLIC 카테고리/항목 탐색에 그룹으로 연결한다. 기존 단순화 280개 레시피와 전용 경로·별칭은 current catalog에서 제거하며 compatibility entry로 유지하지 않는다. source 안무·시간·경로·레이어를 보존하고 외관은 4계층 KLIC 토큰 경로(색·폰트·표면·테두리·radius·spacing)에 맞춘다. 같은 런타임이 HTML/CSS/JavaScript/React 소스와 미리보기를 구동하며, Canvas 재생은 CSS만으로 제공하지 않는다. 모션 수는 컴포넌트·블록·CLI 작업 폴더 수와 독립 집계한다. `Copyright © 2026 acc0mplish. All rights reserved.` 및 원본 라이선스 고지를 보존하고 KLIC 각색본을 자체 제작으로 표시하지 않는다. 공개 패키지는 `klic-design/motions/runtime`과 `klic-design/motions/runtime.css` exports를 제공한다. | 도입 모션의 재현 검증, `prefers-reduced-motion` 대응, light/dark/mobile 재생 환경 확인 |
+| 컴포넌트·블록 라벨 | 이름은 `labels.ko/en`, 분류는 `categoryLabels.ko/en`으로 분리한다. 브라우저·API·CLI·MCP·WebMCP·정적 미러가 같은 쌍을 사용하며 두 언어로 검색한다. `name` 문자열은 기존 소비자 호환을 위해 유지한다. | 전체 컴포넌트·블록 라벨의 번역, 괄호 없는 표시 이름, API 상세·검색·CLI·MCP 출력 일치 |
+| 재사용 차트·MCP | KLIC 소유 `KlicChartSpec`과 타입 레지스트리·컴파일러·SVG 렌더러가 60개 데이터 기반 차트 유형을 제공한다. 기존 KLIC 예제는 형상이 호환될 때 공용 경로를 사용하고, 라이브 데이터·고유 상호작용·3D 예제는 기존 소유 경로를 유지한다. 재사용 차트 playground는 활성 미리보기 Light/Dark 테마를 따르며, 명시적 차트 spec은 자체 display mode를 유지한다. 로컬 npm 후보는 프레임워크 독립 `klic-design/charts`와 선택적 React `klic-design/charts/react`를 추가하며, 최신 공개 패키지에 반영하는 일은 별도 npm 릴리스다. 로컬 stdio MCP는 검증·컴파일·렌더·표시·정적 보드를 지원하고, 원격 HTTP MCP/WebMCP는 유형·테마·상호작용 메타데이터만 제공한다. 행 데이터는 로컬 stdio 사용만 지원하며 URL 가져오기·외부 렌더러·임의 CSS는 받지 않는다. | 스펙/테이블/SVG 일치, 키보드와 정확한 값 표, 프로필별 블루·중립 팔레트, HTTP 직접 호출 차단과 실제 패키지 소비를 검증 |
+| 패키지 배포 | 공개 npm 패키지 `klic-design`은 `latest` 태그를 사용하며 884 motion source patterns, 109 components, 공유 runtime exports, CLI와 SKILL.md를 제공한다. 정확한 등록 정보는 정본 publication receipt에서 관리한다. 배포 계약의 정본은 [KLIC_Gateway_Distribution_PRD_v0.0.1.md](KLIC_Gateway_Distribution_PRD_v0.0.1.md)이다 | 지원 Node/Bun 버전·peer 의존성·설치 경로 고정 |
 | 패키지 | React 19.0.1, Vite 7.1.7, Tailwind CSS 4.1.14, Lucide 0.546.0 선언; 실제 해석은 lockfile | lockfile·설치 코드·생성 CSS 고정 |
 | ReUI / Base UI / Radix | 현재 dependency에 없음 | 설치한다면 정확한 계열·preset·버전·로컬 변경 diff 고정 |
 | 브랜드 | Core·Studio·Data는 이 Site의 표현 프로필. A/B는 별도 높이 fixture | 사업 브랜드의 공식 승인과 혼동하지 않음 |

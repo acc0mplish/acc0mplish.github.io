@@ -25,6 +25,24 @@ export function designGuidanceSections(locale='ko',system=DESIGN_SYSTEM){
    p(t('최신 CLI와 로컬 레지스트리를 사용하고 stdio 세션을 재시작합니다. WebMCP는 페이지를 새로 읽어 등록합니다. source는 원시 코드만 출력합니다. 소스 묶음은 DESIGN.md, 테마 키트는 README.md를 KLIC-DESIGN-SYSTEM.json과 함께 읽습니다.'))
   ]}
  ];
+ if(system.classNamingPolicy){const policy=system.classNamingPolicy;sections.push({id:'design-system-class-naming',title:t(policy.title),blocks:[
+  {type:'table',headers:['접두사','책임','사용 범위','예시'].map(t),rows:policy.namespaces.map(item=>[item.prefix,item.role,item.usage,item.example].map(t))},
+  {type:'table',headers:['변형 축','허용 class','조합 규칙'].map(t),rows:policy.variantAxes.map(axis=>[axis.label,axis.values.join(' · '),axis.rule].map(t))},
+  p(t(policy.tokenPrecedence)),list(policy.rules.map(t)),p(t(policy.compatibility))
+ ]});}
+ if(system.dataAttributePolicy){const policy=system.dataAttributePolicy;sections.push({id:'design-system-data-attributes',title:t(policy.title),blocks:[
+  {type:'table',headers:['속성','역할','값과 소유 범위'].map(t),rows:policy.attributes.map(item=>[item.name,item.role,item.values].map(t))},
+  list(policy.rules.map(t)),list(policy.extensions.map(t))
+ ]});}
+ if(system.motionResponsibilityPolicy){const policy=system.motionResponsibilityPolicy;sections.push({id:'design-system-motion-responsibility',title:t(policy.title),blocks:[
+  {type:'table',headers:['컴포넌트','시작 상태','도착 상태','모션'].map(t),rows:policy.transitions.map(item=>[item.component,item.from,item.to,item.effect].map(t))},
+  {type:'table',headers:['소유 범위','책임'].map(t),rows:Object.entries(policy.ownership).map(([owner,rule])=>[owner,rule].map(t))},
+  list(policy.rules.map(t))
+ ]});}
+ for(const [key,id] of [['componentContractPolicy','component-contracts'],['discoveryPolicy','discovery'],['customizationPolicy','customization'],['interactionPolicy','interaction'],['consumerEvaluationPolicy','consumer-evaluation']]){
+  const policy=system[key];
+  if(policy)sections.push({id:'design-system-'+id,title:t(policy.title),blocks:[list(policy.rules.map(t))]});
+ }
  if(system.adoptionPolicy)sections.push({id:'design-system-adoption',title:t('참고 문서의 선택적 채택'),blocks:Object.values(system.adoptionPolicy).map(v=>p(t(v)))});
  if(system.changePolicy)sections.push({id:'design-system-changes',title:t('변경 시 함께 확인할 범위'),blocks:[p(t(system.changePolicy.scope)),list(system.changePolicy.surfaces.map(t)),p(t(system.changePolicy.completion))]});
  return sections;

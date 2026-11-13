@@ -1,0 +1,98 @@
+{
+  "id": "flowmotion-cinematic-spark",
+  "category": "particles",
+  "title": {
+    "ko": "번개 스파크",
+    "en": "Lightning spark"
+  },
+  "summary": {
+    "ko": "고정 시드로 만든 7개의 짧은 광선과 확장 링입니다.",
+    "en": "Seven seeded rays accompany the source 550 ms expanding spark ring."
+  },
+  "durationMs": 800,
+  "easing": "ease-out",
+  "origin": {
+    "templateIds": [
+      "cinematic-node-connect"
+    ],
+    "sourceFile": "src/components/CinematicNodeConnectCanvas.tsx",
+    "renderer": "CinematicNodeConnectCanvas",
+    "effect": "spark",
+    "sourceTimeline": {
+      "durationMs": 800,
+      "description": "Source ring expands from radius 6 to 44 in 550 ms; its parent fade starts at 300 ms and completes at 800 ms.",
+      "frames": [
+        {
+          "atMs": 0,
+          "phase": "7 seeded lightning rays and radius 6 ring"
+        },
+        {
+          "atMs": 300,
+          "phase": "spark group fade begins"
+        },
+        {
+          "atMs": 550,
+          "phase": "ring reaches radius 44"
+        },
+        {
+          "atMs": 800,
+          "phase": "source cleanup point"
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>.fm-root{--fm-blue:var(--klic-semantic-color-accent,#245fc2);--fm-navy:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-component-card-background-default,var(--klic-semantic-color-panel,#fff));--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);--fm-muted:var(--klic-semantic-color-muted,#52657b);--fm-on-blue:var(--klic-semantic-color-on-accent,#fff);--fm-selected:var(--klic-semantic-color-surface-selected,#e4ecfc);box-sizing:border-box;width:100%;height:100%;color:var(--fm-navy);font-family:inherit}.fm-root *{box-sizing:inherit}.fm-root svg{display:block;width:100%;height:100%;overflow:visible;font-family:inherit}.fm-root .fm-surface{fill:var(--fm-surface)}.fm-root .fm-panel{fill:var(--fm-panel);stroke:var(--fm-border)}.fm-root .fm-blue{fill:var(--fm-blue)}.fm-root .fm-blue-stroke{stroke:var(--fm-blue)}.fm-root .fm-ink{fill:var(--fm-navy)}.fm-root .fm-muted{fill:var(--fm-muted)}.fm-root .fm-selected{fill:var(--fm-selected)}.fm-root .fm-on-blue{fill:var(--fm-on-blue)}.fm-root [transform-box]{transform-box:fill-box;transform-origin:center}.fm-root text{font-size:11px;fill:var(--fm-navy)}</style><div class='fm-root'><svg viewBox='0 0 320 200' role='img' aria-label='Lightning spark'><defs><filter id='spark-blur'><feGaussianBlur stdDeviation='6'/></filter></defs><rect class='fm-surface' width='320' height='200' rx='14'/><g class='spark-group'><circle cx='250' cy='100' r='26' fill='var(--fm-blue)' opacity='.16' filter='url(#spark-blur)'/><polyline points='250,100 264.6,108.6 279.2,123.3 288.2,146.2 289.5,177.4' fill='none' stroke='var(--fm-blue)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><polyline points='250,100 256.4,127.4 277.3,142 285.2,154.8 293.3,181.9' fill='none' stroke='var(--fm-blue)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><polyline points='250,100 232.1,71.5 219.5,48 208,38 192.5,21.6' fill='none' stroke='var(--fm-blue)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><polyline points='250,100 224.5,92.7 201.5,84.5 187,76 168.8,82.8' fill='none' stroke='var(--fm-blue)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><polyline points='250,100 251.3,85.7 250,66.3 246.6,42.9 246.3,9.3' fill='none' stroke='var(--fm-blue)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><polyline points='250,100 224.3,93.6 202,86.3 189,64.4 167.3,54.6' fill='none' stroke='var(--fm-blue)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><polyline points='250,100 239.4,130.8 245.3,142.6 249.7,154 243.9,178.6' fill='none' stroke='var(--fm-blue)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><circle class='spark-ring' cx='250' cy='100' r='44' fill='none' stroke='var(--fm-blue)' stroke-width='2.5' transform-box='fill-box' transform-origin='center'/><circle cx='250' cy='100' r='4' fill='var(--fm-blue)'/></g></svg></div>",
+    "duration": 800,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 0.2,
+    "tracks": [
+      {
+        "selector": ".spark-ring",
+        "easing": "linear",
+        "keyframes": [
+          {
+            "offset": 0,
+            "transform": "scale(.136)",
+            "opacity": 0.9,
+            "easing": "ease-out"
+          },
+          {
+            "offset": 0.6875,
+            "transform": "scale(1)",
+            "opacity": 0.9,
+            "easing": "ease-out"
+          },
+          {
+            "offset": 1,
+            "transform": "scale(1)",
+            "opacity": 0,
+            "easing": "ease-out"
+          }
+        ]
+      },
+      {
+        "selector": ".spark-group",
+        "keyframes": [
+          {
+            "offset": 0,
+            "opacity": 1,
+            "easing": "linear"
+          },
+          {
+            "offset": 0.375,
+            "opacity": 1,
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "opacity": 0,
+            "easing": "linear"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

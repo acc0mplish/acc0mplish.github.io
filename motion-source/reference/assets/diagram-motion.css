@@ -1,0 +1,181 @@
+/* Diagram motion demos (svg-path). Stage SVG only; stillness comes from reducedProgress, not from @media. */
+.diagram-motion .dm-svg { overflow: visible; }
+.diagram-motion .dm-box { fill: #172433; stroke: #4b6179; stroke-width: 1; }
+.diagram-motion .dm-node { fill: #1d3a40; stroke: #75e4d2; stroke-width: 1.2; }
+.diagram-motion .dm-line { fill: none; stroke: #75e4d2; stroke-width: 1.4; stroke-dasharray: 1; stroke-linecap: butt; }
+.diagram-motion .dm-arrow { fill: #75e4d2; stroke: none; }
+.diagram-motion .dm-life { fill: none; stroke: #5d7189; stroke-width: 1; stroke-dasharray: 3 3; }
+.diagram-motion .dm-act { fill: #254840; stroke: #75e4d2; stroke-width: 1; transform-box: fill-box; transform-origin: 50% 0; }
+.diagram-motion .dm-group { fill: #75e4d2; fill-opacity: 0; stroke: #5d7189; stroke-width: 1.2; stroke-dasharray: 4 3; }
+.diagram-motion .dm-badge { fill: #1d3a40; stroke: #75e4d2; stroke-width: 1.2; transform-box: fill-box; transform-origin: 50% 50%; }
+.diagram-motion .dm-num { fill: #e7f2fa; font: 700 12px/1 Pretendard, system-ui, sans-serif; opacity: 0; }
+/* 다이어그램 형태 12종 (#9-#20) */
+.diagram-motion .dm-lab { fill: #9fb3c8; font: 700 9px/1 Pretendard, system-ui, sans-serif; opacity: 0; }
+.diagram-motion .dm-bar { fill: #4b6179; }
+.diagram-motion .dm-pop { transform-box: fill-box; transform-origin: 50% 50%; }
+.diagram-motion .dm-lane { fill: #172433; fill-opacity: .55; stroke: #33465c; stroke-width: 1; transform-box: fill-box; transform-origin: 0 50%; }
+.diagram-motion .dm-grow { transform-box: fill-box; transform-origin: 50% 0; }
+.diagram-motion .dm-ret { fill: none; stroke: #75e4d2; stroke-width: 1.4; stroke-dasharray: 3 3; }
+.diagram-motion .dm-venn { fill: #75e4d2; fill-opacity: 0; stroke: #75e4d2; stroke-width: 1.2; stroke-opacity: 0; transform-box: fill-box; transform-origin: 50% 50%; }
+.diagram-motion .dm-vi { fill: #75e4d2; opacity: 0; }
+.diagram-motion .dm-bus { fill: #254840; stroke: #75e4d2; stroke-width: 1; transform-box: fill-box; transform-origin: 50% 50%; }
+.diagram-motion polygon.dm-box, .diagram-motion .dm-x00, .diagram-motion [class*="dm-fn"], .diagram-motion .dm-dc { transform-box: fill-box; transform-origin: 50% 50%; }
+.diagram-motion .dm-ms0b, .diagram-motion .dm-ms1b, .diagram-motion .dm-ms2b, .diagram-motion .dm-ms3b { transform-box: fill-box; transform-origin: 50% 50%; }
+
+/* ===== 컬러 레이어: 카드별 3색 팔레트(--c1/2/3) + 네온 글로우 + 색 배경 ===== */
+.diagram-motion { background: radial-gradient(110% 90% at 50% 38%, color-mix(in srgb, var(--c2) 20%, transparent), transparent 68%), radial-gradient(90% 80% at 12% 92%, color-mix(in srgb, var(--c1) 18%, transparent), transparent 70%), radial-gradient(70% 70% at 92% 10%, color-mix(in srgb, var(--c3) 14%, transparent), transparent 72%); }
+.diagram-motion .dm-box { stroke: color-mix(in srgb, var(--c1) 55%, #4b6179); }
+.diagram-motion .dm-line, .diagram-motion .dm-flow { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-arrow { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-node { fill: color-mix(in srgb, var(--c1) 30%, #0f1a2a); stroke: var(--c1); filter: drop-shadow(0 0 3px var(--c1)); }
+.diagram-motion .dm-life { stroke: color-mix(in srgb, var(--c1) 50%, #5d7189); }
+.diagram-motion .dm-lab { fill: var(--c3); }
+.diagram-motion .dm-ret { stroke: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-num { fill: #fff; }
+.diagram-motion .dm-bar { fill: color-mix(in srgb, var(--c2) 55%, #4b6179); }
+.diagram-motion .dm-f0 { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-fa0 { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-m0 { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-ma0 { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-f1 { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-fa1 { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-m1 { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-ma1 { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-f2 { stroke: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-fa2 { fill: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-m2 { stroke: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-ma2 { fill: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-act { fill: color-mix(in srgb, var(--c1) 40%, #0f1a2a); stroke: var(--c1); } 
+.diagram-motion .dm-loop { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-la { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-c0 { stroke: var(--c1); fill: color-mix(in srgb, var(--c1) 24%, #121c2b); }
+.diagram-motion .dm-c1 { stroke: var(--c2); fill: color-mix(in srgb, var(--c2) 24%, #121c2b); }
+.diagram-motion .dm-c2 { stroke: var(--c3); fill: color-mix(in srgb, var(--c3) 24%, #121c2b); }
+.diagram-motion .dm-group { fill: var(--c1); }
+.diagram-motion .dm-g0 { stroke: var(--c2); fill: color-mix(in srgb, var(--c2) 24%, #121c2b); }
+.diagram-motion .dm-g1 { stroke: var(--c3); fill: color-mix(in srgb, var(--c3) 24%, #121c2b); }
+.diagram-motion .dm-cc0 .dm-line { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); } .diagram-motion .dm-cc0 .dm-arrow { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-cc1 .dm-line { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); } .diagram-motion .dm-cc1 .dm-arrow { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-bc0 .dm-line { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); } .diagram-motion .dm-bc0 .dm-arrow { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-bc1 .dm-line { stroke: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); } .diagram-motion .dm-bc1 .dm-arrow { fill: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-q { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-qa { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-p { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-pa { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-b0 { fill: color-mix(in srgb, var(--c1) 35%, #0f1a2a); stroke: var(--c1); filter: drop-shadow(0 0 3px var(--c1)); }
+.diagram-motion .dm-b1 { fill: color-mix(in srgb, var(--c2) 35%, #0f1a2a); stroke: var(--c2); filter: drop-shadow(0 0 3px var(--c2)); }
+.diagram-motion .dm-b2 { fill: color-mix(in srgb, var(--c3) 35%, #0f1a2a); stroke: var(--c3); filter: drop-shadow(0 0 3px var(--c3)); }
+.diagram-motion .dm-tl1 { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-ta1 { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-tl2 { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-ta2 { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-t0 { stroke: var(--c3); fill: color-mix(in srgb, var(--c3) 34%, #121c2b); }
+.diagram-motion .dm-t1 { stroke: var(--c1); fill: color-mix(in srgb, var(--c1) 24%, #121c2b); }
+.diagram-motion .dm-t2 { stroke: var(--c2); fill: color-mix(in srgb, var(--c2) 24%, #121c2b); }
+.diagram-motion .dm-sp0 { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-spa0 { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-spn0 { fill: color-mix(in srgb, var(--c1) 35%, #0f1a2a); stroke: var(--c1); filter: drop-shadow(0 0 3px var(--c1)); }
+.diagram-motion .dm-sp1 { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-spa1 { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-spn1 { fill: color-mix(in srgb, var(--c2) 35%, #0f1a2a); stroke: var(--c2); filter: drop-shadow(0 0 3px var(--c2)); }
+.diagram-motion .dm-sp2 { stroke: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-spa2 { fill: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-spn2 { fill: color-mix(in srgb, var(--c3) 35%, #0f1a2a); stroke: var(--c3); filter: drop-shadow(0 0 3px var(--c3)); }
+.diagram-motion .dm-sp3 { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-spa3 { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-spn3 { fill: color-mix(in srgb, var(--c1) 35%, #0f1a2a); stroke: var(--c1); filter: drop-shadow(0 0 3px var(--c1)); }
+.diagram-motion .dm-sp4 { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-spa4 { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-spn4 { fill: color-mix(in srgb, var(--c2) 35%, #0f1a2a); stroke: var(--c2); filter: drop-shadow(0 0 3px var(--c2)); }
+.diagram-motion .dm-sp5 { stroke: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-spa5 { fill: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-spn5 { fill: color-mix(in srgb, var(--c3) 35%, #0f1a2a); stroke: var(--c3); filter: drop-shadow(0 0 3px var(--c3)); }
+.diagram-motion .dm-hubc { fill: color-mix(in srgb, var(--c3) 45%, #0f1a2a); stroke: var(--c3); filter: drop-shadow(0 0 5px var(--c3)); }
+.diagram-motion .dm-x00 { stroke: var(--c1); fill: var(--c1); fill-opacity: 0.06; }
+.diagram-motion .dm-x01 { stroke: var(--c2); fill: var(--c2); fill-opacity: 0.06; }
+.diagram-motion .dm-x02 { stroke: var(--c3); fill: var(--c3); fill-opacity: 0.06; }
+.diagram-motion .dm-x10 { stroke: var(--c1); fill: var(--c1); fill-opacity: 0.06; }
+.diagram-motion .dm-x11 { stroke: var(--c2); fill: var(--c2); fill-opacity: 0.06; }
+.diagram-motion .dm-x12 { stroke: var(--c3); fill: var(--c3); fill-opacity: 0.06; }
+.diagram-motion .dm-x20 { stroke: var(--c1); fill: var(--c1); fill-opacity: 0.06; }
+.diagram-motion .dm-x21 { stroke: var(--c2); fill: var(--c2); fill-opacity: 0.06; }
+.diagram-motion .dm-x22 { stroke: var(--c3); fill: var(--c3); fill-opacity: 0.06; }
+.diagram-motion .dm-va { stroke: var(--c1); fill: var(--c1); fill-opacity: 0; }
+.diagram-motion .dm-vb { stroke: var(--c2); fill: var(--c2); fill-opacity: 0; }
+.diagram-motion .dm-vc { stroke: var(--c3); fill: var(--c3); fill-opacity: 0; }
+.diagram-motion .dm-venn { fill-opacity: 0; } .diagram-motion .dm-vi { fill: #fff; filter: drop-shadow(0 0 6px #fff); }
+.diagram-motion .dm-dc { stroke: var(--c3); fill: color-mix(in srgb, var(--c3) 26%, #121c2b); filter: drop-shadow(0 0 4px var(--c3)); }
+.diagram-motion .dm-dy { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-dya { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-db { stroke: var(--c1); fill: color-mix(in srgb, var(--c1) 24%, #121c2b); }
+.diagram-motion .dm-no .dm-line { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); } .diagram-motion .dm-no .dm-arrow { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); } .diagram-motion .dm-no .dm-box { stroke: var(--c2); fill: color-mix(in srgb, var(--c2) 24%, #121c2b); }
+.diagram-motion .dm-ln0 { fill: var(--c1); fill-opacity: .12; stroke: var(--c1); stroke-opacity: .55; } .diagram-motion .dm-ln1 { fill: var(--c2); fill-opacity: .12; stroke: var(--c2); stroke-opacity: .55; }
+.diagram-motion .dm-sa { stroke: var(--c1); fill: color-mix(in srgb, var(--c1) 24%, #121c2b); }
+.diagram-motion .dm-sb { stroke: var(--c2); fill: color-mix(in srgb, var(--c2) 24%, #121c2b); }
+.diagram-motion .dm-sc { stroke: var(--c1); fill: color-mix(in srgb, var(--c1) 24%, #121c2b); }
+.diagram-motion .dm-sl1 { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-sa1 { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-sl2 { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-sa2 { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-qh0 { stroke: var(--c1); fill: color-mix(in srgb, var(--c1) 30%, #121c2b); }
+.diagram-motion .dm-qg0 { stroke: var(--c1); stroke-opacity: .6; }
+.diagram-motion .dm-qh1 { stroke: var(--c2); fill: color-mix(in srgb, var(--c2) 30%, #121c2b); }
+.diagram-motion .dm-qg1 { stroke: var(--c2); stroke-opacity: .6; }
+.diagram-motion .dm-qh2 { stroke: var(--c3); fill: color-mix(in srgb, var(--c3) 30%, #121c2b); }
+.diagram-motion .dm-qg2 { stroke: var(--c3); stroke-opacity: .6; }
+.diagram-motion .dm-qm1 { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-qa1 { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-qm2 { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-qa2 { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-qr .dm-arrow { fill: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-ax { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-ms0d { fill: var(--c1); stroke: #fff; stroke-width: 1; filter: drop-shadow(0 0 4px var(--c1)); }
+.diagram-motion .dm-ms0s { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-ms0b { stroke: var(--c1); fill: color-mix(in srgb, var(--c1) 30%, #121c2b); }
+.diagram-motion .dm-ms1d { fill: var(--c2); stroke: #fff; stroke-width: 1; filter: drop-shadow(0 0 4px var(--c2)); }
+.diagram-motion .dm-ms1s { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-ms1b { stroke: var(--c2); fill: color-mix(in srgb, var(--c2) 30%, #121c2b); }
+.diagram-motion .dm-ms2d { fill: var(--c3); stroke: #fff; stroke-width: 1; filter: drop-shadow(0 0 4px var(--c3)); }
+.diagram-motion .dm-ms2s { stroke: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-ms2b { stroke: var(--c3); fill: color-mix(in srgb, var(--c3) 30%, #121c2b); }
+.diagram-motion .dm-ms3d { fill: var(--c1); stroke: #fff; stroke-width: 1; filter: drop-shadow(0 0 4px var(--c1)); }
+.diagram-motion .dm-ms3s { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-ms3b { stroke: var(--c1); fill: color-mix(in srgb, var(--c1) 30%, #121c2b); }
+.diagram-motion .dm-cn0 { fill: color-mix(in srgb, var(--c1) 38%, #0f1a2a); stroke: var(--c1); filter: drop-shadow(0 0 4px var(--c1)); }
+.diagram-motion .dm-ca0 { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-cb0 { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-cn1 { fill: color-mix(in srgb, var(--c2) 38%, #0f1a2a); stroke: var(--c2); filter: drop-shadow(0 0 4px var(--c2)); }
+.diagram-motion .dm-ca1 { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-cb1 { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-cn2 { fill: color-mix(in srgb, var(--c3) 38%, #0f1a2a); stroke: var(--c3); filter: drop-shadow(0 0 4px var(--c3)); }
+.diagram-motion .dm-ca2 { stroke: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-cb2 { fill: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-cn3 { fill: color-mix(in srgb, var(--c1) 38%, #0f1a2a); stroke: var(--c1); filter: drop-shadow(0 0 4px var(--c1)); }
+.diagram-motion .dm-ca3 { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-cb3 { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-st0 { stroke: var(--c1); fill: var(--c1); fill-opacity: 0.1; }
+.diagram-motion .dm-st1 { stroke: var(--c2); fill: var(--c2); fill-opacity: 0.1; }
+.diagram-motion .dm-st2 { stroke: var(--c3); fill: var(--c3); fill-opacity: 0.1; }
+.diagram-motion .dm-mt1 { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-ma1 { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-mt2 { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-ma2 { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-mt3 { stroke: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-ma3 { fill: var(--c3); filter: drop-shadow(0 0 2.5px var(--c3)); }
+.diagram-motion .dm-bp0 { stroke: var(--c1); fill: color-mix(in srgb, var(--c1) 30%, #121c2b); }
+.diagram-motion .dm-bs0 { stroke: var(--c1); fill: color-mix(in srgb, var(--c1) 30%, #121c2b); }
+.diagram-motion .dm-bp1 { stroke: var(--c2); fill: color-mix(in srgb, var(--c2) 30%, #121c2b); }
+.diagram-motion .dm-bs1 { stroke: var(--c2); fill: color-mix(in srgb, var(--c2) 30%, #121c2b); }
+.diagram-motion .dm-bp2 { stroke: var(--c3); fill: color-mix(in srgb, var(--c3) 30%, #121c2b); }
+.diagram-motion .dm-bs2 { stroke: var(--c3); fill: color-mix(in srgb, var(--c3) 30%, #121c2b); }
+.diagram-motion .dm-bu { stroke: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-bua { fill: var(--c1); filter: drop-shadow(0 0 2.5px var(--c1)); }
+.diagram-motion .dm-bd { stroke: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-bda { fill: var(--c2); filter: drop-shadow(0 0 2.5px var(--c2)); }
+.diagram-motion .dm-bus { fill: color-mix(in srgb, var(--c3) 55%, #121c2b); stroke: var(--c3); filter: drop-shadow(0 0 5px var(--c3)); }
+.diagram-motion .dm-fn0 { stroke: var(--c1); fill: var(--c1); fill-opacity: 0.25; }
+.diagram-motion .dm-fn1 { stroke: var(--c2); fill: var(--c2); fill-opacity: 0.25; }
+.diagram-motion .dm-fn2 { stroke: var(--c3); fill: var(--c3); fill-opacity: 0.25; }
+.diagram-motion .dm-fn0 { filter: drop-shadow(0 0 4px var(--c1)); }
+.diagram-motion .dm-fn1 { filter: drop-shadow(0 0 4px var(--c2)); }
+.diagram-motion .dm-fn2 { filter: drop-shadow(0 0 4px var(--c3)); }

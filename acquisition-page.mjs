@@ -10,6 +10,8 @@ export async function copyBrief(text,{clipboard=globalThis.navigator?.clipboard,
 export function initAcquisitionPage(doc=document,win=window){
  const locale=doc.documentElement.lang==='en'?'en':'ko',T=(ko,en)=>locale==='en'?en:ko;
  doc.querySelector('[data-klic-language]')?.addEventListener('change',event=>{const url=new URL(win.location.href);if(event.target.value==='en')url.searchParams.set('lang','en');else url.searchParams.delete('lang');win.location.assign(url.href);});
+ const endpoint=doc.querySelector('[data-mcp-endpoint]'),copyEndpoint=doc.querySelector('[data-copy-mcp-endpoint]'),copyStatus=doc.querySelector('[data-mcp-copy-status]');
+ if(endpoint&&copyEndpoint&&copyStatus)copyEndpoint.addEventListener('click',()=>copyBrief(endpoint.value,{success:()=>{copyStatus.dataset.state='success';copyStatus.textContent=T('주소를 복사했습니다.','Endpoint copied.');},fallback:()=>{endpoint.focus();endpoint.select();copyStatus.dataset.state='manual';copyStatus.textContent=T('주소를 선택했습니다. 직접 복사하세요.','Clipboard unavailable. The address is selected; copy it manually.');}}));
  const form=doc.querySelector('[data-brief-form]');if(!form)return;
  const recipe=doc.querySelector('#brief-recipe'),notes=doc.querySelector('#brief-notes'),output=doc.querySelector('#brief-output'),status=doc.querySelector('[data-brief-status]'),dialog=doc.querySelector('[data-copy-fallback]');
  const emit=action=>win.dispatchEvent(new CustomEvent('klic:conversion',{detail:{action,recipe:recipe.value,placement:'start'}}));

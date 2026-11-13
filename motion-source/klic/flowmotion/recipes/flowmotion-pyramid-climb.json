@@ -1,0 +1,313 @@
+{
+  "id": "flowmotion-pyramid-climb",
+  "category": "particles",
+  "title": {
+    "ko": "전략 피라미드 상승 펄스",
+    "en": "Strategy Pyramid Climb Pulse"
+  },
+  "summary": {
+    "ko": "상향 진행의 원본 선형식을 따라 계층 축을 오릅니다.",
+    "en": "Climbs the tier axis using the source linear upward progression."
+  },
+  "durationMs": 2400,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "creative-strategy-pyramid"
+    ],
+    "sourceFile": "src/components/CreativeInfographicCanvases.tsx",
+    "renderer": "CreativeStrategyPyramidCanvas",
+    "effect": "pyramid-energy-pulse",
+    "sourceTimeline": {
+      "durationMs": 2400,
+      "description": "Bottom-up strategy scenario; source axis spans y=450 to y=95. pulseY=450−ambientProgress×355; activeTierIdx=3−floor(progress×4).",
+      "frames": [
+        {
+          "progress": 0,
+          "pulseY": 450,
+          "activeTierIdx": 3
+        },
+        {
+          "progress": 0.25,
+          "pulseY": 361.25,
+          "activeTierIdx": 2
+        },
+        {
+          "progress": 0.5,
+          "pulseY": 272.5,
+          "activeTierIdx": 1
+        },
+        {
+          "progress": 0.75,
+          "pulseY": 183.75,
+          "activeTierIdx": 0
+        },
+        {
+          "progress": 1,
+          "pulseY": 95,
+          "activeTierIdx": 0
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"전략 단계 축을 오르는 에너지\"><path class=\"flow\" d=\"M 160 42 L 111 136 L 209 136 Z\"/><line class=\"flow\" x1=\"123\" y1=\"112\" x2=\"197\" y2=\"112\"/><line class=\"flow\" x1=\"135\" y1=\"88\" x2=\"185\" y2=\"88\"/><line class=\"flow\" x1=\"147\" y1=\"65\" x2=\"173\" y2=\"65\"/><circle class=\"packet\" cx=\"160\" cy=\"136\" r=\"6\"/><text class=\"small\" text-anchor=\"middle\" x=\"160\" y=\"160\">01 → 04</text></svg></div>",
+    "duration": 2400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".packet",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "160px",
+            "cy": "136px"
+          },
+          {
+            "offset": 0.020833333333333332,
+            "cx": "160px",
+            "cy": "134.042px"
+          },
+          {
+            "offset": 0.041666666666666664,
+            "cx": "160px",
+            "cy": "132.083px"
+          },
+          {
+            "offset": 0.0625,
+            "cx": "160px",
+            "cy": "130.125px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "160px",
+            "cy": "128.167px"
+          },
+          {
+            "offset": 0.10416666666666667,
+            "cx": "160px",
+            "cy": "126.208px"
+          },
+          {
+            "offset": 0.125,
+            "cx": "160px",
+            "cy": "124.25px"
+          },
+          {
+            "offset": 0.14583333333333334,
+            "cx": "160px",
+            "cy": "122.292px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "160px",
+            "cy": "120.333px"
+          },
+          {
+            "offset": 0.1875,
+            "cx": "160px",
+            "cy": "118.375px"
+          },
+          {
+            "offset": 0.20833333333333334,
+            "cx": "160px",
+            "cy": "116.417px"
+          },
+          {
+            "offset": 0.22916666666666666,
+            "cx": "160px",
+            "cy": "114.458px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "160px",
+            "cy": "112.5px"
+          },
+          {
+            "offset": 0.2708333333333333,
+            "cx": "160px",
+            "cy": "110.542px"
+          },
+          {
+            "offset": 0.2916666666666667,
+            "cx": "160px",
+            "cy": "108.583px"
+          },
+          {
+            "offset": 0.3125,
+            "cx": "160px",
+            "cy": "106.625px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "160px",
+            "cy": "104.667px"
+          },
+          {
+            "offset": 0.3541666666666667,
+            "cx": "160px",
+            "cy": "102.708px"
+          },
+          {
+            "offset": 0.375,
+            "cx": "160px",
+            "cy": "100.75px"
+          },
+          {
+            "offset": 0.3958333333333333,
+            "cx": "160px",
+            "cy": "98.792px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "160px",
+            "cy": "96.833px"
+          },
+          {
+            "offset": 0.4375,
+            "cx": "160px",
+            "cy": "94.875px"
+          },
+          {
+            "offset": 0.4583333333333333,
+            "cx": "160px",
+            "cy": "92.917px"
+          },
+          {
+            "offset": 0.4791666666666667,
+            "cx": "160px",
+            "cy": "90.958px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "160px",
+            "cy": "89px"
+          },
+          {
+            "offset": 0.5208333333333334,
+            "cx": "160px",
+            "cy": "87.042px"
+          },
+          {
+            "offset": 0.5416666666666666,
+            "cx": "160px",
+            "cy": "85.083px"
+          },
+          {
+            "offset": 0.5625,
+            "cx": "160px",
+            "cy": "83.125px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "160px",
+            "cy": "81.167px"
+          },
+          {
+            "offset": 0.6041666666666666,
+            "cx": "160px",
+            "cy": "79.208px"
+          },
+          {
+            "offset": 0.625,
+            "cx": "160px",
+            "cy": "77.25px"
+          },
+          {
+            "offset": 0.6458333333333334,
+            "cx": "160px",
+            "cy": "75.292px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "160px",
+            "cy": "73.333px"
+          },
+          {
+            "offset": 0.6875,
+            "cx": "160px",
+            "cy": "71.375px"
+          },
+          {
+            "offset": 0.7083333333333334,
+            "cx": "160px",
+            "cy": "69.417px"
+          },
+          {
+            "offset": 0.7291666666666666,
+            "cx": "160px",
+            "cy": "67.458px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "160px",
+            "cy": "65.5px"
+          },
+          {
+            "offset": 0.7708333333333334,
+            "cx": "160px",
+            "cy": "63.542px"
+          },
+          {
+            "offset": 0.7916666666666666,
+            "cx": "160px",
+            "cy": "61.583px"
+          },
+          {
+            "offset": 0.8125,
+            "cx": "160px",
+            "cy": "59.625px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "160px",
+            "cy": "57.667px"
+          },
+          {
+            "offset": 0.8541666666666666,
+            "cx": "160px",
+            "cy": "55.708px"
+          },
+          {
+            "offset": 0.875,
+            "cx": "160px",
+            "cy": "53.75px"
+          },
+          {
+            "offset": 0.8958333333333334,
+            "cx": "160px",
+            "cy": "51.792px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "160px",
+            "cy": "49.833px"
+          },
+          {
+            "offset": 0.9375,
+            "cx": "160px",
+            "cy": "47.875px"
+          },
+          {
+            "offset": 0.9583333333333334,
+            "cx": "160px",
+            "cy": "45.917px"
+          },
+          {
+            "offset": 0.9791666666666666,
+            "cx": "160px",
+            "cy": "43.958px"
+          },
+          {
+            "offset": 1,
+            "cx": "160px",
+            "cy": "42px"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

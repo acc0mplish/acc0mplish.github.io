@@ -1,5 +1,6 @@
 /** KLIC native adaptation of Affect UI Classic; MIT © Florian Höller; pinned source in affect-components.mjs. */
 import {affectTransition,renderAffectContent} from './affect-components.mjs';
+import {isComposingInput} from './keyboard-guards.mjs';
 let installed;
 export function initAffectInteractions({copy,notify}={}){
  if(installed)return installed;
@@ -39,7 +40,7 @@ export function initAffectInteractions({copy,notify}={}){
   if(action==='regenerate')later(root,()=>apply(root,'generated'));
  };
  const input=e=>{const root=e.target.closest?.('[data-af-family]');if(root&&e.target.matches('[data-af-feedback]')){const s=get(root);if(s)s.feedback=e.target.value;}};
- const keydown=e=>{if(e.key!=='Escape')return;const root=e.target.closest?.('[data-af-family]');if(!root)return;const s=get(root);if(s?.alternatives){apply(root,'alternatives','');root.querySelector('[data-af-action="alternatives"]')?.focus();e.stopPropagation();}else if(s?.panel){apply(root,'close-feedback','');root.querySelector('[data-af-action="vote"][data-af-value="down"]')?.focus();e.stopPropagation();}};
+ const keydown=e=>{if(isComposingInput(e)||e.key!=='Escape')return;const root=e.target.closest?.('[data-af-family]');if(!root)return;const s=get(root);if(s?.alternatives){apply(root,'alternatives','');root.querySelector('[data-af-action="alternatives"]')?.focus();e.stopPropagation();}else if(s?.panel){apply(root,'close-feedback','');root.querySelector('[data-af-action="vote"][data-af-value="down"]')?.focus();e.stopPropagation();}};
  const pointer=e=>{document.querySelectorAll('[data-af-family="smart-recommendation"]').forEach(root=>{const s=states.get(root);if(s?.alternatives&&!root.contains(e.target))apply(root,'alternatives','');});};
  document.addEventListener('click',click);document.addEventListener('input',input);document.addEventListener('keydown',keydown);document.addEventListener('pointerdown',pointer);
  if(globalThis.MutationObserver){observer=new MutationObserver(()=>{for(const root of pending.keys())if(!root.isConnected)cancelRoot(root);if(speechOwner&&!speechOwner.isConnected)cancelRoot(speechOwner);});observer.observe(document.documentElement,{childList:true,subtree:true});}

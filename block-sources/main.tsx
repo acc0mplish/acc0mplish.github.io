@@ -2,6 +2,7 @@ import {FONT_IDS,fontFaceCSS} from '../../dist/font-registry.mjs';
 /** SPDX-License-Identifier: Apache-2.0 */
 import React, { Component, Suspense, useEffect, useState } from 'react';
 import {isDeferredResizeNotice} from './utils/runtime-diagnostics';
+import {createPublishingInspector} from './utils/publishing-inspector';
 import { createRoot } from 'react-dom/client';
 import { createTokens, resolveTokens, formatValue } from '../../dist/tokens.mjs';
 import { normalizePreferences, FONT_NAMES } from '../../dist/preferences.mjs';
@@ -22,7 +23,7 @@ export interface BlockContext {
   font: string;
   headingFont?: string; accent?: string; neutral?: string; radius?: number; textScale?: number; chartPalette?: string; iconWeight?: string; showAvatars?: boolean; showProgressRings?: boolean; menuStyle?: string;
 }
-const DEFAULT_CONTEXT: BlockContext = { theme: 'light', brand: 'a', density: 'normal', font: 'paperlogy' };
+const DEFAULT_CONTEXT: BlockContext = { theme: 'light', brand: 'a', density: 'normal', font: 'pretendard' };
 const FONT_FAMILIES = FONT_NAMES;
 const query = new URLSearchParams(location.search);
 const requestedId = query.get('id') || '';
@@ -144,6 +145,10 @@ function Runtime() {
   const [notice, setNotice] = useState('샘플 데이터 · 변경 사항은 이 예제에서만 적용됩니다');
   useEffect(() => { applyContext(context); }, [context]);
   useEffect(() => {
+    const publishingInspector = ['dashboard-sales-analytics', 'form-incident-report'].includes(selectedId)
+      ? createPublishingInspector(document.getElementById('root') as HTMLElement, selectedId, message => {
+        if (window.parent !== window) window.parent.postMessage(message, parentOrigin);
+      }) : null;
     const receive = (event: MessageEvent) => {
       if (event.origin !== parentOrigin || event.source !== window.parent || window.parent === window) return;
       if (!event.data || typeof event.data !== 'object') return;
@@ -153,7 +158,7 @@ function Runtime() {
       } else if (event.data.type === 'klic:block-reset') {
         setRevision(value => value + 1);
         setNotice('샘플 데이터가 초기화되었습니다');
-      }
+      } else if (typeof event.data.type === 'string' && event.data.type.startsWith('klic:publishing-')) publishingInspector?.receive(event.data);
     };
     const error = (event: ErrorEvent) => {
       if (isDeferredResizeNotice(event)) {
@@ -185,6 +190,7 @@ function Runtime() {
     document.addEventListener('auxclick', preventNavigation, true);
     document.addEventListener('submit', preventFormNavigation, true);
     return () => {
+      publishingInspector?.dispose();
       observer.disconnect();
       document.removeEventListener('keydown',escapeExpanded);
       motionQuery.removeEventListener('change', applySvgMotionPreference);
@@ -200,7 +206,7 @@ function Runtime() {
     <p className="runtime-note" role="status">{notice}</p>
     <main className="runtime-surface">
       <DemoErrorBoundary key={`${selectedId}:${revision}`} onRetry={() => setRevision(value => value + 1)}>
-        <Suspense fallback={<PreviewLoading />}><BlockApp selectedId={selectedId || requestedId} density={context.density} showAvatars={context.showAvatars} showProgressRings={context.showProgressRings} onDensityChange={density => { setContext(c => ({...c,density})); if(window.parent!==window)window.parent.postMessage({type:"klic:block-preference",density},parentOrigin); }} />
+        <Suspense fallback={<PreviewLoading />}><BlockApp selectedId={selectedId || requestedId} density={context.density} theme={context.theme} showAvatars={context.showAvatars} showProgressRings={context.showProgressRings} onDensityChange={density => { setContext(c => ({...c,density})); if(window.parent!==window)window.parent.postMessage({type:"klic:block-preference",density},parentOrigin); }} />
         <PreviewReady /></Suspense>
       </DemoErrorBoundary>
     </main>

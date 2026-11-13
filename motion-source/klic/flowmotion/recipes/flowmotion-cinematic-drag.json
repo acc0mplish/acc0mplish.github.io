@@ -1,0 +1,63 @@
+{
+  "id": "flowmotion-cinematic-drag",
+  "category": "web-interaction",
+  "title": {
+    "ko": "드래그 리프트",
+    "en": "Drag lift"
+  },
+  "summary": {
+    "ko": "실제 포인터 입력이 아닌 시간 기반 노드 이동 예시입니다.",
+    "en": "A timed node-move study, not an interactive pointer-drag API."
+  },
+  "durationMs": 420,
+  "easing": "ease-out",
+  "origin": {
+    "templateIds": [
+      "cinematic-node-connect"
+    ],
+    "sourceFile": "src/components/CinematicNodeConnectCanvas.tsx",
+    "renderer": "CinematicNodeConnectCanvas",
+    "effect": "drag",
+    "sourceTimeline": {
+      "durationMs": 420,
+      "description": "Source moves the selected node continuously from pointer deltas and clears its dragging state on pointerup; it defines no fixed duration. KLIC uses a labeled 420 ms timed sample.",
+      "frames": [
+        {
+          "atMs": 0,
+          "phase": "node at origin"
+        },
+        {
+          "atMs": 420,
+          "phase": "node translated +34, −12 px and lifted"
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>.fm-root{--fm-blue:var(--klic-semantic-color-accent,#245fc2);--fm-navy:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-component-card-background-default,var(--klic-semantic-color-panel,#fff));--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);--fm-muted:var(--klic-semantic-color-muted,#52657b);--fm-on-blue:var(--klic-semantic-color-on-accent,#fff);--fm-selected:var(--klic-semantic-color-surface-selected,#e4ecfc);box-sizing:border-box;width:100%;height:100%;color:var(--fm-navy);font-family:inherit}.fm-root *{box-sizing:inherit}.fm-root svg{display:block;width:100%;height:100%;overflow:visible;font-family:inherit}.fm-root .fm-surface{fill:var(--fm-surface)}.fm-root .fm-panel{fill:var(--fm-panel);stroke:var(--fm-border)}.fm-root .fm-blue{fill:var(--fm-blue)}.fm-root .fm-blue-stroke{stroke:var(--fm-blue)}.fm-root .fm-ink{fill:var(--fm-navy)}.fm-root .fm-muted{fill:var(--fm-muted)}.fm-root .fm-selected{fill:var(--fm-selected)}.fm-root .fm-on-blue{fill:var(--fm-on-blue)}.fm-root [transform-box]{transform-box:fill-box;transform-origin:center}.fm-root text{font-size:11px;fill:var(--fm-navy)}.fm-root .drag-node{transform-box:view-box;transform-origin:0 0}</style><div class='fm-root'><svg viewBox='0 0 320 200' role='img' aria-label='Drag lift'><rect class='fm-surface' width='320' height='200' rx='14'/><path d='M 46 144 H 274' stroke='var(--fm-border)' stroke-width='2' stroke-dasharray='4 5'/><g class='drag-node'><rect x='70' y='64' width='150' height='68' rx='12' fill='var(--fm-panel)' stroke='var(--fm-border)'/><circle cx='94' cy='98' r='7' fill='var(--fm-blue)'/><text x='112' y='94' class='fm-ink'>node</text><text x='112' y='110' class='fm-muted'>timed drag study</text></g><circle cx='252' cy='130' r='4' fill='var(--fm-blue)'/></svg></div>",
+    "duration": 420,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".drag-node",
+        "easing": "linear",
+        "keyframes": [
+          {
+            "offset": 0,
+            "transform": "translate(0px,0px)",
+            "filter": "drop-shadow(0 1px 1px rgba(19,44,70,.08))",
+            "easing": "ease-out"
+          },
+          {
+            "offset": 1,
+            "transform": "translate(34px,-12px)",
+            "filter": "drop-shadow(0 10px 12px rgba(19,44,70,.16))",
+            "easing": "ease-out"
+          }
+        ]
+      }
+    ]
+  }
+}

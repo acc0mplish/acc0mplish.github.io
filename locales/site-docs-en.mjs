@@ -11,7 +11,7 @@ export const siteDocsMessages = {
  "각 부품의 slot·size·variant·state와 역할의 연결.": "Connections between each component's slot, size, variant, state, and role.",
  "실제 참조 관계 탐색하기": "Explore actual token references",
  "원본을 바탕으로, 새로운 표현으로.": "Grounded in the source, expressed anew.",
- "PRD의 기술 기준은 고정된 ReUI 소스입니다. 이 사이트의 화면 구성·팔레트·native HTML 예제는 새로 만들었으며 ReUI 사이트 디자인을 복제하지 않았습니다. 모든 PRD 요구사항의 완료를 주장하는 제품용 구현은 아닙니다.": "The PRD's technical baseline is a fixed ReUI source revision. This site's layout, palette, and native HTML examples were created independently rather than copying the ReUI site design. This is not a production implementation claiming to complete every PRD requirement.",
+ "ReUI 고정 소스는 설계·기술 참고 자료입니다. 이 사이트의 화면 구성·팔레트·native HTML 예제는 KLIC이 독립적으로 만들었고 ReUI 코드를 복사·변형하지 않았습니다. 모든 PRD 요구사항을 완료한 제품 구현을 뜻하지 않습니다.": "The fixed ReUI revision is a design and technical reference only. KLIC independently created this site's layout, palette, and native HTML examples; no ReUI code was copied or adapted into them. This is not a production implementation claiming to complete every PRD requirement.",
  "KLIC 디자인 시스템 PRD v1.0": "KLIC Design System PRD v1.0",
  "7 디멘션 4계층 제품 요구사항 · 제공된 원문": "7 Dimensions and four-layer product requirements · supplied original",
  "같은 카탈로그를 터미널·에이전트·브라우저에서 사용하세요. 실행 가능한 기능, API 계약과 연결 방법을 함께 제공합니다.": "Use the same catalog from terminals, agents, and browsers. Runnable capabilities, API contracts, and connection instructions are provided together.",

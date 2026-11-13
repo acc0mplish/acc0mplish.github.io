@@ -1,0 +1,128 @@
+const freezeTarget = target => Object.freeze({
+  ...target,
+  controls: Object.freeze(Object.fromEntries(Object.entries(target.controls).map(([name, value]) => [name, Object.freeze({...value,...(value.values?{values:Object.freeze([...value.values])}:{})})]))),
+  parts: Object.freeze({...target.parts}),
+  sourceProperties: Object.freeze({...target.sourceProperties}),
+});
+
+export const PUBLISHING_TARGETS = Object.freeze([
+  freezeTarget({
+    scope: 'lab',
+    itemId: 'geometry',
+    targetId: 'geometry-card',
+    selector: '[data-klic-publishing-target="geometry-card"]',
+    parts: {outer: '[data-publishing-part="outer"]', middle: '[data-publishing-part="middle"]', inner: '[data-publishing-part="inner"]'},
+    controls: {
+      outerRadius: {kind: 'number', min: 0, max: 48, step: 1, unit: 'px'},
+      padding: {kind: 'number', min: 0, max: 24, step: 1, unit: 'px'},
+      innerPadding: {kind: 'number', min: 0, max: 24, step: 1, unit: 'px'},
+      borderWidth: {kind: 'number', min: 0, max: 10, step: 1, unit: 'px'},
+      minFloor: {kind: 'number', min: 0, max: 12, step: 1, unit: 'px'},
+      useOpticalFloor: {kind: 'boolean'},
+    },
+    sourceProperties: {outerRadius: 'border-radius', padding: 'padding', borderWidth: 'border-width'},
+  }),
+  freezeTarget({
+    scope: 'lab',
+    itemId: 'effects',
+    targetId: 'effects-card',
+    selector: '[data-klic-publishing-target="effects-card"]',
+    parts: {surface: '[data-klic-publishing-target="effects-card"]', hitArea: '[data-publishing-part="hit-area"]', text: '[data-publishing-part="text"]'},
+    controls: {
+      cornerTopLeft: {kind: 'number', min: 0, max: 44, step: 1, unit: 'px'},
+      cornerTopRight: {kind: 'number', min: 0, max: 44, step: 1, unit: 'px'},
+      cornerBottomRight: {kind: 'number', min: 0, max: 44, step: 1, unit: 'px'},
+      cornerBottomLeft: {kind: 'number', min: 0, max: 44, step: 1, unit: 'px'},
+      borderWidth: {kind: 'number', min: 0, max: 8, step: 1, unit: 'px'},
+      borderStyle: {kind: 'enum', values: ['solid', 'dashed', 'dotted']},
+      showGuides: {kind: 'boolean'}, showCenters: {kind: 'boolean'},
+      padding: {kind: 'number', min: 2, max: 22, step: 1, unit: 'px'},
+      textWrap: {kind: 'enum', values: ['normal', 'keep-all', 'ellipsis']},
+      fixture: {kind: 'enum', values: ['card', 'hero', 'grid', 'glass-dialog']},
+      backdropBlur: {kind: 'number', min: 0, max: 24, step: 1, unit: 'px'},
+      lineHeight: {kind: 'number', min: 100, max: 220, step: 5, unit: '%'},
+      letterSpacing: {kind: 'number', min: -2, max: 8, step: 1, unit: '0.1px'},
+      pillHeight: {kind: 'number', min: 20, max: 48, step: 1, unit: 'px'},
+      shadowX: {kind: 'number', min: -24, max: 24, step: 1, unit: 'px'},
+      shadowY: {kind: 'number', min: -24, max: 24, step: 1, unit: 'px'},
+      shadowBlur: {kind: 'number', min: 0, max: 48, step: 1, unit: 'px'},
+      shadowSpread: {kind: 'number', min: -12, max: 16, step: 1, unit: 'px'},
+      shadowInset: {kind: 'boolean'},
+      offsetX: {kind: 'number', min: -20, max: 20, step: 1, unit: 'px'},
+      layout: {kind: 'enum', values: ['flex-row', 'flex-col', 'grid-2', 'grid-3']},
+      align: {kind: 'enum', values: ['start', 'center', 'between']},
+      rowGap: {kind: 'number', min: 4, max: 36, step: 1, unit: 'px'},
+      columnGap: {kind: 'number', min: 4, max: 36, step: 1, unit: 'px'},
+      margin: {kind: 'number', min: 0, max: 32, step: 1, unit: 'px'},
+      overflow: {kind: 'enum', values: ['hidden', 'auto']},
+      zIndex: {kind: 'number', min: 1, max: 20, step: 1},
+      surfaceAlpha: {kind: 'number', min: 0, max: 100, step: 5, unit: '%'},
+      rotate: {kind: 'number', min: -30, max: 30, step: 1, unit: 'deg'},
+      transformOrigin: {kind: 'enum', values: ['center', 'top left', 'bottom right']},
+      transitionDuration: {kind: 'number', min: 50, max: 800, step: 10, unit: 'ms'},
+      outlineOffset: {kind: 'number', min: 0, max: 14, step: 1, unit: 'px'},
+    },
+    sourceProperties: {},
+  }),
+  freezeTarget({
+    scope: 'component',
+    itemId: 'card',
+    formId: 'default',
+    targetId: 'card-base',
+    selector: '[data-klic-publishing-target="card-base"]',
+    parts: {surface: '[data-klic-publishing-target="card-base"]'},
+    controls: {
+      radius: {kind: 'number', min: 0, max: 24, step: 1, unit: 'px'},
+      padding: {kind: 'number', min: 0, max: 48, step: 1, unit: 'px'},
+      borderWidth: {kind: 'number', min: 0, max: 8, step: 1, unit: 'px'},
+    },
+    sourceProperties: {radius: 'border-radius', padding: 'padding', borderWidth: 'border-width'},
+  }),
+  ...[
+    ['button', 'button-primary', '[data-klic-publishing-target="button-primary"]'],
+    ['input', 'input-name', '[data-klic-publishing-target="input-name"]'],
+    ['field', 'field-email', '[data-klic-publishing-target="field-email"]'],
+    ['dialog', 'native-demo-dialog', '[data-klic-publishing-target="native-demo-dialog"]'],
+  ].map(([itemId, targetId, selector]) => freezeTarget({
+    scope: 'component', itemId, formId: 'default', targetId, selector,
+    parts: {surface: selector},
+    controls: {
+      radius: {kind: 'number', min: 0, max: 24, step: 1, unit: 'px'},
+      padding: {kind: 'number', min: 0, max: 48, step: 1, unit: 'px'},
+      borderWidth: {kind: 'number', min: 0, max: 8, step: 1, unit: 'px'},
+    },
+    sourceProperties: {radius: 'border-radius', padding: 'padding', borderWidth: 'border-width'},
+  })),
+  freezeTarget({
+    scope: 'block',
+    itemId: 'dashboard-sales-analytics',
+    targetId: 'sales-revenue',
+    selector: '.ks-revenue-panel',
+    parts: {surface: '.ks-revenue-panel'},
+    controls: {
+      radius: {kind: 'number', min: 0, max: 24, step: 1, unit: 'px'},
+      padding: {kind: 'number', min: 0, max: 48, step: 1, unit: 'px'},
+      borderWidth: {kind: 'number', min: 0, max: 8, step: 1, unit: 'px'},
+    },
+    sourceProperties: {radius: 'border-radius', padding: 'padding', borderWidth: 'border-width'},
+  }),
+  freezeTarget({
+    scope: 'block',
+    itemId: 'form-incident-report',
+    targetId: 'incident-report-title',
+    selector: '[data-klic-publishing-target="incident-report-title"]',
+    parts: {field: '[data-klic-publishing-target="incident-report-title"]'},
+    controls: {
+      radius: {kind: 'number', min: 0, max: 24, step: 1, unit: 'px'},
+      padding: {kind: 'number', min: 0, max: 48, step: 1, unit: 'px'},
+      borderWidth: {kind: 'number', min: 0, max: 8, step: 1, unit: 'px'},
+    },
+    sourceProperties: {radius: 'border-radius', padding: 'padding', borderWidth: 'border-width'},
+  }),
+]);
+
+const targetById = new Map(PUBLISHING_TARGETS.map(target => [target.targetId, target]));
+
+export function getPublishingTarget(targetId) {
+  return targetById.get(targetId) || null;
+}

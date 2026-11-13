@@ -1,5 +1,6 @@
 // Authored adoption-policy guidance. Policy claims are not validation evidence.
 export const blockContractBMessages = {
+  "기준: KLIC 조합 구현과 별도 연동한 외부 모듈의 파일별 고지.": "Basis: KLIC composition and file-scoped notices for separately integrated external modules.",
   "기간 제목·이전/다음·오늘·날짜 격자·일정 목록·선택 상세를 연결한다. 날짜와 시간대, 선택 기간의 의미를 명시한다.": "Connect the period heading, previous/next controls, Today action, date grid, event list, and selected-event details. State the meaning of dates, time zones, and the selected period.",
   "날짜 target과 일정 레이블을 유지한다. 월·주·일 뷰의 셀 기하를 구분하고 많은 일정은 목록 또는 더 보기로 접근하게 한다.": "Preserve date targets and event labels. Distinguish the cell geometry of month, week, and day views, and make crowded schedules accessible through a list or a Show more action.",
   "날짜·요일·일정 제목·시간의 역할을 구분한다. 긴 한글 일정명과 locale별 날짜 형식이 셀을 넘을 때 전체 내용 경로를 둔다.": "Distinguish the roles of dates, weekdays, event titles, and times. Provide access to the complete text when long Korean event names or locale-specific date formats exceed their cells.",
@@ -53,7 +54,7 @@ export const blockContractBMessages = {
   "출처 파일 경로 미제공": "Source file path not provided",
   "각 축의 상태는 정책 채택(policy-adopted)이다. 연결된 소스나 토큰이 존재한다는 사실을 실제 동작 검증 완료로 해석하지 않는다.": "Each dimension has policy-adopted status. The presence of linked source code or tokens does not establish that actual behavior has been verified.",
   "실제 200% 브라우저 확대·스크린리더·한글 IME·forced-colors·물리 모바일 키보드는 미검증이다. 지원 환경별 결과와 예외 근거를 별도로 기록한다.": "Actual 200% browser zoom, screen readers, Korean IME, forced colors, and physical mobile keyboards have not been verified. Record results and grounds for exceptions separately for each supported environment.",
-  "미리보기와 예제 코드는 제공 ZIP을 KLIC에 맞추는 구현 범위다. 제품 저장·인증·외부 연동·배포의 완료를 보장하지 않는다.": "Previews and example code cover adapting the supplied ZIP to KLIC. They do not guarantee completed product persistence, authentication, external integrations, or deployment.",
+  "미리보기와 예제 코드는 KLIC이 직접 구현한 Block Studio의 로컬 예제다. 디자인 참고와 구현 코드의 출처를 구분한다. 제품 저장·인증·외부 연동·배포는 별도 구현한다.": "Previews and examples are local examples from KLIC-authored Block Studio. Visual design references are distinct from implementation-code provenance. Product persistence, authentication, integrations and deployment require separate implementation.",
   "이 항목은 전용 구현이 연결되지 않은 카탈로그 예시다. 대체 미리보기를 해당 블록의 기능 검증으로 간주하지 않는다.": "This catalog example has no dedicated implementation connected. Do not treat a substitute preview as functional verification of the block.",
   "가상화 채택 시 추정·실측·재측정, 첫·중간·마지막 행 접근, 선택·편집·초점 보존을 FR20에 따라 별도로 검증해야 한다.": "When adopting virtualization, separately verify estimation, measurement, remeasurement, access to first, middle, and last rows, and preservation of selection, editing, and focus under FR20.",
   "블록": "Block",
@@ -61,7 +62,7 @@ export const blockContractBMessages = {
   "모든 조작의 이름·보이는 초점·실제 target 경계를 확인한다. reduced-motion에서도 기능에 필요한 상태 안내를 유지한다.": "Check every action's name, visible focus, and actual target boundary. Preserve status information needed for functionality when reduced motion is enabled.",
   "CSS viewport·실제 콘텐츠 컨테이너·사용자 확대·명시적 density를 별개의 시험 조건으로 기록한다.": "Record the CSS viewport, actual content container, user zoom, and explicitly selected density as separate test conditions.",
   "완료·성공은 블루와 체크·명시적 문구로 전달한다. hover가 selected·invalid·focus 의미를 지우지 않도록 한다.": "Communicate completion and success through blue, a check mark, and explicit wording. Prevent hover from erasing the meaning of selected, invalid, or focus states.",
-  "기준: 사용자 제공 Block Studio ZIP의 카탈로그·구현 소스와 KLIC 디자인 시스템 PRD v1.0.": "Basis: the catalog and implementation source in the user-provided Block Studio ZIP and KLIC Design System PRD v1.0.",
-  "KLIC 신규 결정: 회사 블루·4계층 토큰 adapter·7 디멘션 채택 정책. ReUI 공식 배포본 설치 또는 전체 PRD 수용시험 완료를 뜻하지 않는다.": "New KLIC decisions: company blue, a four-level token adapter, and 7 Dimensions adoption policies. This does not indicate installation of an official ReUI distribution or completion of all PRD acceptance tests.",
+  "기준: KLIC Block Studio 자체 구현과 디자인 시스템. 외부 디자인 참고는 구현 코드의 출처와 구분한다.": "Basis: KLIC-authored Block Studio and its design system. External visual references are distinct from implementation-code provenance.",
+  "KLIC 구현 기준: 회사 블루·4계층 토큰·7 디멘션. 별도로 연동한 외부 코드·폰트·의존성은 해당 파일의 고지를 따른다. 전체 PRD 수용시험 완료를 뜻하지 않는다.": "KLIC implementation criteria: company blue, four-layer tokens and 7 Dimensions. Separately integrated external code, fonts and dependencies retain their file-scoped notices. This does not certify completion of all PRD acceptance tests.",
   "각 디멘션의 상태는 정책 채택(policy-adopted)이다. 연결된 소스나 토큰이 존재한다는 사실을 실제 동작 검증 완료로 해석하지 않는다.": "Each dimension has policy-adopted status. The presence of linked source code or tokens does not establish that actual behavior has been verified."
 };

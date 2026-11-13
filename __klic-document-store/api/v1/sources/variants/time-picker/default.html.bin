@@ -1,0 +1,2 @@
+<!-- KLIC native HTML example. Styles/interactions: component bundle. KLIC example; preserve bundled per-file license notices. -->
+<div data-klic-component="time-picker" class="kn-time-picker"><div data-part="field"><label for="export-time-picker-default-time" data-part="label">회의 시작</label><input id="export-time-picker-default-time" type="time" step="900" value="09:30" data-part="input"></div><p data-part="hint">15분 단위 · 현지 시간</p></div>

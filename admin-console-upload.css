@@ -1,0 +1,21 @@
+.admin-upload-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.65fr);gap:18px;align-items:end}
+.admin-upload-form .admin-field{margin:0}
+.admin-upload-form input[type=file],.admin-upload-form select{width:100%;min-height:44px;border:1px solid var(--admin-line);border-radius:8px;background:#fff;color:var(--admin-navy);padding:9px 11px}
+.admin-upload-form input[type=file]{padding:7px}
+.admin-upload-form input[type=file]::file-selector-button{margin-right:10px;border:1px solid var(--admin-line);border-radius:6px;background:#f6f8fb;color:var(--admin-navy);padding:7px 10px}
+.admin-upload-form input[type=file]::file-selector-button:hover{border-color:var(--admin-blue);color:var(--admin-blue)}
+.admin-upload-form>.admin-upload-actions{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:2px}
+.admin-upload-form>.admin-upload-actions p{margin:0;color:var(--admin-muted);font-size:12px}
+.admin-upload-form>.admin-upload-actions p[data-error=true]{color:#b42335}
+.admin-upload-list{margin-top:20px;border-top:1px solid var(--admin-line)}
+.admin-upload-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:20px;padding:18px 0;border-bottom:1px solid var(--admin-line)}
+.admin-upload-details{display:grid;min-width:0;gap:4px}
+.admin-upload-name{overflow-wrap:anywhere;font-size:14px}
+.admin-upload-meta{color:var(--admin-muted);font-size:11px;overflow-wrap:anywhere}
+.admin-upload-visibility{width:fit-content;margin-top:3px;color:var(--admin-blue);font-size:11px;font-weight:700}
+.admin-upload-row .admin-upload-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:8px}
+.admin-upload-row .admin-upload-actions a{font-size:12px}
+.admin-upload-row .admin-upload-actions button{font-size:11px;padding:7px 10px}
+.admin-upload-row .admin-upload-delete{color:#b42335}
+.admin-upload-empty{color:var(--admin-muted);font-size:13px}
+@media(max-width:680px){.admin-upload-form{grid-template-columns:1fr}.admin-upload-form>.admin-upload-actions{grid-column:1;align-items:flex-start;flex-direction:column}.admin-upload-row{grid-template-columns:1fr;gap:12px}.admin-upload-row .admin-upload-actions{justify-content:flex-start}}

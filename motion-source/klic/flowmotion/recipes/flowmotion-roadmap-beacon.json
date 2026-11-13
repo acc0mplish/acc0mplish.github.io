@@ -1,0 +1,318 @@
+{
+  "id": "flowmotion-roadmap-beacon",
+  "category": "data-story",
+  "title": {
+    "ko": "마일스톤 S 커브 비콘",
+    "en": "Milestone S-Curve Beacon"
+  },
+  "summary": {
+    "ko": "원본 로지스틱 S 커브의 시간 진행에 맞춰 비콘을 이동합니다.",
+    "en": "Moves a beacon along the source logistic S-curve progression."
+  },
+  "durationMs": 2400,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "ppt-milestone-roadmap"
+    ],
+    "sourceFile": "src/components/PptInfographicCanvases.tsx",
+    "renderer": "PptMilestoneRoadmapCanvas",
+    "effect": "milestone-s-curve-beacon",
+    "sourceTimeline": {
+      "durationMs": 2400,
+      "description": "The current-quarter example caps progress at maxT=0.68. t=progress×0.68; x=80+t×940; sRatio=1/(1+exp(−8×(t−0.52))); y=468−sRatio×148.",
+      "frames": [
+        {
+          "progress": 0,
+          "t": 0,
+          "x": 80,
+          "y": 465.726
+        },
+        {
+          "progress": 0.25,
+          "t": 0.17,
+          "x": 239.8,
+          "y": 459.516
+        },
+        {
+          "progress": 0.5,
+          "t": 0.34,
+          "x": 399.6,
+          "y": 439.651
+        },
+        {
+          "progress": 0.75,
+          "t": 0.51,
+          "x": 559.4,
+          "y": 396.958
+        },
+        {
+          "progress": 1,
+          "t": 0.68,
+          "x": 719.2,
+          "y": 352.197
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"S 커브를 따라가는 분기 비콘\"><path class=\"flow\" d=\"M 30 138 C 92 138 89 126 155 112 S 231 54 290 52\"/><circle class=\"packet\" cx=\"30\" cy=\"138\" r=\"5\"/><text class=\"small\" text-anchor=\"start\" x=\"35\" y=\"158\">시작</text><text class=\"small\" text-anchor=\"end\" x=\"288\" y=\"40\">완료</text></svg></div>",
+    "duration": 2400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".packet",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "30px",
+            "cy": "136.678px"
+          },
+          {
+            "offset": 0.020833333333333332,
+            "cx": "33.683px",
+            "cy": "136.523px"
+          },
+          {
+            "offset": 0.041666666666666664,
+            "cx": "37.367px",
+            "cy": "136.349px"
+          },
+          {
+            "offset": 0.0625,
+            "cx": "41.05px",
+            "cy": "136.155px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "44.733px",
+            "cy": "135.939px"
+          },
+          {
+            "offset": 0.10416666666666667,
+            "cx": "48.417px",
+            "cy": "135.698px"
+          },
+          {
+            "offset": 0.125,
+            "cx": "52.1px",
+            "cy": "135.43px"
+          },
+          {
+            "offset": 0.14583333333333334,
+            "cx": "55.783px",
+            "cy": "135.132px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "59.467px",
+            "cy": "134.8px"
+          },
+          {
+            "offset": 0.1875,
+            "cx": "63.15px",
+            "cy": "134.432px"
+          },
+          {
+            "offset": 0.20833333333333334,
+            "cx": "66.833px",
+            "cy": "134.024px"
+          },
+          {
+            "offset": 0.22916666666666666,
+            "cx": "70.517px",
+            "cy": "133.571px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "74.2px",
+            "cy": "133.07px"
+          },
+          {
+            "offset": 0.2708333333333333,
+            "cx": "77.883px",
+            "cy": "132.516px"
+          },
+          {
+            "offset": 0.2916666666666667,
+            "cx": "81.567px",
+            "cy": "131.905px"
+          },
+          {
+            "offset": 0.3125,
+            "cx": "85.25px",
+            "cy": "131.231px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "88.933px",
+            "cy": "130.49px"
+          },
+          {
+            "offset": 0.3541666666666667,
+            "cx": "92.617px",
+            "cy": "129.675px"
+          },
+          {
+            "offset": 0.375,
+            "cx": "96.3px",
+            "cy": "128.784px"
+          },
+          {
+            "offset": 0.3958333333333333,
+            "cx": "99.983px",
+            "cy": "127.809px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "103.667px",
+            "cy": "126.746px"
+          },
+          {
+            "offset": 0.4375,
+            "cx": "107.35px",
+            "cy": "125.59px"
+          },
+          {
+            "offset": 0.4583333333333333,
+            "cx": "111.033px",
+            "cy": "124.337px"
+          },
+          {
+            "offset": 0.4791666666666667,
+            "cx": "114.717px",
+            "cy": "122.984px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "118.4px",
+            "cy": "121.527px"
+          },
+          {
+            "offset": 0.5208333333333334,
+            "cx": "122.083px",
+            "cy": "119.965px"
+          },
+          {
+            "offset": 0.5416666666666666,
+            "cx": "125.767px",
+            "cy": "118.296px"
+          },
+          {
+            "offset": 0.5625,
+            "cx": "129.45px",
+            "cy": "116.522px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "133.133px",
+            "cy": "114.645px"
+          },
+          {
+            "offset": 0.6041666666666666,
+            "cx": "136.817px",
+            "cy": "112.668px"
+          },
+          {
+            "offset": 0.625,
+            "cx": "140.5px",
+            "cy": "110.596px"
+          },
+          {
+            "offset": 0.6458333333333334,
+            "cx": "144.183px",
+            "cy": "108.438px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "147.867px",
+            "cy": "106.202px"
+          },
+          {
+            "offset": 0.6875,
+            "cx": "151.55px",
+            "cy": "103.9px"
+          },
+          {
+            "offset": 0.7083333333333334,
+            "cx": "155.233px",
+            "cy": "101.542px"
+          },
+          {
+            "offset": 0.7291666666666666,
+            "cx": "158.917px",
+            "cy": "99.144px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "162.6px",
+            "cy": "96.719px"
+          },
+          {
+            "offset": 0.7708333333333334,
+            "cx": "166.283px",
+            "cy": "94.283px"
+          },
+          {
+            "offset": 0.7916666666666666,
+            "cx": "169.967px",
+            "cy": "91.852px"
+          },
+          {
+            "offset": 0.8125,
+            "cx": "173.65px",
+            "cy": "89.441px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "177.333px",
+            "cy": "87.065px"
+          },
+          {
+            "offset": 0.8541666666666666,
+            "cx": "181.017px",
+            "cy": "84.738px"
+          },
+          {
+            "offset": 0.875,
+            "cx": "184.7px",
+            "cy": "82.474px"
+          },
+          {
+            "offset": 0.8958333333333334,
+            "cx": "188.383px",
+            "cy": "80.282px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "192.067px",
+            "cy": "78.174px"
+          },
+          {
+            "offset": 0.9375,
+            "cx": "195.75px",
+            "cy": "76.157px"
+          },
+          {
+            "offset": 0.9583333333333334,
+            "cx": "199.433px",
+            "cy": "74.238px"
+          },
+          {
+            "offset": 0.9791666666666666,
+            "cx": "203.117px",
+            "cy": "72.421px"
+          },
+          {
+            "offset": 1,
+            "cx": "206.8px",
+            "cy": "70.709px"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

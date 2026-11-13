@@ -6,6 +6,10 @@
 import React, { useState, useEffect } from 'react';
 import { lazyBlockComponents, type BlockComponents } from './block-components';
 import { NewTaskModal } from './components/preview/NewTaskModal';
+import { PLANNED_PREVIEW_IDS } from './data/plannedPreviewRoutes';
+import { BasketballUploadBlock } from './components/blocks/BasketballUploadBlock';
+import { SoccerGoalUploadBlock } from './components/blocks/SoccerGoalUploadBlock';
+import { TrashCanUploadBlock } from './components/blocks/TrashCanUploadBlock';
 import {
   INITIAL_ROADMAP_TASKS,
   INITIAL_ACCESS_MEMBERS,
@@ -56,12 +60,17 @@ import {
   ReportItem,
 } from './types';
 
-export const BLOCK_IDS = ['panel-timeline-context', 'panel-customer-inspector', 'panel-task-discussion', 'panel-risk-review', 'dashboard-sales-analytics', 'dashboard-ai-workspace', 'dashboard-automation-ops', 'dashboard-personal-finance', 'dashboard-flow-operations', 'dashboard-activation-goals', 'dashboard-report-center', 'dashboard-sales-pipeline', 'dashboard-deal-momentum', 'dashboard-ai-mail', 'dashboard-payment-authorizations', 'dashboard-project-tracker', 'dashboard-delivery-tracker', 'multi-select', 'tree-view', 'file-upload', 'trace-waterfall', 'log-stream', 'deploy-pipeline', "affect-agent-review", "affect-response-workspace", "affect-logo-marquee", "affect-testimonial-wall", "chart-distribution", "chart-violin", "chart-beeswarm", "chart-scatter-brush", "chart-calibration", "chart-candlestick", "chart-forecast-fan", "chart-drawdown", "chart-market-depth", "chart-orderbook", "chart-state-timeline", "chart-spark-table", "chart-waterfall", "chart-treemap", "chart-streamgraph", "daily-active-users-area", "cloud-spend-variance-bar", "chart-dumbbell", "chart-correlation", "chart-cohort-retention", "chart-calendar-heatmap", "self-serve-funnel", "chart-bullet", 'timeline-plan-actual', 'timeline-execution-waterfall', 'timeline-team-swimlane', 'timeline-milestone-delta', 'timeline-release-gates', 'flow-connector-straight', 'flow-connector-elbow', 'flow-connector-curve', 'flow-connector-step', 'flow-connector-dashed', 'flow-connector-bidirectional', 'flow-connector-rounded', 'flow-connector-ports', 'flow-connector-hyperedge', 'flow-connector-feedback', 'flow-connector-labels', 'flow-connector-taper', 'flow-connector-decision', 'flow-connector-parallel', 'flow-connector-state', 'flow-connector-retry', 'flow-connector-interaction', 'flow-connector-obstacle', 'flow-connector-metro', 'flow-connector-multiedge', 'flow-connector-loops', 'flow-connector-containers', 'flow-connector-bundle', 'flow-connector-bus', 'flow-connector-bridges', 'flow-connector-ribbons', 'flow-connector-radial', 'diagram-service-flow', 'template-advisor-knowledge', 'template-autonomous-task-lifecycle', 'template-smart-reorder-supplychain', 'template-proforma-financial-roi', 'template-enterprise-reports-center', 'cell-inline-input', 'popover-date-picker', 'tag-multiselect-editor', 'numeric-stepper-cell', 'optimistic-cell-save', 'sheet-issue-detail', 'sheet-trace-inspector', 'sheet-customer-360', 'sheet-advanced-filter', 'sheet-audit-diff', 'flow-react-lead-routing', 'flow-react-fds-routing', 'flow-react-vip-defense', 'flow-cicd-pipeline', 'flow-webhook-automation', 'flow-etl-lineage', 'flow-microservice-topology', 'flow-approval-routing', 'shell-enterprise-sidebar', 'shell-dual-rail-ide', 'shell-top-nav-portal', 'shell-master-detail-inbox', 'shell-canvas-studio', 'notif-project-updates', 'notif-floating-toast', 'notif-approval-center', 'notif-incident-pager', 'notif-mention-thread', 'notif-daily-digest', 'empty-search-filter', 'empty-first-project', 'empty-permission-locked', 'empty-integration-disconnected', 'empty-inbox-zero', 'settings-team-permissions', 'settings-workspace-general', 'settings-security-sso', 'settings-notification-routing', 'settings-api-webhooks', 'settings-billing-plan', 'list-audit-activity', 'list-notification-inbox', 'list-git-deployments', 'list-team-directory', 'list-api-webhooks', 'navbar-workspace-header', 'navbar-contextual-subnav', 'navbar-floating-dock', 'navbar-mega-menu', 'navbar-incident-banner', 'dialog-command-palette', 'dialog-destructive-confirm', 'dialog-share-permissions', 'dialog-api-token-create', 'dialog-bulk-import-csv', 'card-saas-metric', 'card-project-health', 'card-pricing-tier', 'card-api-integration', 'card-approval-request', 'card-meeting-schedule', 'dashboard-exec-revenue', 'dashboard-sre-observability', 'dashboard-product-analytics', 'dashboard-finops-cost', 'dashboard-cx-support', 'auth-enterprise-sso-login', 'auth-mfa-totp-verify', 'auth-workspace-signup', 'auth-session-device-manager', 'auth-step-up-reauth', 'schedule-shift-optimize', 'schedule-field-dispatch', 'schedule-daily-agenda', 'schedule-interview-slots', 'schedule-maintenance-window', 'schedule-shift-planner', 'schedule-batch-cron-agenda', 'agent-task-lifecycle', 'list-agent-tasks', 'kanban-sprint-board', 'kanban-swimlane-squad', 'kanban-crm-deal', 'kanban-incident-triage', 'kanban-hiring-ats', 'gantt-flux-wbs-svg', 'gantt-project-tasks', 'gantt-resource-capacity', 'gantt-milestone-roadmap', 'gantt-sprint-release', 'gantt-critical-path', 'error-budget-burn', 'capital-inflows-bar', 'revenue-breakdown-bar', 'headcount-cost-bar', 'env-promotion-pipeline', 'cron-run-history-tracker', 'uptime-sla-tracker', 'incident-health-bars', 'cash-inflows-radial', 'api-health-radial', 'competitor-feature-radar', 'team-velocity-polar', 'error-budget-slope', 'arr-growth-slope', 'feature-adoption-slope', 'funnel-flow', 'trial-flow', 'b2b-deals-flow', 'billing-upgrade', 'striped-rows', 'integrations-hub', 'reports-schedule', 'shared-drive-folders', 'course-catalog', 'product-catalog', 'support-tickets', 'sla-risk-index', 'workspace-overview', 'release-approvals', 'subtask-tracker', 'access-permissions-matrix', 'roadmap-stage', 'revenue-region', 'billing-transactions', 'rte-slash-document', 'rte-markdown-tech-spec', 'rte-collaborative-comment', 'rte-incident-postmortem', 'rte-email-campaign', 'onboarding-checklist-hub', 'onboarding-role-personalize', 'onboarding-interactive-tour', 'onboarding-sdk-quickstart', 'onboarding-data-migration', 'wizard-cloud-provisioning', 'wizard-enterprise-contract', 'wizard-rbac-role-builder', 'wizard-report-scheduler', 'wizard-sso-saml-setup', 'calendar-release-freeze', 'calendar-marketing-campaign', 'calendar-oncall-rotation', 'calendar-resource-booking', 'calendar-compliance-audit', 'stats-executive-kpi-strip', 'stats-sla-uptime-summary', 'stats-usage-quota-meters', 'stats-conversion-benchmark', 'stats-dora-engineering', 'timeline-incident-response', 'timeline-order-fulfillment', 'timeline-release-changelog', 'timeline-contract-lifecycle', 'timeline-pr-review-chain', 'form-incident-report', 'form-procurement-request', 'form-webhook-endpoint', 'form-database-connection', 'form-feature-flag-rule'] as const;
-export interface BlockAppProps { selectedId: string; density: 'compact' | 'normal' | 'relaxed'; showAvatars?: boolean; showProgressRings?: boolean; onDensityChange?: (density: 'compact' | 'normal' | 'relaxed') => void; components?: BlockComponents }
-export default function BlockApp({ selectedId: initialId, density: contextDensity, showAvatars = true, showProgressRings = true, onDensityChange, components = lazyBlockComponents }: BlockAppProps) {
+const BASE_BLOCK_IDS = ['panel-timeline-context', 'panel-customer-inspector', 'panel-task-discussion', 'panel-risk-review', 'dashboard-sales-analytics', 'dashboard-ai-workspace', 'dashboard-automation-ops', 'dashboard-personal-finance', 'dashboard-flow-operations', 'dashboard-activation-goals', 'dashboard-report-center', 'dashboard-sales-pipeline', 'dashboard-deal-momentum', 'dashboard-ai-mail', 'dashboard-payment-authorizations', 'dashboard-project-tracker', 'dashboard-delivery-tracker', 'multi-select', 'splitter-code-preview', 'splitter-ide-nested', 'splitter-diff-compare', 'splitter-master-detail', 'splitter-canvas-drawer', 'tree-view', 'file-upload', 'trace-waterfall', 'log-stream', 'deploy-pipeline', "affect-agent-review", "affect-response-workspace", "affect-logo-marquee", "affect-testimonial-wall", "chart-distribution", "chart-violin", "chart-beeswarm", "chart-scatter-brush", "chart-calibration", "chart-candlestick", "chart-forecast-fan", "chart-drawdown", "chart-market-depth", "chart-orderbook", "chart-state-timeline", "chart-spark-table", "chart-waterfall", "chart-treemap", "chart-streamgraph", "daily-active-users-area", "cloud-spend-variance-bar", "chart-dumbbell", "chart-correlation", "chart-cohort-retention", "chart-calendar-heatmap", "chart3d-isometric-latency", "chart3d-voxel-hourly-density", "chart3d-cylinder-donut-stack", "chart3d-cluster-topology-bars", "chart3d-funnel-slab-cascade", "self-serve-funnel", "chart-bullet", 'timeline-plan-actual', 'timeline-execution-waterfall', 'timeline-team-swimlane', 'timeline-milestone-delta', 'timeline-release-gates', 'flow-connector-straight', 'flow-connector-elbow', 'flow-connector-curve', 'flow-connector-step', 'flow-connector-dashed', 'flow-connector-bidirectional', 'flow-connector-rounded', 'flow-connector-ports', 'flow-connector-hyperedge', 'flow-connector-feedback', 'flow-connector-labels', 'flow-connector-taper', 'flow-connector-decision', 'flow-connector-parallel', 'flow-connector-state', 'flow-connector-retry', 'flow-connector-interaction', 'flow-connector-obstacle', 'flow-connector-metro', 'flow-connector-multiedge', 'flow-connector-loops', 'flow-connector-containers', 'flow-connector-bundle', 'flow-connector-bus', 'flow-connector-bridges', 'flow-connector-ribbons', 'flow-connector-radial', 'diagram-service-flow', 'template-advisor-knowledge', 'template-autonomous-task-lifecycle', 'template-smart-reorder-supplychain', 'template-proforma-financial-roi', 'template-enterprise-reports-center', 'cell-inline-input', 'popover-date-picker', 'tag-multiselect-editor', 'numeric-stepper-cell', 'optimistic-cell-save', 'sheet-issue-detail', 'sheet-trace-inspector', 'sheet-customer-360', 'sheet-advanced-filter', 'sheet-audit-diff', 'flow-react-lead-routing', 'flow-react-fds-routing', 'flow-react-vip-defense', 'flow-cicd-pipeline', 'flow-webhook-automation', 'flow-etl-lineage', 'flow-microservice-topology', 'flow-approval-routing', 'shell-enterprise-sidebar', 'shell-dual-rail-ide', 'shell-top-nav-portal', 'shell-master-detail-inbox', 'shell-canvas-studio', 'notif-project-updates', 'notif-floating-toast', 'notif-approval-center', 'notif-incident-pager', 'notif-mention-thread', 'notif-daily-digest', 'empty-search-filter', 'empty-first-project', 'empty-permission-locked', 'empty-integration-disconnected', 'empty-inbox-zero', 'settings-team-permissions', 'settings-workspace-general', 'settings-security-sso', 'settings-notification-routing', 'settings-api-webhooks', 'settings-billing-plan', 'list-audit-activity', 'list-notification-inbox', 'list-git-deployments', 'list-team-directory', 'list-api-webhooks', 'navbar-workspace-header', 'navbar-contextual-subnav', 'navbar-floating-dock', 'navbar-mega-menu', 'navbar-incident-banner', 'dialog-command-palette', 'dialog-destructive-confirm', 'dialog-share-permissions', 'dialog-api-token-create', 'dialog-bulk-import-csv', 'card-saas-metric', 'card-project-health', 'card-pricing-tier', 'card-api-integration', 'card-approval-request', 'card-meeting-schedule', 'dashboard-exec-revenue', 'dashboard-sre-observability', 'dashboard-product-analytics', 'dashboard-finops-cost', 'dashboard-cx-support', 'auth-enterprise-sso-login', 'auth-mfa-totp-verify', 'auth-workspace-signup', 'auth-session-device-manager', 'auth-step-up-reauth', 'schedule-shift-optimize', 'schedule-field-dispatch', 'schedule-daily-agenda', 'schedule-interview-slots', 'schedule-maintenance-window', 'schedule-shift-planner', 'schedule-batch-cron-agenda', 'agent-task-lifecycle', 'list-agent-tasks', 'kanban-sprint-board', 'kanban-swimlane-squad', 'kanban-crm-deal', 'kanban-incident-triage', 'kanban-hiring-ats', 'gantt-flux-wbs-svg', 'gantt-project-tasks', 'gantt-resource-capacity', 'gantt-milestone-roadmap', 'gantt-sprint-release', 'gantt-critical-path', 'error-budget-burn', 'capital-inflows-bar', 'env-promotion-pipeline', 'cron-run-history-tracker', 'uptime-sla-tracker', 'incident-health-bars', 'cash-inflows-radial', 'api-health-radial', 'competitor-feature-radar', 'team-velocity-polar', 'error-budget-slope', 'arr-growth-slope', 'feature-adoption-slope', 'funnel-flow', 'trial-flow', 'b2b-deals-flow', 'billing-upgrade', 'striped-rows', 'integrations-hub', 'reports-schedule', 'shared-drive-folders', 'course-catalog', 'product-catalog', 'support-tickets', 'sla-risk-index', 'workspace-overview', 'release-approvals', 'subtask-tracker', 'access-permissions-matrix', 'roadmap-stage', 'revenue-region', 'billing-transactions', 'rte-slash-document', 'rte-markdown-tech-spec', 'rte-collaborative-comment', 'rte-incident-postmortem', 'rte-email-campaign', 'onboarding-checklist-hub', 'onboarding-role-personalize', 'onboarding-interactive-tour', 'onboarding-sdk-quickstart', 'onboarding-data-migration', 'wizard-cloud-provisioning', 'wizard-enterprise-contract', 'wizard-rbac-role-builder', 'wizard-report-scheduler', 'wizard-sso-saml-setup', 'calendar-release-freeze', 'calendar-marketing-campaign', 'calendar-oncall-rotation', 'calendar-resource-booking', 'calendar-compliance-audit', 'stats-executive-kpi-strip', 'stats-sla-uptime-summary', 'stats-usage-quota-meters', 'stats-conversion-benchmark', 'stats-dora-engineering', 'timeline-incident-response', 'timeline-order-fulfillment', 'timeline-release-changelog', 'timeline-contract-lifecycle', 'timeline-pr-review-chain', 'form-incident-report', 'form-procurement-request', 'form-webhook-endpoint', 'form-database-connection', 'form-feature-flag-rule'] as const;
+const FLOWMOTION_BLOCK_IDS = ['flowmotion-inbound-lead-routing', 'flowmotion-realtime-ai-scoring-hub', 'flowmotion-swimlane-etl-funnel', 'flowmotion-cyclic-agent-ring', 'flowmotion-vertical-region-tree', 'flowmotion-ppt-chevron-funnel', 'flowmotion-ppt-sequence-flowchart', 'flowmotion-ppt-flywheel-infographic', 'flowmotion-ppt-asis-tobe-bridge', 'flowmotion-ppt-milestone-roadmap', 'flowmotion-creative-zigzag-ribbon', 'flowmotion-creative-lightbulb-brainstorm', 'flowmotion-creative-strategy-pyramid', 'flowmotion-creative-semicircle-radial-fan', 'flowmotion-creative-hexagon-honeycomb', 'flowmotion-cinematic-node-connect', 'flowmotion-editorial-mcp-skill-compare', 'flowmotion-it-pms-project', 'flowmotion-it-design-system', 'flowmotion-it-slack-chatops', 'flowmotion-it-dev-cicd', 'flowmotion-it-si-integration'] as const;
+const KLIC_CHART_BLOCK_IDS=['klic-reusable-chart-types'] as const;
+const SHOTDROP_BLOCK_IDS = ['file-upload-basketball-hoop', 'file-upload-soccer-goal', 'file-upload-trash-can'] as const;
+export const BLOCK_IDS = [...BASE_BLOCK_IDS, ...SHOTDROP_BLOCK_IDS, ...PLANNED_PREVIEW_IDS, ...FLOWMOTION_BLOCK_IDS, ...KLIC_CHART_BLOCK_IDS] as const;
+export interface BlockAppProps { selectedId: string; density: 'compact' | 'normal' | 'relaxed'; theme?: 'light' | 'dark'; showAvatars?: boolean; showProgressRings?: boolean; onDensityChange?: (density: 'compact' | 'normal' | 'relaxed') => void; components?: BlockComponents }
+export default function BlockApp({ selectedId: initialId, density: contextDensity, theme = 'light', showAvatars = true, showProgressRings = true, onDensityChange, components = lazyBlockComponents }: BlockAppProps) {
   const {
     RightSidePanelBlock,
     DistributionChartsBlock,
+    ReusableChartShowcaseBlock,
     FinancialChartsBlock,
     CompositionChartsBlock,
     MatrixChartsBlock,
@@ -87,6 +96,8 @@ export default function BlockApp({ selectedId: initialId, density: contextDensit
     StatusTrackerBlock,
     EnvironmentPipelineBlock,
     CapitalInflowsBlock,
+    ThreeDChartShowcaseBlock,
+    SplitterShowcaseBlock,
     ErrorBudgetBurnBlock,
     GanttChartBlock,
     KanbanBoardBlock,
@@ -112,6 +123,11 @@ export default function BlockApp({ selectedId: initialId, density: contextDensit
     ApplicationTemplatesBlock,
     SheetShowcaseBlock,
     FlowShowcaseBlock,
+    FlowMotionBlock,
+    PlannedApplicationBlock,
+    PlannedWhiteboardBlock,
+    PlannedChartPreviewBlock,
+    PlannedDataGridPreviewBlock,
     AppShellShowcaseBlock,
     RichTextEditorShowcaseBlock,
     OnboardingShowcaseBlock,
@@ -120,7 +136,10 @@ export default function BlockApp({ selectedId: initialId, density: contextDensit
     StatsShowcaseBlock,
     TimelineShowcaseBlock,
     LiveTimelineBlock,
-    FormShowcaseBlock
+    FormShowcaseBlock,
+    BasketballUploadBlock,
+    SoccerGoalUploadBlock,
+    TrashCanUploadBlock
   } = components;
   const [selectedId, setSelectedId] = useState(initialId);
   const [density, setDensity] = useState(contextDensity);
@@ -446,6 +465,7 @@ export default function BlockApp({ selectedId: initialId, density: contextDensit
       case 'panel-risk-review':
         return <RightSidePanelBlock initialMode="risk-review" density={density} />;
 
+      case 'klic-reusable-chart-types': return <ReusableChartShowcaseBlock key={selectedId} density={density} theme={theme} />;
       case 'chart-distribution': return <DistributionChartsBlock key={selectedId} variant="distribution" density={density} />;
       case 'chart-violin': return <DistributionChartsBlock key={selectedId} variant="violin" density={density} />;
       case 'chart-beeswarm': return <DistributionChartsBlock key={selectedId} variant="beeswarm" density={density} />;
@@ -548,6 +568,28 @@ export default function BlockApp({ selectedId: initialId, density: contextDensit
         return <FlowShowcaseBlock initialMode="microservice-topology" density={density} />;
       case 'flow-approval-routing':
         return <FlowShowcaseBlock initialMode="approval-routing" density={density} />;
+      case 'flowmotion-inbound-lead-routing': return <FlowMotionBlock key={selectedId} templateId="inbound-lead-routing" density={density} />;
+      case 'flowmotion-realtime-ai-scoring-hub': return <FlowMotionBlock key={selectedId} templateId="realtime-ai-scoring-hub" density={density} />;
+      case 'flowmotion-swimlane-etl-funnel': return <FlowMotionBlock key={selectedId} templateId="swimlane-etl-funnel" density={density} />;
+      case 'flowmotion-cyclic-agent-ring': return <FlowMotionBlock key={selectedId} templateId="cyclic-agent-ring" density={density} />;
+      case 'flowmotion-vertical-region-tree': return <FlowMotionBlock key={selectedId} templateId="vertical-region-tree" density={density} />;
+      case 'flowmotion-ppt-chevron-funnel': return <FlowMotionBlock key={selectedId} templateId="ppt-chevron-funnel" density={density} />;
+      case 'flowmotion-ppt-sequence-flowchart': return <FlowMotionBlock key={selectedId} templateId="ppt-sequence-flowchart" density={density} />;
+      case 'flowmotion-ppt-flywheel-infographic': return <FlowMotionBlock key={selectedId} templateId="ppt-flywheel-infographic" density={density} />;
+      case 'flowmotion-ppt-asis-tobe-bridge': return <FlowMotionBlock key={selectedId} templateId="ppt-asis-tobe-bridge" density={density} />;
+      case 'flowmotion-ppt-milestone-roadmap': return <FlowMotionBlock key={selectedId} templateId="ppt-milestone-roadmap" density={density} />;
+      case 'flowmotion-creative-zigzag-ribbon': return <FlowMotionBlock key={selectedId} templateId="creative-zigzag-ribbon" density={density} />;
+      case 'flowmotion-creative-lightbulb-brainstorm': return <FlowMotionBlock key={selectedId} templateId="creative-lightbulb-brainstorm" density={density} />;
+      case 'flowmotion-creative-strategy-pyramid': return <FlowMotionBlock key={selectedId} templateId="creative-strategy-pyramid" density={density} />;
+      case 'flowmotion-creative-semicircle-radial-fan': return <FlowMotionBlock key={selectedId} templateId="creative-semicircle-radial-fan" density={density} />;
+      case 'flowmotion-creative-hexagon-honeycomb': return <FlowMotionBlock key={selectedId} templateId="creative-hexagon-honeycomb" density={density} />;
+      case 'flowmotion-cinematic-node-connect': return <FlowMotionBlock key={selectedId} templateId="cinematic-node-connect" density={density} />;
+      case 'flowmotion-editorial-mcp-skill-compare': return <FlowMotionBlock key={selectedId} templateId="editorial-mcp-skill-compare" density={density} />;
+      case 'flowmotion-it-pms-project': return <FlowMotionBlock key={selectedId} templateId="it-pms-project" density={density} />;
+      case 'flowmotion-it-design-system': return <FlowMotionBlock key={selectedId} templateId="it-design-system" density={density} />;
+      case 'flowmotion-it-slack-chatops': return <FlowMotionBlock key={selectedId} templateId="it-slack-chatops" density={density} />;
+      case 'flowmotion-it-dev-cicd': return <FlowMotionBlock key={selectedId} templateId="it-dev-cicd" density={density} />;
+      case 'flowmotion-it-si-integration': return <FlowMotionBlock key={selectedId} templateId="it-si-integration" density={density} />;
       case 'shell-enterprise-sidebar':
         return <AppShellShowcaseBlock initialMode="enterprise-sidebar" density={density} />;
       case 'shell-dual-rail-ide':
@@ -653,6 +695,9 @@ export default function BlockApp({ selectedId: initialId, density: contextDensit
       case 'multi-select': return <InteractionReferenceBlock key="multi-select" mode="multi-select" density={density} />;
       case 'tree-view': return <InteractionReferenceBlock key="tree-view" mode="tree-view" density={density} />;
       case 'file-upload': return <InteractionReferenceBlock key="file-upload" mode="file-upload" density={density} />;
+      case 'file-upload-basketball-hoop': return <BasketballUploadBlock key="file-upload-basketball-hoop" density={density} />;
+      case 'file-upload-soccer-goal': return <SoccerGoalUploadBlock key="file-upload-soccer-goal" density={density} />;
+      case 'file-upload-trash-can': return <TrashCanUploadBlock key="file-upload-trash-can" density={density} />;
       case 'trace-waterfall': return <InteractionReferenceBlock key="trace-waterfall" mode="trace-waterfall" density={density} />;
       case 'log-stream': return <InteractionReferenceBlock key="log-stream" mode="log-stream" density={density} />;
       case 'deploy-pipeline': return <InteractionReferenceBlock key="deploy-pipeline" mode="deploy-pipeline" density={density} />;
@@ -719,9 +764,27 @@ export default function BlockApp({ selectedId: initialId, density: contextDensit
       case 'error-budget-burn':
         return <ErrorBudgetBurnBlock density={density} />;
       case 'capital-inflows-bar':
-      case 'revenue-breakdown-bar':
-      case 'headcount-cost-bar':
-        return <CapitalInflowsBlock key={selectedId} variant={selectedId} density={density} />;
+        return <CapitalInflowsBlock density={density} />;
+      case 'chart3d-isometric-latency':
+        return <ThreeDChartShowcaseBlock key={selectedId} initialMode="isometric-latency" density={density} />;
+      case 'chart3d-voxel-hourly-density':
+        return <ThreeDChartShowcaseBlock key={selectedId} initialMode="voxel-hourly-density" density={density} />;
+      case 'chart3d-cylinder-donut-stack':
+        return <ThreeDChartShowcaseBlock key={selectedId} initialMode="cylinder-donut-stack" density={density} />;
+      case 'chart3d-cluster-topology-bars':
+        return <ThreeDChartShowcaseBlock key={selectedId} initialMode="cluster-topology-bars" density={density} />;
+      case 'chart3d-funnel-slab-cascade':
+        return <ThreeDChartShowcaseBlock key={selectedId} initialMode="funnel-slab-cascade" density={density} />;
+      case 'splitter-code-preview':
+        return <SplitterShowcaseBlock key={selectedId} initialMode="code-preview" density={density} />;
+      case 'splitter-ide-nested':
+        return <SplitterShowcaseBlock key={selectedId} initialMode="ide-nested" density={density} />;
+      case 'splitter-diff-compare':
+        return <SplitterShowcaseBlock key={selectedId} initialMode="diff-compare" density={density} />;
+      case 'splitter-master-detail':
+        return <SplitterShowcaseBlock key={selectedId} initialMode="master-detail" density={density} />;
+      case 'splitter-canvas-drawer':
+        return <SplitterShowcaseBlock key={selectedId} initialMode="canvas-drawer" density={density} />;
       case 'env-promotion-pipeline':
         return <EnvironmentPipelineBlock density={density} />;
       case 'cron-run-history-tracker':
@@ -982,13 +1045,99 @@ export default function BlockApp({ selectedId: initialId, density: contextDensit
         return <FormShowcaseBlock initialMode="database-connection" density={density} />;
       case 'form-feature-flag-rule':
         return <FormShowcaseBlock initialMode="feature-flag-rule" density={density} />;
+      case 'profile-engineer-scorecard':
+      case 'profile-enterprise-account':
+      case 'profile-security-identity':
+      case 'profile-personal-preferences':
+      case 'profile-vendor-compliance':
+        return <PlannedApplicationBlock key={selectedId} variant={selectedId} density={density} />;
+      case 'whiteboard-system-architecture':
+      case 'whiteboard-sprint-retro':
+      case 'whiteboard-user-journey-map':
+      case 'whiteboard-erd-schema':
+      case 'whiteboard-incident-warroom':
+        return <PlannedWhiteboardBlock key={selectedId} variant={selectedId} density={density} />;
+      case 'cloud-cost-sankey':
+      case 'traffic-attribution-sankey':
+      case 'nps-cohort-slope':
+      case 'conversion-tier-slope':
+      case 'latency-region-slope':
+      case 'quota-attainment-radial':
+      case 'cluster-cpu-radial':
+      case 'security-posture-radial':
+      case 'live-mrr-sparkline':
+      case 'kpi-mini-trend':
+      case 'latency-sparkline':
+      case 'error-rate-sparkline':
+      case 'active-session-sparkline':
+      case 'cohort-retention-bar':
+      case 'latency-percentiles-line':
+      case 'net-revenue-retention-area':
+      case 'token-throughput-line':
+      case 'concurrent-connections-area':
+      case 'customer-segment-donut':
+      case 'expense-allocation-pie':
+      case 'ticket-severity-pie':
+      case 'churn-retention-funnel':
+      case 'enterprise-poc-funnel':
+      case 'dora-metrics-radar':
+      case 'incident-response-polar':
+      case 'system-resilience-radar':
+        return <PlannedChartPreviewBlock key={selectedId} variant={selectedId} density={density} />;
+      case 'bordered-table':
+      case 'selectable-grid':
+      case 'sortable-headers':
+      case 'fixed-header':
+      case 'empty-states':
+      case 'loading-skeletons':
+      case 'faceted-filter-grid':
+      case 'inline-row-actions':
+      case 'cell-formula-eval':
+      case 'nested-subgrids':
+      case 'multi-level-headers':
+      case 'batch-bulk-update':
+      case 'export-csv-excel':
+      case 'dynamic-height-cells':
+      case 'undo-redo-history':
+      case 'column-visibility':
+      case 'column-reordering':
+      case 'column-pinning':
+      case 'resizable-headers':
+      case 'auto-fit-columns':
+      case 'row-reorder-handle':
+      case 'kanban-interchange':
+      case 'cross-table-dnd':
+      case 'hierarchy-tree-reorder':
+      case 'detail-panel-row':
+      case 'lazy-child-loader':
+      case 'master-detail-split':
+      case 'automation-library':
+      case 'renewal-reassignment':
+      case 'at-risk-renewals':
+      case 'patient-access':
+      case 'bill-materials':
+      case 'reporting-hierarchy':
+      case 'editorial-pipeline':
+      case 'studio-delivery':
+      case 'card-payments-ledger':
+      case 'shipment-exceptions':
+      case 'audit-log-stream':
+      case 'iot-sensor-matrix':
+      case 'order-book-depth':
+        return <PlannedDataGridPreviewBlock key={selectedId} variant={selectedId} density={density} />;
       default:
         return <section className="runtime-unavailable" role="status"><h1>이 블록은 아직 제공되지 않습니다</h1><p>카탈로그에서 구현된 예제를 선택해 주세요.</p><code>{selectedId}</code></section>;
     }
   };
 
+  const blockRootClassName = (BLOCK_IDS as readonly string[]).includes(selectedId)
+    ? `kb-${selectedId}`
+    : 'kb-unavailable';
+
   return <>
-    {renderActiveComponent()}
+    <div className={blockRootClassName}>
+      {renderActiveComponent()}
+    </div>
     <NewTaskModal isOpen={isNewTaskOpen} onClose={() => setIsNewTaskOpen(false)} onAddTask={handleAddTask} />
   </>;
 }

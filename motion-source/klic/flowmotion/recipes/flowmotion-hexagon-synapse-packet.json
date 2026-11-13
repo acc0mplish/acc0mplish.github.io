@@ -1,0 +1,418 @@
+{
+  "id": "flowmotion-hexagon-synapse-packet",
+  "category": "particles",
+  "title": {
+    "ko": "육각 시냅스 패킷",
+    "en": "Hexagon Synapse Packet"
+  },
+  "summary": {
+    "ko": "첫 두 육각 셀 사이 연결을 원본의 두 배 주기로 왕복합니다.",
+    "en": "Moves across the first two hex cells at the source doubled cycle rate."
+  },
+  "durationMs": 2400,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "creative-hexagon-honeycomb"
+    ],
+    "sourceFile": "src/components/CreativeInfographicCanvases.tsx",
+    "renderer": "CreativeHexagonHoneycombCanvas",
+    "effect": "intercell-synapse-packet",
+    "sourceTimeline": {
+      "durationMs": 2400,
+      "description": "Source cells are (165,235) and (365,345); link index i=0. localT=(ambientProgress×2+i×0.25)%1; x/y interpolate between adjacent cell centers.",
+      "frames": [
+        {
+          "progress": 0,
+          "localT": 0,
+          "sourceX": 165,
+          "sourceY": 235,
+          "x": 74,
+          "y": 64
+        },
+        {
+          "progress": 0.25,
+          "localT": 0.5,
+          "sourceX": 265,
+          "sourceY": 290,
+          "x": 160,
+          "y": 101.5
+        },
+        {
+          "progress": 0.5,
+          "localT": 0,
+          "sourceX": 165,
+          "sourceY": 235,
+          "x": 74,
+          "y": 64
+        },
+        {
+          "progress": 0.75,
+          "localT": 0.5,
+          "sourceX": 265,
+          "sourceY": 290,
+          "x": 160,
+          "y": 101.5
+        },
+        {
+          "progress": 1,
+          "localT": 0,
+          "sourceX": 165,
+          "sourceY": 235,
+          "x": 74,
+          "y": 64
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"인접한 육각 셀 사이 신호 전달\"><polygon class=\"node-bg\" points=\"60,64 67,52 81,52 88,64 81,76 67,76\"/><polygon class=\"node-bg\" points=\"232,139 239,127 253,127 260,139 253,151 239,151\"/><line class=\"flow\" x1=\"74\" y1=\"64\" x2=\"246\" y2=\"139\"/><circle class=\"packet\" cx=\"74\" cy=\"64\" r=\"5\"/><text class=\"small\" text-anchor=\"middle\" x=\"74\" y=\"91\">01</text><text class=\"small\" text-anchor=\"middle\" x=\"246\" y=\"172\">02</text></svg></div>",
+    "duration": 2400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".packet",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "74px",
+            "cy": "64px"
+          },
+          {
+            "offset": 0.015625,
+            "cx": "79.375px",
+            "cy": "66.344px"
+          },
+          {
+            "offset": 0.03125,
+            "cx": "84.75px",
+            "cy": "68.688px"
+          },
+          {
+            "offset": 0.046875,
+            "cx": "90.125px",
+            "cy": "71.031px"
+          },
+          {
+            "offset": 0.0625,
+            "cx": "95.5px",
+            "cy": "73.375px"
+          },
+          {
+            "offset": 0.078125,
+            "cx": "100.875px",
+            "cy": "75.719px"
+          },
+          {
+            "offset": 0.09375,
+            "cx": "106.25px",
+            "cy": "78.063px"
+          },
+          {
+            "offset": 0.109375,
+            "cx": "111.625px",
+            "cy": "80.406px"
+          },
+          {
+            "offset": 0.125,
+            "cx": "117px",
+            "cy": "82.75px"
+          },
+          {
+            "offset": 0.140625,
+            "cx": "122.375px",
+            "cy": "85.094px"
+          },
+          {
+            "offset": 0.15625,
+            "cx": "127.75px",
+            "cy": "87.438px"
+          },
+          {
+            "offset": 0.171875,
+            "cx": "133.125px",
+            "cy": "89.781px"
+          },
+          {
+            "offset": 0.1875,
+            "cx": "138.5px",
+            "cy": "92.125px"
+          },
+          {
+            "offset": 0.203125,
+            "cx": "143.875px",
+            "cy": "94.469px"
+          },
+          {
+            "offset": 0.21875,
+            "cx": "149.25px",
+            "cy": "96.813px"
+          },
+          {
+            "offset": 0.234375,
+            "cx": "154.625px",
+            "cy": "99.156px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "160px",
+            "cy": "101.5px"
+          },
+          {
+            "offset": 0.265625,
+            "cx": "165.375px",
+            "cy": "103.844px"
+          },
+          {
+            "offset": 0.28125,
+            "cx": "170.75px",
+            "cy": "106.188px"
+          },
+          {
+            "offset": 0.296875,
+            "cx": "176.125px",
+            "cy": "108.531px"
+          },
+          {
+            "offset": 0.3125,
+            "cx": "181.5px",
+            "cy": "110.875px"
+          },
+          {
+            "offset": 0.328125,
+            "cx": "186.875px",
+            "cy": "113.219px"
+          },
+          {
+            "offset": 0.34375,
+            "cx": "192.25px",
+            "cy": "115.563px"
+          },
+          {
+            "offset": 0.359375,
+            "cx": "197.625px",
+            "cy": "117.906px"
+          },
+          {
+            "offset": 0.375,
+            "cx": "203px",
+            "cy": "120.25px"
+          },
+          {
+            "offset": 0.390625,
+            "cx": "208.375px",
+            "cy": "122.594px"
+          },
+          {
+            "offset": 0.40625,
+            "cx": "213.75px",
+            "cy": "124.938px"
+          },
+          {
+            "offset": 0.421875,
+            "cx": "219.125px",
+            "cy": "127.281px"
+          },
+          {
+            "offset": 0.4375,
+            "cx": "224.5px",
+            "cy": "129.625px"
+          },
+          {
+            "offset": 0.453125,
+            "cx": "229.875px",
+            "cy": "131.969px"
+          },
+          {
+            "offset": 0.46875,
+            "cx": "235.25px",
+            "cy": "134.313px"
+          },
+          {
+            "offset": 0.484375,
+            "cx": "240.625px",
+            "cy": "136.656px"
+          },
+          {
+            "offset": 0.4999,
+            "cx": "245.966px",
+            "cy": "138.985px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "74px",
+            "cy": "64px"
+          },
+          {
+            "offset": 0.5001,
+            "cx": "74.034px",
+            "cy": "64.015px"
+          },
+          {
+            "offset": 0.515625,
+            "cx": "79.375px",
+            "cy": "66.344px"
+          },
+          {
+            "offset": 0.53125,
+            "cx": "84.75px",
+            "cy": "68.688px"
+          },
+          {
+            "offset": 0.546875,
+            "cx": "90.125px",
+            "cy": "71.031px"
+          },
+          {
+            "offset": 0.5625,
+            "cx": "95.5px",
+            "cy": "73.375px"
+          },
+          {
+            "offset": 0.578125,
+            "cx": "100.875px",
+            "cy": "75.719px"
+          },
+          {
+            "offset": 0.59375,
+            "cx": "106.25px",
+            "cy": "78.063px"
+          },
+          {
+            "offset": 0.609375,
+            "cx": "111.625px",
+            "cy": "80.406px"
+          },
+          {
+            "offset": 0.625,
+            "cx": "117px",
+            "cy": "82.75px"
+          },
+          {
+            "offset": 0.640625,
+            "cx": "122.375px",
+            "cy": "85.094px"
+          },
+          {
+            "offset": 0.65625,
+            "cx": "127.75px",
+            "cy": "87.438px"
+          },
+          {
+            "offset": 0.671875,
+            "cx": "133.125px",
+            "cy": "89.781px"
+          },
+          {
+            "offset": 0.6875,
+            "cx": "138.5px",
+            "cy": "92.125px"
+          },
+          {
+            "offset": 0.703125,
+            "cx": "143.875px",
+            "cy": "94.469px"
+          },
+          {
+            "offset": 0.71875,
+            "cx": "149.25px",
+            "cy": "96.813px"
+          },
+          {
+            "offset": 0.734375,
+            "cx": "154.625px",
+            "cy": "99.156px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "160px",
+            "cy": "101.5px"
+          },
+          {
+            "offset": 0.765625,
+            "cx": "165.375px",
+            "cy": "103.844px"
+          },
+          {
+            "offset": 0.78125,
+            "cx": "170.75px",
+            "cy": "106.188px"
+          },
+          {
+            "offset": 0.796875,
+            "cx": "176.125px",
+            "cy": "108.531px"
+          },
+          {
+            "offset": 0.8125,
+            "cx": "181.5px",
+            "cy": "110.875px"
+          },
+          {
+            "offset": 0.828125,
+            "cx": "186.875px",
+            "cy": "113.219px"
+          },
+          {
+            "offset": 0.84375,
+            "cx": "192.25px",
+            "cy": "115.563px"
+          },
+          {
+            "offset": 0.859375,
+            "cx": "197.625px",
+            "cy": "117.906px"
+          },
+          {
+            "offset": 0.875,
+            "cx": "203px",
+            "cy": "120.25px"
+          },
+          {
+            "offset": 0.890625,
+            "cx": "208.375px",
+            "cy": "122.594px"
+          },
+          {
+            "offset": 0.90625,
+            "cx": "213.75px",
+            "cy": "124.938px"
+          },
+          {
+            "offset": 0.921875,
+            "cx": "219.125px",
+            "cy": "127.281px"
+          },
+          {
+            "offset": 0.9375,
+            "cx": "224.5px",
+            "cy": "129.625px"
+          },
+          {
+            "offset": 0.953125,
+            "cx": "229.875px",
+            "cy": "131.969px"
+          },
+          {
+            "offset": 0.96875,
+            "cx": "235.25px",
+            "cy": "134.313px"
+          },
+          {
+            "offset": 0.984375,
+            "cx": "240.625px",
+            "cy": "136.656px"
+          },
+          {
+            "offset": 1,
+            "cx": "74px",
+            "cy": "64px"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

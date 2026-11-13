@@ -1,0 +1,429 @@
+{
+  "id": "flowmotion-cinematic-particle",
+  "category": "particles",
+  "title": {
+    "ko": "이동 입자",
+    "en": "Traveling particles"
+  },
+  "summary": {
+    "ko": "원본 곡선 경로를 따라 두 입자가 1700ms씩 850ms 간격으로 이동합니다.",
+    "en": "Two particles follow the same curve for 1700 ms each, staggered by 850 ms."
+  },
+  "durationMs": 2550,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "cinematic-node-connect"
+    ],
+    "sourceFile": "src/components/CinematicNodeConnectCanvas.tsx",
+    "renderer": "CinematicNodeConnectCanvas",
+    "effect": "particle",
+    "sourceTimeline": {
+      "durationMs": 2550,
+      "description": "Source creates two animateMotion particles per edge: each repeats on a 1700 ms path and the second begins 850 ms later. KLIC converts the first pass into a finite timeline.",
+      "frames": [
+        {
+          "atMs": 0,
+          "phase": "particle 1 starts on route"
+        },
+        {
+          "atMs": 850,
+          "phase": "particle 2 starts; particle 1 is halfway"
+        },
+        {
+          "atMs": 1700,
+          "phase": "particle 1 arrives; particle 2 is halfway"
+        },
+        {
+          "atMs": 2550,
+          "phase": "particle 2 arrives"
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>.fm-root{--fm-blue:var(--klic-semantic-color-accent,#245fc2);--fm-navy:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-component-card-background-default,var(--klic-semantic-color-panel,#fff));--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);--fm-muted:var(--klic-semantic-color-muted,#52657b);--fm-on-blue:var(--klic-semantic-color-on-accent,#fff);--fm-selected:var(--klic-semantic-color-surface-selected,#e4ecfc);box-sizing:border-box;width:100%;height:100%;color:var(--fm-navy);font-family:inherit}.fm-root *{box-sizing:inherit}.fm-root svg{display:block;width:100%;height:100%;overflow:visible;font-family:inherit}.fm-root .fm-surface{fill:var(--fm-surface)}.fm-root .fm-panel{fill:var(--fm-panel);stroke:var(--fm-border)}.fm-root .fm-blue{fill:var(--fm-blue)}.fm-root .fm-blue-stroke{stroke:var(--fm-blue)}.fm-root .fm-ink{fill:var(--fm-navy)}.fm-root .fm-muted{fill:var(--fm-muted)}.fm-root .fm-selected{fill:var(--fm-selected)}.fm-root .fm-on-blue{fill:var(--fm-on-blue)}.fm-root [transform-box]{transform-box:fill-box;transform-origin:center}.fm-root text{font-size:11px;fill:var(--fm-navy)}.fm-root .particle-one,.fm-root .particle-one-core,.fm-root .particle-two,.fm-root .particle-two-core{transform-box:view-box;transform-origin:0 0}</style><div class='fm-root'><svg viewBox='0 0 320 200' role='img' aria-label='Traveling particles'><defs><filter id='particle-blur'><feGaussianBlur stdDeviation='5'/></filter></defs><rect class='fm-surface' width='320' height='200' rx='14'/><path d='M 36 100 C 102 28 218 172 284 100' fill='none' stroke='var(--fm-border)' stroke-width='2'/><path d='M 36 100 C 102 28 218 172 284 100' fill='none' stroke='var(--fm-blue)' stroke-width='1.5' stroke-dasharray='4 6' opacity='.6'/><circle class='particle-one' cx='0' cy='0' r='7' fill='var(--fm-blue)' filter='url(#particle-blur)' transform='translate(36px,100px)'/><circle class='particle-one-core' cx='0' cy='0' r='3' fill='var(--fm-on-blue)' transform='translate(36px,100px)'/><circle class='particle-two' cx='0' cy='0' r='7' fill='var(--fm-blue)' filter='url(#particle-blur)' transform='translate(36px,100px)'/><circle class='particle-two-core' cx='0' cy='0' r='3' fill='var(--fm-on-blue)' transform='translate(36px,100px)'/></svg></div>",
+    "duration": 2550,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".particle-one",
+        "keyframes": [
+          {
+            "offset": 0,
+            "transform": "translate(36px, 100px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.041667,
+            "transform": "translate(48.94px, 88.93px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.083333,
+            "transform": "translate(62.9px, 82.28px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.125,
+            "transform": "translate(77.74px, 79.43px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.166667,
+            "transform": "translate(93.31px, 79.75px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.208333,
+            "transform": "translate(109.47px, 82.6px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.25,
+            "transform": "translate(126.07px, 87.34px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.291667,
+            "transform": "translate(142.96px, 93.36px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.333333,
+            "transform": "translate(160px, 100px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.375,
+            "transform": "translate(177.04px, 106.64px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.416667,
+            "transform": "translate(193.93px, 112.66px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.458333,
+            "transform": "translate(210.53px, 117.4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.5,
+            "transform": "translate(226.69px, 120.25px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.541667,
+            "transform": "translate(242.26px, 120.57px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.583333,
+            "transform": "translate(257.1px, 117.72px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.625,
+            "transform": "translate(271.06px, 111.07px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.666667,
+            "transform": "translate(284px, 100px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "transform": "translate(284px, 100px)",
+            "easing": "linear"
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".particle-one-core",
+        "keyframes": [
+          {
+            "offset": 0,
+            "transform": "translate(36px, 100px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.041667,
+            "transform": "translate(48.94px, 88.93px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.083333,
+            "transform": "translate(62.9px, 82.28px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.125,
+            "transform": "translate(77.74px, 79.43px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.166667,
+            "transform": "translate(93.31px, 79.75px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.208333,
+            "transform": "translate(109.47px, 82.6px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.25,
+            "transform": "translate(126.07px, 87.34px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.291667,
+            "transform": "translate(142.96px, 93.36px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.333333,
+            "transform": "translate(160px, 100px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.375,
+            "transform": "translate(177.04px, 106.64px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.416667,
+            "transform": "translate(193.93px, 112.66px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.458333,
+            "transform": "translate(210.53px, 117.4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.5,
+            "transform": "translate(226.69px, 120.25px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.541667,
+            "transform": "translate(242.26px, 120.57px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.583333,
+            "transform": "translate(257.1px, 117.72px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.625,
+            "transform": "translate(271.06px, 111.07px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.666667,
+            "transform": "translate(284px, 100px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "transform": "translate(284px, 100px)",
+            "easing": "linear"
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".particle-two",
+        "delay": 850,
+        "keyframes": [
+          {
+            "offset": 0,
+            "transform": "translate(36px, 100px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.0625,
+            "transform": "translate(48.94px, 88.93px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.125,
+            "transform": "translate(62.9px, 82.28px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.1875,
+            "transform": "translate(77.74px, 79.43px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.25,
+            "transform": "translate(93.31px, 79.75px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.3125,
+            "transform": "translate(109.47px, 82.6px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.375,
+            "transform": "translate(126.07px, 87.34px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.4375,
+            "transform": "translate(142.96px, 93.36px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.5,
+            "transform": "translate(160px, 100px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.5625,
+            "transform": "translate(177.04px, 106.64px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.625,
+            "transform": "translate(193.93px, 112.66px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.6875,
+            "transform": "translate(210.53px, 117.4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.75,
+            "transform": "translate(226.69px, 120.25px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.8125,
+            "transform": "translate(242.26px, 120.57px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.875,
+            "transform": "translate(257.1px, 117.72px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.9375,
+            "transform": "translate(271.06px, 111.07px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "transform": "translate(284px, 100px)",
+            "easing": "linear"
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".particle-two-core",
+        "delay": 850,
+        "keyframes": [
+          {
+            "offset": 0,
+            "transform": "translate(36px, 100px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.0625,
+            "transform": "translate(48.94px, 88.93px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.125,
+            "transform": "translate(62.9px, 82.28px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.1875,
+            "transform": "translate(77.74px, 79.43px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.25,
+            "transform": "translate(93.31px, 79.75px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.3125,
+            "transform": "translate(109.47px, 82.6px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.375,
+            "transform": "translate(126.07px, 87.34px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.4375,
+            "transform": "translate(142.96px, 93.36px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.5,
+            "transform": "translate(160px, 100px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.5625,
+            "transform": "translate(177.04px, 106.64px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.625,
+            "transform": "translate(193.93px, 112.66px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.6875,
+            "transform": "translate(210.53px, 117.4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.75,
+            "transform": "translate(226.69px, 120.25px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.8125,
+            "transform": "translate(242.26px, 120.57px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.875,
+            "transform": "translate(257.1px, 117.72px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.9375,
+            "transform": "translate(271.06px, 111.07px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "transform": "translate(284px, 100px)",
+            "easing": "linear"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

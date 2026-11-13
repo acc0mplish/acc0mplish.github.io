@@ -1,0 +1,257 @@
+# macOS Terminal DESIGN
+
+항목: component/macos-terminal
+구현: native-html
+범위: 설계 적용 지침. 검증 완료 인증이 아닙니다.
+
+## 공통 디자인 기준
+
+기준 리비전: 93b34249b2a82e244d1e1d6d096d28821eb45f8dd9b4f733e4bf9c6536be44a5
+
+기준 원문: https://design.klic.co.kr/api/v1/design-system.json
+
+API·CLI·MCP·WebMCP의 designSystem과 동봉된 KLIC-DESIGN-SYSTEM.json에서 이 기준과 리비전을 확인합니다. 항목별 계약은 item.design.system으로 연결합니다.
+
+| 디멘션 | 토큰의 책임 | 구조·행동의 책임 |
+| --- | --- | --- |
+| 크기와 비율 | 컨트롤 크기·아이콘·콘텐츠 폭 | min-height·패딩·줄바꿈·실제 hit area는 컴포넌트 recipe와 DOM에서 보장 |
+| 타이포그래피 | 등록 family·역할별 크기·굵기 | 행간·자간·줄바꿈·반응형 조건은 지원 recipe에서 정의; 등록되지 않은 타입을 가정하지 않음 |
+| 색과 대비 | 행동·선택·텍스트·경계·상태의 역할 색 | 레이블·아이콘·상태 속성으로 의미 전달; 합성 표면의 실제 대비는 토큰 밖에서 측정 |
+| 배치와 정렬 | 콘텐츠 최대 폭·패널 폭 등 등록된 공간 역할 | DOM 읽기 순서·배치 전환·스크롤 소유권·Portal 구조 |
+| 간격과 그룹화 | 내부 gap·padding·그룹 사이 간격과 승인 밀도 매핑 | label·fieldset·legend·describedby 등의 관계; 창 폭만으로 밀도를 변경하지 않음 |
+| 표면과 깊이 | 표면색·반경·경계 및 지원 color/dimension 소재 leaf | blur·shadow 합성 recipe·stacking·보조 패널과 모달 구분·불투명 fallback |
+| 상호작용과 피드백 | focus·선택·진행·성공·경고·오류의 시각 역할 | 키보드·focus 이동·비동기 전이·실행 차단·입력 보존·복구 경로 |
+
+Primitive만 literal 소유. Brand→Primitive, Semantic→Brand, Component→Semantic 인접 참조 유지.
+
+토큰 정의, DOM/CSS recipe의 구조 조건, 컴파일된 최종 literal 출력을 구분한다.
+
+모션 레시피는 컴포넌트·블록 설치 항목과 별도 읽기 카탈로그로 유지하되, 브라우저 검색·미리보기·상세 UI는 KLIC Interface Library 홈페이지의 기존 #motion 메뉴에서 제공한다. 읽기 API·CLI·MCP·WebMCP도 같은 정본 카탈로그를 사용한다. 참조 채택 범위는 사용자 제공 참조 소스의 884개 패턴·67개 분류다. KLIC 자체 구현 FlowMotion은 개별 효과로 해체해 같은 분류에 추가하고, 각 효과의 원본 renderer·전체 timeline·소스 정의·KLIC 자체 구현 고지를 별도로 기록한다. 집합 갤러리나 정적 일러스트를 모션 레시피로 대체하지 않으며, 기존 KLIC 카테고리/항목 탐색 동작에 그룹으로 싣는다. 기존 단순화 280개 카탈로그, 그 전용 경로와 별칭은 현 카탈로그에서 제외하고 호환 항목으로 유지하지 않는다. 각 채택 항목에는 원본 source id·pattern·engine을 연결하고, Copyright © 2026 acc0mplish. All rights reserved. 및 원본 라이선스 고지를 보존하며 KLIC 자체 제작으로 표시하지 않는다. 원본 안무·시간·경로·레이어·SVG/inline/WAAPI alpha는 보존한다. 외관은 KLIC 4계층 토큰 경로의 색·폰트·표면·테두리·radius·spacing으로 각색하고 Canvas도 같은 팔레트·폰트 토큰을 사용한다. 데모 CSS는 항목 범위로 격리한다. 같은 source runtime이 미리보기와 JavaScript/React 전달을 구동하며 Canvas 재생을 CSS만으로 제공한다고 주장하지 않는다. KLIC 각색본은 블루·네이비·중립 팔레트와 reduced-motion·replay·cleanup 계약을 따르고 출시 전 light/dark/mobile 및 실제 재생을 검증한다. NPM 패키지는 홈페이지와 별도 산출물이다. 패키지 명령은 npm의 latest 태그를 사용하며 export 범위는 공개 manifest와 대조한다. 원본 워크플로 화면은 별도의 React 블록으로 전달할 수 있다. FlowMotion 블록 22개는 Application의 기존 Flow 항목과 나란히 배치하고 전용 하위 그룹은 만들지 않는다. 모션 효과 수와 블록·CLI 작업 폴더 수는 별도로 집계한다.
+
+## 프리셋의 허용 범위
+
+Preset은 기존 API의 승인된 설정 조합이며 토큰의 다섯 번째 계층이 아니다.
+
+해당 컴포넌트 API가 실제 지원하는 size·variant·density·layout 등 명시적 allowlist
+
+- label·설명·업무 데이터
+- value·selection·validation·request 상태
+- 이벤트 핸들러·복구 액션·권한
+- 원시 스타일 값·미등록 CSS 변수·임의 토큰 override
+
+컴포넌트 기본값 → 선택한 preset → 허용된 명시적 설정. 업무 데이터·상태·권한은 별도 입력으로 처리한다.
+
+허용 키·enum·조합을 검사하고 모르는 값은 진단한다. 타입 선언과 실제 DOM·동작 검증을 구분한다.
+
+## 충돌 해결 순서
+
+- 정보·조작·접근성을 먼저 보존: 핵심 정보·상태 의미·입력·focus와 조작 경로를 보존한다. 디멘션 번호로 다른 필수 계약을 무효화하지 않는다.
+- 구조와 읽기 순서를 재배치: 줄바꿈·열 전환·행동 묶음·패널 배치를 먼저 조정한다. 의미상 필요한 2차원 영역만 국소 스크롤을 사용한다.
+- 승인 범위에서 간격·표면 조정: 사용자가 선택한 밀도와 글자 배율을 존중하며 승인된 recipe 안에서 여백·장식을 조정한다. 공간 부족만으로 자동 compact나 글자 축소를 적용하지 않는다.
+- 남는 제약과 검증을 기록: 기본값으로 해결되지 않으면 적용 범위·대안·영향·FR/AT·실제 검증을 기록한다. 토큰 계층을 건너뛰거나 검증 실패를 예외 승인으로 덮지 않는다.
+
+sources/checks는 연결 근거이며 통과 인증이 아니다. 제품별 실제 환경 검증 결과는 기존 FR/AT 기록에서 관리한다.
+
+## 적용과 검증
+
+공통 기준과 항목별 DESIGN.md·실제 소스를 먼저 읽습니다. 규칙마다 토큰·DOM·CSS recipe·상태 처리의 책임을 나누고 제품에 필요한 조건을 적용합니다.
+
+기준 본문과 항목 계약의 revision을 비교합니다. release는 레지스트리 배포를 식별하므로 서로 다른 배포의 페이지 결과를 섞지 않습니다.
+
+최신 CLI와 로컬 레지스트리를 사용하고 stdio 세션을 재시작합니다. WebMCP는 페이지를 새로 읽어 등록합니다. source는 원시 코드만 출력합니다. 소스 묶음은 DESIGN.md, 테마 키트는 README.md를 KLIC-DESIGN-SYSTEM.json과 함께 읽습니다.
+
+## CSS 클래스 네임스페이스와 변형 조합
+
+| 접두사 | 책임 | 사용 범위 | 예시 |
+| --- | --- | --- | --- |
+| kb-* | 블록 루트 | KLIC이 배포하는 화면·업무 조합의 루트. 접미사는 안정적인 블록 ID를 사용한다. | kb-dashboard |
+| kn-* | 컴포넌트 루트 | KLIC Native 컴포넌트의 루트. 카탈로그 ID를 사용하며 button은 btn으로 등록한다. | kn-btn · kn-popover |
+| kx-* | 외부 어댑터 경계 | KLIC이 실제 외부 구현을 감싸거나 수정한 범위. vendor 소유 클래스는 그대로 둔다. | kx-grid · kx-swiper |
+| kv-* | 시각 변형 | 등록된 의도·표현·크기·밀도 값만 표시한다. 논리 상태를 나타내지 않는다. | kn-btn kv-primary kv-outline kv-sm |
+| ku-* | KLIC 유틸리티 | 재사용 배치·보조 효과. 컴포넌트 의미나 논리 상태를 소유하지 않는다. | ku-flex · ku-spin |
+
+| 변형 축 | 허용 class | 조합 규칙 |
+| --- | --- | --- |
+| 색상·의도 | kv-primary · kv-neutral · kv-success · kv-warning · kv-danger | 컴포넌트가 지원하는 값 중 하나만 선택한다. 성공은 회사 블루와 확인 아이콘을 사용하고 녹색을 쓰지 않는다. |
+| 표현 형태 | kv-solid · kv-outline · kv-ghost | 같은 컴포넌트에서 최대 한 값만 사용한다. |
+| 크기 | kv-sm · kv-md · kv-lg | 등록된 크기만 사용하고 미등록 CSS 수치를 추가하지 않는다. |
+| 밀도 | kv-compact · kv-normal · kv-relaxed | 컴포넌트가 지원하는 값 중 하나만 선택한다. |
+
+컴포넌트별 등록 Component 토큰을 먼저 사용한다. 해당 축의 Component 토큰이 없으면 기존 Semantic 토큰으로 폴백한다. 클래스에서 새 색·간격 literal 또는 미등록 CSS 변수를 만들지 않는다.
+
+- KLIC 소유 공개 class는 kb·kn·kx·kv·ku 네임스페이스 중 하나를 따른다. 블록·컴포넌트 루트에만 kb·kn을 쓰고, 내부 파츠는 data-part로 표시한다.
+- HTML class와 React className은 같은 식별자를 사용한다. 컴포넌트 ID button은 kn-btn으로 표기하고 나머지는 등록 ID를 유지한다.
+- 각 컴포넌트는 지원하는 변형 축과 허용값을 등록한다. 축마다 최대 한 값만 허용하며 같은 축 충돌과 미등록 값은 거부한다.
+- 변형은 등록 Component 토큰을 우선 사용하고 기존 Semantic 토큰으로 폴백한다. 성공 의도는 회사 블루와 확인 아이콘을 사용한다.
+- 레거시 x-* 및 컴포넌트 의미로 쓰던 kv-* 이름은 현재 CSS 호환 별칭으로만 유지한다. 새 HTML·React 출력에는 넣지 않으며 별도 공지 없는 삭제는 금지한다.
+- Tailwind 등 의존성 소유 utility와 외부 vendor class는 ku로 다시 이름 붙이지 않는다. 외부 구현에 대한 KLIC CSS 수정은 해당 kx-* 경계 내부로 제한하고 원본 vendor 선택자와 class를 보존한다.
+
+새 정책 객체는 DesignSystem schema 1.0에 추가되는 선택 필드다. 현재 snapshot은 항상 제공하지만 이전 1.0 snapshot에는 없을 수 있으며, 이전 snapshot도 읽을 수 있어야 한다.
+
+## 표준 data 속성: part·state·theme
+
+| 속성 | 역할 | 값과 소유 범위 |
+| --- | --- | --- |
+| data-part | 컴포넌트 내부 파츠 | 가장 가까운 kn-* 또는 kb-* 루트가 소유하는 안정된 소문자 kebab-case 토큰 목록. 예: icon label panel. |
+| data-state | 컴포넌트별 논리 상태 반영 | 컴포넌트 계약이 정한 단일 상태 토큰. 예: closed 또는 open. |
+| data-theme | 문서·하위 영역의 표시 모드 | resolved light 또는 dark. system 선호는 실제 DOM 값으로 설정하기 전에 해석한다. |
+
+- data-part는 가장 가까운 KLIC 컴포넌트 또는 블록 루트가 소유한다. 값은 하나 이상의 공백 구분 kebab-case 토큰이며 CSS는 토큰 단위로 선택한다.
+- data-state는 컴포넌트별 상태 전이의 표현이다. 상태값 목록은 공통 전역 enum이 아니라 해당 컴포넌트 계약에 둔다.
+- native 속성과 ARIA가 논리 상태의 기준이다. disabled·checked·aria-expanded·aria-pressed·aria-selected·aria-busy·aria-invalid를 시각 class나 data-state로 대체하지 않는다.
+- custom data-state를 쓸 때 동작 소유자는 키보드·접근성 처리와 같은 논리 상태에서 값을 갱신한다. 별도 상태 저장소를 만들지 않는다.
+- data-theme에는 resolved light 또는 dark를 쓴다. system은 DOM 속성값이 아니라 설정 선택이며 속성 설정 전에 실제 모드로 해석한다.
+- 기존 재질·편집기·미리보기·외부 라이브러리 data hook은 extension/compatibility로 보존하고 임의 삭제·이름 변경하지 않는다.
+
+- 기존 data-kv-root·data-kv-component·data-kv-variant 및 data-kv-action 계열 미리보기·상호작용 hook을 보존한다.
+- data-klic-material, 편집기 연결, 외부 라이브러리의 data-* 속성은 별도 extension/compatibility 계약으로 등록하고 삭제하지 않는다.
+
+## 상태 전이와 모션 책임
+
+| 컴포넌트 | 시작 상태 | 도착 상태 | 모션 |
+| --- | --- | --- | --- |
+| popover | closed | open | 등장 · entry |
+| popover | open | closed | 퇴장 · exit |
+
+| 소유 범위 | 책임 |
+| --- | --- |
+| 동작 소유자 | 컴포넌트 동작 소유자가 상태 변경, 키보드, focus 진입·복귀, mount/unmount와 cleanup을 책임진다. |
+| 시각 효과 | CSS 또는 등록된 KLIC motion runtime이 전이별 시각 효과를 구현한다. data-state 변경 자체는 애니메이션을 실행하지 않는다. |
+| 퇴장 수명주기 | 필요한 퇴장 모션이 끝날 때까지 시각 요소를 유지하되 논리적 닫힘과 focus 복귀는 지연하지 않는다. |
+| 모션 감소 | prefers-reduced-motion: reduce에서 비필수 모션을 제거·단축하고 상태와 콘텐츠 접근은 유지한다. |
+
+- 컴포넌트 계약은 각 등록 상태 전이에 대응하는 등장·퇴장 또는 상태 피드백을 명시한다.
+- Popover의 closed → open에는 등장, open → closed에는 퇴장을 정의한다. data-state는 전이 신호이며 CSS나 runtime 구현이 별도로 필요하다.
+- 닫힘 처리는 focus 복귀·키보드 동작을 보존하고 퇴장 효과 때문에 논리 상태를 늦추지 않는다. 실제 DOM 제거 시점만 필요한 경우 animation completion에 맞춘다.
+- prefers-reduced-motion: reduce는 비필수 전이를 제거하거나 단축해도 상태 의미·피드백·콘텐츠 접근을 보존한다.
+- ku-spin은 실제 진행 중일 때만 쓰고 reduced-motion 대체를 정의한다. 장식 목적의 무한 회전은 금지한다.
+
+## 컴포넌트 가족의 동작 계약
+
+- 가족별 계약은 실제 HTML·속성·상태·키보드·조합·이벤트 책임·한계를 연결한다. 표시 전용 항목에는 실행 동작을 만들어내지 않는다.
+- 입력 하나는 일관된 의미를 유지한다. 독립 설정의 충돌과 우선순위를 명시하고 업무 데이터·요청 상태·권한을 표현 프리셋으로 덮지 않는다.
+- 공통 의미는 이 정본에서, 항목별 문법과 지원 동작은 실제 소스와 가이드에서 관리한다. 새 래퍼나 중복 상태 API보다 기존 부품의 조합을 먼저 검토한다.
+- tokenMapping의 해석 결과에는 높이 fixture·모드·밀도와 고정 예시인지 현재 선택값인지 표시한다. 고정 A/Light/Normal 예시는 사용자의 실험실 선택을 대표하지 않는다.
+- 항목 계약은 실제 소스 또는 선택자 근거가 확인된 variant 축과 값을 공개한다. 미리보기 forms는 예시이며 제품 props·지원 variant를 증명하지 않고, 확인되지 않은 축은 not-specified로 둔다.
+
+## 점진적 조회와 응답 출처
+
+- 컴포넌트·블록 이름은 labels.ko/en, 분류 이름은 categoryLabels.ko/en으로 분리한다. 브라우저·API·CLI·MCP·WebMCP와 정적 미러는 같은 라벨 쌍을 사용하며 양쪽 언어로 검색할 수 있게 한다. 기존 name은 문자열 호환 필드로 유지하고 원본 이름은 검색 태그에 보존한다.
+- 기본 조회는 full이다. brief는 식별자·요약·next, compact는 핵심 계약·적용 범위를 제공한다. task에 맞춰 kind·status·group·token으로 검색하고 반환된 next를 따라간다. 넓은 탐색은 brief/compact, 적용 후보는 full로 읽고 요청한 조회 수준을 기록한다.
+- 검색 결과는 정확한 ID·이름, ID·이름 접두사, ID·이름 부분 일치, 나머지 메타데이터 순으로 안정 정렬한다. 점수 동률은 원본 registry 순서를 보존하고 cursor는 정렬된 결과에 적용한다.
+- 계약을 먼저 읽고 release, designSystem.revision, 실제 responder·toolkit 버전을 기록한다. 서로 다른 release의 응답을 섞지 않으며 서버는 소비자 설치 버전이나 발행 권장 버전을 실제 실행 버전으로 추측하지 않는다.
+- ready는 사용 가능한 항목이고 planned는 제안이다. use·avoid·states·recovery·token·limitations·source notice·design contract를 확인한다. not-specified는 지원을 뜻하지 않고 근거가 비어 있음을 뜻한다.
+- API·CLI·MCP·WebMCP와 정적 미러는 같은 조회 함수를 사용한다. 구현이나 소스 사용이 과업에 포함될 때만 delivery plan과 raw source를 읽고 범위를 지킨다. source는 원시 코드만 출력하며 원시 바이트와 함께 제공된 notice를 보존한다.
+- KLIC 사실과 에이전트 추론을 구분하고 근거 필드와 실제 실행한 확인을 각 결론에 연결한다. 실제 동작을 확인하지 않았으면 미검증으로 표시한다. 체크리스트와 source 링크는 제품 검증 증거가 아니다.
+
+## 테마·조합·소스 수정의 선택
+
+- 색·폰트·표면 등 외관은 지원 테마와 CSS 토큰으로 조정한다. klic. 4계층 참조와 접근성·상태 의미를 보존한다.
+- 업무 흐름은 기존 부품과 소비자 소유 데이터·상태·이벤트로 조합한다. HTML 참고 코드와 동작이 포함된 독립 workspace의 전달 범위를 구분한다.
+- 내부 변경이 필요하면 해시·의존성·라이선스가 포함된 소스를 가져와 수정한다. 실제 외관·소스 변경을 dev와 production에서 실행하고 이미지·키보드·복구 동작 보존을 확인한다.
+- 퍼블리싱 학습 수정과 안내 overlay는 등록 target의 현재 세션에만 적용하며 전역 appearance, BlockContext, 업무 데이터·선택·검증·요청 상태에 저장하지 않는다.
+- 지원 설정은 기존 KLIC 설정 계약으로 내보내고, source edit은 klic-publishing-v1의 등록 target·허용 값으로 별도 전달한다. 알 수 없는 target·속성·값은 거부한다.
+- 가이드·치수선·선택·수업 상태는 제품 코드에서 제외하고, CSS는 등록 target의 허용 source recipe에서만 생성한다.
+
+## IME·레이어·포커스 책임
+
+- IME 조합 여부는 native 또는 React nativeEvent의 isComposing·keyCode 229와 필요한 조합 생명주기로 판별한다. 판별 함수는 이벤트를 취소하거나 전파를 막지 않는다.
+- Enter·Escape·방향키 명령은 자신이 소유한 입력과 레이어에서 처리한다. 조합 확정·취소가 제출·선택·닫기를 실행하지 않도록 하며 소비자의 원시 이벤트 관찰과 일반 키 동작을 보존한다.
+- Escape는 최상위 소유 레이어부터 처리하고 native dialog의 cancel도 검토한다. 닫을 때 실제 opener로 복귀하며 제거·disabled·inert 상태이면 안전한 대체 focus를 사용한다.
+- 브라우저의 합성 IME 이벤트 검사, 실제 키보드 조작, OS 입력기 검증을 구분한다. 등록 mock을 실제 WebMCP 지원 브라우저 호환성으로 표시하지 않는다.
+
+## 실제 소비 산출물의 과업 평가
+
+- 실제 설치 tarball과 전달 소스에서 검색·선택·수정, 실패·재시도 폼, 한글 검색·중첩 레이어 과업을 검증한다. 저장소 내부 파일을 소비자 환경의 숨은 의존성으로 제공하지 않는다.
+- 자동 레시피 기능 검사와 fresh-agent 과업 수행을 분리한다. 공개 완성 예제 노출을 기록하고 예제를 활용한 결과는 recipe-adaptation으로 분류한다. 신규 조합 능력이나 개선율로 일반화하지 않는다.
+- 과업·허용 자료·검사 기준과 배포물 해시를 고정하고 실제 제출물의 빌드·자산·동작 증거로 판정한다. 누락·실패·미실행도 분모에 포함하며 파일 존재나 자기 보고만으로 성공 처리하지 않는다.
+- 단계·시도별 시작·종료·경과 시간과 최초 통과 시도를 기록한다. 비용은 measured·unavailable·not-applicable 및 출처를 표시하고 미측정 값은 null로 유지한다. 실제 usage 영수가 없는 token·금액을 만들어내지 않는다.
+
+## 참고 문서의 선택적 채택
+
+외부 문서와 초안은 검토 후보로 취급한다. KLIC의 현재 문제·구현·계약을 확인하고 필요한 규칙만 채택하며, 보류·기각의 이유와 적용 범위를 남긴다.
+
+참고 문서의 제품명·예제 API·출처를 KLIC의 구현 사실로 옮기지 않는다. 채택한 규칙은 실제 토큰·DOM·CSS recipe·상태 처리와 검증 근거에 연결한다.
+
+## 변경 시 함께 확인할 범위
+
+문제 제기는 관련 사용 경로 전체의 변경 영향을 검토하는 출발점이다. 사용자가 언급한 화면이나 도구만 수정하고 완료로 처리하지 않는다.
+
+- 구현 원본·토큰·컴포넌트·타입·스키마
+- DOCS·웹 가이드·개발자 문서·예제
+- MCP·CLI·WebMCP·API의 설명·입력·응답
+- AI 프롬프트·llms.txt·소스와 테마 내보내기
+- 회귀 검사·빌드·운영 배포와 실제 응답
+
+정본을 수정한 뒤 관련 가이드·예제·도구·프롬프트·내보내기를 함께 재생성하고 같은 리비전을 검사한다. 영향을 받지 않는 경로는 이유를 기록하며, 실제 확인한 결과와 남은 미검증 조건을 구분해 보고한다.
+
+## 조합과 이벤트 책임
+
+가족: macos-terminal
+
+- states: invalid + focus / support: not-specified / evidence: 없음 / diagnostic: 현재 가이드에는 이 상태 조합의 지원 근거가 없습니다. 개별 상태만으로 조합을 추론하지 마세요.
+- states: selected + hover + focus / support: not-specified / evidence: 없음 / diagnostic: 현재 가이드에는 이 상태 조합의 지원 근거가 없습니다. 개별 상태만으로 조합을 추론하지 마세요.
+- states: busy + disabled / support: not-specified / evidence: 없음 / diagnostic: 현재 가이드에는 이 상태 조합의 지원 근거가 없습니다. 개별 상태만으로 조합을 추론하지 마세요.
+- key: Tab / owner: browser focus navigation / action: Tab으로 클라이언트 설정과 복사 버튼에 접근하고 각 탭으로 내용을 바꿉니다. / defaultBehavior: not specified / propagation: not specified
+- key: 읽기 / owner: not specified by this guide / action: pre/code 출력은 문서 순서로 읽습니다. / defaultBehavior: not specified / propagation: not specified
+
+## 사용할 때
+- 터미널 종류별 창·프롬프트·탭 또는 호스트 문맥을 구분합니다.
+- 긴 경로와 출력은 터미널 영역 안에서 확인합니다.
+
+## 사용하지 말아야 할 때
+- 샘플 호스트를 실제 연결 상태로 안내하지 않습니다.
+- 미리보기에 실행 스크립트, 로컬 프로세스, 네트워크 연결을 추가하지 않습니다.
+
+## 접근성
+- 명령과 출력은 순서가 있는 pre/code 텍스트로 제공합니다.
+- 선택·연결 상태는 문구로 함께 표시하며 색만으로 전달하지 않습니다.
+- 고정폭 출력은 내부에서 스크롤해 페이지 조작을 방해하지 않습니다.
+
+## 밀도
+- compact: 반복 목록에서만 여백을 줄이고 주요 행동 간격은 유지합니다.
+- normal: 기본 권장 밀도입니다. 읽기 순서와 레이블·컨트롤·피드백 그룹을 유지합니다.
+- relaxed: 설명 중심·프레젠테이션 화면에 사용합니다. 정보 계층을 유지하며 여백을 늘립니다.
+
+## 상태 변이
+- 초기 선택 / Codex 설정이 표시됨: 읽기 전용 MCP 연결 명령만 보이며 실행되지 않습니다.
+- 탭 전환 / 다른 클라이언트 선택: 설정 코드와 안내 문구만 바뀝니다.
+- 정적 트랜스크립트 / 프롬프트·명령·출력이 표시됨: 명령이나 SSH 연결은 실행되지 않습니다.
+- 좁은 화면 / 데스크톱에서 가용 폭을 채우고 긴 설정만 터미널 영역 안에서 스크롤합니다.: 터미널 내부 레이아웃을 유지하고 페이지 폭을 보존합니다.
+
+## 빈 상태와 복구
+- loading: 진행 중임을 알리고 중복 요청을 차단합니다. 기존 데이터가 있으면 갱신 중에도 유지합니다.
+- empty: 처음부터 데이터가 없는 상태에는 생성·연결 행동을 제공합니다.
+- filtered: 검색 결과가 없으면 데이터 없음과 구분하고 필터 초기화 행동을 제공합니다.
+- error: 마지막 정상 데이터를 보존하고 실패 영역에 재시도를 제공합니다.
+
+## 토큰 해석 기준
+높이 fixture A · light · normal · static-example. 표시값은 이 고정 예시의 해석 결과이며 현재 사용자의 실험실 선택값이 아닙니다.
+
+## 지원 variant 축
+상태: not-specified
+- 확인된 축 없음
+예시 forms: default
+미리보기 forms는 예시 형태이며 제품 props나 지원 variant 축을 뜻하지 않습니다. CSS class 근거만 명시합니다.
+
+## 토큰 매핑
+| 경로 | CSS 변수 | 기본 A Light 값 | 용도 | Tailwind 예시 |
+| --- | --- | --- | --- | --- |
+| klic.component.surface.card.background | --klic-component-surface-card-background | #ffffff | 터미널 창 표면 | bg-[var(--klic-component-surface-card-background)] |
+| klic.semantic.color.accent | --klic-semantic-color-accent | #245fc2 | 행동·선택·진행을 전달하는 블루 | text-[var(--klic-semantic-color-accent)] |
+| klic.semantic.color.text | --klic-semantic-color-text | #132c46 | 명령과 출력 텍스트 | text-[var(--klic-semantic-color-text)] |
+| klic.semantic.color.border | --klic-semantic-color-border | #dfe5ee | 창과 영역 경계 | border-[var(--klic-semantic-color-border)] |
+| klic.component.field.spacing.internal | --klic-component-field-spacing-internal | 0.5rem | 창 내부 간격 | gap-[var(--klic-component-field-spacing-internal)] |
+
+Tailwind에서는 실제 CSS 속성에 맞는 arbitrary value를 선택하세요. 색상 토큰은 text/bg/border 역할을 구분하고 크기 토큰은 min-h/gap/p 등에 연결합니다. 토큰 값의 하드코딩으로 참조를 끊지 않습니다.
+
+## 구현 범위
+- Native HTML/CSS 참고 컴포넌트입니다. 화면의 명령·호스트·출력은 정적 샘플이며 실제 명령이나 SSH 연결을 실행하지 않습니다.
+
+## 검수
+- 데스크톱 상세 미리보기가 가용 폭을 채우는지 확인합니다.
+- 5개 클라이언트 탭·klic-design 프롬프트·Codex MCP 명령이 메인 화면과 일치하는지 확인합니다.
+- 탭 전환과 복사가 동작하고 명령은 실행되지 않는지 확인합니다.
+
+## 에이전트 프롬프트
+KLIC macOS Terminal (component/macos-terminal)을 사용해 화면을 구성하세요. KLIC은 7개 디자인 디멘션·4계층 토큰을 씁니다. 컴포넌트는 조작, 블록은 업무 흐름, 모션은 전환을 다룹니다. npm 최신 태그: klic-design@latest. 먼저 https://design.klic.co.kr/api/v1/design-system.json의 공통 기준(revision 93b34249b2a82e244d1e1d6d096d28821eb45f8dd9b4f733e4bf9c6536be44a5), DESIGN.md와 실제 소스를 읽고, 구현 책임·프리셋 허용 범위·충돌 해결 순서를 적용하세요. 사용 원칙·금지 사항·접근성·밀도·빈 상태·오류 처리를 준수하세요. 토큰 매핑 값은 높이 fixture A · light · normal 밀도의 고정 예시입니다. 지원 variant 상태는 not-specified이며 확인된 축만 사용하세요. 미리보기 forms에서 제품 props를 추론하지 마세요. 토큰은 klic. 4계층 참조를 보존하고 없는 API나 실제 저장 기능을 만들어내지 마세요.

@@ -11,10 +11,7 @@ import {
   Shield,
 } from 'lucide-react';
 
-export type CapitalBarVariant = 'capital-inflows-bar' | 'revenue-breakdown-bar' | 'headcount-cost-bar';
-
 export interface CapitalInflowsBlockProps {
-  variant?: CapitalBarVariant;
   density?: 'compact' | 'normal' | 'relaxed';
 }
 
@@ -210,24 +207,6 @@ const CAPITAL_YEARLY_DATA: YearlyCapitalDatum[] = [
   },
 ];
 
-function buildFinancialYears(rows: number[][]): YearlyCapitalDatum[] {
-  const totals = rows.map(row => Number(row.reduce((sum, value) => sum + value, 0).toFixed(2)));
-  return rows.map((row, index) => {
-    const year = String(2021 + index), totalM = totals[index];
-    const runRateM = index === 5 ? Number((totalM * 4 / 3).toFixed(2)) : totalM;
-    return {
-      year, axisLabel: index === 5 ? '2026 누적' : year, totalM, runRateM,
-      yoyPct: index ? Number(((runRateM / totals[index - 1] - 1) * 100).toFixed(1)) : 0,
-      yoyLabel: index ? `${2020 + index}년 대비${index === 5 ? ' 연간 환산' : ''}` : '데모 기준연도',
-      cagrPct: index ? Number(((Math.pow(runRateM / totals[0], 1 / index) - 1) * 100).toFixed(1)) : 0,
-      cagrLabel: index ? `2021–${year} 연복리 기준${index === 5 ? ' · 연간 환산' : ''}` : '데모 기준연도',
-      projectedTotalM: index === 5 ? runRateM : undefined,
-      defaultHighlighted: index === 3 || index === 5,
-      breakdown: Object.fromEntries(row.map((value, i) => [CAPITAL_FUNDS[i].id, value])),
-    };
-  });
-}
-
 const namedSeries = (names: string[]): FundMeta[] => CAPITAL_FUNDS.map((fund, index) => ({...fund, nameKo: names[index], nameEn: names[index]}));
 export const capitalBarVariants = {
   'capital-inflows-bar': {
@@ -235,24 +214,10 @@ export const capitalBarVariants = {
     seriesLabel: '펀드', amountLabel: '순 유입액', growthLabel: '연평균 성장률 (CAGR)',
     funds: namedSeries(['Northstar 성장', 'Harbor 벤처', 'Summit 기회', 'Orbit 디지털', 'Bridge 인컴', 'Atlas 리저브']), years: CAPITAL_YEARLY_DATA,
   },
-  'revenue-breakdown-bar': {
-    title: "매출 구성", description: '6개 매출원별 인식 매출 · 2026년은 1–9월 누적 데모 데이터',
-    seriesLabel: '매출원', amountLabel: '매출액', growthLabel: '연평균 매출 성장률',
-    funds: namedSeries(['구독 요금', '사용량 과금', '엔터프라이즈', '전문 서비스', '마켓플레이스', '교육·지원']),
-    years: buildFinancialYears([[2.4,1.1,1.5,.8,.4,.2],[3.2,1.7,2,1,.6,.3],[3.8,2.2,2.6,1.1,.7,.4],[4.7,2.9,3.1,1.2,.8,.5],[5.6,3.5,4.1,1.4,1,.7],[5.1,3.4,3.8,1.1,.9,.6]]),
-  },
-  'headcount-cost-bar': {
-    title: "조직별 인건비", description: '급여·복리후생·고용부담금을 포함한 6개 조직 인건비 · 데모 데이터',
-    seriesLabel: '조직', amountLabel: '인건비', growthLabel: '연평균 인건비 증감률',
-    funds: namedSeries(['엔지니어링', '제품·디자인', '영업', '고객 성공', '마케팅', '경영 지원']),
-    years: buildFinancialYears([[2.1,.6,.8,.5,.4,.4],[2.4,.7,.9,.6,.5,.4],[2.8,.8,1,.6,.5,.4],[3.3,1,1.2,.8,.6,.5],[3.9,1.2,1.5,1,.7,.6],[3.4,1,1.2,.8,.7,.5]]),
-  },
 };
 
-export function CapitalInflowsBlock({
-  density = 'normal', variant = 'capital-inflows-bar',
-}: CapitalInflowsBlockProps) {
-  const fixture = capitalBarVariants[variant];
+export function CapitalInflowsBlock({density = 'normal'}: CapitalInflowsBlockProps) {
+  const fixture = capitalBarVariants['capital-inflows-bar'];
   const FUNDS = fixture.funds, YEARLY_DATA = fixture.years;
   const [yearRange, setYearRange] = useState<'all' | 'recent4' | 'highlightOnly'>('all');
   const [selectedFundId, setSelectedFundId] = useState<string>('all');

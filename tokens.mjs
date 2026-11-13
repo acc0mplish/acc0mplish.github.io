@@ -98,7 +98,7 @@ export function createTokens(brand='a',mode='light',appearance={}) {
   }
   for(const [key,value] of Object.entries(FONT_NAMES))t[`klic.primitive.font-family.${key}`]={$type:'fontFamily',$value:value};
   t['klic.primitive.font-weight.semibold']={$type:'fontWeight',$value:600};
-  const identity=getBrandProfile(appearance.brandProfile),bodyFont=FONT_IDS.includes(appearance.font)?appearance.font:'paperlogy',headingFont=FONT_IDS.includes(appearance.headingFont)?appearance.headingFont:bodyFont;
+  const identity=getBrandProfile(appearance.brandProfile),bodyFont=FONT_IDS.includes(appearance.font)?appearance.font:'pretendard',headingFont=FONT_IDS.includes(appearance.headingFont)?appearance.headingFont:bodyFont;
   const identityRoles=[
     ['color','color.identity','color.identity','wordmark.color',mode==='dark'?'klic.primitive.color.identity.night-royal':'klic.primitive.color.blue-royal'],
     ['color','color.navigation','color.navigation','navigation.color.selected',mode==='dark'?'klic.primitive.color.identity.night-royal':'klic.primitive.color.blue-royal'],

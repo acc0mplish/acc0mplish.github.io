@@ -1,4 +1,4 @@
-/** Five KLIC timeline forms adapted from the supplied plan/actual interaction reference. */
+/** Five original KLIC timeline forms; the supplied plan/actual interaction model was a design reference only. */
 export const TIMELINE_BLOCK_EXAMPLES=[
  {id:'timeline-plan-actual',mode:'plan-actual',title:'계획 대 실적 라이브 타임라인',enTitle:'Live plan vs actual timeline',description:'계획 점선·실적 막대·초과 구간·비용을 같은 시점으로 비교하고, 의존 연결선과 작업 상세를 탐색합니다.',enDescription:'Compare dashed plans, actual bars, overruns and accrued cost at one instant, with dependency links and task details.'},
  {id:'timeline-execution-waterfall',mode:'execution-waterfall',title:'에이전트 실행 워터폴',enTitle:'Agent execution waterfall',description:'검색·추론·검증의 병렬 실행과 대기 시간을 워터폴로 비교하고 단계별 경과와 비용을 확인합니다.',enDescription:'Compare parallel retrieval, inference and validation spans in a waterfall with elapsed time and accrued cost.'},

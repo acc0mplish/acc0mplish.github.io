@@ -1,12 +1,18 @@
 import {renderItemDelivery} from './item-delivery.mjs';
 import {readMotionFavorites,toggleMotionFavorite,MOTION_FAVORITES_EVENT,MOTION_FAVORITES_STORAGE_KEY} from './motion-favorites.mjs';
 import {MOTION_CATALOG,MOTION_CATEGORIES,getMotion} from './motion-catalog.mjs';
+import {MOTION_GROUPS} from './motion-groups.mjs';
+import {mountMotion,loadMotionSource} from './motion-runtime.mjs';
+import {getOriginalMotionDetails,createStandaloneMotionDocument} from './motion-original-details.mjs';
+import {renderLibraryOverview} from './library-overview.mjs';
 
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icon=name=>'<i data-lucide="'+name+'" aria-hidden="true"></i>';
 const text=(value,locale)=>typeof value==='string'?value:value?.[locale]||value?.ko||'';
 const duration=value=>new Intl.NumberFormat('en-US').format(value)+'ms';
+const motionFonts=Object.freeze({default:'',paperlogy:'KlicPaperlogy,system-ui,sans-serif',mindeulle:'KlicMindeulle,system-ui,sans-serif',mono:'KlicGeistMono,monospace'});
 const categoryFor=motion=>MOTION_CATEGORIES.find(category=>category.id===motion.category);
+const previewControllers=new WeakMap();
 const strings=value=>typeof value==='string'?[value]:Array.isArray(value)?value.flatMap(strings):value&&typeof value==='object'?Object.values(value).flatMap(strings):[];
 const motionSearchText=(motion,locale)=>[
  motion.id,motion.easing,duration(motion.durationMs),duration(motion.staggerMs||0),
@@ -15,9 +21,11 @@ const motionSearchText=(motion,locale)=>[
  ...strings(categoryFor(motion)?.label)
 ].join(' ').normalize('NFKC').toLocaleLowerCase(locale==='en'?'en':'ko');
 
-export function selectMotionItems(catalog,{category=null,query='',sort='default',limit=24,cursor='0',locale='ko'}={}){
+export function selectMotionItems(catalog,{category=null,major=null,minor=null,query='',sort='default',limit=24,cursor='0',locale='ko',feeling='',usage='',metadata=null}={}){
  const terms=String(query).normalize('NFKC').trim().slice(0,200).toLocaleLowerCase(locale==='en'?'en':'ko').split(/\s+/).filter(Boolean);
- let matches=catalog.filter(motion=>(!category||motion.category===category)&&(!terms.length||terms.every(term=>motionSearchText(motion,locale).includes(term))));
+ const group=MOTION_GROUPS.find(group=>group.id===major);
+ const members=minor?group?.subgroups.find(item=>item.id===minor)?.categories:group?.categories;
+ let matches=catalog.filter(motion=>{const details=metadata?.get(motion.reference.id+':'+motion.reference.pattern);return (!members||members.includes(motion.category))&&(!category||motion.category===category)&&(!feeling||details?.feelings?.includes(feeling))&&(!usage||details?.usages?.includes(usage))&&(!terms.length||terms.every(term=>motionSearchText(motion,locale).includes(term)));});
  if(sort==='name-asc')matches=matches.map((motion,index)=>({motion,index})).sort((a,b)=>text(a.motion.title,locale).localeCompare(text(b.motion.title,locale),locale)||a.index-b.index).map(row=>row.motion);
  else if(sort==='duration-asc')matches=matches.map((motion,index)=>({motion,index})).sort((a,b)=>a.motion.durationMs-b.motion.durationMs||a.index-b.index).map(row=>row.motion);
  else if(sort==='duration-desc')matches=matches.map((motion,index)=>({motion,index})).sort((a,b)=>b.motion.durationMs-a.motion.durationMs||a.index-b.index).map(row=>row.motion);
@@ -38,451 +46,10 @@ function motionCard(motion,locale,favorites=readMotionFavorites()){
  </article>`;
 }
 
-function sequencePreview(motion,locale){
- const label=locale==='en'?'Animated content preview':'콘텐츠 모션 미리보기';
- return `<div class="motion-stage is-playing" data-motion-stage data-motion-type="${esc(motion.previewType)}" aria-label="${label}">${motion.preview.items.map((item,index)=>`<div class="motion-step" style="--motion-order:${index}" data-motion-step><span class="motion-step-number">${String(index+1).padStart(2,'0')}</span><span class="motion-step-copy"><strong>${esc(text(item.title,locale))}</strong><small>${esc(text(item.description,locale))}</small></span><i data-lucide="check" aria-hidden="true"></i></div>`).join('')}</div>`;
-}
-
-function revealPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-reveal-stage is-playing" data-motion-stage data-motion-type="reveal"><article class="motion-reveal-panel"><span class="motion-reveal-eyebrow">'+esc(text(motion.preview.eyebrow,locale))+'</span><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small><span class="motion-reveal-cover" aria-hidden="true"></span></article></div>';
-}
-
-function irisPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-iris-stage is-playing" data-motion-stage data-motion-type="iris"><article class="motion-iris-content"><span class="motion-iris-symbol" aria-hidden="true"></span><span class="motion-iris-label">'+esc(text(motion.preview.label,locale))+'</span><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></article></div>';
-}
-
-function focusArrivalPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-focus-stage is-playing" data-motion-stage data-motion-type="focus-arrival"><article class="motion-focus-content"><span class="motion-focus-label">'+esc(text(motion.preview.label,locale))+'</span><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></article></div>';
-}
-
-function snapArrivalPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-snap-stage is-playing" data-motion-stage data-motion-type="snap-arrival"><article class="motion-snap-content"><span class="motion-snap-label">'+esc(text(motion.preview.label,locale))+'</span><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></article></div>';
-}
-
-function splitRevealPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-split-stage is-playing" data-motion-stage data-motion-type="split-reveal"><article class="motion-split-content"><span class="motion-split-label">'+esc(text(motion.preview.label,locale))+'</span><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small><span class="motion-split-cover is-left" aria-hidden="true"></span><span class="motion-split-cover is-right" aria-hidden="true"></span></article></div>';
-}
-
-function trailExitPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-trail-stage is-playing" data-motion-stage data-motion-type="trail-exit"><div class="motion-trail-slot" aria-hidden="true">'+esc(locale==='en'?'Cleared from this list':'목록에서 정리됨')+'</div><article class="motion-trail-card"><span class="motion-trail-label">'+esc(text(motion.preview.label,locale))+'</span><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></article></div>';
-}
-
-function foldExitPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-fold-stage is-playing" data-motion-stage data-motion-type="fold-exit"><div class="motion-fold-slot" aria-hidden="true">'+esc(locale==='en'?'Space after removal':'제거 후 남는 자리')+'</div><article class="motion-fold-content"><span class="motion-fold-label">'+esc(text(motion.preview.label,locale))+'</span><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></article></div>';
-}
-
-function steadyTravelPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-steady-stage is-playing" data-motion-stage data-motion-type="steady-travel" role="img" aria-label="'+esc(text(motion.preview.label,locale)+' · '+text(motion.preview.title,locale))+'"><div class="motion-steady-track"><span class="motion-steady-marker"></span></div><span class="motion-steady-label">'+esc(text(motion.preview.description,locale))+'</span></div>';
-}
-
-function smoothArrivalPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-smooth-stage is-playing" data-motion-stage data-motion-type="smooth-arrival"><div class="motion-smooth-track"><span class="motion-smooth-destination" aria-hidden="true"></span><article class="motion-smooth-card"><span class="motion-smooth-label">'+esc(text(motion.preview.label,locale))+'</span><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></article></div></div>';
-}
-
-function arcRoutePreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-arc-stage is-playing" data-motion-stage data-motion-type="arc-route"><figure class="motion-arc-figure" aria-label="'+esc(text(motion.preview.label,locale))+'"><svg viewBox="0 0 240 90" aria-hidden="true"><path d="M 0 72 Q 120 0 240 72"/></svg><span class="motion-arc-marker" aria-hidden="true"></span></figure><span class="motion-arc-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function anticipationMovePreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-anticipation-stage is-playing" data-motion-stage data-motion-type="anticipation-move"><div class="motion-anticipation-track"><span class="motion-anticipation-target" aria-hidden="true"></span><article class="motion-anticipation-card"><span class="motion-anticipation-label">'+esc(text(motion.preview.label,locale))+'</span><strong>'+esc(text(motion.preview.title,locale))+'</strong></article></div><small>'+esc(text(motion.preview.description,locale))+'</small></div>';
-}
-
-function weightedLandingPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-weighted-stage is-playing" data-motion-stage data-motion-type="weighted-landing" role="img" aria-label="'+esc(text(motion.preview.label,locale)+' · '+text(motion.preview.title,locale))+'"><div class="motion-weighted-track"><span class="motion-weighted-guide" aria-hidden="true"></span><article class="motion-weighted-card"><strong>'+esc(text(motion.preview.title,locale))+'</strong></article></div><small>'+esc(text(motion.preview.description,locale))+'</small></div>';
-}
-
-function orientedRoutePreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-oriented-stage is-playing" data-motion-stage data-motion-type="oriented-route" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><figure class="motion-oriented-figure"><svg viewBox="0 0 260 120" aria-hidden="true"><path d="M 12 68 C 64 10 164 112 248 30" /></svg><span class="motion-oriented-marker" aria-hidden="true"></span></figure><span class="motion-oriented-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function magneticSnapPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-magnetic-stage is-playing" data-motion-stage data-motion-type="magnetic-snap" role="img" aria-label="'+esc(text(motion.preview.label,locale)+' · '+text(motion.preview.title,locale))+'"><div class="motion-magnetic-track"><span class="motion-magnetic-target" aria-hidden="true"></span><span class="motion-magnetic-marker" aria-hidden="true"></span></div><span class="motion-magnetic-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function breathingPulsePreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-breathing-stage is-playing" data-motion-stage data-motion-type="breathing-pulse" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><span class="motion-breathing-mark" aria-hidden="true"><span></span></span><span class="motion-breathing-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function elasticScalePreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-elastic-stage is-playing" data-motion-stage data-motion-type="elastic-scale" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><span class="motion-elastic-mark" aria-hidden="true"></span><span class="motion-elastic-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function velocityStretchPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-velocity-stage is-playing" data-motion-stage data-motion-type="velocity-stretch" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><div class="motion-velocity-track"><span class="motion-velocity-marker" aria-hidden="true"></span></div><span class="motion-velocity-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function focusPulsePreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-focus-pulse-stage is-playing" data-motion-stage data-motion-type="focus-pulse" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><span class="motion-focus-pulse-mark"><span class="motion-focus-pulse-ring" aria-hidden="true"></span></span><span class="motion-focus-pulse-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function depthZoomPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-depth-stage is-playing" data-motion-stage data-motion-type="depth-zoom"><article class="motion-depth-card"><span class="motion-depth-label">'+esc(text(motion.preview.label,locale))+'</span><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></article></div>';
-}
-
-function softShrinkPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-soft-shrink-stage is-playing" data-motion-stage data-motion-type="soft-shrink"><span class="motion-soft-shrink-slot" aria-hidden="true">'+esc(locale==='en'?'Space after dismissal':'닫은 뒤 비는 자리')+'</span><article class="motion-soft-card"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></article></div>';
-}
-
-function axisTurnPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-axis-turn-stage is-playing" data-motion-stage data-motion-type="axis-turn" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><span class="motion-axis-turn-mark" aria-hidden="true"><i></i></span><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function spinStopPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-spin-stage is-playing" data-motion-stage data-motion-type="spin-stop" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><span class="motion-spin-mark" aria-hidden="true"><i></i></span><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function pendulumSwayPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-pendulum-stage is-playing" data-motion-stage data-motion-type="pendulum-sway" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><span class="motion-pendulum-hanger"><span class="motion-pendulum-stem"><i></i></span></span><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function cardFlipPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-card-flip-stage is-playing" data-motion-stage data-motion-type="card-flip" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><div class="motion-flip-perspective"><div class="motion-flip-card"><span class="motion-flip-face front"><small>'+esc(locale==='en'?'OVERVIEW':'요약')+'</small><strong>'+esc(text(motion.preview.title,locale))+'</strong></span><span class="motion-flip-face back"><small>'+esc(locale==='en'?'DETAIL':'세부 정보')+'</small><strong>'+esc(text(motion.preview.description,locale))+'</strong></span></div></div></div>';
-}
-
-function orbitMotionPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-orbit-stage is-playing" data-motion-stage data-motion-type="orbit-motion" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><div class="motion-orbit-system"><span class="motion-orbit-ring" aria-hidden="true"></span><span class="motion-orbit-center" aria-hidden="true"></span><span class="motion-orbit-arm"><i class="motion-orbit-marker"></i></span></div><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function inputTiltPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-input-tilt-stage is-playing" data-motion-stage data-motion-type="input-tilt" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><article class="motion-input-tilt-card"><span class="motion-input-tilt-label">'+esc(text(motion.preview.title,locale))+'</span><strong>'+esc(text(motion.preview.description,locale))+'</strong></article></div>';
-}
-
-function rollInPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-roll-stage is-playing" data-motion-stage data-motion-type="roll-in" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><div class="motion-roll-track"><span class="motion-roll-guide" aria-hidden="true"></span><span class="motion-roll-marker" aria-hidden="true"></span></div><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function counterRotationPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-counter-stage is-playing" data-motion-stage data-motion-type="counter-rotation" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><span class="motion-counter-outer"><span class="motion-counter-dot"></span><i class="motion-counter-inner"><b></b></i></span><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function dampedBouncePreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-bounce-stage is-playing" data-motion-stage data-motion-type="damped-bounce" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><div class="motion-bounce-track"><span class="motion-bounce-floor" aria-hidden="true"></span><span class="motion-bounce-marker" aria-hidden="true"></span></div><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function springFollowPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-follow-stage is-playing" data-motion-stage data-motion-type="spring-follow" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><div class="motion-follow-track"><span class="motion-follow-target" aria-hidden="true"></span><span class="motion-follow-marker lead"></span><span class="motion-follow-marker follower one"></span><span class="motion-follow-marker follower two"></span><span class="motion-follow-marker follower three"></span></div><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function elasticReturnPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-elastic-return-stage is-playing" data-motion-stage data-motion-type="elastic-return" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><div class="motion-elastic-return-track"><span class="motion-elastic-return-anchor" aria-hidden="true"></span><span class="motion-elastic-return-mark" aria-hidden="true"></span></div><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function impactShakePreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-impact-stage is-playing" data-motion-stage data-motion-type="impact-shake" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><article class="motion-impact-card"><span class="motion-impact-icon" aria-hidden="true">'+icon('check')+'</span><span><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></article></div>';
-}
-
-function gridPatternPreviewMarkup(motion,locale,type){
- const cells=Array.from({length:9},(_,index)=>{
-  const row=Math.floor(index/3),column=index%3,distance=Math.abs(row-1)+Math.abs(column-1),startX=((index*13)%31)-15,startY=((index*17)%27)-13,turn=((index%5)-2)*8;
-  return '<span class="motion-grid-pattern-cell" style="--grid-row:'+row+';--grid-column:'+column+';--ring-distance:'+distance+';--row-order:'+row+';--column-order:'+column+';--cell-order:'+index+';--start-x:'+startX+'px;--start-y:'+startY+'px;--start-turn:'+turn+'deg" aria-hidden="true"></span>';
- }).join('');
- return '<div class="motion-stage motion-grid-pattern-stage is-playing" data-motion-stage data-motion-type="'+type+'" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><div class="motion-grid-pattern">'+cells+'</div><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function alternatingRevealPreviewMarkup(motion,locale){
- const rows=[1,2,3].map((value,index)=>'<span class="motion-alternating-row" style="--row-order:'+index+'"><i>'+String(value).padStart(2,'0')+'</i><strong>'+esc(locale==='en'?'Review item '+value:'검토 항목 '+value)+'</strong></span>').join('');
- return '<div class="motion-stage motion-alternating-stage is-playing" data-motion-stage data-motion-type="alternating-reveal"><div class="motion-alternating-list">'+rows+'</div><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function nudgePreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-nudge-stage is-playing" data-motion-stage data-motion-type="nudge"><button type="button" class="motion-nudge-card" aria-label="'+esc(text(motion.preview.label,locale))+'"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></button></div>';
-}
-
-function highlightSweepPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-highlight-stage is-playing" data-motion-stage data-motion-type="highlight-sweep"><article class="motion-highlight-card"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small><span class="motion-highlight-band" aria-hidden="true"></span></article></div>';
-}
-
-function rimGlowPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-rim-stage is-playing" data-motion-stage data-motion-type="rim-glow" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><span class="motion-rim-mark" aria-hidden="true"></span><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function chargeUpPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-charge-stage is-playing" data-motion-stage data-motion-type="charge-up" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><span class="motion-charge-mark"><span class="motion-charge-ring" aria-hidden="true"></span><span class="motion-charge-core" aria-hidden="true"></span></span><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function lightTrailPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-light-trail-stage is-playing" data-motion-stage data-motion-type="light-trail" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><div class="motion-light-trail-track"><span class="motion-light-trail-guide" aria-hidden="true"></span><span class="motion-light-trail-marker lead"></span><span class="motion-light-trail-marker echo one"></span><span class="motion-light-trail-marker echo two"></span></div><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function scanLinePreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-scan-stage is-playing" data-motion-stage data-motion-type="scan-line" role="img" aria-label="'+esc(text(motion.preview.label,locale))+'"><div class="motion-scan-area"><span class="motion-scan-content"><i></i><i></i><i></i></span><span class="motion-scan-line" aria-hidden="true"></span></div><span class="motion-axis-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div>';
-}
-
-function settlePreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-settle-stage is-playing" data-motion-stage data-motion-type="settle"><div class="motion-settle-card"><span class="motion-settle-icon" aria-hidden="true">'+icon('check')+'</span><span><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span></div></div>';
-}
-
-function shimmerPreviewMarkup(motion,locale){
- const label=locale==='en'?'Loading content preview':'불러오는 콘텐츠 미리보기';
- return '<div class="motion-stage motion-shimmer-stage is-playing" data-motion-stage data-motion-type="shimmer" role="status" aria-label="'+label+'"><div class="motion-skeleton-panel" aria-hidden="true"><span class="motion-skeleton-line" style="--line-width:34%"></span><span class="motion-skeleton-line" style="--line-width:86%"></span><span class="motion-skeleton-line" style="--line-width:62%"></span><span class="motion-skeleton-line" style="--line-width:74%"></span></div><span class="motion-skeleton-label">'+esc(text(motion.preview.label,locale))+'</span></div>';
-}
-
-function scrollProgressPreviewMarkup(motion,locale){
- const inputLabel=locale==='en'?'Preview scroll position':'스크롤 위치 미리보기';
- return '<div class="motion-stage motion-scroll-stage" data-motion-stage data-motion-type="scroll-progress"><div class="motion-scroll-heading"><strong>'+esc(text(motion.preview.title,locale))+'</strong><output data-motion-scroll-value>42%</output></div><div class="motion-scroll-track" aria-hidden="true"><span data-motion-scroll-indicator style="width:42%"></span></div><label class="motion-scroll-control"><span>'+esc(text(motion.preview.label,locale))+'</span><input type="range" min="0" max="100" step="1" value="42" data-motion-scroll-input aria-label="'+inputLabel+'"></label></div>';
-}
-
-function hoverLiftPreviewMarkup(motion,locale){
- return '<div class="motion-stage motion-hover-stage is-playing" data-motion-stage data-motion-type="hover-lift"><button type="button" class="motion-hover-card" data-motion-preview-action><span class="motion-hover-icon" aria-hidden="true">'+icon('layers-2')+'</span><span class="motion-hover-copy"><strong>'+esc(text(motion.preview.title,locale))+'</strong><small>'+esc(text(motion.preview.description,locale))+'</small></span>'+icon('arrow-up-right')+'</button></div>';
-}
-
-function patternPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Motion illustration':'모션 도식';
- return '<div class="motion-stage motion-pattern-stage is-playing" data-motion-stage data-motion-type="'+esc(motion.previewType)+'" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas" aria-hidden="true"><span class="motion-pattern-guide"></span><span class="motion-pattern-ghost"></span><span class="motion-pattern-object klic-motion-'+esc(motion.id)+'"></span><span class="motion-pattern-secondary"></span></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function modalArrivalPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Modal preview':'모달 미리보기';
- const action=locale==='en'?'Continue':'계속';
- return '<div class="motion-stage motion-pattern-stage motion-modal-preview is-playing" data-motion-stage data-motion-type="modal-arrival" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-modal-backdrop" aria-hidden="true"><div class="motion-modal-card klic-motion-modal-arrival"><span class="motion-modal-mark">'+icon('message-square')+'</span><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small><span class="motion-modal-action">'+esc(action)+'</span></div></div></div>';
-}
-
-function heatmapRipplePreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Heatmap illustration':'히트맵 도식';
- const cells=Array.from({length:20},(_,index)=>'<span class="motion-data-heatmap-cell klic-motion-heatmap-ripple" style="--cell-index:'+index+'"></span>').join('');
- return '<div class="motion-stage motion-pattern-stage motion-data-heatmap-stage is-playing" data-motion-stage data-motion-type="heatmap-ripple" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-data-heatmap" aria-hidden="true">'+cells+'</div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function rsvpWordTrackPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Reading pace illustration':'읽기 속도 도식';
- const words=locale==='en'?['Keep','one','focus']:['한 단어씩','차분히','읽어요'];
- const slots=words.map((word,index)=>'<span class="motion-rsvp-word" style="--rsvp-order:'+index+'">'+esc(word)+'</span>').join('');
- const sentence=words.join(' ');
- return '<div class="motion-stage motion-pattern-stage motion-rsvp-preview is-playing" data-motion-stage data-motion-type="rsvp-word-track" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-rsvp-canvas" aria-hidden="true"><span class="motion-pattern-guide"></span><div class="motion-rsvp-window klic-motion-rsvp-word-track"><span class="motion-rsvp-marker"></span>'+slots+'<span class="motion-rsvp-complete">'+esc(sentence)+'</span></div></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function noiseDissolveExitPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Text exit illustration':'문자 퇴장 도식';
- const points=[[-44,-14],[-28,11],[-12,-23],[8,18],[24,-15],[40,4],[52,-20]];
- const grains=points.map(([x,y],index)=>'<i class="motion-noise-speck" aria-hidden="true" style="--grain-order:'+index+';--grain-x:'+x+'px;--grain-y:'+y+'px"></i>').join('');
- const defs='<svg class="motion-noise-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs><filter id="klic-noise-filter" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".08" numOctaves="1" seed="7" result="noise"/><feColorMatrix in="noise" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .333 .333 .333 0 0" result="noise-alpha"/><feComponentTransfer in="noise-alpha" result="threshold"><feFuncA type="linear" slope="1" intercept="1"><animate attributeName="intercept" values="1;-4" dur="1200ms" fill="freeze"/></feFuncA></feComponentTransfer><feComposite in="SourceGraphic" in2="threshold" operator="in"/></filter><mask id="klic-noise-mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox" mask-type="alpha"><rect x="0" y="0" width="1" height="1" fill="#fff" filter="url(#klic-noise-filter)"/></mask></defs></svg>';
- return '<div class="motion-stage motion-pattern-stage motion-noise-dissolve-preview motion-typography-stage is-playing" data-motion-stage data-motion-type="noise-dissolve-exit" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-typography-canvas motion-noise-canvas" aria-hidden="true">'+defs+'<span class="motion-pattern-guide"></span><strong class="motion-typography-sample motion-noise-sample klic-motion-noise-dissolve-exit">KLIC</strong>'+grains+'</div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function textSparkleLoopPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Decorative text illustration':'문자 장식 도식';
- const points=[[-70,-18],[-48,-34],[-22,-42],[12,-40],[45,-31],[70,-13],[-68,17],[-38,31],[4,37],[42,25]];
- const stars=points.map(([x,y],index)=>{const altX=Math.round(-x*.65),altY=Math.round(-y*.5+8);return '<i class="motion-sparkle-star" aria-hidden="true" style="--sparkle-x:'+x+'px;--sparkle-y:'+y+'px;--sparkle-x-alt:'+altX+'px;--sparkle-y-alt:'+altY+'px;--sparkle-delay:'+(index*180)+'ms">✦</i>';}).join('');
- return '<div class="motion-stage motion-pattern-stage motion-sparkle-preview motion-typography-stage is-playing" data-motion-stage data-motion-type="text-sparkle-loop" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-typography-canvas motion-sparkle-canvas" aria-hidden="true"><span class="motion-pattern-guide"></span><strong class="motion-typography-sample motion-sparkle-text klic-motion-text-sparkle-loop">KLIC'+stars+'</strong></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function scrollPinHoldPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Pinned scroll illustration':'고정 스크롤 도식';
- const context='<i></i><i></i><i></i>';
- return '<div class="motion-stage motion-pattern-stage motion-scroll-pin-preview is-playing" data-motion-stage data-motion-type="scroll-pin-hold" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-scroll-pin-canvas" aria-hidden="true"><div class="motion-scroll-pin-context">'+context+'</div><span class="motion-scroll-pin-subject klic-motion-scroll-pin-hold">KLIC</span></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function pinnedStoryStepsPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Pinned story illustration':'고정 스토리 도식';
- const steps=locale==='en'?['Context','Action','Result']:['맥락','실행','결과'];
- const rows=steps.map(step=>'<span class="motion-pinned-story-step">'+esc(step)+'</span>').join('');
- return '<div class="motion-stage motion-pattern-stage motion-pinned-story-preview is-playing" data-motion-stage data-motion-type="pinned-story-steps" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-pinned-story-canvas" aria-hidden="true"><div class="motion-pinned-story-steps">'+rows+'</div><span class="motion-pinned-story-focus klic-motion-pinned-story-steps"></span><span class="motion-pinned-story-subject">KLIC</span></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function sheetDragSnapPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Sheet drag illustration':'시트 드래그 도식';
- return '<div class="motion-stage motion-pattern-stage motion-sheet-snap-preview is-playing" data-motion-stage data-motion-type="sheet-drag-snap" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-sheet-snap-canvas" aria-hidden="true"><span class="motion-sheet-snap-track"><i class="motion-sheet-snap-mark"></i><i class="motion-sheet-snap-mark"></i><i class="motion-sheet-snap-mark"></i></span><div class="motion-sheet-snap-sheet klic-motion-sheet-drag-snap"><span class="motion-sheet-snap-handle"></span></div></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function glassCrackRecoverPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Glass recovery illustration':'유리 복구 도식';
- const paths=['M100 58 L71 13','M100 58 L138 18','M100 58 L158 57','M100 58 L133 105','M100 58 L64 105','M100 58 L42 65','M100 58 L77 35','M100 58 L120 37','M71 13 L54 18','M138 18 L151 30','M133 105 L145 97'];
- const cracks=paths.map((path,index)=>'<path class="motion-glass-crack-line" d="'+path+'" style="--crack-order:'+index+'"/>').join('');
- return '<div class="motion-stage motion-pattern-stage motion-glass-crack-preview is-playing" data-motion-stage data-motion-type="glass-crack-recover" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-glass-crack-canvas" aria-hidden="true"><div class="motion-glass-crack-surface"><svg class="motion-glass-crack-lines klic-motion-glass-crack-recover" viewBox="0 0 200 120">'+cracks+'</svg></div></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function impactFreezePreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Impact timing illustration':'충돌 타이밍 도식';
- return '<div class="motion-stage motion-pattern-stage motion-impact-freeze-preview is-playing" data-motion-stage data-motion-type="impact-freeze" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-impact-freeze-canvas" aria-hidden="true"><span class="motion-impact-actor"></span><span class="motion-impact-mark">·</span><span class="motion-impact-target klic-motion-impact-freeze"></span></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function blurCrossfadePreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Blur crossfade illustration':'흐림 교차 도식';
- const previous=locale==='en'?'Overview':'요약',next=locale==='en'?'Details':'세부';
- return '<div class="motion-stage motion-pattern-stage motion-blur-crossfade-preview is-playing" data-motion-stage data-motion-type="blur-crossfade" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-blur-crossfade-preview" aria-hidden="true"><span class="motion-blur-view motion-blur-old">'+esc(previous)+'</span><span class="motion-blur-view motion-blur-new klic-motion-blur-crossfade">'+esc(next)+'</span></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function sidechainDuckPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Beat duck illustration':'박자 감쇠 도식';
- const bars=[12,24,18,30,16].map(height=>'<i class="motion-sidechain-bar" style="height:'+height+'px"></i>').join('');
- return '<div class="motion-stage motion-pattern-stage motion-sidechain-preview is-playing" data-motion-stage data-motion-type="sidechain-duck" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-sidechain-canvas" aria-hidden="true"><span class="motion-sidechain-kick"></span><span class="motion-sidechain-surrounding klic-motion-sidechain-duck">'+bars+'</span></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function directionalRecoilPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Directional recoil illustration':'방향성 반동 도식';
- return '<div class="motion-stage motion-pattern-stage motion-recoil-preview is-playing" data-motion-stage data-motion-type="directional-recoil" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-recoil-canvas" aria-hidden="true"><span class="motion-recoil-source"></span><span class="motion-recoil-target klic-motion-directional-recoil"></span></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function attentionBouncePreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Attention bounce illustration':'주의 반동 도식';
- return '<div class="motion-stage motion-pattern-stage motion-attention-bounce-preview is-playing" data-motion-stage data-motion-type="attention-bounce" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-attention-bounce-canvas" aria-hidden="true"><strong class="motion-attention-bounce-mark klic-motion-attention-bounce">KLIC</strong></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function pressBouncePreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Press rebound illustration':'누름 반동 도식';
- return '<div class="motion-stage motion-pattern-stage motion-press-bounce-preview is-playing" data-motion-stage data-motion-type="press-bounce" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-press-bounce-canvas" aria-hidden="true"><span class="motion-press-bounce-button klic-motion-press-bounce">'+esc(locale==='en'?'Action':'실행')+'</span></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function parryWindowPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Parry timing illustration':'패리 타이밍 도식';
- return '<div class="motion-stage motion-pattern-stage motion-parry-window-preview is-playing" data-motion-stage data-motion-type="parry-window" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-parry-canvas" aria-hidden="true"><span class="motion-parry-ring"></span><span class="motion-parry-shield"></span><span class="motion-parry-projectile klic-motion-parry-window"></span></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function victoryImpactHoldPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Victory landing illustration':'승리 착지 도식';
- return '<div class="motion-stage motion-pattern-stage motion-victory-hold-preview is-playing" data-motion-stage data-motion-type="victory-impact-hold" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-victory-hold-canvas" aria-hidden="true"><span class="motion-victory-hold-mark klic-motion-victory-impact-hold">KLIC</span></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function titleSlamPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Title impact illustration':'표제 충격 도식';
- return '<div class="motion-stage motion-pattern-stage motion-title-slam-preview motion-typography-stage is-playing" data-motion-stage data-motion-type="title-slam" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-title-slam-canvas" aria-hidden="true"><strong class="motion-title-slam-text klic-motion-title-slam">KLIC</strong></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function comicTelopImpactPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Comic caption impact illustration':'만화식 자막 충격 도식';
- return '<div class="motion-stage motion-pattern-stage motion-comic-impact-preview is-playing" data-motion-stage data-motion-type="comic-telop-impact" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-comic-impact-canvas" aria-hidden="true"><strong class="motion-comic-impact-text klic-motion-comic-telop-impact">KLIC!</strong></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function sfxCueSyncPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Sound cue timing illustration':'효과음 동기화 도식';
- return '<div class="motion-stage motion-pattern-stage motion-sfx-cue-preview is-playing" data-motion-stage data-motion-type="sfx-cue-sync" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-sfx-cue-canvas" aria-hidden="true"><span class="motion-sfx-cue-tick"></span><span class="motion-sfx-cue-mark klic-motion-sfx-cue-sync is-active"></span></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function characterDropBouncePreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Character landing illustration':'문자 착지 도식';
- const glyphs='KLIC'.split('').map((glyph,index)=>'<i class="motion-character-drop-glyph" aria-hidden="true" style="--char-index:'+index+'">'+glyph+'</i>').join('');
- return '<div class="motion-stage motion-pattern-stage motion-character-drop-preview motion-typography-stage is-playing" data-motion-stage data-motion-type="character-drop-bounce" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-typography-canvas" aria-hidden="true"><span class="motion-pattern-guide"></span><strong class="motion-character-drop-word">'+glyphs+'</strong></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function characterHopLoopPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Sequential character hops illustration':'문자 순차 도약 도식';
- const glyphs='KLIC'.split('').map((glyph,index)=>'<i class="motion-character-hop-glyph" aria-hidden="true" style="--char-index:'+index+'">'+glyph+'</i>').join('');
- return '<div class="motion-stage motion-pattern-stage motion-character-hop-preview motion-typography-stage is-playing" data-motion-stage data-motion-type="character-hop-loop" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-typography-canvas" aria-hidden="true"><span class="motion-pattern-guide"></span><strong class="motion-character-hop-word">'+glyphs+'</strong></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-const TYPOGRAPHY_PREVIEW_TYPES=new Set(['pointer-wipe-reveal','cursor-stamp-trail','proximity-text-scramble','proximity-repel','line-parallax','sticky-shrink-title','text-window-zoom','echo-fan','dual-column-wave','scroll-letter-drop','scroll-focus-tilt','scroll-word-reveal','scroll-word-highlight','font-weight-proximity','text-pressure','font-weight-grow','font-weight-breathe','variable-width-pulse','font-weight-wave','text-effect-sweep','cylinder-carousel','melt-drip','pixel-resolve','scanline-glide','ascii-density','subtle-turbulence','pixel-jitter','slice-displacement','blue-fringe-glitch','word-focus-track','tracking-focus-build','random-focus-reveal','character-focus-resolve','three-step-focus-settle','word-compose-reveal','text-blend-crossfade','text-depth-shadow','moving-line-shadow','text-glow-pulse','neon-startup','neon-flicker-soft','noise-resolve-reveal','blue-color-pop','blue-tone-cycle','conic-spin','blue-gradient-drift','blue-gradient-flow','outline-to-fill','slat-reveal','character-mask-rise','text-on-path','morphing-text-path','spiral-text-move','stroke-write','text-outline-draw','curved-text-marquee','particle-text-resolve','domino-word-topple','falling-word-stack','character-rain','symbol-flicker-in','center-out-text-reveal','type-backspace-loop','gooey-text-morph','comic-pop','marker-circle-draw','scale-text-exit','gravity-drop-exit','particle-text-exit','soft-focus-exit','grapheme-pop','typewriter','text-decode','diff-highlight']);
-
-function typographyPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const sample=text(motion.preview.sample,locale)||'KLIC';
- const parts=motion.preview.segment==='word'?sample.split(/(\s+)/u):Array.from(sample);
- const sampleMarkup=motion.preview.segment?parts.map((part,index)=>/^\s+$/u.test(part)?esc(part):'<span class="klic-motion-'+esc(motion.id)+'" style="--motion-order:'+index+'">'+esc(part)+'</span>').join(''):esc(sample);
- const label=locale==='en'?'Typography illustration':'문자 모션 도식';
- return '<div class="motion-stage motion-pattern-stage motion-typography-stage is-playing" data-motion-stage data-motion-type="'+esc(motion.previewType)+'" role="img" aria-label="'+esc(label+': '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-typography-canvas" aria-hidden="true"><span class="motion-pattern-guide"></span><strong class="motion-typography-sample '+(motion.preview.segment?'':'klic-motion-'+esc(motion.id))+'">'+sampleMarkup+'</strong><span class="motion-typography-cursor"></span></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function speakerCaptionPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale),speaker=text(motion.preview.label,locale);
- const label=locale==='en'?'Motion illustration':'모션 도식';
- return '<div class="motion-stage motion-pattern-stage motion-speaker-caption-stage is-playing" data-motion-stage data-motion-type="speaker-caption" role="img" aria-label="'+esc(label+': '+speaker+'. '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-caption-canvas" aria-hidden="true"><span class="motion-caption-card klic-motion-speaker-caption"><span class="motion-caption-avatar">A</span><span class="motion-caption-copy"><small>'+esc(speaker)+'</small><strong>'+esc(title)+'</strong></span></span></div><span class="motion-pattern-copy"><strong>'+esc(locale==='en'?'Speaker summary':'화자 요약')+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function cornerTitleSwapPreviewMarkup(motion,locale){
- const title=text(motion.preview.title,locale),description=text(motion.preview.description,locale);
- const label=locale==='en'?'Motion illustration':'모션 도식';
- const program=text(motion.preview.label,locale);
- const previous=locale==='en'?'Components':'구성 요소';
- return '<div class="motion-stage motion-pattern-stage motion-corner-title-stage is-playing" data-motion-stage data-motion-type="corner-title-swap" role="img" aria-label="'+esc(label+': '+program+'. '+previous+' becomes '+title+'. '+description)+'"><div class="motion-pattern-canvas motion-corner-canvas" aria-hidden="true"><div class="motion-corner-title-frame"><span class="motion-corner-program">'+esc(program)+'</span><span class="motion-corner-title-window"><span class="motion-corner-old is-leaving">'+esc(previous)+'</span><span class="klic-motion-corner-title-swap">'+esc(title)+'</span></span></div></div><span class="motion-pattern-copy"><strong>'+esc(title)+'</strong><small>'+esc(description)+'</small></span></div>';
-}
-
-function previewMarkup(motion,locale){
- if(motion.previewType==='steady-travel')return steadyTravelPreviewMarkup(motion,locale);
- if(motion.previewType==='smooth-arrival')return smoothArrivalPreviewMarkup(motion,locale);
- if(motion.previewType==='arc-route')return arcRoutePreviewMarkup(motion,locale);
- if(motion.previewType==='anticipation-move')return anticipationMovePreviewMarkup(motion,locale);
- if(motion.previewType==='weighted-landing')return weightedLandingPreviewMarkup(motion,locale);
- if(motion.previewType==='oriented-route')return orientedRoutePreviewMarkup(motion,locale);
- if(motion.previewType==='magnetic-snap')return magneticSnapPreviewMarkup(motion,locale);
- if(motion.previewType==='breathing-pulse')return breathingPulsePreviewMarkup(motion,locale);
- if(motion.previewType==='elastic-scale')return elasticScalePreviewMarkup(motion,locale);
- if(motion.previewType==='velocity-stretch')return velocityStretchPreviewMarkup(motion,locale);
- if(motion.previewType==='focus-pulse')return focusPulsePreviewMarkup(motion,locale);
- if(motion.previewType==='depth-zoom')return depthZoomPreviewMarkup(motion,locale);
- if(motion.previewType==='soft-shrink')return softShrinkPreviewMarkup(motion,locale);
- if(motion.previewType==='axis-turn')return axisTurnPreviewMarkup(motion,locale);
- if(motion.previewType==='spin-stop')return spinStopPreviewMarkup(motion,locale);
- if(motion.previewType==='pendulum-sway')return pendulumSwayPreviewMarkup(motion,locale);
- if(motion.previewType==='card-flip')return cardFlipPreviewMarkup(motion,locale);
- if(motion.previewType==='orbit-motion')return orbitMotionPreviewMarkup(motion,locale);
- if(motion.previewType==='input-tilt')return inputTiltPreviewMarkup(motion,locale);
- if(motion.previewType==='roll-in')return rollInPreviewMarkup(motion,locale);
- if(motion.previewType==='counter-rotation')return counterRotationPreviewMarkup(motion,locale);
- if(motion.previewType==='damped-bounce')return dampedBouncePreviewMarkup(motion,locale);
- if(motion.previewType==='spring-follow')return springFollowPreviewMarkup(motion,locale);
- if(motion.previewType==='elastic-return')return elasticReturnPreviewMarkup(motion,locale);
- if(motion.previewType==='impact-shake')return impactShakePreviewMarkup(motion,locale);
- if(['grid-wave','center-out-grid','row-sweep','grid-shuffle'].includes(motion.previewType))return gridPatternPreviewMarkup(motion,locale,motion.previewType);
- if(motion.previewType==='alternating-reveal')return alternatingRevealPreviewMarkup(motion,locale);
- if(motion.previewType==='nudge')return nudgePreviewMarkup(motion,locale);
- if(motion.previewType==='highlight-sweep')return highlightSweepPreviewMarkup(motion,locale);
- if(motion.previewType==='rim-glow')return rimGlowPreviewMarkup(motion,locale);
- if(motion.previewType==='charge-up')return chargeUpPreviewMarkup(motion,locale);
- if(motion.previewType==='light-trail')return lightTrailPreviewMarkup(motion,locale);
- if(motion.previewType==='scan-line')return scanLinePreviewMarkup(motion,locale);
- if(motion.previewType==='snap-arrival')return snapArrivalPreviewMarkup(motion,locale);
- if(motion.previewType==='split-reveal')return splitRevealPreviewMarkup(motion,locale);
- if(motion.previewType==='trail-exit')return trailExitPreviewMarkup(motion,locale);
- if(motion.previewType==='fold-exit')return foldExitPreviewMarkup(motion,locale);
- if(motion.previewType==='focus-arrival')return focusArrivalPreviewMarkup(motion,locale);
- if(motion.previewType==='iris')return irisPreviewMarkup(motion,locale);
- if(motion.previewType==='reveal')return revealPreviewMarkup(motion,locale);
- if(motion.previewType==='settle')return settlePreviewMarkup(motion,locale);
- if(motion.previewType==='shimmer')return shimmerPreviewMarkup(motion,locale);
- if(motion.previewType==='scroll-progress')return scrollProgressPreviewMarkup(motion,locale);
- if(motion.previewType==='hover-lift')return hoverLiftPreviewMarkup(motion,locale);
- if(motion.previewType==='sequence'||motion.previewType==='fade')return sequencePreview(motion,locale);
- if(motion.previewType==='press')return `<div class="motion-stage motion-interaction-stage" data-motion-stage data-motion-type="press"><div class="motion-preview-copy"><span class="motion-step-number">01</span><span><strong>${locale==='en'?'Action feedback':'실행 피드백'}</strong><small>${esc(text(motion.preview.hint,locale))}</small></span></div><button class="motion-preview-button" type="button" data-motion-preview-action>${icon('save')}<span>${esc(text(motion.preview.label,locale))}</span></button></div>`;
- if(motion.previewType==='disclosure')return `<div class="motion-stage motion-interaction-stage is-playing" data-motion-stage data-motion-type="disclosure"><details class="motion-preview-disclosure" open><summary><span><strong>${esc(text(motion.preview.title,locale))}</strong><small>${esc(text(motion.preview.description,locale))}</small></span>${icon('chevron-down')}</summary><div class="motion-disclosure-panel"><div>${motion.preview.items.map(item=>`<div class="motion-disclosure-row"><strong>${esc(text(item.title,locale))}</strong><small>${esc(text(item.description,locale))}</small></div>`).join('')}</div></div></details></div>`;
- if(motion.previewType==='toast')return `<div class="motion-stage motion-toast-stage is-playing" data-motion-stage data-motion-type="toast"><div class="motion-toast-preview" role="status" aria-live="polite"><span class="motion-toast-icon">${icon('check')}</span><span><strong>${esc(text(motion.preview.title,locale))}</strong><small>${esc(text(motion.preview.description,locale))}</small></span></div></div>`;
- if(motion.previewType==='speaker-caption')return speakerCaptionPreviewMarkup(motion,locale);
- if(motion.previewType==='corner-title-swap')return cornerTitleSwapPreviewMarkup(motion,locale);
- if(motion.previewType==='modal-arrival')return modalArrivalPreviewMarkup(motion,locale);
- if(motion.previewType==='heatmap-ripple')return heatmapRipplePreviewMarkup(motion,locale);
- if(motion.previewType==='rsvp-word-track')return rsvpWordTrackPreviewMarkup(motion,locale);
- if(motion.previewType==='noise-dissolve-exit')return noiseDissolveExitPreviewMarkup(motion,locale);
- if(motion.previewType==='text-sparkle-loop')return textSparkleLoopPreviewMarkup(motion,locale);
- if(motion.previewType==='scroll-pin-hold')return scrollPinHoldPreviewMarkup(motion,locale);
- if(motion.previewType==='pinned-story-steps')return pinnedStoryStepsPreviewMarkup(motion,locale);
- if(motion.previewType==='sheet-drag-snap')return sheetDragSnapPreviewMarkup(motion,locale);
- if(motion.previewType==='glass-crack-recover')return glassCrackRecoverPreviewMarkup(motion,locale);
- if(motion.previewType==='impact-freeze')return impactFreezePreviewMarkup(motion,locale);
- if(motion.previewType==='blur-crossfade')return blurCrossfadePreviewMarkup(motion,locale);
- if(motion.previewType==='sidechain-duck')return sidechainDuckPreviewMarkup(motion,locale);
- if(motion.previewType==='directional-recoil')return directionalRecoilPreviewMarkup(motion,locale);
- if(motion.previewType==='attention-bounce')return attentionBouncePreviewMarkup(motion,locale);
- if(motion.previewType==='press-bounce')return pressBouncePreviewMarkup(motion,locale);
- if(motion.previewType==='parry-window')return parryWindowPreviewMarkup(motion,locale);
- if(motion.previewType==='victory-impact-hold')return victoryImpactHoldPreviewMarkup(motion,locale);
- if(motion.previewType==='title-slam')return titleSlamPreviewMarkup(motion,locale);
- if(motion.previewType==='comic-telop-impact')return comicTelopImpactPreviewMarkup(motion,locale);
- if(motion.previewType==='sfx-cue-sync')return sfxCueSyncPreviewMarkup(motion,locale);
- if(motion.previewType==='character-drop-bounce')return characterDropBouncePreviewMarkup(motion,locale);
- if(motion.previewType==='character-hop-loop')return characterHopLoopPreviewMarkup(motion,locale);
- if(String(motion.category).startsWith('text-')||TYPOGRAPHY_PREVIEW_TYPES.has(motion.previewType))return typographyPreviewMarkup(motion,locale);
- return patternPreviewMarkup(motion,locale);
+function previewMarkup(motion){
+ const reference=motion.reference;
+ if(!reference?.pattern)return '';
+ return `<div class="motion-source-mount" data-motion-source-mount data-motion-id="${esc(motion.id)}" data-motion-reference="${esc(reference.id)}" data-motion-pattern="${esc(reference.pattern)}" data-motion-engine="${esc(reference.engine)}" aria-hidden="true"></div>`;
 }
 
 export function renderMotionThumbnail(id,{locale='ko'}={}){
@@ -492,18 +59,27 @@ export function renderMotionThumbnail(id,{locale='ko'}={}){
 
 function motionDialog(motion,locale){
  const category=text(categoryFor(motion)?.label,locale);
+ const favoriteId=motion.reference?.route||motion.id;
+ const related=MOTION_CATALOG.filter(item=>item.category===motion.category),position=related.findIndex(item=>item.id===motion.id);
  const durationRows=[`<div><dt>${locale==='en'?'Duration':'지속 시간'}</dt><dd>${duration(motion.durationMs)}</dd></div>`,motion.staggerMs?`<div><dt>${locale==='en'?'Stagger':'간격'}</dt><dd>${duration(motion.staggerMs)}</dd></div>`:'',`<div><dt>${locale==='en'?'Easing':'이징'}</dt><dd><code>${esc(motion.easing)}</code></dd></div>`].join('');
  return `<dialog class="motion-dialog" aria-labelledby="motion-dialog-title" aria-describedby="motion-dialog-summary" data-motion-dialog>
   <div class="motion-dialog-shell">
-   <header class="motion-dialog-header"><div><span class="motion-recipe-kicker">${esc(category)} · KLIC MOTION</span><h2 id="motion-dialog-title">${esc(text(motion.title,locale))}</h2></div><button type="button" class="btn secondary sm" data-motion-favorite="${esc(motion.id)}" aria-pressed="${readMotionFavorites().has(motion.id)}">${icon('star')}${locale==='en'?'Favorite':'즐겨찾기'}</button><button type="button" class="icon-button" data-motion-close aria-label="${locale==='en'?'Close':'닫기'}">${icon('x')}</button></header>
+   <header class="motion-dialog-header"><div><span class="motion-recipe-kicker">${esc(category)} · KLIC MOTION</span><h2 id="motion-dialog-title">${esc(text(motion.title,locale))}</h2></div><button type="button" class="btn secondary sm" data-motion-favorite="${esc(favoriteId)}" aria-pressed="${readMotionFavorites().has(favoriteId)}">${icon('star')}${locale==='en'?'Favorite':'즐겨찾기'}</button><div class="motion-dialog-nav" role="group" aria-label="${locale==='en'?'Browse motions':'모션 이동'}"><button type="button" class="btn secondary sm" data-motion-prev aria-label="${locale==='en'?'Previous motion':'이전 모션'}">‹</button><span data-motion-position>${position+1} / ${related.length}</span><button type="button" class="btn secondary sm" data-motion-next aria-label="${locale==='en'?'Next motion':'다음 모션'}">›</button></div><button type="button" class="btn secondary sm" data-motion-copy-link>${locale==='en'?'Copy link':'링크 복사'}</button><button type="button" class="icon-button" data-motion-close aria-label="${locale==='en'?'Close':'닫기'}">${icon('x')}</button></header>
    <div class="motion-dialog-scroll">
     <p id="motion-dialog-summary" class="motion-dialog-summary">${esc(text(motion.summary,locale))}</p>
     <section class="motion-dialog-preview" aria-label="${locale==='en'?'Motion preview':'모션 미리보기'}">
      <div class="motion-dialog-preview-head"><strong>${locale==='en'?'Live preview':'실시간 미리보기'}</strong><button type="button" class="btn secondary sm" data-motion-replay aria-controls="motion-preview-stage">${icon('rotate-ccw')}<span>${locale==='en'?'Replay':'다시 재생'}</span></button></div>
+     ${motion.reference.engine==='semantic'?`<div class="motion-preview-mode" role="group" aria-label="${locale==='en'?'Preview example':'표시 예'}"><button type="button" class="btn secondary sm" data-motion-before-after aria-pressed="false">${locale==='en'?'Before / after':'효과 전·후 비교'}</button></div>`:''}
      <div id="motion-preview-stage" class="motion-preview-root">${previewMarkup(motion,locale)}</div>
+     ${motion.reference.engine==='text'?`<label class="motion-input-label">${locale==='en'?'Try text':'문구 시험'} <input type="text" maxlength="40" data-motion-text value="${esc(motion.preview?.sample?.[locale]||motion.preview?.sample?.ko||'KLIC')}"></label><label class="motion-input-label">${locale==='en'?'Sample language':'견본 언어'} <select data-motion-sample-language><option value="ko">한국어</option><option value="en">English</option></select></label><label class="motion-input-label">${locale==='en'?'Font':'서체'} <select data-motion-font><option value="default">${locale==='en'?'System default':'시스템 기본'}</option><option value="paperlogy">Paperlogy</option><option value="mindeulle">Mindeulle</option><option value="mono">Geist Mono</option></select></label>`:''}
+     <div class="motion-playback" aria-label="${locale==='en'?'Playback controls':'재생 조작'}"><div class="motion-playback-row"><button type="button" class="btn secondary sm" data-motion-step="-1" aria-label="${locale==='en'?'Previous frame':'1프레임 뒤로'}">◀|</button><button type="button" class="btn secondary sm" data-motion-play aria-label="${locale==='en'?'Pause':'일시정지'}">${locale==='en'?'Pause':'일시정지'}</button><button type="button" class="btn secondary sm" data-motion-step="1" aria-label="${locale==='en'?'Next frame':'1프레임 앞으로'}">|▶</button><output data-motion-time>0ms / ${duration(motion.reference.engineDuration||motion.durationMs)}</output><label>${locale==='en'?'Speed':'배속'} <select data-motion-speed aria-label="${locale==='en'?'Playback speed':'재생 속도'}"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><button type="button" class="btn secondary sm" data-motion-loop aria-pressed="true">${locale==='en'?'Loop':'반복'}</button><button type="button" class="btn secondary sm" data-motion-onion aria-pressed="false">${locale==='en'?'Onion skin':'오니언 스킨'}</button></div><label class="motion-timeline"><span>${locale==='en'?'Playback position':'재생 위치'}</span><input type="range" min="0" max="1000" value="0" data-motion-timeline aria-label="${locale==='en'?'Playback position':'재생 위치'}"></label><p>${locale==='en'?'Space: play/pause · , .: frame · ← →: previous/next · O: onion skin':'Space 재생·정지 · , . 프레임 이동 · ← → 이전·다음 · O 오니언 스킨'}</p></div>
+     ${['web-scroll','web-interaction','web-layout','web-feedback','form-state','gesture','svg-path','svg-diagram'].includes(motion.category)||motion.id.startsWith('catalog-')?`<button type="button" class="btn secondary sm" data-motion-interaction aria-pressed="false">${locale==='en'?'Try interaction':'직접 조작'}</button><p data-motion-interaction-hint hidden>${locale==='en'?'Drag, scroll, or click the preview to control progress.':'미리보기를 드래그·스크롤·클릭해 진행 위치를 조작하세요.'}</p>`:''}
     </section>
+    <details class="motion-compare" data-motion-compare><summary>${locale==='en'?'Compare motions':'모션 비교'}</summary><div class="motion-compare-controls"><label>${locale==='en'?'Compare with':'비교 대상'} <select data-compare-choice>${MOTION_CATALOG.filter(item=>item.category===motion.category).map(item=>`<option value="${esc(item.id)}" ${item.id===motion.id?'selected':''}>${esc(text(item.title,locale))}</option>`).join('')}</select></label><label>${locale==='en'?'Comparison duration':'비교 대상 지속 시간'} <input type="range" data-compare-duration min="200" max="30000" step="50" value="${Math.min(30000,Math.max(200,motion.reference.engineDuration||motion.durationMs))}"><output data-compare-output></output></label><label data-compare-extra>${locale==='en'?'Amplitude':'진폭'} <input type="range" data-compare-amplitude min="40" max="180" step="5" value="100"><output data-compare-amplitude-output>100%</output></label><label data-compare-extra>${locale==='en'?'Stagger':'지연'} <input type="range" data-compare-stagger min="0" max="180" step="10" value="0"><output data-compare-stagger-output>0ms</output></label><label data-compare-extra>${locale==='en'?'Easing':'이징'} <select data-compare-easing><option value="">${locale==='en'?'Original':'원본'}</option><option value="easeOutCubic">easeOutCubic</option><option value="easeInOutCubic">easeInOutCubic</option><option value="easeOutBack">easeOutBack</option><option value="linear">linear</option></select></label><button type="button" class="btn secondary sm" data-compare-replay>${locale==='en'?'Replay both':'함께 다시 재생'}</button></div><div class="motion-compare-stages"><div><strong>${esc(text(motion.title,locale))}</strong><div class="motion-source-mount" data-compare-a></div></div><div><strong data-compare-label></strong><div class="motion-source-mount" data-compare-b></div></div></div></details>
     ${renderItemDelivery('motion',motion.id,{locale})}
-    <dl class="motion-spec">${durationRows}<div><dt>${locale==='en'?'Source':'제작'}</dt><dd>${locale==='en'?'KLIC-authored':'KLIC 자체 제작'}</dd></div></dl>
+    <section data-motion-original-details aria-live="polite"></section>
+    <section class="motion-curve" aria-label="${locale==='en'?'Easing curve':'이징 커브'}"><h3>${locale==='en'?'Easing curve':'이징 커브'}</h3><svg data-motion-curve viewBox="0 0 320 150" role="img" aria-label="${locale==='en'?'Easing progress curve':'시간 진행 기준 이징 곡선'}"></svg><p>${locale==='en'?'Overall timing; individual segments may differ.':'전체 시간 진행 기준이며, 각 구간의 움직임은 다를 수 있습니다.'}</p></section>
+    <dl class="motion-spec">${durationRows}<div><dt>${locale==='en'?'Source':'출처'}</dt><dd>${esc(motion.source)} · ${esc(text(motion.reference?.sourceLabel,locale)||motion.reference?.engine||'')}</dd></div></dl>
     <div class="motion-dialog-tabs" role="tablist" aria-label="${locale==='en'?'Motion details':'모션 정보'}">
      <button type="button" role="tab" aria-selected="true" aria-controls="motion-panel-guidance" id="motion-tab-guidance" data-motion-tab="guidance" tabindex="0">${locale==='en'?'Usage':'사용 기준'}</button>
      <button type="button" role="tab" aria-selected="false" aria-controls="motion-panel-implementation" id="motion-tab-implementation" data-motion-tab="implementation" tabindex="-1">${locale==='en'?'Implementation':'구현 코드'}</button>
@@ -512,9 +88,9 @@ function motionDialog(motion,locale){
      <dl class="motion-guidance"><div><dt>${locale==='en'?'Trigger':'시작 조건'}</dt><dd>${esc(text(motion.trigger,locale))}</dd></div><div><dt>${locale==='en'?'Use cases':'적합한 용도'}</dt><dd><ul>${motion.useCases.map(item=>`<li>${esc(text(item,locale))}</li>`).join('')}</ul></dd></div><div><dt>${locale==='en'?'Reduced motion':'모션 줄이기'}</dt><dd>${esc(text(motion.reducedMotion,locale))}</dd></div><div><dt>${locale==='en'?'Cautions':'주의할 점'}</dt><dd><ul>${motion.cautions.map(item=>`<li>${esc(text(item,locale))}</li>`).join('')}</ul></dd></div></dl>
     </section>
     <section class="motion-dialog-panel" role="tabpanel" id="motion-panel-implementation" aria-labelledby="motion-tab-implementation" data-motion-panel="implementation" tabindex="0" hidden>
-     <div class="motion-code-toolbar"><div role="group" aria-label="${locale==='en'?'Implementation format':'구현 형식'}"><button type="button" aria-pressed="true" data-motion-format="css">CSS</button><button type="button" aria-pressed="false" data-motion-format="react">React</button></div><button type="button" class="btn secondary sm" data-motion-copy="css">${icon('copy')}<span>${locale==='en'?'Copy code':'코드 복사'}</span></button></div>
-     <pre class="motion-code"><code data-motion-source>${esc(motion.implementation.css)}</code></pre>
-     <p class="motion-code-note">${locale==='en'?'KLIC-authored examples. React snippets use native elements and the paired CSS example for motion and reduced-motion handling. Adapt content to the receiving interface.':'KLIC 자체 구현 예시입니다. React 코드는 기본 요소와 함께 제공하는 CSS를 사용해 모션과 모션 줄이기를 처리합니다. 적용 화면에 맞게 내용을 조정하세요.'}</p>
+     <div class="motion-code-toolbar"><div role="group" aria-label="${locale==='en'?'Implementation format':'구현 형식'}"><button type="button" aria-pressed="false" data-motion-format="css">CSS</button><button type="button" aria-pressed="true" data-motion-format="js">JavaScript</button><button type="button" aria-pressed="false" data-motion-format="react">React</button></div><button type="button" class="btn secondary sm" data-motion-copy="js">${icon('copy')}<span>${locale==='en'?'Copy code':'코드 복사'}</span></button></div>
+     <pre class="motion-code"><code data-motion-source>${esc(motion.implementation.js)}</code></pre>
+     <p class="motion-code-note">${locale==='en'?'Adapted source motion. JavaScript and React examples import the shared renderer; CSS supplies the stage layout and reduced-motion handling. Preserve the included attribution.':'원본 모션을 KLIC 토큰에 맞춰 적용했습니다. JavaScript·React 예제는 공통 렌더러를 가져오고, CSS는 스테이지 레이아웃을 맡습니다. 출처 표기를 유지하세요.'}</p>
     </section>
    </div>
   </div>
@@ -524,54 +100,104 @@ function motionDialog(motion,locale){
 export function renderMotionPage(route=[],{locale='ko',query='',sort='default',limit=24,cursor='0',favorites=readMotionFavorites()}={}){
  const categoryId=route[0]==='category'?route[1]:null;
  const favoritesOnly=route[0]==='favorites',favoriteIds=favorites;
+ const majorId=route[0]==='major'?route[1]:route[0]==='minor'?MOTION_GROUPS.find(group=>group.subgroups.some(item=>item.id===route[1]))?.id:MOTION_GROUPS.find(group=>group.categories.includes(categoryId))?.id;
+ const major=MOTION_GROUPS.find(group=>group.id===majorId)||null;
+ const minor=route[0]==='minor'?major?.subgroups.find(item=>item.id===route[1]):major?.subgroups.find(item=>item.categories.includes(categoryId));
  const current=route.length===1&&!favoritesOnly&&route[0]!=='category'?getMotion(route[0]):null;
  const category=MOTION_CATEGORIES.find(item=>item.id===categoryId)||null;
- const result=selectMotionItems(favoritesOnly?MOTION_CATALOG.filter(item=>favoriteIds.has(item.id)):MOTION_CATALOG,{category:category?.id,query,sort,limit,cursor,locale});
+ const result=selectMotionItems(favoritesOnly?MOTION_CATALOG.filter(item=>favoriteIds.has(item.id)):MOTION_CATALOG,{category:category?.id,major:major?.id,minor:minor?.id,query,sort,limit,cursor,locale});
  const items=result.items;
- const title=favoritesOnly?(locale==='en'?'Favorite motions':'즐겨찾는 모션'):category?text(category.label,locale):locale==='en'?'All motions':'모든 모션';
+ const title=favoritesOnly?(locale==='en'?'Favorite motions':'즐겨찾는 모션'):category?text(category.label,locale):minor?text(minor.label,locale):major?text(major.label,locale):locale==='en'?'All motions':'모든 모션';
  const countLabel=result.total?locale==='en'?`Showing ${result.start+1}–${result.start+items.length} of ${result.total}`:`${result.start+1}–${result.start+items.length} / ${result.total}`:locale==='en'?'No matching motions':'일치하는 모션 없음';
- return `<section class="motion-library" aria-labelledby="motion-title" data-category="${esc(category?.id||'')}" data-favorites-only="${favoritesOnly}">
-  <header class="section-header"><div><div class="section-title"><h1 id="motion-title">${esc(title)}</h1><span class="count-tag" data-motion-total>${result.total}</span></div><p>${locale==='en'?'KLIC-authored motion recipes with practical usage and implementation notes.':'KLIC가 직접 만든 모션과 사용 기준·구현 정보를 살펴보세요.'}</p></div><span class="eyebrow motion-eyebrow">MOTION · ${String(result.total).padStart(2,'0')}</span></header>
+ const overview=part=>renderLibraryOverview({kind:'motion',part,kicker:locale==='en'?'Motion recipes':'모션 레시피',title:locale==='en'?'Motion studio':'모션 스튜디오',subtitle:locale==='en'?'Motion with a clear purpose.':'움직임에도 설계 기준을.',introDescription:locale==='en'?'Search motion recipes, preview them and review their use.':'모션 레시피를 검색해 미리보고 사용 기준을 확인하세요.',description:locale==='en'?`${MOTION_CATALOG.length} motion recipes across categories, with usage guidance and implementation code.`:`${MOTION_CATALOG.length}개 모션 레시피의 분류와 사용 기준, 구현 코드를 확인하세요.`,detailsSummary:locale==='en'?'Motion system overview and statistics':'모션 시스템 소개와 통계',guideHref:'#docs/principles',guideLabel:locale==='en'?'Motion design principles':'모션 설계 기준',cardLabel:'THE KLIC MOTION SYSTEM',cardIcon:'workflow',rows:MOTION_GROUPS.slice(0,4).map((group,index)=>({value:String(index+1).padStart(2,'0'),label:text(group.label,locale),note:locale==='en'?`${group.count} recipes`:`${group.count}개 레시피`})),markers:['01','02','03'],markerLabel:'CSS · JS · REACT',links:[{href:'#docs/principles',label:locale==='en'?'Design principles':'디자인 원칙'},{href:'#docs/integrations',label:locale==='en'?'Developer integrations':'개발 연동'},{href:'#releases',label:locale==='en'?'Change log':'변경 기록'}],stats:[{value:MOTION_CATALOG.length,label:locale==='en'?'motion recipes':'모션 레시피'},{value:MOTION_GROUPS.length,label:locale==='en'?'main groups':'주요 분류'},{value:MOTION_CATEGORIES.length,label:locale==='en'?'categories':'세부 분류'},{value:3,label:locale==='en'?'source formats':'구현 형식'}]});
+ return `<section class="motion-library" aria-labelledby="motion-title" data-category="${esc(category?.id||'')}" data-major="${esc(major?.id||'')}" data-minor="${esc(minor?.id||'')}" data-favorites-only="${favoritesOnly}">
+  ${overview('intro')}
+  <header class="section-header motion-library-heading"><div class="section-title"><h2 id="motion-title">${esc(title)}</h2><span class="count-tag" data-motion-total>${result.total}</span></div><span class="eyebrow motion-eyebrow">MOTION · ${String(result.total).padStart(2,'0')}</span></header>
   <nav class="motion-view-tabs library-favorites-view" aria-label="${locale==='en'?'Motion view':'모션 보기'}"><a href="#motion" ${!favoritesOnly?'aria-current="page"':''}>${locale==='en'?'All motions':'전체 모션'}</a><a href="#motion/favorites" ${favoritesOnly?'aria-current="page"':''}>${icon('star')}${locale==='en'?'Favorites':'즐겨찾기'} <span data-motion-favorite-count>${MOTION_CATALOG.filter(item=>favoriteIds.has(item.id)).length}</span></a></nav>
-  <nav class="motion-category-filter" aria-label="${locale==='en'?'Motion categories':'모션 분류'}"><a href="#motion" ${!category&&!favoritesOnly?'aria-current="page"':''}>${locale==='en'?'All':'전체'} <span>${MOTION_CATALOG.length}</span></a>${MOTION_CATEGORIES.map(item=>`<a href="#motion/category/${esc(item.id)}" ${category?.id===item.id?'aria-current="page"':''}>${esc(text(item.label,locale))} <span>${MOTION_CATALOG.filter(motion=>motion.category===item.id).length}</span></a>`).join('')}</nav>
-  <div class="motion-controls"><label><span>${locale==='en'?'Search motions':'모션 검색'}</span><input type="search" data-motion-search maxlength="200" value="${esc(query)}" placeholder="${locale==='en'?'Name, use or easing':'이름·용도·이징'}"></label><label><span>${locale==='en'?'Sort':'정렬'}</span><select data-motion-sort><option value="default" ${sort==='default'?'selected':''}>${locale==='en'?'Recommended':'기본 순서'}</option><option value="name-asc" ${sort==='name-asc'?'selected':''}>${locale==='en'?'Name':'이름순'}</option><option value="duration-asc" ${sort==='duration-asc'?'selected':''}>${locale==='en'?'Fastest':'빠른 순'}</option><option value="duration-desc" ${sort==='duration-desc'?'selected':''}>${locale==='en'?'Slowest':'느린 순'}</option></select></label><span class="motion-result-count" data-motion-count aria-live="polite">${esc(countLabel)}</span></div>
+  <div class="motion-controls motion-primary-controls"><label><span>${locale==='en'?'Search motions':'모션 검색'}</span><input type="search" data-motion-search maxlength="200" value="${esc(query)}" placeholder="${locale==='en'?'Name, use or easing':'이름·용도·이징'}"></label><span class="motion-result-count" data-motion-count aria-live="polite">${esc(countLabel)}</span></div>
+  <nav class="motion-category-filter motion-main-categories" aria-label="${locale==='en'?'Motion categories':'모션 분류'}"><a href="#motion" ${!major&&!category&&!favoritesOnly?'aria-current="page"':''}>${locale==='en'?'All':'전체'} <span>${MOTION_CATALOG.length}</span></a>${MOTION_GROUPS.map(group=>`<a href="#motion/major/${esc(group.id)}" ${major?.id===group.id?'aria-current="page"':''}>${esc(text(group.label,locale))} <span>${group.count}</span></a>`).join('')}</nav>
+  ${major?`<nav class="motion-category-filter motion-subcategories" aria-label="${locale==='en'?'Motion subcategories':'모션 중분류'}"><a href="#motion/major/${esc(major.id)}" ${!category&&!minor?'aria-current="page"':''}>${locale==='en'?'All':'전체'} <span>${major.count}</span></a>${major.subgroups.length?major.subgroups.map(item=>`<a href="#motion/minor/${esc(item.id)}" ${minor?.id===item.id?'aria-current="page"':''}>${esc(text(item.label,locale))} <span>${item.count}</span></a>`).join(''):MOTION_CATEGORIES.filter(item=>major.categories.includes(item.id)).map(item=>`<a href="#motion/category/${esc(item.id)}" ${category?.id===item.id?'aria-current="page"':''}>${esc(text(item.label,locale))} <span>${item.count}</span></a>`).join('')}</nav>`:''}
+  ${minor?`<nav class="motion-category-filter motion-subcategories" aria-label="${locale==='en'?'Motion types':'모션 세부 분류'}"><a href="#motion/minor/${esc(minor.id)}" ${!category?'aria-current="page"':''}>${locale==='en'?'All':'전체'} <span>${minor.count}</span></a>${MOTION_CATEGORIES.filter(item=>minor.categories.includes(item.id)).map(item=>`<a href="#motion/category/${esc(item.id)}" ${category?.id===item.id?'aria-current="page"':''}>${esc(text(item.label,locale))} <span>${item.count}</span></a>`).join('')}</nav>`:''}
+  <details class="motion-secondary-controls"><summary>${locale==='en'?'Sort and preview settings':'정렬과 미리보기 설정'}${icon('chevron-down')}</summary><div class="motion-secondary-control-body"><h2 class="motion-secondary-heading">${locale==='en'?'Additional motion filters':'추가 필터와 재생 설정'}</h2><div class="motion-controls motion-sort-controls"><label><span>${locale==='en'?'Sort':'정렬'}</span><select data-motion-sort><option value="default" ${sort==='default'?'selected':''}>${locale==='en'?'Recommended':'기본 순서'}</option><option value="name-asc" ${sort==='name-asc'?'selected':''}>${locale==='en'?'Name':'이름순'}</option><option value="duration-asc" ${sort==='duration-asc'?'selected':''}>${locale==='en'?'Fastest':'빠른 순'}</option><option value="duration-desc" ${sort==='duration-desc'?'selected':''}>${locale==='en'?'Slowest':'느린 순'}</option></select></label></div>
+  <div class="motion-gallery-filters"><label>${locale==='en'?'Feel':'감촉'} <select data-motion-feeling disabled><option value="">${locale==='en'?'All':'모두'}</option>${[['부드러움','Smooth'],['경쾌함','Crisp'],['말랑함','Soft'],['무거움','Heavy'],['바운스','Bouncy']].map(([ko,en])=>`<option value="${ko}">${locale==='en'?en:ko}</option>`).join('')}</select></label><label>${locale==='en'?'Use':'용도'} <select data-motion-usage disabled><option value="">${locale==='en'?'All':'모두'}</option>${[['UI','UI'],['텍스트','Text'],['로고','Logo'],['캐릭터','Character'],['3D','3D']].map(([ko,en])=>`<option value="${ko}">${locale==='en'?en:ko}</option>`).join('')}</select></label><label>${locale==='en'?'Grid size':'목록 크기'} <select data-motion-density><option value="standard">${locale==='en'?'Standard':'표준'}</option><option value="compact">${locale==='en'?'Compact':'작게'}</option></select></label><label>${locale==='en'?'Sample language':'견본 언어'} <select data-gallery-sample-language><option value="ko">한국어</option><option value="en">English</option></select></label><label>${locale==='en'?'Text font':'텍스트 서체'} <select data-gallery-font><option value="default">${locale==='en'?'System default':'시스템 기본'}</option><option value="paperlogy">Paperlogy</option><option value="mindeulle">Mindeulle</option><option value="mono">Geist Mono</option></select></label><label>${locale==='en'?'Text sample':'텍스트 시험'} <input type="text" maxlength="40" data-gallery-text placeholder="${locale==='en'?'Text for text motions':'텍스트 모션에 표시할 문구'}"></label></div>
+  <div class="motion-gallery-playback"><label>${locale==='en'?'Preview speed':'미리보기 속도'} <select data-gallery-speed><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><label>${locale==='en'?'Gallery playback':'목록 재생'} <select data-gallery-playback><option value="loop">${locale==='en'?'Auto loop':'자동 반복'}</option><option value="paused">${locale==='en'?'Pause all':'모두 정지'}</option><option value="solo">${locale==='en'?'Selected only':'선택만 재생'}</option></select></label></div></div></details>
   <div class="motion-grid" data-motion-grid>${items.map(item=>motionCard(item,locale,favoriteIds)).join('')}</div>
   <div class="motion-empty" data-motion-empty role="status" ${result.total?'hidden':''}>${favoritesOnly?(locale==='en'?'No saved motions yet. Use the star on any motion.':'저장한 모션이 없습니다. 항목의 별을 눌러 추가하세요.'):(locale==='en'?'No motion matches. Change the query or category.':'일치하는 모션이 없습니다. 검색어나 분류를 바꿔보세요.')}</div>
   <button type="button" class="btn secondary motion-more" data-motion-more data-next-cursor="${result.nextCursor||''}" ${result.nextCursor?'':'hidden'}>${locale==='en'?'Load more':'더 보기'}</button>
-  ${current?motionDialog(current,locale):route.length&&!category&&!favoritesOnly?'<div class="motion-empty" role="status">'+(locale==='en'?'Motion not found.':'모션을 찾을 수 없습니다.')+'</div>':''}
+  ${overview('details')}
+  ${current?motionDialog(current,locale):route.length&&!category&&!major&&!favoritesOnly?'<div class="motion-empty" role="status">'+(locale==='en'?'Motion not found.':'모션을 찾을 수 없습니다.')+'</div>':''}
  </section>`;
 }
 
 export function restartMotionStage(stage){
  if(!stage)return;
- const scroll=stage.querySelector('[data-motion-scroll-input]');
- if(scroll){const indicator=stage.querySelector('[data-motion-scroll-indicator]'),output=stage.querySelector('[data-motion-scroll-value]');for(const animation of indicator?.getAnimations()||[])animation.cancel();scroll.value='100';if(output)output.textContent='100%';if(indicator){indicator.style.width='100%';if(!matchMedia('(prefers-reduced-motion: reduce)').matches)indicator.animate([{width:'0%'},{width:'100%'}],{duration:1400,easing:'linear'});}return;}
- stage.classList.remove('is-playing');
- const action=stage.querySelector('[data-motion-preview-action]');action?.classList.remove('is-playing');
- void stage.offsetWidth;
- stage.classList.add('is-playing');action?.classList.add('is-playing');
- for(const animation of stage.getAnimations({subtree:true})){animation.currentTime=0;animation.play();}
+ const host=stage.matches?.('[data-motion-source-mount]')?stage:stage.querySelector?.('[data-motion-source-mount]');
+ previewControllers.get(host)?.replay();
 }
 
 export function initMotionPage(root,{copy=async()=>{},icons=()=>{},locale='ko'}={}){
  const dialog=root.querySelector('[data-motion-dialog]');
- const stage=dialog?.querySelector('[data-motion-stage]'),replayButton=dialog?.querySelector('[data-motion-replay]');
+ const stage=dialog?.querySelector('[data-motion-source-mount]')||dialog?.querySelector('[data-motion-stage]'),replayButton=dialog?.querySelector('[data-motion-replay]');
  const motionId=location.hash.slice(1).split('/')[1],motion=getMotion(motionId);
- const scrollInput=stage?.querySelector('[data-motion-scroll-input]'),scrollIndicator=stage?.querySelector('[data-motion-scroll-indicator]'),scrollValue=stage?.querySelector('[data-motion-scroll-value]');
- const updateScrollPreview=()=>{
-  if(!scrollInput)return;
-  const value=Math.max(0,Math.min(100,Number(scrollInput.value)||0));
-  scrollInput.value=String(value);if(scrollIndicator)scrollIndicator.style.width=value+'%';if(scrollValue)scrollValue.textContent=value+'%';
+ const originalPanel=dialog?.querySelector('[data-motion-original-details]');let originalSnippets={};
+ if(originalPanel&&motion)void getOriginalMotionDetails(motion,{locale,host:stage}).then(details=>{
+  if(!originalPanel.isConnected)return;originalSnippets=details.snippets;
+  const list=(label,values)=>values?.length?`<div><dt>${esc(label)}</dt><dd>${values.map(value=>esc(value)).join(' · ')}</dd></div>`:'';
+  const formats=Object.keys(originalSnippets).filter(key=>typeof originalSnippets[key]==='string');
+  const links=details.sources.filter(([,url])=>/^(?:https?:\/\/|motion-source\/klic\/)/i.test(String(url))).map(([name,url])=>`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(name)}</a>`).join(' · ');
+  const tips=details.tips.length?`<h3>${locale==='en'?'Reproduction tips':'재현 팁'}</h3><ol>${details.tips.map(tip=>`<li>${esc(tip)}</li>`).join('')}</ol>`:'';
+  originalPanel.innerHTML=`<details><summary>${locale==='en'?'Original guidance and examples':'원본 상세 정보와 구현 예시'}</summary><dl class="motion-guidance">${list(locale==='en'?'Feel':'감촉',details.feelings)}${list(locale==='en'?'Inputs':'입력',details.inputs)}${list(locale==='en'?'Values':'수치·키워드',details.values)}${details.recipe?`<div><dt>${locale==='en'?'Recipe':'재현 포인트'}</dt><dd>${esc(details.recipe)}</dd></div>`:''}</dl>${links?`<p>${locale==='en'?'Sources':'출처'}: ${links}</p>`:''}${tips}${formats.length?`<p>${details.tokenized?(locale==='en'?'KLIC token-based implementation examples.':'KLIC 토큰을 적용한 구현 예시입니다.'):(locale==='en'?'Original reference examples; adapt styles to KLIC tokens.':'원본 참고 예시입니다. 적용 시 스타일을 KLIC 토큰에 맞추세요.')}</p><div role="group" aria-label="${locale==='en'?'Original code formats':'원본 코드 형식'}">${formats.map((key,index)=>`<button type="button" class="btn secondary sm" aria-pressed="${index===0}" data-original-format="${esc(key)}">${esc(key==='seek'?'seek(t)':key.toUpperCase())}</button>`).join('')} <button type="button" class="btn secondary sm" data-original-copy>${locale==='en'?'Copy':'복사'}</button> <button type="button" class="btn secondary sm" data-original-download>${locale==='en'?'Save runnable HTML':'실행 HTML 저장'}</button></div><p role="status" data-original-status></p><pre class="motion-code"><code data-original-code>${esc(originalSnippets[formats[0]])}</code></pre>`:''}</details>`;
+ }).catch(()=>{if(originalPanel.isConnected)originalPanel.textContent=locale==='en'?'Original details could not be loaded.':'원본 상세 정보를 불러오지 못했습니다.';});
+ const curve=dialog?.querySelector('[data-motion-curve]');
+ if(curve&&motion)void loadMotionSource().then(source=>{if(!curve.isConnected)return;const ref=motion.reference,engine=ref.engine==='text'?source.TEXTMOTION:source.ATLAS,demo=ref.engine==='semantic'?null:engine.get(ref.demoId);let fn=ref.engine==='text'?engine.curveOf?.(demo):demo?.curve;if(typeof fn!=='function'&&demo?.spring)fn=value=>engine.spring(value*1.6,...demo.spring);if(typeof fn!=='function'&&demo?.bez)fn=engine.bez(...demo.bez);if(typeof fn!=='function'&&typeof demo?.ease==='string')fn=engine.E?.[demo.ease];if(typeof fn!=='function')fn=value=>value;let values=Array.from({length:81},(_,i)=>Number(fn(i/80)));if(values.some(value=>!Number.isFinite(value)))values=Array.from({length:81},(_,i)=>i/80);const lo=Math.min(0,...values),hi=Math.max(1,...values),y=value=>118-(value-lo)/(hi-lo)*96,path=values.map((value,index)=>`${index?'L':'M'}${(38+index/80*254).toFixed(1)} ${y(value).toFixed(1)}`).join(' ');curve.innerHTML=`<line x1="38" y1="118" x2="292" y2="118" stroke="var(--klic-semantic-color-border,#dfe5ee)"/><line x1="38" y1="118" x2="38" y2="18" stroke="var(--klic-semantic-color-border,#dfe5ee)"/><path d="${path}" fill="none" stroke="var(--klic-semantic-color-accent,#245fc2)" stroke-width="3"/><circle data-curve-playhead cx="38" cy="118" r="4" fill="var(--klic-semantic-color-accent,#245fc2)"/>`;}).catch(()=>{});
+ const settings={gallerySpeed:1,galleryMode:'loop',dialogSpeed:1,dialogLoop:true,density:'standard',galleryText:'',textFont:'default',sampleLanguage:locale==='en'?'en':'ko',browseHash:'#motion',browseIds:[],browseFilters:null};try{const saved=JSON.parse(sessionStorage.getItem('klic-motion-playback')||'{}');if([.25,.5,1,2].includes(saved.gallerySpeed))settings.gallerySpeed=saved.gallerySpeed;if(['loop','paused','solo'].includes(saved.galleryMode))settings.galleryMode=saved.galleryMode;if([.25,.5,1,2].includes(saved.dialogSpeed))settings.dialogSpeed=saved.dialogSpeed;if(typeof saved.dialogLoop==='boolean')settings.dialogLoop=saved.dialogLoop;if(['standard','compact'].includes(saved.density))settings.density=saved.density;if(typeof saved.galleryText==='string')settings.galleryText=saved.galleryText.slice(0,40);if(Object.hasOwn(motionFonts,saved.textFont))settings.textFont=saved.textFont;if(['ko','en'].includes(saved.sampleLanguage))settings.sampleLanguage=saved.sampleLanguage;if(typeof saved.browseHash==='string'&&/^#motion(?:\/(?:category|major|minor)\/[\w-]+|\/favorites)?$/.test(saved.browseHash))settings.browseHash=saved.browseHash;if(Array.isArray(saved.browseIds))settings.browseIds=saved.browseIds.filter(id=>typeof id==='string'&&getMotion(id)).slice(0,884);if(saved.browseFilters&&typeof saved.browseFilters==='object')settings.browseFilters=saved.browseFilters;}catch{}
+ const saveSettings=()=>{try{sessionStorage.setItem('klic-motion-playback',JSON.stringify(settings));}catch{}};
+ const controllers=new Map();let gallerySpeed=settings.gallerySpeed,galleryMode=settings.galleryMode;
+ const grid=root.querySelector('[data-motion-grid]');
+ const mountPreview=host=>{
+  if(!host)return null;let controller=controllers.get(host);if(controller)return controller;
+  const recipe=getMotion(host.dataset.motionId);if(!recipe)return null;
+  controller=mountMotion(host,recipe,{locale,loop:true});if(grid?.contains(host)){controller.setPlaybackRate(gallerySpeed);controller.setLoop(true);if(recipe.reference.engine==='text'){controller.setText(settings.galleryText||text(recipe.preview?.sample,settings.sampleLanguage));controller.setFont(motionFonts[settings.textFont]);}if(galleryMode!=='loop')controller.pause();}controllers.set(host,controller);previewControllers.set(host,controller);return controller;
  };
- let pressedTimer;
- const replay=()=>{
-  if(!stage)return;
-  if(scrollInput){scrollInput.value='42';updateScrollPreview();}
-  restartMotionStage(stage);
-  const button=stage.querySelector('[data-motion-preview-action]');
-  if(button){clearTimeout(pressedTimer);pressedTimer=setTimeout(()=>button.classList.remove('is-playing'),motion?.durationMs||160);}
+ let compareFrame=0,compareTimer=0,compareGeneration=0,compareControllers=[];
+ const compare=dialog?.querySelector('[data-motion-compare]');
+ const clearCompare=()=>{compareGeneration++;clearTimeout(compareTimer);cancelAnimationFrame(compareFrame);compareFrame=0;for(const controller of compareControllers)controller.destroy();compareControllers=[];};
+ const startCompare=async()=>{
+  if(!compare?.open||!motion)return;clearCompare();const generation=compareGeneration,other=getMotion(compare.querySelector('[data-compare-choice]').value);if(!other)return;
+  const slider=compare.querySelector('[data-compare-duration]'),ms=Number(slider.value),amplitude=Number(compare.querySelector('[data-compare-amplitude]').value),stagger=Number(compare.querySelector('[data-compare-stagger]').value),easing=compare.querySelector('[data-compare-easing]').value;compare.querySelector('[data-compare-output]').textContent=duration(ms);compare.querySelector('[data-compare-amplitude-output]').textContent=amplitude+'%';compare.querySelector('[data-compare-stagger-output]').textContent=duration(stagger);for(const extra of compare.querySelectorAll('[data-compare-extra]'))extra.hidden=other.reference.engine!=='semantic';compare.querySelector('[data-compare-label]').textContent=text(other.title,locale);
+  const a=mountMotion(compare.querySelector('[data-compare-a]'),motion,{locale}),b=mountMotion(compare.querySelector('[data-compare-b]'),other,{locale,amplitude:amplitude/100,stagger,easing});compareControllers=[a,b];a.pause();b.pause();for(const [controller,item] of [[a,motion],[b,other]])if(item.reference.engine==='text'){controller.setFont(motionFonts[settings.textFont]);controller.setText(settings.galleryText||text(item.preview?.sample,settings.sampleLanguage));}
+  try{await Promise.all([a.ready,b.ready]);}catch{return;}if(generation!==compareGeneration)return;a.pause();b.pause();
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  let start;const tick=now=>{if(generation!==compareGeneration)return;start??=now;const elapsed=now-start;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;a.seek(elapsed%a.duration);b.seek((elapsed%ms)/ms*b.duration);compareFrame=requestAnimationFrame(tick);};compareFrame=requestAnimationFrame(tick);
  };
- const close=()=>{location.hash='#motion';};
+ const onCompareToggle=()=>compare.open?void startCompare():clearCompare();const onCompareChange=()=>void startCompare();
+ const onCompareInput=event=>{const key=event.target.dataset;if('compareDuration' in key)compare.querySelector('[data-compare-output]').textContent=duration(Number(event.target.value));if('compareAmplitude' in key)compare.querySelector('[data-compare-amplitude-output]').textContent=event.target.value+'%';if('compareStagger' in key)compare.querySelector('[data-compare-stagger-output]').textContent=duration(Number(event.target.value));clearTimeout(compareTimer);compareTimer=setTimeout(()=>void startCompare(),100);};
+ compare?.addEventListener('input',onCompareInput);
+ compare?.addEventListener('toggle',onCompareToggle);compare?.querySelector('[data-compare-choice]')?.addEventListener('change',onCompareChange);compare?.querySelector('[data-compare-duration]')?.addEventListener('change',onCompareChange);for(const selector of ['[data-compare-amplitude]','[data-compare-stagger]','[data-compare-easing]'])compare?.querySelector(selector)?.addEventListener('change',onCompareChange);compare?.querySelector('[data-compare-replay]')?.addEventListener('click',onCompareChange);
+ const disposeRemoved=()=>{for(const [host,controller]of controllers){if(!host.isConnected){controller.destroy();controllers.delete(host);previewControllers.delete?.(host);}}};
+ const replay=()=>{if(stage?.matches?.('[data-motion-source-mount]'))mountPreview(stage)?.replay();};
+ const dialogController=stage?mountPreview(stage):null,playButton=dialog?.querySelector('[data-motion-play]'),timeline=dialog?.querySelector('[data-motion-timeline]'),timeOutput=dialog?.querySelector('[data-motion-time]');
+ if(dialogController){if(motion?.reference.engine==='text'){dialogController.setFont(motionFonts[settings.textFont]);dialogController.setText(settings.galleryText||text(motion.preview?.sample,settings.sampleLanguage));const fontInput=dialog.querySelector('[data-motion-font]'),languageInput=dialog.querySelector('[data-motion-sample-language]'),sampleInput=dialog.querySelector('[data-motion-text]');if(fontInput)fontInput.value=settings.textFont;if(languageInput){languageInput.value=settings.sampleLanguage;languageInput.disabled=Boolean(settings.galleryText);}if(sampleInput)sampleInput.value=settings.galleryText||text(motion.preview?.sample,settings.sampleLanguage);}if(motion?.reference.engine==='text'&&settings.galleryText){dialogController.setText(settings.galleryText);const textInput=dialog.querySelector('[data-motion-text]');if(textInput)textInput.value=settings.galleryText;}dialogController.setPlaybackRate(settings.dialogSpeed);dialogController.setLoop(settings.dialogLoop);const speed=dialog.querySelector('[data-motion-speed]'),loopButton=dialog.querySelector('[data-motion-loop]');if(speed)speed.value=String(settings.dialogSpeed);loopButton?.setAttribute('aria-pressed',String(settings.dialogLoop));}
+ let uiFrame=0,onionControllers=[],onionGeneration=0,interactive=false,drag=null,baseline=null;
+ const syncPlayback=()=>{if(!dialog?.isConnected)return;const current=dialogController?.currentTime||0,total=dialogController?.duration||motion?.durationMs||1;if(timeline)timeline.value=String(Math.round(current/total*1000));if(timeOutput)timeOutput.textContent=duration(Math.round(current))+' / '+duration(Math.round(total));const path=curve?.querySelector('path'),dot=curve?.querySelector('[data-curve-playhead]');if(path&&dot&&typeof path.getTotalLength==='function'){const point=path.getPointAtLength(path.getTotalLength()*Math.min(1,current/total));dot.setAttribute('cx',point.x);dot.setAttribute('cy',point.y);}if(playButton){const playing=dialogController?.playState==='running';playButton.textContent=locale==='en'?(playing?'Pause':'Play'):(playing?'일시정지':'재생');playButton.setAttribute('aria-label',playButton.textContent);}uiFrame=requestAnimationFrame(syncPlayback);};
+ if(dialogController)void dialogController.ready.then(()=>{if(dialog?.isConnected){cancelAnimationFrame(uiFrame);syncPlayback();}}).catch(()=>{});
+ const seekProgress=value=>{if(dialogController)dialogController.seek(Math.max(0,Math.min(1,value))*dialogController.duration);};
+ const stepFrame=direction=>{if(dialogController)dialogController.seek(dialogController.currentTime+direction*1000/30);};
+ const clearOnion=()=>{onionGeneration++;for(const row of onionControllers){row.controller.destroy();row.node.remove();}onionControllers=[];};
+ const toggleOnion=async button=>{const active=button.getAttribute('aria-pressed')!=='true';button.setAttribute('aria-pressed',String(active));clearOnion();if(!motion||!stage)return;if(motion.reference.engine!=='semantic'){dialogController?.setOnion(active);return;}if(!active)return;const generation=onionGeneration,container=stage.parentElement;for(let index=0;index<8;index++){const node=document.createElement('div');node.className='motion-source-mount motion-onion-layer';node.setAttribute('aria-hidden','true');node.style.opacity=String(.07+index*.012);container.append(node);const controller=mountMotion(node,motion,{locale});controller.pause();if(motion.reference.engine==='text'){controller.setFont(motionFonts[settings.textFont]);controller.setText(settings.galleryText||text(motion.preview?.sample,settings.sampleLanguage));}onionControllers.push({node,controller});void controller.ready.then(()=>{if(generation===onionGeneration){controller.pause();controller.seek(controller.duration*index/8);}}).catch(()=>{});}};
+ const toggleBeforeAfter=async button=>{const active=button.getAttribute('aria-pressed')!=='true';button.setAttribute('aria-pressed',String(active));baseline?.controller.destroy();baseline?.node.remove();baseline=null;stage?.parentElement?.classList.toggle('is-split',active);if(!active||!stage||!motion)return;const node=document.createElement('div');node.className='motion-source-mount motion-baseline';node.setAttribute('aria-label',locale==='en'?'Without motion':'효과 전');stage.parentElement.prepend(node);const controller=mountMotion(node,motion,{locale});controller.pause();baseline={node,controller};try{await controller.ready;if(baseline?.controller===controller){controller.pause();controller.seek(controller.reducedTime);}}catch{}};
+ const browseItems=motion&&settings.browseIds.includes(motion.id)?settings.browseIds.map(getMotion).filter(Boolean):MOTION_CATALOG.filter(item=>item.category===motion?.category);const positionLabel=dialog?.querySelector('[data-motion-position]');if(positionLabel&&motion)positionLabel.textContent=(browseItems.findIndex(item=>item.id===motion.id)+1)+' / '+browseItems.length;
+ const navigateMotion=direction=>{if(!motion)return;const index=browseItems.findIndex(item=>item.id===motion.id),next=browseItems[(index+direction+browseItems.length)%browseItems.length];if(next)location.hash='#motion/'+next.id;};
+ const toggleInteraction=button=>{interactive=!interactive;drag=null;button.setAttribute('aria-pressed',String(interactive));button.textContent=interactive?(locale==='en'?'Return to autoplay':'자동 재생으로 돌아가기'):(locale==='en'?'Try interaction':'직접 조작');const hint=dialog?.querySelector('[data-motion-interaction-hint]');if(hint)hint.hidden=!interactive;if(interactive)dialogController?.pause();else dialogController?.replay();};
+ const interactionPointerDown=event=>{if(!interactive||!stage)return;drag={x:event.clientX,y:event.clientY,progress:(dialogController?.currentTime||0)/(dialogController?.duration||1)};stage.setPointerCapture?.(event.pointerId);};
+ const interactionPointerMove=event=>{if(!interactive||!stage)return;if(drag){const vertical=motion.category==='web-scroll'||motion.category==='gesture';seekProgress(drag.progress+((vertical?event.clientY-drag.y:event.clientX-drag.x)/220));}else if(motion.category==='web-interaction'){const rect=stage.getBoundingClientRect();seekProgress((event.clientX-rect.left)/rect.width);}};
+ const interactionPointerUp=event=>{if(!interactive||!stage)return;drag=null;if(stage.hasPointerCapture?.(event.pointerId))stage.releasePointerCapture(event.pointerId);};
+ const interactionWheel=event=>{if(!interactive)return;event.preventDefault();seekProgress((dialogController?.currentTime||0)/(dialogController?.duration||1)+event.deltaY/520);};
+ const interactionClick=()=>{if(interactive&&!['web-scroll','gesture','web-interaction'].includes(motion.category))seekProgress((dialogController?.currentTime||0)/(dialogController?.duration||1)>.5?0:1);};
+ stage?.addEventListener('pointerdown',interactionPointerDown);stage?.addEventListener('pointermove',interactionPointerMove);stage?.addEventListener('pointerup',interactionPointerUp);stage?.addEventListener('pointercancel',interactionPointerUp);stage?.addEventListener('wheel',interactionWheel,{passive:false});stage?.addEventListener('click',interactionClick);
+ const controlChange=event=>{const target=event.target;if(event.type==='input'&&target.tagName==='SELECT'||event.type==='change'&&target.tagName==='INPUT')return;if(target.matches('[data-motion-timeline]'))seekProgress(Number(target.value)/1000);else if(target.matches('[data-motion-speed]')){settings.dialogSpeed=Number(target.value);dialogController?.setPlaybackRate(settings.dialogSpeed);saveSettings();}else if(target.matches('[data-motion-sample-language]')){if(['ko','en'].includes(target.value)){settings.sampleLanguage=target.value;saveSettings();const sample=text(motion.preview?.sample,settings.sampleLanguage);const input=dialog.querySelector('[data-motion-text]');if(input)input.value=sample;dialogController?.setText(sample);for(const row of onionControllers)row.controller.setText(sample);}}else if(target.matches('[data-motion-font]')){if(Object.hasOwn(motionFonts,target.value)){settings.textFont=target.value;saveSettings();dialogController?.setFont(motionFonts[target.value]);for(const row of onionControllers)row.controller.setFont(motionFonts[target.value]);}}else if(target.matches('[data-motion-text]')){settings.galleryText=target.value;saveSettings();const sample=target.value||text(motion.preview?.sample,settings.sampleLanguage),language=dialog.querySelector('[data-motion-sample-language]');if(language)language.disabled=Boolean(target.value);dialogController?.setText(sample);for(const row of onionControllers)row.controller.setText(sample);}};
+ dialog?.addEventListener('input',controlChange);dialog?.addEventListener('change',controlChange);
+ const close=()=>{location.hash=settings.browseHash||'#motion';};
  const selectTab=tab=>{
   if(!dialog)return;
   for(const button of dialog.querySelectorAll('[data-motion-tab]')){const active=button===tab;button.setAttribute('aria-selected',String(active));button.tabIndex=active?0:-1;}
@@ -579,7 +205,15 @@ export function initMotionPage(root,{copy=async()=>{},icons=()=>{},locale='ko'}=
  };
  const click=event=>{
   if(!dialog)return;
+  if(event.target.closest('[data-motion-copy-link]')){copy(location.href,locale==='en'?'Link copied.':'링크를 복사했습니다.');return;}
+  const action=event.target.closest('[data-motion-play],[data-motion-step],[data-motion-loop],[data-motion-onion],[data-motion-prev],[data-motion-next],[data-motion-interaction],[data-motion-before-after]');if(action){if(action.matches('[data-motion-play]')){if(dialogController?.playState==='running')dialogController.pause();else dialogController?.play();}else if(action.matches('[data-motion-step]'))stepFrame(Number(action.dataset.motionStep));else if(action.matches('[data-motion-loop]')){dialogController?.setLoop(!dialogController.loop);settings.dialogLoop=Boolean(dialogController?.loop);saveSettings();action.setAttribute('aria-pressed',String(dialogController?.loop));}else if(action.matches('[data-motion-onion]'))void toggleOnion(action);else if(action.matches('[data-motion-prev]'))navigateMotion(-1);else if(action.matches('[data-motion-next]'))navigateMotion(1);else if(action.matches('[data-motion-before-after]'))void toggleBeforeAfter(action);else toggleInteraction(action);return;}
   const tab=event.target.closest('[data-motion-tab]');if(tab){selectTab(tab);return;}
+  const download=event.target.closest('[data-original-download]');if(download&&motion){
+   const status=originalPanel.querySelector('[data-original-status]');download.disabled=true;if(status)status.textContent=locale==='en'?'Preparing offline HTML…':'오프라인 HTML 준비 중…';
+   void createStandaloneMotionDocument(motion,{host:stage,locale,sample:motion.reference.engine==='text'?dialog.querySelector('[data-motion-text]')?.value:null,sampleLanguage:settings.sampleLanguage,font:settings.textFont}).then(html=>{const url=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'})),anchor=document.createElement('a');anchor.href=url;anchor.download=motion.id+'.html';anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);if(status?.isConnected)status.textContent=locale==='en'?'HTML ready.':'HTML을 저장했습니다.';}).catch(error=>{if(status?.isConnected)status.textContent=(locale==='en'?'HTML export failed: ':'HTML 저장 실패: ')+error.message;}).finally(()=>{download.disabled=false;});return;
+  }
+  const originalFormat=event.target.closest('[data-original-format]');if(originalFormat&&originalPanel){const code=originalPanel.querySelector('[data-original-code]');if(code)code.textContent=originalSnippets[originalFormat.dataset.originalFormat]||'';for(const button of originalPanel.querySelectorAll('[data-original-format]'))button.setAttribute('aria-pressed',String(button===originalFormat));return;}
+  if(event.target.closest('[data-original-copy]')&&originalPanel){const code=originalPanel.querySelector('[data-original-code]');if(code)copy(code.textContent,locale==='en'?'Code copied.':'코드를 복사했습니다.');return;}
   const format=event.target.closest('[data-motion-format]');
   if(format&&motion){
    const source=motion.implementation[format.dataset.motionFormat];if(typeof source!=='string')return;
@@ -593,25 +227,28 @@ export function initMotionPage(root,{copy=async()=>{},icons=()=>{},locale='ko'}=
  };
  const keydown=event=>{
   if(!dialog)return;
-  const tab=event.target.closest?.('[data-motion-tab]');if(!tab)return;
+  const tab=event.target.closest?.('[data-motion-tab]');if(!tab){const tag=event.target?.tagName;if(event.ctrlKey||event.metaKey||event.altKey||['INPUT','SELECT','TEXTAREA'].includes(tag)||event.target?.isContentEditable)return;if(event.key===','||event.key==='.'){event.preventDefault();stepFrame(event.key===','?-1:1);}else if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();navigateMotion(event.key==='ArrowLeft'?-1:1);}else if(event.key===' '&&!['BUTTON','A'].includes(tag)){event.preventDefault();if(dialogController?.playState==='running')dialogController.pause();else dialogController?.play();}else if(event.key.toLowerCase()==='o'){event.preventDefault();const button=dialog.querySelector('[data-motion-onion]');if(button)void toggleOnion(button);}return;}
   if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
   event.preventDefault();const tabs=[...dialog.querySelectorAll('[data-motion-tab]')],index=tabs.indexOf(tab);
   const next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(index+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
   tabs[next]?.focus();selectTab(tabs[next]);
  };
- const search=root.querySelector('[data-motion-search]'),sortControl=root.querySelector('[data-motion-sort]'),grid=root.querySelector('[data-motion-grid]'),count=root.querySelector('[data-motion-count]'),total=root.querySelector('[data-motion-total]'),more=root.querySelector('[data-motion-more]'),empty=root.querySelector('[data-motion-empty]');
+ const search=root.querySelector('[data-motion-search]'),sortControl=root.querySelector('[data-motion-sort]'),count=root.querySelector('[data-motion-count]'),total=root.querySelector('[data-motion-total]'),more=root.querySelector('[data-motion-more]'),empty=root.querySelector('[data-motion-empty]');
  const categoryId=root.querySelector('.motion-library')?.dataset.category||null;
+ const majorId=root.querySelector('.motion-library')?.dataset.major||null;
+ const minorId=root.querySelector('.motion-library')?.dataset.minor||null;
  const favoritesOnly=root.querySelector('.motion-library')?.dataset.favoritesOnly==='true';
- let query=search?.value||'',sort=sortControl?.value||'default',nextCursor=more?.dataset.nextCursor||null;
- const observer=typeof IntersectionObserver==='function'?new IntersectionObserver(entries=>{
-  for(const entry of entries){const stage=entry.target.querySelector('[data-motion-stage]');if(entry.isIntersecting)restartMotionStage(stage);else for(const animation of stage?.getAnimations({subtree:true})||[])animation.pause();}
+ let query=search?.value||'',sort=sortControl?.value||'default',nextCursor=more?.dataset.nextCursor||null,metadata=null,feeling='',usage='';
+ const IO=root.ownerDocument.defaultView?.IntersectionObserver;
+ const observer=typeof IO==='function'?new IO(entries=>{
+  for(const entry of entries){const host=entry.target.querySelector('[data-motion-source-mount]');if(entry.isIntersecting&&galleryMode==='loop')mountPreview(host)?.replay();else if(!entry.isIntersecting)controllers.get(host)?.pause();}
  },{threshold:.25}):null;
- const observeCards=()=>{for(const card of grid?.querySelectorAll('.motion-card')||[])observer?.observe(card);};
- const replayCard=event=>{const card=event.target.closest?.('.motion-card');if(!card||card.contains(event.relatedTarget))return;restartMotionStage(card.querySelector('[data-motion-stage]'));};
+ const observeCards=()=>{if(dialog)return;const cards=[...(grid?.querySelectorAll('.motion-card')||[])];if(observer){for(const card of cards)observer.observe(card);}else for(const host of cards.slice(0,6).map(card=>card.querySelector('[data-motion-source-mount]')))mountPreview(host);};
+ const replayCard=event=>{const card=event.target.closest?.('.motion-card');if(!card||card.contains(event.relatedTarget)||galleryMode==='paused')return;const host=card.querySelector('[data-motion-source-mount]');if(!host)return;if(galleryMode==='solo')for(const [other,c]of controllers)if(grid?.contains(other)&&other!==host)c.pause();mountPreview(host)?.replay();};
  root.addEventListener('pointerover',replayCard);root.addEventListener('focusin',replayCard);observeCards();
  const updateList=(cursor='0',append=false)=>{
   if(!grid)return;
-  const page=selectMotionItems(favoritesOnly?MOTION_CATALOG.filter(item=>readMotionFavorites().has(item.id)):MOTION_CATALOG,{category:categoryId,query,sort,limit:24,cursor,locale});
+  const page=selectMotionItems(favoritesOnly?MOTION_CATALOG.filter(item=>readMotionFavorites().has(item.id)):MOTION_CATALOG,{category:categoryId,major:majorId,minor:minorId,query,sort,limit:24,cursor,locale,feeling,usage,metadata});
   const markup=page.items.map(item=>motionCard(item,locale)).join('');
   if(!append)observer?.disconnect();
   if(append)grid.insertAdjacentHTML('beforeend',markup);else grid.innerHTML=markup;
@@ -619,23 +256,38 @@ export function initMotionPage(root,{copy=async()=>{},icons=()=>{},locale='ko'}=
   if(count)count.textContent=label;if(total)total.textContent=String(page.total);
   if(empty)empty.hidden=page.total>0;
   nextCursor=page.nextCursor;if(more){more.dataset.nextCursor=nextCursor||'';more.hidden=!nextCursor;}
-  icons(grid);observeCards();
+  icons(grid);observeCards();disposeRemoved();
  };
  const refreshFavorites=()=>{const favorites=readMotionFavorites();for(const button of root.querySelectorAll('[data-motion-favorite]'))button.setAttribute('aria-pressed',String(favorites.has(button.dataset.motionFavorite)));for(const count of root.querySelectorAll('[data-motion-favorite-count]'))count.textContent=String(MOTION_CATALOG.filter(item=>favorites.has(item.id)).length);if(favoritesOnly)updateList();};
  const onStorage=event=>{if(event.key===MOTION_FAVORITES_STORAGE_KEY||event.key===null)refreshFavorites();};
  window.addEventListener(MOTION_FAVORITES_EVENT,refreshFavorites);window.addEventListener('storage',onStorage);
  const onSearch=()=>{query=search?.value||'';updateList();};
  const onSort=()=>{sort=sortControl?.value||'default';updateList();};
- const onRootClick=event=>{const favorite=event.target.closest?.('[data-motion-favorite]');if(favorite){toggleMotionFavorite(favorite.dataset.motionFavorite);return;}const replay=event.target.closest?.('[data-motion-card-replay]');if(replay){restartMotionStage(replay.closest('.motion-card')?.querySelector('[data-motion-stage]'));return;}const button=event.target.closest?.('[data-motion-more]');if(button&&nextCursor){event.preventDefault();updateList(nextCursor,true);}};
- search?.addEventListener('input',onSearch);sortControl?.addEventListener('change',onSort);root.addEventListener('click',onRootClick);scrollInput?.addEventListener('input',updateScrollPreview);
+ const onRootClick=event=>{const link=event.target.closest?.('a[href^="#motion/"]');if(!dialog&&link){const id=link.getAttribute('href').slice('#motion/'.length);if(getMotion(id)){const ids=[];let cursor='0';do{const page=selectMotionItems(favoritesOnly?MOTION_CATALOG.filter(item=>readMotionFavorites().has(item.id)):MOTION_CATALOG,{category:categoryId,major:majorId,minor:minorId,query,sort,limit:100,cursor,locale,feeling,usage,metadata});ids.push(...page.items.map(item=>item.id));cursor=page.nextCursor;}while(cursor);settings.browseHash=location.hash||'#motion';settings.browseIds=ids;settings.browseFilters={query,sort,feeling,usage};saveSettings();}}const favorite=event.target.closest?.('[data-motion-favorite]');if(favorite){toggleMotionFavorite(favorite.dataset.motionFavorite);return;}const replay=event.target.closest?.('[data-motion-card-replay]');if(replay){const host=replay.closest('.motion-card')?.querySelector('[data-motion-source-mount]');if(host)mountPreview(host)?.replay();return;}const button=event.target.closest?.('[data-motion-more]');if(button&&nextCursor){event.preventDefault();updateList(nextCursor,true);}};
+ const feelingControl=root.querySelector('[data-motion-feeling]'),usageControl=root.querySelector('[data-motion-usage]'),densityControl=root.querySelector('[data-motion-density]'),galleryTextControl=root.querySelector('[data-gallery-text]'),galleryFontControl=root.querySelector('[data-gallery-font]'),galleryLanguageControl=root.querySelector('[data-gallery-sample-language]');
+ if(densityControl)densityControl.value=settings.density;if(grid)grid.classList.toggle('is-compact',settings.density==='compact');if(galleryTextControl)galleryTextControl.value=settings.galleryText;if(galleryFontControl)galleryFontControl.value=settings.textFont;if(galleryLanguageControl){galleryLanguageControl.value=settings.sampleLanguage;galleryLanguageControl.disabled=Boolean(settings.galleryText);}
+ const restored=!dialog&&settings.browseHash===(location.hash||'#motion')?settings.browseFilters:null;if(restored){query=String(restored.query||'').slice(0,200);sort=['default','name-asc','duration-asc','duration-desc'].includes(restored.sort)?restored.sort:'default';feeling=String(restored.feeling||'');usage=String(restored.usage||'');if(search)search.value=query;if(sortControl)sortControl.value=sort;if(feelingControl)feelingControl.value=feeling;if(usageControl)usageControl.value=usage;}
+ void loadMotionSource().then(source=>{if(!root.isConnected)return;metadata=new Map(source.MOTION_LIBRARY.map(item=>[item.id+':'+item.pattern,item]));if(feelingControl)feelingControl.disabled=false;if(usageControl)usageControl.disabled=false;if(restored)updateList();}).catch(()=>{});
+ const updateFilters=()=>{feeling=feelingControl?.value||'';usage=usageControl?.value||'';updateList();};
+ const updateDensity=()=>{settings.density=densityControl?.value||'standard';grid?.classList.toggle('is-compact',settings.density==='compact');saveSettings();};
+ const updateGalleryText=()=>{settings.galleryText=galleryTextControl?.value||'';if(galleryLanguageControl)galleryLanguageControl.disabled=Boolean(settings.galleryText);saveSettings();for(const [host,controller]of controllers)if(grid?.contains(host)){const item=getMotion(host.dataset.motionId);if(item?.reference.engine==='text')controller.setText(settings.galleryText||text(item.preview?.sample,settings.sampleLanguage));}};
+ const updateGalleryFont=()=>{if(!(Object.hasOwn(motionFonts,galleryFontControl?.value)))return;settings.textFont=galleryFontControl.value;saveSettings();for(const [host,controller]of controllers)if(grid?.contains(host)&&getMotion(host.dataset.motionId)?.reference.engine==='text')controller.setFont(motionFonts[settings.textFont]);};
+ const updateGalleryLanguage=()=>{if(!['ko','en'].includes(galleryLanguageControl?.value))return;settings.sampleLanguage=galleryLanguageControl.value;saveSettings();updateGalleryText();};
+ galleryLanguageControl?.addEventListener('change',updateGalleryLanguage);
+ galleryFontControl?.addEventListener('change',updateGalleryFont);
+ feelingControl?.addEventListener('change',updateFilters);usageControl?.addEventListener('change',updateFilters);densityControl?.addEventListener('change',updateDensity);galleryTextControl?.addEventListener('input',updateGalleryText);
+ const gallerySpeedControl=root.querySelector('[data-gallery-speed]'),galleryModeControl=root.querySelector('[data-gallery-playback]');if(gallerySpeedControl)gallerySpeedControl.value=String(gallerySpeed);if(galleryModeControl)galleryModeControl.value=galleryMode;
+ const updateGallery=()=>{gallerySpeed=Number(gallerySpeedControl?.value||1);galleryMode=galleryModeControl?.value||'loop';settings.gallerySpeed=gallerySpeed;settings.galleryMode=galleryMode;saveSettings();for(const [host,c] of controllers)if(grid?.contains(host)){c.setPlaybackRate(gallerySpeed);if(galleryMode==='loop')c.replay();else c.pause();}};
+ gallerySpeedControl?.addEventListener('change',updateGallery);galleryModeControl?.addEventListener('change',updateGallery);
+ search?.addEventListener('input',onSearch);sortControl?.addEventListener('change',onSort);root.addEventListener('click',onRootClick);
  replayButton?.addEventListener('click',replay);dialog?.querySelector('[data-motion-close]')?.addEventListener('click',close);
  dialog?.addEventListener('cancel',event=>{event.preventDefault();close();});dialog?.addEventListener('click',event=>{if(event.target===dialog)close();});
  dialog?.addEventListener('click',click);dialog?.addEventListener('keydown',keydown);
  if(dialog){dialog.showModal();dialog.querySelector('[data-motion-close]')?.focus({preventScroll:true});requestAnimationFrame(()=>{if(stage?.isConnected)replay();});icons(dialog);}
  return ()=>{
   window.removeEventListener(MOTION_FAVORITES_EVENT,refreshFavorites);window.removeEventListener('storage',onStorage);
-  observer?.disconnect();root.removeEventListener('pointerover',replayCard);root.removeEventListener('focusin',replayCard);
-  clearTimeout(pressedTimer);search?.removeEventListener('input',onSearch);sortControl?.removeEventListener('change',onSort);root.removeEventListener('click',onRootClick);scrollInput?.removeEventListener('input',updateScrollPreview);
+  galleryLanguageControl?.removeEventListener('change',updateGalleryLanguage);galleryFontControl?.removeEventListener('change',updateGalleryFont);feelingControl?.removeEventListener('change',updateFilters);usageControl?.removeEventListener('change',updateFilters);densityControl?.removeEventListener('change',updateDensity);galleryTextControl?.removeEventListener('input',updateGalleryText);cancelAnimationFrame(uiFrame);clearOnion();baseline?.controller.destroy();baseline?.node.remove();dialog?.removeEventListener('input',controlChange);dialog?.removeEventListener('change',controlChange);gallerySpeedControl?.removeEventListener('change',updateGallery);galleryModeControl?.removeEventListener('change',updateGallery);stage?.removeEventListener('pointerdown',interactionPointerDown);stage?.removeEventListener('pointermove',interactionPointerMove);stage?.removeEventListener('pointerup',interactionPointerUp);stage?.removeEventListener('pointercancel',interactionPointerUp);stage?.removeEventListener('wheel',interactionWheel);stage?.removeEventListener('click',interactionClick);clearCompare();compare?.removeEventListener('input',onCompareInput);compare?.removeEventListener('toggle',onCompareToggle);observer?.disconnect();for(const controller of controllers.values())controller.destroy();controllers.clear();root.removeEventListener('pointerover',replayCard);root.removeEventListener('focusin',replayCard);
+  search?.removeEventListener('input',onSearch);sortControl?.removeEventListener('change',onSort);root.removeEventListener('click',onRootClick);
   replayButton?.removeEventListener('click',replay);dialog?.querySelector('[data-motion-close]')?.removeEventListener('click',close);
   dialog?.removeEventListener('click',click);dialog?.removeEventListener('keydown',keydown);if(dialog?.open)dialog.close();
  };

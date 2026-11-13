@@ -1,4 +1,4 @@
-/** KLIC native timeline family, adapted from the user-supplied plan/actual interaction model. */
+/** Original KLIC Native timeline family; the user-supplied plan/actual interaction model was a design reference only. */
 import React,{useEffect,useId,useRef,useState} from 'react';
 import {Play,Pause,RotateCcw,Clock3,ArrowUpRight,Check,GitBranch,ChevronRight,Flag,Layers3,Activity} from 'lucide-react';
 import {TIMELINE_SCENARIOS,bounds,taskSnapshot,timelineSnapshot,advanceTimeline,timelineTime,formatDuration,dependencyCurve,type TimelineMode,type TimelineTask,type TextPair} from '../../utils/timelineModel';

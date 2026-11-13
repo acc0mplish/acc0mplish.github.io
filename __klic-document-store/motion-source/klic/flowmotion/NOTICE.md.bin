@@ -1,0 +1,13 @@
+# FlowMotion source notice
+
+## 한국어
+
+FlowMotion 원본 구현은 KLIC가 작성했습니다. 제공된 ZIP은 KLIC 프로젝트의 전달 기록입니다. 이 provenance census는 22개 template의 원본 ID와 layoutType, App.tsx의 renderer 선택, 시나리오 타임라인, 실제 renderer 효과와 cinematic 20종 스위치를 기록합니다. 각 효과는 현재 KLIC motion-source의 토큰/runtime 형식에 맞춰 개별 motion recipe로 분해합니다. 정적 도해에 애니메이션을 덧붙이지 않습니다.
+
+저작 주체 표시는 사용자의 확인을 근거로 합니다. AI Studio scaffolding, 참고 이미지·URL, 의존성 고지 또는 SPDX 식별자로 저작권자나 제3자 구현 소유권을 추론하지 않습니다. 실제 파일에 포함되거나 사용되는 외부 의존성·폰트의 고지는 해당 파일 범위에만 적용합니다. 개인 저자 이름이나 새 라이선스 주장을 추가하지 않으며 기존 배포 조건을 따릅니다.
+
+## English
+
+KLIC authored the original FlowMotion implementation. The supplied ZIP is a KLIC project delivery record. This provenance census records the original IDs and layout types for all 22 templates, the renderer selection in App.tsx, source scenario timelines, effects actually implemented by each renderer, and the 20 cinematic effect switches. Each effect is decomposed into an individual motion recipe in the current KLIC motion-source token/runtime format. Static illustrations do not receive fabricated animation.
+
+The authorship statement is based on the user's confirmation. AI Studio scaffolding, reference images or URLs, dependency notices, and SPDX identifiers are not used to infer authorship, copyright ownership, or third-party implementation ownership. External dependency and font notices apply only to the files that actually include or use them. This notice adds no personal author name or new license claim; existing distribution terms remain in force.

@@ -5,7 +5,7 @@ import {brandProfilePatch} from './brand-profiles.mjs';
 const isRecord=value=>value!==null&&typeof value==='object'&&!Array.isArray(value);
 const consumerRoot=path=>path.startsWith('klic.component.')||path.startsWith('klic.semantic.material.');
 
-/** Keep every consumer role, every runtime material choice, and their alias dependencies. */
+/** Keep every consumer role, selectable font primitive, runtime material choice, and their dependencies. */
 export function pruneThemeTokens(tokens){
  const selected=new Set();
  function visit(path){
@@ -16,6 +16,9 @@ export function pruneThemeTokens(tokens){
   if(typeof token.$value==='string'&&token.$value.startsWith('{'))visit(token.$value.slice(1,-1));
  }
  Object.keys(tokens).filter(consumerRoot).forEach(visit);
+ // Theme kits bundle every registered font and allow changing font at runtime,
+ // so each selectable font-family primitive must exist in the exported graph.
+ for(const id of Object.keys(FONT_NAMES))visit(`klic.primitive.font-family.${id}`);
  return Object.fromEntries(Object.entries(tokens).filter(([path])=>selected.has(path)));
 }
 

@@ -1,3 +1,4 @@
+import {flowMotionBlockNames} from './flowmotion-en.mjs';
 import {affectBlockNames} from './affect-en.mjs';
 import {timelineBlockNames,timelineMessages} from './timeline-en.mjs';
 import {connectorBlockNames} from './flow-connectors-en.mjs';
@@ -5,6 +6,12 @@ import {DASHBOARD_BLOCK_EXAMPLES} from '../dashboard-block-catalog.mjs';
 import {REFERENCE_COMPONENT_BLOCKS} from '../reference-component-block-catalog.mjs';
 /** Authored English component summaries and block titles. Original IDs remain unchanged. */
 export const catalogMessages = {
+  "개발 도구": "Developer tools",
+  "macOS 터미널": "macOS Terminal",
+  "Windows PowerShell 터미널": "Windows PowerShell terminal",
+  "Ubuntu 터미널": "Ubuntu Terminal",
+  "Ghostty 터미널": "Ghostty terminal",
+  "Termius 원격 터미널": "Termius remote terminal",
   "모션": "Motion",
   "모션 컬렉션": "Motion library",
   "순차 등장": "Staggered reveal",
@@ -69,6 +76,17 @@ export const catalogMessages = {
   "내용이 없을 때도 다음 행동을 제안.": "Offer a next step even when there is no content.",
   "레이블, 입력, 도움말을 하나로.": "Connect a label, input, and supporting text.",
   "선택한 파일의 이름과 크기를 확인.": "Review the selected file's name and size.",
+  "KLIC 4계층 토큰 적용": "KLIC four-layer tokens applied",
+  "로컬 샘플": "local sample",
+  "농구 골대 파일 업로드": "Basketball hoop file upload",
+  "축구 골대 파일 업로드": "Soccer goal file upload",
+  "휴지통 파일 업로드": "Trash can file upload",
+  "파일 카드를 드래그하거나 놓고 농구 골대에 던져 넣는 물리 미리보기입니다. 성공 기록은 현재 화면의 로컬 상태로만 유지됩니다.": "A physics preview where you drag or drop file cards into a basketball hoop. Success records remain local to the current page.",
+  "파일을 골키퍼가 지키는 축구 골대에 감아 차고 업로드 결과를 확인하는 물리 미리보기입니다. 기록은 현재 화면에만 유지됩니다.": "A physics preview where you curve a file into a soccer goal defended by a goalkeeper and review the upload result. Records stay on the current page.",
+  "파일 카드를 구겨 선풍기 바람을 피해 휴지통에 던져 넣는 물리 미리보기입니다. 기록은 현재 화면의 로컬 상태로만 유지됩니다.": "A physics preview where you crumple a file card and throw it into a trash can while avoiding a fan. Records remain local to the current page.",
+  "BasketballUploadBlock · KLIC 4계층 토큰 적용 · 로컬 샘플 · project-delivery-record docs/shotdrop-—-physics-file-upload-components.zip": "BasketballUploadBlock · KLIC four-layer tokens applied · local sample · project-delivery record docs/shotdrop-—-physics-file-upload-components.zip",
+  "SoccerGoalUploadBlock · KLIC 4계층 토큰 적용 · 로컬 샘플 · project-delivery-record docs/shotdrop-—-physics-file-upload-components.zip": "SoccerGoalUploadBlock · KLIC four-layer tokens applied · local sample · project-delivery record docs/shotdrop-—-physics-file-upload-components.zip",
+  "TrashCanUploadBlock · KLIC 4계층 토큰 적용 · 로컬 샘플 · project-delivery-record docs/shotdrop-—-physics-file-upload-components.zip": "TrashCanUploadBlock · KLIC four-layer tokens applied · local sample · project-delivery record docs/shotdrop-—-physics-file-upload-components.zip",
   "필드와 검증을 하나의 제출 흐름으로.": "Connect fields and validation into one submission flow.",
   "이름 옆에서 확인하는 사람의 맥락.": "Show contextual information beside a person's name.",
   "행동의 의미를 보완하는 시각 기호.": "Reinforce an action's meaning with a visual symbol.",
@@ -401,9 +419,34 @@ export const catalogMessages = {
   "물류 예외 모니터링": "Shipment exception monitoring",
   "보안 감사 스트림": "Security audit stream",
   "IoT 센서 그리드": "IoT sensor grid",
-  "초고속 호가창": "High-frequency order book"
+  "초고속 호가창": "High-frequency order book",
+  "3D 차트": "3D charts",
+  "스플리터": "Splitters",
+  "3D 네온 글래스 p95 지연율": "3D neon glass p95 latency",
+  "3D 시간대별 트래픽 복셀": "3D hourly traffic voxel grid",
+  "3D 클라우드 자원 점유 실린더": "3D cloud resource occupancy cylinder",
+  "3D 글로벌 리전 처리량 기둥": "3D global region throughput columns",
+  "3D 전환 퍼널 슬래브": "3D conversion funnel slabs",
+  "코드 에디터와 실시간 프리뷰 분할": "Split code editor and live preview",
+  "다단 IDE 워크스페이스 분할": "Nested IDE workspace splitter",
+  "변경 전·후 비교 커튼": "Before and after comparison curtain",
+  "쿼리 콘솔과 결과 테이블 분할": "Split query console and results table",
+  "캔버스와 인스펙터 서랍 분할": "Split canvas and inspector drawer",
+  "시간대별 p95 지연을 아이소메트릭 글래스 슬래브와 KLIC 블루 궤적으로 살펴보는 3D 라인 차트입니다.": "Explore hourly p95 latency with an isometric glass slab and KLIC blue path in a 3D line chart.",
+  "요일별 24시간 요청량을 높이와 색으로 표현하고 2D·3D 전환과 셀 상세 확인을 제공하는 복셀 히트맵입니다.": "Show requests across 24 hours and seven weekdays as voxel height, with a 2D/3D toggle and cell details.",
+  "컴퓨팅·스토리지·네트워크 점유율을 층별 원통으로 쌓고 기울기와 선택 상태를 조절하는 3D 도넛 차트입니다.": "Stack compute, storage and network utilization as cylinder tiers; adjust tilt and select a tier.",
+  "5개 리전의 RPS와 지연을 아이소메트릭 기둥으로 비교하고 리전별 상세값을 확인하는 관제 차트입니다.": "Compare RPS and latency across five regions in isometric columns and inspect each region.",
+  "방문부터 결제까지 4단계 전환량과 이탈을 층이 있는 슬래브로 표시하고 각 단계를 선택하는 3D 퍼널입니다.": "Show four conversion stages and drop-off as stepped 3D slabs; select a stage to inspect it.",
+  "코드 편집기와 결과 화면 사이 분할선을 드래그하고 화면 비율을 직접 조절하는 인터랙티브 스플리터입니다.": "Drag the divider between code and preview to adjust the split.",
+  "파일 트리·편집기·터미널 패널을 중첩 분할하고 각 영역의 너비와 높이를 조절하는 IDE 레이아웃입니다.": "Resize nested file tree, editor, and terminal panes independently.",
+  "두 버전의 설정을 좌우로 놓고 가운데 커튼을 움직여 차이를 비교하는 스플리터입니다.": "Move the center curtain to compare two versions of the configuration.",
+  "SQL 편집기와 결과 테이블 사이의 수평 구분선을 드래그해 패널 높이를 조절합니다.": "Drag the horizontal divider between SQL editor and results to resize the panels.",
+  "작업 캔버스와 속성 인스펙터 사이 폭을 조절하고 서랍을 접거나 펼치는 레이아웃입니다.": "Resize or collapse the inspector drawer beside the work canvas."
 };
 export const blockNames = {
+  "file-upload-basketball-hoop": "Basketball hoop file upload",
+  "file-upload-soccer-goal": "Soccer goal file upload",
+  "file-upload-trash-can": "Trash can file upload",
   "diagram-service-flow": "Service flow diagram",
   "template-advisor-knowledge": "Customer retention and NRR expansion portal (PulseGuard)",
   "template-autonomous-task-lifecycle": "Multicloud FinOps cost optimization portal (CloudPulse)",
@@ -572,8 +615,6 @@ export const blockNames = {
   "uptime-sla-tracker": "Batch execution history tracker",
   "incident-health-bars": "Batch execution history tracker",
   "capital-inflows-bar": "Capital inflows 3D stacked columns",
-  "revenue-breakdown-bar": "Capital inflows 3D stacked columns",
-  "headcount-cost-bar": "Capital inflows 3D stacked columns",
   "cohort-retention-bar": "Cohort retention columns",
   "cloud-spend-variance-bar": "Cloud spend variance",
   "daily-active-users-area": "DAU/MAU area chart",
@@ -583,14 +624,10 @@ export const blockNames = {
   "concurrent-connections-area": "Concurrent WebSocket connections",
   "customer-segment-donut": "Customer segment donut",
   "expense-allocation-pie": "Operating expense allocation pie",
-  "cloud-provider-share-donut": "Cloud provider share donut",
   "ticket-severity-pie": "Incident severity distribution",
-  "license-seat-utilization-donut": "License seat utilization donut",
   "self-serve-funnel": "Self-service onboarding funnel",
   "churn-retention-funnel": "Churn prevention funnel",
   "enterprise-poc-funnel": "Proof-of-concept conversion funnel",
-  "checkout-drop-funnel": "Checkout abandonment analysis",
-  "activation-milestone-funnel": "Workspace activation milestones",
   "competitor-feature-radar": "Cash inflow and API health radial chart",
   "team-velocity-polar": "Cash inflow and API health radial chart",
   "dora-metrics-radar": "DORA capability radar",
@@ -651,7 +688,17 @@ export const blockNames = {
   "shipment-exceptions": "Shipment exception monitoring",
   "audit-log-stream": "Security audit stream",
   "iot-sensor-matrix": "IoT sensor grid",
-  "order-book-depth": "High-frequency order book"
+  "order-book-depth": "High-frequency order book",
+  "chart3d-isometric-latency": "3D neon glass p95 latency",
+  "chart3d-voxel-hourly-density": "3D hourly traffic voxel grid",
+  "chart3d-cylinder-donut-stack": "3D cloud resource occupancy cylinder",
+  "chart3d-cluster-topology-bars": "3D global region throughput columns",
+  "chart3d-funnel-slab-cascade": "3D conversion funnel slabs",
+  "splitter-code-preview": "Split code editor and live preview",
+  "splitter-ide-nested": "Nested IDE workspace splitter",
+  "splitter-diff-compare": "Before and after comparison curtain",
+  "splitter-master-detail": "Split query console and results table",
+  "splitter-canvas-drawer": "Split canvas and inspector drawer"
 };
 
 Object.assign(blockNames,connectorBlockNames);
@@ -667,3 +714,11 @@ Object.assign(catalogMessages,Object.fromEntries(DASHBOARD_BLOCK_EXAMPLES.map(e=
   `KLIC 독립 구현 · 사용자 제공 화면 참고 · 로컬 샘플${e.referenceMode?` · ${e.referenceMode}`:''}`,
   `KLIC independent implementation · user-provided screen reference · local sample${e.referenceMode?` · ${e.referenceMode}`:''}`
 ])));
+
+Object.assign(blockNames,flowMotionBlockNames);
+Object.assign(blockNames,{'klic-reusable-chart-types':'Reusable KLIC chart types'});
+Object.assign(catalogMessages,{
+ 'KLIC 재사용 차트':'Reusable KLIC charts',
+ 'KLIC 재사용 차트 유형':'Reusable KLIC chart types',
+ 'KLIC chart spec 하나로 산점·분포·계층·지역·네트워크 형상을 만들고 동일 데이터 표와 키보드 선택을 확인하는 재사용 차트 playground입니다.':'Explore six reusable chart geometries from one KLIC chart spec, with an exact data table and keyboard selection.',
+});

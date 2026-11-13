@@ -1,0 +1,92 @@
+{
+  "id": "flowmotion-cinematic-flow",
+  "category": "loops",
+  "title": {
+    "ko": "대시 흐름",
+    "en": "Dashed flow"
+  },
+  "summary": {
+    "ko": "엣지 드로우 680ms 뒤 1초 동안 대시를 한 번 흐르게 합니다.",
+    "en": "After the 680 ms edge draw, move the dashed signal for one finite 1 s pass."
+  },
+  "durationMs": 1680,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "cinematic-node-connect"
+    ],
+    "sourceFile": "src/components/CinematicNodeConnectCanvas.tsx",
+    "renderer": "CinematicNodeConnectCanvas",
+    "effect": "flow",
+    "sourceTimeline": {
+      "durationMs": 1680,
+      "description": "Source dash pattern is 3 15, travels 18 units per 1000 ms, and fades in after the 680 ms edge draw. KLIC shows one pass instead of an infinite loop.",
+      "frames": [
+        {
+          "atMs": 0,
+          "phase": "edge not drawn"
+        },
+        {
+          "atMs": 680,
+          "phase": "flowline fade and dash travel start"
+        },
+        {
+          "atMs": 1080,
+          "phase": "flowline reaches .75 opacity"
+        },
+        {
+          "atMs": 1680,
+          "phase": "one dash pass ends"
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>.fm-root{--fm-blue:var(--klic-semantic-color-accent,#245fc2);--fm-navy:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-component-card-background-default,var(--klic-semantic-color-panel,#fff));--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);--fm-muted:var(--klic-semantic-color-muted,#52657b);--fm-on-blue:var(--klic-semantic-color-on-accent,#fff);--fm-selected:var(--klic-semantic-color-surface-selected,#e4ecfc);box-sizing:border-box;width:100%;height:100%;color:var(--fm-navy);font-family:inherit}.fm-root *{box-sizing:inherit}.fm-root svg{display:block;width:100%;height:100%;overflow:visible;font-family:inherit}.fm-root .fm-surface{fill:var(--fm-surface)}.fm-root .fm-panel{fill:var(--fm-panel);stroke:var(--fm-border)}.fm-root .fm-blue{fill:var(--fm-blue)}.fm-root .fm-blue-stroke{stroke:var(--fm-blue)}.fm-root .fm-ink{fill:var(--fm-navy)}.fm-root .fm-muted{fill:var(--fm-muted)}.fm-root .fm-selected{fill:var(--fm-selected)}.fm-root .fm-on-blue{fill:var(--fm-on-blue)}.fm-root [transform-box]{transform-box:fill-box;transform-origin:center}.fm-root text{font-size:11px;fill:var(--fm-navy)}</style><div class='fm-root'><svg viewBox='0 0 320 200' role='img' aria-label='Dashed flow'><rect class='fm-surface' width='320' height='200' rx='14'/><path d='M 36 100 C 102 28 218 172 284 100' fill='none' stroke='var(--fm-border)' stroke-width='3'/><path class='flow-line' d='M 36 100 C 102 28 218 172 284 100' fill='none' stroke='var(--fm-blue)' stroke-width='3' stroke-linecap='round' stroke-dasharray='3 15' stroke-dashoffset='0' opacity='0'/><circle cx='36' cy='100' r='7' fill='var(--fm-panel)' stroke='var(--fm-blue)' stroke-width='2'/><circle cx='284' cy='100' r='7' fill='var(--fm-blue)'/></svg></div>",
+    "duration": 1680,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".flow-line",
+        "delay": 680,
+        "easing": "linear",
+        "keyframes": [
+          {
+            "offset": 0,
+            "strokeDashoffset": 0,
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "strokeDashoffset": -18,
+            "easing": "linear"
+          }
+        ]
+      },
+      {
+        "selector": ".flow-line",
+        "delay": 680,
+        "easing": "linear",
+        "keyframes": [
+          {
+            "offset": 0,
+            "opacity": 0,
+            "easing": "linear"
+          },
+          {
+            "offset": 0.4,
+            "opacity": 0.75,
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "opacity": 0.75,
+            "easing": "linear"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -18,7 +18,7 @@ Use `materialStylesCSS()` with complete resolved token variables, a required `da
 
 Unsupported backdrop filtering and `prefers-reduced-transparency: reduce` use opaque role fallback colors without blur or shadow. Forced colors use Canvas/CanvasText and retain browser focus/status behavior. Runtime support and assistive technology conformance require browser verification; generated CSS alone is not a conformance claim.
 
-Glass uses translucent tint with blur. Solid Glass increases opacity for legibility. Liquid Glass is a minimal CSS optical approximation using tint, blur and rim lighting. It does not implement physical refraction, distortion, native Figma GLASS parity, or a runtime refraction toggle.
+Glass uses translucent tint with blur. Solid Glass keeps card, chrome and control surfaces at .92 alpha with .75rem blur, a .60-alpha inset rim and .17-alpha lower shadow (.375rem offset, 1.25rem blur). Overlay remains at least .96 alpha, fields at least .92, and dense content stays opaque. Liquid Glass is a minimal CSS optical approximation using tint, blur and rim lighting. It does not implement physical refraction, distortion, native Figma GLASS parity, or a runtime refraction toggle.
 
 ## Seven dimensions
 

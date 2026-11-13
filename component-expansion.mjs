@@ -1,6 +1,7 @@
 import {renderAvatar} from './avatars.mjs';
+import {normalizeKlicMarkup,componentClassName} from './native-class-contract.mjs';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const ic=n=>'<i data-lucide="'+n+'" aria-hidden="true"></i>';
+const ic=n=>'<i data-part="icon" data-lucide="'+n+'" aria-hidden="true"></i>';
 // Independently authored native implementations. External references inform scope, not styling or package APIs.
 const rows=[
 ['form','Form','폼','input','필드와 검증을 하나의 제출 흐름으로.','native 폼 검증을 통과한 이름·이메일만 로컬 결과에 표시하고 서버에는 전송하지 않습니다.','required / type / submit','boolean / email / event','true / email / local'],
@@ -188,7 +189,7 @@ export function expandedSpecimen(id,uid='expanded'){
  case 'collapsible':html='<details class="x-collapsible"><summary>'+ic('chevron-right')+' 프로젝트 부가 정보</summary><div><p>시작일: 2026.10.24</p><p>담당 팀: KLIC Interface</p><p>토큰 프로필: Brand A</p></div></details>';break;
  default:return '';
  }
- return '<div class="x-demo xc-'+id+'" data-klic-component="'+id+'">'+html+'</div>';
+ return normalizeKlicMarkup('<div class="x-demo xc-'+id+'" data-klic-component="'+id+'">'+html+'</div>',{componentId:id});
 }
 const actionHelp={
 'toggle':'aria-pressed를 반전하고 선택한 옵션과 켜짐·꺼짐을 상태 영역에 표시합니다.',
@@ -233,7 +234,7 @@ export function expansionGuide(entry,guide){
   avoid:[editable?'필수 조건·오류·제약을 placeholder에만 숨기지 않습니다.':'정보의 의미를 색이나 아이콘에만 의존하지 않습니다.','이 예제의 브라우저 로컬 상태를 서버 저장·인증·실제 알림으로 해석하지 않습니다.'],
   anatomy:[['의미와 이름',entry.ko+'의 목적을 설명하는 레이블 또는 제목'],['주요 영역',entry.description],['상태와 보조 설명',entry.rule]],
   states:[['기본','예제가 처음 표시됨',entry.description],['포커스·탐색',editable?'사용자가 입력 또는 선택을 시작함':'링크·버튼·스크롤 영역에 키보드로 접근함','기본 focus 표시와 DOM 읽기 순서를 유지합니다.'],['내용 변화',editable?'값이나 선택이 변경됨':'데이터·주제·표시 영역이 달라짐',entry.rule],['작은 화면·확대','260px 영역 또는 사용자 글자 배율 적용','내용을 보존하며 줄바꿈하고 필요한 영역만 내부 스크롤합니다.']],
-  api:[...Array.from(new Set([...expandedSpecimen(entry.id,'api').matchAll(/data-cmp-action="([^"]+)"/g)].map(m=>m[1]))).map(action=>['DOM click 계약','data-cmp-action="'+action+'"','string',action,actionHelp[action]||entry.rule]),['HTML·DOM 계약',entry.attribute,entry.type,entry.defaultValue,entry.rule],['컴포넌트 식별','data-klic-component','string',entry.id,'실행 예제의 최상위 컨테이너입니다.'],['CSS 클래스','x-demo + x-'+entry.id,'class','x-demo','component-expansion.css에서 구조와 의미 있는 상태를 지정합니다.'],['공통 스타일','--klic-text-scale','number','1','개인 설정의 글자 배율을 따릅니다.'],['토큰 참조',entry.token,'KLIC token alias','선택한 브랜드·테마','4계층으로 해석한 실제 역할 값을 사용합니다.']],
+  api:[...Array.from(new Set([...expandedSpecimen(entry.id,'api').matchAll(/data-cmp-action="([^"]+)"/g)].map(m=>m[1]))).map(action=>['DOM click 계약','data-cmp-action="'+action+'"','string',action,actionHelp[action]||entry.rule]),['HTML·DOM 계약',entry.attribute,entry.type,entry.defaultValue,entry.rule],['컴포넌트 식별','data-klic-component','string',entry.id,'실행 예제의 최상위 컨테이너입니다.'],['컴포넌트 루트',componentClassName(entry.id),'class',componentClassName(entry.id),'KLIC Native root를 HTML과 JSX에서 같은 식별자로 사용합니다.'],['내부 파츠','data-part','space-separated tokens','icon','가장 가까운 KLIC component root가 소유합니다.'],['공통 스타일','--klic-text-scale','number','1','개인 설정의 글자 배율을 따릅니다.'],['토큰 참조',entry.token,'KLIC token alias','선택한 브랜드·테마','4계층으로 해석한 실제 역할 값을 사용합니다.']],
   examples:[{id:'basic',title:'기본 구성',description:'실제 '+entry.ko+' 구조와 브라우저 동작을 확인합니다.',code:expandedSpecimen(entry.id,'example-basic'),dependencies:'component-expansion.css · component-expansion.mjs · component-interactions.mjs · 기존 KLIC 토큰/스타일. native 동작 외 상호작용은 initComponentInteractions가 필요합니다.'}],
   exampleGuidance:[{title:'업무 화면에 조합',description:entry.ko+'의 목적과 현재 상태를 알 수 있도록 제목·설명을 함께 배치합니다. '+entry.rule},{title:'작은 영역에 배치',description:'미리보기의 컨테이너 폭을 줄여 확인하세요. 긴 한글 레이블은 줄바꿈하고 표·차트 등 폭을 유지해야 하는 내용만 내부에서 스크롤합니다.'}],
   keyboard:[['Tab / Shift+Tab','DOM 순서대로 실제 링크·버튼·입력에 접근합니다. 장식 요소는 Tab 순서에 넣지 않습니다.'],[entry.id==='combobox'?'방향키 / Enter / Escape':editable?'문자 입력·방향키·Space':'Enter / Space',entry.rule]],

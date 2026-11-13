@@ -1,0 +1,2 @@
+<!-- KLIC native HTML example. Styles/interactions: component bundle. KLIC example; preserve bundled per-file license notices. -->
+<div data-klic-component="sheet" class="kn-sheet"><button data-action="sheet" class="kv-neutral" data-part="btn"><i data-part="icon" data-lucide="panel-right"></i> 프로젝트 설정</button><span>화면 옆에서 더 자세히 살펴보세요.</span></div>

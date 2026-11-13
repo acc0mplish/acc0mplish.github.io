@@ -1,3 +1,4 @@
+import {flowMotionMessages} from './flowmotion-en.mjs';
 import {libraryScopeText} from '../library-scope.mjs';
 import {designGuidanceMessages} from './design-guidance-en.mjs';
 import {BLOCK_IDENTITIES} from '../block-identities.mjs';
@@ -135,6 +136,15 @@ API · 동작	API and behavior
 기본 코드	Base code
 설계 명세	Design specification
 7 디멘션	7 Dimensions
+같은 7개 관점, 서로 다른 검토 기준	The same seven dimensions, with distinct review criteria
+설계 대상별 검토 기준	Review criteria by design target
+COMPONENT · 단일 요소	COMPONENT · individual control
+역할과 이름이 분명한가? 크기와 variant가 달라도 콘텐츠와 조작 영역이 유지되는가? 포커스·비활성·오류 상태와 키보드 조작을 확인합니다.	Are its role and name clear? Do content and interaction targets remain usable across sizes and variants? Check focus, disabled and error states, and keyboard behavior.
+BLOCK · 업무 흐름	BLOCK · workflow
+여러 요소가 하나의 업무를 이어주는가? 정보와 행동의 순서, 데이터 의미, 빈 결과·실패·복구 경로를 확인합니다. 미리보기의 샘플 데이터 범위도 실제 기능과 구분합니다.	Do multiple elements carry a task through from start to finish? Check the order of information and actions, data meaning, and empty, failure, and recovery paths. Distinguish sample data in previews from actual functionality.
+MOTION · 시간에 따른 전환	MOTION · transitions over time
+무엇이 어떤 순서와 시간으로 바뀌는가? 원본 ID·pattern·engine, keyframe·레이어 순서, 일시 정지·다시 보기·reduced-motion 동작을 확인합니다.	What changes, and in what order and timing? Check the source ID, pattern, and engine; keyframe and layer order; and pause, replay, and reduced-motion behavior.
+출처·라이선스 안내 →	Source and license details →
 7 디멘션 · 4계층	7 Dimensions · 4 layers
 7 디멘션 · 4계층 ↗	7 Dimensions · 4 layers ↗
 7 디멘션 명세	7 Dimensions
@@ -239,7 +249,6 @@ OpenAPI 다운로드	Download OpenAPI
 API 연결 확인	Check API connection
 연결 설정 복사	Copy connection settings
 연동 문서에서 자세히 보기	Read the integration documentation
-외부 Codex 클라이언트용 설정입니다. ChatGPT에서는 사이트의 개인 플러그인을 사용하세요.	Configuration for an external Codex client. In ChatGPT, use the site's personal plugin.
 다음 경험은,	Your next experience
 여기서 시작됩니다.	starts here.
 KLIC 라이브러리 시작하기	Explore the KLIC library
@@ -451,6 +460,7 @@ API가 있는 탭에서만 등록. 미지원 브라우저는 일반 탐색 유�
 준비 상태를 검사한 뒤 실제 항목의 프리뷰로 이동합니다.	Check availability and open the item's preview.
 도구	Tool
 역할	Purpose
+용도·결과·범위	Purpose, result, and scope
 입력	Input
 출력	Output
 명령	Command
@@ -645,6 +655,7 @@ component-expansion.css · component-expansion.mjs · component-interactions.mjs
 7 디멘션, 하나의 경험.	7 Dimensions, one experience.
 다차원 관점과 4단계 위계로 정립된 디자인 프레임워크	A design framework built on multidimensional perspectives and a four-level hierarchy
 7 디멘션은 화면과 행동을 검토하는 관점입니다. 4단계 위계는 값의 소유권과 참조 관계를 정합니다. 같은 컴포넌트를 두 구조에서 함께 설명합니다.	7 Dimensions provides perspectives for reviewing interfaces and behavior. The four-level hierarchy defines ownership and references between values. Both structures describe the same component.
+7개 디멘션은 공통 기반입니다. 무엇을 설계하느냐에 따라 확인할 내용은 달라집니다. 4단계 위계는 각 유형이 사용하는 값의 출처와 연결을 설명합니다.	The seven dimensions are shared foundations. Review checks vary by what is being designed. The four-level hierarchy explains the sources and relationships of values used by each type.
 화면과 행동을 보는 7개의 관점	Seven perspectives on interface and behavior
 콘텐츠의 길이와 조작 영역을 함께 설계합니다. 고정 높이로 긴 문구를 자르지 않습니다.	Design for both content length and target size. Do not clip long text to a fixed height.
 본문·레이블·제목의 역할을 구분합니다. 좁은 화면에서는 줄바꿈과 재배치를 먼저 적용합니다.	Distinguish body text, labels, and headings. On narrow screens, first wrap and rearrange content.
@@ -692,7 +703,6 @@ Figma의 Foundations에서 확인한 본문 16/24, 보조 문구 14/20, 레이�
 프리뷰는 기본 1920px 논리 너비로 구성하고 화면 맞춤으로 축소 표시합니다. 100%로 전환하면 실제 크기에서 스크롤하며 확인할 수 있습니다. 축소된 프리뷰만으로 본문의 가독성이나 조작 영역 검사를 완료했다고 판단하지 않습니다.	Previews use a 1920px logical width by default and scale to fit. Switch to 100% to inspect and scroll at actual size. A scaled preview alone is not sufficient to verify text readability or target size.
 참고 자료와 검증 범위	References and validation scope
 KLIC-WCAG-KRDS · 참조한 커밋 204b027	KLIC-WCAG-KRDS · referenced commit 204b027
-ReUI Dashboard 1 · 블록과 의존성 확인 방식	ReUI Dashboard 1 · block and dependency presentation
 Figma Foundations · 문서 타이포그래피와 간격	Figma Foundations · documentation typography and spacing
 이 페이지는 설계 원칙과 검증 기준을 정리합니다. KLIC-WCAG-KRDS 전체 규칙 통과, WCAG 적합성 인증 또는 모든 화면의 보조기술 검증 완료를 의미하지 않습니다. 실제 제품에서는 각 상태와 화면을 별도로 검사하고 증거를 남겨야 합니다.	This page documents design principles and validation criteria. It does not claim that every KLIC-WCAG-KRDS rule passes, certify WCAG conformance, or establish assistive-technology validation for every screen. Test each product screen and state separately and retain evidence.
 공유 레지스트리 아키텍처	Shared registry architecture
@@ -735,9 +745,7 @@ stdio JSON-RPC 서버	stdio JSON-RPC server
 로 같은 계약의 다른 배포를 선택할 수 있습니다. HTTP는 localhost 개발 환경에만 허용합니다. 각 응답의	selects another deployment with the same contract. HTTP is allowed only for localhost development. Each response's
 로 읽은 스냅샷을 식별할 수 있습니다.	identifies the snapshot you read.
 add는 독립 실행용 작업 폴더를 생성합니다. 블록은 공용 React 런타임을, HTML 컴포넌트는 라이브러리 런타임을 함께 제공합니다. 최소 파일만 설치하는 방식이 아닙니다. README와 라이선스를 확인한 뒤 bun install · bun run dev를 직접 실행하세요.	add creates a standalone working folder. Blocks include the shared React runtime; HTML components include the library runtime. It does not install only a minimal set of files. Review the README and licenses, then run bun install and bun run dev yourself.
-에서 공개 디자인 자료를 조회합니다. 인증이 요청되면 클라이언트의 안내를 따르세요. ChatGPT의 개인 플러그인 연결과 OAuth 리소스는 Sites가 별도로 관리합니다. ChatGPT에서는 이 사이트를 게시할 때 생성된 개인 플러그인을 설치·연결하세요.	provides access to public design resources. Follow your client's prompts when authentication is required. Sites separately manages ChatGPT personal plugin connections and OAuth resources. In ChatGPT, install and connect the personal plugin generated when this site was published.
 Cursor 등 원격 HTTP MCP 설정 예시	Example remote HTTP MCP configuration for Cursor and other clients
-클라이언트별 HTTP 설정 형식과 인증 지원이 다를 수 있습니다. 위 설정은 외부 클라이언트용이며 현재 연결이 완료되었다는 뜻은 아닙니다. ChatGPT에서는 Plugins → Personal → Created by you에서 KLIC 플러그인을 사용하세요.	HTTP configuration and authentication support vary by client. This example is for external clients and does not establish that a connection is active. In ChatGPT, use the KLIC plugin under Plugins → Personal → Created by you.
 컴포넌트·블록 검색, 상태·분류·페이지 선택	Search components and blocks; select status, category, and page
 상세 정보, 소스, 의존성·문서 링크	Details, source, dependencies, and documentation links
 파일 manifest와 CLI 명령. 실제 설치는 수행하지 않음	File manifest and CLI commands; does not perform installation
@@ -798,7 +806,6 @@ HTTP 서버	HTTP server
 준비 상태도 데이터로	Readiness as data
 서버 권한을 명시적으로	Explicit server permissions
 출처와 의존성 보존	Preserve provenance and dependencies
-klic.mjs 다운로드	Download klic.mjs
 없음	None
 기본	Default
 아직 등록하지 않았습니다.	Tools have not been registered yet.
@@ -923,7 +930,9 @@ KLIC 토큰	KLIC tokens
 조합에도 기준이 있습니다.	Compositions have standards, too.
 직접 만든 블록을 KLIC의 언어로 연결했습니다.	Original blocks connected through KLIC's design language.
 4계층은 값의 출처를, 7 디멘션은 사용 경험의 규칙을 설명합니다.	Four layers explain where values come from; 7 Dimensions describes the rules of the user experience.
-원본에서 가져온 것과 바꾼 것	What was retained and changed
+자체 구현과 사이트 통합	Original implementation and site integration
+Block Studio는 KLIC이 직접 구현했습니다. 외부 화면은 디자인 참고로만 사용했으며, 제공 ZIP은 이 프로젝트의 전달 기록입니다.	KLIC authored Block Studio. External screens were visual design references; the supplied ZIP is a delivery record of this project.
+프로젝트 통합 검토 기록	Project integration review record
 KLIC의 시각 언어	KLIC's visual language
 회사 블루, 네이비 텍스트, 중립 표면을 사용합니다. 완료는 블루와 문구, 주의는 앰버, 오류는 레드로 구별합니다. Paperlogy·Pretendard·Spoqa 폰트를 미리보기에 연결했습니다.	Use company blue, navy text, and neutral surfaces. Completion uses blue and explicit text, warnings use amber, and errors use red. Previews include Paperlogy, Pretendard, and Spoqa fonts.
 값과 동작의 분리	Separating values from behavior
@@ -1053,9 +1062,8 @@ Object.assign(messages,{
 Object.assign(messages,{'키트는 선택한 프로필의 기본값을 사용합니다. 개별 화면 조정값은 설정 JSON으로 함께 저장하세요.':'The kit uses the selected profile defaults. Save individual screen adjustments alongside it with the settings JSON.'});
 
 
-Object.assign(messages,{"공개 읽기 전용 HTTP MCP 설정입니다. ChatGPT에서는 사이트의 개인 플러그인을 사용하세요.": "Public read-only HTTP MCP configuration. In ChatGPT, use the site's personal plugin.", "POST /api/v1/mcp · 공개 디자인 자료 조회 · 관리형 플러그인은 Sites 인증": "POST /api/v1/mcp · Public design reads · Managed plugin uses Sites authentication", "클라이언트별 HTTP 설정 형식이 다를 수 있습니다. 외부 연결에는 /api/v1/mcp를 사용하고 기존 커스텀 도메인의 /mcp는 사용하지 마세요. 위 설정은 외부 클라이언트용이며 현재 연결이 완료되었다는 뜻은 아닙니다. ChatGPT에서는 Plugins → Personal → Created by you에서 KLIC 플러그인을 사용하세요.": "Client HTTP configuration formats vary. Use /api/v1/mcp externally rather than /mcp on the custom domain. This configuration targets external clients and does not indicate a completed connection. In ChatGPT, use the KLIC plugin under Plugins → Personal → Created by you."});
+Object.assign(messages,{"외부 클라이언트용 공개 읽기 전용 HTTP MCP입니다. ChatGPT·Claude 조직 연결은 /connect에서 설정하세요. ChatGPT Sites 플러그인은 Sites 인증을 사용하는 별도 경로입니다.": "Public read-only MCP for external clients. Use /connect for ChatGPT or Claude organization setup. The ChatGPT Sites plugin is a separate route with Sites authentication.", "POST /api/v1/mcp · 공개 디자인 자료 조회 · 관리형 플러그인은 Sites 인증": "POST /api/v1/mcp · Public design reads · Managed plugin uses Sites authentication"});
 
-Object.assign(messages,{"에서 로그인 없이 공개 JSON API와 같은 디자인 자료를 조회합니다. ChatGPT의 개인 플러그인은 별도의 관리형 /mcp 경로와 Sites 인증을 사용합니다. ChatGPT에서는 이 사이트를 게시할 때 생성된 개인 플러그인을 설치·연결하세요.": "provides the same public design assets as the JSON API without a login. The ChatGPT personal plugin uses a separate managed /mcp route and Sites authentication. In ChatGPT, install/connect the personal plugin generated when this site was published."});
 
 Object.assign(messages,{"현재 공개 데이터는 인증 없이 읽습니다. 검색 API는 교차 출처 읽기를 지원합니다. 외부 MCP는 같은 공개 자료를 로그인 없이 조회하며, ChatGPT의 개인 플러그인은 Sites 인증을 사용합니다. 서버 쓰기 기능은 제공하지 않습니다.": "Public data is read without authentication. Search supports cross-origin reads. External MCP reads the same public assets without login; the ChatGPT personal plugin uses Sites authentication. No server-write tools are available."});
 
@@ -1063,7 +1071,7 @@ Object.assign(messages,affectMessages);
 
 // Shared architecture guidance used by framework and component specification views.
 Object.assign(messages,{
- '모션 레시피는 컴포넌트·블록 설치 항목과 별도 읽기 카탈로그로 유지하되, 브라우저 검색·미리보기·상세 UI는 KLIC Interface Library 홈페이지의 #motion 메뉴에서 제공한다. 읽기 API·CLI·MCP·WebMCP도 같은 카탈로그 스냅샷을 사용한다. NPM 패키지는 홈페이지 배포와 별도 산출물로 관리한다. 현재 발행하는 모션은 KLIC 자체 제작 콘텐츠로 한정한다.':'Keep motion recipes in a read-only catalog separate from component and block installation items. Keep browser search, previews and details within the KLIC Interface Library homepage at #motion. The read API, CLI, MCP and WebMCP use the same catalog snapshot. Manage the npm package as an artifact separate from website deployment. Limit published motions to KLIC-authored content.',
+  '모션 레시피는 컴포넌트·블록 설치 항목과 별도 읽기 카탈로그로 유지하되, 브라우저 검색·미리보기·상세 UI는 KLIC Interface Library 홈페이지의 기존 #motion 메뉴에서 제공한다. 읽기 API·CLI·MCP·WebMCP도 같은 정본 카탈로그를 사용한다. 참조 채택 범위는 사용자 제공 참조 소스의 884개 패턴·67개 분류다. KLIC 자체 구현 FlowMotion은 개별 효과로 해체해 같은 분류에 추가하고, 각 효과의 원본 renderer·전체 timeline·소스 정의·KLIC 자체 구현 고지를 별도로 기록한다. 집합 갤러리나 정적 일러스트를 모션 레시피로 대체하지 않으며, 기존 KLIC 카테고리/항목 탐색 동작에 그룹으로 싣는다. 기존 단순화 280개 카탈로그, 그 전용 경로와 별칭은 현 카탈로그에서 제외하고 호환 항목으로 유지하지 않는다. 각 채택 항목에는 원본 source id·pattern·engine을 연결하고, Copyright © 2026 acc0mplish. All rights reserved. 및 원본 라이선스 고지를 보존하며 KLIC 자체 제작으로 표시하지 않는다. 원본 안무·시간·경로·레이어·SVG/inline/WAAPI alpha는 보존한다. 외관은 KLIC 4계층 토큰 경로의 색·폰트·표면·테두리·radius·spacing으로 각색하고 Canvas도 같은 팔레트·폰트 토큰을 사용한다. 데모 CSS는 항목 범위로 격리한다. 같은 source runtime이 미리보기와 JavaScript/React 전달을 구동하며 Canvas 재생을 CSS만으로 제공한다고 주장하지 않는다. KLIC 각색본은 블루·네이비·중립 팔레트와 reduced-motion·replay·cleanup 계약을 따르고 출시 전 light/dark/mobile 및 실제 재생을 검증한다. NPM 패키지는 홈페이지와 별도 산출물이며, 현재 소스 후보의 export를 발행된 버전의 기능으로 소개하지 않는다. NPM export 안내는 확인된 발행 manifest에 근거한다. 원본 워크플로 화면은 별도의 React 블록으로 전달할 수 있다. FlowMotion 블록은 Application의 Flow 안에서 이름이 드러나는 묶음과 개별 경로로 제공하며, 모션 효과 수와 블록·CLI 작업 폴더 수를 섞어 집계하지 않는다.':'Keep motion recipes in a read-only catalog separate from component and block installation items, with browser search and details in the existing KLIC Interface Library #motion view. The read API, CLI, MCP and WebMCP use one canonical catalog. The adopted reference scope is 884 supplied patterns in 67 categories. Add KLIC-authored FlowMotion as individual effects in those categories, recording original renderers, complete timelines, source definitions and KLIC-authored notices separately. Keep aggregate galleries and static illustrations outside motion recipes, grouped within the existing KLIC category/item navigation. Remove the previous simplified 280-item catalog and its dedicated routes and aliases; do not retain them as compatibility entries. Preserve source id + pattern identity, source engine, choreography, timing, paths, layers, SVG/inline/WAAPI alpha, and original notices including Copyright © 2026 acc0mplish. All rights reserved. and the supplied license. Never label those adopted reference records KLIC-authored. Adapt appearance through existing four-layer KLIC token paths for color, fonts, surfaces, borders, radius and spacing. Canvas uses the same palette and font tokens; scope demo CSS to each item. Use one owned runtime for previews and JavaScript/React delivery; do not claim CSS alone reproduces Canvas playback. KLIC adaptations use the blue/navy/neutral palette and reduced-motion, replay and cleanup contracts; verify real playback in light/dark and mobile before release. The npm package remains separate from the homepage: describe candidate exports only after checking the published manifest, and do not infer release contents from current source. Original workflow screens may also be delivered as separate React blocks. Place all 22 FlowMotion blocks alongside the existing Application / Flow items without a dedicated subgroup. Keep motion-effect counts separate from block and CLI-workspace counts.',
  '규칙마다 구현 책임을 연결합니다.':'Connect each rule to its implementation responsibility.',
  '값은 토큰, 읽기 순서와 정보 관계는 DOM, 배치와 넘침은 CSS recipe, 실행과 복구는 상태·동작 계약에서 책임집니다. 프리셋은 실제 API가 허용한 설정 조합으로 관리하고, 충돌 시 정보·조작·접근성을 먼저 보존합니다.':'Tokens own values; the DOM owns reading order and information relationships; CSS recipes own layout and overflow; behavior contracts own execution and recovery. Presets combine settings allowed by the actual API. Resolve conflicts by preserving information, operability and accessibility first.',
  '설계 책임과 조합 기준 보기 →':'View responsibility and composition rules →',
@@ -1091,3 +1099,63 @@ Object.assign(messages,{'npm 패키지':'npm package',[libraryScopeText('ko')]:l
 Object.assign(messages,{'모든 모션':'All motions','전체 모션':'All motions','모션 보기':'Motion view','전체 모션 페이지':'All motions page','저장한 모션이 없습니다. 메뉴의 별을 눌러 추가하세요.':'No saved motions. Use a star in the menu to add one.','즐겨찾는 컴포넌트':'Favorite components','즐겨찾는 블록':'Favorite blocks','전체 보기':'View all'});
 
 Object.assign(messages,{'전체 모션 보기':'View all motions'});
+
+
+Object.assign(messages,{
+ '기본 창':'Default window',
+ 'GTK 제목줄·세션 탭·세 pane이 보임':'GTK title bar, session tabs and three panes are visible.',
+ '정적 샘플이며 실행 중인 Ghostty 프로세스를 나타내지 않습니다.':'This static sample does not represent a running Ghostty process.',
+ 'apt update 결과가 표시됨':'The apt update output is shown.',
+ '패키지 관리 명령은 실행되지 않습니다.':'No package-management command is executed.',
+ 'btop 프로세스 목록 샘플이 표시됨':'A sample btop process list is shown.',
+ '실제 시스템 프로세스를 조회하지 않습니다.':'No real system processes are queried.',
+ 'ncdu 저장소 용량 출력이 표시됨':'Sample ncdu disk-usage output is shown.',
+ '로컬 파일 시스템을 읽지 않습니다.':'The local file system is not read.',
+ '좁은 화면':'Narrow viewport',
+ 'pane이 세로로 쌓임':'Panes stack vertically.',
+ '패널 순서와 페이지 너비를 유지합니다.':'Pane order is preserved without widening the page.',
+ 'CSS 제목줄':'CSS title bar',
+ 'Ghostty의 중앙 경로·창 제어 영역을 배치합니다.':'Positions the centered path and window controls in the Ghostty title bar.',
+ 'CSS 세션 탭':'CSS session tabs',
+ '기본 세션과 files 샘플 탭을 표시합니다.':'Displays the default and files sample tabs.',
+ 'CSS split pane':'CSS split pane',
+ 'Project·Processes·Files 정적 패널의 폭과 순서를 조정합니다.':'Controls width and order of the static Project, Processes and Files panes.',
+ '정적 트랜스크립트':'Static transcript',
+ '프롬프트·명령·출력이 표시됨':'Prompt, command and output are displayed.',
+ '명령이나 SSH 연결은 실행되지 않습니다.':'No command is executed and no SSH connection is made.',
+ '터미널 내부 레이아웃을 유지하고 페이지 폭을 보존합니다.':'Preserves the internal terminal layout and page width.',
+ '각 독립 미리보기의 고유 인스턴스입니다.':'Unique instance identifier for each independent preview.',
+ '고정폭 명령·출력을 표시하는 공통 텍스트 영역입니다.':'Shared text area for fixed-width command and output samples.',
+ 'CSS 출력':'CSS transcript',
+ 'CSS 루트':'CSS root',
+ 'CSS 레이아웃':'CSS layout',
+ 'DOM 속성':'DOM attribute'
+});
+
+Object.assign(messages,{
+  "공개 klic-design@0.0.4의 카탈로그 이미지는 Site 상대 경로를 사용합니다. 독립 앱에서는 최신 CLI source workspace 또는 로컬 candidate를 사용하세요.": "Catalog images in published klic-design@0.0.4 use Site-relative paths. For an independent app, use the current CLI source workspace or the local candidate.",
+  "공개 klic-design@0.0.4에서 blocks.css 다음 components.css를 함께 가져오면 CSS reset layer가 utility보다 뒤에 등록되어 카탈로그 추가 버튼의 글자와 배경이 같은 색이 됩니다. 두 CSS를 함께 쓰는 독립 앱은 수정 후보의 검증 결과를 확인하세요.": "In published klic-design@0.0.4, importing components.css after blocks.css registers the reset layer after utilities, making catalog add-button text match its background. Independent apps combining both stylesheets should consult validation of the corrected candidate."
+});
+
+Object.assign(messages,{
+  "필요한 요소를 검색해 동작 예제와 토큰 연결을 확인하세요.": "Search for a component to preview behavior examples and token links.",
+  "미리보기와 사용 가이드가 있는 HTML 컴포넌트입니다.": "Browse HTML components with previews and usage guidance.",
+  "자세한 소개와 통계 보기": "View overview and statistics.",
+  "형태와 쓰임을 함께 확인하세요.": "Review form and purpose together.",
+  "구현 범위와 출처": "Implementation scope and sources.",
+  "완성된 제품 흐름으로 이어 보기": "Explore complete product flows.",
+  "업무 화면 조합을 검색해 실행 예시를 미리보세요.": "Search interface compositions to preview runnable examples.",
+  "블록 구성과 통계 보기": "View block system and statistics.",
+  "사용 방법": "How to use.",
+  "미리보기에서 샘플을 조작하고, 실제 소스 탭에서 구현 파일을 확인하세요.": "Interact with the preview sample, then inspect implementation files in the Source tab.",
+  "준비 항목입니다. 실행 예시와 패키지 전달은 아직 제공되지 않습니다.": "This item is planned; runnable examples and package delivery are not yet available.",
+  "처리가 진행 중이며 native disabled와 aria-busy=\"true\"가 설정됨": "While processing, native disabled and aria-busy=\"true\" are set.",
+  "native disabled와 aria-busy를 함께 유지하고 disabled guard로 중복 실행을 막습니다. async-demo 완료 후 원래 레이블을 복구하고 disabled와 aria-busy의 이전 상태를 되돌립니다.": "Keep native disabled and aria-busy together, suppress duplicate activation with a disabled guard, then restore the original label and prior states when async-demo completes.",
+  "async-demo 완료 시 원래 레이블을 복구하고 native disabled와 aria-busy의 이전 값을 되돌립니다. 실제 실패·재시도 로직은 제품에서 연결합니다.": "When async-demo completes, restore the original label and prior native disabled and aria-busy values. Product code supplies failure and retry handling.",
+  "처리 중 상태를 보조 기술에 전달합니다. 실행 차단은 native disabled와 함께 설정합니다.": "Expose the busy state to assistive technology; use native disabled to block activation.",
+  "현재 사이트에서 1초 처리·native disabled·aria-busy·중복 실행 차단·완료 후 이전 상태 복구를 시연합니다. 실제 저장 요청은 없습니다.": "The site demo runs for one second, sets native disabled and aria-busy, suppresses duplicate activation, then restores prior state. It does not save data."
+});
+
+Object.assign(messages,flowMotionMessages);
+
+messages['모션 레시피는 컴포넌트·블록 설치 항목과 별도 읽기 카탈로그로 유지하되, 브라우저 검색·미리보기·상세 UI는 KLIC Interface Library 홈페이지의 기존 #motion 메뉴에서 제공한다. 읽기 API·CLI·MCP·WebMCP도 같은 정본 카탈로그를 사용한다. 참조 채택 범위는 사용자 제공 참조 소스의 884개 패턴·67개 분류다. KLIC 자체 구현 FlowMotion은 개별 효과로 해체해 같은 분류에 추가하고, 각 효과의 원본 renderer·전체 timeline·소스 정의·KLIC 자체 구현 고지를 별도로 기록한다. 집합 갤러리나 정적 일러스트를 모션 레시피로 대체하지 않으며, 기존 KLIC 카테고리/항목 탐색 동작에 그룹으로 싣는다. 기존 단순화 280개 카탈로그, 그 전용 경로와 별칭은 현 카탈로그에서 제외하고 호환 항목으로 유지하지 않는다. 각 채택 항목에는 원본 source id·pattern·engine을 연결하고, Copyright © 2026 acc0mplish. All rights reserved. 및 원본 라이선스 고지를 보존하며 KLIC 자체 제작으로 표시하지 않는다. 원본 안무·시간·경로·레이어·SVG/inline/WAAPI alpha는 보존한다. 외관은 KLIC 4계층 토큰 경로의 색·폰트·표면·테두리·radius·spacing으로 각색하고 Canvas도 같은 팔레트·폰트 토큰을 사용한다. 데모 CSS는 항목 범위로 격리한다. 같은 source runtime이 미리보기와 JavaScript/React 전달을 구동하며 Canvas 재생을 CSS만으로 제공한다고 주장하지 않는다. KLIC 각색본은 블루·네이비·중립 팔레트와 reduced-motion·replay·cleanup 계약을 따르고 출시 전 light/dark/mobile 및 실제 재생을 검증한다. NPM 패키지는 홈페이지와 별도 산출물이며, 현재 소스 후보의 export를 발행된 버전의 기능으로 소개하지 않는다. NPM export 안내는 확인된 발행 manifest에 근거한다. 원본 워크플로 화면은 별도의 React 블록으로 전달할 수 있다. FlowMotion 블록 22개는 Application의 기존 Flow 항목과 나란히 배치하고 전용 하위 그룹은 만들지 않는다. 모션 효과 수와 블록·CLI 작업 폴더 수는 별도로 집계한다.'] = 'Keep motion recipes in a separate read catalog from installable component and block items. Use the existing KLIC Interface Library #motion view for browser search, previews and details; the read API, CLI, MCP and WebMCP use the same canonical catalog. The adopted reference scope is 884 patterns across 67 categories from the user-supplied reference sources. Split KLIC-authored FlowMotion into individual effects in those categories, recording each effect’s original renderer, complete timeline, source definition and KLIC-authored notice. Do not turn aggregate galleries or static illustrations into motion recipes; group entries within existing KLIC category and item navigation. Remove the older simplified 280-item catalog and its dedicated routes and aliases; do not preserve compatibility entries. For each adopted entry, link the original source ID, pattern and engine; preserve original choreography, timing, paths, layers, SVG/inline/WAAPI alpha, copyright statement and source license notice. Do not label adopted entries as KLIC-authored. Adapt color, fonts, surfaces, borders, radius and spacing through the four-layer KLIC token paths; use the same palette and font tokens in Canvas and scope demo CSS to each item. Use one source runtime for previews and JavaScript/React delivery; do not claim CSS alone reproduces Canvas playback. KLIC-authored adaptations follow the blue, navy and neutral palette plus reduced-motion, replay and cleanup contracts; verify actual playback in light, dark and mobile before release. Keep the npm package separate from the homepage. Describe candidate exports as published only when the published manifest confirms them. Original workflow screens may ship as separate React blocks. Place all 22 FlowMotion blocks alongside Application’s existing Flow items without a dedicated subgroup. Count motion effects separately from blocks and CLI workspace folders.';

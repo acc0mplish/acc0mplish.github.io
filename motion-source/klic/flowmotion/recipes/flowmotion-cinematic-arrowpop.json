@@ -1,0 +1,73 @@
+{
+  "id": "flowmotion-cinematic-arrowpop",
+  "category": "svg-diagram",
+  "title": {
+    "ko": "화살촉 팝",
+    "en": "Arrowhead pop"
+  },
+  "summary": {
+    "ko": "경로 끝에 화살촉 하나가 400ms 동안 튀어 오릅니다.",
+    "en": "Pop one arrowhead at the end of a connector over the source 400 ms interval."
+  },
+  "durationMs": 400,
+  "easing": "ease",
+  "origin": {
+    "templateIds": [
+      "cinematic-node-connect"
+    ],
+    "sourceFile": "src/components/CinematicNodeConnectCanvas.tsx",
+    "renderer": "CinematicNodeConnectCanvas",
+    "effect": "arrowpop",
+    "sourceTimeline": {
+      "durationMs": 400,
+      "description": "Source arrowhead uses the shared .4 → 1.3 → 1 pop curve over 400 ms.",
+      "frames": [
+        {
+          "atMs": 0,
+          "phase": "arrow hidden"
+        },
+        {
+          "atMs": 240,
+          "phase": "overshoot 1.3"
+        },
+        {
+          "atMs": 400,
+          "phase": "arrow settles at 1"
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>.fm-root{--fm-blue:var(--klic-semantic-color-accent,#245fc2);--fm-navy:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-component-card-background-default,var(--klic-semantic-color-panel,#fff));--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);--fm-muted:var(--klic-semantic-color-muted,#52657b);--fm-on-blue:var(--klic-semantic-color-on-accent,#fff);--fm-selected:var(--klic-semantic-color-surface-selected,#e4ecfc);box-sizing:border-box;width:100%;height:100%;color:var(--fm-navy);font-family:inherit}.fm-root *{box-sizing:inherit}.fm-root svg{display:block;width:100%;height:100%;overflow:visible;font-family:inherit}.fm-root .fm-surface{fill:var(--fm-surface)}.fm-root .fm-panel{fill:var(--fm-panel);stroke:var(--fm-border)}.fm-root .fm-blue{fill:var(--fm-blue)}.fm-root .fm-blue-stroke{stroke:var(--fm-blue)}.fm-root .fm-ink{fill:var(--fm-navy)}.fm-root .fm-muted{fill:var(--fm-muted)}.fm-root .fm-selected{fill:var(--fm-selected)}.fm-root .fm-on-blue{fill:var(--fm-on-blue)}.fm-root [transform-box]{transform-box:fill-box;transform-origin:center}.fm-root text{font-size:11px;fill:var(--fm-navy)}</style><div class='fm-root'><svg viewBox='0 0 320 200' role='img' aria-label='Arrowhead pop'><rect class='fm-surface' width='320' height='200' rx='14'/><path d='M 38 100 C 104 100 196 100 268 100' fill='none' stroke='var(--fm-border)' stroke-width='2.5'/><polygon class='arrowhead' points='282,100 268,106 268,94' fill='var(--fm-blue)' transform-box='fill-box' transform-origin='center'/><circle cx='38' cy='100' r='7' fill='var(--fm-panel)' stroke='var(--fm-blue)' stroke-width='2'/><circle cx='282' cy='100' r='7' fill='var(--fm-blue)'/></svg></div>",
+    "duration": 400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".arrowhead",
+        "easing": "linear",
+        "keyframes": [
+          {
+            "offset": 0,
+            "transform": "scale(.4)",
+            "opacity": 1,
+            "easing": "ease"
+          },
+          {
+            "offset": 0.6,
+            "transform": "scale(1.3)",
+            "opacity": 1,
+            "easing": "ease"
+          },
+          {
+            "offset": 1,
+            "transform": "scale(1)",
+            "opacity": 1,
+            "easing": "ease"
+          }
+        ]
+      }
+    ]
+  }
+}

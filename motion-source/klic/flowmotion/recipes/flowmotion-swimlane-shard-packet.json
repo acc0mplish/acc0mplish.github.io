@@ -1,0 +1,318 @@
+{
+  "id": "flowmotion-swimlane-shard-packet",
+  "category": "data-story",
+  "title": {
+    "ko": "병렬 샤드 패킷",
+    "en": "Parallel Shard Packet"
+  },
+  "summary": {
+    "ko": "검증 단계에서 첫 워커 샤드로 패킷을 전달합니다.",
+    "en": "Delivers a packet from validation to the first worker shard."
+  },
+  "durationMs": 2400,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "swimlane-etl-funnel"
+    ],
+    "sourceFile": "src/components/MultiStyleFlowCanvases.tsx",
+    "renderer": "SwimlaneEtlCanvas",
+    "effect": "stage-two-shard-cubic-packet",
+    "sourceTimeline": {
+      "durationMs": 2400,
+      "description": "Shard #01 has y=74, so cy=y+56=130; source loop offset is idx×0.3 with idx=0. computeCubicBezierPath(502,260,548,130,0.5), then getPointAlongCubicBezier(...,ambientProgress).",
+      "frames": [
+        {
+          "progress": 0,
+          "t": 0,
+          "x": 502,
+          "y": 260
+        },
+        {
+          "progress": 0.25,
+          "t": 0.25,
+          "x": 515.656,
+          "y": 239.688
+        },
+        {
+          "progress": 0.5,
+          "t": 0.5,
+          "x": 525,
+          "y": 195
+        },
+        {
+          "progress": 0.75,
+          "t": 0.75,
+          "x": 534.344,
+          "y": 150.313
+        },
+        {
+          "progress": 1,
+          "t": 1,
+          "x": 548,
+          "y": 130
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"검증에서 샤드로 분기하는 패킷\"><rect class=\"node-bg\" x=\"18\" y=\"108\" width=\"74\" height=\"34\" rx=\"8\"/><text class=\"label\" x=\"27\" y=\"122\">검증</text><text class=\"small\" x=\"27\" y=\"135\">유효성</text><rect class=\"node-bg\" x=\"228\" y=\"44\" width=\"74\" height=\"34\" rx=\"8\"/><text class=\"label\" x=\"237\" y=\"58\">샤드 01</text><text class=\"small\" x=\"237\" y=\"71\">병렬 처리</text><path class=\"flow\" d=\"M 81 136 C 160 136, 160 50, 239 50\"/><circle class=\"packet\" cx=\"81\" cy=\"136\" r=\"5\"/></svg></div>",
+    "duration": 2400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 0.8,
+    "tracks": [
+      {
+        "selector": ".packet",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "81px",
+            "cy": "136px"
+          },
+          {
+            "offset": 0.020833333333333332,
+            "cx": "85.836px",
+            "cy": "135.89px"
+          },
+          {
+            "offset": 0.041666666666666664,
+            "cx": "90.475px",
+            "cy": "135.565px"
+          },
+          {
+            "offset": 0.0625,
+            "cx": "94.925px",
+            "cy": "135.034px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "99.196px",
+            "cy": "134.308px"
+          },
+          {
+            "offset": 0.10416666666666667,
+            "cx": "103.294px",
+            "cy": "133.395px"
+          },
+          {
+            "offset": 0.125,
+            "cx": "107.23px",
+            "cy": "132.305px"
+          },
+          {
+            "offset": 0.14583333333333334,
+            "cx": "111.012px",
+            "cy": "131.046px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "114.648px",
+            "cy": "129.63px"
+          },
+          {
+            "offset": 0.1875,
+            "cx": "118.147px",
+            "cy": "128.063px"
+          },
+          {
+            "offset": 0.20833333333333334,
+            "cx": "121.517px",
+            "cy": "126.357px"
+          },
+          {
+            "offset": 0.22916666666666666,
+            "cx": "124.767px",
+            "cy": "124.521px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "127.906px",
+            "cy": "122.563px"
+          },
+          {
+            "offset": 0.2708333333333333,
+            "cx": "130.942px",
+            "cy": "120.492px"
+          },
+          {
+            "offset": 0.2916666666666667,
+            "cx": "133.884px",
+            "cy": "118.32px"
+          },
+          {
+            "offset": 0.3125,
+            "cx": "136.74px",
+            "cy": "116.054px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "139.519px",
+            "cy": "113.704px"
+          },
+          {
+            "offset": 0.3541666666666667,
+            "cx": "142.229px",
+            "cy": "111.279px"
+          },
+          {
+            "offset": 0.375,
+            "cx": "144.879px",
+            "cy": "108.789px"
+          },
+          {
+            "offset": 0.3958333333333333,
+            "cx": "147.478px",
+            "cy": "106.243px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "150.034px",
+            "cy": "103.65px"
+          },
+          {
+            "offset": 0.4375,
+            "cx": "152.555px",
+            "cy": "101.021px"
+          },
+          {
+            "offset": 0.4583333333333333,
+            "cx": "155.051px",
+            "cy": "98.363px"
+          },
+          {
+            "offset": 0.4791666666666667,
+            "cx": "157.53px",
+            "cy": "95.686px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "160px",
+            "cy": "93px"
+          },
+          {
+            "offset": 0.5208333333333334,
+            "cx": "162.47px",
+            "cy": "90.314px"
+          },
+          {
+            "offset": 0.5416666666666666,
+            "cx": "164.949px",
+            "cy": "87.637px"
+          },
+          {
+            "offset": 0.5625,
+            "cx": "167.445px",
+            "cy": "84.979px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "169.966px",
+            "cy": "82.35px"
+          },
+          {
+            "offset": 0.6041666666666666,
+            "cx": "172.522px",
+            "cy": "79.757px"
+          },
+          {
+            "offset": 0.625,
+            "cx": "175.121px",
+            "cy": "77.211px"
+          },
+          {
+            "offset": 0.6458333333333334,
+            "cx": "177.771px",
+            "cy": "74.721px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "180.481px",
+            "cy": "72.296px"
+          },
+          {
+            "offset": 0.6875,
+            "cx": "183.26px",
+            "cy": "69.946px"
+          },
+          {
+            "offset": 0.7083333333333334,
+            "cx": "186.116px",
+            "cy": "67.68px"
+          },
+          {
+            "offset": 0.7291666666666666,
+            "cx": "189.058px",
+            "cy": "65.508px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "192.094px",
+            "cy": "63.438px"
+          },
+          {
+            "offset": 0.7708333333333334,
+            "cx": "195.233px",
+            "cy": "61.479px"
+          },
+          {
+            "offset": 0.7916666666666666,
+            "cx": "198.483px",
+            "cy": "59.643px"
+          },
+          {
+            "offset": 0.8125,
+            "cx": "201.853px",
+            "cy": "57.937px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "205.352px",
+            "cy": "56.37px"
+          },
+          {
+            "offset": 0.8541666666666666,
+            "cx": "208.988px",
+            "cy": "54.954px"
+          },
+          {
+            "offset": 0.875,
+            "cx": "212.77px",
+            "cy": "53.695px"
+          },
+          {
+            "offset": 0.8958333333333334,
+            "cx": "216.706px",
+            "cy": "52.605px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "220.804px",
+            "cy": "51.692px"
+          },
+          {
+            "offset": 0.9375,
+            "cx": "225.075px",
+            "cy": "50.966px"
+          },
+          {
+            "offset": 0.9583333333333334,
+            "cx": "229.525px",
+            "cy": "50.435px"
+          },
+          {
+            "offset": 0.9791666666666666,
+            "cx": "234.164px",
+            "cy": "50.11px"
+          },
+          {
+            "offset": 1,
+            "cx": "239px",
+            "cy": "50px"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

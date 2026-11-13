@@ -1,0 +1,3072 @@
+{
+  "id": "flowmotion-sequence-step-packet",
+  "category": "data-story",
+  "title": {
+    "ko": "순차 결제 단계 패킷",
+    "en": "Sequential Payment Step Packet"
+  },
+  "summary": {
+    "ko": "다섯 단계 중 활성 경로의 신호만 이동하고 나머지는 중간 지점에 둡니다.",
+    "en": "Moves only the active signal across five steps while other signals hold at their midpoints."
+  },
+  "durationMs": 2400,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "ppt-sequence-flowchart"
+    ],
+    "sourceFile": "src/components/PptInfographicCanvases.tsx",
+    "renderer": "PptSequenceFlowchartCanvas",
+    "effect": "active-sequence-step-travel",
+    "sourceTimeline": {
+      "durationMs": 2400,
+      "description": "Five source steps run across one 2,400ms ambient pass. activeStepIdx=floor(progress×steps.length); localT=(progress×steps.length)%1; active dot interpolates fromX→toX, idle dots stay at 0.5.",
+      "frames": [
+        {
+          "progress": 0,
+          "activeStepIdx": 0,
+          "localT": 0
+        },
+        {
+          "progress": 0.2,
+          "activeStepIdx": 1,
+          "localT": 0
+        },
+        {
+          "progress": 0.4,
+          "activeStepIdx": 2,
+          "localT": 0
+        },
+        {
+          "progress": 0.6,
+          "activeStepIdx": 3,
+          "localT": 0
+        },
+        {
+          "progress": 0.8,
+          "activeStepIdx": 4,
+          "localT": 0
+        },
+        {
+          "progress": 1,
+          "activeStepIdx": 4,
+          "localT": 0
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"결제 단계를 따라 이동하는 신호\"><line class=\"flow seq-line-0\" x1=\"38\" y1=\"43\" x2=\"119.33333333333334\" y2=\"43\" stroke-width=\"2.2\"/><circle class=\"packet seq-dot-0\" cx=\"78.66666666666667\" cy=\"43\" r=\"4\"/><line class=\"flow seq-line-1\" x1=\"119.33333333333334\" y1=\"68.34482758620689\" x2=\"200.66666666666669\" y2=\"68.34482758620689\" stroke-width=\"2.2\"/><circle class=\"packet seq-dot-1\" cx=\"160\" cy=\"68.34482758620689\" r=\"4\"/><line class=\"flow seq-line-2\" x1=\"200.66666666666669\" y1=\"97.3103448275862\" x2=\"119.33333333333334\" y2=\"97.3103448275862\" stroke-width=\"2.2\"/><circle class=\"packet seq-dot-2\" cx=\"160\" cy=\"97.3103448275862\" r=\"4\"/><line class=\"flow seq-line-3\" x1=\"119.33333333333334\" y1=\"122.65517241379311\" x2=\"282\" y2=\"122.65517241379311\" stroke-width=\"2.2\"/><circle class=\"packet seq-dot-3\" cx=\"200.66666666666669\" cy=\"122.65517241379311\" r=\"4\"/><line class=\"flow seq-line-4\" x1=\"119.33333333333334\" y1=\"148\" x2=\"38\" y2=\"148\" stroke-width=\"2.2\"/><circle class=\"packet seq-dot-4\" cx=\"78.66666666666667\" cy=\"148\" r=\"4\"/><text class=\"small\" text-anchor=\"middle\" x=\"160\" y=\"169\">인증 · 승인 · 원장 · 완료</text></svg></div>",
+    "duration": 2400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 0.5,
+    "tracks": [
+      {
+        "selector": ".seq-line-0",
+        "keyframes": [
+          {
+            "offset": 0,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.020833333333333332,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.041666666666666664,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.0625,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.08333333333333333,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.10416666666666667,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.125,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.14583333333333334,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.16666666666666666,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.1875,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.1999,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.2,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.20833333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.22916666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.25,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2708333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2916666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3125,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3333333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3541666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.375,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3958333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4166666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4375,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4583333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4791666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5208333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5416666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5625,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5833333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6041666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.625,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6458333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6666666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6875,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7083333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7291666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.75,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7708333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7916666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8125,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8333333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8541666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.875,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8958333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9166666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9375,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9583333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9791666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 1,
+            "strokeWidth": 2.2
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".seq-line-1",
+        "keyframes": [
+          {
+            "offset": 0,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.020833333333333332,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.041666666666666664,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.0625,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.08333333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.10416666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.125,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.14583333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.16666666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.1875,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.1999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.2001,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.20833333333333334,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.22916666666666666,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.25,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.2708333333333333,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.2916666666666667,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.3125,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.3333333333333333,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.3541666666666667,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.375,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.3958333333333333,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.3999,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.4,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4166666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4375,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4583333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4791666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5208333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5416666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5625,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5833333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6041666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.625,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6458333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6666666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6875,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7083333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7291666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.75,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7708333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7916666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8125,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8333333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8541666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.875,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8958333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9166666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9375,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9583333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9791666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 1,
+            "strokeWidth": 2.2
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".seq-line-2",
+        "keyframes": [
+          {
+            "offset": 0,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.020833333333333332,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.041666666666666664,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.0625,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.08333333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.10416666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.125,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.14583333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.16666666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.1875,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.1999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.20833333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.22916666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.25,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2708333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2916666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3125,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3333333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3541666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.375,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3958333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.4001,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.4166666666666667,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.4375,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.4583333333333333,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.4791666666666667,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.5,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.5208333333333334,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.5416666666666666,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.5625,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.5833333333333334,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.5999,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.6,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6041666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.625,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6458333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6666666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6875,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7083333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7291666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.75,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7708333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7916666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8125,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8333333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8541666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.875,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8958333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9166666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9375,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9583333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9791666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 1,
+            "strokeWidth": 2.2
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".seq-line-3",
+        "keyframes": [
+          {
+            "offset": 0,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.020833333333333332,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.041666666666666664,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.0625,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.08333333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.10416666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.125,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.14583333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.16666666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.1875,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.1999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.20833333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.22916666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.25,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2708333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2916666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3125,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3333333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3541666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.375,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3958333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4166666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4375,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4583333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4791666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5208333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5416666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5625,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5833333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.6001,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.6041666666666666,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.625,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.6458333333333334,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.6666666666666666,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.6875,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.7083333333333334,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.7291666666666666,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.75,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.7708333333333334,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.7916666666666666,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.7999,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.8,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8125,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8333333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8541666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.875,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8958333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9166666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9375,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9583333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.9791666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 1,
+            "strokeWidth": 2.2
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".seq-line-4",
+        "keyframes": [
+          {
+            "offset": 0,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.020833333333333332,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.041666666666666664,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.0625,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.08333333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.10416666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.125,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.14583333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.16666666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.1875,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.1999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.20833333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.22916666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.25,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2708333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.2916666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3125,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3333333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3541666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.375,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3958333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.3999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4166666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4375,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4583333333333333,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.4791666666666667,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5208333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5416666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5625,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5833333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.5999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6001,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6041666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.625,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6458333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6666666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.6875,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7083333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7291666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.75,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7708333333333334,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7916666666666666,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.7999,
+            "strokeWidth": 2.2
+          },
+          {
+            "offset": 0.8,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.8001,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.8125,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.8333333333333334,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.8541666666666666,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.875,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.8958333333333334,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.9166666666666666,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.9375,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.9583333333333334,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 0.9791666666666666,
+            "strokeWidth": 3
+          },
+          {
+            "offset": 1,
+            "strokeWidth": 3
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".seq-dot-0",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "38px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.016666666666666666,
+            "cx": "44.778px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.03333333333333333,
+            "cx": "51.556px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.05,
+            "cx": "58.333px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.06666666666666667,
+            "cx": "65.111px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "71.889px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.1,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.11666666666666667,
+            "cx": "85.444px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.13333333333333333,
+            "cx": "92.222px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.15,
+            "cx": "99px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "105.778px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.18333333333333332,
+            "cx": "112.556px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.1999,
+            "cx": "119.293px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.2,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.2001,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.21666666666666667,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.23333333333333334,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.26666666666666666,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.2833333333333333,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.3,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.31666666666666665,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.35,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.36666666666666664,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.38333333333333336,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.3999,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.4,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.4001,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.43333333333333335,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.45,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.4666666666666667,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.48333333333333334,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.5166666666666667,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.5333333333333333,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.55,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.5666666666666667,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.5999,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.6,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.6001,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.6166666666666667,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.6333333333333333,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.65,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.6833333333333333,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.7,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.7166666666666667,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.7333333333333333,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.7666666666666667,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.7833333333333333,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.7999,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.8,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.8001,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.8166666666666667,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.85,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.8666666666666667,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.8833333333333333,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.9,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.9333333333333333,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.95,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.9666666666666667,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 0.9833333333333333,
+            "cx": "78.667px",
+            "cy": "43px"
+          },
+          {
+            "offset": 1,
+            "cx": "78.667px",
+            "cy": "43px"
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".seq-dot-1",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.016666666666666666,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.03333333333333333,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.05,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.06666666666666667,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.1,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.11666666666666667,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.13333333333333333,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.15,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.18333333333333332,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.1999,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.2,
+            "cx": "119.333px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.2001,
+            "cx": "119.374px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.21666666666666667,
+            "cx": "126.111px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.23333333333333334,
+            "cx": "132.889px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "139.667px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.26666666666666666,
+            "cx": "146.444px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.2833333333333333,
+            "cx": "153.222px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.3,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.31666666666666665,
+            "cx": "166.778px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "173.556px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.35,
+            "cx": "180.333px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.36666666666666664,
+            "cx": "187.111px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.38333333333333336,
+            "cx": "193.889px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.3999,
+            "cx": "200.626px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.4,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.4001,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.43333333333333335,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.45,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.4666666666666667,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.48333333333333334,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.5166666666666667,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.5333333333333333,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.55,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.5666666666666667,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.5999,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.6,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.6001,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.6166666666666667,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.6333333333333333,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.65,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.6833333333333333,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.7,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.7166666666666667,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.7333333333333333,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.7666666666666667,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.7833333333333333,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.7999,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.8,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.8001,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.8166666666666667,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.85,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.8666666666666667,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.8833333333333333,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.9,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.9333333333333333,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.95,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.9666666666666667,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 0.9833333333333333,
+            "cx": "160px",
+            "cy": "68.345px"
+          },
+          {
+            "offset": 1,
+            "cx": "160px",
+            "cy": "68.345px"
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".seq-dot-2",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.016666666666666666,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.03333333333333333,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.05,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.06666666666666667,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.1,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.11666666666666667,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.13333333333333333,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.15,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.18333333333333332,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.1999,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.2,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.2001,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.21666666666666667,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.23333333333333334,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.26666666666666666,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.2833333333333333,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.3,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.31666666666666665,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.35,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.36666666666666664,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.38333333333333336,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.3999,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.4,
+            "cx": "200.667px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.4001,
+            "cx": "200.626px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "193.889px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.43333333333333335,
+            "cx": "187.111px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.45,
+            "cx": "180.333px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.4666666666666667,
+            "cx": "173.556px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.48333333333333334,
+            "cx": "166.778px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.5166666666666667,
+            "cx": "153.222px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.5333333333333333,
+            "cx": "146.444px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.55,
+            "cx": "139.667px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.5666666666666667,
+            "cx": "132.889px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "126.111px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.5999,
+            "cx": "119.374px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.6,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.6001,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.6166666666666667,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.6333333333333333,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.65,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.6833333333333333,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.7,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.7166666666666667,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.7333333333333333,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.7666666666666667,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.7833333333333333,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.7999,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.8,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.8001,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.8166666666666667,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.85,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.8666666666666667,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.8833333333333333,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.9,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.9333333333333333,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.95,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.9666666666666667,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 0.9833333333333333,
+            "cx": "160px",
+            "cy": "97.31px"
+          },
+          {
+            "offset": 1,
+            "cx": "160px",
+            "cy": "97.31px"
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".seq-dot-3",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.016666666666666666,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.03333333333333333,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.05,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.06666666666666667,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.1,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.11666666666666667,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.13333333333333333,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.15,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.18333333333333332,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.1999,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.2,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.2001,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.21666666666666667,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.23333333333333334,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.26666666666666666,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.2833333333333333,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.3,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.31666666666666665,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.35,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.36666666666666664,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.38333333333333336,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.3999,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.4,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.4001,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.43333333333333335,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.45,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.4666666666666667,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.48333333333333334,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.5166666666666667,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.5333333333333333,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.55,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.5666666666666667,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.5999,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.6,
+            "cx": "119.333px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.6001,
+            "cx": "119.415px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.6166666666666667,
+            "cx": "132.889px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.6333333333333333,
+            "cx": "146.444px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.65,
+            "cx": "160px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "173.556px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.6833333333333333,
+            "cx": "187.111px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.7,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.7166666666666667,
+            "cx": "214.222px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.7333333333333333,
+            "cx": "227.778px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "241.333px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.7666666666666667,
+            "cx": "254.889px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.7833333333333333,
+            "cx": "268.444px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.7999,
+            "cx": "281.919px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.8,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.8001,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.8166666666666667,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.85,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.8666666666666667,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.8833333333333333,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.9,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.9333333333333333,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.95,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.9666666666666667,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 0.9833333333333333,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          },
+          {
+            "offset": 1,
+            "cx": "200.667px",
+            "cy": "122.655px"
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".seq-dot-4",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.016666666666666666,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.03333333333333333,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.05,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.06666666666666667,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.1,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.11666666666666667,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.13333333333333333,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.15,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.18333333333333332,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.1999,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.2,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.2001,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.21666666666666667,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.23333333333333334,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.26666666666666666,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.2833333333333333,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.3,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.31666666666666665,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.35,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.36666666666666664,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.38333333333333336,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.3999,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.4,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.4001,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.43333333333333335,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.45,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.4666666666666667,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.48333333333333334,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.5166666666666667,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.5333333333333333,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.55,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.5666666666666667,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.5999,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.6,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.6001,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.6166666666666667,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.6333333333333333,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.65,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.6833333333333333,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.7,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.7166666666666667,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.7333333333333333,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.7666666666666667,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.7833333333333333,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.7999,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.8,
+            "cx": "119.333px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.8001,
+            "cx": "119.293px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.8166666666666667,
+            "cx": "112.556px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "105.778px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.85,
+            "cx": "99px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.8666666666666667,
+            "cx": "92.222px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.8833333333333333,
+            "cx": "85.444px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.9,
+            "cx": "78.667px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "71.889px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.9333333333333333,
+            "cx": "65.111px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.95,
+            "cx": "58.333px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.9666666666666667,
+            "cx": "51.556px",
+            "cy": "148px"
+          },
+          {
+            "offset": 0.9833333333333333,
+            "cx": "44.778px",
+            "cy": "148px"
+          },
+          {
+            "offset": 1,
+            "cx": "119.333px",
+            "cy": "148px"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

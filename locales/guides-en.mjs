@@ -826,6 +826,11 @@ const components=[
  ]
 ];
 export const guideMessages=Object.fromEntries(methods);
+Object.assign(guideMessages,{
+ '검색 결과는 정확한 ID·이름, ID·이름 접두사, ID·이름 부분 일치, 나머지 메타데이터 순으로 안정 정렬한다. 점수 동률은 원본 registry 순서를 보존하고 cursor는 정렬된 결과에 적용한다.':'Rank search results by exact ID or name, then ID/name prefix matches, then ID/name substring matches, then remaining metadata. Preserve original registry order for ties and apply cursors to the ranked result set.',
+ 'tokenMapping의 해석 결과에는 높이 fixture·모드·밀도와 고정 예시인지 현재 선택값인지 표시한다. 고정 A/Light/Normal 예시는 사용자의 실험실 선택을 대표하지 않는다.':"Token mappings identify the height fixture, mode, density, and whether values are static examples or current selections. The fixed A/Light/Normal example does not represent a user's live lab settings.",
+ '항목 계약은 실제 소스 또는 선택자 근거가 확인된 variant 축과 값을 공개한다. 미리보기 forms는 예시이며 제품 props·지원 variant를 증명하지 않고, 확인되지 않은 축은 not-specified로 둔다.':'Item contracts expose only variant axes and values supported by source or selector evidence. Preview forms are examples, not proof of product props or supported variants; leave unverified axes as not-specified.'
+});
 for(const [ko,name,description,index]of components){
  const [rule,method]=methods[index],desc=catalogMessages[description];
  Object.assign(guideMessages,{

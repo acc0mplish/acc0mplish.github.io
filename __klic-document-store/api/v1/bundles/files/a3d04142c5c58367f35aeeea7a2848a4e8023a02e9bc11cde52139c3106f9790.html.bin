@@ -1,0 +1,172 @@
+<!-- KLIC terminal sample. Transcript is static; no shell or SSH session is started. -->
+<link rel="stylesheet" href="./terminal-components.css">
+<section data-terminal-demo="termius-terminal" data-terminal-instance="klic-example" aria-label="Termius 원격 터미널 샘플 미리보기" data-klic-component="termius-terminal" class="kn-termius-terminal">
+<div data-part="terminal-termius">
+  <header data-part="terminal-termius-appbar">
+<span data-part="terminal-termius-wordmark">Termius</span>
+<nav aria-label="Termius workspace tabs" data-part="terminal-termius-tabs">
+<span data-state="active">
+<i data-lucide="layers-2" data-part="icon">
+</i> Vaults</span>
+<span>
+<i data-lucide="folder-open" data-part="icon">
+</i> SFTP</span>
+<span data-part="terminal-termius-session-tab">
+<i data-lucide="terminal" data-part="icon">
+</i> klic-design</span>
+<span aria-hidden="true" data-part="terminal-termius-add">
+<i data-lucide="plus" data-part="icon">
+</i>
+</span>
+</nav>
+<span data-part="terminal-termius-command-key">⌘ J</span>
+</header>
+  <div data-part="terminal-termius-workspace">
+<nav aria-label="Termius navigation" data-part="terminal-termius-sidebar">
+<span data-part="terminal-termius-nav-item" data-state="active">
+<i data-lucide="server" data-part="icon">
+</i>Hosts</span>
+<span data-part="terminal-termius-nav-item">
+<i data-lucide="folder-open" data-part="icon">
+</i>SFTP</span>
+<span data-part="terminal-termius-nav-item">
+<i data-lucide="network" data-part="icon">
+</i>Port forwarding</span>
+<span data-part="terminal-termius-nav-item">
+<i data-lucide="braces" data-part="icon">
+</i>Snippets</span>
+<span data-part="terminal-termius-nav-item">
+<i data-lucide="clock-3" data-part="icon">
+</i>History</span>
+</nav>
+   <main data-part="terminal-termius-main">
+<header data-part="terminal-termius-toolbar">
+<span data-part="terminal-termius-search">
+<i data-lucide="search" data-part="icon">
+</i>Find a host or ssh user@hostname...</span>
+<span data-part="terminal-termius-disconnected">DEMO · NOT CONNECTED</span>
+</header>
+<div data-part="terminal-termius-actions">
+<span>＋　NEW HOST</span>
+<span>
+<i data-lucide="terminal" data-part="icon">
+</i> TERMINAL</span>
+<span>
+<i data-lucide="radio" data-part="icon">
+</i> SERIAL</span>
+</div>
+<div data-part="terminal-termius-panes">
+  <section data-part="terminal-termius-pane">
+<header>
+<i data-lucide="server" data-part="icon">
+</i>
+<span>Prod Main</span>
+<small>klic-design:/srv/prod</small>
+</header>
+<div data-part="terminal-termius-console">
+<pre data-part="terminal-output">
+<code>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design:/srv/prod$</span>
+<span data-part="terminal-line terminal-line--command">uptime</span>
+<span data-part="terminal-line terminal-line--output">up 1 day, 2 hours · load average: 0.05</span>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design:/srv/prod$</span>
+<span data-part="terminal-line terminal-line--command">df -h /</span>
+<span data-part="terminal-line terminal-line--output">/dev/root 80G 26G 54G 33% /</span>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design:/srv/prod$</span>
+</code>
+</pre>
+</div>
+</section>
+  <section data-part="terminal-termius-pane">
+<header>
+<i data-lucide="server" data-part="icon">
+</i>
+<span>Development</span>
+<small>klic-design:~/KLIC</small>
+</header>
+<div data-part="terminal-termius-console">
+<pre data-part="terminal-output">
+<code>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design:~/KLIC$</span>
+<span data-part="terminal-line terminal-line--command">git status -sb</span>
+<span data-part="terminal-line terminal-line--output">## main</span>
+<span data-part="terminal-line terminal-line--output"> M src/app.js</span>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design:~/KLIC$</span>
+<span data-part="terminal-line terminal-line--command">bun --version</span>
+<span data-part="terminal-line terminal-line--output">1.4.2</span>
+</code>
+</pre>
+</div>
+</section>
+  <section data-part="terminal-termius-pane">
+<header>
+<i data-lucide="server" data-part="icon">
+</i>
+<span>QA</span>
+<small>klic-design:/srv/qa</small>
+</header>
+<div data-part="terminal-termius-console">
+<pre data-part="terminal-output">
+<code>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design:/srv/qa$</span>
+<span data-part="terminal-line terminal-line--command">uname -s</span>
+<span data-part="terminal-line terminal-line--output">Linux klic-design 6.8.0-51</span>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design:/srv/qa$</span>
+<span data-part="terminal-line terminal-line--command">whoami</span>
+<span data-part="terminal-line terminal-line--output">klic</span>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design:/srv/qa$</span>
+</code>
+</pre>
+</div>
+</section>
+  <section data-part="terminal-termius-pane">
+<header>
+<i data-lucide="server" data-part="icon">
+</i>
+<span>Staging</span>
+<small>klic-design:/srv/staging</small>
+</header>
+<div data-part="terminal-termius-console">
+<pre data-part="terminal-output">
+<code>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design:/srv/staging$</span>
+<span data-part="terminal-line terminal-line--command">systemctl is-active klic-app</span>
+<span data-part="terminal-line terminal-line--output">active</span>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design:/srv/staging$</span>
+<span data-part="terminal-line terminal-line--command">journalctl -u klic-app -n 1</span>
+<span data-part="terminal-line terminal-line--output">klic-app[2084]: ready</span>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design:/srv/staging$</span>
+</code>
+</pre>
+</div>
+</section>
+ </div>
+</main>
+   <aside aria-label="Terminal theme preview" data-part="terminal-termius-themes">
+<strong>Font</strong>
+<span data-part="terminal-termius-setting">Monospace <i data-lucide="chevron-right" data-part="icon">
+</i>
+</span>
+<strong>Theme</strong>
+<span data-part="terminal-termius-theme terminal-termius-theme--blue is-selected">
+<i data-part="icon">
+</i>
+<span>KLIC Blue<small>Dark · selected</small>
+</span>
+</span>
+<span data-part="terminal-termius-theme terminal-termius-theme--slate">
+<i data-part="icon">
+</i>
+<span>Slate<small>Dark · neutral</small>
+</span>
+</span>
+<span data-part="terminal-termius-theme terminal-termius-theme--light">
+<i data-part="icon">
+</i>
+<span>Light<small>Neutral</small>
+</span>
+</span>
+</aside>
+  </div>
+ </div>
+</section>

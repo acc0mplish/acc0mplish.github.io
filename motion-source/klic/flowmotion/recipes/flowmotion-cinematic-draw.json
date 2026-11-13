@@ -1,0 +1,61 @@
+{
+  "id": "flowmotion-cinematic-draw",
+  "category": "svg-path",
+  "title": {
+    "ko": "엣지 드로우",
+    "en": "Edge draw-on"
+  },
+  "summary": {
+    "ko": "한 개의 곡선 연결선을 680ms 동안 그립니다.",
+    "en": "Draw one curved connector over the source 680 ms stroke interval."
+  },
+  "durationMs": 680,
+  "easing": "ease",
+  "origin": {
+    "templateIds": [
+      "cinematic-node-connect"
+    ],
+    "sourceFile": "src/components/CinematicNodeConnectCanvas.tsx",
+    "renderer": "CinematicNodeConnectCanvas",
+    "effect": "draw",
+    "sourceTimeline": {
+      "durationMs": 680,
+      "description": "Source edge uses pathLength 1 and transitions stroke-dashoffset from 1 to 0 in 680 ms.",
+      "frames": [
+        {
+          "atMs": 0,
+          "phase": "dash offset 1"
+        },
+        {
+          "atMs": 680,
+          "phase": "complete path"
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>.fm-root{--fm-blue:var(--klic-semantic-color-accent,#245fc2);--fm-navy:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-component-card-background-default,var(--klic-semantic-color-panel,#fff));--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);--fm-muted:var(--klic-semantic-color-muted,#52657b);--fm-on-blue:var(--klic-semantic-color-on-accent,#fff);--fm-selected:var(--klic-semantic-color-surface-selected,#e4ecfc);box-sizing:border-box;width:100%;height:100%;color:var(--fm-navy);font-family:inherit}.fm-root *{box-sizing:inherit}.fm-root svg{display:block;width:100%;height:100%;overflow:visible;font-family:inherit}.fm-root .fm-surface{fill:var(--fm-surface)}.fm-root .fm-panel{fill:var(--fm-panel);stroke:var(--fm-border)}.fm-root .fm-blue{fill:var(--fm-blue)}.fm-root .fm-blue-stroke{stroke:var(--fm-blue)}.fm-root .fm-ink{fill:var(--fm-navy)}.fm-root .fm-muted{fill:var(--fm-muted)}.fm-root .fm-selected{fill:var(--fm-selected)}.fm-root .fm-on-blue{fill:var(--fm-on-blue)}.fm-root [transform-box]{transform-box:fill-box;transform-origin:center}.fm-root text{font-size:11px;fill:var(--fm-navy)}.fm-root .draw-path{stroke-dasharray:1;stroke-dashoffset:1}</style><div class='fm-root'><svg viewBox='0 0 320 200' role='img' aria-label='Edge draw-on'><rect class='fm-surface' width='320' height='200' rx='14'/><path d='M 36 100 C 102 28 218 172 284 100' fill='none' stroke='var(--fm-border)' stroke-width='2'/><path class='draw-path' d='M 36 100 C 102 28 218 172 284 100' fill='none' stroke='var(--fm-blue)' stroke-width='3' pathLength='1' stroke-dasharray='1' stroke-dashoffset='1'/><circle cx='36' cy='100' r='8' fill='var(--fm-panel)' stroke='var(--fm-blue)' stroke-width='2'/><circle cx='284' cy='100' r='8' fill='var(--fm-blue)'/><text x='24' y='157' class='fm-muted'>source</text><text x='254' y='157' class='fm-muted'>target</text></svg></div>",
+    "duration": 680,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".draw-path",
+        "easing": "linear",
+        "keyframes": [
+          {
+            "offset": 0,
+            "strokeDashoffset": 1,
+            "easing": "ease"
+          },
+          {
+            "offset": 1,
+            "strokeDashoffset": 0,
+            "easing": "ease"
+          }
+        ]
+      }
+    ]
+  }
+}

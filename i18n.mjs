@@ -1,3 +1,4 @@
+import {NPM_PACKAGE} from './npm-package-data.mjs';
 import {panelCrmSceneMessages} from './locales/panel-crm-scene-en.mjs';
 import {BLOCK_IDENTITIES} from './block-identities.mjs';
 import {panelTaskSceneMessages} from './locales/panel-task-scene-en.mjs';
@@ -14,6 +15,7 @@ import {CHART_EXAMPLES,CHART_GROUPS} from './chart-examples.mjs';
 import {dashboardMessages} from './locales/dashboard-en.mjs';
 import {rightPanelMessages,rightPanelNames} from './locales/right-panel-en.mjs';
 import {interactionReferenceMessages} from './locales/interaction-reference-en.mjs';
+import {terminalMessages} from './locales/terminal-en.mjs';
 import {SITE_METADATA} from './site-metadata.mjs';
 export const LOCALE_STORAGE_KEY='klic-language-v1';
 export const SUPPORTED_LOCALES=Object.freeze([...SITE_METADATA.site.locales]);
@@ -23,11 +25,11 @@ const chartMessages=Object.fromEntries([
  ...CHART_EXAMPLES.flatMap(e=>[
   [e.title,e.enTitle],
   [e.description,e.enDescription],
-  [`Björk UI · MIT · KLIC 토큰 적용 · variant=${e.variant} · ${e.enTitle}`,`Björk UI · MIT · KLIC token adaptation · variant=${e.variant} · ${e.enTitle}`]
  ])
 ]);
 const panelSceneMessages=Object.fromEntries(Object.entries({...panelCrmSceneMessages,...panelTaskSceneMessages,...panelRiskSceneMessages,...panelTimelineSceneMessages}).filter(([key])=>!['님이','일','월','년','건'].includes(key)));
-const authoredEnglish={...panelSceneMessages,...chartUiMessages,...blockUiMessages,...sharedBlockUiMessages,...sourceUiMessages,...messages,...catalogMessages,...guideMessages,...chartMessages,...dashboardMessages,...rightPanelMessages,...interactionReferenceMessages};
+const publishedPackageMessages=Object.fromEntries((NPM_PACKAGE.publishedLimitations||[]).map(item=>[item.ko,item.en]));
+const authoredEnglish={...publishedPackageMessages,...panelSceneMessages,...chartUiMessages,...blockUiMessages,...sharedBlockUiMessages,...sourceUiMessages,...messages,...catalogMessages,...guideMessages,...chartMessages,...dashboardMessages,...rightPanelMessages,...interactionReferenceMessages,...terminalMessages};
 // Blank TSV rows must never turn spacer nodes into the string "undefined".
 export const ENGLISH_MESSAGES=Object.freeze(Object.fromEntries(Object.entries(authoredEnglish).filter(([source,target])=>source.trim().length>0&&typeof target==='string')));
 const own=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);

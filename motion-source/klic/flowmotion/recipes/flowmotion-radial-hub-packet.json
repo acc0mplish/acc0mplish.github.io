@@ -1,0 +1,318 @@
+{
+  "id": "flowmotion-radial-hub-packet",
+  "category": "particles",
+  "title": {
+    "ko": "허브 베지어 패킷",
+    "en": "Hub Bezier Packet"
+  },
+  "summary": {
+    "ko": "입력 스트림에서 허브까지 원본 cubic Bézier 계산으로 이동합니다.",
+    "en": "Moves from an input stream to the hub using the source cubic Bezier calculation."
+  },
+  "durationMs": 2400,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "realtime-ai-scoring-hub"
+    ],
+    "sourceFile": "src/components/MultiStyleFlowCanvases.tsx",
+    "renderer": "RadialStreamHubCanvas",
+    "effect": "fan-in-cubic-bezier-packet",
+    "sourceTimeline": {
+      "durationMs": 2400,
+      "description": "First fan-in stream uses cy=84 and ambient offset idx×0.28 with idx=0. computeCubicBezierPath(268,84,368,274,0.5): p1=(318,84), p2=(318,274); cubic Bernstein point at t=progress.",
+      "frames": [
+        {
+          "progress": 0,
+          "t": 0,
+          "x": 268,
+          "y": 84
+        },
+        {
+          "progress": 0.25,
+          "t": 0.25,
+          "x": 297.688,
+          "y": 113.688
+        },
+        {
+          "progress": 0.5,
+          "t": 0.5,
+          "x": 318,
+          "y": 179
+        },
+        {
+          "progress": 0.75,
+          "t": 0.75,
+          "x": 338.313,
+          "y": 244.313
+        },
+        {
+          "progress": 1,
+          "t": 1,
+          "x": 368,
+          "y": 274
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"스트림에서 허브로 패킷 이동\"><rect class=\"node-bg\" x=\"28\" y=\"29\" width=\"78\" height=\"34\" rx=\"8\"/><text class=\"label\" x=\"37\" y=\"43\">입력</text><text class=\"small\" x=\"37\" y=\"56\">이벤트</text><rect class=\"node-bg\" x=\"214\" y=\"111\" width=\"78\" height=\"34\" rx=\"8\"/><text class=\"label\" x=\"223\" y=\"125\">허브</text><text class=\"small\" x=\"223\" y=\"138\">분기</text><path class=\"flow\" d=\"M 67 46 C 160 46, 160 138, 253 138\"/><circle class=\"packet\" cx=\"67\" cy=\"46\" r=\"5\"/></svg></div>",
+    "duration": 2400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 0.8,
+    "tracks": [
+      {
+        "selector": ".packet",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "67px",
+            "cy": "46px"
+          },
+          {
+            "offset": 0.020833333333333332,
+            "cx": "72.693px",
+            "cy": "46.118px"
+          },
+          {
+            "offset": 0.041666666666666664,
+            "cx": "78.154px",
+            "cy": "46.466px"
+          },
+          {
+            "offset": 0.0625,
+            "cx": "83.393px",
+            "cy": "47.033px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "88.42px",
+            "cy": "47.81px"
+          },
+          {
+            "offset": 0.10416666666666667,
+            "cx": "93.245px",
+            "cy": "48.787px"
+          },
+          {
+            "offset": 0.125,
+            "cx": "97.879px",
+            "cy": "49.953px"
+          },
+          {
+            "offset": 0.14583333333333334,
+            "cx": "102.331px",
+            "cy": "51.299px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "106.611px",
+            "cy": "52.815px"
+          },
+          {
+            "offset": 0.1875,
+            "cx": "110.73px",
+            "cy": "54.49px"
+          },
+          {
+            "offset": 0.20833333333333334,
+            "cx": "114.697px",
+            "cy": "56.315px"
+          },
+          {
+            "offset": 0.22916666666666666,
+            "cx": "118.524px",
+            "cy": "58.28px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "122.219px",
+            "cy": "60.375px"
+          },
+          {
+            "offset": 0.2708333333333333,
+            "cx": "125.793px",
+            "cy": "62.589px"
+          },
+          {
+            "offset": 0.2916666666666667,
+            "cx": "129.256px",
+            "cy": "64.914px"
+          },
+          {
+            "offset": 0.3125,
+            "cx": "132.618px",
+            "cy": "67.338px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "135.889px",
+            "cy": "69.852px"
+          },
+          {
+            "offset": 0.3541666666666667,
+            "cx": "139.079px",
+            "cy": "72.446px"
+          },
+          {
+            "offset": 0.375,
+            "cx": "142.199px",
+            "cy": "75.109px"
+          },
+          {
+            "offset": 0.3958333333333333,
+            "cx": "145.259px",
+            "cy": "77.833px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "148.267px",
+            "cy": "80.606px"
+          },
+          {
+            "offset": 0.4375,
+            "cx": "151.236px",
+            "cy": "83.42px"
+          },
+          {
+            "offset": 0.4583333333333333,
+            "cx": "154.174px",
+            "cy": "86.263px"
+          },
+          {
+            "offset": 0.4791666666666667,
+            "cx": "157.092px",
+            "cy": "89.127px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "160px",
+            "cy": "92px"
+          },
+          {
+            "offset": 0.5208333333333334,
+            "cx": "162.908px",
+            "cy": "94.873px"
+          },
+          {
+            "offset": 0.5416666666666666,
+            "cx": "165.826px",
+            "cy": "97.737px"
+          },
+          {
+            "offset": 0.5625,
+            "cx": "168.764px",
+            "cy": "100.58px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "171.733px",
+            "cy": "103.394px"
+          },
+          {
+            "offset": 0.6041666666666666,
+            "cx": "174.741px",
+            "cy": "106.167px"
+          },
+          {
+            "offset": 0.625,
+            "cx": "177.801px",
+            "cy": "108.891px"
+          },
+          {
+            "offset": 0.6458333333333334,
+            "cx": "180.921px",
+            "cy": "111.554px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "184.111px",
+            "cy": "114.148px"
+          },
+          {
+            "offset": 0.6875,
+            "cx": "187.382px",
+            "cy": "116.662px"
+          },
+          {
+            "offset": 0.7083333333333334,
+            "cx": "190.744px",
+            "cy": "119.086px"
+          },
+          {
+            "offset": 0.7291666666666666,
+            "cx": "194.207px",
+            "cy": "121.411px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "197.781px",
+            "cy": "123.625px"
+          },
+          {
+            "offset": 0.7708333333333334,
+            "cx": "201.476px",
+            "cy": "125.72px"
+          },
+          {
+            "offset": 0.7916666666666666,
+            "cx": "205.303px",
+            "cy": "127.685px"
+          },
+          {
+            "offset": 0.8125,
+            "cx": "209.27px",
+            "cy": "129.51px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "213.389px",
+            "cy": "131.185px"
+          },
+          {
+            "offset": 0.8541666666666666,
+            "cx": "217.669px",
+            "cy": "132.701px"
+          },
+          {
+            "offset": 0.875,
+            "cx": "222.121px",
+            "cy": "134.047px"
+          },
+          {
+            "offset": 0.8958333333333334,
+            "cx": "226.755px",
+            "cy": "135.213px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "231.58px",
+            "cy": "136.19px"
+          },
+          {
+            "offset": 0.9375,
+            "cx": "236.607px",
+            "cy": "136.967px"
+          },
+          {
+            "offset": 0.9583333333333334,
+            "cx": "241.846px",
+            "cy": "137.534px"
+          },
+          {
+            "offset": 0.9791666666666666,
+            "cx": "247.307px",
+            "cy": "137.882px"
+          },
+          {
+            "offset": 1,
+            "cx": "253px",
+            "cy": "138px"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

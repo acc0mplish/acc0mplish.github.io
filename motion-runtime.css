@@ -1,0 +1,5 @@
+.motion-source-stage,.motion-source-mount{position:relative;display:block;overflow:hidden;min-width:0;aspect-ratio:16/10;border:1px solid var(--klic-semantic-color-border,#dfe5ee);border-radius:var(--klic-component-card-radius-default,.5rem);background:var(--klic-semantic-color-surface,#fbfcfe);color:var(--klic-semantic-color-text,#132c46);contain:content}
+.motion-source-stage canvas,.motion-source-canvas{display:block;width:100%;height:100%;font-family:inherit}
+.motion-source-semantic-stage{position:absolute;inset:0;overflow:hidden}
+.motion-source-attribution{margin-block-start:var(--klic-component-field-spacing-internal,.5rem);font-size:.75rem;color:var(--klic-semantic-color-muted,#52657b)}
+@media(prefers-reduced-motion:reduce){.motion-source-stage,.motion-source-mount{scroll-behavior:auto}}

@@ -13,6 +13,12 @@
 .framework-dimension{display:flex;align-items:flex-start;gap:16px;padding:24px;background:var(--klic-semantic-color-panel);border:1px solid var(--klic-semantic-color-border);border-radius:16px;min-width:0}
 .framework-number{color:var(--klic-semantic-color-accent);font:500 14px/24px var(--klic-ui-mono);flex-shrink:0}
 .framework-dimension p{font-size:calc(14px * var(--klic-text-scale,1));line-height:1.428572;margin:0}
+.framework-unit-criteria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.framework-unit-card{min-width:0;padding:22px 20px 20px;background:var(--klic-semantic-color-panel);border:1px solid var(--klic-semantic-color-border);border-top:0;border-radius:14px}
+.framework-unit-type{display:block;margin-bottom:14px;color:var(--klic-semantic-color-accent);font:500 12px/18px var(--klic-ui-mono);letter-spacing:.06em;overflow-wrap:anywhere}
+.framework-unit-card h4{display:flex;align-items:baseline;gap:10px;margin:0 0 10px}
+.framework-unit-card h4 span{color:var(--klic-semantic-color-accent);font:500 13px/20px var(--klic-ui-mono)}
+.framework-unit-card p{font-size:calc(14px * var(--klic-text-scale,1));line-height:1.5;margin:0}
 .framework-layers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:0 0 16px}
 .framework-layers li{min-width:0;border:1px solid var(--klic-semantic-color-border);border-radius:16px;padding:20px;background:var(--klic-semantic-color-panel)}
 .framework-layers strong,.framework-layers span,.framework-layers code{display:block;overflow-wrap:anywhere}
@@ -45,17 +51,17 @@
 .sidebar::-webkit-scrollbar,.sidebar *::-webkit-scrollbar{display:none;width:0;height:0}
 .component-guide-decisions>div,.component-guide-anatomy,.agent-columns>div,.integration-principles>div{border-radius:16px}
 .framework-guide :is(code,pre),.agent-section code,.doc-section>p code{overflow-wrap:anywhere}
-@media(max-width:900px){.framework-layers{grid-template-columns:repeat(2,minmax(0,1fr))}.framework-validation{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.framework-layers,.framework-unit-criteria{grid-template-columns:repeat(2,minmax(0,1fr))}.framework-validation{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){
  .framework-heading h2{font-size:32px;line-height:40px}.framework-heading .framework-lead{font-size:18px;line-height:28px}
- .framework-dimensions,.framework-validation,.framework-layers{grid-template-columns:minmax(0,1fr)}
+ .framework-dimensions,.framework-validation,.framework-layers,.framework-unit-criteria{grid-template-columns:minmax(0,1fr)}
  .framework-dimension{padding:20px;gap:12px}.framework-section{margin-block:24px;padding-top:20px}.framework-section h3{font-size:22px;line-height:30px}
  .framework-checks>div{grid-template-columns:minmax(0,1fr);gap:8px;padding-block:16px}.framework-checks dt{font-size:16px}
  .agent-toolbar,.block-detail-actions,.preview-workbench-actions{flex-wrap:wrap;min-width:0}.preview-workbench-head{flex-wrap:wrap}
  .command-filter-row{flex-wrap:wrap}.command-filter-row>*{min-width:0;max-width:100%}
  .page-heading-row,.block-detail-heading{flex-wrap:wrap}.page-heading-row>*{min-width:0}
 }
-@media(forced-colors:active){.framework-dimension,.framework-layers li,.framework-validation>div{border:1px solid CanvasText}.framework-number{color:LinkText}}
+@media(forced-colors:active){.framework-dimension,.framework-layers li,.framework-validation>div,.framework-unit-card{border:1px solid CanvasText}.framework-unit-card{border-top:0}.framework-number,.framework-unit-card h4 span{color:LinkText}}
 
 /* Shared policy identifiers and canonical URLs must wrap in narrow guides. */
 .design-guidance{min-width:0}.design-guidance :is(p,li){overflow-wrap:anywhere}

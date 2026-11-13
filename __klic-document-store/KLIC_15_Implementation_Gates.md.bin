@@ -20,7 +20,7 @@
 | KRDS 참고 | R/A/D/I/U/S 검증과 디자인 디멘션 구분 | 포커스·24px 최소 타깃·대비·320px reflow 기준 및 예외 문서화 |
 | i18n | 한국어/영어 선택·저장·iframe 전파 | 메뉴·100개 전체 가이드·249개 블록명/설명·연동 가이드, 왕복 전환 시 값/코드 보존 |
 | CSS/Figma | 기존 블루/네이비 유지, 문서16/24·14/20, 간격·표면 정리 | 문서 스타일이 실행 데모의 CSS를 덮어쓰지 않음 |
-| ReUI/Dependencies | 실제 import 분석, 버전 고정, 로컬 의존성과 빌드 도구 구분 | HTML에 React 설치를 요구하지 않음; 계획 항목에 가짜 명령 없음 |
+| Dependencies | 실제 import 분석, 버전 고정, 로컬 의존성과 빌드 도구 구분 | HTML에 React 설치를 요구하지 않음; 계획 항목에 가짜 명령 없음 |
 | Customize | 우측 도킹/플로팅·닫기/Escape·포커스 복귀 | 데스크톱 도킹은 비모달 region, 모바일은 오버레이 |
 
 ## 보안·운영 계약
@@ -35,7 +35,6 @@
 ## 참고와 한계
 
 - KLIC-WCAG-KRDS: https://github.com/klic-co-kr/KLIC-WCAG-KRDS/tree/204b0276340c29fccc5b3ba52ba5d2806133e1ef
-- ReUI: https://reui.io/blocks/application/dashboard/dashboard-1 — 블록 문서의 의존성 구성 참고. 라이선스가 다른 블록 코드를 복제하지 않는다.
 - Figma: https://www.figma.com/design/wpWaKSR8tiMo0y5FSUisrC/acc0mplish--Design-v0.1?node-id=4005-41386 — Foundations의 타이포그래피·간격 참고. Figma 원본 파일은 변경하지 않고 사이트 CSS에 적용한다.
 - WCAG: https://www.w3.org/WAI/WCAG22/Understanding/reflow.html · https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
 - 사용자 언급 첨부 스크린샷은 이번 요청에 없어 우측 도킹 요구를 기준으로 구현했다.

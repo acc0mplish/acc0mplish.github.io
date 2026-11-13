@@ -4,28 +4,30 @@
     "filename": "remix-component-library-&-ui-block-studio.zip",
     "sha256": "90dd1e8e9b4e9c2f5b391fd7e885ed0d003f28239d7908fb09de2dfd9ab95405",
     "importedAt": "2026-10-24",
-    "note": "사용자가 제공한 ZIP의 카탈로그, 현재 미리보기 메타데이터와 실제 렌더 경로를 정적으로 추출했습니다. 구현 수는 독립 소스 모듈 수이며, 연결된 항목 수에는 같은 구현을 공유하는 변형과 별칭이 포함됩니다. 카탈로그 전용 항목을 구현으로 표시하지 않습니다.",
+    "note": "KLIC이 직접 구현한 Block Studio 프로젝트의 전달 ZIP에서 카탈로그와 렌더 경로를 추출했습니다. 외부 화면은 디자인 참고이며 외부 구현 코드의 출처를 뜻하지 않습니다. ZIP 이름과 해시는 프로젝트 전달 기록입니다. 별도로 연동한 외부 모듈·폰트·의존성은 각 파일의 고지를 따릅니다. 구현 수는 독립 소스 모듈 수이며 같은 구현을 공유하는 변형·별칭을 별도 구현으로 세지 않습니다.",
     "unlistedAliases": [
       {
         "id": "feature-adoption-slope",
         "sourceComponent": "SlopeChartBlock",
         "sourceFile": "components/blocks/SlopeChartBlock.tsx"
       }
-    ]
+    ],
+    "authorship": "KLIC original implementation",
+    "archiveRole": "project-delivery-record"
   },
   "stats": {
-    "categories": 56,
-    "entries": 327,
-    "implemented": 247,
-    "planned": 80,
-    "implementations": 61
+    "categories": 59,
+    "entries": 357,
+    "implemented": 357,
+    "planned": 0,
+    "implementations": 72
   },
   "collections": [
     {
       "id": "applications",
       "name": "애플리케이션",
-      "count": 167,
-      "implemented": 157
+      "count": 197,
+      "implemented": 197
     },
     {
       "id": "diagrams",
@@ -37,13 +39,13 @@
       "id": "charts",
       "name": "차트",
       "count": 76,
-      "implemented": 46
+      "implemented": 76
     },
     {
       "id": "data-grids",
       "name": "데이터 그리드",
       "count": 56,
-      "implemented": 16
+      "implemented": 56
     }
   ],
   "categories": [
@@ -156,8 +158,8 @@
       "id": "app-flow",
       "name": "플로우",
       "collection": "applications",
-      "count": 9,
-      "implemented": 9
+      "count": 31,
+      "implemented": 31
     },
     {
       "id": "app-shell",
@@ -226,50 +228,50 @@
       "id": "app-form",
       "name": "폼 양식",
       "collection": "applications",
-      "count": 7,
-      "implemented": 7
+      "count": 10,
+      "implemented": 10
     },
     {
       "id": "app-profile",
       "name": "프로필",
       "collection": "applications",
       "count": 5,
-      "implemented": 0
+      "implemented": 5
     },
     {
       "id": "app-whiteboard",
       "name": "화이트보드",
       "collection": "applications",
       "count": 5,
-      "implemented": 0
+      "implemented": 5
     },
     {
       "id": "sankey-chart",
       "name": "생키 차트",
       "collection": "charts",
       "count": 5,
-      "implemented": 3
+      "implemented": 5
     },
     {
       "id": "slope-chart",
       "name": "슬로프 차트",
       "collection": "charts",
       "count": 5,
-      "implemented": 2
+      "implemented": 5
     },
     {
       "id": "radial-chart",
       "name": "래디얼 차트",
       "collection": "charts",
       "count": 5,
-      "implemented": 2
+      "implemented": 5
     },
     {
       "id": "sparkline",
       "name": "스파크라인",
       "collection": "charts",
       "count": 5,
-      "implemented": 0
+      "implemented": 5
     },
     {
       "id": "status-tracker",
@@ -282,92 +284,92 @@
       "id": "bar-column",
       "name": "바 & 컬럼",
       "collection": "charts",
-      "count": 5,
-      "implemented": 4
+      "count": 3,
+      "implemented": 3
     },
     {
       "id": "area-line",
       "name": "에어리어 & 라인",
       "collection": "charts",
       "count": 5,
-      "implemented": 1
+      "implemented": 5
     },
     {
       "id": "pie-donut",
       "name": "파이 & 도넛",
       "collection": "charts",
-      "count": 5,
-      "implemented": 0
+      "count": 3,
+      "implemented": 3
     },
     {
       "id": "funnel-chart",
       "name": "퍼넬 차트",
       "collection": "charts",
-      "count": 5,
-      "implemented": 1
+      "count": 3,
+      "implemented": 3
     },
     {
       "id": "radar-polar",
       "name": "레이더 & 폴라",
       "collection": "charts",
       "count": 5,
-      "implemented": 2
+      "implemented": 5
     },
     {
       "id": "base",
       "name": "기본 테이블",
       "collection": "data-grids",
       "count": 8,
-      "implemented": 2
+      "implemented": 8
     },
     {
       "id": "advanced",
       "name": "고급 기능",
       "collection": "data-grids",
       "count": 10,
-      "implemented": 1
+      "implemented": 10
     },
     {
       "id": "columns",
       "name": "컬럼 제어",
       "collection": "data-grids",
       "count": 8,
-      "implemented": 3
+      "implemented": 8
     },
     {
       "id": "drag-drop",
       "name": "드래그 앤 드롭",
       "collection": "data-grids",
       "count": 5,
-      "implemented": 1
+      "implemented": 5
     },
     {
       "id": "expansion",
       "name": "행 확장",
       "collection": "data-grids",
       "count": 5,
-      "implemented": 2
+      "implemented": 5
     },
     {
       "id": "filtering",
       "name": "필터링",
       "collection": "data-grids",
       "count": 7,
-      "implemented": 4
+      "implemented": 7
     },
     {
       "id": "grouping",
       "name": "그룹화",
       "collection": "data-grids",
       "count": 8,
-      "implemented": 3
+      "implemented": 8
     },
     {
       "id": "virtualization",
       "name": "가상화",
       "collection": "data-grids",
       "count": 5,
-      "implemented": 0
+      "implemented": 5
     },
     {
       "id": "diagram-connectors",
@@ -438,9 +440,1039 @@
       "collection": "charts",
       "count": 2,
       "implemented": 2
+    },
+    {
+      "id": "chart-3d",
+      "name": "3D 차트",
+      "collection": "charts",
+      "count": 5,
+      "implemented": 5
+    },
+    {
+      "id": "app-splitter",
+      "name": "스플리터",
+      "collection": "applications",
+      "count": 5,
+      "implemented": 5
+    },
+    {
+      "id": "klic-chart-types",
+      "name": "KLIC 재사용 차트",
+      "collection": "charts",
+      "count": 1,
+      "implemented": 1
     }
   ],
   "blocks": [
+    {
+      "id": "klic-reusable-chart-types",
+      "title": "KLIC 재사용 차트 유형",
+      "catalogTitle": "KLIC 재사용 차트 유형",
+      "description": "KLIC chart spec 하나로 산점·분포·계층·지역·네트워크 형상을 만들고 동일 데이터 표와 키보드 선택을 확인하는 재사용 차트 playground입니다.",
+      "categoryId": "klic-chart-types",
+      "categoryName": "KLIC 재사용 차트",
+      "collection": "charts",
+      "implemented": true,
+      "sourceFile": "components/blocks/ReusableChartShowcaseBlock.tsx",
+      "sourceComponent": "ReusableChartShowcaseBlock",
+      "variantNote": "ReusableChartShowcaseBlock · variant=reusable-chart-types · KLIC authored",
+      "tags": [
+        "klic-reusable-chart-types",
+        "KLIC 재사용 차트 유형",
+        "KLIC 재사용 차트",
+        "KLIC preview"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "splitter-canvas-drawer",
+      "title": "캔버스와 인스펙터 서랍 분할",
+      "catalogTitle": "캔버스와 인스펙터 서랍 분할",
+      "description": "작업 캔버스와 속성 인스펙터 사이 폭을 조절하고 서랍을 접거나 펼치는 레이아웃입니다.",
+      "categoryId": "app-splitter",
+      "categoryName": "스플리터",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/SplitterShowcaseBlock.tsx",
+      "sourceComponent": "SplitterShowcaseBlock",
+      "variantNote": "SplitterShowcaseBlock · variant=canvas-drawer · KLIC authored",
+      "tags": [
+        "splitter-canvas-drawer",
+        "캔버스와 인스펙터 서랍 분할",
+        "스플리터",
+        "KLIC preview"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "splitter-master-detail",
+      "title": "쿼리 콘솔과 결과 테이블 분할",
+      "catalogTitle": "쿼리 콘솔과 결과 테이블 분할",
+      "description": "SQL 편집기와 결과 테이블 사이의 수평 구분선을 드래그해 패널 높이를 조절합니다.",
+      "categoryId": "app-splitter",
+      "categoryName": "스플리터",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/SplitterShowcaseBlock.tsx",
+      "sourceComponent": "SplitterShowcaseBlock",
+      "variantNote": "SplitterShowcaseBlock · variant=master-detail · KLIC authored",
+      "tags": [
+        "splitter-master-detail",
+        "쿼리 콘솔과 결과 테이블 분할",
+        "스플리터",
+        "KLIC preview"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "splitter-diff-compare",
+      "title": "변경 전·후 비교 커튼",
+      "catalogTitle": "변경 전·후 비교 커튼",
+      "description": "두 버전의 설정을 좌우로 놓고 가운데 커튼을 움직여 차이를 비교하는 스플리터입니다.",
+      "categoryId": "app-splitter",
+      "categoryName": "스플리터",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/SplitterShowcaseBlock.tsx",
+      "sourceComponent": "SplitterShowcaseBlock",
+      "variantNote": "SplitterShowcaseBlock · variant=diff-compare · KLIC authored",
+      "tags": [
+        "splitter-diff-compare",
+        "변경 전·후 비교 커튼",
+        "스플리터",
+        "KLIC preview"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "splitter-ide-nested",
+      "title": "다단 IDE 워크스페이스 분할",
+      "catalogTitle": "다단 IDE 워크스페이스 분할",
+      "description": "파일 트리·편집기·터미널 패널을 중첩 분할하고 각 영역의 너비와 높이를 조절하는 IDE 레이아웃입니다.",
+      "categoryId": "app-splitter",
+      "categoryName": "스플리터",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/SplitterShowcaseBlock.tsx",
+      "sourceComponent": "SplitterShowcaseBlock",
+      "variantNote": "SplitterShowcaseBlock · variant=ide-nested · KLIC authored",
+      "tags": [
+        "splitter-ide-nested",
+        "다단 IDE 워크스페이스 분할",
+        "스플리터",
+        "KLIC preview"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "splitter-code-preview",
+      "title": "코드 에디터와 실시간 프리뷰 분할",
+      "catalogTitle": "코드 에디터와 실시간 프리뷰 분할",
+      "description": "코드 편집기와 결과 화면 사이 분할선을 드래그하고 화면 비율을 직접 조절하는 인터랙티브 스플리터입니다.",
+      "categoryId": "app-splitter",
+      "categoryName": "스플리터",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/SplitterShowcaseBlock.tsx",
+      "sourceComponent": "SplitterShowcaseBlock",
+      "variantNote": "SplitterShowcaseBlock · variant=code-preview · KLIC authored",
+      "tags": [
+        "splitter-code-preview",
+        "코드 에디터와 실시간 프리뷰 분할",
+        "스플리터",
+        "KLIC preview"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "chart3d-funnel-slab-cascade",
+      "title": "3D 전환 퍼널 슬래브",
+      "catalogTitle": "3D 전환 퍼널 슬래브",
+      "description": "방문부터 결제까지 4단계 전환량과 이탈을 층이 있는 슬래브로 표시하고 각 단계를 선택하는 3D 퍼널입니다.",
+      "categoryId": "chart-3d",
+      "categoryName": "3D 차트",
+      "collection": "charts",
+      "implemented": true,
+      "sourceFile": "components/blocks/ThreeDChartShowcaseBlock.tsx",
+      "sourceComponent": "ThreeDChartShowcaseBlock",
+      "variantNote": "ThreeDChartShowcaseBlock · variant=funnel-slab-cascade · KLIC authored",
+      "tags": [
+        "chart3d-funnel-slab-cascade",
+        "3D 전환 퍼널 슬래브",
+        "3D 차트",
+        "KLIC preview"
+      ],
+      "origin": "klic-native",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart3d-funnel-slab-cascade",
+        "origin": "klic-authored",
+        "family": "conversion",
+        "useWhen": {
+          "ko": "단계별 잔존과 이탈을 계단형 슬래브로 설명할 때 사용합니다.",
+          "en": "Use to explain stage retention and drop-off with cascading slabs."
+        },
+        "avoidWhen": {
+          "ko": "단계 순서나 모수가 다르거나 합성값인 경우 실제 전환 보고에 사용하지 않습니다.",
+          "en": "Do not use for actual conversion reporting when stages or populations differ or values are synthetic."
+        },
+        "takeaway": {
+          "ko": "각 단계 이름·인원·직전 단계 대비 비율은 슬래브에 사용한 같은 표본에서 읽습니다.",
+          "en": "Each stage name, count, and prior-stage rate comes from the same data used by the slabs."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값 표는 3D 렌더러와 같은 데이터에서 만듭니다.",
+            "en": "Synthetic example data. The exact-value table is built from the same data as the 3D renderer."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "차트 모드·값 선택은 기본 키보드 조작이 가능한 컨트롤로 제공하고, 정확한 값은 표에서 탐색합니다.",
+            "en": "Chart mode and data selection use keyboard-operable native controls; exact values are navigable in the table."
+          },
+          "exactData": {
+            "ko": "동일 렌더러 데이터의 행·열·단위를 표로 확인합니다.",
+            "en": "Inspect rows, columns, and units in a table generated from renderer data."
+          },
+          "reducedMotion": {
+            "ko": "시스템 모션 감소 설정에서 자동 카메라·그래프 움직임을 멈추고 데이터 선택은 유지합니다.",
+            "en": "With reduced motion enabled, automatic camera and graph movement stops while data selection remains available."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
+    },
+    {
+      "id": "chart3d-cluster-topology-bars",
+      "title": "3D 글로벌 리전 처리량 기둥",
+      "catalogTitle": "3D 글로벌 리전 처리량 기둥",
+      "description": "5개 리전의 RPS와 지연을 아이소메트릭 기둥으로 비교하고 리전별 상세값을 확인하는 관제 차트입니다.",
+      "categoryId": "chart-3d",
+      "categoryName": "3D 차트",
+      "collection": "charts",
+      "implemented": true,
+      "sourceFile": "components/blocks/ThreeDChartShowcaseBlock.tsx",
+      "sourceComponent": "ThreeDChartShowcaseBlock",
+      "variantNote": "ThreeDChartShowcaseBlock · variant=cluster-topology-bars · KLIC authored",
+      "tags": [
+        "chart3d-cluster-topology-bars",
+        "3D 글로벌 리전 처리량 기둥",
+        "3D 차트",
+        "KLIC preview"
+      ],
+      "origin": "klic-native",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart3d-cluster-topology-bars",
+        "origin": "klic-authored",
+        "family": "regional-throughput",
+        "useWhen": {
+          "ko": "리전별 요청 처리량과 평균 지연을 같은 화면에서 선택 비교할 때 사용합니다.",
+          "en": "Use to select and compare regional request throughput and average latency."
+        },
+        "avoidWhen": {
+          "ko": "합성 리전 값을 실제 가용성·네트워크 상태로 보고하지 않습니다.",
+          "en": "Do not report synthetic region values as real availability or network status."
+        },
+        "takeaway": {
+          "ko": "리전 표에는 기둥 높이와 연결된 RPS·핑 값 및 단위가 표시됩니다.",
+          "en": "The region table exposes RPS and ping values and units tied to the bar heights."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값 표는 3D 렌더러와 같은 데이터에서 만듭니다.",
+            "en": "Synthetic example data. The exact-value table is built from the same data as the 3D renderer."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "차트 모드·값 선택은 기본 키보드 조작이 가능한 컨트롤로 제공하고, 정확한 값은 표에서 탐색합니다.",
+            "en": "Chart mode and data selection use keyboard-operable native controls; exact values are navigable in the table."
+          },
+          "exactData": {
+            "ko": "동일 렌더러 데이터의 행·열·단위를 표로 확인합니다.",
+            "en": "Inspect rows, columns, and units in a table generated from renderer data."
+          },
+          "reducedMotion": {
+            "ko": "시스템 모션 감소 설정에서 자동 카메라·그래프 움직임을 멈추고 데이터 선택은 유지합니다.",
+            "en": "With reduced motion enabled, automatic camera and graph movement stops while data selection remains available."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
+    },
+    {
+      "id": "chart3d-cylinder-donut-stack",
+      "title": "3D 클라우드 자원 점유 실린더",
+      "catalogTitle": "3D 클라우드 자원 점유 실린더",
+      "description": "컴퓨팅·스토리지·네트워크 점유율을 층별 원통으로 쌓고 기울기와 선택 상태를 조절하는 3D 도넛 차트입니다.",
+      "categoryId": "chart-3d",
+      "categoryName": "3D 차트",
+      "collection": "charts",
+      "implemented": true,
+      "sourceFile": "components/blocks/ThreeDChartShowcaseBlock.tsx",
+      "sourceComponent": "ThreeDChartShowcaseBlock",
+      "variantNote": "ThreeDChartShowcaseBlock · variant=cylinder-donut-stack · KLIC authored",
+      "tags": [
+        "chart3d-cylinder-donut-stack",
+        "3D 클라우드 자원 점유 실린더",
+        "3D 차트",
+        "KLIC preview"
+      ],
+      "origin": "klic-native",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart3d-cylinder-donut-stack",
+        "origin": "klic-authored",
+        "family": "composition",
+        "useWhen": {
+          "ko": "세 자원 계층의 점유 비율과 예시 월 비용을 하나의 입체 구성으로 비교할 때 사용합니다.",
+          "en": "Use to compare three resource shares and illustrative monthly costs in one 3D composition."
+        },
+        "avoidWhen": {
+          "ko": "자원 비용이 실제 청구 데이터가 아니면 비용 승인·예측 자료로 사용하지 않습니다.",
+          "en": "Do not use illustrative costs for billing approval or forecasts."
+        },
+        "takeaway": {
+          "ko": "각 계층의 퍼센트·월 비용은 원통 렌더러에 전달한 동일 항목에서 읽습니다.",
+          "en": "Tier percentages and monthly costs are read from the same entries passed to the cylinder renderer."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값 표는 3D 렌더러와 같은 데이터에서 만듭니다.",
+            "en": "Synthetic example data. The exact-value table is built from the same data as the 3D renderer."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "차트 모드·값 선택은 기본 키보드 조작이 가능한 컨트롤로 제공하고, 정확한 값은 표에서 탐색합니다.",
+            "en": "Chart mode and data selection use keyboard-operable native controls; exact values are navigable in the table."
+          },
+          "exactData": {
+            "ko": "동일 렌더러 데이터의 행·열·단위를 표로 확인합니다.",
+            "en": "Inspect rows, columns, and units in a table generated from renderer data."
+          },
+          "reducedMotion": {
+            "ko": "시스템 모션 감소 설정에서 자동 카메라·그래프 움직임을 멈추고 데이터 선택은 유지합니다.",
+            "en": "With reduced motion enabled, automatic camera and graph movement stops while data selection remains available."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
+    },
+    {
+      "id": "chart3d-voxel-hourly-density",
+      "title": "3D 시간대별 트래픽 복셀",
+      "catalogTitle": "3D 시간대별 트래픽 복셀",
+      "description": "요일별 24시간 요청량을 높이와 색으로 표현하고 2D·3D 전환과 셀 상세 확인을 제공하는 복셀 히트맵입니다.",
+      "categoryId": "chart-3d",
+      "categoryName": "3D 차트",
+      "collection": "charts",
+      "implemented": true,
+      "sourceFile": "components/blocks/ThreeDChartShowcaseBlock.tsx",
+      "sourceComponent": "ThreeDChartShowcaseBlock",
+      "variantNote": "ThreeDChartShowcaseBlock · variant=voxel-hourly-density · KLIC authored",
+      "tags": [
+        "chart3d-voxel-hourly-density",
+        "3D 시간대별 트래픽 복셀",
+        "3D 차트",
+        "KLIC preview"
+      ],
+      "origin": "klic-native",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart3d-voxel-hourly-density",
+        "origin": "klic-authored",
+        "family": "traffic",
+        "useWhen": {
+          "ko": "요일·시간대별 요청 밀도 패턴과 피크 셀을 탐색할 때 사용합니다.",
+          "en": "Use to explore request density by weekday and hour, including peak cells."
+        },
+        "avoidWhen": {
+          "ko": "셀 값이 실제 트래픽 측정치가 아니거나 밀도 대신 정확한 총량 비교가 필요하면 사용하지 않습니다.",
+          "en": "Avoid when values are not measured traffic or exact totals matter more than density."
+        },
+        "takeaway": {
+          "ko": "7×24 격자 표의 셀은 복셀 높이와 같은 요청량 값을 사용합니다.",
+          "en": "The 7×24 grid table uses the same request values as voxel heights."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값 표는 3D 렌더러와 같은 데이터에서 만듭니다.",
+            "en": "Synthetic example data. The exact-value table is built from the same data as the 3D renderer."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "차트 모드·값 선택은 기본 키보드 조작이 가능한 컨트롤로 제공하고, 정확한 값은 표에서 탐색합니다.",
+            "en": "Chart mode and data selection use keyboard-operable native controls; exact values are navigable in the table."
+          },
+          "exactData": {
+            "ko": "동일 렌더러 데이터의 행·열·단위를 표로 확인합니다.",
+            "en": "Inspect rows, columns, and units in a table generated from renderer data."
+          },
+          "reducedMotion": {
+            "ko": "시스템 모션 감소 설정에서 자동 카메라·그래프 움직임을 멈추고 데이터 선택은 유지합니다.",
+            "en": "With reduced motion enabled, automatic camera and graph movement stops while data selection remains available."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
+    },
+    {
+      "id": "chart3d-isometric-latency",
+      "title": "3D 네온 글래스 p95 지연율",
+      "catalogTitle": "3D 네온 글래스 p95 지연율",
+      "description": "시간대별 p95 지연을 아이소메트릭 글래스 슬래브와 KLIC 블루 궤적으로 살펴보는 3D 라인 차트입니다.",
+      "categoryId": "chart-3d",
+      "categoryName": "3D 차트",
+      "collection": "charts",
+      "implemented": true,
+      "sourceFile": "components/blocks/ThreeDChartShowcaseBlock.tsx",
+      "sourceComponent": "ThreeDChartShowcaseBlock",
+      "variantNote": "ThreeDChartShowcaseBlock · variant=isometric-latency · KLIC authored",
+      "tags": [
+        "chart3d-isometric-latency",
+        "3D 네온 글래스 p95 지연율",
+        "3D 차트",
+        "KLIC preview"
+      ],
+      "origin": "klic-native",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart3d-isometric-latency",
+        "origin": "klic-authored",
+        "family": "latency",
+        "useWhen": {
+          "ko": "시간별 p95 지연 변화와 선택한 날짜의 정확한 값을 입체적으로 보여줄 때 사용합니다.",
+          "en": "Use to show p95 latency over time and inspect an exact selected day in 3D."
+        },
+        "avoidWhen": {
+          "ko": "합성 지연값을 서비스 SLO 판정이나 운영 경보의 근거로 사용하지 않습니다.",
+          "en": "Do not use synthetic latency values for SLO decisions or operational alerts."
+        },
+        "takeaway": {
+          "ko": "선택 날짜와 일별 지연값은 동일 30일 데이터의 표에서 확인합니다.",
+          "en": "Inspect the selected day and daily latency in a table backed by the same 30-day data."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값 표는 3D 렌더러와 같은 데이터에서 만듭니다.",
+            "en": "Synthetic example data. The exact-value table is built from the same data as the 3D renderer."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "차트 모드·값 선택은 기본 키보드 조작이 가능한 컨트롤로 제공하고, 정확한 값은 표에서 탐색합니다.",
+            "en": "Chart mode and data selection use keyboard-operable native controls; exact values are navigable in the table."
+          },
+          "exactData": {
+            "ko": "동일 렌더러 데이터의 행·열·단위를 표로 확인합니다.",
+            "en": "Inspect rows, columns, and units in a table generated from renderer data."
+          },
+          "reducedMotion": {
+            "ko": "시스템 모션 감소 설정에서 자동 카메라·그래프 움직임을 멈추고 데이터 선택은 유지합니다.",
+            "en": "With reduced motion enabled, automatic camera and graph movement stops while data selection remains available."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
+    },
+    {
+      "id": "file-upload-basketball-hoop",
+      "title": "농구 골대 파일 업로드",
+      "description": "파일 카드를 드래그하거나 놓고 농구 골대에 던져 넣는 물리 미리보기입니다. 성공 기록은 현재 화면의 로컬 상태로만 유지됩니다.",
+      "component": "BasketballUploadBlock",
+      "catalogTitle": "농구 골대 파일 업로드",
+      "categoryId": "app-form",
+      "categoryName": "폼 양식",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/BasketballUploadBlock.tsx",
+      "sourceComponent": "BasketballUploadBlock",
+      "sourceArchive": "docs/shotdrop-—-physics-file-upload-components.zip",
+      "sourceArchiveSha256": "626f84638a8596e62ec602c4be4543d2d0aea55a8897e2a54f798d34bebb409d",
+      "variantNote": "BasketballUploadBlock · KLIC 4계층 토큰 적용 · 로컬 샘플 · project-delivery-record docs/shotdrop-—-physics-file-upload-components.zip",
+      "tags": [
+        "파일 업로드",
+        "file upload",
+        "dropzone",
+        "physics",
+        "file-upload-basketball-hoop",
+        "농구 골대 파일 업로드"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "file-upload-soccer-goal",
+      "title": "축구 골대 파일 업로드",
+      "description": "파일을 골키퍼가 지키는 축구 골대에 감아 차고 업로드 결과를 확인하는 물리 미리보기입니다. 기록은 현재 화면에만 유지됩니다.",
+      "component": "SoccerGoalUploadBlock",
+      "catalogTitle": "축구 골대 파일 업로드",
+      "categoryId": "app-form",
+      "categoryName": "폼 양식",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/SoccerGoalUploadBlock.tsx",
+      "sourceComponent": "SoccerGoalUploadBlock",
+      "sourceArchive": "docs/shotdrop-—-physics-file-upload-components.zip",
+      "sourceArchiveSha256": "626f84638a8596e62ec602c4be4543d2d0aea55a8897e2a54f798d34bebb409d",
+      "variantNote": "SoccerGoalUploadBlock · KLIC 4계층 토큰 적용 · 로컬 샘플 · project-delivery-record docs/shotdrop-—-physics-file-upload-components.zip",
+      "tags": [
+        "파일 업로드",
+        "file upload",
+        "dropzone",
+        "physics",
+        "file-upload-soccer-goal",
+        "축구 골대 파일 업로드"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "file-upload-trash-can",
+      "title": "휴지통 파일 업로드",
+      "description": "파일 카드를 구겨 선풍기 바람을 피해 휴지통에 던져 넣는 물리 미리보기입니다. 기록은 현재 화면의 로컬 상태로만 유지됩니다.",
+      "component": "TrashCanUploadBlock",
+      "catalogTitle": "휴지통 파일 업로드",
+      "categoryId": "app-form",
+      "categoryName": "폼 양식",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/TrashCanUploadBlock.tsx",
+      "sourceComponent": "TrashCanUploadBlock",
+      "sourceArchive": "docs/shotdrop-—-physics-file-upload-components.zip",
+      "sourceArchiveSha256": "626f84638a8596e62ec602c4be4543d2d0aea55a8897e2a54f798d34bebb409d",
+      "variantNote": "TrashCanUploadBlock · KLIC 4계층 토큰 적용 · 로컬 샘플 · project-delivery-record docs/shotdrop-—-physics-file-upload-components.zip",
+      "tags": [
+        "파일 업로드",
+        "file upload",
+        "dropzone",
+        "physics",
+        "file-upload-trash-can",
+        "휴지통 파일 업로드"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-inbound-lead-routing",
+      "title": "인바운드 엔터프라이즈 리드 라우팅",
+      "catalogTitle": "인바운드 엔터프라이즈 리드 라우팅",
+      "description": "데모 신청 웹훅을 받은 뒤 기업 규모를 판별해 데이터 보강과 딜 생성 또는 세일즈 알림으로 분기합니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "inbound-lead-routing",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=inbound-lead-routing · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "인바운드 엔터프라이즈 리드 라우팅",
+        "inbound-lead-routing"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-realtime-ai-scoring-hub",
+      "title": "실시간 이상·이탈 복합 스코어링 허브",
+      "catalogTitle": "실시간 이상·이탈 복합 스코어링 허브",
+      "description": "세 가지 Kafka·CDC 스트림을 중앙 AI 스코어링 허브로 모으고 위험도와 이탈률에 따라 분기합니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "realtime-ai-scoring-hub",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=realtime-ai-scoring-hub · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "실시간 이상·이탈 복합 스코어링 허브",
+        "realtime-ai-scoring-hub"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-swimlane-etl-funnel",
+      "title": "멀티 샤드 데이터 레이크 ETL 스윔레인",
+      "catalogTitle": "멀티 샤드 데이터 레이크 ETL 스윔레인",
+      "description": "수집, 스키마 검증, 병렬 변환, 웨어하우스 적재로 이어지는 ETL 단계를 스윔레인으로 보여줍니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "swimlane-etl-funnel",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=swimlane-etl-funnel · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "멀티 샤드 데이터 레이크 ETL 스윔레인",
+        "swimlane-etl-funnel"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-cyclic-agent-ring",
+      "title": "자율형 멀티 에이전트 오케스트레이션 링",
+      "catalogTitle": "자율형 멀티 에이전트 오케스트레이션 링",
+      "description": "기획, 코딩, 샌드박스, 보안 검토, 배포 에이전트가 오케스트레이터와 피드백을 주고받는 흐름입니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "cyclic-agent-ring",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=cyclic-agent-ring · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "자율형 멀티 에이전트 오케스트레이션 링",
+        "cyclic-agent-ring"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-vertical-region-tree",
+      "title": "글로벌 멀티리전 L7 오토 페일오버 트리",
+      "catalogTitle": "글로벌 멀티리전 L7 오토 페일오버 트리",
+      "description": "글로벌 라우터에서 여러 리전과 클러스터로 분기하며 장애 시 우회 경로를 보여줍니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "vertical-region-tree",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=vertical-region-tree · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "글로벌 멀티리전 L7 오토 페일오버 트리",
+        "vertical-region-tree"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-ppt-chevron-funnel",
+      "title": "엔터프라이즈 GTM 세일즈 전환 퍼널",
+      "catalogTitle": "엔터프라이즈 GTM 세일즈 전환 퍼널",
+      "description": "5단계 세일즈 전환과 단계별 전환율, 누적 파이프라인 지표를 한 화면에 연결합니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "ppt-chevron-funnel",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=ppt-chevron-funnel · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "엔터프라이즈 GTM 세일즈 전환 퍼널",
+        "ppt-chevron-funnel"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-ppt-sequence-flowchart",
+      "title": "차세대 원클릭 결제 승인·정산 시퀀스 순서도",
+      "catalogTitle": "차세대 원클릭 결제 승인·정산 시퀀스 순서도",
+      "description": "고객 앱, API 게이트웨이, 카드사 망, 정산 원장 사이의 요청과 응답, 조건 분기를 순서대로 보여줍니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "ppt-sequence-flowchart",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=ppt-sequence-flowchart · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "차세대 원클릭 결제 승인·정산 시퀀스 순서도",
+        "ppt-sequence-flowchart"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-ppt-flywheel-infographic",
+      "title": "AI 플랫폼 데이터 선순환 플라이휠 (Flywheel)",
+      "catalogTitle": "AI 플랫폼 데이터 선순환 플라이휠 (Flywheel)",
+      "description": "성장 지표를 둘러싼 네 가지 성장 모멘텀과 KPI 요약을 연결한 플라이휠 인포그래픽입니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "ppt-flywheel-infographic",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=ppt-flywheel-infographic · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "AI 플랫폼 데이터 선순환 플라이휠 (Flywheel)",
+        "ppt-flywheel-infographic"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-ppt-asis-tobe-bridge",
+      "title": "레거시 수동 운영 vs AI 네이티브 전환 인포그래픽",
+      "catalogTitle": "레거시 수동 운영 vs AI 네이티브 전환 인포그래픽",
+      "description": "기존 운영 구조와 AI 네이티브 구조를 전환 단계로 연결하고 비용과 속도 개선 지표를 함께 보여줍니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "ppt-asis-tobe-bridge",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=ppt-asis-tobe-bridge · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "레거시 수동 운영 vs AI 네이티브 전환 인포그래픽",
+        "ppt-asis-tobe-bridge"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-ppt-milestone-roadmap",
+      "title": "전사 AX(AI 전환) 4분기 마일스톤 & 품질 게이트",
+      "catalogTitle": "전사 AX(AI 전환) 4분기 마일스톤 & 품질 게이트",
+      "description": "분기별 실행 단계, 품질 승인 게이트, 누적 가치 창출 지표를 연결한 연간 로드맵입니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "ppt-milestone-roadmap",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=ppt-milestone-roadmap · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "전사 AX(AI 전환) 4분기 마일스톤 & 품질 게이트",
+        "ppt-milestone-roadmap"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-creative-zigzag-ribbon",
+      "title": "4대 경영 혁신 지그재그 리본 전략도",
+      "catalogTitle": "4대 경영 혁신 지그재그 리본 전략도",
+      "description": "네 가지 경영 전략을 지그재그 리본 흐름과 단계별 콜아웃으로 보여줍니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "creative-zigzag-ribbon",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=creative-zigzag-ribbon · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "4대 경영 혁신 지그재그 리본 전략도",
+        "creative-zigzag-ribbon"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-creative-lightbulb-brainstorm",
+      "title": "신사업 브레인스토밍 전구 방사형 인포그래픽",
+      "catalogTitle": "신사업 브레인스토밍 전구 방사형 인포그래픽",
+      "description": "중앙 아이디어 허브에서 여섯 가지 신사업 아이디어로 확장되는 브레인스토밍 장면입니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "creative-lightbulb-brainstorm",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=creative-lightbulb-brainstorm · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "신사업 브레인스토밍 전구 방사형 인포그래픽",
+        "creative-lightbulb-brainstorm"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-creative-strategy-pyramid",
+      "title": "엔터프라이즈 4단 입체 전략 피라미드 & 상승 모션",
+      "catalogTitle": "엔터프라이즈 4단 입체 전략 피라미드 & 상승 모션",
+      "description": "기반 인프라부터 자율형 혁신까지 네 단계 전략 계층을 아래에서 위로 표현합니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "creative-strategy-pyramid",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=creative-strategy-pyramid · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "엔터프라이즈 4단 입체 전략 피라미드 & 상승 모션",
+        "creative-strategy-pyramid"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-creative-semicircle-radial-fan",
+      "title": "5대 성장 동력 반원형(180°) 선버스트 팬 인포그래픽",
+      "catalogTitle": "5대 성장 동력 반원형(180°) 선버스트 팬 인포그래픽",
+      "description": "다섯 가지 성장 동력과 전략 카드, 레이더 스윕을 반원형 레이아웃으로 연결합니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "creative-semicircle-radial-fan",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=creative-semicircle-radial-fan · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "5대 성장 동력 반원형(180°) 선버스트 팬 인포그래픽",
+        "creative-semicircle-radial-fan"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-creative-hexagon-honeycomb",
+      "title": "5연동 육각형(Hexagon) 허니콤 전략 매트릭스",
+      "catalogTitle": "5연동 육각형(Hexagon) 허니콤 전략 매트릭스",
+      "description": "시장 침투, 수직 통합, 전략적 제휴 등 다섯 가지 역량을 육각 매트릭스로 표현합니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "creative-hexagon-honeycomb",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=creative-hexagon-honeycomb · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "5연동 육각형(Hexagon) 허니콤 전략 매트릭스",
+        "creative-hexagon-honeycomb"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-cinematic-node-connect",
+      "title": "시네마틱 카메라 확대 추적 (Node Connect 20 FX)",
+      "catalogTitle": "시네마틱 카메라 확대 추적 (Node Connect 20 FX)",
+      "description": "노드 확대와 엣지 이동을 따라가며 스파크, 리플, 타이핑, 글로우 등 20개 효과를 보여줍니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "cinematic-node-connect",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=cinematic-node-connect · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "시네마틱 카메라 확대 추적 (Node Connect 20 FX)",
+        "cinematic-node-connect"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-editorial-mcp-skill-compare",
+      "title": "MCP(모델 연결 규격) vs 스킬(일하는 요령) 비교",
+      "catalogTitle": "MCP(모델 연결 규격) vs 스킬(일하는 요령) 비교",
+      "description": "AI를 내부 도구와 연결하는 MCP와 필요할 때 읽는 스킬의 역할을 두 카드로 비교합니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "editorial-mcp-skill-compare",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=editorial-mcp-skill-compare · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "MCP(모델 연결 규격) vs 스킬(일하는 요령) 비교",
+        "editorial-mcp-skill-compare"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-it-pms-project",
+      "title": "PMS 4-Pin 마일스톤 & WBS 간트 차트",
+      "catalogTitle": "PMS 4-Pin 마일스톤 & WBS 간트 차트",
+      "description": "Jira, WBS, 리소스, 리스크 관리와 프로젝트 마일스톤·진척도를 결합한 관리 화면입니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "it-pms-project",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=it-pms-project · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "PMS 4-Pin 마일스톤 & WBS 간트 차트",
+        "it-pms-project"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-it-design-system",
+      "title": "디자인 모니터 프리뷰 & 4-폰 핸드오프",
+      "catalogTitle": "디자인 모니터 프리뷰 & 4-폰 핸드오프",
+      "description": "디자인 변수와 컴포넌트, 접근성 검수를 연결하고 모니터와 모바일 화면에 전달하는 과정을 보여줍니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "it-design-system",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=it-design-system · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "디자인 모니터 프리뷰 & 4-폰 핸드오프",
+        "it-design-system"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-it-slack-chatops",
+      "title": "슬랙 오버래핑 서클 허브 & Block Kit 결재",
+      "catalogTitle": "슬랙 오버래핑 서클 허브 & Block Kit 결재",
+      "description": "배포, 장애, 결재, 고객 의견 채널과 커뮤니케이션 스킬을 연결한 협업 허브입니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "it-slack-chatops",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=it-slack-chatops · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "슬랙 오버래핑 서클 허브 & Block Kit 결재",
+        "it-slack-chatops"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-it-dev-cicd",
+      "title": "개발 3-Pillar 트라이앵글 & DORA 4분면",
+      "catalogTitle": "개발 3-Pillar 트라이앵글 & DORA 4분면",
+      "description": "PR, 보안 검사, E2E, 카나리 배포와 엔지니어링 스킬을 3단계 파이프라인 및 지표로 묶습니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "it-dev-cicd",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=it-dev-cicd · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "개발 3-Pillar 트라이앵글 & DORA 4분면",
+        "it-dev-cicd"
+      ],
+      "origin": "klic-native"
+    },
+    {
+      "id": "flowmotion-it-si-integration",
+      "title": "SI 5단계 A–E 피라미드 & 이관 매트릭스",
+      "catalogTitle": "SI 5단계 A–E 피라미드 & 이관 매트릭스",
+      "description": "레거시 DB, ERP, 대외계, 그룹웨어 연결과 요구사항 추적·데이터 이관·감리 단계를 결합합니다.",
+      "categoryId": "app-flow",
+      "categoryName": "플로우",
+      "collection": "applications",
+      "implemented": true,
+      "sourceFile": "components/blocks/FlowMotionBlock.tsx",
+      "sourceComponent": "FlowMotionBlock",
+      "sourceTemplateId": "it-si-integration",
+      "sourceArchive": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "variantNote": "FlowMotionBlock · templateId=it-si-integration · KLIC-authored · docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+      "tags": [
+        "FlowMotion",
+        "플로우모션",
+        "SI 5단계 A–E 피라미드 & 이관 매트릭스",
+        "it-si-integration"
+      ],
+      "origin": "klic-native"
+    },
     {
       "id": "deploy-pipeline",
       "title": "배포 파이프라인",
@@ -1094,7 +2126,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/MatrixChartsBlock.tsx",
       "sourceComponent": "MatrixChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=bullet · Target attainment bullet",
+      "variantNote": "지표별 실적·목표·참조 구간을 공통 선형 축에서 비교하는 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1103,8 +2135,53 @@
         "Target attainment bullet"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/bullet-chart",
-      "geometry": "A measure bar overlays qualitative range bands; an independent target marker uses the same domain."
+      "geometry": "A measure bar overlays qualitative range bands; an independent target marker uses the same domain.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-bullet",
+        "origin": "mit-licensed-adaptation",
+        "family": "target",
+        "useWhen": {
+          "ko": "실적과 목표, 정성 구간을 하나의 공통 축에서 비교할 때 사용합니다.",
+          "en": "Use to compare a measure, target, and qualitative ranges on one shared scale."
+        },
+        "avoidWhen": {
+          "ko": "목표가 범위 밖이거나 단위가 서로 다르면 같은 축에 겹쳐 표시하지 않습니다.",
+          "en": "Do not overlay measures with incompatible units or targets outside the displayed domain."
+        },
+        "takeaway": {
+          "ko": "실적 막대와 목표 표식은 같은 축을 쓰며 배경 구간은 정성 범위입니다.",
+          "en": "The measure and target share one axis; background bands encode qualitative ranges."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-calendar-heatmap",
@@ -1117,7 +2194,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/MatrixChartsBlock.tsx",
       "sourceComponent": "MatrixChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=calendar · Daily activity heatmap",
+      "variantNote": "날짜를 주·요일 위치에 배치하고 활동량·빈 날짜를 구분하는 달력 히트맵 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1126,8 +2203,53 @@
         "Daily activity heatmap"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/calendar-heatmap",
-      "geometry": "Each date occupies its weekday/week cell; intensity encodes count; absent dates differ from observed zero."
+      "geometry": "Each date occupies its weekday/week cell; intensity encodes count; absent dates differ from observed zero.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-calendar-heatmap",
+        "origin": "mit-licensed-adaptation",
+        "family": "calendar",
+        "useWhen": {
+          "ko": "일별 활동량과 요일·주 패턴을 함께 확인할 때 사용합니다.",
+          "en": "Use to inspect daily activity and weekday/week patterns together."
+        },
+        "avoidWhen": {
+          "ko": "시간대별 변화나 정확한 두 범주의 수치 비교에는 적합하지 않습니다.",
+          "en": "Avoid for intraday changes or exact numeric comparisons between two categories."
+        },
+        "takeaway": {
+          "ko": "날짜가 없는 셀은 관측된 0과 구분하고 색 외에 값을 제공합니다.",
+          "en": "Missing dates are distinct from observed zero and values are available beyond color."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-cohort-retention",
@@ -1140,7 +2262,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/MatrixChartsBlock.tsx",
       "sourceComponent": "MatrixChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=cohort · Cohort retention",
+      "variantNote": "코호트 시작 인원 대비 경과 기간별 잔존율을 읽는 삼각 행렬 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1149,8 +2271,53 @@
         "Cohort retention"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/cohort-retention",
-      "geometry": "Rows are acquisition cohorts; columns are elapsed periods; retained/base percentages exclude unavailable future cells."
+      "geometry": "Rows are acquisition cohorts; columns are elapsed periods; retained/base percentages exclude unavailable future cells.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-cohort-retention",
+        "origin": "mit-licensed-adaptation",
+        "family": "retention",
+        "useWhen": {
+          "ko": "시작 시점이 다른 코호트의 경과 기간별 잔존율을 비교할 때 사용합니다.",
+          "en": "Use to compare retention by elapsed period for cohorts with different start dates."
+        },
+        "avoidWhen": {
+          "ko": "미래 관측이 없는 빈 칸을 0% 잔존으로 해석하지 않습니다.",
+          "en": "Do not interpret unavailable future cells as 0% retention."
+        },
+        "takeaway": {
+          "ko": "각 셀은 해당 코호트 시작 인원 대비 잔존 비율이며 아직 관측되지 않은 기간은 제외됩니다.",
+          "en": "Each cell is the retained share of its cohort base; unobserved future periods are omitted."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-correlation",
@@ -1163,7 +2330,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/MatrixChartsBlock.tsx",
       "sourceComponent": "MatrixChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=correlation · Correlation matrix",
+      "variantNote": "변수 쌍의 상관계수를 수치와 셀 명도로 확인하는 대칭 행렬 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1172,8 +2339,53 @@
         "Correlation matrix"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/correlation-matrix",
-      "geometry": "Symmetric pairwise correlation cells with a fixed −1 to +1 domain; missing values differ from zero."
+      "geometry": "Symmetric pairwise correlation cells with a fixed −1 to +1 domain; missing values differ from zero.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-correlation",
+        "origin": "mit-licensed-adaptation",
+        "family": "relationship",
+        "useWhen": {
+          "ko": "여러 변수 쌍의 상관 방향과 강도를 전체적으로 살펴볼 때 사용합니다.",
+          "en": "Use to scan the direction and strength of pairwise correlations across variables."
+        },
+        "avoidWhen": {
+          "ko": "상관을 인과관계로 해석하거나 표본 수·불확실성을 생략하지 않습니다.",
+          "en": "Do not interpret correlation as causation or omit sample size and uncertainty."
+        },
+        "takeaway": {
+          "ko": "셀은 −1부터 +1의 상관계수이며 결측값은 0과 다릅니다.",
+          "en": "Cells encode correlations from −1 to +1; missing values are distinct from zero."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-dumbbell",
@@ -1186,7 +2398,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/CompositionChartsBlock.tsx",
       "sourceComponent": "CompositionChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=dumbbell · Before-after dumbbell",
+      "variantNote": "항목별 이전·이후 수치를 같은 수평 축의 두 점과 차이 구간으로 비교하는 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1195,8 +2407,53 @@
         "Before-after dumbbell"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/dumbbell-chart",
-      "geometry": "Two endpoints per category share a horizontal numeric scale; a connector encodes the signed difference."
+      "geometry": "Two endpoints per category share a horizontal numeric scale; a connector encodes the signed difference.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-dumbbell",
+        "origin": "mit-licensed-adaptation",
+        "family": "comparison",
+        "useWhen": {
+          "ko": "범주별 두 값과 전후 차이를 공통 수평 축에서 비교할 때 사용합니다.",
+          "en": "Use to compare two values and their change across categories on a shared horizontal scale."
+        },
+        "avoidWhen": {
+          "ko": "세 개 이상 시점의 상세 추세를 설명하는 용도로는 적합하지 않습니다.",
+          "en": "Avoid when the task is to explain a detailed trend across more than two time points."
+        },
+        "takeaway": {
+          "ko": "두 점은 비교값이고 연결선은 부호가 있는 차이를 나타냅니다.",
+          "en": "The two endpoints are compared values; the connector encodes their signed difference."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-streamgraph",
@@ -1209,7 +2466,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/CompositionChartsBlock.tsx",
       "sourceComponent": "CompositionChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=streamgraph · Centered streamgraph",
+      "variantNote": "시간별 series를 중심 기준선 주위에 쌓아 구성 변화와 두께를 읽는 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1218,8 +2475,53 @@
         "Centered streamgraph"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/streamgraph",
-      "geometry": "Time-aligned nonnegative bands share adjacent boundaries and a centered baseline; thickness encodes value."
+      "geometry": "Time-aligned nonnegative bands share adjacent boundaries and a centered baseline; thickness encodes value.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-streamgraph",
+        "origin": "mit-licensed-adaptation",
+        "family": "composition",
+        "useWhen": {
+          "ko": "시간에 따른 여러 항목의 구성 변화와 밴드 두께를 보여줄 때 사용합니다.",
+          "en": "Use to show how multiple series’ composition changes over time."
+        },
+        "avoidWhen": {
+          "ko": "정확한 0 기준 비교나 음수 값이 필요하면 다른 차트를 선택합니다.",
+          "en": "Choose another chart when exact zero-based comparisons or negative values matter."
+        },
+        "takeaway": {
+          "ko": "밴드 두께가 값을 나타내고 중앙 기준선 때문에 위치만으로 절대값을 읽을 수 없습니다.",
+          "en": "Band thickness encodes values; the centered baseline means position alone is not an absolute value."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-treemap",
@@ -1232,7 +2534,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/CompositionChartsBlock.tsx",
       "sourceComponent": "CompositionChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=treemap · Area-proportional treemap",
+      "variantNote": "계층별 값의 비율을 사각형 면적으로 표현하고 선택한 항목의 값을 확인하는 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1241,8 +2543,53 @@
         "Area-proportional treemap"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/treemap",
-      "geometry": "Non-overlapping rectangles partition the available area in proportion to nonnegative values."
+      "geometry": "Non-overlapping rectangles partition the available area in proportion to nonnegative values.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-treemap",
+        "origin": "mit-licensed-adaptation",
+        "family": "composition",
+        "useWhen": {
+          "ko": "계층형 범주의 상대적 크기를 제한된 화면에서 비교할 때 사용합니다.",
+          "en": "Use to compare relative sizes of hierarchical categories in a constrained area."
+        },
+        "avoidWhen": {
+          "ko": "면적 차이가 작아 정확한 순위·값 비교가 필요하면 막대와 표를 사용합니다.",
+          "en": "Use bars and a table when small area differences make exact ranking or values important."
+        },
+        "takeaway": {
+          "ko": "사각형 면적은 비음수 값을 비례해 배분합니다.",
+          "en": "Rectangle area is proportional to each nonnegative value."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-waterfall",
@@ -1255,7 +2602,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/CompositionChartsBlock.tsx",
       "sourceComponent": "CompositionChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=waterfall · Cumulative waterfall",
+      "variantNote": "증가·감소가 이전 누적값에서 출발해 최종 합계로 이어지는 워터폴 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1264,8 +2611,53 @@
         "Cumulative waterfall"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/waterfall-chart",
-      "geometry": "Each delta bar spans previous to next cumulative total; connectors link totals; summary bars start at zero."
+      "geometry": "Each delta bar spans previous to next cumulative total; connectors link totals; summary bars start at zero.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-waterfall",
+        "origin": "mit-licensed-adaptation",
+        "family": "composition",
+        "useWhen": {
+          "ko": "증감 항목이 이전 누계에서 최종 합계로 이어지는 과정을 설명할 때 사용합니다.",
+          "en": "Use to explain how positive and negative deltas build to a final total."
+        },
+        "avoidWhen": {
+          "ko": "부분 구성의 비율만 비교하거나 각 막대를 0 기준으로 비교할 때는 쓰지 않습니다.",
+          "en": "Avoid when only part-to-whole shares or zero-based category comparison is needed."
+        },
+        "takeaway": {
+          "ko": "증감 막대는 이전 누계에서 시작하고 요약 막대만 0 기준에서 시작합니다.",
+          "en": "Delta bars start at the previous cumulative value; summary bars start at zero."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-spark-table",
@@ -1278,7 +2670,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/FinancialChartsBlock.tsx",
       "sourceComponent": "FinancialChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=spark-table · Trend spark table",
+      "variantNote": "항목별 작은 추세와 현재값·변화량을 같은 행에서 비교하는 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1287,8 +2679,53 @@
         "Trend spark table"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/spark-table",
-      "geometry": "Aligned row sparklines encode each numeric sequence; exact series and endpoint changes remain tabular."
+      "geometry": "Aligned row sparklines encode each numeric sequence; exact series and endpoint changes remain tabular.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-spark-table",
+        "origin": "mit-licensed-adaptation",
+        "family": "trend",
+        "useWhen": {
+          "ko": "여러 항목의 작은 추세와 현재값·변화량을 표 안에서 비교할 때 사용합니다.",
+          "en": "Use to compare compact trends, current values, and changes in one table."
+        },
+        "avoidWhen": {
+          "ko": "추세 모양 자체를 정밀하게 비교해야 하면 큰 공통 축을 사용합니다.",
+          "en": "Use a larger shared axis when precise shape comparison matters."
+        },
+        "takeaway": {
+          "ko": "각 미니 선은 같은 행의 수열에 연결되고 현재값·변화량은 텍스트로 남습니다.",
+          "en": "Each sparkline is tied to its row’s sequence; current value and change remain textual."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-state-timeline",
@@ -1301,7 +2738,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/FinancialChartsBlock.tsx",
       "sourceComponent": "FinancialChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=state-timeline · Duration state timeline",
+      "variantNote": "상태가 유지된 구간의 시작·종료와 지속시간을 시간 축에 표시하는 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1310,8 +2747,53 @@
         "Duration state timeline"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/state-timeline",
-      "geometry": "Interval rectangles use start/end timestamps on one time axis; widths encode elapsed duration."
+      "geometry": "Interval rectangles use start/end timestamps on one time axis; widths encode elapsed duration.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-state-timeline",
+        "origin": "mit-licensed-adaptation",
+        "family": "timeline",
+        "useWhen": {
+          "ko": "각 상태의 시작·종료 시각과 지속 시간을 비교할 때 사용합니다.",
+          "en": "Use to compare start, end, and elapsed duration for each state."
+        },
+        "avoidWhen": {
+          "ko": "사건 간 인과관계나 정확한 수치 규모가 핵심이면 별도 축·표를 추가합니다.",
+          "en": "Add explicit axes or a table when causality or precise magnitudes are central."
+        },
+        "takeaway": {
+          "ko": "막대의 위치는 시간, 폭은 경과 시간을 나타냅니다.",
+          "en": "Position encodes time and bar width encodes elapsed duration."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-orderbook",
@@ -1324,7 +2806,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/FinancialChartsBlock.tsx",
       "sourceComponent": "FinancialChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=orderbook · Price-level order book",
+      "variantNote": "가격·수량·누적 수량을 정확한 표와 비례 막대로 함께 읽는 합성 호가 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1333,8 +2815,53 @@
         "Price-level order book"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/order-book",
-      "geometry": "Discrete price levels sorted by side; aligned quantity/cumulative columns and proportional quantity bars."
+      "geometry": "Discrete price levels sorted by side; aligned quantity/cumulative columns and proportional quantity bars.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-orderbook",
+        "origin": "mit-licensed-adaptation",
+        "family": "market",
+        "useWhen": {
+          "ko": "가격 단계별 수량과 누적 수량을 정확한 표와 함께 비교할 때 사용합니다.",
+          "en": "Use to compare quantity and cumulative quantity at discrete price levels with exact values."
+        },
+        "avoidWhen": {
+          "ko": "연속 시계열 추세나 현재 주문 상태를 보여줘야 할 때 합성 호가를 사용하지 않습니다.",
+          "en": "Do not use synthetic order-book data for continuous trends or current order state."
+        },
+        "takeaway": {
+          "ko": "가격 단계는 매수·매도로 나뉘며 표가 가격·수량·누적값을 보존합니다.",
+          "en": "Price levels are split by side; the table preserves price, quantity, and cumulative values."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-market-depth",
@@ -1347,7 +2874,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/FinancialChartsBlock.tsx",
       "sourceComponent": "FinancialChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=depth · Cumulative market depth",
+      "variantNote": "매수·매도 가격별 수량을 누적해 양쪽 시장 깊이를 비교하는 합성 호가 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1356,8 +2883,53 @@
         "Cumulative market depth"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/depth-chart",
-      "geometry": "Price-ordered bid/ask cumulative quantities, separated by the spread around the midpoint."
+      "geometry": "Price-ordered bid/ask cumulative quantities, separated by the spread around the midpoint.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-market-depth",
+        "origin": "mit-licensed-adaptation",
+        "family": "market",
+        "useWhen": {
+          "ko": "중간 가격 주변의 매수·매도 누적 수량을 비교할 때 사용합니다.",
+          "en": "Use to compare cumulative bid and ask quantities around the midpoint."
+        },
+        "avoidWhen": {
+          "ko": "실시간 체결이나 주문 실행 가능량으로 표현하지 않습니다.",
+          "en": "Do not present it as live trades or executable liquidity."
+        },
+        "takeaway": {
+          "ko": "매수와 매도 곡선의 간격은 스프레드, 각 측의 높이는 누적 수량을 나타냅니다.",
+          "en": "The gap between sides marks the spread; each side’s height encodes cumulative quantity."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-drawdown",
@@ -1370,7 +2942,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/FinancialChartsBlock.tsx",
       "sourceComponent": "FinancialChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=drawdown · Peak drawdown",
+      "variantNote": "시점별 누적 고점을 기준으로 하락 비율을 계산하는 합성 가격 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1379,8 +2951,53 @@
         "Peak drawdown"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/drawdown-chart",
-      "geometry": "Drawdown is value/runningPeak−1; area stays at or below zero, and recovery returns to zero."
+      "geometry": "Drawdown is value/runningPeak−1; area stays at or below zero, and recovery returns to zero.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-drawdown",
+        "origin": "mit-licensed-adaptation",
+        "family": "risk",
+        "useWhen": {
+          "ko": "누적 최고값 대비 하락 폭과 회복 여부를 비교할 때 사용합니다.",
+          "en": "Use to compare declines from a running peak and subsequent recovery."
+        },
+        "avoidWhen": {
+          "ko": "가격 수준이나 서로 다른 자산의 절대 규모 비교에는 적합하지 않습니다.",
+          "en": "Avoid for comparing price levels or absolute scale across assets."
+        },
+        "takeaway": {
+          "ko": "각 시점의 낙폭은 현재값을 누적 최고값으로 나눈 비율에서 1을 뺀 값입니다.",
+          "en": "Drawdown at each point is current value divided by running peak, minus one."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-forecast-fan",
@@ -1393,7 +3010,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/FinancialChartsBlock.tsx",
       "sourceComponent": "FinancialChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=forecast · Forecast interval fan",
+      "variantNote": "관측 구간과 미래 예측 중앙값·불확실성 구간을 분리하는 합성 시계열 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1402,8 +3019,53 @@
         "Forecast interval fan"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/forecast-fan",
-      "geometry": "Observed path ends at the forecast boundary; nested lower/upper interval bands surround a central estimate."
+      "geometry": "Observed path ends at the forecast boundary; nested lower/upper interval bands surround a central estimate.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-forecast-fan",
+        "origin": "mit-licensed-adaptation",
+        "family": "forecast",
+        "useWhen": {
+          "ko": "관측 구간과 미래 예측의 중앙값·불확실성 범위를 함께 보여줄 때 사용합니다.",
+          "en": "Use to show observed history alongside a forecast center and uncertainty bands."
+        },
+        "avoidWhen": {
+          "ko": "예측 구간을 보장값이나 확정된 계획으로 해석하면 안 됩니다.",
+          "en": "Do not interpret forecast intervals as guarantees or committed plans."
+        },
+        "takeaway": {
+          "ko": "예측 경계 뒤의 중첩 밴드는 불확실성 범위이며 관측값과 분리됩니다.",
+          "en": "Nested bands after the forecast boundary show uncertainty and remain distinct from observations."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-candlestick",
@@ -1416,7 +3078,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/FinancialChartsBlock.tsx",
       "sourceComponent": "FinancialChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=candlestick · OHLC candlestick",
+      "variantNote": "시가·종가의 몸통과 고가·저가의 꼬리를 공통 가격 축으로 표시하는 합성 시세 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1425,8 +3087,53 @@
         "OHLC candlestick"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/candlestick-chart",
-      "geometry": "Body spans open to close; wick spans low to high; all prices use one shared y scale."
+      "geometry": "Body spans open to close; wick spans low to high; all prices use one shared y scale.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-candlestick",
+        "origin": "mit-licensed-adaptation",
+        "family": "price",
+        "useWhen": {
+          "ko": "기간별 시가·고가·저가·종가 범위를 함께 비교할 때 사용합니다.",
+          "en": "Use to compare open, high, low, and close values by period."
+        },
+        "avoidWhen": {
+          "ko": "실제 투자 판단에 합성 또는 지연 데이터가 들어가면 사용하지 않습니다.",
+          "en": "Do not use synthetic or delayed data for investment decisions."
+        },
+        "takeaway": {
+          "ko": "몸통은 시가와 종가, 꼬리는 고가와 저가를 나타냅니다.",
+          "en": "The body encodes open and close; the wick encodes high and low."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-calibration",
@@ -1439,7 +3146,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/DistributionChartsBlock.tsx",
       "sourceComponent": "DistributionChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=calibration · Probability calibration",
+      "variantNote": "예측 확률과 실제 관측 비율을 이상적 보정 대각선과 비교하는 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1448,8 +3155,53 @@
         "Probability calibration"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/calibration-plot",
-      "geometry": "Prediction bins versus observed frequency on matched 0–1 axes, with the y=x reference."
+      "geometry": "Prediction bins versus observed frequency on matched 0–1 axes, with the y=x reference.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-calibration",
+        "origin": "mit-licensed-adaptation",
+        "family": "distribution",
+        "useWhen": {
+          "ko": "예측 확률과 실제 사건 비율이 일치하는지 확인할 때 사용합니다.",
+          "en": "Use to assess whether predicted probabilities match observed event rates."
+        },
+        "avoidWhen": {
+          "ko": "분류 정확도나 임계값별 오류가 질문이면 보정 그래프만으로 판단하지 않습니다.",
+          "en": "Do not use calibration alone when the question concerns classification accuracy or threshold-specific errors."
+        },
+        "takeaway": {
+          "ko": "이상 대각선에 가까울수록 예측 확률과 관측 비율이 일치합니다.",
+          "en": "Points nearer the identity line indicate closer agreement between predicted probability and observed rate."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-scatter-brush",
@@ -1462,7 +3214,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/DistributionChartsBlock.tsx",
       "sourceComponent": "DistributionChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=scatter · Scatter brush selection",
+      "variantNote": "두 지표의 관계를 산점도로 보고 수치 범위로 관측값을 선택하는 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1471,8 +3223,53 @@
         "Scatter brush selection"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/scatter-brush",
-      "geometry": "Independent x/y numeric scales; rectangular numeric selection reports the included observations."
+      "geometry": "Independent x/y numeric scales; rectangular numeric selection reports the included observations.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-scatter-brush",
+        "origin": "mit-licensed-adaptation",
+        "family": "distribution",
+        "useWhen": {
+          "ko": "두 수치 변수의 관계를 살피고 사각 범위 안의 관측값을 고를 때 사용합니다.",
+          "en": "Use to inspect relationships between two numeric variables and select a rectangular range."
+        },
+        "avoidWhen": {
+          "ko": "시간 순서나 범주별 총량이 질문이면 시계열 또는 막대 차트를 사용합니다.",
+          "en": "Use a time-series or bar chart for temporal order or category totals."
+        },
+        "takeaway": {
+          "ko": "두 축은 독립 수치 척도이며 선택된 표본 수는 범위에 포함된 점의 수입니다.",
+          "en": "The axes are independent numeric scales; the selected count is the number of included points."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-beeswarm",
@@ -1485,7 +3282,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/DistributionChartsBlock.tsx",
       "sourceComponent": "DistributionChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=beeswarm · Observation beeswarm",
+      "variantNote": "개별 관측값의 수치 위치를 유지하며 점 겹침을 줄인 분포 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1494,8 +3291,53 @@
         "Observation beeswarm"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/beeswarm",
-      "geometry": "Numeric x positions are preserved; deterministic perpendicular displacement separates overlapping circles."
+      "geometry": "Numeric x positions are preserved; deterministic perpendicular displacement separates overlapping circles.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-beeswarm",
+        "origin": "mit-licensed-adaptation",
+        "family": "distribution",
+        "useWhen": {
+          "ko": "관측값 하나하나의 위치와 분포 겹침을 함께 확인할 때 사용합니다.",
+          "en": "Use when individual observations and overlap both matter."
+        },
+        "avoidWhen": {
+          "ko": "수천 개 점이 겹쳐 비교를 막으면 집계 분포나 표본화된 보기를 사용합니다.",
+          "en": "Use an aggregate or sampled view when thousands of overlapping points impede comparison."
+        },
+        "takeaway": {
+          "ko": "각 점은 실제 샘플 관측값이며 가로 이동은 겹침을 줄이기 위한 배치입니다.",
+          "en": "Each dot is a sample observation; perpendicular displacement only reduces overlap."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-violin",
@@ -1508,7 +3350,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/DistributionChartsBlock.tsx",
       "sourceComponent": "DistributionChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=violin · Violin distribution",
+      "variantNote": "그룹별 밀도와 중앙값을 대칭 바이올린 형태로 비교하는 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1517,8 +3359,53 @@
         "Violin distribution"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/violin-plot",
-      "geometry": "Mirrored kernel-density envelopes on a shared numeric axis; the median is a separate mark."
+      "geometry": "Mirrored kernel-density envelopes on a shared numeric axis; the median is a separate mark.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-violin",
+        "origin": "mit-licensed-adaptation",
+        "family": "distribution",
+        "useWhen": {
+          "ko": "여러 그룹의 분포 밀도와 중앙값을 동시에 비교할 때 사용합니다.",
+          "en": "Use to compare distribution density and medians across groups."
+        },
+        "avoidWhen": {
+          "ko": "표본이 매우 적거나 밀도 추정이 관측값을 과장할 수 있으면 원자료 점을 함께 보여줍니다.",
+          "en": "Show raw points when samples are sparse or density estimates could overstate the evidence."
+        },
+        "takeaway": {
+          "ko": "좌우 대칭 폭은 추정 밀도이고 중앙값 표식은 별도 값입니다.",
+          "en": "The mirrored width encodes estimated density; the median is a separate statistic."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "chart-distribution",
@@ -1531,7 +3418,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/DistributionChartsBlock.tsx",
       "sourceComponent": "DistributionChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=distribution · Distribution histogram",
+      "variantNote": "관측값을 구간별 빈도로 집계하고 구간 폭을 바꿔 분포와 원시 값을 비교하는 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -1540,8 +3427,53 @@
         "Distribution histogram"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/distribution-plot",
-      "geometry": "Equal-width bins; each observation belongs to exactly one bin; bar height encodes count."
+      "geometry": "Equal-width bins; each observation belongs to exactly one bin; bar height encodes count.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "chart-distribution",
+        "origin": "mit-licensed-adaptation",
+        "family": "distribution",
+        "useWhen": {
+          "ko": "연속형 관측값의 빈도와 분포 모양을 구간별로 비교할 때 사용합니다.",
+          "en": "Use to compare frequency and distribution shape across numeric bins."
+        },
+        "avoidWhen": {
+          "ko": "표본 수가 적거나 개별 관측값의 위치가 핵심이면 점 기반 분포를 선택합니다.",
+          "en": "Choose a point-based distribution when the sample is small or individual positions matter."
+        },
+        "takeaway": {
+          "ko": "구간 높이는 관측 빈도를 나타내며 구간 폭에 따라 모양이 달라집니다.",
+          "en": "Bar height encodes observation count, and the shape depends on bin width."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "timeline-release-gates",
@@ -5135,16 +7067,19 @@
       "categoryId": "app-profile",
       "categoryName": "프로필",
       "collection": "applications",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedApplicationBlock.tsx",
+      "sourceComponent": "PlannedApplicationBlock",
+      "variantNote": "PlannedApplicationBlock · variant=profile-engineer-scorecard · local sample",
       "tags": [
         "profile-engineer-scorecard",
         "엔지니어 역량 프로필",
         "프로필",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedApplicationBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "profile-enterprise-account",
@@ -5154,16 +7089,19 @@
       "categoryId": "app-profile",
       "categoryName": "프로필",
       "collection": "applications",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedApplicationBlock.tsx",
+      "sourceComponent": "PlannedApplicationBlock",
+      "variantNote": "PlannedApplicationBlock · variant=profile-enterprise-account · local sample",
       "tags": [
         "profile-enterprise-account",
         "고객사 계정 프로필",
         "프로필",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedApplicationBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "profile-security-identity",
@@ -5173,16 +7111,19 @@
       "categoryId": "app-profile",
       "categoryName": "프로필",
       "collection": "applications",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedApplicationBlock.tsx",
+      "sourceComponent": "PlannedApplicationBlock",
+      "variantNote": "PlannedApplicationBlock · variant=profile-security-identity · local sample",
       "tags": [
         "profile-security-identity",
         "보안 자격증명 프로필",
         "프로필",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedApplicationBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "profile-personal-preferences",
@@ -5192,16 +7133,19 @@
       "categoryId": "app-profile",
       "categoryName": "프로필",
       "collection": "applications",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedApplicationBlock.tsx",
+      "sourceComponent": "PlannedApplicationBlock",
+      "variantNote": "PlannedApplicationBlock · variant=profile-personal-preferences · local sample",
       "tags": [
         "profile-personal-preferences",
         "개인 환경설정 프로필",
         "프로필",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedApplicationBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "profile-vendor-compliance",
@@ -5211,16 +7155,19 @@
       "categoryId": "app-profile",
       "categoryName": "프로필",
       "collection": "applications",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedApplicationBlock.tsx",
+      "sourceComponent": "PlannedApplicationBlock",
+      "variantNote": "PlannedApplicationBlock · variant=profile-vendor-compliance · local sample",
       "tags": [
         "profile-vendor-compliance",
         "파트너 벤더 보안 프로필",
         "프로필",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedApplicationBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "whiteboard-system-architecture",
@@ -5230,16 +7177,19 @@
       "categoryId": "app-whiteboard",
       "categoryName": "화이트보드",
       "collection": "applications",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedWhiteboardBlock.tsx",
+      "sourceComponent": "PlannedWhiteboardBlock",
+      "variantNote": "PlannedWhiteboardBlock · variant=whiteboard-system-architecture · local sample",
       "tags": [
         "whiteboard-system-architecture",
         "시스템 아키텍처 보드",
         "화이트보드",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedWhiteboardBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "whiteboard-sprint-retro",
@@ -5249,16 +7199,19 @@
       "categoryId": "app-whiteboard",
       "categoryName": "화이트보드",
       "collection": "applications",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedWhiteboardBlock.tsx",
+      "sourceComponent": "PlannedWhiteboardBlock",
+      "variantNote": "PlannedWhiteboardBlock · variant=whiteboard-sprint-retro · local sample",
       "tags": [
         "whiteboard-sprint-retro",
         "스프린트 회고 보드",
         "화이트보드",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedWhiteboardBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "whiteboard-user-journey-map",
@@ -5268,16 +7221,19 @@
       "categoryId": "app-whiteboard",
       "categoryName": "화이트보드",
       "collection": "applications",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedWhiteboardBlock.tsx",
+      "sourceComponent": "PlannedWhiteboardBlock",
+      "variantNote": "PlannedWhiteboardBlock · variant=whiteboard-user-journey-map · local sample",
       "tags": [
         "whiteboard-user-journey-map",
         "고객 여정 지도 캔버스",
         "화이트보드",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedWhiteboardBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "whiteboard-erd-schema",
@@ -5287,16 +7243,19 @@
       "categoryId": "app-whiteboard",
       "categoryName": "화이트보드",
       "collection": "applications",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedWhiteboardBlock.tsx",
+      "sourceComponent": "PlannedWhiteboardBlock",
+      "variantNote": "PlannedWhiteboardBlock · variant=whiteboard-erd-schema · local sample",
       "tags": [
         "whiteboard-erd-schema",
         "DB ERD 스키마 보드",
         "화이트보드",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedWhiteboardBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "whiteboard-incident-warroom",
@@ -5306,16 +7265,19 @@
       "categoryId": "app-whiteboard",
       "categoryName": "화이트보드",
       "collection": "applications",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedWhiteboardBlock.tsx",
+      "sourceComponent": "PlannedWhiteboardBlock",
+      "variantNote": "PlannedWhiteboardBlock · variant=whiteboard-incident-warroom · local sample",
       "tags": [
         "whiteboard-incident-warroom",
         "장애 워룸 브레인스토밍",
         "화이트보드",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedWhiteboardBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "funnel-flow",
@@ -5389,16 +7351,19 @@
       "categoryId": "sankey-chart",
       "categoryName": "생키 차트",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=cloud-cost-sankey · local sample",
       "tags": [
         "cloud-cost-sankey",
         "클라우드 비용 생키",
         "생키 차트",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "traffic-attribution-sankey",
@@ -5408,16 +7373,19 @@
       "categoryId": "sankey-chart",
       "categoryName": "생키 차트",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=traffic-attribution-sankey · local sample",
       "tags": [
         "traffic-attribution-sankey",
         "채널 유입 기여도",
         "생키 차트",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "error-budget-slope",
@@ -5468,16 +7436,19 @@
       "categoryId": "slope-chart",
       "categoryName": "슬로프 차트",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=nps-cohort-slope · local sample",
       "tags": [
         "nps-cohort-slope",
         "분기별 NPS 변동",
         "슬로프 차트",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "conversion-tier-slope",
@@ -5487,16 +7458,19 @@
       "categoryId": "slope-chart",
       "categoryName": "슬로프 차트",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=conversion-tier-slope · local sample",
       "tags": [
         "conversion-tier-slope",
         "티어별 전환율 비교",
         "슬로프 차트",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "latency-region-slope",
@@ -5506,16 +7480,19 @@
       "categoryId": "slope-chart",
       "categoryName": "슬로프 차트",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=latency-region-slope · local sample",
       "tags": [
         "latency-region-slope",
         "리전별 응답 지연",
         "슬로프 차트",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "cash-inflows-radial",
@@ -5566,16 +7543,19 @@
       "categoryId": "radial-chart",
       "categoryName": "래디얼 차트",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=quota-attainment-radial · local sample",
       "tags": [
         "quota-attainment-radial",
         "영업 할당량 달성 링",
         "래디얼 차트",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "cluster-cpu-radial",
@@ -5585,16 +7565,19 @@
       "categoryId": "radial-chart",
       "categoryName": "래디얼 차트",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=cluster-cpu-radial · local sample",
       "tags": [
         "cluster-cpu-radial",
         "노드 리소스 포화도",
         "래디얼 차트",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "security-posture-radial",
@@ -5604,16 +7587,19 @@
       "categoryId": "radial-chart",
       "categoryName": "래디얼 차트",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=security-posture-radial · local sample",
       "tags": [
         "security-posture-radial",
         "보안 준수율 게이지",
         "래디얼 차트",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "live-mrr-sparkline",
@@ -5623,16 +7609,19 @@
       "categoryId": "sparkline",
       "categoryName": "스파크라인",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=live-mrr-sparkline · local sample",
       "tags": [
         "live-mrr-sparkline",
         "실시간 MRR 추이",
         "스파크라인",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "kpi-mini-trend",
@@ -5642,16 +7631,19 @@
       "categoryId": "sparkline",
       "categoryName": "스파크라인",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=kpi-mini-trend · local sample",
       "tags": [
         "kpi-mini-trend",
         "KPI 미니 트렌드",
         "스파크라인",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "latency-sparkline",
@@ -5661,16 +7653,19 @@
       "categoryId": "sparkline",
       "categoryName": "스파크라인",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=latency-sparkline · local sample",
       "tags": [
         "latency-sparkline",
         "API 응답 지연 추이",
         "스파크라인",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "error-rate-sparkline",
@@ -5680,16 +7675,19 @@
       "categoryId": "sparkline",
       "categoryName": "스파크라인",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=error-rate-sparkline · local sample",
       "tags": [
         "error-rate-sparkline",
         "5xx 에러율 파형",
         "스파크라인",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "active-session-sparkline",
@@ -5699,16 +7697,19 @@
       "categoryId": "sparkline",
       "categoryName": "스파크라인",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=active-session-sparkline · local sample",
       "tags": [
         "active-session-sparkline",
         "동시 접속 트렌드",
         "스파크라인",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "error-budget-burn",
@@ -5835,46 +7836,6 @@
       ]
     },
     {
-      "id": "revenue-breakdown-bar",
-      "title": "자본 유입 현황 3D 스택 컬럼 차트 (Capital Inflows)",
-      "catalogTitle": "분기 매출 구성비",
-      "description": "6개 운용 펀드(웨이브마크 캐피탈, 엔바토 파이낸스, 큐브릿지 테크, 네온 리퀴디티, 스트라이프 트레저리, ETH 리저브 풀)에 걸친 연도별 순 신규 자본 유입액과 2026년 연간 환산치(빗금 3D 블록), 4대 재무 요약 지표를 시각화하는 3D 아이소메트릭 스택 컬럼 차트입니다.",
-      "categoryId": "bar-column",
-      "categoryName": "바 & 컬럼",
-      "collection": "charts",
-      "implemented": true,
-      "sourceFile": "components/blocks/CapitalInflowsBlock.tsx",
-      "sourceComponent": "CapitalInflowsBlock",
-      "variantNote": "같은 CapitalInflowsBlock 미리보기를 3개 카탈로그 항목이 공유합니다. 항목별 독립 구현은 아닙니다.",
-      "tags": [
-        "revenue-breakdown-bar",
-        "분기 매출 구성비",
-        "자본 유입 현황 3D 스택 컬럼 차트 (Capital Inflows)",
-        "바 & 컬럼",
-        "CapitalInflowsBlock"
-      ]
-    },
-    {
-      "id": "headcount-cost-bar",
-      "title": "자본 유입 현황 3D 스택 컬럼 차트 (Capital Inflows)",
-      "catalogTitle": "조직별 인건비 차트",
-      "description": "6개 운용 펀드(웨이브마크 캐피탈, 엔바토 파이낸스, 큐브릿지 테크, 네온 리퀴디티, 스트라이프 트레저리, ETH 리저브 풀)에 걸친 연도별 순 신규 자본 유입액과 2026년 연간 환산치(빗금 3D 블록), 4대 재무 요약 지표를 시각화하는 3D 아이소메트릭 스택 컬럼 차트입니다.",
-      "categoryId": "bar-column",
-      "categoryName": "바 & 컬럼",
-      "collection": "charts",
-      "implemented": true,
-      "sourceFile": "components/blocks/CapitalInflowsBlock.tsx",
-      "sourceComponent": "CapitalInflowsBlock",
-      "variantNote": "같은 CapitalInflowsBlock 미리보기를 3개 카탈로그 항목이 공유합니다. 항목별 독립 구현은 아닙니다.",
-      "tags": [
-        "headcount-cost-bar",
-        "조직별 인건비 차트",
-        "자본 유입 현황 3D 스택 컬럼 차트 (Capital Inflows)",
-        "바 & 컬럼",
-        "CapitalInflowsBlock"
-      ]
-    },
-    {
       "id": "cohort-retention-bar",
       "title": "코호트 잔존율 컬럼",
       "catalogTitle": "코호트 잔존율 컬럼",
@@ -5882,16 +7843,19 @@
       "categoryId": "bar-column",
       "categoryName": "바 & 컬럼",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=cohort-retention-bar · local sample",
       "tags": [
         "cohort-retention-bar",
         "코호트 잔존율 컬럼",
         "바 & 컬럼",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "cloud-spend-variance-bar",
@@ -5904,7 +7868,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/CompositionChartsBlock.tsx",
       "sourceComponent": "CompositionChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=grouped-bar · Cloud spend composition",
+      "variantNote": "클라우드 서비스별 개발·스테이징·운영 비용을 공통 축에서 비교하고 실제 구성 합계를 확인합니다.",
       "tags": [
         "차트",
         "chart",
@@ -5913,8 +7877,53 @@
         "Cloud spend composition"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/grouped-bar-chart",
-      "geometry": "Disjoint environment costs share a zero-based scale; grouped, stacked and percent layouts retain truthful totals."
+      "geometry": "Disjoint environment costs share a zero-based scale; grouped, stacked and percent layouts retain truthful totals.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "cloud-spend-variance-bar",
+        "origin": "mit-licensed-adaptation",
+        "family": "comparison",
+        "useWhen": {
+          "ko": "서비스별 환경 비용을 공통 0 기준 축에서 비교할 때 사용합니다.",
+          "en": "Use to compare environment costs per service on a shared zero-based scale."
+        },
+        "avoidWhen": {
+          "ko": "개발·스테이징·운영 값이 실제 청구 데이터가 아니면 예산 결정을 뒷받침하지 않습니다.",
+          "en": "Do not use non-billing sample data to support budget decisions."
+        },
+        "takeaway": {
+          "ko": "그룹은 환경별 비용을 분리하고 누적 합계는 환경 비용의 총액입니다.",
+          "en": "Groups separate environment costs; stacked totals equal the sum of those costs."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "daily-active-users-area",
@@ -5927,7 +7936,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/CompositionChartsBlock.tsx",
       "sourceComponent": "CompositionChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=stacked-area · Stacked active-user area",
+      "variantNote": "유입 채널별 활성 사용자 샘플을 시간별로 누적하고 series 구성과 전체 합계를 확인합니다.",
       "tags": [
         "차트",
         "chart",
@@ -5936,8 +7945,53 @@
         "Stacked active-user area"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/stacked-area-chart",
-      "geometry": "Adjacent cumulative areas share a zero baseline; stacked height equals the sum at each timestamp."
+      "geometry": "Adjacent cumulative areas share a zero baseline; stacked height equals the sum at each timestamp.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "daily-active-users-area",
+        "origin": "mit-licensed-adaptation",
+        "family": "composition",
+        "useWhen": {
+          "ko": "채널별 활성 사용자 구성과 전체 합계의 시간 변화를 함께 볼 때 사용합니다.",
+          "en": "Use to view channel composition and total active users over time."
+        },
+        "avoidWhen": {
+          "ko": "채널별 독립 추세를 0 기준으로 비교하려면 누적 대신 분리된 축을 사용합니다.",
+          "en": "Use separate zero-based comparisons when independent channel trends matter."
+        },
+        "takeaway": {
+          "ko": "각 시점의 전체 높이는 채널 값의 합이며 각 층은 채널 값을 나타냅니다.",
+          "en": "Total height at each time is the sum of channel values; each band is one channel."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "latency-percentiles-line",
@@ -5947,16 +8001,19 @@
       "categoryId": "area-line",
       "categoryName": "에어리어 & 라인",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=latency-percentiles-line · local sample",
       "tags": [
         "latency-percentiles-line",
         "P95/P99 지연율 라인",
         "에어리어 & 라인",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "net-revenue-retention-area",
@@ -5966,16 +8023,19 @@
       "categoryId": "area-line",
       "categoryName": "에어리어 & 라인",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=net-revenue-retention-area · local sample",
       "tags": [
         "net-revenue-retention-area",
         "순매출 유지율 곡선",
         "에어리어 & 라인",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "token-throughput-line",
@@ -5985,16 +8045,19 @@
       "categoryId": "area-line",
       "categoryName": "에어리어 & 라인",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=token-throughput-line · local sample",
       "tags": [
         "token-throughput-line",
         "API 처리량 라인",
         "에어리어 & 라인",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "concurrent-connections-area",
@@ -6004,16 +8067,19 @@
       "categoryId": "area-line",
       "categoryName": "에어리어 & 라인",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=concurrent-connections-area · local sample",
       "tags": [
         "concurrent-connections-area",
         "웹소켓 동시 연결",
         "에어리어 & 라인",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "customer-segment-donut",
@@ -6023,16 +8089,19 @@
       "categoryId": "pie-donut",
       "categoryName": "파이 & 도넛",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=customer-segment-donut · local sample",
       "tags": [
         "customer-segment-donut",
         "고객 세그먼트 도넛",
         "파이 & 도넛",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "expense-allocation-pie",
@@ -6042,35 +8111,19 @@
       "categoryId": "pie-donut",
       "categoryName": "파이 & 도넛",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=expense-allocation-pie · local sample",
       "tags": [
         "expense-allocation-pie",
         "판관비 지출 파이",
         "파이 & 도넛",
-        "카탈로그"
-      ]
-    },
-    {
-      "id": "cloud-provider-share-donut",
-      "title": "클라우드 점유율 도넛",
-      "catalogTitle": "클라우드 점유율 도넛",
-      "description": "컴퓨팅·스토리지·네트워크 비용 비중 도넛 차트",
-      "categoryId": "pie-donut",
-      "categoryName": "파이 & 도넛",
-      "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
-      "tags": [
-        "cloud-provider-share-donut",
-        "클라우드 점유율 도넛",
-        "파이 & 도넛",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "ticket-severity-pie",
@@ -6080,35 +8133,19 @@
       "categoryId": "pie-donut",
       "categoryName": "파이 & 도넛",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=ticket-severity-pie · local sample",
       "tags": [
         "ticket-severity-pie",
         "장애 심각도 분포",
         "파이 & 도넛",
-        "카탈로그"
-      ]
-    },
-    {
-      "id": "license-seat-utilization-donut",
-      "title": "라이선스 가동 도넛",
-      "catalogTitle": "라이선스 가동 도넛",
-      "description": "계약된 총 시트 대비 활성·대기·미할당 시트 구성비",
-      "categoryId": "pie-donut",
-      "categoryName": "파이 & 도넛",
-      "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
-      "tags": [
-        "license-seat-utilization-donut",
-        "라이선스 가동 도넛",
-        "파이 & 도넛",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "self-serve-funnel",
@@ -6121,7 +8158,7 @@
       "implemented": true,
       "sourceFile": "components/blocks/MatrixChartsBlock.tsx",
       "sourceComponent": "MatrixChartsBlock",
-      "variantNote": "Björk UI · MIT · KLIC 토큰 적용 · variant=funnel · Self-serve conversion funnel",
+      "variantNote": "방문·가입·활성화·전환 단계의 잔존 수와 이전 단계 대비 전환율을 비교하는 샘플입니다.",
       "tags": [
         "차트",
         "chart",
@@ -6130,8 +8167,53 @@
         "Self-serve conversion funnel"
       ],
       "origin": "klic-native",
-      "referenceUrl": "https://ui.isaiahbjork.com/charts/funnel-chart",
-      "geometry": "Ordered funnel stages narrow by remaining count on a consistent scale; ratios use the immediately preceding stage."
+      "geometry": "Ordered funnel stages narrow by remaining count on a consistent scale; ratios use the immediately preceding stage.",
+      "chartContract": {
+        "schemaVersion": "1.0",
+        "id": "self-serve-funnel",
+        "origin": "mit-licensed-adaptation",
+        "family": "conversion",
+        "useWhen": {
+          "ko": "순서가 고정된 셀프서브 단계별 잔존 수와 이전 단계 전환을 볼 때 사용합니다.",
+          "en": "Use to inspect remaining users and step-to-step conversion in an ordered self-serve flow."
+        },
+        "avoidWhen": {
+          "ko": "단계가 병렬이거나 서로 다른 모집단이면 하나의 퍼넬로 합치지 않습니다.",
+          "en": "Do not combine parallel stages or different populations in one funnel."
+        },
+        "takeaway": {
+          "ko": "전환율 분모는 바로 앞 단계의 수이며 각 단계 수는 누적 감소 흐름을 이룹니다.",
+          "en": "Each conversion rate uses the immediately preceding stage as its denominator."
+        },
+        "data": {
+          "synthetic": true,
+          "exactTable": true,
+          "note": {
+            "ko": "합성 예제 데이터입니다. 정확한 값은 차트의 표 대체 보기를 기준으로 읽습니다.",
+            "en": "Synthetic example data. Read exact values from the chart’s tabular alternative."
+          }
+        },
+        "accessibility": {
+          "keyboard": {
+            "ko": "표 대체 보기와 노출된 기본 컨트롤을 키보드로 이용합니다. 개별 도형 탐색은 차트별 구현을 확인합니다.",
+            "en": "Use the tabular alternative and exposed native controls by keyboard. Mark-level navigation varies by chart implementation."
+          },
+          "exactData": {
+            "ko": "동일 데이터에서 생성한 표 대체 보기를 제공합니다.",
+            "en": "An exact-value table is generated from the chart data."
+          },
+          "reducedMotion": {
+            "ko": "정적 차트에는 자동 모션이 없습니다. 전환 효과는 시스템의 모션 감소 설정에서 확인합니다.",
+            "en": "Static charts have no autoplay. Check transitions with the system reduced-motion preference."
+          }
+        },
+        "qa": {
+          "responsive": "검증할 실제 콘텐츠 폭: 320, 390, 768, 1280 CSS px. 축이 필요한 경우 차트 내부에서만 스크롤합니다.",
+          "theme": "KLIC light/dark 테마에서 파란색 데이터·중립 표면·선택 상태를 확인합니다.",
+          "labels": "축, 단위, 범례, 누락값, 0값을 색상만으로 구분하지 않는지 확인합니다.",
+          "tableParity": "표의 행·값·단위가 시각화에 전달된 동일 데이터와 일치하는지 대조합니다."
+        }
+      }
     },
     {
       "id": "churn-retention-funnel",
@@ -6141,16 +8223,19 @@
       "categoryId": "funnel-chart",
       "categoryName": "퍼넬 차트",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=churn-retention-funnel · local sample",
       "tags": [
         "churn-retention-funnel",
         "이탈 방지 리텐션",
         "퍼넬 차트",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "enterprise-poc-funnel",
@@ -6160,54 +8245,19 @@
       "categoryId": "funnel-chart",
       "categoryName": "퍼넬 차트",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=enterprise-poc-funnel · local sample",
       "tags": [
         "enterprise-poc-funnel",
         "기술 검증 전환 퍼넬",
         "퍼넬 차트",
-        "카탈로그"
-      ]
-    },
-    {
-      "id": "checkout-drop-funnel",
-      "title": "체크아웃 이탈 분석",
-      "catalogTitle": "체크아웃 이탈 분석",
-      "description": "장바구니·청구지 입력·카드 인증 단계별 전환율 비교",
-      "categoryId": "funnel-chart",
-      "categoryName": "퍼넬 차트",
-      "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
-      "tags": [
-        "checkout-drop-funnel",
-        "체크아웃 이탈 분석",
-        "퍼넬 차트",
-        "카탈로그"
-      ]
-    },
-    {
-      "id": "activation-milestone-funnel",
-      "title": "워크스페이스 활성화",
-      "catalogTitle": "워크스페이스 활성화",
-      "description": "팀원 초대·데이터 연동·첫 리포트 발행 달성 퍼넬",
-      "categoryId": "funnel-chart",
-      "categoryName": "퍼넬 차트",
-      "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
-      "tags": [
-        "activation-milestone-funnel",
-        "워크스페이스 활성화",
-        "퍼넬 차트",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "competitor-feature-radar",
@@ -6257,16 +8307,19 @@
       "categoryId": "radar-polar",
       "categoryName": "레이더 & 폴라",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=dora-metrics-radar · local sample",
       "tags": [
         "dora-metrics-radar",
         "DORA 역량 레이더",
         "레이더 & 폴라",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "incident-response-polar",
@@ -6276,16 +8329,19 @@
       "categoryId": "radar-polar",
       "categoryName": "레이더 & 폴라",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=incident-response-polar · local sample",
       "tags": [
         "incident-response-polar",
         "장애 대응 폴라",
         "레이더 & 폴라",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "system-resilience-radar",
@@ -6295,16 +8351,19 @@
       "categoryId": "radar-polar",
       "categoryName": "레이더 & 폴라",
       "collection": "charts",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "sourceComponent": "PlannedChartPreviewBlock",
+      "variantNote": "PlannedChartPreviewBlock · variant=system-resilience-radar · local sample",
       "tags": [
         "system-resilience-radar",
         "아키텍처 복원력",
         "레이더 & 폴라",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedChartPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "support-tickets",
@@ -6353,16 +8412,19 @@
       "categoryId": "base",
       "categoryName": "기본 테이블",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=bordered-table · local sample",
       "tags": [
         "bordered-table",
         "보더 라인 테이블",
         "기본 테이블",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "selectable-grid",
@@ -6372,16 +8434,19 @@
       "categoryId": "base",
       "categoryName": "기본 테이블",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=selectable-grid · local sample",
       "tags": [
         "selectable-grid",
         "다중 선택 그리드",
         "기본 테이블",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "sortable-headers",
@@ -6391,16 +8456,19 @@
       "categoryId": "base",
       "categoryName": "기본 테이블",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=sortable-headers · local sample",
       "tags": [
         "sortable-headers",
         "정렬 가능 헤더",
         "기본 테이블",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "fixed-header",
@@ -6410,16 +8478,19 @@
       "categoryId": "base",
       "categoryName": "기본 테이블",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=fixed-header · local sample",
       "tags": [
         "fixed-header",
         "상단 고정 헤더",
         "기본 테이블",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "empty-states",
@@ -6429,16 +8500,19 @@
       "categoryId": "base",
       "categoryName": "기본 테이블",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=empty-states · local sample",
       "tags": [
         "empty-states",
         "빈 데이터 상태 뷰",
         "기본 테이블",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "loading-skeletons",
@@ -6448,16 +8522,19 @@
       "categoryId": "base",
       "categoryName": "기본 테이블",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=loading-skeletons · local sample",
       "tags": [
         "loading-skeletons",
         "로딩 스켈레톤 UI",
         "기본 테이블",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "sla-risk-index",
@@ -6487,16 +8564,19 @@
       "categoryId": "advanced",
       "categoryName": "고급 기능",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=faceted-filter-grid · local sample",
       "tags": [
         "faceted-filter-grid",
         "패싯 다중 필터",
         "고급 기능",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "inline-row-actions",
@@ -6506,16 +8586,19 @@
       "categoryId": "advanced",
       "categoryName": "고급 기능",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=inline-row-actions · local sample",
       "tags": [
         "inline-row-actions",
         "인라인 행 액션",
         "고급 기능",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "cell-formula-eval",
@@ -6525,16 +8608,19 @@
       "categoryId": "advanced",
       "categoryName": "고급 기능",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=cell-formula-eval · local sample",
       "tags": [
         "cell-formula-eval",
         "셀 수식 자동 계산",
         "고급 기능",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "nested-subgrids",
@@ -6544,16 +8630,19 @@
       "categoryId": "advanced",
       "categoryName": "고급 기능",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=nested-subgrids · local sample",
       "tags": [
         "nested-subgrids",
         "중첩 서브 그리드",
         "고급 기능",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "multi-level-headers",
@@ -6563,16 +8652,19 @@
       "categoryId": "advanced",
       "categoryName": "고급 기능",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=multi-level-headers · local sample",
       "tags": [
         "multi-level-headers",
         "다단 그룹 헤더",
         "고급 기능",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "batch-bulk-update",
@@ -6582,16 +8674,19 @@
       "categoryId": "advanced",
       "categoryName": "고급 기능",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=batch-bulk-update · local sample",
       "tags": [
         "batch-bulk-update",
         "대량 일괄 수정",
         "고급 기능",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "export-csv-excel",
@@ -6601,16 +8696,19 @@
       "categoryId": "advanced",
       "categoryName": "고급 기능",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=export-csv-excel · local sample",
       "tags": [
         "export-csv-excel",
         "CSV/엑셀 내보내기",
         "고급 기능",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "dynamic-height-cells",
@@ -6620,16 +8718,19 @@
       "categoryId": "advanced",
       "categoryName": "고급 기능",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=dynamic-height-cells · local sample",
       "tags": [
         "dynamic-height-cells",
         "가변 높이 셀",
         "고급 기능",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "undo-redo-history",
@@ -6639,16 +8740,19 @@
       "categoryId": "advanced",
       "categoryName": "고급 기능",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=undo-redo-history · local sample",
       "tags": [
         "undo-redo-history",
         "실행 취소/복원",
         "고급 기능",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "course-catalog",
@@ -6717,16 +8821,19 @@
       "categoryId": "columns",
       "categoryName": "컬럼 제어",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=column-visibility · local sample",
       "tags": [
         "column-visibility",
         "컬럼 표시 피커",
         "컬럼 제어",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "column-reordering",
@@ -6736,16 +8843,19 @@
       "categoryId": "columns",
       "categoryName": "컬럼 제어",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=column-reordering · local sample",
       "tags": [
         "column-reordering",
         "컬럼 순서 변경",
         "컬럼 제어",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "column-pinning",
@@ -6755,16 +8865,19 @@
       "categoryId": "columns",
       "categoryName": "컬럼 제어",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=column-pinning · local sample",
       "tags": [
         "column-pinning",
         "좌/우 컬럼 고정",
         "컬럼 제어",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "resizable-headers",
@@ -6774,16 +8887,19 @@
       "categoryId": "columns",
       "categoryName": "컬럼 제어",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=resizable-headers · local sample",
       "tags": [
         "resizable-headers",
         "컬럼 너비 조절",
         "컬럼 제어",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "auto-fit-columns",
@@ -6793,16 +8909,19 @@
       "categoryId": "columns",
       "categoryName": "컬럼 제어",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=auto-fit-columns · local sample",
       "tags": [
         "auto-fit-columns",
         "자동 너비 맞춤",
         "컬럼 제어",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "shared-drive-folders",
@@ -6831,16 +8950,19 @@
       "categoryId": "drag-drop",
       "categoryName": "드래그 앤 드롭",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=row-reorder-handle · local sample",
       "tags": [
         "row-reorder-handle",
         "행 순서 드래그",
         "드래그 앤 드롭",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "kanban-interchange",
@@ -6850,16 +8972,19 @@
       "categoryId": "drag-drop",
       "categoryName": "드래그 앤 드롭",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=kanban-interchange · local sample",
       "tags": [
         "kanban-interchange",
         "테이블 ↔ 칸반 연동",
         "드래그 앤 드롭",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "cross-table-dnd",
@@ -6869,16 +8994,19 @@
       "categoryId": "drag-drop",
       "categoryName": "드래그 앤 드롭",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=cross-table-dnd · local sample",
       "tags": [
         "cross-table-dnd",
         "테이블 간 이동",
         "드래그 앤 드롭",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "hierarchy-tree-reorder",
@@ -6888,16 +9016,19 @@
       "categoryId": "drag-drop",
       "categoryName": "드래그 앤 드롭",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=hierarchy-tree-reorder · local sample",
       "tags": [
         "hierarchy-tree-reorder",
         "트리 계층 재배치",
         "드래그 앤 드롭",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "release-approvals",
@@ -6945,16 +9076,19 @@
       "categoryId": "expansion",
       "categoryName": "행 확장",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=detail-panel-row · local sample",
       "tags": [
         "detail-panel-row",
         "행 상세 아코디언",
         "행 확장",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "lazy-child-loader",
@@ -6964,16 +9098,19 @@
       "categoryId": "expansion",
       "categoryName": "행 확장",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=lazy-child-loader · local sample",
       "tags": [
         "lazy-child-loader",
         "지연 로딩 하위 행",
         "행 확장",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "master-detail-split",
@@ -6983,16 +9120,19 @@
       "categoryId": "expansion",
       "categoryName": "행 확장",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=master-detail-split · local sample",
       "tags": [
         "master-detail-split",
         "마스터-디테일 분할",
         "행 확장",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "billing-upgrade",
@@ -7081,16 +9221,19 @@
       "categoryId": "filtering",
       "categoryName": "필터링",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=automation-library · local sample",
       "tags": [
         "automation-library",
         "자동화 규칙 목록",
         "필터링",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "renewal-reassignment",
@@ -7100,16 +9243,19 @@
       "categoryId": "filtering",
       "categoryName": "필터링",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=renewal-reassignment · local sample",
       "tags": [
         "renewal-reassignment",
         "갱신 담당자 재배정",
         "필터링",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "at-risk-renewals",
@@ -7119,16 +9265,19 @@
       "categoryId": "filtering",
       "categoryName": "필터링",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=at-risk-renewals · local sample",
       "tags": [
         "at-risk-renewals",
         "이탈 위험 고객사",
         "필터링",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "workspace-overview",
@@ -7196,16 +9345,19 @@
       "categoryId": "grouping",
       "categoryName": "그룹화",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=patient-access · local sample",
       "tags": [
         "patient-access",
         "임상 환자군 분류",
         "그룹화",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "bill-materials",
@@ -7215,16 +9367,19 @@
       "categoryId": "grouping",
       "categoryName": "그룹화",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=bill-materials · local sample",
       "tags": [
         "bill-materials",
         "자재 명세서 (BOM)",
         "그룹화",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "reporting-hierarchy",
@@ -7234,16 +9389,19 @@
       "categoryId": "grouping",
       "categoryName": "그룹화",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=reporting-hierarchy · local sample",
       "tags": [
         "reporting-hierarchy",
         "조직 예산 체계",
         "그룹화",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "editorial-pipeline",
@@ -7253,16 +9411,19 @@
       "categoryId": "grouping",
       "categoryName": "그룹화",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=editorial-pipeline · local sample",
       "tags": [
         "editorial-pipeline",
         "콘텐츠 파이프라인",
         "그룹화",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "studio-delivery",
@@ -7272,16 +9433,19 @@
       "categoryId": "grouping",
       "categoryName": "그룹화",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=studio-delivery · local sample",
       "tags": [
         "studio-delivery",
         "스튜디오 딜리버리",
         "그룹화",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "card-payments-ledger",
@@ -7291,16 +9455,19 @@
       "categoryId": "virtualization",
       "categoryName": "가상화",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=card-payments-ledger · local sample",
       "tags": [
         "card-payments-ledger",
         "대용량 결제 원장",
         "가상화",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "shipment-exceptions",
@@ -7310,16 +9477,19 @@
       "categoryId": "virtualization",
       "categoryName": "가상화",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=shipment-exceptions · local sample",
       "tags": [
         "shipment-exceptions",
         "물류 예외 모니터링",
         "가상화",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "audit-log-stream",
@@ -7329,16 +9499,19 @@
       "categoryId": "virtualization",
       "categoryName": "가상화",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=audit-log-stream · local sample",
       "tags": [
         "audit-log-stream",
         "보안 감사 스트림",
         "가상화",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "iot-sensor-matrix",
@@ -7348,16 +9521,19 @@
       "categoryId": "virtualization",
       "categoryName": "가상화",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=iot-sensor-matrix · local sample",
       "tags": [
         "iot-sensor-matrix",
         "IoT 센서 그리드",
         "가상화",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     },
     {
       "id": "order-book-depth",
@@ -7367,16 +9543,19 @@
       "categoryId": "virtualization",
       "categoryName": "가상화",
       "collection": "data-grids",
-      "implemented": false,
-      "sourceFile": null,
-      "sourceComponent": null,
-      "variantNote": "카탈로그 항목만 제공되어 실제 미리보기는 미구현입니다.",
+      "implemented": true,
+      "sourceFile": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "sourceComponent": "PlannedDataGridPreviewBlock",
+      "variantNote": "PlannedDataGridPreviewBlock · variant=order-book-depth · local sample",
       "tags": [
         "order-book-depth",
         "초고속 호가창",
         "가상화",
-        "카탈로그"
-      ]
+        "카탈로그",
+        "PlannedDataGridPreviewBlock",
+        "preview"
+      ],
+      "origin": "klic-native"
     }
   ]
 }

@@ -1,0 +1,29 @@
+/* テキストモーション（統合分）の部品 */
+.try-text-row { flex-wrap: wrap; }
+.try-text-field { display: flex; flex: 1 1 320px; gap: 8px; min-width: 0; }
+.try-text-field input, .dialog-text-field input {
+  flex: 1; min-width: 0; height: 36px; padding: 0 12px; border: 1px solid var(--line-strong); border-radius: 8px;
+  background: #fff; color: var(--ink); font: 600 14px/1 Pretendard, sans-serif;
+}
+.try-text-field input:focus, .dialog-text-field input:focus { outline: 2px solid rgba(114, 87, 255, .45); outline-offset: 1px; }
+.try-text-field button { flex: none; height: 32px; padding: 0 12px; border: 1px solid var(--line-strong); border-radius: 7px; background: #fff; font-size: 11px; font-weight: 700; }
+.dialog-text-field { display: flex; align-items: center; gap: 10px; margin: 10px 2px 0; }
+.dialog-text-field > span { flex: none; color: var(--violet-dark); font-size: 11px; font-weight: 800; }
+.code-preview.is-steps code { font-family: Pretendard, sans-serif; white-space: pre-wrap; line-height: 1.9; }
+.side-subheading { margin-top: 14px !important; padding-top: 12px !important; border-top: 1px solid rgba(255, 255, 255, .075); color: #a593ff !important; }
+.segmented { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 9px; background: var(--paper); }
+.segmented button { min-width: 44px; height: 30px; padding: 0 11px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); font-size: 11px; font-weight: 800; }
+.segmented button.active { background: linear-gradient(135deg, #7d64ff, #5b43df); color: #fff; box-shadow: 0 4px 12px rgba(91, 67, 223, .25); }
+.segmented button:disabled { opacity: .45; cursor: default; }
+.segmented [data-font="serif"] { font-family: "Nanum Myeongjo", "Noto Serif KR", "Batang", serif; }
+.segmented [data-font="mono"] { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+/* ---- ガイド・出典 ---- */
+.doc-view { padding: 26px clamp(20px, 3vw, 42px) 48px; }
+
+.source-groups { columns: 2 360px; column-gap: 18px; }
+.source-group { break-inside: avoid; margin: 0 0 14px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.source-group h3 { margin: 0 0 6px; font: 700 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.source-group h3 small { color: var(--soft); }
+.source-group ul { margin: 0; padding-left: 16px; font-size: 12px; line-height: 1.75; }
+.source-items { display: inline-flex; flex-wrap: wrap; gap: 4px; margin-left: 4px; }
+.source-items a, .source-items em { padding: 0 6px; border-radius: 999px; background: var(--paper); color: var(--muted) !important; font-size: 10.5px; font-style: normal; text-decoration: none; word-break: normal !important; }

@@ -50,22 +50,22 @@
   .bottom-callout{background:var(--klic-semantic-color-panel);border:1px solid var(--klic-semantic-color-border)}
   .mini-bars>span{background:var(--klic-ui-chart-subtle)}
   .mini-bars>span:nth-last-child(-n+3){background:var(--klic-semantic-color-accent)}
-  .demo-input,.demo-select{border-color:var(--klic-component-input-border-default,var(--klic-semantic-color-control-border))}
-  .demo-input[aria-invalid=true]{border-color:var(--klic-semantic-color-danger)}
+  :is(.demo-input,:is(.kn-input,[data-part~="input"])),:is(.demo-select,:is(.kn-select,[data-part~="select"])){border-color:var(--klic-component-input-border-default,var(--klic-semantic-color-control-border))}
+  :is(.demo-input,:is(.kn-input,[data-part~="input"]))[aria-invalid=true]{border-color:var(--klic-semantic-color-danger)}
   .field-required{color:var(--klic-semantic-color-danger)}
-  .demo-error{color:var(--klic-semantic-color-danger)}
+  :is(.demo-error,:is(.kn-error,[data-part~="error"])){color:var(--klic-semantic-color-danger)}
   .check-row input[type=checkbox]{border-color:var(--klic-semantic-color-control-border)}
   .check-row input:checked{background:var(--klic-semantic-color-accent);border-color:var(--klic-semantic-color-accent)}
   .switch:not(:checked){background:var(--klic-semantic-color-control-border);border-color:var(--klic-semantic-color-control-border)}
-  .badge,.toast-check{background:var(--klic-semantic-color-success-surface);color:var(--klic-semantic-color-success)}
-  .badge.neutral{background:var(--klic-ui-soft);color:var(--klic-semantic-color-muted)}
-  .badge.amber{background:var(--klic-semantic-color-warning-surface);color:var(--klic-semantic-color-warning)}
-  .badge.rose{background:var(--klic-semantic-color-danger-surface);color:var(--klic-semantic-color-danger)}
-  .badge.blue{background:var(--klic-ui-selected);color:var(--klic-semantic-color-accent)}
-  .badge.outline{background:transparent;color:var(--klic-semantic-color-muted)}
-  .btn:not(.secondary):not(.outline):not(.ghost):not(.danger):hover:not(:disabled){background:var(--klic-component-button-background-hover);filter:none}
-  .btn:not(.secondary):not(.outline):not(.ghost):not(.danger):active:not(:disabled){background:var(--klic-component-button-background-active)}
-  .btn.danger{background:var(--klic-semantic-color-danger);color:var(--klic-semantic-color-panel)}
+  :is(.badge,:is(.kn-badge,[data-part~="badge"])),.toast-check{background:var(--klic-semantic-color-success-surface);color:var(--klic-semantic-color-success)}
+  :is(.badge,:is(.kn-badge,[data-part~="badge"])).neutral{background:var(--klic-ui-soft);color:var(--klic-semantic-color-muted)}
+  :is(.badge,:is(.kn-badge,[data-part~="badge"])).amber{background:var(--klic-semantic-color-warning-surface);color:var(--klic-semantic-color-warning)}
+  :is(.badge,:is(.kn-badge,[data-part~="badge"])).rose{background:var(--klic-semantic-color-danger-surface);color:var(--klic-semantic-color-danger)}
+  :is(.badge,:is(.kn-badge,[data-part~="badge"])).blue{background:var(--klic-ui-selected);color:var(--klic-semantic-color-accent)}
+  :is(.badge,:is(.kn-badge,[data-part~="badge"])):is(.outline,.kv-outline){background:transparent;color:var(--klic-semantic-color-muted)}
+  :is(.btn,:is(.kn-btn,[data-part~="btn"])):not(:is(.secondary,.kv-neutral)):not(:is(.outline,.kv-outline)):not(:is(.ghost,.kv-ghost)):not(.danger):hover:not(:disabled){background:var(--klic-component-button-background-hover);filter:none}
+  :is(.btn,:is(.kn-btn,[data-part~="btn"])):not(:is(.secondary,.kv-neutral)):not(:is(.outline,.kv-outline)):not(:is(.ghost,.kv-ghost)):not(.danger):active:not(:disabled){background:var(--klic-component-button-background-active)}
+  :is(.btn,:is(.kn-btn,[data-part~="btn"])).danger{background:var(--klic-semantic-color-danger);color:var(--klic-semantic-color-panel)}
   .info-note{background:var(--klic-ui-selected);color:var(--klic-semantic-color-accent)}
   .palette-role{display:flex;align-items:center;gap:9px}
   .palette-role .color-swatch{width:22px;height:22px}

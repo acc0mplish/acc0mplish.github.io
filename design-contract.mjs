@@ -12,12 +12,12 @@ const documents=[
 export function renderDesignContract(locale='ko'){
  const en=locale==='en',t=(ko,english)=>en?english:ko;
  const rows=[
-  [t('현재 구현','Current implementation'),t('확정','Decided'),t('독립 native 컴포넌트와 React 블록. ReUI·Base UI·Radix 미설치.','Independent native components and React blocks. ReUI, Base UI and Radix are not installed.')],
+  [t('현재 구현','Current implementation'),t('확정','Decided'),t('독립 native 컴포넌트와 React 블록. 외부 UI 런타임 미설치.','Independent native components and React blocks. No external UI runtime is installed.')],
   [t('4계층 소유권','Four-layer ownership'),t('확정','Decided'),t('Component → Semantic → Brand → Primitive. literal은 Primitive만 소유.','Component → Semantic → Brand → Primitive. Only Primitive owns literals.')],
   [t('브랜드와 사용자 조정','Profiles and customization'),t('확정','Decided'),t('Core·Studio·Data는 Site 표현 프로필. 동일 Primitive inventory에서 Brand 참조만 선택.','Core, Studio and Data are Site expression profiles. Brand selects references from one immutable Primitive inventory.')],
   [t('토큰 프로파일','Token profile'),t('제한 지원','Bounded support'),t('rem dimension·sRGB color·등록 fontFamily·fontWeight. 범용 DTCG 적합성 주장 없음.','rem dimensions, sRGB colors, registered fontFamily and fontWeight. No general DTCG conformance claim.')],
   [t('전역 테마','Global themes'),t('구현','Implemented'),t('Light/Dark 전체 literal map 출력. root 속성 전환; 열린 Portal은 같은 문맥 사용.','Complete literal Light/Dark maps. Root attribute switching; open Portals share the same context.')],
-  [t('이관값과 제목 보간','Migration values and title interpolation'),t('예시','Example'),t('A/B 높이·PageTitle 24→30px·ReUI Nova 값은 제품 승인 기본값이 아님.','A/B heights, PageTitle 24–30px and ReUI Nova values are examples, not approved product defaults.')],
+  [t('이관값과 제목 보간','Migration values and title interpolation'),t('예시','Example'),t('A/B 높이·PageTitle 24→30px 후보는 제품 승인 기본값이 아님.','A/B heights and PageTitle 24–30px are examples, not approved product defaults.')],
   [t('소비 제품 수용','Consumer product acceptance'),t('미검증','Unverified'),t('지원 환경·실제 담당자·업무·접근성 증거는 해당 제품 단계 0에서 확정.','Support matrix, named owners, workflows and accessibility evidence are required at that product\'s stage 0.')]
  ];
  return `<section class="doc-section" style="margin-top:0" data-design-contract="1.1"><div class="eyebrow">CONTRACT 1.1 · 2026.10.25</div><h2>${t('구조의 결정과 제품의 검증을 구분합니다.','Separate architecture decisions from product acceptance.')}</h2><p>${t('적대검토를 현재 구현과 대조해 계약의 모호함을 수정했습니다. 공통 구현은 계속 진행하며, 실제 제품의 출시는 선언한 범위와 증거로 판정합니다.','The review was checked against the implementation and ambiguous contracts were resolved. Shared development continues; each product release is judged against its declared scope and evidence.')}</p><div class="info-note">${t('구조·현재 프로파일 확정 / 소비 제품 기준선 별도 / 전체 수용시험 미완료','Architecture and current profile decided / consumer baselines separate / full acceptance incomplete')}</div></section>

@@ -12,3 +12,11 @@
 body.block-expanded-open{overflow:hidden!important}.block-runtime-stage.block-expanded{position:fixed;inset:0;z-index:1000;width:calc(100vw / var(--klic-ui-scale,1));height:calc(100dvh / var(--klic-ui-scale,1));max-height:none;background:var(--klic-semantic-color-surface);padding:16px;display:flex;flex-direction:column}.block-expanded .block-fullscreen-bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:4px 0 16px;font-size:1rem}.block-expanded .block-runtime-frame{height:100%;margin:0 auto;flex:1;min-height:0}.block-expanded iframe{height:100%;min-height:0}
 
 .block-source-picker{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:18px 0}.block-source-picker label{font-size:.8rem;font-weight:600}.block-source-picker select{min-width:0;max-width:100%;flex:1;padding:10px 12px;border:1px solid var(--klic-semantic-color-control-border);border-radius:8px;background:var(--klic-semantic-color-panel);color:var(--klic-semantic-color-text);font:.75rem var(--klic-ui-mono)}.block-source-picker>span{font-size:.75rem;color:var(--klic-semantic-color-muted)}@media(max-width:600px){.block-source-picker select{flex-basis:100%;font-size:16px}.block-code-actions{flex-wrap:wrap}}
+.block-collection .block-section-heading{margin-bottom:8px}.block-collection-tabs{margin-bottom:10px}.block-filterbar{margin-bottom:14px}
+.block-collection-tabs button{flex:0 0 auto;min-width:max-content}
+.block-page .library-overview-details .library-overview-card{display:block}
+.block-detail-usage{margin:22px 0;padding:16px 18px;border:1px solid var(--block-border);border-radius:8px;background:var(--block-panel)}
+.block-detail-usage h2{margin-bottom:8px;font-size:calc(17px * var(--klic-text-scale,1));font-weight:600;color:var(--klic-semantic-color-text)}
+.block-detail-usage p{font-size:calc(13px * var(--klic-text-scale,1));line-height:1.8;color:var(--block-muted)}
+.block-detail-usage p+p{margin-top:5px}
+@media(max-width:760px){.block-collection .block-section-heading{margin-bottom:7px}.block-filterbar{margin-bottom:10px}.block-page .library-overview-details .library-overview-card{display:block}.block-detail-usage{margin:16px 0;padding:14px}}

@@ -1,0 +1,83 @@
+{
+  "id": "flowmotion-node-loader-spin",
+  "category": "ui-loading",
+  "title": {
+    "ko": "노드 상태 스피너",
+    "en": "Node Status Spinner"
+  },
+  "summary": {
+    "ko": "실행 중 노드의 회전 표시를 한 바퀴로 재생합니다.",
+    "en": "Plays one turn of the running-node spinner."
+  },
+  "durationMs": 1000,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "inbound-lead-routing"
+    ],
+    "sourceFile": "src/components/FlowNodeCard.tsx",
+    "renderer": "FlowNodeCard",
+    "effect": "running-node-loader-spin",
+    "sourceTimeline": {
+      "durationMs": 1000,
+      "description": "FlowNodeCard의 Loader2 animate-spin 한 회전. angle = 360° × progress over the 1,000ms Tailwind spin cycle.",
+      "frames": [
+        {
+          "progress": 0,
+          "angleDeg": 0
+        },
+        {
+          "progress": 0.25,
+          "angleDeg": 90
+        },
+        {
+          "progress": 0.5,
+          "angleDeg": 180
+        },
+        {
+          "progress": 0.75,
+          "angleDeg": 270
+        },
+        {
+          "progress": 1,
+          "angleDeg": 360
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"실행 중 노드 회전 표시\"><circle cx=\"160\" cy=\"88\" r=\"31\" class=\"flow\"/><path class=\"accent-line spin\" d=\"M160 57 A31 31 0 1 1 137 67\" stroke-width=\"5\" stroke-linecap=\"round\"/><text class=\"label\" text-anchor=\"middle\" x=\"160\" y=\"145\">실행 중</text></svg></div>",
+    "duration": 1000,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".spin",
+        "keyframes": [
+          {
+            "offset": 0,
+            "transform": "rotate(0deg)"
+          },
+          {
+            "offset": 0.25,
+            "transform": "rotate(90deg)"
+          },
+          {
+            "offset": 0.5,
+            "transform": "rotate(180deg)"
+          },
+          {
+            "offset": 0.75,
+            "transform": "rotate(270deg)"
+          },
+          {
+            "offset": 1,
+            "transform": "rotate(360deg)"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

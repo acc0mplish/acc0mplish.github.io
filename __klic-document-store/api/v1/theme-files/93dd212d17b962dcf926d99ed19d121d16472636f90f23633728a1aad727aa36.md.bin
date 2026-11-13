@@ -1,0 +1,180 @@
+## Shared design criteria
+
+Policy revision: 93b34249b2a82e244d1e1d6d096d28821eb45f8dd9b4f733e4bf9c6536be44a5
+
+Canonical policy: https://design.klic.co.kr/api/v1/design-system.json
+
+Read the same criteria and revision in API, CLI, MCP and WebMCP designSystem responses and the bundled KLIC-DESIGN-SYSTEM.json. Item contracts link through item.design.system.
+
+| Dimension | Token responsibility | Structure and behavior responsibility |
+| --- | --- | --- |
+| Size and proportion | Control sizes, icons and content width | Component recipes and the DOM ensure min-height, padding, wrapping and actual hit areas. |
+| Typography | Registered font families, role sizes and weights | Supported recipes define line height, tracking, wrapping and responsive conditions without assuming unregistered token types. |
+| Color and contrast | Role colors for actions, selection, text, borders and status | Labels, icons and state attributes convey meaning; measure actual composited-surface contrast separately. |
+| Layout and alignment | Registered spatial roles, including maximum content and panel widths | DOM reading order, layout transitions, scroll ownership and Portal structure |
+| Spacing and grouping | Internal gaps, padding, group spacing and approved density mappings | Maintain label, fieldset, legend and describedby relationships; window width alone does not change density. |
+| Surface and depth | Surface colors, radii, borders and supported color/dimension material leaves | Blur and shadow recipes, stacking, auxiliary-panel versus modal behavior and opaque fallbacks |
+| Interaction and feedback | Visual roles for focus, selection, progress, success, warnings and errors | Keyboard operation, focus movement, asynchronous transitions, execution blocking, input preservation and recovery |
+
+Only Primitive owns literals. Preserve adjacent Brand→Primitive, Semantic→Brand and Component→Semantic references.
+
+Distinguish token definitions, structural conditions in DOM/CSS recipes and compiled final literals.
+
+Keep the npm package separate from the homepage. Use the npm latest tag for package commands and check package exports against the public manifest.
+
+## Allowed preset scope
+
+A preset combines approved settings of an existing API. It is not a fifth token layer.
+
+Use an explicit allowlist of size, variant, density, layout and other settings supported by the actual component API.
+
+- Labels, descriptions and business data
+- Value, selection, validation and request state
+- Event handlers, recovery actions and permissions
+- Raw style values, unregistered CSS variables and arbitrary token overrides
+
+Component defaults → selected preset → permitted explicit settings. Pass business data, state and permissions separately.
+
+Validate allowed keys, enums and combinations; diagnose unknown values. Distinguish type declarations from actual DOM and behavior verification.
+
+## Conflict resolution order
+
+- Preserve information, operability and accessibility first: Preserve essential information, state meaning, input, focus and operation paths. Dimension numbers do not override other required contracts.
+- Reflow structure and reading order: Adjust wrapping, columns, action groups and panel arrangement first. Use local scrolling only for areas whose meaning requires two dimensions.
+- Adjust spacing and surfaces within approved bounds: Respect the selected density and text scale while adjusting spacing and decoration within approved recipes. Limited space alone does not justify automatic compact mode or smaller text.
+- Record remaining constraints and verification: If defaults cannot resolve a constraint, record scope, alternatives, impact, FR/AT references and actual verification. Do not skip token layers or conceal failed checks with exception approval.
+
+sources/checks identify supporting references, not certification. Record actual product-environment results in the existing FR/AT evidence.
+
+## Application and verification
+
+Read the shared criteria, item DESIGN.md and actual source first. Assign token, DOM, CSS recipe and state responsibilities for each rule, then apply the conditions your product needs.
+
+Compare revision in the policy and item contract. release identifies a registry publication; do not combine paginated results from different publications.
+
+Use the latest CLI and local registry and restart stdio sessions. Reload the page to register WebMCP again. source prints raw code. Read DESIGN.md for source bundles or README.md for theme kits together with KLIC-DESIGN-SYSTEM.json.
+
+## CSS class namespaces and variant composition
+
+| Prefix | Responsibility | Usage scope | Example |
+| --- | --- | --- | --- |
+| kb-* | Block root | Root of a KLIC-delivered screen or workflow composition. Use the stable block ID as the suffix. | kb-dashboard |
+| kn-* | Component root | Root of a KLIC Native component. Use its catalog ID, with the registered short form button → btn. | kn-btn · kn-popover |
+| kx-* | External adapter boundary | Boundary around an actual external implementation or KLIC modifications. Preserve vendor-owned classes. | kx-grid · kx-swiper |
+| kv-* | Visual variant | Use only registered intent, appearance, size, and density values. Do not encode logical state. | kn-btn kv-primary kv-outline kv-sm |
+| ku-* | KLIC utility | Reusable layout and assistive effects. Utilities do not own component identity or logical state. | ku-flex · ku-spin |
+
+| Variant axis | Allowed classes | Composition rule |
+| --- | --- | --- |
+| Intent and color | kv-primary · kv-neutral · kv-success · kv-warning · kv-danger | Choose one supported value. Success uses company blue with a check icon and never green. |
+| Appearance | kv-solid · kv-outline · kv-ghost | Use at most one value on a component. |
+| Size | kv-sm · kv-md · kv-lg | Use registered sizes only; do not add unregistered CSS values. |
+| Density | kv-compact · kv-normal · kv-relaxed | Choose one value supported by the component. |
+
+Use a registered Component token for the owning component when available; otherwise fall back to the existing Semantic token for that axis. Do not add literal colors, spacing, or unregistered CSS variables in classes.
+
+- Every KLIC-owned public class uses one of the kb, kn, kx, kv, or ku namespaces. Use kb and kn only on block and component roots; identify internal parts with data-part.
+- HTML class and React className use the same identifier. Map component ID button to kn-btn and preserve other registered IDs.
+- Each component registers its supported variant axes and values. Allow at most one value per axis; reject conflicts and unregistered values.
+- Variants prefer registered Component tokens and fall back to existing Semantic tokens. Success intent uses company blue and a check icon.
+- Legacy x-* classes and semantic kv-* names remain CSS compatibility aliases only. Do not emit them in new HTML or React output; remove them only with a separately announced breaking change.
+- Do not rename dependency-owned Tailwind utilities or external vendor classes to ku. Scope KLIC CSS overrides for external implementations to the relevant kx-* adapter boundary while preserving original vendor selectors and classes.
+
+The policy objects are additive optional fields in DesignSystem schema 1.0. Current snapshots always include them; earlier 1.0 snapshots may not, and must remain readable.
+
+## Standard data attributes: part, state, and theme
+
+| Property | Role | Values and ownership scope |
+| --- | --- | --- |
+| data-part | Internal component part | A stable list of lowercase kebab-case tokens owned by the nearest kn-* or kb-* root, such as icon, label, or panel. |
+| data-state | Component-defined logical state | One state token defined by the component contract, such as closed or open. |
+| data-theme | Display mode for a document or subtree | Resolved light or dark mode. Resolve a system preference before setting the DOM value. |
+
+- data-part is owned by the nearest KLIC component or block root. Its value is one or more space-separated kebab-case tokens; CSS selects individual tokens.
+- data-state represents a component-specific state transition. Its values belong to that component contract, not a global enum.
+- Native attributes and ARIA remain authoritative for logical state. Do not replace disabled, checked, aria-expanded, aria-pressed, aria-selected, aria-busy, or aria-invalid with visual classes or data-state.
+- When using custom data-state, the behavior owner updates it from the same logical state used for keyboard and accessibility behavior. Do not create a second state store.
+- Use resolved light or dark for data-theme. System is a preference, not a DOM value; resolve it before setting the attribute.
+- Preserve existing material, editor, preview, and external library data hooks as extensions or compatibility contracts. Do not delete or rename them arbitrarily.
+
+- Preserve existing data-kv-root, data-kv-component, data-kv-variant, and data-kv-action preview and interaction hooks.
+- Register data-klic-material, editor connections, and external library data-* attributes as separate extensions or compatibility hooks; do not delete them.
+
+## State transitions and motion ownership
+
+| Component | From state | To state | Motion |
+| --- | --- | --- | --- |
+| popover | closed | open | Entry |
+| popover | open | closed | Exit |
+
+| Ownership scope | Responsibility |
+| --- | --- |
+| Behavior owner | The component behavior owner controls state changes, keyboard behavior, focus entry and restoration, mount/unmount, and cleanup. |
+| Visual effect | CSS or a registered KLIC motion runtime implements each visual transition. Changing data-state does not itself run an animation. |
+| Exit lifecycle | Keep the visual element mounted until required exit motion completes, without delaying logical closure or focus restoration. |
+| Reduced motion | Under prefers-reduced-motion: reduce, remove or shorten nonessential motion while preserving state and content access. |
+
+- Component contracts specify entry, exit, or state feedback for each registered transition.
+- For a Popover, define entry for closed → open and exit for open → closed. data-state signals the transition; CSS or a runtime must implement it.
+- Closing preserves focus restoration and keyboard behavior; exit effects do not delay logical closure. Delay DOM removal until animation completion only when needed.
+- prefers-reduced-motion: reduce may remove or shorten nonessential transitions while preserving state meaning, feedback, and content access.
+- Use ku-spin only while work is actually in progress and define a reduced-motion alternative. Do not use endless rotation as decoration.
+
+## Component family behavior contracts
+
+- Family contracts connect actual HTML, attributes, states, keyboard behavior, combinations, event ownership and limits. Do not invent actions for display-only items.
+- Each input keeps one consistent meaning. State conflicts and precedence between independent settings. Presentation presets never overwrite business data, request state or authorization.
+- This canonical record owns shared semantics; actual source and item guides own syntax and supported behavior. Consider composing existing parts before adding wrappers or duplicate state APIs.
+- Token mappings identify the height fixture, mode, density, and whether values are static examples or current selections. The fixed A/Light/Normal example does not represent a user's live lab settings.
+- Item contracts expose only variant axes and values supported by source or selector evidence. Preview forms are examples, not proof of product props or supported variants; leave unverified axes as not-specified.
+
+## Progressive reads and response provenance
+
+- Store component and block names in separate labels.ko/en fields and category names in categoryLabels.ko/en. Browser, API, CLI, MCP, WebMCP and static mirrors use the same label pairs and support search in both languages. Keep the existing name string for compatibility and retain original names in search tags.
+- Reads default to full. Brief returns identity, summary and next; compact returns key contracts and scope. Search by task-relevant kind, status, group or token and follow next. Use brief or compact for broad discovery, full for an implementation candidate, and record the requested detail level.
+- Rank search results by exact ID or name, then ID/name prefix matches, then ID/name substring matches, then remaining metadata. Preserve original registry order for ties and apply cursors to the ranked result set.
+- Read the contract first and record release, designSystem.revision, and the actual responder and toolkit versions. Do not mix responses from different releases or infer a consumer's installed version or treat a recommended release as the version actually running.
+- Ready items are available; planned items are proposals. Check use, avoid, states, recovery, tokens, limitations, source notices and the design contract. Not-specified means evidence is missing, not that support exists.
+- API, CLI, MCP, WebMCP and static mirrors use the same read functions. Read a delivery plan and raw source only when implementation or source use is in scope, and follow the plan's boundaries. Source returns raw code only; preserve its bytes and accompanying notices.
+- Separate KLIC facts from agent inferences and tie each conclusion to supporting fields and checks actually performed. Mark behavior unverified when it was not checked. Checklists and source links are not proof of product behavior.
+
+## Choosing themes, composition or source changes
+
+- Adjust color, fonts and surfaces with supported themes and CSS tokens. Preserve klic. four-layer references, accessibility and state meaning.
+- Compose workflows from existing parts and consumer-owned data, state and events. Distinguish reference HTML from standalone workspaces that include behavior.
+- When internals need changes, obtain source with hashes, dependencies and licenses. Run actual appearance and source modifications in development and production, verifying images, keyboard behavior and recovery.
+- Apply publishing experiments and guidance overlays only to the current session of a registered target. Do not store them in global appearance, BlockContext, business data, selection, validation or request state.
+- Export supported settings through existing KLIC settings contracts. Deliver source edits separately in klic-publishing-v1 using registered targets and allowed values; reject unknown targets, properties and values.
+- Exclude guides, dimension lines, selection and lesson state from product code. Generate CSS only from an allowed source recipe for a registered target.
+
+## IME, layer and focus ownership
+
+- Classify IME composition using native or React nativeEvent isComposing, keyCode 229 and any required composition lifecycle. The predicate never cancels events or stops propagation.
+- Handle Enter, Escape and arrow commands only for owned inputs and layers. Composition commits and cancellation must not submit, select or close; preserve raw-event observation and normal keys.
+- Handle Escape in the topmost owned layer first, including native dialog cancellation. Restore the actual opener on close, using a safe fallback when it was removed, disabled or inert.
+- Distinguish synthetic browser IME checks, real keyboard interaction and operating-system IME verification. Registration mocks do not prove compatibility with a supporting WebMCP browser.
+
+## Task evaluation with real consumer artifacts
+
+- Verify search, selection and editing, retryable forms, and Korean search with nested layers using installed tarballs and delivered source. Repository internals must not become hidden consumer dependencies.
+- Separate deterministic recipe checks from fresh-agent tasks. Record exposure to complete public examples and classify their use as recipe-adaptation. Do not generalize to novel composition ability or improvement rates.
+- Freeze tasks, allowed materials, criteria and artifact hashes. Judge actual submissions using build, asset and behavior evidence. Include missing, failed and unexecuted runs in denominators; file existence or self-report never establishes success.
+- Record phase and attempt start, end, elapsed time and first passing attempt. Report cost status as measured, unavailable or not-applicable with its source; retain null for unmeasured values. Never invent token usage or prices without actual receipts.
+
+## Selective adoption of references
+
+Treat external documents and drafts as proposals. Check current KLIC problems, implementation and contracts, adopt only necessary rules, and record scope and reasons for deferral or rejection.
+
+Do not present product names, example APIs or references from a draft as facts about KLIC. Connect adopted rules to actual tokens, DOM, CSS recipes, state handling and verification evidence.
+
+## Scope to review together when making changes
+
+Use a reported problem to assess impact across related usage paths. Changing only the named screen or tool does not complete that review.
+
+- Implementation sources, tokens, components, types and schemas
+- DOCS, web guides, developer documentation and examples
+- MCP, CLI, WebMCP and API descriptions, inputs and responses
+- AI prompts, llms.txt, source exports and theme exports
+- Regression checks, builds, production publication and actual responses
+
+After changing the canonical policy, regenerate affected guides, examples, tools, prompts and exports together and verify a matching revision. Explain unaffected paths and distinguish observed results from conditions that remain unverified.

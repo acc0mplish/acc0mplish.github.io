@@ -1,0 +1,569 @@
+{
+  "id": "flowmotion-bridge-throughput",
+  "category": "data-story",
+  "title": {
+    "ko": "전후 처리량 브리지",
+    "en": "Before and After Throughput Bridge"
+  },
+  "summary": {
+    "ko": "병목 구간과 고속 구간의 입자를 서로 다른 속도대로 전달합니다.",
+    "en": "Moves particles through bottleneck and high-throughput spans at the source pace."
+  },
+  "durationMs": 2400,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "ppt-asis-tobe-bridge"
+    ],
+    "sourceFile": "src/components/PptInfographicCanvases.tsx",
+    "renderer": "PptAsIsToBeBridgeCanvas",
+    "effect": "before-after-stream-particles",
+    "sourceTimeline": {
+      "durationMs": 2400,
+      "description": "The three source rows stagger by idx×0.3; this preview isolates row zero. p1=340+((progress+0×0.3)%1)×90; p2=690+((progress+0×0.3)%1)×90.",
+      "frames": [
+        {
+          "progress": 0,
+          "localT": 0,
+          "beforeX": 340,
+          "afterX": 690
+        },
+        {
+          "progress": 0.25,
+          "localT": 0.25,
+          "beforeX": 362.5,
+          "afterX": 712.5
+        },
+        {
+          "progress": 0.5,
+          "localT": 0.5,
+          "beforeX": 385,
+          "afterX": 735
+        },
+        {
+          "progress": 0.75,
+          "localT": 0.75,
+          "beforeX": 407.5,
+          "afterX": 757.5
+        },
+        {
+          "progress": 1,
+          "localT": 0,
+          "beforeX": 340,
+          "afterX": 690
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"병목에서 개선 구간으로 이어지는 데이터\"><text class=\"label\" text-anchor=\"middle\" x=\"55\" y=\"48\">이전</text><text class=\"label\" text-anchor=\"middle\" x=\"265\" y=\"48\">이후</text><line class=\"danger-line\" x1=\"66\" y1=\"86\" x2=\"128\" y2=\"86\" stroke-width=\"2.5\" stroke-dasharray=\"5 5\"/><line class=\"accent-line\" x1=\"192\" y1=\"86\" x2=\"254\" y2=\"86\" stroke-width=\"3\" stroke-dasharray=\"6 4\"/><circle class=\"danger\" cx=\"66\" cy=\"86\" r=\"5\"/><circle class=\"packet\" cx=\"192\" cy=\"86\" r=\"5\"/><text class=\"small\" text-anchor=\"middle\" x=\"97\" y=\"111\">병목</text><text class=\"small\" text-anchor=\"middle\" x=\"223\" y=\"111\">고속</text></svg></div>",
+    "duration": 2400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".danger",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "66px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.020833333333333332,
+            "cx": "67.292px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.041666666666666664,
+            "cx": "68.583px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.0625,
+            "cx": "69.875px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "71.167px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.10416666666666667,
+            "cx": "72.458px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.125,
+            "cx": "73.75px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.14583333333333334,
+            "cx": "75.042px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "76.333px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.1875,
+            "cx": "77.625px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.20833333333333334,
+            "cx": "78.917px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.22916666666666666,
+            "cx": "80.208px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "81.5px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.2708333333333333,
+            "cx": "82.792px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.2916666666666667,
+            "cx": "84.083px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.3125,
+            "cx": "85.375px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "86.667px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.3541666666666667,
+            "cx": "87.958px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.375,
+            "cx": "89.25px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.3958333333333333,
+            "cx": "90.542px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "91.833px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.4375,
+            "cx": "93.125px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.4583333333333333,
+            "cx": "94.417px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.4791666666666667,
+            "cx": "95.708px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "97px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.5208333333333334,
+            "cx": "98.292px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.5416666666666666,
+            "cx": "99.583px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.5625,
+            "cx": "100.875px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "102.167px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.6041666666666666,
+            "cx": "103.458px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.625,
+            "cx": "104.75px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.6458333333333334,
+            "cx": "106.042px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "107.333px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.6875,
+            "cx": "108.625px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.7083333333333334,
+            "cx": "109.917px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.7291666666666666,
+            "cx": "111.208px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "112.5px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.7708333333333334,
+            "cx": "113.792px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.7916666666666666,
+            "cx": "115.083px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.8125,
+            "cx": "116.375px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "117.667px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.8541666666666666,
+            "cx": "118.958px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.875,
+            "cx": "120.25px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.8958333333333334,
+            "cx": "121.542px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "122.833px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.9375,
+            "cx": "124.125px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.9583333333333334,
+            "cx": "125.417px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.9791666666666666,
+            "cx": "126.708px",
+            "cy": "86px"
+          },
+          {
+            "offset": 1,
+            "cx": "66px",
+            "cy": "86px"
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".packet",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "192px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.020833333333333332,
+            "cx": "193.292px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.041666666666666664,
+            "cx": "194.583px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.0625,
+            "cx": "195.875px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "197.167px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.10416666666666667,
+            "cx": "198.458px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.125,
+            "cx": "199.75px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.14583333333333334,
+            "cx": "201.042px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "202.333px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.1875,
+            "cx": "203.625px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.20833333333333334,
+            "cx": "204.917px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.22916666666666666,
+            "cx": "206.208px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "207.5px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.2708333333333333,
+            "cx": "208.792px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.2916666666666667,
+            "cx": "210.083px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.3125,
+            "cx": "211.375px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "212.667px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.3541666666666667,
+            "cx": "213.958px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.375,
+            "cx": "215.25px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.3958333333333333,
+            "cx": "216.542px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "217.833px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.4375,
+            "cx": "219.125px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.4583333333333333,
+            "cx": "220.417px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.4791666666666667,
+            "cx": "221.708px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "223px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.5208333333333334,
+            "cx": "224.292px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.5416666666666666,
+            "cx": "225.583px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.5625,
+            "cx": "226.875px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "228.167px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.6041666666666666,
+            "cx": "229.458px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.625,
+            "cx": "230.75px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.6458333333333334,
+            "cx": "232.042px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "233.333px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.6875,
+            "cx": "234.625px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.7083333333333334,
+            "cx": "235.917px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.7291666666666666,
+            "cx": "237.208px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "238.5px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.7708333333333334,
+            "cx": "239.792px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.7916666666666666,
+            "cx": "241.083px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.8125,
+            "cx": "242.375px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "243.667px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.8541666666666666,
+            "cx": "244.958px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.875,
+            "cx": "246.25px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.8958333333333334,
+            "cx": "247.542px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "248.833px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.9375,
+            "cx": "250.125px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.9583333333333334,
+            "cx": "251.417px",
+            "cy": "86px"
+          },
+          {
+            "offset": 0.9791666666666666,
+            "cx": "252.708px",
+            "cy": "86px"
+          },
+          {
+            "offset": 1,
+            "cx": "192px",
+            "cy": "86px"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

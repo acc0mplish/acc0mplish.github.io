@@ -1,0 +1,211 @@
+{
+  "id": "flowmotion-cinematic-type",
+  "category": "tx-typing",
+  "title": {
+    "ko": "상태 타자기",
+    "en": "Status typewriter"
+  },
+  "summary": {
+    "ko": "실제 glyph span 다섯 개를 40ms 간격으로 표시합니다.",
+    "en": "Reveal five real glyph spans at the source 40 ms per-character interval."
+  },
+  "durationMs": 200,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "cinematic-node-connect"
+    ],
+    "sourceFile": "src/components/CinematicNodeConnectCanvas.tsx",
+    "renderer": "CinematicNodeConnectCanvas",
+    "effect": "type",
+    "sourceTimeline": {
+      "durationMs": 200,
+      "description": "Source clears the status string and appends one character every 40 ms; KLIC preview uses five segmented glyph spans.",
+      "frames": [
+        {
+          "atMs": 0,
+          "phase": "zero visible glyphs"
+        },
+        {
+          "atMs": 40,
+          "phase": "glyph 1 visible"
+        },
+        {
+          "atMs": 80,
+          "phase": "glyph 2 visible"
+        },
+        {
+          "atMs": 120,
+          "phase": "glyph 3 visible"
+        },
+        {
+          "atMs": 160,
+          "phase": "glyph 4 visible"
+        },
+        {
+          "atMs": 200,
+          "phase": "glyph 5 visible; Ready readable"
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>.fm-root{--fm-blue:var(--klic-semantic-color-accent,#245fc2);--fm-navy:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-component-card-background-default,var(--klic-semantic-color-panel,#fff));--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);--fm-muted:var(--klic-semantic-color-muted,#52657b);--fm-on-blue:var(--klic-semantic-color-on-accent,#fff);--fm-selected:var(--klic-semantic-color-surface-selected,#e4ecfc);box-sizing:border-box;width:100%;height:100%;color:var(--fm-navy);font-family:inherit}.fm-root *{box-sizing:inherit}.fm-root svg{display:block;width:100%;height:100%;overflow:visible;font-family:inherit}.fm-root .fm-surface{fill:var(--fm-surface)}.fm-root .fm-panel{fill:var(--fm-panel);stroke:var(--fm-border)}.fm-root .fm-blue{fill:var(--fm-blue)}.fm-root .fm-blue-stroke{stroke:var(--fm-blue)}.fm-root .fm-ink{fill:var(--fm-navy)}.fm-root .fm-muted{fill:var(--fm-muted)}.fm-root .fm-selected{fill:var(--fm-selected)}.fm-root .fm-on-blue{fill:var(--fm-on-blue)}.fm-root [transform-box]{transform-box:fill-box;transform-origin:center}.fm-root text{font-size:11px;fill:var(--fm-navy)}.fm-root .fm-type-card{min-height:0;height:100%;display:flex;align-items:center;justify-content:center;gap:16px;padding:20px;background:var(--fm-surface);border:1px solid var(--fm-border);border-radius:12px}.fm-root .fm-type-label{color:var(--fm-muted);font-size:12px}.fm-root .fm-type-value{display:flex;color:var(--fm-blue);font-size:24px;font-weight:650;letter-spacing:.02em}.fm-root .fm-type-value>span{display:inline-block;opacity:0;transform:translateY(4px)}</style><div class='fm-root'><div class='fm-type-card' role='img' aria-label='Ready'><span class='fm-type-label'>status</span><span class='fm-type-value'><span aria-hidden='true' class='glyph-0'>R</span><span aria-hidden='true' class='glyph-1'>e</span><span aria-hidden='true' class='glyph-2'>a</span><span aria-hidden='true' class='glyph-3'>d</span><span aria-hidden='true' class='glyph-4'>y</span></span></div></div>",
+    "duration": 200,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".glyph-0",
+        "keyframes": [
+          {
+            "offset": 0,
+            "opacity": 0,
+            "transform": "translateY(4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0,
+            "opacity": 0,
+            "transform": "translateY(4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.2,
+            "opacity": 1,
+            "transform": "translateY(0px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "opacity": 1,
+            "transform": "translateY(0px)",
+            "easing": "linear"
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".glyph-1",
+        "keyframes": [
+          {
+            "offset": 0,
+            "opacity": 0,
+            "transform": "translateY(4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.2,
+            "opacity": 0,
+            "transform": "translateY(4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.4,
+            "opacity": 1,
+            "transform": "translateY(0px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "opacity": 1,
+            "transform": "translateY(0px)",
+            "easing": "linear"
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".glyph-2",
+        "keyframes": [
+          {
+            "offset": 0,
+            "opacity": 0,
+            "transform": "translateY(4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.4,
+            "opacity": 0,
+            "transform": "translateY(4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.6,
+            "opacity": 1,
+            "transform": "translateY(0px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "opacity": 1,
+            "transform": "translateY(0px)",
+            "easing": "linear"
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".glyph-3",
+        "keyframes": [
+          {
+            "offset": 0,
+            "opacity": 0,
+            "transform": "translateY(4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.6,
+            "opacity": 0,
+            "transform": "translateY(4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.8,
+            "opacity": 1,
+            "transform": "translateY(0px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "opacity": 1,
+            "transform": "translateY(0px)",
+            "easing": "linear"
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".glyph-4",
+        "keyframes": [
+          {
+            "offset": 0,
+            "opacity": 0,
+            "transform": "translateY(4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 0.8,
+            "opacity": 0,
+            "transform": "translateY(4px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "opacity": 1,
+            "transform": "translateY(0px)",
+            "easing": "linear"
+          },
+          {
+            "offset": 1,
+            "opacity": 1,
+            "transform": "translateY(0px)",
+            "easing": "linear"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

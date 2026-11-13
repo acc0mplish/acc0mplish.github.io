@@ -1,6 +1,10 @@
 import {DESIGN_ARCHITECTURE} from './design-architecture-data.mjs';
 import {affectGuides} from './affect-components.mjs';
 import {expansionEntries,expansionGuide} from './component-expansion.mjs';
+import {TERMINAL_COMPONENTS,TERMINAL_COMPONENT_IDS,renderTerminalSpecimen} from './terminal-components.mjs';
+import {NATIVE_COMPOSITION_EXAMPLES} from './native-composition-examples.mjs';
+import {initNativeCompositionInteractions} from './native-composition-interactions.mjs';
+import {isComposingInput,isUsableNativeFocusTarget,restoreNativeFocus} from './keyboard-guards.mjs';
 // Documentation for the native examples in catalog.js and app.js.
 // These are HTML attributes, existing CSS classes and browser APIs, not an npm API.
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -11,6 +15,57 @@ const stateRows=rows=>rows.map(([name,condition,response])=>({name,condition,res
 const apiRows=rows=>rows.map(([kind,name,type,defaultValue,description])=>({kind,name,type,default:defaultValue,description}));
 const keyRows=rows=>rows.map(([key,action])=>({key,action}));
 const example=(id,title,description,code,dependencies=NATIVE)=>({id,title,description,code,dependencies});
+const combinationChecks=[
+ {name:'invalid + focus',terms:[['invalid','오류','유효하지'],['focus','포커스']]},
+ {name:'selected + hover + focus',terms:[['selected','선택'],['hover'],['focus','포커스']]},
+ {name:'busy + disabled',terms:[['busy','처리 중','진행 중'],['disabled','비활성']]}
+];
+const any=(text,terms)=>terms.some(term=>text.toLocaleLowerCase().includes(term.toLocaleLowerCase()));
+function documentedCombination(entry,check){
+ const evidence=entry.states.find(state=>check.terms.every(terms=>any(`${state.name} ${state.condition} ${state.response}`,terms)));
+ const unsupported=entry.avoid.find(note=>check.terms.every(terms=>any(note,terms)));
+ const support=evidence?'supported':unsupported?'unsupported':'not-specified';
+ const diagnostic=evidence?evidence.response:unsupported||'현재 가이드에는 이 상태 조합의 지원 근거가 없습니다. 개별 상태만으로 조합을 추론하지 마세요.';
+ return {states:check.name,support,evidence:evidence?{condition:evidence.condition,response:evidence.response}:null,diagnostic};
+}
+function behaviorContract(entry){
+ const markup=entry.examples.map(item=>item.code).join('\n');
+ const nativeElements=[...new Set([...markup.matchAll(/<\s*([a-z][\w-]*)\b/gi)].map(([,tag])=>tag.toLowerCase()).filter(tag=>!['script','style','link'].includes(tag)))];
+ const interactiveElements=nativeElements.filter(tag=>['a','button','input','select','textarea','summary','dialog'].includes(tag));
+ const apiText=entry.api.map(row=>`${row.kind} ${row.name} ${row.type} ${row.description}`).join(' ');
+ const documentedProperties=entry.api.filter(row=>/(?:^|[\s/])(?:value|checked|selected|open|readonly|disabled|aria-(?:selected|pressed|disabled|invalid|busy))(?:$|[\s/])/i.test(row.name));
+ const markedProperties=[...new Set([...markup.matchAll(/\s(value|checked|selected|open|readonly|disabled|aria-[\w-]+)/gi)].map(([,name])=>name.toLowerCase()))];
+ const nativeActivation=key=>/^(?:Enter \/ Space|Space)$/.test(key)&&['button','checkbox','radio','switch','data-grid','accordion'].includes(entry.id);
+ const ownerFor=(key,action)=>{
+  if(/정적|동작이 없습니다|실행 동작이 없습니다|focus 대상에 넣지/.test(action))return 'none';
+  if(/Tab/.test(key)&&interactiveElements.length)return 'browser focus navigation';
+  if(nativeActivation(key))return 'native HTML control';
+  if(/native|브라우저|기본 동작/i.test(action)&&interactiveElements.length)return 'native HTML control';
+  if(/handler|preventDefault|사이트는 조합 중 폼 제출/i.test(action))return 'KLIC DOM handler';
+  return 'not specified by this guide';
+ };
+ const eventOwnership=entry.keyboard.map(item=>{
+  const action=item.action;
+  const defaultBehavior=nativeActivation(item.key)||/기본 동작.{0,12}(?:유지|따릅니다)|native.*default|default.*native/i.test(action)?'preserved':/preventDefault|기본 동작.{0,12}(?:차단|막)/i.test(action)?'prevented by the described handler':'not specified';
+  const propagation=/stopPropagation|전파.{0,8}(?:차단|중단)/i.test(action)?'stopped as described':/전파.{0,8}(?:유지|막지 않)/i.test(action)?'preserved':'not specified';
+  return {key:item.key,owner:ownerFor(item.key,action),action,defaultBehavior,propagation};
+ });
+ const readonlyFacts=entry.api.filter(row=>/readonly/i.test(row.name+' '+row.description));
+ const disabledFacts=entry.api.filter(row=>/disabled/i.test(row.name+' '+row.description));
+ const valueOwnership=documentedProperties.map(row=>({property:row.name,owner:/handler|click|input|change/i.test(row.type+' '+row.description)?'KLIC DOM handler':'native HTML/DOM property',evidence:row.description}));
+ if(!valueOwnership.length&&markedProperties.length)valueOwnership.push({property:markedProperties.join(', '),owner:'native HTML/DOM property',evidence:'Observed in the example markup.'});
+ if(!valueOwnership.length)valueOwnership.push({property:'value / selection',owner:'not modeled or not documented',evidence:'No value-owning property appears in this guide API or example markup.'});
+ return {
+  family:entry.id,
+  nativeElements,
+  valueOwnership,
+  readonlyDisabled:{readonly:readonlyFacts.length?'documented':'not documented',readonlyEvidence:readonlyFacts.map(row=>row.description),disabled:disabledFacts.length?'documented':'not documented',disabledEvidence:disabledFacts.map(row=>row.description)},
+  combinations:combinationChecks.map(check=>documentedCombination(entry,check)),
+  eventOwnership:eventOwnership.length?eventOwnership:[{key:'none',owner:'none',action:'This guide has no keyboard interaction.',defaultBehavior:'not applicable',propagation:'not applicable'}],
+  rawEvents:{imeGuard:'isComposingInput classifies composition state without calling preventDefault() or stopPropagation().',lifecycle:'compositionstart and compositionend are tracked per target; no timeout suppression is used.'},
+  limitations:[...entry.avoid,entry.implementation]
+ };
+}
 const token=(path,purpose)=>({path,purpose});
 const actionHeight=token('klic.component.button.size.default.height','주요 동작 컨트롤의 최소 높이');
 const inputHeight=token('klic.component.input.size.default.height','입력 컨트롤의 최소 높이');
@@ -18,7 +73,7 @@ const fieldGap=token('klic.component.field.spacing.internal','레이블·입력�
 const surface=token('klic.component.card.background.default','콘텐츠를 담는 패널 표면');
 const accent=token('klic.semantic.color.accent','행동·선택·진행을 전달하는 블루');
 const containerGap=token('klic.semantic.space.container.default','독립적인 컨테이너 간격');
-const guide=entry=>({...entry,states:stateRows(entry.states),api:apiRows(entry.api),keyboard:keyRows(entry.keyboard),axes:entry.axes.map((description,i)=>({label:axisLabels[i],description})),sources:[{href:'./catalog.js',title:'HTML 구조 · catalog.js'},{href:'./app.js',title:'이벤트와 상태 처리 · app.js'},{href:'./KLIC_Design_System_PRD_v1.1.md',title:'7 디멘션·4계층 계약 · PRD v1.0'},...(entry.sourceBlock?[{href:'./block-sources/components/blocks/'+entry.sourceBlock+'.tsx',title:'조합 예시 TSX · '+entry.sourceBlock}]:[])]});
+const guide=entry=>({...entry,states:stateRows(entry.states),api:apiRows(entry.api),keyboard:keyRows(entry.keyboard),axes:entry.axes.map((description,i)=>({label:axisLabels[i],description})),sources:[{href:'./catalog.js',title:'HTML 구조 · catalog.js'},{href:'./app.js',title:'이벤트와 상태 처리 · app.js'},{href:'./KLIC_Design_System_PRD_v1.1.md',title:'7 디멘션·4계층 계약 · PRD v1.0'},...(entry.sourceBlock?[{href:'./block-sources/components/blocks/'+entry.sourceBlock+'.tsx',title:'조합 예시 TSX · '+entry.sourceBlock}]:[]),...(entry.terminalStyles?[{href:'./terminal-components.css',title:'터미널 미리보기 스타일 · terminal-components.css'}]:[])]});
 
 export const componentGuideMeta=Object.freeze({version:1,implementation:'native-html',apiScope:'현재 사이트의 HTML·CSS·DOM 계약',architecture:'./design/architecture.json',axisLabels:[...axisLabels],sections:['overview','examples','api','behavior','spec','all']});
 
@@ -29,8 +84,8 @@ const coreComponentGuides=Object.freeze({
   use:['한 화면의 주된 완료 행동은 기본 버튼 한 개로 강조합니다.','보조 행동은 secondary·outline으로, 손실 가능성이 있는 행동은 danger와 구체적인 문구로 구분합니다.'],
   avoid:['다른 URL로 이동할 때는 버튼 대신 실제 href가 있는 링크를 사용합니다.','disabled 스타일만 바꾸거나 aria-disabled만 선언해 중복 실행을 막았다고 가정하지 않습니다.'],
   anatomy:[['레이블','저장하기·프로젝트 만들기처럼 결과를 예측할 수 있는 동사'],['보조 아이콘','레이블 의미를 보충하며 접근성 트리에서는 장식으로 처리'],['실행 상태','비활성·처리 중·완료를 텍스트와 실행 가능 여부로 전달']],
-  states:[['기본','실행 가능한 상태','Enter·Space 또는 포인터로 한 번 실행합니다.'],['hover + focus','포인터가 있고 키보드 포커스도 있음','배경과 focus 외곽선을 함께 유지합니다.'],['disabled','HTML disabled가 설정됨','클릭과 키보드 실행을 차단하고 Tab 순서에서 제외합니다.'],['busy','처리가 진행 중','중복 실행을 차단하고 처리 중 레이블을 표시합니다. 상세 데모는 aria-busy도 제공합니다.'],['완료·재시도','데모 처리가 끝남','원래 레이블과 실행 가능 상태를 복원합니다. 실제 실패·재시도 로직은 제품에서 연결합니다.']],
-  api:[['HTML 속성','type','button | submit | reset','HTML: submit','폼 안의 보조 행동은 type="button"을 명시합니다.'],['HTML 속성','disabled','boolean','false','동작 차단과 focus 가능 여부를 브라우저가 처리합니다.'],['ARIA 속성','aria-busy','true | false','미지정','처리 중 상태를 보조 기술에 전달합니다. 실행 차단은 별도로 필요합니다.'],['CSS 클래스','btn + secondary / outline / ghost / danger','class','btn','기존 사이트의 중요도·의미 표현입니다.'],['CSS 클래스','sm / lg','class','기본 높이','높이·내부 간격을 선택하며 variant와 독립적입니다.'],['사이트 동작','data-action="async-demo"','click handler','미지정','현재 사이트에서 1초 처리·중복 실행 차단·완료 알림을 시연합니다. 실제 저장 요청은 없습니다.']],
+  states:[['기본','실행 가능한 상태','Enter·Space 또는 포인터로 한 번 실행합니다.'],['hover + focus','포인터가 있고 키보드 포커스도 있음','배경과 focus 외곽선을 함께 유지합니다.'],['disabled','HTML disabled가 설정됨','클릭과 키보드 실행을 차단하고 Tab 순서에서 제외합니다.'],['busy','처리가 진행 중이며 native disabled와 aria-busy="true"가 설정됨','native disabled와 aria-busy를 함께 유지하고 disabled guard로 중복 실행을 막습니다. async-demo 완료 후 원래 레이블을 복구하고 disabled와 aria-busy의 이전 상태를 되돌립니다.'],['완료·재시도','데모 처리가 끝남','async-demo 완료 시 원래 레이블을 복구하고 native disabled와 aria-busy의 이전 값을 되돌립니다. 실제 실패·재시도 로직은 제품에서 연결합니다.']],
+  api:[['HTML 속성','type','button | submit | reset','HTML: submit','폼 안의 보조 행동은 type="button"을 명시합니다.'],['HTML 속성','disabled','boolean','false','동작 차단과 focus 가능 여부를 브라우저가 처리합니다.'],['ARIA 속성','aria-busy','true | false','미지정','처리 중 상태를 보조 기술에 전달합니다. 실행 차단은 native disabled와 함께 설정합니다.'],['CSS 클래스','btn + secondary / outline / ghost / danger','class','btn','기존 사이트의 중요도·의미 표현입니다.'],['CSS 클래스','sm / lg','class','기본 높이','높이·내부 간격을 선택하며 variant와 독립적입니다.'],['사이트 동작','data-action="async-demo"','click handler','미지정','현재 사이트에서 1초 처리·native disabled·aria-busy·중복 실행 차단·완료 후 이전 상태 복구를 시연합니다. 실제 저장 요청은 없습니다.']],
   examples:[example('primary','완료 행동과 보조 행동','취소는 보조 버튼, 최종 실행은 기본 버튼으로 구분합니다.',`<div class="button-row">\n  <button class="btn secondary" type="button">취소</button>\n  <button class="btn" type="submit">프로젝트 만들기</button>\n</div>`),example('busy','중복 실행을 막는 처리 데모','기존 async-demo 동작을 사용합니다. 제품 저장 API와는 별개입니다.',`<button class="btn" type="button" data-action="async-demo">\n  저장하기\n</button>`,SITE),example('disabled','권한이 없는 행동','비활성 이유를 버튼 밖의 문장으로 전달합니다.',`<button class="btn outline" type="button" disabled\n        aria-describedby="delete-reason">프로젝트 삭제</button>\n<p id="delete-reason">소유자만 삭제할 수 있습니다.</p>`)],
   keyboard:[['Tab / Shift+Tab','실행 가능한 버튼으로 이동합니다. disabled 버튼은 건너뜁니다.'],['Enter / Space','포커스된 버튼을 실행합니다. native button의 기본 동작을 유지합니다.']],
   accessibility:['아이콘만 있는 버튼에는 작업 이름을 aria-label로 제공합니다.','처리 중에도 사용자가 어떤 작업을 실행했는지 알 수 있는 레이블을 유지합니다.','시각적 높이와 실제 조작 영역을 별도로 확인하고 긴 한글 레이블을 잘라내지 않습니다.'],
@@ -260,7 +315,30 @@ const coreComponentGuides=Object.freeze({
  }),
 });
 
-export const componentGuides=Object.freeze({...affectGuides,...coreComponentGuides,...Object.fromEntries(expansionEntries.map(entry=>[entry.id,expansionGuide(entry,guide)]))});
+const terminalGuidance={
+ 'macos-terminal':{className:'hs-terminal',anatomy:[['창 프레임','메인 화면과 같은 검은 유리·macOS 세 점'],['연결 도구 탭','Codex·Claude·Cursor·CLI·API 설정'],['연결 명령','klic@klic-design ~/KLIC % 프롬프트와 MCP 명령']],size:'데스크톱에서 가용 폭을 채우고 긴 설정만 터미널 영역 안에서 스크롤합니다.',type:'klic-design 호스트의 zsh 프롬프트와 MCP 연결 설정을 고정폭으로 표시합니다.',color:'메인 화면과 같은 어두운 중립 프레임과 텍스트를 사용하고 초록색을 넣지 않습니다.',layout:'세 점 창 컨트롤·경로/복사 줄·5개 클라이언트 탭·명령·안내 순서를 유지합니다.',spacing:'메인 화면의 탭 간격과 명령·안내 영역의 여백을 그대로 따릅니다.',surface:'메인 화면의 검은 유리 프레임과 내부 음영을 재사용합니다. 카드 상단 강조선은 두지 않습니다.',interaction:'클라이언트 탭은 설정 내용을 바꾸고 복사 버튼은 선택된 설정을 복사합니다. 창 컨트롤은 장식입니다.',keyboard:'Tab으로 클라이언트 설정과 복사 버튼에 접근하고 각 탭으로 내용을 바꿉니다.',states:[['초기 선택','Codex 설정이 표시됨','읽기 전용 MCP 연결 명령만 보이며 실행되지 않습니다.'],['탭 전환','다른 클라이언트 선택','설정 코드와 안내 문구만 바뀝니다.']],api:[['클라이언트 탭','data-mcp-terminal-client','string','Codex | Claude | Cursor | CLI | API','선택한 연결 설정을 표시합니다.'],['복사 버튼','data-mcp-terminal-copy','boolean','—','현재 선택된 설정을 복사합니다.'],['설정 코드','data-mcp-terminal-code','text','MCP 설정','선택된 연결 설정 텍스트를 표시합니다.']],checks:['데스크톱 상세 미리보기가 가용 폭을 채우는지 확인합니다.','5개 클라이언트 탭·klic-design 프롬프트·Codex MCP 명령이 메인 화면과 일치하는지 확인합니다.','탭 전환과 복사가 동작하고 명령은 실행되지 않는지 확인합니다.']},
+ 'powershell-terminal':{className:'klic-terminal-windows',anatomy:[['Windows Terminal 탭','PS 아이콘·PowerShell 제목·탭 닫기'],['창 제어','새 탭·메뉴·최소화·최대화·닫기'],['콘솔','Get-Location·Get-ChildItem 명령과 결과·현재 프롬프트']],size:'상세 프리뷰는 가용 폭 전체를 사용하고 좁은 화면에서는 콘솔만 가로 스크롤합니다.',type:'PowerShell 명령 이름과 PS C: 드라이브 프롬프트를 고정폭으로 표시합니다.',color:'검은 콘솔의 밝은 텍스트, 중립 창 크롬과 KLIC blue PS 아이콘을 사용합니다.',layout:'넓은 Windows Terminal 창에 상단 탭 줄과 넓은 콘솔을 배치합니다.',spacing:'명령과 결과를 빈 줄로 나누고 프롬프트를 즉시 다시 읽을 수 있게 둡니다.',surface:'짙은 회색 탭 크롬과 검은 콘솔을 사용하며 카드 상단 강조선은 두지 않습니다.',interaction:'탭·창 제어·커서는 정적 장식이고 명령은 실제 실행되지 않습니다.',checks:['상세 프리뷰에서 터미널 창이 모바일 폭으로 축소되지 않고 가용 폭을 채우는지 확인합니다.','Get-Location·Get-ChildItem 결과와 마지막 프롬프트 커서가 보이는지 확인합니다.']},
+ 'ubuntu-terminal':{className:'klic-terminal-ubuntu',anatomy:[['GNOME 제목줄','새 탭·klic@klic-design 경로·검색·메뉴·창 제어'],['Ubuntu 콘솔','aubergine 배경과 bash 편집 버퍼'],['스크립트','hello.bash 예제와 Vim의 빈 행 표시']],size:'데스크톱에서 창을 가용 폭에 맞추고 긴 버퍼는 Ubuntu 화면 안에서 스크롤합니다.',type:'bash 파일 내용을 고정폭으로 표시하고 명령이나 편집은 실행하지 않습니다.',color:'Ubuntu aubergine 화면과 밝은 코드, 중립 GNOME 제목줄을 사용합니다. 초록색은 넣지 않습니다.',layout:'GNOME 제목줄 아래에 전체 폭 bash 편집 화면을 두며 별도 메타데이터 카드는 두지 않습니다.',spacing:'제목줄은 낮게 유지하고 코드 시작 위치와 Vim 빈 행 간격을 참고 화면에 맞춥니다.',surface:'aubergine 단색 콘솔과 차콜 GNOME 헤더를 사용하며 macOS 유리 프레임이나 Windows 탭은 넣지 않습니다.',interaction:'창 아이콘은 장식이며 bash 예제는 정적 텍스트로만 표시합니다.',checks:['GNOME 헤더의 경로와 검색·메뉴·창 제어가 한 줄에 보이는지 확인합니다.','aubergine 버퍼에 스크립트 4행과 Vim 빈 행이 표시되는지 확인합니다.','호스트명이 klic-design이고 명령이 실행되지 않는지 확인합니다.']},
+ 'ghostty-terminal':{className:'klic-terminal-ghostty-grid',anatomy:[['GTK 제목줄','중앙 경로와 새 탭·메뉴·닫기'],['세션 탭','활성 klic-design과 files 탭'],['Split pane','Project·Processes·Files의 독립 셸 화면']],size:'데스크톱에서 가용 폭을 쓰고 모바일에서는 split pane을 세로로 쌓습니다.',type:'zsh 프롬프트와 apt·btop·ncdu의 고정폭 출력을 표시합니다.',color:'Ghostty graphite 화면·중립 GTK 제목줄·KLIC blue 활성 split을 사용하고 초록색은 넣지 않습니다.',layout:'GTK 제목줄과 세션 탭 아래에 위아래 Project·Processes pane과 오른쪽 Files pane을 배치합니다.',spacing:'pane 사이에는 얇은 분할선을 두고 개별 가짜 제목 막대 없이 터미널 출력을 이어 보입니다.',surface:'Ghostty의 어두운 graphite terminal canvas를 사용합니다. macOS 검은 유리 프레임과 Ubuntu aubergine은 넣지 않습니다.',interaction:'탭·창 제어·split은 정적 배치이며 명령과 Ghostty 프로세스는 실행되지 않습니다.',states:[['기본 창','GTK 제목줄·세션 탭·세 pane이 보임','정적 샘플이며 실행 중인 Ghostty 프로세스를 나타내지 않습니다.'],['Project pane','apt update 결과가 표시됨','패키지 관리 명령은 실행되지 않습니다.'],['Processes pane','btop 프로세스 목록 샘플이 표시됨','실제 시스템 프로세스를 조회하지 않습니다.'],['Files pane','ncdu 저장소 용량 출력이 표시됨','로컬 파일 시스템을 읽지 않습니다.'],['좁은 화면','pane이 세로로 쌓임','패널 순서와 페이지 너비를 유지합니다.']],api:[['CSS 제목줄','.klic-terminal-ghostty-titlebar','class','—','Ghostty의 중앙 경로·창 제어 영역을 배치합니다.'],['CSS 세션 탭','.klic-terminal-ghostty-tabs','class','—','기본 세션과 files 샘플 탭을 표시합니다.'],['CSS split pane','.klic-terminal-ghostty-pane','class','—','Project·Processes·Files 정적 패널의 폭과 순서를 조정합니다.']],checks:['GTK 제목줄·세션 탭과 Project·Processes·Files 3개 pane이 구분되는지 확인합니다.','세 prompt가 모두 klic@klic-design을 사용하고 초록색 UI가 없는지 확인합니다.','모바일에서 pane 순서와 페이지 폭이 유지되는지 확인합니다.']},
+  'termius-terminal':{className:'klic-terminal-termius-workspace',anatomy:[['가로 workspace 탭','Vaults·SFTP·klic-design 세션'],['좌측 navigation','Hosts·SFTP·Port forwarding·Snippets·History'],['SSH split screen','Prod Main·Development·QA·Staging 4개 세션'],['Theme panel','KLIC Blue·Slate·Light 샘플']],size:'데스크톱은 navigation·4-pane SSH 작업 공간·theme panel을 나눠 표시하고 좁은 컨테이너에서는 theme panel을 접습니다.',type:'각 SSH pane에 klic@klic-design 경로와 환경별 정적 명령 출력을 표시합니다.',color:'Termius의 어두운 업무 화면에 KLIC blue 선택·아이콘, amber 미연결 상태, 중립 표면을 적용하고 초록색 팔레트는 제외합니다.',layout:'좌측 navigation, 중앙 2×2 split terminal, 우측 theme panel과 상단 가로 세션 탭으로 구성합니다.',spacing:'탐색과 세션 창을 분리하고 네 pane의 경계·제목을 짧게 유지해 터미널 공간을 확보합니다.',surface:'Termius의 vault navigation과 split-screen 화면 구조를 따르되 Host·Theme 영역은 어두운 중립색으로 구성합니다.',interaction:'navigation·세션 탭·theme은 정적 샘플이며 SSH·SFTP·호스트 저장은 실행되지 않습니다.',keyboard:'정적 샘플에는 작동하는 컨트롤이 없습니다.',checks:['좌측 navigation·상단 가로 탭·2×2 split terminal·theme panel이 함께 보이는지 확인합니다.','모든 세션의 호스트가 klic-design이고 연결 상태가 DEMO · NOT CONNECTED인지 확인합니다.','모바일에서 navigation은 가로로 이동하고 theme panel은 숨겨져 페이지 폭이 유지되는지 확인합니다.']}
+};
+const terminalComponentGuides=Object.fromEntries(TERMINAL_COMPONENTS.map(item=>{
+ const detail=terminalGuidance[item.id];
+ const description=`${item.ko}의 정적 화면 예시입니다. 명령, 출력, 원격 호스트 정보는 표시용 샘플이며 실행되거나 연결되지 않습니다.`;
+ const states=detail.states?.length?[...detail.states]:[['기본','정적 샘플 화면','실행되지 않는 예시임을 명시합니다.'],['긴 출력','출력이 창 너비를 넘침','터미널 내부에서 확인해 페이지 폭을 보존합니다.']];
+ if(states.length<4)states.push(['정적 트랜스크립트','프롬프트·명령·출력이 표시됨','명령이나 SSH 연결은 실행되지 않습니다.'],['좁은 화면',detail.size,'터미널 내부 레이아웃을 유지하고 페이지 폭을 보존합니다.']);
+ const api=[['DOM 속성','data-terminal-demo','string',item.id,'정적 샘플을 식별하며 실행 API는 제공하지 않습니다.'],['DOM 속성','data-terminal-instance','string',`guide-${item.id}`,'각 독립 미리보기의 고유 인스턴스입니다.'],['CSS 출력','.klic-terminal-output','class','—','고정폭 명령·출력을 표시하는 공통 텍스트 영역입니다.'],...(detail.api||[]),['CSS 루트','.klic-terminal--'+item.id,'class','—','항목별 외곽 컴포넌트 범위입니다.'],['CSS 레이아웃',detail.className,'class','—','제품별 창·패널 구조를 조정합니다.']];
+ return [item.id,guide({id:item.id,summary:item.description,terminalStyles:true,implementation:'Native HTML/CSS 참고 컴포넌트입니다. 화면의 명령·호스트·출력은 정적 샘플이며 실제 명령이나 SSH 연결을 실행하지 않습니다.',use:['터미널 종류별 창·프롬프트·탭 또는 호스트 문맥을 구분합니다.','긴 경로와 출력은 터미널 영역 안에서 확인합니다.'],avoid:['샘플 호스트를 실제 연결 상태로 안내하지 않습니다.','미리보기에 실행 스크립트, 로컬 프로세스, 네트워크 연결을 추가하지 않습니다.'],anatomy:detail.anatomy,states,api,keyboard:[['Tab',detail.keyboard||'정적 샘플에는 작동하는 컨트롤이 없습니다.'],['읽기','pre/code 출력은 문서 순서로 읽습니다.']],accessibility:['명령과 출력은 순서가 있는 pre/code 텍스트로 제공합니다.','선택·연결 상태는 문구로 함께 표시하며 색만으로 전달하지 않습니다.','고정폭 출력은 내부에서 스크롤해 페이지 조작을 방해하지 않습니다.'],tokens:[token('klic.component.surface.card.background','터미널 창 표면'),accent,token('klic.semantic.color.text','명령과 출력 텍스트'),token('klic.semantic.color.border','창과 영역 경계'),token('klic.component.field.spacing.internal','창 내부 간격')],checks:detail.checks,axes:[detail.size,detail.type,detail.color,detail.layout,detail.spacing,detail.surface,detail.interaction],examples:[example('default','터미널 창',description,`<link rel="stylesheet" href="./terminal-components.css">\n${renderTerminalSpecimen(item.id,`guide-${item.id}`)}`,'terminal-components.css')],related:TERMINAL_COMPONENT_IDS.filter(id=>id!==item.id)})];
+}));
+const guideEntries={...affectGuides,...coreComponentGuides,...terminalComponentGuides,...Object.fromEntries(expansionEntries.map(entry=>[entry.id,expansionGuide(entry,guide)]))};
+for(const [componentId,composition] of Object.entries(NATIVE_COMPOSITION_EXAMPLES)){
+ const current=guideEntries[componentId];
+ if(!current)continue;
+ const nativeExample=example(composition.id,composition.title,composition.description,composition.code,'native-composition-interactions.mjs · component-expansion.css · styles.css · brand.css · KLIC tokens');
+ guideEntries[componentId]={...current,examples:[...current.examples,nativeExample]};
+}
+for(const [id,current] of Object.entries(guideEntries))guideEntries[id]={...current,behavior:behaviorContract(current)};
+export const componentGuides=Object.freeze(guideEntries);
 
 export function getComponentGuide(id){return Object.hasOwn(componentGuides,id)?componentGuides[id]:null;}
 export function getComponentGuideExample(id,exampleId){return getComponentGuide(id)?.examples.find(e=>e.id===exampleId)?.code??null;}
@@ -298,6 +376,7 @@ export function hydrateComponentGuidePreviews(root){
   });
  }
  for(const preview of root.querySelectorAll('.component-guide-live')){
+  if(preview.querySelector('[data-native-composition]'))initNativeCompositionInteractions(preview);
   for(const checkbox of preview.querySelectorAll('[data-guide-indeterminate]'))if(!checkbox.dataset.guideStateBound){checkbox.indeterminate=true;checkbox.dataset.guideStateBound='true';}
   for(const trigger of preview.querySelectorAll('[data-guide-open-dialog]'))if(!trigger.dataset.guideBound){
    trigger.dataset.guideBound='true';
@@ -305,7 +384,8 @@ export function hydrateComponentGuidePreviews(root){
   }
   for(const dialog of preview.querySelectorAll('dialog'))if(!dialog.dataset.guideBound){
    dialog.dataset.guideBound='true';
-   dialog.addEventListener('close',()=>{const trigger=nativeDialogTriggers.get(dialog);if(trigger?.isConnected)trigger.focus();});
+   dialog.addEventListener('cancel',event=>{if(isComposingInput(event,document.activeElement))event.preventDefault();});
+   dialog.addEventListener('close',()=>{const trigger=nativeDialogTriggers.get(dialog);const localFallback=[...preview.querySelectorAll('button:not(:disabled),a[href],input:not(:disabled),select:not(:disabled),textarea:not(:disabled)')].find(isUsableNativeFocusTarget);const fallback=localFallback||preview.ownerDocument.querySelector('#main-content');restoreNativeFocus(trigger,fallback);});
   }
   for(const close of preview.querySelectorAll('[data-guide-close-dialog]'))if(!close.dataset.guideBound){close.dataset.guideBound='true';close.addEventListener('click',()=>close.closest('dialog')?.close());}
   for(const form of preview.querySelectorAll('[data-guide-submit-preview]'))if(!form.dataset.guideBound){
@@ -326,7 +406,7 @@ const examples=(g,selectedId)=>{
  return `<section class="component-guide component-guide-examples"><div class="component-guide-section-title"><h2>실무 적용 예제</h2><span>${g.examples.length} ${g.examples.length===1?'EXAMPLE':'EXAMPLES'}</span></div><p>${g.examples.length>1?'예제를 선택해 한 화면씩 조작하고 코드를 확인하세요.':'실행 예제를 조작하고 코드와 적용 안내를 확인하세요.'}</p>${g.examples.length>1?`<div class="component-guide-example-picker"><label for="${selectorId}">예제 선택</label><select class="demo-select" id="${selectorId}" data-guide-selector="${g.id}" aria-controls="${panelId}">${g.examples.map((e,i)=>`<option value="${e.id}"${e===selected?' selected':''}>${String(i+1).padStart(2,'0')} · ${esc(e.title)}</option>`).join('')}</select></div>`:''}<article class="component-guide-example" id="${panelId}" data-guide-example-panel aria-label="${esc(selected.title)} 예제">${exampleContent(g,selected)}</article>${guidance}</section>`;
 };
 const api=g=>`<section class="component-guide"><div class="component-guide-section-title"><h2>속성 · 스타일 · 동작</h2><span>IMPLEMENTED CONTRACT</span></div><p>현재 사이트에서 사용하는 HTML 속성, CSS 클래스, DOM API를 구분했습니다. React 패키지의 props 표가 아닙니다.</p>${table(['구분 / 이름','타입','기본값','적용 계약'],g.api.map(p=>[p.kind+' · '+p.name,p.type,p.default,p.description]))}</section>`;
-const behavior=g=>`<section class="component-guide"><div class="component-guide-section-title"><h2>상태와 피드백</h2><span>STATE & INTERACTION</span></div>${table(['상태','조건','화면과 동작'],g.states.map(s=>[s.name,s.condition,s.response]))}<h3>키보드 조작</h3>${table(['입력','동작'],g.keyboard.map(k=>[k.key,k.action]))}<h3>접근성 연결</h3>${list(g.accessibility)}<div class="component-guide-checks"><h3>직접 확인할 항목</h3>${list(g.checks)}</div></section>`;
+const behavior=g=>`<section class="component-guide"><div class="component-guide-section-title"><h2>상태와 피드백</h2><span>STATE & INTERACTION</span></div>${table(['상태','조건','화면과 동작'],g.states.map(s=>[s.name,s.condition,s.response]))}<h3>Native 구조와 값 소유권</h3><p>가족 ID: <code>${esc(g.behavior.family)}</code> · 예제 HTML 요소: ${esc(g.behavior.nativeElements.join(', ')||'해당 없음')}</p>${table(['속성','소유자','근거'],g.behavior.valueOwnership.map(item=>[item.property,item.owner,item.evidence]))}<p>readonly: ${esc(g.behavior.readonlyDisabled.readonly)} · disabled: ${esc(g.behavior.readonlyDisabled.disabled)}</p><h3>조합과 이벤트 책임</h3><h4>상태 조합</h4>${table(['조합','지원 상태','근거 또는 진단'],g.behavior.combinations.map(item=>[item.states,item.support,item.diagnostic]))}<h4>키보드·이벤트 책임</h4>${table(['키','실행자','기본 동작','전파','계약'],g.behavior.eventOwnership.map(item=>[item.key,item.owner,item.defaultBehavior,item.propagation,item.action]))}<p>${esc(g.behavior.rawEvents.imeGuard)} ${esc(g.behavior.rawEvents.lifecycle)}</p><h3>키보드 조작</h3>${table(['입력','동작'],g.keyboard.map(k=>[k.key,k.action]))}<h3>접근성 연결</h3>${list(g.accessibility)}<div class="component-guide-checks"><h3>직접 확인할 항목</h3>${list(g.checks)}</div><h3>지원 범위와 한계</h3>${list(g.behavior.limitations)}</section>`;
 const spec=g=>`<section class="component-guide"><div class="component-guide-section-title"><h2>7 디멘션 명세</h2><span>SEVEN AXES</span></div>${table(['디자인 디멘션','이 컴포넌트의 계약','공통 구현 책임'],g.axes.map((a,i)=>[String(i+1).padStart(2,'0')+' '+a.label,a.description,'토큰: '+DESIGN_ARCHITECTURE.dimensions[i].tokenControl+' / 구조·행동: '+DESIGN_ARCHITECTURE.dimensions[i].structureControl]))}<p>관점별 규칙은 값·구조·동작의 책임을 나누어 구현합니다. <a href="#docs/architecture">설계 책임·프리셋·충돌 해결 기준 ↗</a>에서 연결된 FR/AT와 검증 범위를 확인하세요.</p><h3>4계층 토큰 연결</h3><p>아래 경로는 현재 토큰 fixture에 있는 값입니다. 구조·키보드·상태 전이는 별도의 동작 계약으로 유지합니다.</p><div class="component-guide-tokens">${g.tokens.map(t=>`<a href="#tokens" data-token-link="${esc(t.path)}"><code>${esc(t.path)}</code><span>${esc(t.purpose)}</span></a>`).join('')}</div><h3>함께 사용하는 컴포넌트</h3><div class="component-guide-related">${g.related.map(id=>`<a href="#component/${esc(id)}">${esc(id)} <span aria-hidden="true">↗</span></a>`).join('')}</div><h3>확인한 소스</h3><div class="component-guide-sources">${g.sources.map(s=>`<a href="${esc(s.href)}" target="_blank" rel="noopener">${esc(s.title)} <span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
 
 export function renderComponentGuide(id,section='overview',exampleId){

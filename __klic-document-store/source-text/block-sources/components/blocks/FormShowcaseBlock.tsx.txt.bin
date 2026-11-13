@@ -214,7 +214,7 @@ function IncidentReportFormCard({ isCompact }: { isCompact: boolean }) {
                 </label>
                 <span className="text-[11px] font-mono text-klic-muted">{title.length} / 120자</span>
               </div>
-              <input data-klic-surface="field"
+              <input data-klic-surface="field" data-klic-publishing-target="incident-report-title"
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}

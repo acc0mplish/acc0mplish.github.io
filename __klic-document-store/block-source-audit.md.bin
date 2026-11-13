@@ -91,7 +91,7 @@
 - 상품: `block-runtime/public/catalog/product-01.webp`부터 `product-12.webp`
 - 매핑: `block-runtime/public/catalog/thumbnail-map.json`
 - 24개 합계 257,018바이트. 각 파일은 실제 WebP 디코딩, 이미지 치수, SHA-256 검증 완료.
-- 매핑은 `id`, `mode`, `title`, `originalUrl`, `currentPlaceholder`, `localPath`, `filename`, `bytes`, `contentType`, `format`, `width`, `height`, `sha256`을 기록한다.
+- 매핑은 `id`, `mode`, `title`, `currentPlaceholder`, `localPath`, `filename`, `bytes`, `contentType`, `format`, `width`, `height`, `sha256`을 기록한다. 외부 원본 URL은 배포 데이터에서 제외한다.
 
 `auto=format` 응답이 WebP이므로 확장자도 실제 형식을 따른다. 최종 소스 확인에서 중앙 `componentsData.ts`의 24개 thumbnail 모두 매핑의 `localPath`로 적용된 것을 확인했다. 외부 이미지 요청 없이 원본 교육·상품 이미지 의미를 보존한다.
 
@@ -185,22 +185,9 @@ W 또는 H가 양수가 아니면 자동배율은 1이다. 잘못 저장된 사�
 
 `state.rs:342`의 Toss/Notion 숨김 주석과 달리 실제 `DESIGN_THEMES.iter()` 렌더에는 필터가 없다. 주석만 보고 카드가 2개라고 판단하면 안 된다. Calendar 원본의 여러 색 가운데 녹색도 있으나, 이 사이트에서는 사용자의 KLIC 블루 정책을 우선하므로 색 선택 목록을 그대로 복제할 근거로 삼지 않는다.
 
-## 7. 공식 ReUI Customize: 확인된 기능과 미확인 범위
+## 7. 외부 갤러리와 원본 에셋
 
-공식 1차 자료를 조회했다. 제공 ZIP은 사용자 재구현본이므로 현재 ReUI 전체 목록 숫자를 가져와 ZIP의 누락 수로 계산하지 않는다.
-
-| 확인 사항 | 공식 근거 | KLIC에 적용할 의미 |
-| --- | --- | --- |
-| Customize의 디자인 변수 | [Embed 문서](https://reui.io/docs/embed)의 URL 계약: `style`, `theme`, `font`, `fontHeading`, `chartColor`, `baseColor`, `menuAccent`, `menuColor`, `radius`, `iconLibrary` | 테마·본문/제목 글꼴·차트·neutral/base·메뉴·radius·아이콘 계열은 단순 밀도보다 넓은 공식 기능군 |
-| 디자인 preset | [Registry](https://reui.io/docs/registry): Vega, Nova, Maia, Lyra, Mira, Luma, Sera, Rhea. Base UI와 Radix UI 두 primitive 기반 | 시각 preset과 실제 구현 기반을 구분. 이 업로드 소스가 두 라이브러리 모두로 변환됐다고 주장하면 안 됨 |
-| 미리보기와 복사 코드 | [Components의 Shadcn Create Compatibility](https://reui.io/components): radius·font·base color·color scale이 preview에 반영되고 복사 소스는 같은 CSS 변수 사용 | 설정이 실제 미리보기와 내보낸 토큰/코드에 연결되어야 함 |
-| 상태별 색 토큰 | [Styling](https://reui.io/docs/styling): info/success/warning/invert 등 의미 토큰과 명암별 값 | 의미 토큰 방식은 참고하되 KLIC의 녹색 금지 규칙에 맞춰 색값 결정 |
-| 로딩·embed | 공식 preview는 URL 설정을 최초 렌더에서 읽으며 높이 자동 조절은 제공하지 않음 | 첫 화면 깜빡임 방지·iframe 크기는 host 책임이라는 설계 참고 |
-| 설치 방식 | Registry의 `@reui`는 shadcn registry namespace이며 npm package scope 설치가 아님 | `npm i @reui/...` 또는 업로드의 가짜 `@flux-ui/...` 명령을 실제 설치 안내로 노출하면 안 됨 |
-
-확인하지 못한 사항: 실제 Customize 패널의 전체 화면 캡처, 모든 선택값 목록, import/export/reset 버튼의 정확한 존재·배치, 화면배율 퍼센트 제어와 Desktop/Tablet/Mobile의 구체 값. 공식 문서의 디자인 변수 계약에서 이런 UI까지 추정하지 않는다. KLIC에서 설정 JSON/CSS export, 저장 preset, 전역 textScale을 제공하는 것은 합리적인 확장이지만 “공식 ReUI에 동일 버튼이 있다”는 단정은 피한다.
-
-공식 원격 preview의 framing 계약과 로컬 업로드 소스로 만든 React iframe은 다른 대상이다. 이번 구현은 원격 ReUI iframe을 삽입한 것이 아니므로, 원격 embed 조건을 로컬 소스 실행의 기술적 장애로 해석하지 않는다.
+배포 Site는 별도 upstream 예제 importer/gallery와 외부 원본 이미지 URL 목록을 제공하지 않는다. 채택한 소스 파일에는 적용되는 저작권·라이선스 고지만 보존한다.
 
 ## 8. 최종 반영 상태와 남는 제한
 
@@ -228,7 +215,7 @@ W 또는 H가 양수가 아니면 자동배율은 1이다. 잘못 저장된 사�
 
 인물 사진은 OpenAI imagegen으로 생성된 가상 인물이며 provenance와 이름별 고유 매핑을 기록했다. 원본의 재사용 사진 URL만으로 사람을 식별하지 않는다. 교육·상품 24개 이미지는 이 가상 인물 사진과 별개로 원본 URL 응답을 보존한 자산이다.
 
-최종 KLIC 화면배율 선택은 80/90/100/110/125/150%이고 자동 배율은 선택 옵션이다. Calendar의 사용자 단계 80/90/100/110/120/135/150%와 정확히 같지는 않다. radius 값, 글꼴 수, 전역 textScale, 프리셋과 내보내기 역시 KLIC에 맞춘 선택·확장이며 Calendar 또는 ReUI의 전체 기능을 동일하게 복제했다는 뜻은 아니다. 강조색은 KLIC·Royal·Navy 블루 계열로 제한했다.
+최종 KLIC 화면배율 선택은 80/90/100/110/125/150%이고 자동 배율은 선택 옵션이다. Calendar의 사용자 단계 80/90/100/110/120/135/150%와 정확히 같지는 않다. radius 값, 글꼴 수, 전역 textScale, 프리셋과 내보내기 역시 KLIC에 맞춘 선택·확장이며 Calendar 또는 외부 제품의 전체 기능을 동일하게 복제했다는 뜻은 아니다. 강조색은 KLIC·Royal·Navy 블루 계열로 제한했다.
 
 | 유지되는 제한 | 최종 설명 |
 | --- | --- |
@@ -276,7 +263,7 @@ W 또는 H가 양수가 아니면 자동배율은 1이다. 잘못 저장된 사�
 | ErrorBudgetBurnBlock | 1 | error-budget-burn |
 | EnvironmentPipelineBlock | 1 | env-promotion-pipeline |
 | StatusTrackerBlock | 3 | cron-run-history-tracker, uptime-sla-tracker, incident-health-bars |
-| CapitalInflowsBlock | 3 | capital-inflows-bar, revenue-breakdown-bar, headcount-cost-bar |
+| CapitalInflowsBlock | 1 | capital-inflows-bar |
 | SupportTicketsBlock | 1 | support-tickets |
 | StripedRowsBlock | 1 | striped-rows |
 | SlaRiskIndexBlock | 1 | sla-risk-index |

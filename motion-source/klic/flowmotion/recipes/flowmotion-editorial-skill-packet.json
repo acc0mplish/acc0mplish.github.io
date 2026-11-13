@@ -1,0 +1,431 @@
+{
+  "id": "flowmotion-editorial-skill-packet",
+  "category": "svg-path",
+  "title": {
+    "ko": "스킬 카드 베지어 패킷",
+    "en": "Skill Card Bezier Packet"
+  },
+  "summary": {
+    "ko": "스킬 카드에서 AI 허브까지 원본 이차 베지어 곡선을 따라 이동합니다.",
+    "en": "Moves from the skill card to the AI hub along the source quadratic Bezier curve."
+  },
+  "durationMs": 2400,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "editorial-mcp-skill-compare"
+    ],
+    "sourceFile": "src/components/EditorialMcpSkillCanvas.tsx",
+    "renderer": "EditorialMcpSkillCanvas",
+    "effect": "skill-to-hub-quadratic-packet",
+    "sourceTimeline": {
+      "durationMs": 2400,
+      "description": "Source quadratic path: start=(256,132), control=(294,102), end=(332,118). localT=(ambientProgress×1.4)%1; quadratic Bernstein interpolation with inv=1−localT.",
+      "frames": [
+        {
+          "progress": 0,
+          "localT": 0,
+          "sourceX": 256,
+          "sourceY": 132,
+          "x": 87,
+          "y": 132
+        },
+        {
+          "progress": 0.25,
+          "localT": 0.35,
+          "sourceX": 282.6,
+          "sourceY": 116.635,
+          "x": 140.9,
+          "y": 93.075
+        },
+        {
+          "progress": 0.5,
+          "localT": 0.7,
+          "sourceX": 309.2,
+          "sourceY": 112.54,
+          "x": 194.8,
+          "y": 82.701
+        },
+        {
+          "progress": 0.7142857142857143,
+          "localT": 0,
+          "sourceX": 256,
+          "sourceY": 132,
+          "x": 87,
+          "y": 132
+        },
+        {
+          "progress": 0.75,
+          "localT": 0.05,
+          "sourceX": 259.8,
+          "sourceY": 129.115,
+          "x": 94.7,
+          "y": 124.691
+        },
+        {
+          "progress": 1,
+          "localT": 0.4,
+          "sourceX": 286.4,
+          "sourceY": 115.36,
+          "x": 148.6,
+          "y": 89.845
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"스킬 카드에서 허브로 이동하는 패킷\"><rect class=\"node-bg\" x=\"18\" y=\"105\" width=\"76\" height=\"34\" rx=\"8\"/><text class=\"label\" x=\"27\" y=\"119\">스킬</text><text class=\"small\" x=\"27\" y=\"132\">절차 안내</text><rect class=\"node-bg\" x=\"226\" y=\"46\" width=\"76\" height=\"34\" rx=\"8\"/><text class=\"label\" x=\"235\" y=\"60\">AI 허브</text><text class=\"small\" x=\"235\" y=\"73\">도구 호출</text><path class=\"flow\" d=\"M 87 132 Q 164 56, 241 96.53333333333333\"/><circle class=\"packet\" cx=\"87\" cy=\"132\" r=\"5\"/></svg></div>",
+    "duration": 2400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 0.5,
+    "tracks": [
+      {
+        "selector": ".packet",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "87px",
+            "cy": "132px"
+          },
+          {
+            "offset": 0.015625,
+            "cx": "90.369px",
+            "cy": "128.731px"
+          },
+          {
+            "offset": 0.03125,
+            "cx": "93.737px",
+            "cy": "125.573px"
+          },
+          {
+            "offset": 0.046875,
+            "cx": "97.106px",
+            "cy": "122.527px"
+          },
+          {
+            "offset": 0.0625,
+            "cx": "100.475px",
+            "cy": "119.592px"
+          },
+          {
+            "offset": 0.078125,
+            "cx": "103.844px",
+            "cy": "116.769px"
+          },
+          {
+            "offset": 0.09375,
+            "cx": "107.212px",
+            "cy": "114.057px"
+          },
+          {
+            "offset": 0.109375,
+            "cx": "110.581px",
+            "cy": "111.457px"
+          },
+          {
+            "offset": 0.125,
+            "cx": "113.95px",
+            "cy": "108.969px"
+          },
+          {
+            "offset": 0.140625,
+            "cx": "117.319px",
+            "cy": "106.592px"
+          },
+          {
+            "offset": 0.15625,
+            "cx": "120.688px",
+            "cy": "104.326px"
+          },
+          {
+            "offset": 0.171875,
+            "cx": "124.056px",
+            "cy": "102.172px"
+          },
+          {
+            "offset": 0.1875,
+            "cx": "127.425px",
+            "cy": "100.13px"
+          },
+          {
+            "offset": 0.203125,
+            "cx": "130.794px",
+            "cy": "98.199px"
+          },
+          {
+            "offset": 0.21875,
+            "cx": "134.162px",
+            "cy": "96.38px"
+          },
+          {
+            "offset": 0.234375,
+            "cx": "137.531px",
+            "cy": "94.672px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "140.9px",
+            "cy": "93.075px"
+          },
+          {
+            "offset": 0.265625,
+            "cx": "144.269px",
+            "cy": "91.591px"
+          },
+          {
+            "offset": 0.28125,
+            "cx": "147.638px",
+            "cy": "90.217px"
+          },
+          {
+            "offset": 0.296875,
+            "cx": "151.006px",
+            "cy": "88.955px"
+          },
+          {
+            "offset": 0.3125,
+            "cx": "154.375px",
+            "cy": "87.805px"
+          },
+          {
+            "offset": 0.328125,
+            "cx": "157.744px",
+            "cy": "86.766px"
+          },
+          {
+            "offset": 0.34375,
+            "cx": "161.112px",
+            "cy": "85.839px"
+          },
+          {
+            "offset": 0.359375,
+            "cx": "164.481px",
+            "cy": "85.024px"
+          },
+          {
+            "offset": 0.375,
+            "cx": "167.85px",
+            "cy": "84.32px"
+          },
+          {
+            "offset": 0.390625,
+            "cx": "171.219px",
+            "cy": "83.727px"
+          },
+          {
+            "offset": 0.40625,
+            "cx": "174.588px",
+            "cy": "83.246px"
+          },
+          {
+            "offset": 0.421875,
+            "cx": "177.956px",
+            "cy": "82.876px"
+          },
+          {
+            "offset": 0.4375,
+            "cx": "181.325px",
+            "cy": "82.618px"
+          },
+          {
+            "offset": 0.453125,
+            "cx": "184.694px",
+            "cy": "82.472px"
+          },
+          {
+            "offset": 0.46875,
+            "cx": "188.063px",
+            "cy": "82.437px"
+          },
+          {
+            "offset": 0.484375,
+            "cx": "191.431px",
+            "cy": "82.513px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "194.8px",
+            "cy": "82.701px"
+          },
+          {
+            "offset": 0.515625,
+            "cx": "198.169px",
+            "cy": "83.001px"
+          },
+          {
+            "offset": 0.53125,
+            "cx": "201.537px",
+            "cy": "83.412px"
+          },
+          {
+            "offset": 0.546875,
+            "cx": "204.906px",
+            "cy": "83.935px"
+          },
+          {
+            "offset": 0.5625,
+            "cx": "208.275px",
+            "cy": "84.569px"
+          },
+          {
+            "offset": 0.578125,
+            "cx": "211.644px",
+            "cy": "85.315px"
+          },
+          {
+            "offset": 0.59375,
+            "cx": "215.013px",
+            "cy": "86.172px"
+          },
+          {
+            "offset": 0.609375,
+            "cx": "218.381px",
+            "cy": "87.141px"
+          },
+          {
+            "offset": 0.625,
+            "cx": "221.75px",
+            "cy": "88.221px"
+          },
+          {
+            "offset": 0.640625,
+            "cx": "225.119px",
+            "cy": "89.413px"
+          },
+          {
+            "offset": 0.65625,
+            "cx": "228.487px",
+            "cy": "90.716px"
+          },
+          {
+            "offset": 0.671875,
+            "cx": "231.856px",
+            "cy": "92.131px"
+          },
+          {
+            "offset": 0.6875,
+            "cx": "235.225px",
+            "cy": "93.657px"
+          },
+          {
+            "offset": 0.703125,
+            "cx": "238.594px",
+            "cy": "95.295px"
+          },
+          {
+            "offset": 0.714186,
+            "cx": "240.979px",
+            "cy": "96.522px"
+          },
+          {
+            "offset": 0.714286,
+            "cx": "87px",
+            "cy": "132px"
+          },
+          {
+            "offset": 0.714386,
+            "cx": "87.022px",
+            "cy": "131.979px"
+          },
+          {
+            "offset": 0.71875,
+            "cx": "87.963px",
+            "cy": "131.055px"
+          },
+          {
+            "offset": 0.734375,
+            "cx": "91.331px",
+            "cy": "127.817px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "94.7px",
+            "cy": "124.691px"
+          },
+          {
+            "offset": 0.765625,
+            "cx": "98.069px",
+            "cy": "121.677px"
+          },
+          {
+            "offset": 0.78125,
+            "cx": "101.438px",
+            "cy": "118.774px"
+          },
+          {
+            "offset": 0.796875,
+            "cx": "104.806px",
+            "cy": "115.983px"
+          },
+          {
+            "offset": 0.8125,
+            "cx": "108.175px",
+            "cy": "113.303px"
+          },
+          {
+            "offset": 0.828125,
+            "cx": "111.544px",
+            "cy": "110.735px"
+          },
+          {
+            "offset": 0.84375,
+            "cx": "114.912px",
+            "cy": "108.278px"
+          },
+          {
+            "offset": 0.859375,
+            "cx": "118.281px",
+            "cy": "105.933px"
+          },
+          {
+            "offset": 0.875,
+            "cx": "121.65px",
+            "cy": "103.7px"
+          },
+          {
+            "offset": 0.890625,
+            "cx": "125.019px",
+            "cy": "101.577px"
+          },
+          {
+            "offset": 0.90625,
+            "cx": "128.388px",
+            "cy": "99.567px"
+          },
+          {
+            "offset": 0.921875,
+            "cx": "131.756px",
+            "cy": "97.668px"
+          },
+          {
+            "offset": 0.9375,
+            "cx": "135.125px",
+            "cy": "95.88px"
+          },
+          {
+            "offset": 0.953125,
+            "cx": "138.494px",
+            "cy": "94.204px"
+          },
+          {
+            "offset": 0.96875,
+            "cx": "141.862px",
+            "cy": "92.64px"
+          },
+          {
+            "offset": 0.984375,
+            "cx": "145.231px",
+            "cy": "91.187px"
+          },
+          {
+            "offset": 1,
+            "cx": "148.6px",
+            "cy": "89.845px"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

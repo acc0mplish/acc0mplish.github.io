@@ -1,6 +1,6 @@
 {
   "verifiedDate": "2026-10-26",
-  "usage": "Public MIT source references for KLIC native adaptations. Each slot is a source pattern or an explicitly marked related/KLIC composition, not a claim of direct copying or visual parity.",
+  "usage": "Pinned source references retained for non-ReUI Native design patterns are research metadata, not runtime dependencies or implementation licenses. ReUI source examples and assets are not shipped; its standalone MIT notice remains.",
   "components": [
     {
       "component": "accordion",
@@ -199,42 +199,8 @@
     },
     {
       "component": "anchor",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/scrollspy/c-scrollspy-2.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/scrollspy/c-scrollspy-2.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "6042f482600d05dcea96b5331f11af871a265fa15172e773b760da0b8e1d7b53",
-      "characters": 1719,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:scrollspy:1",
-          "structuralIdea": "스크롤 위치와 섹션 탐색 연결",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/scrollspy/c-scrollspy-1.tsx",
-          "sha256": "fdd7b15f9ab077e088eb689d1bb3f5e5308984c4028fb2e251c276d21c675a08",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/scrollspy/c-scrollspy-1.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:scrollspy:2",
-          "structuralIdea": "제한된 스크롤 영역과 섹션 이동",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/scrollspy/c-scrollspy-2.tsx",
-          "sha256": "6042f482600d05dcea96b5331f11af871a265fa15172e773b760da0b8e1d7b53",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/scrollspy/c-scrollspy-2.tsx"
-        },
         {
           "slot": 3,
           "sourceToken": "sidebar-menu-sub",
@@ -330,14 +296,6 @@
     },
     {
       "component": "autocomplete",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/autocomplete/c-autocomplete-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/autocomplete/c-autocomplete-4.tsx",
-      "relation": "direct-category",
-      "fileFetched": true,
-      "sha256": "70038d2c7f4f0c857ec5e4400514856a98ac79a59e2e68e0d4c1265963cd4b81",
-      "characters": 3145,
       "variantReferences": [
         {
           "slot": 1,
@@ -590,14 +548,6 @@
     },
     {
       "component": "banner",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/alert/c-alert-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/alert/c-alert-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "b9f562fb1d0aa82e9b10e3c3de2d81d9d86a00d356d6e9b9b83c81172f41e225",
-      "characters": 833,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -656,14 +606,6 @@
     },
     {
       "component": "bar-chart",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/chart/c-chart-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/chart/c-chart-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "33d79eb2c00a12cd500743d9252fd510501a6a44e40948c4f539b0cc07b295e0",
-      "characters": 4750,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -787,14 +729,6 @@
     },
     {
       "component": "bottom-navigation",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/navigation-menu/c-navigation-menu-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/navigation-menu/c-navigation-menu-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "56121ed9b0aca239704b27b8efebbf651219ac589ec89c8893a6c308ccd24226",
-      "characters": 4454,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -1134,45 +1068,6 @@
           "sha256": "f4b3e4d827225a24a122d1e7e0ad2da353c2dfb508f91805e7059ff395de3c30",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/card-image.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:card:10",
-          "structuralIdea": "아바타·이름·이메일 저자 카드",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/card/c-card-10.tsx",
-          "sha256": "7c49c92e28606ff0937e43b4e81c52c03334fd08c2a0b6885b497d44fa4cc084",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/card/c-card-10.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:card:12",
-          "structuralIdea": "이메일·비밀번호 로그인 카드",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/card/c-card-12.tsx",
-          "sha256": "9df20ef0f1179cc3ead79231efc8a45a8623521cc3b8b36dcf00e96f5cecbb45",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/card/c-card-12.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:card:13",
-          "structuralIdea": "결제 사용량·지표·진행률 카드",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/card/c-card-13.tsx",
-          "sha256": "50e35c9742f217fcc8ecfdd5377cc5371675d1f601b095f4255eece24117a737",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/card/c-card-13.tsx"
         }
       ]
     },
@@ -1243,68 +1138,7 @@
     },
     {
       "component": "cascader",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/cascader/c-cascader-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/cascader/c-cascader-4.tsx",
-      "relation": "direct-category",
-      "fileFetched": true,
-      "sha256": "c3ebe85657986a88e2b0dc1f0c7ee2fe608ff87faa84a86f93ba2dfe987bcbb1",
-      "characters": 16650,
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:cascader:4",
-          "structuralIdea": "아이콘·하위 경로·하단 행동 메뉴",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/cascader/c-cascader-4.tsx",
-          "sha256": "c3ebe85657986a88e2b0dc1f0c7ee2fe608ff87faa84a86f93ba2dfe987bcbb1",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/cascader/c-cascader-4.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:cascader:7",
-          "structuralIdea": "카드 안에 항상 보이는 계층 선택",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/cascader/c-cascader-7.tsx",
-          "sha256": "456b0cbd1623ced663c08be839b4ba9ba03b530feebff4d7f7d343cbbfc621ff",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/cascader/c-cascader-7.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:cascader:10",
-          "structuralIdea": "하위 단계로 이동하는 계층 선택",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/cascader/c-cascader-10.tsx",
-          "sha256": "12056185f936c74f6ddaa6be3e07e80e672165affc05732e4432e20b53587ada",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/cascader/c-cascader-10.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:cascader:12",
-          "structuralIdea": "문의 주제 계층 선택과 제출 폼",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/cascader/c-cascader-12.tsx",
-          "sha256": "dd3a244b5c08bf786a552a655150ab64589b64a7f70104c57f1820edfab35ebb",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/cascader/c-cascader-12.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "checkbox",
@@ -1373,14 +1207,6 @@
     },
     {
       "component": "chip",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/badge/c-badge-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/badge/c-badge-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "e4c95d765d17d68c58fb6a49ac9ce438840b483129b287416014843eebfa32b4",
-      "characters": 149,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -1569,68 +1395,7 @@
     },
     {
       "component": "color-picker",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/color-picker/c-color-picker-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/color-picker/c-color-picker-4.tsx",
-      "relation": "direct-category",
-      "fileFetched": true,
-      "sha256": "14097d1f1265c1aa7eae0a2fa54e204d729a7a6ebaa0352b21389e5e5bdc1fa8",
-      "characters": 1814,
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:color-picker:4",
-          "structuralIdea": "미디어 오버레이 색·투명도",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/color-picker/c-color-picker-4.tsx",
-          "sha256": "14097d1f1265c1aa7eae0a2fa54e204d729a7a6ebaa0352b21389e5e5bdc1fa8",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/color-picker/c-color-picker-4.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:color-picker:7",
-          "structuralIdea": "색 영역·슬라이더·형식 선택",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/color-picker/c-color-picker-7.tsx",
-          "sha256": "405206d712f2f799cadf3cafcd8585a49b3b4251e4727021158a87f02e9d8b93",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/color-picker/c-color-picker-7.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:color-picker:10",
-          "structuralIdea": "서식 도구의 글자색 메뉴",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/color-picker/c-color-picker-10.tsx",
-          "sha256": "fcf34918d70977e3621e262a5b80f7e18799a9f88f4c54b5b84e1a39934b2a09",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/color-picker/c-color-picker-10.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:color-picker:13",
-          "structuralIdea": "본문/배경 색과 대비 확인",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/color-picker/c-color-picker-13.tsx",
-          "sha256": "bf2593eac3451869a4f6197f544df767e5b76b5eef561cf53c7775e59f36f3f8",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/color-picker/c-color-picker-13.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "combobox",
@@ -1829,68 +1594,7 @@
     },
     {
       "component": "data-grid",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/data-grid/c-data-grid-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/data-grid/c-data-grid-4.tsx",
-      "relation": "direct-category",
-      "fileFetched": true,
-      "sha256": "bed80bf8807f416ed13c14bc18672bfb033304cf64dc59ecd7b6be331f4b8b4b",
-      "characters": 9161,
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:data-grid:4",
-          "structuralIdea": "프로필·상태 배지를 가진 데이터 표",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/data-grid/c-data-grid-4.tsx",
-          "sha256": "bed80bf8807f416ed13c14bc18672bfb033304cf64dc59ecd7b6be331f4b8b4b",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/data-grid/c-data-grid-4.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:data-grid:10",
-          "structuralIdea": "열별 정렬 헤더가 있는 데이터 표",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/data-grid/c-data-grid-10.tsx",
-          "sha256": "87b488db9b79b7652fb293cb7151964bde1306d373819a554cd5dac411093367",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/data-grid/c-data-grid-10.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:data-grid:16",
-          "structuralIdea": "카드 표면에 담은 상태·프로필 표",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/data-grid/c-data-grid-16.tsx",
-          "sha256": "fa06e614c9ecd9d2bc32d2bdfb851b987be385a4daed230a8d8f53a6aa4ac7c7",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/data-grid/c-data-grid-16.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:data-grid:22",
-          "structuralIdea": "검색·행별 액션·프로필 정보 그리드",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/data-grid/c-data-grid-22.tsx",
-          "sha256": "fa453ff6c9425ce143f05189dbf16da17ad00bbe746e2ebd75a0eb1f79a99729",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/data-grid/c-data-grid-22.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "date-picker",
@@ -2025,14 +1729,6 @@
     },
     {
       "component": "descriptions",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/item/c-item-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/item/c-item-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "afa2920488596e9d3065d0e255f5d51d56870020d6014c0a0af7cbea6bc3dbfe",
-      "characters": 3096,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -2112,32 +1808,6 @@
           "sha256": "fb2a727ced06f58051a11abdfd96d267c40ab9ce0ba807f6a0deec34c4013739",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/dialog-sticky-footer.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:dialog:6",
-          "structuralIdea": "화면 전체를 쓰는 고정 헤더·푸터 대화상자",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/dialog/c-dialog-6.tsx",
-          "sha256": "eb3a63e251a17b17d7defa0fe5cdf4db230981c41dfae9b6b91ea55920be476d",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/dialog/c-dialog-6.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:dialog:8",
-          "structuralIdea": "여러 쿠키 설정 스위치 폼",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/dialog/c-dialog-8.tsx",
-          "sha256": "030f8289b1ac2dc01d690a413c8adad7482641c2dd16a38c1bcb18562fdc82a4",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/dialog/c-dialog-8.tsx"
         },
         {
           "slot": 4,
@@ -2286,80 +1956,11 @@
     },
     {
       "component": "dropzone",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/file-upload/c-file-upload-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/file-upload/c-file-upload-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "d319dec4977aeebf1369ad84f818eb15a3743e1bf98102cd70422dc8067bfaa3",
-      "characters": 11016,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:file-upload:3",
-          "structuralIdea": "여러 파일 목록과 드롭 영역",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/file-upload/c-file-upload-3.tsx",
-          "sha256": "b89d9ddb6c2e1401b15b5092a7f79a10ed45d14c3bfb343b17c38e0552120c35",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/file-upload/c-file-upload-3.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:file-upload:4",
-          "structuralIdea": "이미지 갤러리와 미리보기 대화상자",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/file-upload/c-file-upload-4.tsx",
-          "sha256": "d319dec4977aeebf1369ad84f818eb15a3743e1bf98102cd70422dc8067bfaa3",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/file-upload/c-file-upload-4.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:file-upload:7",
-          "structuralIdea": "단일 이미지 선택·진행 카드",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/file-upload/c-file-upload-7.tsx",
-          "sha256": "173b2b85d114970806c707205e3bf16ea370dae3a776e7931f97f2974f7ae4b7",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/file-upload/c-file-upload-7.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:file-upload:10",
-          "structuralIdea": "커버 이미지 교체와 제거",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/file-upload/c-file-upload-10.tsx",
-          "sha256": "79974d9bd8ac8f417c2520c9768680a3ab5bcffa6133e84e49819e2a5914767b",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/file-upload/c-file-upload-10.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "empty-state",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/empty/c-empty-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/empty/c-empty-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "3871f649f64fd650c59922eb114639710b5928c6013041c1ece3d1ae7ae9a6cc",
-      "characters": 1383,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -2504,45 +2105,6 @@
           "sha256": "779ccaa3033d260fec31aadffd76623afa0df0adab258525fd1f088cb056387b",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/file-upload-list.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:file-upload:4",
-          "structuralIdea": "이미지 갤러리와 미리보기 대화상자",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/file-upload/c-file-upload-4.tsx",
-          "sha256": "d319dec4977aeebf1369ad84f818eb15a3743e1bf98102cd70422dc8067bfaa3",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/file-upload/c-file-upload-4.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:file-upload:7",
-          "structuralIdea": "단일 이미지 선택·진행 카드",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/file-upload/c-file-upload-7.tsx",
-          "sha256": "173b2b85d114970806c707205e3bf16ea370dae3a776e7931f97f2974f7ae4b7",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/file-upload/c-file-upload-7.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:file-upload:10",
-          "structuralIdea": "커버 이미지 교체와 제거",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/file-upload/c-file-upload-10.tsx",
-          "sha256": "79974d9bd8ac8f417c2520c9768680a3ab5bcffa6133e84e49819e2a5914767b",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/file-upload/c-file-upload-10.tsx"
         }
       ]
     },
@@ -2621,98 +2183,11 @@
       "fileFetched": true,
       "sha256": "4912ae2cda22e25d40b922bf14a0c7eee3ca71906409b95e740a7ebef2558a7a",
       "characters": 831,
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:hover-card:3",
-          "structuralIdea": "아바타·소개·관련 정보 프로필",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/hover-card/c-hover-card-3.tsx",
-          "sha256": "fc2d61761424a5d4acdc7372cbb3b3b7b3dfc9f4eeb0581e4694c8f1474771e6",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/hover-card/c-hover-card-3.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:hover-card:5",
-          "structuralIdea": "이미지와 캡션 미리보기",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/hover-card/c-hover-card-5.tsx",
-          "sha256": "7851e6cd7de74b0762e2f5a9058466f501d5a26fe7307f115f1ee80965ffc1f8",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/hover-card/c-hover-card-5.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:hover-card:7",
-          "structuralIdea": "배포 시각과 UTC 상세",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/hover-card/c-hover-card-7.tsx",
-          "sha256": "4806a09ba65c4544894a937ad61afff3960a312f1399cc05e02dd90960978778",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/hover-card/c-hover-card-7.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:hover-card:8",
-          "structuralIdea": "릴리스 정보와 다음 행동",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/hover-card/c-hover-card-8.tsx",
-          "sha256": "dfe3dc2a76ff7311718bcb2b5fe7833b4151b0830e1390b988281d5c9a71005f",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/hover-card/c-hover-card-8.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "icon",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/icon-tile/c-icon-tile-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/icon-tile/c-icon-tile-4.tsx",
-      "relation": "direct-category",
-      "fileFetched": true,
-      "sha256": "95ce574f65e21670e36936de069b82f1c845f0828c6d1cf17f3dab1935a8c4cd",
-      "characters": 699,
       "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:icon-tile:4",
-          "structuralIdea": "정해진 표면 안의 아이콘 타일",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/icon-tile/c-icon-tile-4.tsx",
-          "sha256": "95ce574f65e21670e36936de069b82f1c845f0828c6d1cf17f3dab1935a8c4cd",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/icon-tile/c-icon-tile-4.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:icon-stack:1",
-          "structuralIdea": "겹친 아이콘 스택",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/icon-stack/c-icon-stack-1.tsx",
-          "sha256": "f22b977115f8a2617b0289da0ead97065ba8f644ca74920f9922039041ef39ef",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/icon-stack/c-icon-stack-1.tsx"
-        },
         {
           "slot": 3,
           "sourceToken": "badge-icon",
@@ -2743,14 +2218,6 @@
     },
     {
       "component": "image",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/aspect-ratio/c-aspect-ratio-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/aspect-ratio/c-aspect-ratio-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "6b3cd1a0d8622e495f1196a6f86d67253329151c51e0216c14f5e3aacd92307e",
-      "characters": 511,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -3200,14 +2667,6 @@
     },
     {
       "component": "list",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/item/c-item-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/item/c-item-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "afa2920488596e9d3065d0e255f5d51d56870020d6014c0a0af7cbea6bc3dbfe",
-      "characters": 3096,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -3266,14 +2725,6 @@
     },
     {
       "component": "loading-overlay",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/spinner/c-spinner-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/spinner/c-spinner-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "92c5cc17f333189d9e3880b1db8e20abdbb6697e265fa8f1b01e821346c2948c",
-      "characters": 617,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -3332,14 +2783,6 @@
     },
     {
       "component": "mentions",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/autocomplete/c-autocomplete-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/autocomplete/c-autocomplete-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "70038d2c7f4f0c857ec5e4400514856a98ac79a59e2e68e0d4c1265963cd4b81",
-      "characters": 3145,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -3537,71 +2980,10 @@
       "fileFetched": true,
       "sha256": "b801ab39c314dd6f7de2e1e32ddc8fadfed6d9d3e1b9978512f8ed27829d3b0e",
       "characters": 4940,
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:navigation-menu:1",
-          "structuralIdea": "소개·문서 링크를 담은 다열 메뉴",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/navigation-menu/c-navigation-menu-1.tsx",
-          "sha256": "357f04c6d40f328367d2f1a3a7dd16bd2e5a93924e854b6079d6e4cbd248040c",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/navigation-menu/c-navigation-menu-1.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:navigation-menu:2",
-          "structuralIdea": "컴포넌트 링크 목록 메뉴",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/navigation-menu/c-navigation-menu-2.tsx",
-          "sha256": "414113984c3e25da1c5e3d99caf44ebb46259c0c8cc5ec64aa9150b2d7b1acd6",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/navigation-menu/c-navigation-menu-2.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:navigation-menu:3",
-          "structuralIdea": "상태별 아이콘 링크 메뉴",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/navigation-menu/c-navigation-menu-3.tsx",
-          "sha256": "0005a5dc732cd32c944c3012c394cc9c7c73791520a0d54c01243d875a03ed23",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/navigation-menu/c-navigation-menu-3.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:navigation-menu:4",
-          "structuralIdea": "산업별 소개와 CTA 메가 메뉴",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/navigation-menu/c-navigation-menu-4.tsx",
-          "sha256": "56121ed9b0aca239704b27b8efebbf651219ac589ec89c8893a6c308ccd24226",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/navigation-menu/c-navigation-menu-4.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "notification",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/sonner/c-sonner-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/sonner/c-sonner-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "009fbb9ebd3ec58c50d104cfb1030f93255ebdd28f020ae8216d8799a6b9a15e",
-      "characters": 1642,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -3642,60 +3024,13 @@
           "sha256": "c96d0f04652f4f293ca085f579df4bd9233efa655210ff465351a847680bfb68",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/alert-action.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:sonner:10",
-          "structuralIdea": "파일명·진행률 업로드 알림",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/sonner/c-sonner-10.tsx",
-          "sha256": "48ce15751d0d1df762eb9f5b27f603e39460414862c0009a0b465fd8480fb4db",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/sonner/c-sonner-10.tsx"
         }
       ]
     },
     {
       "component": "number-input",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/number-field/c-number-field-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/number-field/c-number-field-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "efcfaa7ac582c235288b838d2f9585a7bb4b54a55a26c0ddbf73efbd1f99c529",
-      "characters": 621,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:number-field:5",
-          "structuralIdea": "아이콘이 있는 증가·감소 컨트롤",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/number-field/c-number-field-5.tsx",
-          "sha256": "306ba6402b4efdce0caec14d7340663ff4aa73c053872e29b5c17d919379fc11",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/number-field/c-number-field-5.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:number-field:6",
-          "structuralIdea": "허용 범위·오류·제출 행동을 가진 금액 폼",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/number-field/c-number-field-6.tsx",
-          "sha256": "e51af462f8f3393113170b0c69541109b852b6098f3d5f98e88b070c321843a5",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/number-field/c-number-field-6.tsx"
-        },
         {
           "slot": 3,
           "sourceToken": "input-group-with-addons",
@@ -3734,60 +3069,7 @@
       "fileFetched": true,
       "sha256": "83d56ff42774402c843e1c9209c266ce366a5321c0912b20c6c560dec697ce12",
       "characters": 947,
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:pagination:9",
-          "structuralIdea": "이전/다음과 현재/전체 페이지 수",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/pagination/c-pagination-9.tsx",
-          "sha256": "90f6a42871f06a3da5567f637a5e9314a6e2feddd8207126abc4decac32e81b0",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/pagination/c-pagination-9.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:pagination:12",
-          "structuralIdea": "페이지 크기 선택과 이동 버튼",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/pagination/c-pagination-12.tsx",
-          "sha256": "04581abbc178ecb0156c22fd2314036690fc9a41b9a64f27b44f6a77a20aca7e",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/pagination/c-pagination-12.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:pagination:13",
-          "structuralIdea": "페이지 선택 드롭다운",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/pagination/c-pagination-13.tsx",
-          "sha256": "064529fa818b4ae5f4f44eaa4550da76c0940401bf1a6015f0f8068d3eb53839",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/pagination/c-pagination-13.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:pagination:14",
-          "structuralIdea": "직접 페이지 번호 입력",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/pagination/c-pagination-14.tsx",
-          "sha256": "5c4f60b955e4c5326a65546b10912e01624f9941fff8a2257f62a77dcb35abea",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/pagination/c-pagination-14.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "password-input",
@@ -3856,14 +3138,6 @@
     },
     {
       "component": "popconfirm",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/alert-dialog/c-alert-dialog-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/alert-dialog/c-alert-dialog-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "5d719d4ffad58e4e01398de2f93f04c4d05ae945c8d43503d172c93531cdfbfd",
-      "characters": 1664,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -3945,32 +3219,6 @@
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/popover-form.tsx"
         },
         {
-          "slot": 2,
-          "sourceToken": "reui:popover:7",
-          "structuralIdea": "AI 도움말과 주요/보조 행동",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/popover/c-popover-7.tsx",
-          "sha256": "3bf514f8a2bd304ac6f93e9f8409e1d6729ce770bdfaa60de61a50ea20a83639",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/popover/c-popover-7.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:popover:10",
-          "structuralIdea": "스위치·볼륨 슬라이더 빠른 설정",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/popover/c-popover-10.tsx",
-          "sha256": "5661564f3395ebaa92f49bc53be746cea1d642101af3c7b60da809e3eb88b9f7",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/popover/c-popover-10.tsx"
-        },
-        {
           "slot": 4,
           "sourceToken": "base:popover:open-on-hover",
           "structuralIdea": "포인터와 포커스로 열리는 보조 팝업",
@@ -3995,60 +3243,7 @@
       "fileFetched": true,
       "sha256": "102789f83117fea9819ae490d57421470f74a1ad0e33d65d6391fd28b9b231e0",
       "characters": 298,
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:progress:4",
-          "structuralIdea": "작업명과 설명이 있는 설정 진행",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/progress/c-progress-4.tsx",
-          "sha256": "22f6a8488d5afd46301517a8c72948cc01ff048032c4dcb6bf22d09820c12894",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/progress/c-progress-4.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:progress:5",
-          "structuralIdea": "파일별 진행률을 가진 업로드 목록",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/progress/c-progress-5.tsx",
-          "sha256": "719dfa616505ba5e5269c7aab04b61dbed2d13bdd1f971ce988e08913679f5a2",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/progress/c-progress-5.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:progress:6",
-          "structuralIdea": "슬라이더 조정과 진행률 연결",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/progress/c-progress-6.tsx",
-          "sha256": "69a681fbafc1cdff92419b859d19439d02c0f753ef3805d6edefc72905b3c2c6",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/progress/c-progress-6.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:progress:7",
-          "structuralIdea": "체크리스트와 전체 진행률",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/progress/c-progress-7.tsx",
-          "sha256": "8109b206c66e9d2c51b5698d56d37bb59b8430a4b915ab5aad5db5e99681be67",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/progress/c-progress-7.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "radio-group",
@@ -4183,68 +3378,7 @@
     },
     {
       "component": "rating",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/rating/c-rating-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/rating/c-rating-4.tsx",
-      "relation": "direct-category",
-      "fileFetched": true,
-      "sha256": "a20ef0708a7d9948888fe015b3c7ef67cf713708c7e299b1e91b1639d5549591",
-      "characters": 630,
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:rating:6",
-          "structuralIdea": "총 평점과 점수별 리뷰 분포 막대",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/rating/c-rating-6.tsx",
-          "sha256": "95d6c3cba6b17224023521490df8ce95462b3cb8b8fc415ad33901bcd93ac88f",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/rating/c-rating-6.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:rating:7",
-          "structuralIdea": "편집 가능한 별점과 현재 점수",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/rating/c-rating-7.tsx",
-          "sha256": "fd9025424a6ad238922efdf64215910003dd5394352cb792a580ee78e4ed8b66",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/rating/c-rating-7.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:rating:8",
-          "structuralIdea": "표정으로 고르는 감정 평가",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/rating/c-rating-8.tsx",
-          "sha256": "35cdc95f74a6a3bd98dcb2aac7e398b9c5306af0817ad27df65c903aea0442a9",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/rating/c-rating-8.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:rating:9",
-          "structuralIdea": "별점과 리뷰 본문 작성 폼",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/rating/c-rating-9.tsx",
-          "sha256": "0f1647eb0c30c28a6c53920ae0ef5d0b57fcef65ff3da4a2f1b11350114977bc",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/rating/c-rating-9.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "resizable",
@@ -4282,45 +3416,11 @@
           "sha256": "57067dd190003a415c5022810c41a73608e7726d2c3d3236cc8580bf360882b8",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/resizable-handle.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:resizable:7",
-          "structuralIdea": "가로로 분할된 조절 패널",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/resizable/c-resizable-7.tsx",
-          "sha256": "ceae145184baaa95035457cbb5129a4ce9cda744571c9694c466573e39ce7ff5",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/resizable/c-resizable-7.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:resizable:10",
-          "structuralIdea": "여러 패널의 크기를 상태에 보관",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/resizable/c-resizable-10.tsx",
-          "sha256": "5adb0cf3acc2f468a558930575c7b85a1f0fe3869f52aae71dc689f8d81cca6c",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/resizable/c-resizable-10.tsx"
         }
       ]
     },
     {
       "component": "result",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/empty/c-empty-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/empty/c-empty-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "3871f649f64fd650c59922eb114639710b5928c6013041c1ece3d1ae7ae9a6cc",
-      "characters": 1383,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -4444,14 +3544,6 @@
     },
     {
       "component": "search-input",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/input-group/c-input-group-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/input-group/c-input-group-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "9686c2eff73f1cc5b6e53bb9d6be543e8d67b6fb53f3b1ebc9a6657698a902e1",
-      "characters": 704,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -4510,14 +3602,6 @@
     },
     {
       "component": "segmented-control",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/toggle-group/c-toggle-group-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/toggle-group/c-toggle-group-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "97ad4313dc5d3a18928ea2aa06f532790617b81eb1cd7e9db8db9af6e629a319",
-      "characters": 488,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -4623,19 +3707,6 @@
           "sha256": "02412ec84d495cd27a1efd0d84bbe07299022ad1b7ba9c253c9d4f18c026f416",
           "fileFetched": true,
           "url": "https://github.com/mui/base-ui/blob/c1294abd3c7ab19fa0fb980373af732315b8a5be/docs/src/app/(docs)/react/components/select/demos/multiple/tailwind/index.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:select:16",
-          "structuralIdea": "레이블 정보를 가진 선택 항목",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/select/c-select-16.tsx",
-          "sha256": "15e7e733aabfa571403e50020ec8be7b8d7b93a52ae289b8cf8d3ebc6ad54d0b",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/select/c-select-16.tsx"
         }
       ]
     },
@@ -4740,32 +3811,6 @@
           "sha256": "f1909656ba0d543433f92e8c05e7a794a5fcac01ac31145bebdb4d09faa5ab6b",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/sheet-demo.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:sheet:3",
-          "structuralIdea": "열리는 방향을 선택하는 시트",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/sheet/c-sheet-3.tsx",
-          "sha256": "682452dc1dd9721a63a9eb9036b679cd7ef1dce779a8445c2339a740fb288a49",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/sheet/c-sheet-3.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:sheet:4",
-          "structuralIdea": "긴 본문 스크롤과 하단 저장 행동",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/sheet/c-sheet-4.tsx",
-          "sha256": "e52712b2ffcea483634dd127a610834ae59da141c0cd8b3ca76bb09214aef820",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/sheet/c-sheet-4.tsx"
         }
       ]
     },
@@ -5097,14 +4142,6 @@
     },
     {
       "component": "splitter",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/resizable/c-resizable-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/resizable/c-resizable-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "e5164a2512c4cb8c8a4190dc2f2dd4b9cb1971dbc85d13b92b5ccf66905edd19",
-      "characters": 1297,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -5132,73 +4169,13 @@
           "sha256": "57067dd190003a415c5022810c41a73608e7726d2c3d3236cc8580bf360882b8",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/resizable-handle.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:resizable:7",
-          "structuralIdea": "가로로 분할된 조절 패널",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/resizable/c-resizable-7.tsx",
-          "sha256": "ceae145184baaa95035457cbb5129a4ce9cda744571c9694c466573e39ce7ff5",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/resizable/c-resizable-7.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:resizable:10",
-          "structuralIdea": "여러 패널의 크기를 상태에 보관",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/resizable/c-resizable-10.tsx",
-          "sha256": "5adb0cf3acc2f468a558930575c7b85a1f0fe3869f52aae71dc689f8d81cca6c",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/resizable/c-resizable-10.tsx"
         }
       ]
     },
     {
       "component": "statistic",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/card/c-card-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/card/c-card-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "6f1db1be532d26ed528be4e504b8b6303c66f661b36efab7ae9c8d0089d4b31c",
-      "characters": 730,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:card:13",
-          "structuralIdea": "결제 사용량·지표·진행률 카드",
-          "relationship": "klic-composition",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/card/c-card-13.tsx",
-          "sha256": "50e35c9742f217fcc8ecfdd5377cc5371675d1f601b095f4255eece24117a737",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/card/c-card-13.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:card:15",
-          "structuralIdea": "행동 메뉴와 지표 카드",
-          "relationship": "klic-composition",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/card/c-card-15.tsx",
-          "sha256": "bffbc801ea4a6f9926d9b675de68880b4dbe1f0cce161ba8da1cb1be2ea7ab3a",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/card/c-card-15.tsx"
-        },
         {
           "slot": 3,
           "sourceToken": "chart:chart-line-default",
@@ -5211,152 +4188,17 @@
           "sha256": "d9632a0e955df05c43a5090a87c2f04dfb3e3c475e963efd74d371489d5f2a7a",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/registry/new-york-v4/charts/chart-line-default.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:chart:4",
-          "structuralIdea": "기간별 방문자 비교 막대 카드",
-          "relationship": "klic-composition",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/chart/c-chart-4.tsx",
-          "sha256": "33d79eb2c00a12cd500743d9252fd510501a6a44e40948c4f539b0cc07b295e0",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/chart/c-chart-4.tsx"
         }
       ]
     },
     {
       "component": "stepper",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/stepper/c-stepper-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/stepper/c-stepper-4.tsx",
-      "relation": "direct-category",
-      "fileFetched": true,
-      "sha256": "3aef99b742cf7746a1e03baba605e03b963706dad2a769fa1ab1229e2feacc9c",
-      "characters": 2022,
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:stepper:4",
-          "structuralIdea": "이전·다음 행동과 단계 콘텐츠",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/stepper/c-stepper-4.tsx",
-          "sha256": "3aef99b742cf7746a1e03baba605e03b963706dad2a769fa1ab1229e2feacc9c",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/stepper/c-stepper-4.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:stepper:7",
-          "structuralIdea": "단계 아이콘·상태 배지·설명",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/stepper/c-stepper-7.tsx",
-          "sha256": "8ecb84c60a9b38c282fe8d5257ec46a0abffd959df4637ab62be7fefaacd0fe8",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/stepper/c-stepper-7.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:stepper:10",
-          "structuralIdea": "단계별 설명과 진행 아이콘",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/stepper/c-stepper-10.tsx",
-          "sha256": "6f7fa5df2b365f5ff8555a3fab8833b1b6a7509b94bf45ba77b71f0efcb1e10b",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/stepper/c-stepper-10.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:stepper:13",
-          "structuralIdea": "세로 단계 설명 목록",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/stepper/c-stepper-13.tsx",
-          "sha256": "e72ca06a791db9813fb73381b462ad5d4df872e7ebd3af0ccf32fb1ae5737631",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/stepper/c-stepper-13.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "steps",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/stepper/c-stepper-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/stepper/c-stepper-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "3aef99b742cf7746a1e03baba605e03b963706dad2a769fa1ab1229e2feacc9c",
-      "characters": 2022,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:stepper:4",
-          "structuralIdea": "이전·다음 행동과 단계 콘텐츠",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/stepper/c-stepper-4.tsx",
-          "sha256": "3aef99b742cf7746a1e03baba605e03b963706dad2a769fa1ab1229e2feacc9c",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/stepper/c-stepper-4.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:stepper:7",
-          "structuralIdea": "단계 아이콘·상태 배지·설명",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/stepper/c-stepper-7.tsx",
-          "sha256": "8ecb84c60a9b38c282fe8d5257ec46a0abffd959df4637ab62be7fefaacd0fe8",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/stepper/c-stepper-7.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:stepper:10",
-          "structuralIdea": "단계별 설명과 진행 아이콘",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/stepper/c-stepper-10.tsx",
-          "sha256": "6f7fa5df2b365f5ff8555a3fab8833b1b6a7509b94bf45ba77b71f0efcb1e10b",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/stepper/c-stepper-10.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:stepper:13",
-          "structuralIdea": "세로 단계 설명 목록",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/stepper/c-stepper-13.tsx",
-          "sha256": "e72ca06a791db9813fb73381b462ad5d4df872e7ebd3af0ccf32fb1ae5737631",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/stepper/c-stepper-13.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "switch",
@@ -5472,19 +4314,6 @@
           "sha256": "3e7067a5e41fc07e0301353c890a09492ac89ad3b0edaac0a8b52112f317ab67",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/checkbox-table.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:table:10",
-          "structuralIdea": "헤더·본문·보조정보의 데이터 표",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/table/c-table-10.tsx",
-          "sha256": "7c5a719673d8536e506a8c02aaf056ba31f171f232a7072d6d7f770060b41594",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/table/c-table-10.tsx"
         }
       ]
     },
@@ -5537,32 +4366,11 @@
           "sha256": "e92af625ab9f399fb34dedcd382fd9ca4be8105d0c036f7bfee5af2e8840896d",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/tabs-line.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:tabs:3",
-          "structuralIdea": "세로 계정 탭과 편집 폼 패널",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/tabs/c-tabs-3.tsx",
-          "sha256": "773fe9614f9a7e3875eb7892067754f6556ba93953b38b800245ead46c51e781",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tabs/c-tabs-3.tsx"
         }
       ]
     },
     {
       "component": "tag",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/badge/c-badge-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/badge/c-badge-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "e4c95d765d17d68c58fb6a49ac9ce438840b483129b287416014843eebfa32b4",
-      "characters": 149,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -5752,133 +4560,11 @@
     },
     {
       "component": "time-picker",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/time-picker/c-time-picker-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/time-picker/c-time-picker-4.tsx",
-      "relation": "direct-category",
-      "fileFetched": true,
-      "sha256": "05b1cd7b9187b29b9e248c37d52c59511dff109d0aac34cc43e489bc4eb1b228",
-      "characters": 1011,
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:time-picker:8",
-          "structuralIdea": "시작·종료 시간 쌍",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/time-picker/c-time-picker-8.tsx",
-          "sha256": "7c9a148397a0eda93b0720ce4005e8ab5faf99edef252c5d39639a355ac2d649",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/time-picker/c-time-picker-8.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:time-picker:9",
-          "structuralIdea": "시간대 표시와 사용자 정의 시간 열",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/time-picker/c-time-picker-9.tsx",
-          "sha256": "a280d3042a0afd936467be005a4ab1743cc91d97baa3d77d9443709dc1448442",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/time-picker/c-time-picker-9.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:time-picker:11",
-          "structuralIdea": "시간 선택 패널을 탭으로 구분",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/time-picker/c-time-picker-11.tsx",
-          "sha256": "09be9bb632ff25dd7a519f6f5c5e99cc9f7c57e02780e986ac2ac8facfdc8065",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/time-picker/c-time-picker-11.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:time-picker:13",
-          "structuralIdea": "달력·시간·예약 요약 폼",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/time-picker/c-time-picker-13.tsx",
-          "sha256": "cc474e5bf6049b86adf83054edfc5a85791a38239f9647de9f780f4c6f81e9c7",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/time-picker/c-time-picker-13.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "timeline",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/timeline/c-timeline-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/timeline/c-timeline-4.tsx",
-      "relation": "direct-category",
-      "fileFetched": true,
-      "sha256": "fcd2b099611d6a687c35fd92f08b69b7721126eaf86fe9e7aa2664a46a9b5853",
-      "characters": 3197,
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:timeline:3",
-          "structuralIdea": "단계 아이콘이 있는 타임라인",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/timeline/c-timeline-3.tsx",
-          "sha256": "7aa272951b14d21e745ffabdb522aa5e5e91380d3e5ef450a1f9f2e324157f40",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/timeline/c-timeline-3.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:timeline:6",
-          "structuralIdea": "프로필·배지·접이식 상세 활동 기록",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/timeline/c-timeline-6.tsx",
-          "sha256": "b93b9bdd0b6f919c69446b4689d0dfca56976c80260f6fa110da3f875931bb46",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/timeline/c-timeline-6.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:timeline:11",
-          "structuralIdea": "아바타로 행위자를 표시한 시간 목록",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/timeline/c-timeline-11.tsx",
-          "sha256": "d6ff7e64ccb7de8f47244ff5edbf72a17d08aecf74cf36c0e873af437b80fa8d",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/timeline/c-timeline-11.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:timeline:12",
-          "structuralIdea": "현재 단계를 배지로 강조한 시간 목록",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/timeline/c-timeline-12.tsx",
-          "sha256": "e97e9a607635a61dd23be0c01ffe9aa50950732f54c8e197f924de90b2da2681",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/timeline/c-timeline-12.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "toast",
@@ -5903,45 +4589,6 @@
           "sha256": "a59ce6cb148570f2352395943b0801b3c674b528166841ef30ba14c3abda548b",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/toast-demo.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:sonner:7",
-          "structuralIdea": "배포 동작의 알림",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/sonner/c-sonner-7.tsx",
-          "sha256": "16cd475f89725e12c38cfa0e553de7d77db5131d2733c5431f5861d9310d6e5d",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/sonner/c-sonner-7.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:sonner:10",
-          "structuralIdea": "파일명·진행률 업로드 알림",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/sonner/c-sonner-10.tsx",
-          "sha256": "48ce15751d0d1df762eb9f5b27f603e39460414862c0009a0b465fd8480fb4db",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/sonner/c-sonner-10.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:sonner:15",
-          "structuralIdea": "프로필·시간·수락/거절 초대 알림",
-          "relationship": "related-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/sonner/c-sonner-15.tsx",
-          "sha256": "a9deb60105e0ff953e04e8d4b9b48f783ac5014ef068347ba4b725e0081626b8",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/sonner/c-sonner-15.tsx"
         }
       ]
     },
@@ -6163,58 +4810,11 @@
           "sha256": "53996e470b756ad3a0b2c36e8b84cb7ef60299a049f76a0888270bd78d99c550",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/tooltip-keyboard.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:tooltip:7",
-          "structuralIdea": "검증된 도메인 상태와 설명",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/tooltip/c-tooltip-7.tsx",
-          "sha256": "a40822c2070d55c2f09495567c749627892f8ee6dfe7998ca67ff6653f70ac26",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tooltip/c-tooltip-7.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:tooltip:11",
-          "structuralIdea": "사용자 아바타·역할·이메일",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/tooltip/c-tooltip-11.tsx",
-          "sha256": "c00ae3fd220e0fd4e958695641cedca9f05b0eaffbc2dc88ba8f67ed12564d52",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tooltip/c-tooltip-11.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:tooltip:14",
-          "structuralIdea": "파일명·형식·검증 정보",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/tooltip/c-tooltip-14.tsx",
-          "sha256": "a002a53352b8dd3589043a7ed6b879d9fe01bfdab214c47708a6e90e4fd542fe",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tooltip/c-tooltip-14.tsx"
         }
       ]
     },
     {
       "component": "transfer",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/checkbox/c-checkbox-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/checkbox/c-checkbox-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "e057f3f76506944642f4770cd56fd4c144183fc65b96e70bd42bdbccbf85a3ab",
-      "characters": 378,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -6255,152 +4855,17 @@
           "sha256": "90f60e0bcefc53844a48b01fdfc473e69ed3962c404a58c4cbf98590f5b6ac92",
           "fileFetched": true,
           "url": "https://github.com/shadcn-ui/ui/blob/481d523374745e77d0cf9c53a4115ab5dd7c8481/apps/v4/examples/base/combobox-multiple.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:tree:4",
-          "structuralIdea": "폴더 아이콘과 계층 탐색",
-          "relationship": "klic-composition",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/tree/c-tree-4.tsx",
-          "sha256": "092a14a11f203240f7d062e86e38c8b13cb2864950c3f36bc6b3844d998ca09c",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tree/c-tree-4.tsx"
         }
       ]
     },
     {
       "component": "tree",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/tree/c-tree-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tree/c-tree-4.tsx",
-      "relation": "direct-category",
-      "fileFetched": true,
-      "sha256": "092a14a11f203240f7d062e86e38c8b13cb2864950c3f36bc6b3844d998ca09c",
-      "characters": 4821,
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:tree:3",
-          "structuralIdea": "계층 안내선과 폴더 아이콘",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/tree/c-tree-3.tsx",
-          "sha256": "0dd9dfa06644eac37edbe838692c1141b2e3d7ea67ceb4b7c4b31c7f3a6a10c6",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tree/c-tree-3.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:tree:5",
-          "structuralIdea": "파일 형식별 아이콘과 폴더 트리",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/tree/c-tree-5.tsx",
-          "sha256": "700c6f73efe2318ac7d1a7752d8c9ebf4c731ccec80313d9a2a3c622c37e6b87",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tree/c-tree-5.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:tree:6",
-          "structuralIdea": "아바타·직책이 있는 조직 트리",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/tree/c-tree-6.tsx",
-          "sha256": "d62121c614f8430ffb0e83748d50c84f4645acbc034e578d0bdb60c6566179fe",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tree/c-tree-6.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:tree:7",
-          "structuralIdea": "노드별 권한 체크박스 트리",
-          "relationship": "direct-pattern",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/tree/c-tree-7.tsx",
-          "sha256": "b0b7c46ef74f71ba64b08a07747c037e43df0b3ac3616e2d500ec996723a20fb",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tree/c-tree-7.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "tree-select",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/tree/c-tree-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tree/c-tree-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "092a14a11f203240f7d062e86e38c8b13cb2864950c3f36bc6b3844d998ca09c",
-      "characters": 4821,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
-      "variantReferences": [
-        {
-          "slot": 1,
-          "sourceToken": "reui:tree:3",
-          "structuralIdea": "계층 안내선과 폴더 아이콘",
-          "relationship": "klic-composition",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/tree/c-tree-3.tsx",
-          "sha256": "0dd9dfa06644eac37edbe838692c1141b2e3d7ea67ceb4b7c4b31c7f3a6a10c6",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tree/c-tree-3.tsx"
-        },
-        {
-          "slot": 2,
-          "sourceToken": "reui:tree:5",
-          "structuralIdea": "파일 형식별 아이콘과 폴더 트리",
-          "relationship": "klic-composition",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/tree/c-tree-5.tsx",
-          "sha256": "700c6f73efe2318ac7d1a7752d8c9ebf4c731ccec80313d9a2a3c622c37e6b87",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/tree/c-tree-5.tsx"
-        },
-        {
-          "slot": 3,
-          "sourceToken": "reui:cascader:4",
-          "structuralIdea": "아이콘·하위 경로·하단 행동 메뉴",
-          "relationship": "klic-composition",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/cascader/c-cascader-4.tsx",
-          "sha256": "c3ebe85657986a88e2b0dc1f0c7ee2fe608ff87faa84a86f93ba2dfe987bcbb1",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/cascader/c-cascader-4.tsx"
-        },
-        {
-          "slot": 4,
-          "sourceToken": "reui:cascader:7",
-          "structuralIdea": "카드 안에 항상 보이는 계층 선택",
-          "relationship": "klic-composition",
-          "adaptationRequired": true,
-          "repository": "keenthemes/reui",
-          "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-          "path": "registry-reui/bases/base/components/cascader/c-cascader-7.tsx",
-          "sha256": "456b0cbd1623ced663c08be839b4ba9ba03b530feebff4d7f7d343cbbfc621ff",
-          "fileFetched": true,
-          "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/cascader/c-cascader-7.tsx"
-        }
-      ]
+      "variantReferences": []
     },
     {
       "component": "typography",
@@ -6469,14 +4934,6 @@
     },
     {
       "component": "watermark",
-      "repository": "keenthemes/reui",
-      "commit": "067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a",
-      "path": "registry-reui/bases/base/components/aspect-ratio/c-aspect-ratio-4.tsx",
-      "url": "https://github.com/keenthemes/reui/blob/067aa0dc7f8bbfec1cd76fc5ad31f842be5f569a/registry-reui/bases/base/components/aspect-ratio/c-aspect-ratio-4.tsx",
-      "relation": "related-composition",
-      "fileFetched": true,
-      "sha256": "6b3cd1a0d8622e495f1196a6f86d67253329151c51e0216c14f5e3aacd92307e",
-      "characters": 511,
       "note": "Related primitive/composition only; this is not an exact upstream implementation of the named KLIC component.",
       "variantReferences": [
         {
@@ -6534,5 +4991,5 @@
       ]
     }
   ],
-  "variantReferenceCount": 400
+  "variantReferenceCount": 304
 }

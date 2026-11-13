@@ -1,0 +1,57 @@
+<!-- KLIC terminal sample. Transcript is static; no shell or SSH session is started. -->
+<link rel="stylesheet" href="./terminal-components.css">
+<section data-terminal-demo="ubuntu-terminal" data-terminal-instance="klic-example" aria-label="Ubuntu 터미널 샘플 미리보기" data-klic-component="ubuntu-terminal" class="kn-ubuntu-terminal">
+<div data-part="terminal-ubuntu">
+  <header data-part="terminal-ubuntu-header">
+<span aria-hidden="true" data-part="terminal-ubuntu-new">
+<i data-lucide="square-plus" data-part="icon">
+</i>
+</span>
+<strong data-part="terminal-ubuntu-title">klic@klic-design:/serverA/ch5</strong>
+<span aria-hidden="true" data-part="terminal-ubuntu-toolbar">
+<i data-lucide="search" data-part="icon">
+</i>
+<i data-lucide="menu" data-part="icon">
+</i>
+</span>
+<span aria-hidden="true" data-part="terminal-ubuntu-controls">
+<i data-lucide="minus" data-part="icon">
+</i>
+<i data-lucide="square" data-part="icon">
+</i>
+<i data-lucide="x" data-part="icon">
+</i>
+</span>
+</header>
+  <div aria-label="Ubuntu 터미널의 정적 bash 파일 편집 예시" data-part="terminal-ubuntu-console">
+<pre>
+<code>
+<span data-part="terminal-ubuntu-line">#!/bin/bash</span>
+<span data-part="terminal-ubuntu-line">#hello.bash</span>
+<span data-part="terminal-ubuntu-line">echo &quot;Hello world!&quot;</span>
+<span data-part="terminal-ubuntu-line">printf &quot;hello world! 2\n&quot;</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+<span data-part="terminal-ubuntu-line" data-state="empty">~</span>
+</code>
+</pre>
+</div>
+ </div>
+</section>

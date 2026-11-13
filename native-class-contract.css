@@ -1,0 +1,44 @@
+@layer components {
+  @supports (transition-behavior: allow-discrete) {
+    [data-klic-component="popover"] [popover],
+    [data-kv-component="popover"] [popover] {
+      opacity: 0;
+      transform: translateY(-0.25rem);
+      transition: opacity 160ms ease, transform 160ms ease, display 160ms allow-discrete;
+    }
+
+    [data-klic-component="popover"] [popover][data-state="open"]:popover-open,
+    [data-kv-component="popover"] [popover][data-state="open"]:popover-open {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @starting-style {
+      [data-klic-component="popover"] [popover][data-state="open"]:popover-open,
+      [data-kv-component="popover"] [popover][data-state="open"]:popover-open {
+        opacity: 0;
+        transform: translateY(-0.25rem);
+      }
+    }
+  }
+
+  .ku-spin {
+    animation: klic-contract-spin 900ms linear infinite;
+    transform-origin: center;
+  }
+
+  @keyframes klic-contract-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-klic-component="popover"] [popover],
+    [data-kv-component="popover"] [popover] {
+      transition: none;
+    }
+
+    .ku-spin {
+      animation: none;
+    }
+  }
+}

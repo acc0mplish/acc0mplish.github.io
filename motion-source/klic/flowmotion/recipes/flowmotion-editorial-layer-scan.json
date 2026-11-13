@@ -1,0 +1,143 @@
+{
+  "id": "flowmotion-editorial-layer-scan",
+  "category": "loops",
+  "title": {
+    "ko": "신경망 레이어 순차 강조",
+    "en": "Neural Layer Scan"
+  },
+  "summary": {
+    "ko": "세 레이어를 800ms 간격으로 순환 강조합니다.",
+    "en": "Cycles focus across three layers at 800ms intervals."
+  },
+  "durationMs": 2400,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "editorial-mcp-skill-compare"
+    ],
+    "sourceFile": "src/components/EditorialMcpSkillCanvas.tsx",
+    "renderer": "EditorialMcpSkillCanvas",
+    "effect": "three-layer-active-scan",
+    "sourceTimeline": {
+      "durationMs": 2400,
+      "description": "NeuralNetCircleSvg divides the 2,400ms ambient cycle into three active layers. activeLayer=floor(ambientProgress×3)%3; source columns contain 3,4,3 nodes.",
+      "frames": [
+        {
+          "progress": 0,
+          "activeLayer": 0
+        },
+        {
+          "progress": 0.3333333333333333,
+          "activeLayer": 1
+        },
+        {
+          "progress": 0.6666666666666666,
+          "activeLayer": 2
+        },
+        {
+          "progress": 1,
+          "activeLayer": 2
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"신경망 세 레이어 활성 순환\"><g class=\"layer layer-0\"><circle class=\"node-bg\" cx=\"82\" cy=\"54\" r=\"7\"/><circle class=\"node-bg\" cx=\"82\" cy=\"90\" r=\"7\"/><circle class=\"node-bg\" cx=\"82\" cy=\"126\" r=\"7\"/></g><g class=\"layer layer-1\"><circle class=\"node-bg\" cx=\"160\" cy=\"54\" r=\"7\"/><circle class=\"node-bg\" cx=\"160\" cy=\"78\" r=\"7\"/><circle class=\"node-bg\" cx=\"160\" cy=\"102\" r=\"7\"/><circle class=\"node-bg\" cx=\"160\" cy=\"126\" r=\"7\"/></g><g class=\"layer layer-2\"><circle class=\"node-bg\" cx=\"238\" cy=\"54\" r=\"7\"/><circle class=\"node-bg\" cx=\"238\" cy=\"90\" r=\"7\"/><circle class=\"node-bg\" cx=\"238\" cy=\"126\" r=\"7\"/></g><path class=\"flow\" d=\"M 89 90 L 159 54 M 89 90 L 159 90 M 89 90 L 159 126 M 159 54 L 237 90 M 159 90 L 237 90 M 159 126 L 237 90\"/><text class=\"small\" text-anchor=\"middle\" x=\"160\" y=\"162\">입력 → 처리 → 응답</text></svg></div>",
+    "duration": 2400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 0.5,
+    "tracks": [
+      {
+        "selector": ".layer-0",
+        "keyframes": [
+          {
+            "offset": 0,
+            "opacity": 1
+          },
+          {
+            "offset": 0.3332333333333333,
+            "opacity": 1
+          },
+          {
+            "offset": 0.3334333333333333,
+            "opacity": 0.28
+          },
+          {
+            "offset": 0.6665666666666666,
+            "opacity": 0.28
+          },
+          {
+            "offset": 0.6667666666666666,
+            "opacity": 0.28
+          },
+          {
+            "offset": 1,
+            "opacity": 0.28
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".layer-1",
+        "keyframes": [
+          {
+            "offset": 0,
+            "opacity": 0.28
+          },
+          {
+            "offset": 0.3332333333333333,
+            "opacity": 0.28
+          },
+          {
+            "offset": 0.3334333333333333,
+            "opacity": 1
+          },
+          {
+            "offset": 0.6665666666666666,
+            "opacity": 1
+          },
+          {
+            "offset": 0.6667666666666666,
+            "opacity": 0.28
+          },
+          {
+            "offset": 1,
+            "opacity": 0.28
+          }
+        ],
+        "easing": "linear"
+      },
+      {
+        "selector": ".layer-2",
+        "keyframes": [
+          {
+            "offset": 0,
+            "opacity": 0.28
+          },
+          {
+            "offset": 0.3332333333333333,
+            "opacity": 0.28
+          },
+          {
+            "offset": 0.3334333333333333,
+            "opacity": 0.28
+          },
+          {
+            "offset": 0.6665666666666666,
+            "opacity": 0.28
+          },
+          {
+            "offset": 0.6667666666666666,
+            "opacity": 1
+          },
+          {
+            "offset": 1,
+            "opacity": 1
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

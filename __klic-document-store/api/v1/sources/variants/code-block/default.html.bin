@@ -1,0 +1,5 @@
+<!-- KLIC native HTML example. Styles/interactions: component bundle. KLIC example; preserve bundled per-file license notices. -->
+<div data-klic-component="code-block" class="kn-code-block"><div data-part="code-head"><span>tokens.css</span><button type="button" data-cmp-action="copy"  data-part="btn" class="kv-neutral kv-sm">코드 복사</button></div><pre tabindex="0" aria-label="토큰 CSS 코드" data-part="code"><code>:root {
+  --klic-accent: #245fc2;
+  --klic-radius: 8px;
+}</code></pre><p data-cmp-status role="status" aria-live="polite" data-part="status"></p></div>

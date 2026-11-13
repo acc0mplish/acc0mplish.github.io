@@ -1,0 +1,87 @@
+<!-- KLIC terminal sample. Transcript is static; no shell or SSH session is started. -->
+<link rel="stylesheet" href="./terminal-components.css">
+<section data-terminal-demo="ghostty-terminal" data-terminal-instance="klic-example" aria-label="Ghostty 터미널 샘플 미리보기" data-klic-component="ghostty-terminal" class="kn-ghostty-terminal">
+<div data-part="terminal-ghostty">
+  <header data-part="terminal-ghostty-titlebar">
+<span aria-hidden="true">
+</span>
+<strong>~/KLIC</strong>
+<span aria-hidden="true" data-part="terminal-ghostty-actions">
+<i data-lucide="plus-square" data-part="icon">
+</i>
+<i data-lucide="menu" data-part="icon">
+</i>
+<i data-lucide="x" data-part="icon">
+</i>
+</span>
+</header>
+  <div aria-label="Ghostty 세션 탭" data-part="terminal-ghostty-tabs">
+<span data-state="active">
+<i data-lucide="terminal" data-part="icon">
+</i> klic-design</span>
+<span>
+<i data-lucide="terminal" data-part="icon">
+</i> files</span>
+<span aria-hidden="true" data-part="terminal-ghostty-add">
+<i data-lucide="plus" data-part="icon">
+</i>
+</span>
+</div>
+  <div data-part="terminal-ghostty-grid">
+   <section data-part="terminal-ghostty-pane" data-state="active">
+<div data-part="terminal-ghostty-console">
+<pre data-part="terminal-output">
+<code>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design ~/KLIC %</span>
+<span data-part="terminal-line terminal-line--command">sudo apt update</span>
+<span data-part="terminal-line terminal-line--output">Hit:1 archive.ubuntu.com noble</span>
+<span data-part="terminal-line terminal-line--output">Hit:2 security.ubuntu.com</span>
+<span data-part="terminal-line terminal-line--output">Reading package lists... Done</span>
+<span data-part="terminal-line terminal-line--output">All packages are up to date.</span>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design ~/KLIC %</span>
+</code>
+</pre>
+</div>
+</section>
+   <section data-part="terminal-ghostty-pane">
+<div data-part="terminal-ghostty-console">
+<pre data-part="terminal-output">
+<code>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design ~/KLIC %</span>
+<span data-part="terminal-line terminal-line--command">btop --preset process</span>
+<span data-part="terminal-line terminal-line--output">Tasks: 214, 468 threads; 1 running</span>
+<span data-part="terminal-line terminal-line--output">Load avg: 0.10  0.08  0.06</span>
+<span data-part="terminal-line terminal-line--output">CPU 4.1% · Mem 5.12G / 31.2G</span>
+<span data-part="terminal-line terminal-line--output">PID USER CPU% MEM% COMMAND</span>
+<span data-part="terminal-line terminal-line--output">812  klic 1.4 0.6 ghostty</span>
+</code>
+</pre>
+</div>
+</section>
+   <section data-part="terminal-ghostty-pane">
+<div data-part="terminal-ghostty-console">
+<pre data-part="terminal-output">
+<code>
+<span data-part="terminal-line terminal-line--prompt">klic@klic-design ~/KLIC %</span>
+<span data-part="terminal-line terminal-line--command">ncdu ~/KLIC</span>
+<span data-part="terminal-line terminal-line--output">1.10 GiB  node_modules/</span>
+<span data-part="terminal-line terminal-line--output">808 MiB   node_modules/.cache/</span>
+<span data-part="terminal-line terminal-line--output">226 MiB   node_modules/@types/</span>
+<span data-part="terminal-line terminal-line--output">134 MiB   node_modules/vite/</span>
+<span data-part="terminal-line terminal-line--output">82 MiB    dist/</span>
+<span data-part="terminal-line terminal-line--output">18 MiB    dist/assets/</span>
+<span data-part="terminal-line terminal-line--output">14 MiB    docs/</span>
+<span data-part="terminal-line terminal-line--output">6 MiB     docs/guides/</span>
+<span data-part="terminal-line terminal-line--output">2.4 MiB   scripts/</span>
+<span data-part="terminal-line terminal-line--output">884 KiB   .git/</span>
+<span data-part="terminal-line terminal-line--output">640 KiB   package.json</span>
+<span data-part="terminal-line terminal-line--output">116 KiB   bun.lock</span>
+<span data-part="terminal-line terminal-line--output">92 KiB    README.md</span>
+<span data-part="terminal-line terminal-line--output">total: 2.31 GiB</span>
+</code>
+</pre>
+</div>
+</section>
+  </div>
+ </div>
+</section>

@@ -1,0 +1,35 @@
+# LICENSE — motion-catalog-acc0mplish
+
+**Copyright © 2026 acc0mplish. All rights reserved.**
+
+## 1. 요약 (한국어)
+
+본 저장소는 비공개·내부 사용 전용 저작물입니다.
+
+1. 본 저장소의 모든 콘텐츠(소스 코드·모션 데이터·문서·UI·디자인)의 저작권은 acc0mplish에 있습니다.
+2. acc0mplish의 사전 서면(또는 전자 기록) 허가 없이 본 저작물을 복제·배포·공중전송·2차적저작물 작성·양도·판매할 수 없습니다.
+3. 개인적·내부적 사용(로컬 열람·실행·수정)은 허용됩니다.
+4. 제3자 소재는 각각의 자체 라이선스를 유지하며(§2), 본 선언은 그 라이선스를 대체하지 않습니다.
+5. 본 저작물은 "있는 그대로" 제공되며, 명시적이든 묵시적이든 어떠한 보증도 하지 않습니다. 본 저작물의 사용으로 발생한 어떠한 청구·손해·책임에 대해서도 저작권자는 책임을 지지 않습니다.
+
+## 2. Third-Party Components (제3자 소재)
+
+| 구성요소 | 출처 | 라이선스 | 본 저장소 내 범위 |
+|---|---|---|---|
+| Pretendard / Pretendard JP v1.3.9 | jsdelivr CDN — `orioncactus/pretendard` | SIL OFL 1.1 | 웹폰트 CDN 로드 전용 (`index.html`). 폰트 파일 자체는 저장소에 미포함 — 배포 시 OFL 라이선스 사본 동반 필요 |
+| vanilla-tilt.js · Atropos · Rellax · DepthFlow · zText · Cover Flow | GitHub 모션 라이브러리 | MIT 등 | 코드 미포함 — 기법(패턴)만 독자 재구성 (`assets/depth-demos.js` 헤더 참조) |
+| KanjiVG | kanjivg.tagaini.net | CC BY-SA 3.0 | 가이드 문서 언급만 (`data/text/guides.js`). 실제 데이터를 번들하면 BY·SA 표기 의무 발생 |
+
+## 3. Notice (English)
+
+This repository and all of its content are the proprietary work of acc0mplish.
+Reproduction, distribution, public transmission, creation of derivative works,
+transfer, or commercial use requires prior written permission from acc0mplish.
+Private, internal, non-commercial use (local viewing and execution) is permitted.
+
+Third-party components remain under their own respective licenses (Section 2);
+nothing in this notice supersedes them.
+
+THIS WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY ARISING FROM THE USE OF THIS WORK.

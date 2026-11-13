@@ -5,23 +5,28 @@ description: Use when designing, implementing, reviewing, or adapting an interfa
 
 # KLIC Design
 
-Use KLIC's current contract as the source of truth. Read `klic_get_contract` through MCP, or run `bun klic.mjs contract`. Record `release` and `designSystem.revision`; refresh the contract if either changes. Do not rely on remembered counts, versions, package status, or URLs.
+Use the KLIC contract as source of truth. Read `klic_get_contract` via MCP or, when its CLI is published, use `bunx --bun --package=klic-design@<published-version> klic contract`. Record `release`, `designSystem.revision`, actual `responder`, and toolkit versions together. Refresh when any identifier changes. Do not rely on remembered counts, versions, package status, or URLs.
 
 ## Select and apply KLIC references
 
-- Search with `klic_search`, then inspect candidates with `klic_get_item`. Use only `ready` entries as available references. Label `planned` entries as proposals; do not present them as implemented or installable.
-- Check the contract's design responsibilities, preset bounds, adoption policy, conflict order, change scope, and completion checks before changing an existing product. Adopt selectively and preserve its established behavior.
-- Keep all KLIC token paths under `klic` and preserve Primitive → Brand → Semantic → Component layers. Do not invent KLIC token names or duplicate values when a canonical token exists.
-- Use KLIC blue for action, selection, and progress; keep text navy and surfaces neutral. Do not introduce green, mint, sage, teal, or green-tinted neutrals. Use amber for warnings, red for danger, and blue with a check icon plus clear wording for success.
-- Use only font assets listed in the current catalog. Preserve their file notices and do not claim licensing beyond those notices.
-- Preserve semantic HTML, keyboard operation, visible focus, responsive behavior, and explicit loading, empty, filtered, and error states. A local demo or checklist does not establish accessibility certification.
+- Search with `klic_search` filters, follow `next`, then inspect candidates with `klic_get_item`. Use `brief` or `compact` to discover and `full` to implement; record the detail level.
+- For charts, consult `design.chart`; show exact values beside synthetic samples, match labels/units, and follow accessibility and QA limits.
+- Reuse charts through `klic-design/charts`; its optional React view is `klic-design/charts/react`. Send rows only via local stdio MCP; HTTP and WebMCP expose metadata.
+- `ready` means available; `planned` means proposed. Check `use`, `avoid`, `states`, `recovery`, token mappings, limitations, source notices, and the design contract. `not-specified` means evidence is missing, not that support exists.
+- Check responsibilities, preset bounds, adoption policy, conflict order, scope, and completion checks before changing behavior; adopt selectively.
+- Keep token paths under `klic` and preserve Primitive → Brand → Semantic → Component. Use KLIC blue for action, selection, and progress; navy text and neutral surfaces; amber warnings and red danger. Success uses blue, a check icon, and clear wording. Do not introduce green, mint, sage, teal, or green-tinted neutrals.
+- Use only catalog-listed fonts and preserve their notices. Preserve semantic HTML, keyboard operation, visible focus, responsive behavior, and explicit loading, empty, filtered, and error states. A demo or checklist is not accessibility certification.
 
-## Unified package and motion
+## Package and motion
 
-`klic-design` includes this skill, token/theme SDK, fonts, CLI and `components/*`, `blocks/*`, `motions/*` subpaths. Components preserve native HTML reference forms; blocks are React demos; motion recipes include CSS/React source examples. Use matching styles and reduced-motion guidance. Search motions with `klic_search_motions` and inspect `klic_get_motion` before adoption. Do not claim every example is a precompiled component.
+`klic-design` provides the skill, token/theme SDK, fonts, CLI, and `components/*`, `blocks/*`, `motions/*` subpaths. Components preserve native HTML references; blocks are React demos; motion recipes include CSS/React examples, not always precompiled components. Search motions with `klic_search_motions` and inspect `klic_get_motion` before adoption.
 
 ## Deliver source safely
 
-Read the `klic_get_install_plan` result before suggesting a source workspace. Review its manifest and commands; run `bun klic.mjs add <kind> <id> --out <new-folder> --dry-run` first. Create files only when requested, and use a new output folder.
+Read `klic_get_install_plan` and raw source only when implementation or source use is in scope. Review its manifest, scope, commands, and notices; run `bunx --bun --package=klic-design@latest klic add <kind> <id> --out <new-folder> --dry-run` first. Preserve source bytes and notices. Source returns raw code only. Create files only when requested, in a new output folder.
 
-Check the live contract's `integrations.skill.npmPackage` before giving Agent Skill install commands. When its status is `published`, install with `bun add <name>` or `npm install <name>`, optionally run `bunx skills experimental_sync -y` or `npx skills experimental_sync -y` to link it into the agent. The `skills experimental_sync` command is experimental. If package status is `source-ready`, use the current local tarball or download the canonical skill file; a tarball is not publication evidence. Bun is preferred; Node.js/npm/npx compatibility is separately supported. Use `bunx --bun` only for the CLI package when its publication metadata confirms that package is published. MCP and API are read-only. WebMCP is feature-detected and scoped to the open tab. Figma delivery is a manifest and migration guide; live sync is not provided.
+Check the live contract's `integrations.skill.npmPackage` before giving install commands. If `published`, use `bun add <name>` or `npm install <name>`; optional `skills experimental_sync` is experimental. If `source-ready`, use the current local tarball or canonical skill file; a tarball is not publication evidence. Use `bunx --bun` only for a CLI confirmed published. MCP and API are read-only. WebMCP is feature-detected and scoped to the open tab. Figma delivery is a manifest and migration guide; live sync is unavailable.
+
+## Report evidence
+
+Separate KLIC facts from inferences. Tie claims to returned fields and checks actually run; mark unchecked behavior unverified. Checklists and source links alone do not prove product behavior.

@@ -1,4 +1,4 @@
-/** KLIC-owned component blocks adapted from the user's six visual references. */
+/** KLIC-authored component blocks; the user's six visual references informed design only. */
 export const REFERENCE_COMPONENT_BLOCKS = [
   {
     id: 'multi-select', title: '그룹형 다중 선택', enTitle: 'Grouped multi-select',

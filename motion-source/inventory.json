@@ -1,0 +1,6529 @@
+{
+  "categories": [
+    {
+      "id": "principles",
+      "label": "기본 원칙",
+      "labelEn": "Principles"
+    },
+    {
+      "id": "easing",
+      "label": "이징",
+      "labelEn": "Easing"
+    },
+    {
+      "id": "spring",
+      "label": "스프링",
+      "labelEn": "Springs"
+    },
+    {
+      "id": "timing",
+      "label": "타이밍·리듬",
+      "labelEn": "Timing & Rhythm"
+    },
+    {
+      "id": "backdrop",
+      "label": "배경 모션",
+      "labelEn": "Backdrops"
+    },
+    {
+      "id": "entrance",
+      "label": "등장·퇴장",
+      "labelEn": "Entrance & Exit"
+    },
+    {
+      "id": "move",
+      "label": "이동",
+      "labelEn": "Movement"
+    },
+    {
+      "id": "scale",
+      "label": "확대·축소",
+      "labelEn": "Scale"
+    },
+    {
+      "id": "rotate",
+      "label": "회전",
+      "labelEn": "Rotation"
+    },
+    {
+      "id": "reaction",
+      "label": "바운스·반동",
+      "labelEn": "Bounce & Reaction"
+    },
+    {
+      "id": "collection",
+      "label": "목록·그리드",
+      "labelEn": "List & Grid"
+    },
+    {
+      "id": "attention",
+      "label": "주목·강조",
+      "labelEn": "Attention & Emphasis"
+    },
+    {
+      "id": "light",
+      "label": "발광·라이트",
+      "labelEn": "Light & Glow"
+    },
+    {
+      "id": "effect",
+      "label": "이펙트·전환",
+      "labelEn": "Effects & Transitions"
+    },
+    {
+      "id": "transitions",
+      "label": "트랜지션",
+      "labelEn": "Transitions"
+    },
+    {
+      "id": "camera",
+      "label": "카메라",
+      "labelEn": "Camera"
+    },
+    {
+      "id": "web-scroll",
+      "label": "웹 스크롤",
+      "labelEn": "Web Scroll"
+    },
+    {
+      "id": "web-interaction",
+      "label": "웹 조작·반응",
+      "labelEn": "Web Interaction"
+    },
+    {
+      "id": "web-layout",
+      "label": "레이아웃·전환",
+      "labelEn": "Layout & Navigation"
+    },
+    {
+      "id": "web-feedback",
+      "label": "로딩·데이터",
+      "labelEn": "Loading & Data"
+    },
+    {
+      "id": "form-state",
+      "label": "폼·상태",
+      "labelEn": "Forms & State"
+    },
+    {
+      "id": "gesture",
+      "label": "제스처",
+      "labelEn": "Gesture & Mobile"
+    },
+    {
+      "id": "svg-path",
+      "label": "SVG·패스",
+      "labelEn": "SVG & Path"
+    },
+    {
+      "id": "svg-diagram",
+      "label": "SVG 다이어그램",
+      "labelEn": "SVG Diagram"
+    },
+    {
+      "id": "3d-depth",
+      "label": "3D 깊이",
+      "labelEn": "3D Depth"
+    },
+    {
+      "id": "ui-button",
+      "label": "UI 버튼",
+      "labelEn": "UI Buttons"
+    },
+    {
+      "id": "ui-control",
+      "label": "선택·컨트롤",
+      "labelEn": "Selection & Controls"
+    },
+    {
+      "id": "ui-navigation",
+      "label": "내비·오버레이",
+      "labelEn": "Navigation & Overlays"
+    },
+    {
+      "id": "ui-loading",
+      "label": "로더·진행률",
+      "labelEn": "Loading & Progress"
+    },
+    {
+      "id": "ui-feedback",
+      "label": "알림·리액션",
+      "labelEn": "Feedback & Reactions"
+    },
+    {
+      "id": "game-hud",
+      "label": "게임 HUD",
+      "labelEn": "Game HUD"
+    },
+    {
+      "id": "game-combat",
+      "label": "전투·히트 표현",
+      "labelEn": "Combat & Hit FX"
+    },
+    {
+      "id": "game-reward",
+      "label": "보상·획득 연출",
+      "labelEn": "Rewards & Loot"
+    },
+    {
+      "id": "game-progress",
+      "label": "성장·퀘스트",
+      "labelEn": "Progression & Quests"
+    },
+    {
+      "id": "game-cinematic",
+      "label": "게임 연출·경고",
+      "labelEn": "Game Cinematics"
+    },
+    {
+      "id": "ui-spatial",
+      "label": "공간 UI·깊이",
+      "labelEn": "Spatial UI & Depth"
+    },
+    {
+      "id": "ui-material",
+      "label": "질감·머티리얼 변형",
+      "labelEn": "Material & Surface Motion"
+    },
+    {
+      "id": "game-impact-fx",
+      "label": "게임 순간 FX",
+      "labelEn": "Game Impact FX"
+    },
+    {
+      "id": "data-story",
+      "label": "데이터·스토리텔링",
+      "labelEn": "Data Storytelling"
+    },
+    {
+      "id": "particles",
+      "label": "파티클",
+      "labelEn": "Particles"
+    },
+    {
+      "id": "loops",
+      "label": "루프·앰비언트",
+      "labelEn": "Loops & Ambient"
+    },
+    {
+      "id": "character",
+      "label": "캐릭터",
+      "labelEn": "Character"
+    },
+    {
+      "id": "look",
+      "label": "질감·룩",
+      "labelEn": "Texture & Look"
+    },
+    {
+      "id": "depth3d",
+      "label": "3D",
+      "labelEn": "3D"
+    },
+    {
+      "id": "sound",
+      "label": "사운드 동기",
+      "labelEn": "Sound Sync"
+    },
+    {
+      "id": "tx-reveal",
+      "label": "등장",
+      "labelEn": "Reveal"
+    },
+    {
+      "id": "tx-exit",
+      "label": "퇴장",
+      "labelEn": "Exit"
+    },
+    {
+      "id": "tx-emphasis",
+      "label": "강조",
+      "labelEn": "Emphasis"
+    },
+    {
+      "id": "tx-swap",
+      "label": "교체",
+      "labelEn": "Swap"
+    },
+    {
+      "id": "tx-typing",
+      "label": "타이핑·해독",
+      "labelEn": "Typing & Decoding"
+    },
+    {
+      "id": "tx-physics",
+      "label": "글자의 물리",
+      "labelEn": "Glyph Physics"
+    },
+    {
+      "id": "tx-path",
+      "label": "패스·형태",
+      "labelEn": "Path & Shape"
+    },
+    {
+      "id": "tx-mask",
+      "label": "마스크·클립",
+      "labelEn": "Mask & Clip"
+    },
+    {
+      "id": "tx-color-light",
+      "label": "색·빛",
+      "labelEn": "Colour & Light"
+    },
+    {
+      "id": "tx-blur",
+      "label": "흐림·포커스",
+      "labelEn": "Blur & Focus"
+    },
+    {
+      "id": "tx-glitch",
+      "label": "왜곡·글리치",
+      "labelEn": "Distortion & Glitch"
+    },
+    {
+      "id": "tx-depth",
+      "label": "3D·깊이",
+      "labelEn": "3D & Depth"
+    },
+    {
+      "id": "tx-variable",
+      "label": "가변 폰트",
+      "labelEn": "Variable Fonts"
+    },
+    {
+      "id": "tx-scroll",
+      "label": "스크롤",
+      "labelEn": "Scroll"
+    },
+    {
+      "id": "tx-pointer",
+      "label": "포인터",
+      "labelEn": "Pointer"
+    },
+    {
+      "id": "tx-counter",
+      "label": "숫자·데이터",
+      "labelEn": "Numbers & Data"
+    },
+    {
+      "id": "tx-caption",
+      "label": "자막·캡션",
+      "labelEn": "Captions & Subtitles"
+    },
+    {
+      "id": "tx-layout",
+      "label": "레이아웃·줄바꿈",
+      "labelEn": "Layout & Reflow"
+    },
+    {
+      "id": "tx-loop",
+      "label": "루프·장식",
+      "labelEn": "Loops & Decoration"
+    },
+    {
+      "id": "tx-japanese",
+      "label": "한글 연출",
+      "labelEn": "Korean Script"
+    },
+    {
+      "id": "tx-title",
+      "label": "제목·영화",
+      "labelEn": "Titles & Film"
+    },
+    {
+      "id": "tx-broadcast",
+      "label": "방송 자막",
+      "labelEn": "Broadcast Captions"
+    }
+  ],
+  "items": [
+    {
+      "id": "fade-slide",
+      "category": "entrance",
+      "pattern": "fadeSlide",
+      "engine": "base",
+      "demoId": "fade-slide"
+    },
+    {
+      "id": "mask-wipe",
+      "category": "entrance",
+      "pattern": "maskWipe",
+      "engine": "base",
+      "demoId": "mask-wipe"
+    },
+    {
+      "id": "iris-open",
+      "category": "entrance",
+      "pattern": "iris",
+      "engine": "base",
+      "demoId": "iris-open"
+    },
+    {
+      "id": "soft-rise",
+      "category": "entrance",
+      "pattern": "softRise",
+      "engine": "base",
+      "demoId": "soft-rise"
+    },
+    {
+      "id": "snap-in",
+      "category": "entrance",
+      "pattern": "snapIn",
+      "engine": "base",
+      "demoId": "snap-in"
+    },
+    {
+      "id": "split-reveal",
+      "category": "entrance",
+      "pattern": "splitReveal",
+      "engine": "base",
+      "demoId": "split-reveal"
+    },
+    {
+      "id": "trail-exit",
+      "category": "entrance",
+      "pattern": "trailExit",
+      "engine": "base",
+      "demoId": "trail-exit"
+    },
+    {
+      "id": "collapse-away",
+      "category": "entrance",
+      "pattern": "collapse",
+      "engine": "base",
+      "demoId": "collapse-away"
+    },
+    {
+      "id": "linear-travel",
+      "category": "move",
+      "pattern": "linearMove",
+      "engine": "base",
+      "demoId": "linear-travel"
+    },
+    {
+      "id": "smooth-arrival",
+      "category": "move",
+      "pattern": "smoothMove",
+      "engine": "base",
+      "demoId": "smooth-arrival"
+    },
+    {
+      "id": "arc-travel",
+      "category": "move",
+      "pattern": "arcMove",
+      "engine": "base",
+      "demoId": "arc-travel"
+    },
+    {
+      "id": "anticipation-move",
+      "category": "move",
+      "pattern": "anticipation",
+      "engine": "base",
+      "demoId": "anticipation-move"
+    },
+    {
+      "id": "heavy-stop",
+      "category": "move",
+      "pattern": "heavyStop",
+      "engine": "base",
+      "demoId": "heavy-stop"
+    },
+    {
+      "id": "follow-path",
+      "category": "move",
+      "pattern": "pathFollow",
+      "engine": "base",
+      "demoId": "follow-path"
+    },
+    {
+      "id": "stagger-follow",
+      "category": "move",
+      "pattern": "staggerFollow",
+      "engine": "base",
+      "demoId": "stagger-follow"
+    },
+    {
+      "id": "magnetic-snap",
+      "category": "move",
+      "pattern": "magnet",
+      "engine": "base",
+      "demoId": "magnetic-snap"
+    },
+    {
+      "id": "pop-scale",
+      "category": "scale",
+      "pattern": "popScale",
+      "engine": "base",
+      "demoId": "pop-scale"
+    },
+    {
+      "id": "breathing",
+      "category": "scale",
+      "pattern": "breathing",
+      "engine": "base",
+      "demoId": "lp-breath"
+    },
+    {
+      "id": "elastic-scale",
+      "category": "scale",
+      "pattern": "elasticScale",
+      "engine": "base",
+      "demoId": "elastic-scale"
+    },
+    {
+      "id": "axis-stretch",
+      "category": "scale",
+      "pattern": "axisStretch",
+      "engine": "base",
+      "demoId": "axis-stretch"
+    },
+    {
+      "id": "pulse-focus",
+      "category": "scale",
+      "pattern": "pulse",
+      "engine": "base",
+      "demoId": "pulse-focus"
+    },
+    {
+      "id": "depth-zoom",
+      "category": "scale",
+      "pattern": "depthZoom",
+      "engine": "base",
+      "demoId": "depth-zoom"
+    },
+    {
+      "id": "soft-shrink",
+      "category": "scale",
+      "pattern": "softShrink",
+      "engine": "base",
+      "demoId": "soft-shrink"
+    },
+    {
+      "id": "impact-squash",
+      "category": "scale",
+      "pattern": "squash",
+      "engine": "base",
+      "demoId": "impact-squash"
+    },
+    {
+      "id": "simple-turn",
+      "category": "rotate",
+      "pattern": "simpleRotate",
+      "engine": "base",
+      "demoId": "simple-turn"
+    },
+    {
+      "id": "spin-stop",
+      "category": "rotate",
+      "pattern": "spinStop",
+      "engine": "base",
+      "demoId": "spin-stop"
+    },
+    {
+      "id": "wobble",
+      "category": "rotate",
+      "pattern": "wobble",
+      "engine": "base",
+      "demoId": "lp-pendulum"
+    },
+    {
+      "id": "flip-card",
+      "category": "rotate",
+      "pattern": "flip",
+      "engine": "base",
+      "demoId": "3d-flipcard"
+    },
+    {
+      "id": "orbit",
+      "category": "rotate",
+      "pattern": "orbit",
+      "engine": "base",
+      "demoId": "lp-orbit"
+    },
+    {
+      "id": "tilt-reaction",
+      "category": "rotate",
+      "pattern": "tilt",
+      "engine": "base",
+      "demoId": "tilt-reaction"
+    },
+    {
+      "id": "tumble-in",
+      "category": "rotate",
+      "pattern": "tumble",
+      "engine": "base",
+      "demoId": "tumble-in"
+    },
+    {
+      "id": "counter-rotate",
+      "category": "rotate",
+      "pattern": "counterRotate",
+      "engine": "base",
+      "demoId": "counter-rotate"
+    },
+    {
+      "id": "overshoot",
+      "category": "reaction",
+      "pattern": "overshoot",
+      "engine": "base",
+      "demoId": "overshoot"
+    },
+    {
+      "id": "bounce-land",
+      "category": "reaction",
+      "pattern": "bounce",
+      "engine": "base",
+      "demoId": "bounce-land"
+    },
+    {
+      "id": "spring-follow",
+      "category": "reaction",
+      "pattern": "spring",
+      "engine": "base",
+      "demoId": "spring-follow"
+    },
+    {
+      "id": "rubber-band",
+      "category": "reaction",
+      "pattern": "rubber",
+      "engine": "base",
+      "demoId": "rubber-band"
+    },
+    {
+      "id": "recoil",
+      "category": "reaction",
+      "pattern": "recoil",
+      "engine": "base",
+      "demoId": "recoil"
+    },
+    {
+      "id": "double-bounce",
+      "category": "reaction",
+      "pattern": "doubleBounce",
+      "engine": "base",
+      "demoId": "double-bounce"
+    },
+    {
+      "id": "snap-back",
+      "category": "reaction",
+      "pattern": "snapBack",
+      "engine": "base",
+      "demoId": "snap-back"
+    },
+    {
+      "id": "after-shake",
+      "category": "reaction",
+      "pattern": "shake",
+      "engine": "base",
+      "demoId": "after-shake"
+    },
+    {
+      "id": "list-stagger",
+      "category": "collection",
+      "pattern": "listStagger",
+      "engine": "base",
+      "demoId": "list-stagger"
+    },
+    {
+      "id": "list-cascade",
+      "category": "collection",
+      "pattern": "listCascade",
+      "engine": "base",
+      "demoId": "list-cascade"
+    },
+    {
+      "id": "list-alternate",
+      "category": "collection",
+      "pattern": "listAlternate",
+      "engine": "base",
+      "demoId": "list-alternate"
+    },
+    {
+      "id": "list-expand",
+      "category": "collection",
+      "pattern": "listExpand",
+      "engine": "base",
+      "demoId": "list-expand"
+    },
+    {
+      "id": "grid-wave",
+      "category": "collection",
+      "pattern": "gridWave",
+      "engine": "base",
+      "demoId": "grid-wave"
+    },
+    {
+      "id": "grid-center",
+      "category": "collection",
+      "pattern": "gridCenter",
+      "engine": "base",
+      "demoId": "grid-center"
+    },
+    {
+      "id": "grid-row-sweep",
+      "category": "collection",
+      "pattern": "gridRowSweep",
+      "engine": "base",
+      "demoId": "grid-row-sweep"
+    },
+    {
+      "id": "grid-shuffle",
+      "category": "collection",
+      "pattern": "gridShuffle",
+      "engine": "base",
+      "demoId": "grid-shuffle"
+    },
+    {
+      "id": "nudge",
+      "category": "attention",
+      "pattern": "nudge",
+      "engine": "base",
+      "demoId": "nudge"
+    },
+    {
+      "id": "attention-bounce",
+      "category": "attention",
+      "pattern": "attentionBounce",
+      "engine": "base",
+      "demoId": "attention-bounce"
+    },
+    {
+      "id": "badge-pop",
+      "category": "attention",
+      "pattern": "badgePop",
+      "engine": "base",
+      "demoId": "ui-badge"
+    },
+    {
+      "id": "focus-halo",
+      "category": "attention",
+      "pattern": "focusHalo",
+      "engine": "base",
+      "demoId": "focus-halo"
+    },
+    {
+      "id": "highlight-sweep",
+      "category": "attention",
+      "pattern": "highlightSweep",
+      "engine": "base",
+      "demoId": "highlight-sweep"
+    },
+    {
+      "id": "border-chase",
+      "category": "attention",
+      "pattern": "borderChase",
+      "engine": "base",
+      "demoId": "border-chase"
+    },
+    {
+      "id": "press-feedback",
+      "category": "attention",
+      "pattern": "pressFeedback",
+      "engine": "base",
+      "demoId": "press-feedback"
+    },
+    {
+      "id": "jelly-emphasis",
+      "category": "attention",
+      "pattern": "jellyEmphasis",
+      "engine": "base",
+      "demoId": "jelly-emphasis"
+    },
+    {
+      "id": "glow-pulse",
+      "category": "light",
+      "pattern": "glowPulse",
+      "engine": "base",
+      "demoId": "lk-glow"
+    },
+    {
+      "id": "neon-flicker",
+      "category": "light",
+      "pattern": "neonFlicker",
+      "engine": "base",
+      "demoId": "neon-flicker"
+    },
+    {
+      "id": "light-sweep",
+      "category": "light",
+      "pattern": "lightSweep",
+      "engine": "base",
+      "demoId": "light-sweep"
+    },
+    {
+      "id": "bloom-reveal",
+      "category": "light",
+      "pattern": "bloomReveal",
+      "engine": "base",
+      "demoId": "bloom-reveal"
+    },
+    {
+      "id": "rim-glow",
+      "category": "light",
+      "pattern": "rimGlow",
+      "engine": "base",
+      "demoId": "rim-glow"
+    },
+    {
+      "id": "energy-charge",
+      "category": "light",
+      "pattern": "energyCharge",
+      "engine": "base",
+      "demoId": "energy-charge"
+    },
+    {
+      "id": "light-trail",
+      "category": "light",
+      "pattern": "lightTrail",
+      "engine": "base",
+      "demoId": "light-trail"
+    },
+    {
+      "id": "scan-line",
+      "category": "light",
+      "pattern": "scanLine",
+      "engine": "base",
+      "demoId": "scan-line"
+    },
+    {
+      "id": "blur-zoom",
+      "category": "effect",
+      "pattern": "blurZoom",
+      "engine": "base",
+      "demoId": "blur-zoom"
+    },
+    {
+      "id": "chromatic-split",
+      "category": "effect",
+      "pattern": "chromaticSplit",
+      "engine": "base",
+      "demoId": "lk-chroma"
+    },
+    {
+      "id": "glitch-in",
+      "category": "effect",
+      "pattern": "glitchIn",
+      "engine": "base",
+      "demoId": "glitch-in"
+    },
+    {
+      "id": "pixel-dissolve",
+      "category": "effect",
+      "pattern": "pixelDissolve",
+      "engine": "base",
+      "demoId": "pixel-dissolve"
+    },
+    {
+      "id": "particle-burst",
+      "category": "effect",
+      "pattern": "particleBurst",
+      "engine": "base",
+      "demoId": "pt-burst"
+    },
+    {
+      "id": "ripple-reveal",
+      "category": "effect",
+      "pattern": "rippleReveal",
+      "engine": "base",
+      "demoId": "ripple-reveal"
+    },
+    {
+      "id": "slice-reveal",
+      "category": "effect",
+      "pattern": "sliceReveal",
+      "engine": "base",
+      "demoId": "slice-reveal"
+    },
+    {
+      "id": "noise-reveal",
+      "category": "effect",
+      "pattern": "noiseReveal",
+      "engine": "base",
+      "demoId": "noise-reveal"
+    },
+    {
+      "id": "scroll-reveal",
+      "category": "web-scroll",
+      "pattern": "scrollReveal",
+      "engine": "base",
+      "demoId": "scroll-reveal"
+    },
+    {
+      "id": "parallax-layers",
+      "category": "web-scroll",
+      "pattern": "parallaxLayers",
+      "engine": "base",
+      "demoId": "sc-parallax"
+    },
+    {
+      "id": "sticky-pin",
+      "category": "web-scroll",
+      "pattern": "stickyPin",
+      "engine": "base",
+      "demoId": "sc-pin"
+    },
+    {
+      "id": "scroll-progress",
+      "category": "web-scroll",
+      "pattern": "scrollProgress",
+      "engine": "base",
+      "demoId": "sc-progress"
+    },
+    {
+      "id": "horizontal-scrub",
+      "category": "web-scroll",
+      "pattern": "horizontalScrub",
+      "engine": "base",
+      "demoId": "horizontal-scrub"
+    },
+    {
+      "id": "section-snap",
+      "category": "web-scroll",
+      "pattern": "sectionSnap",
+      "engine": "base",
+      "demoId": "section-snap"
+    },
+    {
+      "id": "text-scroll-scrub",
+      "category": "web-scroll",
+      "pattern": "textScrollScrub",
+      "engine": "base",
+      "demoId": "sc-wordreveal"
+    },
+    {
+      "id": "scroll-depth-zoom",
+      "category": "web-scroll",
+      "pattern": "scrollDepthZoom",
+      "engine": "base",
+      "demoId": "scroll-depth-zoom"
+    },
+    {
+      "id": "hover-lift",
+      "category": "web-interaction",
+      "pattern": "hoverLift",
+      "engine": "base",
+      "demoId": "ui-hover"
+    },
+    {
+      "id": "magnetic-button",
+      "category": "web-interaction",
+      "pattern": "magneticButton",
+      "engine": "base",
+      "demoId": "magnetic-button"
+    },
+    {
+      "id": "pointer-tilt",
+      "category": "web-interaction",
+      "pattern": "pointerTilt",
+      "engine": "base",
+      "demoId": "3d-tilt"
+    },
+    {
+      "id": "cursor-follow",
+      "category": "web-interaction",
+      "pattern": "cursorFollow",
+      "engine": "base",
+      "demoId": "cursor-follow"
+    },
+    {
+      "id": "drag-inertia",
+      "category": "web-interaction",
+      "pattern": "dragInertia",
+      "engine": "base",
+      "demoId": "drag-inertia"
+    },
+    {
+      "id": "click-ripple",
+      "category": "web-interaction",
+      "pattern": "clickRipple",
+      "engine": "base",
+      "demoId": "ui-ripple"
+    },
+    {
+      "id": "toggle-morph",
+      "category": "web-interaction",
+      "pattern": "toggleMorph",
+      "engine": "base",
+      "demoId": "toggle-morph"
+    },
+    {
+      "id": "accordion-open",
+      "category": "web-interaction",
+      "pattern": "accordionOpen",
+      "engine": "base",
+      "demoId": "ui-accordion"
+    },
+    {
+      "id": "shared-element",
+      "category": "web-layout",
+      "pattern": "sharedElement",
+      "engine": "base",
+      "demoId": "tr-shared"
+    },
+    {
+      "id": "view-crossfade",
+      "category": "web-layout",
+      "pattern": "viewCrossfade",
+      "engine": "base",
+      "demoId": "view-crossfade"
+    },
+    {
+      "id": "flip-reorder",
+      "category": "web-layout",
+      "pattern": "flipReorder",
+      "engine": "base",
+      "demoId": "ui-reorder"
+    },
+    {
+      "id": "modal-morph",
+      "category": "web-layout",
+      "pattern": "modalMorph",
+      "engine": "base",
+      "demoId": "modal-morph"
+    },
+    {
+      "id": "tab-indicator",
+      "category": "web-layout",
+      "pattern": "tabIndicator",
+      "engine": "base",
+      "demoId": "tab-indicator"
+    },
+    {
+      "id": "filter-reflow",
+      "category": "web-layout",
+      "pattern": "filterReflow",
+      "engine": "base",
+      "demoId": "filter-reflow"
+    },
+    {
+      "id": "route-slide",
+      "category": "web-layout",
+      "pattern": "routeSlide",
+      "engine": "base",
+      "demoId": "route-slide"
+    },
+    {
+      "id": "page-wipe",
+      "category": "web-layout",
+      "pattern": "pageWipe",
+      "engine": "base",
+      "demoId": "page-wipe"
+    },
+    {
+      "id": "skeleton-shimmer",
+      "category": "web-feedback",
+      "pattern": "skeletonShimmer",
+      "engine": "base",
+      "demoId": "ui-skeleton"
+    },
+    {
+      "id": "spinner-arc",
+      "category": "web-feedback",
+      "pattern": "spinnerArc",
+      "engine": "base",
+      "demoId": "ld-spinner"
+    },
+    {
+      "id": "progress-fill",
+      "category": "web-feedback",
+      "pattern": "progressFill",
+      "engine": "base",
+      "demoId": "ui-progress"
+    },
+    {
+      "id": "circular-progress",
+      "category": "web-feedback",
+      "pattern": "circularProgress",
+      "engine": "base",
+      "demoId": "ld-ring"
+    },
+    {
+      "id": "loading-dots",
+      "category": "web-feedback",
+      "pattern": "loadingDots",
+      "engine": "base",
+      "demoId": "ld-dots"
+    },
+    {
+      "id": "count-up",
+      "category": "web-feedback",
+      "pattern": "countUp",
+      "engine": "base",
+      "demoId": "ty-countup"
+    },
+    {
+      "id": "chart-draw",
+      "category": "web-feedback",
+      "pattern": "chartDraw",
+      "engine": "base",
+      "demoId": "dv-line"
+    },
+    {
+      "id": "toast-stack",
+      "category": "web-feedback",
+      "pattern": "toastStack",
+      "engine": "base",
+      "demoId": "toast-stack"
+    },
+    {
+      "id": "tilt-glare",
+      "category": "3d-depth",
+      "pattern": "depthTiltGlare",
+      "engine": "base",
+      "demoId": "tilt-glare"
+    },
+    {
+      "id": "atropos-parallax",
+      "category": "3d-depth",
+      "pattern": "depthAtropos",
+      "engine": "base",
+      "demoId": "atropos-parallax"
+    },
+    {
+      "id": "rellax-depth",
+      "category": "3d-depth",
+      "pattern": "depthRellax",
+      "engine": "base",
+      "demoId": "rellax-depth"
+    },
+    {
+      "id": "depth-map-drift",
+      "category": "3d-depth",
+      "pattern": "depthMapDrift",
+      "engine": "base",
+      "demoId": "depth-map-drift"
+    },
+    {
+      "id": "ztext-extrude",
+      "category": "3d-depth",
+      "pattern": "depthZText",
+      "engine": "base",
+      "demoId": "ztext-extrude"
+    },
+    {
+      "id": "coverflow",
+      "category": "3d-depth",
+      "pattern": "depthCoverflow",
+      "engine": "base",
+      "demoId": "coverflow"
+    },
+    {
+      "id": "deck-fan",
+      "category": "3d-depth",
+      "pattern": "depthDeckFan",
+      "engine": "base",
+      "demoId": "deck-fan"
+    },
+    {
+      "id": "cube-turn",
+      "category": "3d-depth",
+      "pattern": "depthCubeTurn",
+      "engine": "base",
+      "demoId": "cube-turn"
+    },
+    {
+      "id": "pointer-parallax-hero",
+      "category": "3d-depth",
+      "pattern": "depthPointerHero",
+      "engine": "base",
+      "demoId": "pointer-parallax-hero"
+    },
+    {
+      "id": "perspective-fold",
+      "category": "3d-depth",
+      "pattern": "depthFold",
+      "engine": "base",
+      "demoId": "perspective-fold"
+    },
+    {
+      "id": "border-deepen",
+      "category": "attention",
+      "pattern": "emphBorderDeepen",
+      "engine": "base",
+      "demoId": "border-deepen"
+    },
+    {
+      "id": "point-swell",
+      "category": "attention",
+      "pattern": "emphPointSwell",
+      "engine": "base",
+      "demoId": "point-swell"
+    },
+    {
+      "id": "glow-rise",
+      "category": "attention",
+      "pattern": "emphGlowRise",
+      "engine": "base",
+      "demoId": "glow-rise"
+    },
+    {
+      "id": "color-rise",
+      "category": "attention",
+      "pattern": "emphColorRise",
+      "engine": "base",
+      "demoId": "color-rise"
+    },
+    {
+      "id": "underline-build",
+      "category": "attention",
+      "pattern": "emphUnderlineBuild",
+      "engine": "base",
+      "demoId": "underline-build"
+    },
+    {
+      "id": "slow-recede",
+      "category": "attention",
+      "pattern": "emphSlowRecede",
+      "engine": "base",
+      "demoId": "slow-recede"
+    },
+    {
+      "id": "breath-escalate",
+      "category": "attention",
+      "pattern": "emphBreathEscalate",
+      "engine": "base",
+      "demoId": "breath-escalate"
+    },
+    {
+      "id": "corner-lock",
+      "category": "attention",
+      "pattern": "emphCornerLock",
+      "engine": "base",
+      "demoId": "corner-lock"
+    },
+    {
+      "id": "mesh-drift",
+      "category": "backdrop",
+      "pattern": "bdMeshDrift",
+      "engine": "base",
+      "demoId": "mesh-drift"
+    },
+    {
+      "id": "aurora-curtain",
+      "category": "backdrop",
+      "pattern": "bdAuroraCurtain",
+      "engine": "base",
+      "demoId": "aurora-curtain"
+    },
+    {
+      "id": "star-parallax",
+      "category": "backdrop",
+      "pattern": "bdStarParallax",
+      "engine": "base",
+      "demoId": "star-parallax"
+    },
+    {
+      "id": "wave-lines",
+      "category": "backdrop",
+      "pattern": "bdWaveLines",
+      "engine": "base",
+      "demoId": "wave-lines"
+    },
+    {
+      "id": "grid-breath",
+      "category": "backdrop",
+      "pattern": "bdGridBreath",
+      "engine": "base",
+      "demoId": "grid-breath"
+    },
+    {
+      "id": "bokeh-rise",
+      "category": "backdrop",
+      "pattern": "bdBokehRise",
+      "engine": "base",
+      "demoId": "bokeh-rise"
+    },
+    {
+      "id": "film-grain",
+      "category": "backdrop",
+      "pattern": "bdFilmGrain",
+      "engine": "base",
+      "demoId": "film-grain"
+    },
+    {
+      "id": "scan-beam",
+      "category": "backdrop",
+      "pattern": "bdScanBeam",
+      "engine": "base",
+      "demoId": "scan-beam"
+    },
+    {
+      "id": "paper-shapes",
+      "category": "backdrop",
+      "pattern": "bdPaperShapes",
+      "engine": "base",
+      "demoId": "paper-shapes"
+    },
+    {
+      "id": "sonar-ping",
+      "category": "backdrop",
+      "pattern": "bdSonarPing",
+      "engine": "base",
+      "demoId": "sonar-ping"
+    },
+    {
+      "id": "leaf-dapple",
+      "category": "backdrop",
+      "pattern": "bdLeafDapple",
+      "engine": "base",
+      "demoId": "leaf-dapple"
+    },
+    {
+      "id": "contour-drift",
+      "category": "backdrop",
+      "pattern": "bdContourDrift",
+      "engine": "base",
+      "demoId": "contour-drift"
+    },
+    {
+      "id": "dot-pulse-grid",
+      "category": "backdrop",
+      "pattern": "bdDotPulse",
+      "engine": "base",
+      "demoId": "dot-pulse-grid"
+    },
+    {
+      "id": "conic-sunrise",
+      "category": "backdrop",
+      "pattern": "bdSunrise",
+      "engine": "base",
+      "demoId": "conic-sunrise"
+    },
+    {
+      "id": "wave-band-drift",
+      "category": "backdrop",
+      "pattern": "bdWaveBands",
+      "engine": "base",
+      "demoId": "wave-band-drift"
+    },
+    {
+      "id": "bokeh-rise",
+      "category": "backdrop",
+      "pattern": "bdBokeh",
+      "engine": "base",
+      "demoId": "bokeh-rise"
+    },
+    {
+      "id": "marching-stripes",
+      "category": "backdrop",
+      "pattern": "bdMarchStripes",
+      "engine": "base",
+      "demoId": "marching-stripes"
+    },
+    {
+      "id": "neon-scanline",
+      "category": "backdrop",
+      "pattern": "bdNeonScan",
+      "engine": "base",
+      "demoId": "neon-scanline"
+    },
+    {
+      "id": "particle-drift-field",
+      "category": "backdrop",
+      "pattern": "bdParticleField",
+      "engine": "base",
+      "demoId": "particle-drift-field"
+    },
+    {
+      "id": "prism-beams",
+      "category": "backdrop",
+      "pattern": "bdPrismBeams",
+      "engine": "base",
+      "demoId": "prism-beams"
+    },
+    {
+      "id": "cell-pulse-grid",
+      "category": "backdrop",
+      "pattern": "bdCellPulse",
+      "engine": "base",
+      "demoId": "cell-pulse-grid"
+    },
+    {
+      "id": "lava-blob-morph",
+      "category": "backdrop",
+      "pattern": "bdLavaBlobs",
+      "engine": "base",
+      "demoId": "lava-blob-morph"
+    },
+    {
+      "id": "starfield-pan",
+      "category": "backdrop",
+      "pattern": "bdStarfield",
+      "engine": "base",
+      "demoId": "starfield-pan"
+    },
+    {
+      "id": "focus-rays",
+      "category": "backdrop",
+      "pattern": "bdFocusRays",
+      "engine": "base",
+      "demoId": "focus-rays"
+    },
+    {
+      "id": "stacked-gauge",
+      "category": "ui-loading",
+      "pattern": "aiStackedGauge",
+      "engine": "base",
+      "demoId": "stacked-gauge"
+    },
+    {
+      "id": "summary-collapse",
+      "category": "data-story",
+      "pattern": "aiSummaryCollapse",
+      "engine": "base",
+      "demoId": "summary-collapse"
+    },
+    {
+      "id": "fan-out-merge",
+      "category": "data-story",
+      "pattern": "aiFanOutMerge",
+      "engine": "base",
+      "demoId": "fan-out-merge"
+    },
+    {
+      "id": "gate-verdict",
+      "category": "ui-feedback",
+      "pattern": "aiGateVerdict",
+      "engine": "base",
+      "demoId": "gate-verdict"
+    },
+    {
+      "id": "catch-up-tick",
+      "category": "web-feedback",
+      "pattern": "aiCatchUpTick",
+      "engine": "base",
+      "demoId": "catch-up-tick"
+    },
+    {
+      "id": "next-token-picker",
+      "category": "data-story",
+      "pattern": "aiNextTokenPicker",
+      "engine": "base",
+      "demoId": "next-token-picker"
+    },
+    {
+      "id": "spine-lift",
+      "category": "ui-control",
+      "pattern": "aiSpineLift",
+      "engine": "base",
+      "demoId": "spine-lift"
+    },
+    {
+      "id": "linked-toggle-load",
+      "category": "ui-control",
+      "pattern": "aiLinkedToggle",
+      "engine": "base",
+      "demoId": "linked-toggle-load"
+    },
+    {
+      "id": "plug-snap",
+      "category": "form-state",
+      "pattern": "aiPlugSnap",
+      "engine": "base",
+      "demoId": "plug-snap"
+    },
+    {
+      "id": "key-stage-relay",
+      "category": "attention",
+      "pattern": "aiKeyStageRelay",
+      "engine": "base",
+      "demoId": "key-stage-relay"
+    },
+    {
+      "id": "keycap-relay",
+      "category": "ui-button",
+      "pattern": "deckKeycapRelay",
+      "engine": "base",
+      "demoId": "keycap-relay"
+    },
+    {
+      "id": "round-robin-glow",
+      "category": "attention",
+      "pattern": "deckRoundRobinGlow",
+      "engine": "base",
+      "demoId": "round-robin-glow"
+    },
+    {
+      "id": "annotation-pins",
+      "category": "ui-navigation",
+      "pattern": "deckAnnotationPins",
+      "engine": "base",
+      "demoId": "annotation-pins"
+    },
+    {
+      "id": "metric-card-resolve",
+      "category": "data-story",
+      "pattern": "deckMetricCardResolve",
+      "engine": "base",
+      "demoId": "metric-card-resolve"
+    },
+    {
+      "id": "decision-flash",
+      "category": "form-state",
+      "pattern": "deckDecisionFlash",
+      "engine": "base",
+      "demoId": "decision-flash"
+    },
+    {
+      "id": "flex-hover-expand",
+      "category": "web-layout",
+      "pattern": "layoutFlexHoverExpand",
+      "engine": "base",
+      "demoId": "flex-hover-expand"
+    },
+    {
+      "id": "diagonal-wipe",
+      "category": "entrance",
+      "pattern": "diagonalWipe",
+      "engine": "base",
+      "demoId": "diagonal-wipe"
+    },
+    {
+      "id": "fold-in",
+      "category": "entrance",
+      "pattern": "foldIn",
+      "engine": "base",
+      "demoId": "fold-in"
+    },
+    {
+      "id": "shrink-fade-exit",
+      "category": "entrance",
+      "pattern": "shrinkFade",
+      "engine": "base",
+      "demoId": "shrink-fade-exit"
+    },
+    {
+      "id": "zigzag-travel",
+      "category": "move",
+      "pattern": "zigzagTravel",
+      "engine": "base",
+      "demoId": "zigzag-travel"
+    },
+    {
+      "id": "momentum-drift",
+      "category": "move",
+      "pattern": "momentumDrift",
+      "engine": "base",
+      "demoId": "momentum-drift"
+    },
+    {
+      "id": "waypoint-hop",
+      "category": "move",
+      "pattern": "waypointHop",
+      "engine": "base",
+      "demoId": "waypoint-hop"
+    },
+    {
+      "id": "center-punch",
+      "category": "scale",
+      "pattern": "centerPunch",
+      "engine": "base",
+      "demoId": "center-punch"
+    },
+    {
+      "id": "width-reveal",
+      "category": "scale",
+      "pattern": "widthReveal",
+      "engine": "base",
+      "demoId": "width-reveal"
+    },
+    {
+      "id": "depth-pullback",
+      "category": "scale",
+      "pattern": "depthPullback",
+      "engine": "base",
+      "demoId": "depth-pullback"
+    },
+    {
+      "id": "coin-spin",
+      "category": "rotate",
+      "pattern": "coinSpin",
+      "engine": "base",
+      "demoId": "coin-spin"
+    },
+    {
+      "id": "gyroscope",
+      "category": "rotate",
+      "pattern": "gyroscope",
+      "engine": "base",
+      "demoId": "gyroscope"
+    },
+    {
+      "id": "rotate-reveal",
+      "category": "rotate",
+      "pattern": "rotateReveal",
+      "engine": "base",
+      "demoId": "rotate-reveal"
+    },
+    {
+      "id": "settle-drop",
+      "category": "reaction",
+      "pattern": "settleDrop",
+      "engine": "base",
+      "demoId": "settle-drop"
+    },
+    {
+      "id": "drag-resistance",
+      "category": "reaction",
+      "pattern": "dragResistance",
+      "engine": "base",
+      "demoId": "drag-resistance"
+    },
+    {
+      "id": "follow-through",
+      "category": "reaction",
+      "pattern": "followThrough",
+      "engine": "base",
+      "demoId": "follow-through"
+    },
+    {
+      "id": "line-by-line",
+      "category": "tx-reveal",
+      "pattern": "lineByLine",
+      "engine": "base",
+      "demoId": "line-by-line"
+    },
+    {
+      "id": "list-slide-stack",
+      "category": "collection",
+      "pattern": "listSlideStack",
+      "engine": "base",
+      "demoId": "list-slide-stack"
+    },
+    {
+      "id": "list-trim-collapse",
+      "category": "collection",
+      "pattern": "listTrimCollapse",
+      "engine": "base",
+      "demoId": "list-trim-collapse"
+    },
+    {
+      "id": "grid-spiral",
+      "category": "collection",
+      "pattern": "gridSpiral",
+      "engine": "base",
+      "demoId": "grid-spiral"
+    },
+    {
+      "id": "grid-diagonal",
+      "category": "collection",
+      "pattern": "gridDiagonal",
+      "engine": "base",
+      "demoId": "grid-diagonal"
+    },
+    {
+      "id": "color-pulse",
+      "category": "attention",
+      "pattern": "colorPulse",
+      "engine": "base",
+      "demoId": "color-pulse"
+    },
+    {
+      "id": "icon-nod",
+      "category": "attention",
+      "pattern": "iconNod",
+      "engine": "base",
+      "demoId": "icon-nod"
+    },
+    {
+      "id": "spotlight-focus",
+      "category": "attention",
+      "pattern": "spotlightFocus",
+      "engine": "base",
+      "demoId": "spotlight-focus"
+    },
+    {
+      "id": "error-shake",
+      "category": "attention",
+      "pattern": "errorShake",
+      "engine": "base",
+      "demoId": "error-shake"
+    },
+    {
+      "id": "aurora-glow",
+      "category": "light",
+      "pattern": "auroraGlow",
+      "engine": "base",
+      "demoId": "aurora-glow"
+    },
+    {
+      "id": "radial-flash",
+      "category": "light",
+      "pattern": "radialFlash",
+      "engine": "base",
+      "demoId": "radial-flash"
+    },
+    {
+      "id": "lens-flare-sweep",
+      "category": "light",
+      "pattern": "lensFlareSweep",
+      "engine": "base",
+      "demoId": "lens-flare-sweep"
+    },
+    {
+      "id": "holographic-sheen",
+      "category": "light",
+      "pattern": "holographicSheen",
+      "engine": "base",
+      "demoId": "holographic-sheen"
+    },
+    {
+      "id": "liquid-morph",
+      "category": "effect",
+      "pattern": "liquidMorph",
+      "engine": "base",
+      "demoId": "liquid-morph"
+    },
+    {
+      "id": "ink-reveal",
+      "category": "effect",
+      "pattern": "inkReveal",
+      "engine": "base",
+      "demoId": "ink-reveal"
+    },
+    {
+      "id": "mosaic-flip",
+      "category": "effect",
+      "pattern": "mosaicFlip",
+      "engine": "base",
+      "demoId": "mosaic-flip"
+    },
+    {
+      "id": "displacement-wave",
+      "category": "effect",
+      "pattern": "displacementWave",
+      "engine": "base",
+      "demoId": "displacement-wave"
+    },
+    {
+      "id": "pinned-story-steps",
+      "category": "web-scroll",
+      "pattern": "pinnedStorySteps",
+      "engine": "base",
+      "demoId": "pinned-story-steps"
+    },
+    {
+      "id": "scroll-marquee",
+      "category": "web-scroll",
+      "pattern": "scrollMarquee",
+      "engine": "base",
+      "demoId": "scroll-marquee"
+    },
+    {
+      "id": "image-clip-scrub",
+      "category": "web-scroll",
+      "pattern": "imageClipScrub",
+      "engine": "base",
+      "demoId": "image-clip-scrub"
+    },
+    {
+      "id": "velocity-skew",
+      "category": "web-scroll",
+      "pattern": "velocitySkew",
+      "engine": "base",
+      "demoId": "velocity-skew"
+    },
+    {
+      "id": "button-fill-hover",
+      "category": "web-interaction",
+      "pattern": "buttonFillHover",
+      "engine": "base",
+      "demoId": "button-fill-hover"
+    },
+    {
+      "id": "icon-morph",
+      "category": "web-interaction",
+      "pattern": "iconMorph",
+      "engine": "base",
+      "demoId": "icon-morph"
+    },
+    {
+      "id": "card-spotlight",
+      "category": "web-interaction",
+      "pattern": "cardSpotlight",
+      "engine": "base",
+      "demoId": "card-spotlight"
+    },
+    {
+      "id": "drag-snap",
+      "category": "web-interaction",
+      "pattern": "dragSnap",
+      "engine": "base",
+      "demoId": "ui-drag"
+    },
+    {
+      "id": "sidebar-reveal",
+      "category": "web-layout",
+      "pattern": "sidebarReveal",
+      "engine": "base",
+      "demoId": "sidebar-reveal"
+    },
+    {
+      "id": "command-palette-open",
+      "category": "web-layout",
+      "pattern": "commandPaletteOpen",
+      "engine": "base",
+      "demoId": "ui-cmdk"
+    },
+    {
+      "id": "dropdown-origin",
+      "category": "web-layout",
+      "pattern": "dropdownOrigin",
+      "engine": "base",
+      "demoId": "dropdown-origin"
+    },
+    {
+      "id": "detail-expand",
+      "category": "web-layout",
+      "pattern": "detailExpand",
+      "engine": "base",
+      "demoId": "detail-expand"
+    },
+    {
+      "id": "success-check",
+      "category": "web-feedback",
+      "pattern": "successCheck",
+      "engine": "base",
+      "demoId": "success-check"
+    },
+    {
+      "id": "bar-chart-stagger",
+      "category": "web-feedback",
+      "pattern": "barChartStagger",
+      "engine": "base",
+      "demoId": "dv-bars"
+    },
+    {
+      "id": "donut-segments",
+      "category": "web-feedback",
+      "pattern": "donutSegments",
+      "engine": "base",
+      "demoId": "dv-donut"
+    },
+    {
+      "id": "optimistic-update",
+      "category": "web-feedback",
+      "pattern": "optimisticUpdate",
+      "engine": "base",
+      "demoId": "optimistic-update"
+    },
+    {
+      "id": "floating-label",
+      "category": "form-state",
+      "pattern": "floatingLabel",
+      "engine": "base",
+      "demoId": "floating-label"
+    },
+    {
+      "id": "checkbox-stroke",
+      "category": "form-state",
+      "pattern": "checkboxStroke",
+      "engine": "base",
+      "demoId": "ui-checkbox"
+    },
+    {
+      "id": "switch-state-spring",
+      "category": "form-state",
+      "pattern": "switchStateSpring",
+      "engine": "base",
+      "demoId": "switch-state-spring"
+    },
+    {
+      "id": "inline-validation",
+      "category": "form-state",
+      "pattern": "inlineValidation",
+      "engine": "base",
+      "demoId": "inline-validation"
+    },
+    {
+      "id": "submit-success",
+      "category": "form-state",
+      "pattern": "submitSuccess",
+      "engine": "base",
+      "demoId": "submit-success"
+    },
+    {
+      "id": "upload-progress-state",
+      "category": "form-state",
+      "pattern": "uploadProgressState",
+      "engine": "base",
+      "demoId": "upload-progress-state"
+    },
+    {
+      "id": "password-strength",
+      "category": "form-state",
+      "pattern": "passwordStrength",
+      "engine": "base",
+      "demoId": "password-strength"
+    },
+    {
+      "id": "skeleton-resolve",
+      "category": "form-state",
+      "pattern": "skeletonResolve",
+      "engine": "base",
+      "demoId": "skeleton-resolve"
+    },
+    {
+      "id": "swipe-dismiss",
+      "category": "gesture",
+      "pattern": "swipeDismiss",
+      "engine": "base",
+      "demoId": "ui-swipe"
+    },
+    {
+      "id": "swipe-actions",
+      "category": "gesture",
+      "pattern": "swipeActions",
+      "engine": "base",
+      "demoId": "swipe-actions"
+    },
+    {
+      "id": "long-press-progress",
+      "category": "gesture",
+      "pattern": "longPressProgress",
+      "engine": "base",
+      "demoId": "long-press-progress"
+    },
+    {
+      "id": "pull-to-refresh",
+      "category": "gesture",
+      "pattern": "pullToRefresh",
+      "engine": "base",
+      "demoId": "sc-ptr"
+    },
+    {
+      "id": "drag-pickup",
+      "category": "gesture",
+      "pattern": "dragPickup",
+      "engine": "base",
+      "demoId": "drag-pickup"
+    },
+    {
+      "id": "reorder-drag",
+      "category": "gesture",
+      "pattern": "reorderDrag",
+      "engine": "base",
+      "demoId": "reorder-drag"
+    },
+    {
+      "id": "bottom-sheet-drag",
+      "category": "gesture",
+      "pattern": "bottomSheetDrag",
+      "engine": "base",
+      "demoId": "bottom-sheet-drag"
+    },
+    {
+      "id": "pinch-zoom",
+      "category": "gesture",
+      "pattern": "pinchZoom",
+      "engine": "base",
+      "demoId": "sc-pinch"
+    },
+    {
+      "id": "svg-stroke-draw",
+      "category": "svg-path",
+      "pattern": "svgStrokeDraw",
+      "engine": "base",
+      "demoId": "sh-draw"
+    },
+    {
+      "id": "svg-path-morph",
+      "category": "svg-path",
+      "pattern": "svgPathMorph",
+      "engine": "base",
+      "demoId": "sh-morph"
+    },
+    {
+      "id": "svg-trim-path",
+      "category": "svg-path",
+      "pattern": "svgTrimPath",
+      "engine": "base",
+      "demoId": "sh-trim"
+    },
+    {
+      "id": "svg-motion-path",
+      "category": "svg-path",
+      "pattern": "svgMotionPath",
+      "engine": "base",
+      "demoId": "sh-follow"
+    },
+    {
+      "id": "svg-mask-reveal",
+      "category": "svg-path",
+      "pattern": "svgMaskReveal",
+      "engine": "base",
+      "demoId": "svg-mask-reveal"
+    },
+    {
+      "id": "svg-gradient-flow",
+      "category": "svg-path",
+      "pattern": "svgGradientFlow",
+      "engine": "base",
+      "demoId": "svg-gradient-flow"
+    },
+    {
+      "id": "svg-gooey-merge",
+      "category": "svg-path",
+      "pattern": "svgGooeyMerge",
+      "engine": "base",
+      "demoId": "svg-gooey-merge"
+    },
+    {
+      "id": "svg-signature",
+      "category": "svg-path",
+      "pattern": "svgSignature",
+      "engine": "base",
+      "demoId": "svg-signature"
+    },
+    {
+      "id": "popover-transition",
+      "category": "web-layout",
+      "pattern": "popoverTransition",
+      "engine": "base",
+      "demoId": "popover-transition"
+    },
+    {
+      "id": "dialog-top-layer",
+      "category": "web-layout",
+      "pattern": "dialogTopLayer",
+      "engine": "base",
+      "demoId": "dialog-top-layer"
+    },
+    {
+      "id": "view-transition-circle",
+      "category": "web-layout",
+      "pattern": "viewTransitionCircle",
+      "engine": "base",
+      "demoId": "view-transition-circle"
+    },
+    {
+      "id": "discrete-exit",
+      "category": "web-layout",
+      "pattern": "discreteExit",
+      "engine": "base",
+      "demoId": "discrete-exit"
+    },
+    {
+      "id": "auto-height-expand",
+      "category": "web-layout",
+      "pattern": "autoHeightExpand",
+      "engine": "base",
+      "demoId": "auto-height-expand"
+    },
+    {
+      "id": "page-transition-stack",
+      "category": "web-layout",
+      "pattern": "pageTransitionStack",
+      "engine": "base",
+      "demoId": "page-transition-stack"
+    },
+    {
+      "id": "catalog-ui-button-bounce-press",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-bounce-press",
+      "engine": "base",
+      "demoId": "catalog-ui-button-bounce-press"
+    },
+    {
+      "id": "catalog-ui-button-jelly-squash",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-jelly-squash",
+      "engine": "base",
+      "demoId": "catalog-ui-button-jelly-squash"
+    },
+    {
+      "id": "catalog-ui-button-tap-ripple",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-tap-ripple",
+      "engine": "base",
+      "demoId": "catalog-ui-button-tap-ripple"
+    },
+    {
+      "id": "catalog-ui-button-pulse-glow",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-pulse-glow",
+      "engine": "base",
+      "demoId": "catalog-ui-button-pulse-glow"
+    },
+    {
+      "id": "catalog-ui-button-error-shake",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-error-shake",
+      "engine": "base",
+      "demoId": "catalog-ui-button-error-shake"
+    },
+    {
+      "id": "catalog-ui-button-fill-sweep",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-fill-sweep",
+      "engine": "base",
+      "demoId": "catalog-ui-button-fill-sweep"
+    },
+    {
+      "id": "catalog-ui-button-send-morph",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-send-morph",
+      "engine": "base",
+      "demoId": "catalog-ui-button-send-morph"
+    },
+    {
+      "id": "catalog-ui-button-push-3d",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-push-3d",
+      "engine": "base",
+      "demoId": "catalog-ui-button-push-3d"
+    },
+    {
+      "id": "catalog-ui-button-confetti-burst",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-confetti-burst",
+      "engine": "base",
+      "demoId": "catalog-ui-button-confetti-burst"
+    },
+    {
+      "id": "catalog-ui-button-hold-confirm",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-hold-confirm",
+      "engine": "base",
+      "demoId": "catalog-ui-button-hold-confirm"
+    },
+    {
+      "id": "catalog-ui-button-border-draw",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-border-draw",
+      "engine": "base",
+      "demoId": "catalog-ui-button-border-draw"
+    },
+    {
+      "id": "catalog-ui-button-shine-sweep",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-shine-sweep",
+      "engine": "base",
+      "demoId": "catalog-ui-button-shine-sweep"
+    },
+    {
+      "id": "catalog-ui-button-loading-success",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-loading-success",
+      "engine": "base",
+      "demoId": "catalog-ui-button-loading-success"
+    },
+    {
+      "id": "catalog-ui-button-icon-swap",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-icon-swap",
+      "engine": "base",
+      "demoId": "catalog-ui-button-icon-swap"
+    },
+    {
+      "id": "catalog-ui-button-heartbeat",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-heartbeat",
+      "engine": "base",
+      "demoId": "catalog-ui-button-heartbeat"
+    },
+    {
+      "id": "catalog-ui-button-wobble-tilt",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-wobble-tilt",
+      "engine": "base",
+      "demoId": "catalog-ui-button-wobble-tilt"
+    },
+    {
+      "id": "catalog-ui-button-elastic-drag",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-elastic-drag",
+      "engine": "base",
+      "demoId": "catalog-ui-button-elastic-drag"
+    },
+    {
+      "id": "catalog-ui-button-inner-press",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-inner-press",
+      "engine": "base",
+      "demoId": "catalog-ui-button-inner-press"
+    },
+    {
+      "id": "catalog-ui-button-color-splash",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-color-splash",
+      "engine": "base",
+      "demoId": "catalog-ui-button-color-splash"
+    },
+    {
+      "id": "catalog-ui-button-breathing-gradient",
+      "category": "ui-button",
+      "pattern": "catalog-ui-button-breathing-gradient",
+      "engine": "base",
+      "demoId": "catalog-ui-button-breathing-gradient"
+    },
+    {
+      "id": "catalog-ui-control-spring-switch",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-spring-switch",
+      "engine": "base",
+      "demoId": "catalog-ui-control-spring-switch"
+    },
+    {
+      "id": "catalog-ui-control-day-night",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-day-night",
+      "engine": "base",
+      "demoId": "catalog-ui-control-day-night"
+    },
+    {
+      "id": "catalog-ui-control-liquid-stretch",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-liquid-stretch",
+      "engine": "base",
+      "demoId": "catalog-ui-control-liquid-stretch"
+    },
+    {
+      "id": "catalog-ui-control-check-draw",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-check-draw",
+      "engine": "base",
+      "demoId": "catalog-ui-control-check-draw"
+    },
+    {
+      "id": "catalog-ui-control-heart-like",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-heart-like",
+      "engine": "base",
+      "demoId": "ui-like"
+    },
+    {
+      "id": "catalog-ui-control-lock-unlock",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-lock-unlock",
+      "engine": "base",
+      "demoId": "catalog-ui-control-lock-unlock"
+    },
+    {
+      "id": "catalog-ui-control-mute-pop",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-mute-pop",
+      "engine": "base",
+      "demoId": "catalog-ui-control-mute-pop"
+    },
+    {
+      "id": "catalog-ui-control-play-pause",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-play-pause",
+      "engine": "base",
+      "demoId": "catalog-ui-control-play-pause"
+    },
+    {
+      "id": "catalog-ui-control-sliding-underline",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-sliding-underline",
+      "engine": "base",
+      "demoId": "catalog-ui-control-sliding-underline"
+    },
+    {
+      "id": "catalog-ui-control-pill-indicator",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-pill-indicator",
+      "engine": "base",
+      "demoId": "catalog-ui-control-pill-indicator"
+    },
+    {
+      "id": "catalog-ui-control-bubble-expand",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-bubble-expand",
+      "engine": "base",
+      "demoId": "catalog-ui-control-bubble-expand"
+    },
+    {
+      "id": "catalog-ui-control-jumping-dot",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-jumping-dot",
+      "engine": "base",
+      "demoId": "catalog-ui-control-jumping-dot"
+    },
+    {
+      "id": "catalog-ui-control-liquid-blob",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-liquid-blob",
+      "engine": "base",
+      "demoId": "catalog-ui-control-liquid-blob"
+    },
+    {
+      "id": "catalog-ui-control-tint-shift",
+      "category": "ui-control",
+      "pattern": "catalog-ui-control-tint-shift",
+      "engine": "base",
+      "demoId": "catalog-ui-control-tint-shift"
+    },
+    {
+      "id": "catalog-ui-navigation-hero-expand",
+      "category": "ui-navigation",
+      "pattern": "catalog-ui-navigation-hero-expand",
+      "engine": "base",
+      "demoId": "catalog-ui-navigation-hero-expand"
+    },
+    {
+      "id": "catalog-ui-navigation-spring-sheet",
+      "category": "ui-navigation",
+      "pattern": "catalog-ui-navigation-spring-sheet",
+      "engine": "base",
+      "demoId": "catalog-ui-navigation-spring-sheet"
+    },
+    {
+      "id": "catalog-ui-navigation-card-flip",
+      "category": "ui-navigation",
+      "pattern": "catalog-ui-navigation-card-flip",
+      "engine": "base",
+      "demoId": "catalog-ui-navigation-card-flip"
+    },
+    {
+      "id": "catalog-ui-navigation-circular-reveal",
+      "category": "ui-navigation",
+      "pattern": "catalog-ui-navigation-circular-reveal",
+      "engine": "base",
+      "demoId": "catalog-ui-navigation-circular-reveal"
+    },
+    {
+      "id": "catalog-ui-navigation-parallax-push",
+      "category": "ui-navigation",
+      "pattern": "catalog-ui-navigation-parallax-push",
+      "engine": "base",
+      "demoId": "catalog-ui-navigation-parallax-push"
+    },
+    {
+      "id": "catalog-ui-navigation-staggered-reveal",
+      "category": "ui-navigation",
+      "pattern": "catalog-ui-navigation-staggered-reveal",
+      "engine": "base",
+      "demoId": "catalog-ui-navigation-staggered-reveal"
+    },
+    {
+      "id": "catalog-ui-loading-bouncing-dots",
+      "category": "ui-loading",
+      "pattern": "catalog-ui-loading-bouncing-dots",
+      "engine": "base",
+      "demoId": "catalog-ui-loading-bouncing-dots"
+    },
+    {
+      "id": "catalog-ui-loading-gradient-arc",
+      "category": "ui-loading",
+      "pattern": "catalog-ui-loading-gradient-arc",
+      "engine": "base",
+      "demoId": "catalog-ui-loading-gradient-arc"
+    },
+    {
+      "id": "catalog-ui-loading-progress-success",
+      "category": "ui-loading",
+      "pattern": "catalog-ui-loading-progress-success",
+      "engine": "base",
+      "demoId": "catalog-ui-loading-progress-success"
+    },
+    {
+      "id": "catalog-ui-loading-skeleton-shimmer",
+      "category": "ui-loading",
+      "pattern": "catalog-ui-loading-skeleton-shimmer",
+      "engine": "base",
+      "demoId": "catalog-ui-loading-skeleton-shimmer"
+    },
+    {
+      "id": "catalog-ui-loading-typing-indicator",
+      "category": "ui-loading",
+      "pattern": "catalog-ui-loading-typing-indicator",
+      "engine": "base",
+      "demoId": "catalog-ui-loading-typing-indicator"
+    },
+    {
+      "id": "catalog-ui-loading-equalizer-bars",
+      "category": "ui-loading",
+      "pattern": "catalog-ui-loading-equalizer-bars",
+      "engine": "base",
+      "demoId": "catalog-ui-loading-equalizer-bars"
+    },
+    {
+      "id": "catalog-ui-loading-orbit-trail",
+      "category": "ui-loading",
+      "pattern": "catalog-ui-loading-orbit-trail",
+      "engine": "base",
+      "demoId": "catalog-ui-loading-orbit-trail"
+    },
+    {
+      "id": "catalog-ui-feedback-heart-burst",
+      "category": "ui-feedback",
+      "pattern": "catalog-ui-feedback-heart-burst",
+      "engine": "base",
+      "demoId": "catalog-ui-feedback-heart-burst"
+    },
+    {
+      "id": "catalog-ui-feedback-star-rating",
+      "category": "ui-feedback",
+      "pattern": "catalog-ui-feedback-star-rating",
+      "engine": "base",
+      "demoId": "catalog-ui-feedback-star-rating"
+    },
+    {
+      "id": "catalog-ui-feedback-clap-counter",
+      "category": "ui-feedback",
+      "pattern": "catalog-ui-feedback-clap-counter",
+      "engine": "base",
+      "demoId": "catalog-ui-feedback-clap-counter"
+    },
+    {
+      "id": "catalog-ui-feedback-emoji-bar",
+      "category": "ui-feedback",
+      "pattern": "catalog-ui-feedback-emoji-bar",
+      "engine": "base",
+      "demoId": "catalog-ui-feedback-emoji-bar"
+    },
+    {
+      "id": "catalog-ui-feedback-number-ticker",
+      "category": "ui-feedback",
+      "pattern": "catalog-ui-feedback-number-ticker",
+      "engine": "base",
+      "demoId": "catalog-ui-feedback-number-ticker"
+    },
+    {
+      "id": "catalog-ui-feedback-confetti-rain",
+      "category": "ui-feedback",
+      "pattern": "catalog-ui-feedback-confetti-rain",
+      "engine": "base",
+      "demoId": "catalog-ui-feedback-confetti-rain"
+    },
+    {
+      "id": "catalog-game-hud-coin-collect",
+      "category": "game-hud",
+      "pattern": "catalog-game-hud-coin-collect",
+      "engine": "base",
+      "demoId": "catalog-game-hud-coin-collect"
+    },
+    {
+      "id": "catalog-game-hud-hp-ghost-bar",
+      "category": "game-hud",
+      "pattern": "catalog-game-hud-hp-ghost-bar",
+      "engine": "base",
+      "demoId": "catalog-game-hud-hp-ghost-bar"
+    },
+    {
+      "id": "catalog-game-hud-cooldown-ability",
+      "category": "game-hud",
+      "pattern": "catalog-game-hud-cooldown-ability",
+      "engine": "base",
+      "demoId": "catalog-game-hud-cooldown-ability"
+    },
+    {
+      "id": "catalog-game-hud-score-rollup",
+      "category": "game-hud",
+      "pattern": "catalog-game-hud-score-rollup",
+      "engine": "base",
+      "demoId": "catalog-game-hud-score-rollup"
+    },
+    {
+      "id": "catalog-game-hud-stamina-pulse",
+      "category": "game-hud",
+      "pattern": "catalog-game-hud-stamina-pulse",
+      "engine": "base",
+      "demoId": "catalog-game-hud-stamina-pulse"
+    },
+    {
+      "id": "catalog-game-hud-ammo-reload",
+      "category": "game-hud",
+      "pattern": "catalog-game-hud-ammo-reload",
+      "engine": "base",
+      "demoId": "catalog-game-hud-ammo-reload"
+    },
+    {
+      "id": "catalog-game-hud-compass-lock",
+      "category": "game-hud",
+      "pattern": "catalog-game-hud-compass-lock",
+      "engine": "base",
+      "demoId": "catalog-game-hud-compass-lock"
+    },
+    {
+      "id": "catalog-game-hud-minimap-ping",
+      "category": "game-hud",
+      "pattern": "catalog-game-hud-minimap-ping",
+      "engine": "base",
+      "demoId": "catalog-game-hud-minimap-ping"
+    },
+    {
+      "id": "catalog-game-hud-objective-marker",
+      "category": "game-hud",
+      "pattern": "catalog-game-hud-objective-marker",
+      "engine": "base",
+      "demoId": "catalog-game-hud-objective-marker"
+    },
+    {
+      "id": "catalog-game-hud-resource-cap",
+      "category": "game-hud",
+      "pattern": "catalog-game-hud-resource-cap",
+      "engine": "base",
+      "demoId": "catalog-game-hud-resource-cap"
+    },
+    {
+      "id": "catalog-game-hud-party-status",
+      "category": "game-hud",
+      "pattern": "catalog-game-hud-party-status",
+      "engine": "base",
+      "demoId": "catalog-game-hud-party-status"
+    },
+    {
+      "id": "catalog-game-hud-buff-timer",
+      "category": "game-hud",
+      "pattern": "catalog-game-hud-buff-timer",
+      "engine": "base",
+      "demoId": "catalog-game-hud-buff-timer"
+    },
+    {
+      "id": "catalog-game-combat-damage-numbers",
+      "category": "game-combat",
+      "pattern": "catalog-game-combat-damage-numbers",
+      "engine": "base",
+      "demoId": "catalog-game-combat-damage-numbers"
+    },
+    {
+      "id": "catalog-game-combat-combo-counter",
+      "category": "game-combat",
+      "pattern": "catalog-game-combat-combo-counter",
+      "engine": "base",
+      "demoId": "catalog-game-combat-combo-counter"
+    },
+    {
+      "id": "catalog-game-combat-critical-flash",
+      "category": "game-combat",
+      "pattern": "catalog-game-combat-critical-flash",
+      "engine": "base",
+      "demoId": "catalog-game-combat-critical-flash"
+    },
+    {
+      "id": "catalog-game-combat-hit-confirm",
+      "category": "game-combat",
+      "pattern": "catalog-game-combat-hit-confirm",
+      "engine": "base",
+      "demoId": "catalog-game-combat-hit-confirm"
+    },
+    {
+      "id": "catalog-game-combat-guard-break",
+      "category": "game-combat",
+      "pattern": "catalog-game-combat-guard-break",
+      "engine": "base",
+      "demoId": "catalog-game-combat-guard-break"
+    },
+    {
+      "id": "catalog-game-combat-perfect-dodge",
+      "category": "game-combat",
+      "pattern": "catalog-game-combat-perfect-dodge",
+      "engine": "base",
+      "demoId": "catalog-game-combat-perfect-dodge"
+    },
+    {
+      "id": "catalog-game-combat-parry-window",
+      "category": "game-combat",
+      "pattern": "catalog-game-combat-parry-window",
+      "engine": "base",
+      "demoId": "catalog-game-combat-parry-window"
+    },
+    {
+      "id": "catalog-game-combat-status-ailment",
+      "category": "game-combat",
+      "pattern": "catalog-game-combat-status-ailment",
+      "engine": "base",
+      "demoId": "catalog-game-combat-status-ailment"
+    },
+    {
+      "id": "catalog-game-reward-level-up",
+      "category": "game-reward",
+      "pattern": "catalog-game-reward-level-up",
+      "engine": "base",
+      "demoId": "catalog-game-reward-level-up"
+    },
+    {
+      "id": "catalog-game-reward-chest-open",
+      "category": "game-reward",
+      "pattern": "catalog-game-reward-chest-open",
+      "engine": "base",
+      "demoId": "catalog-game-reward-chest-open"
+    },
+    {
+      "id": "catalog-game-reward-three-star",
+      "category": "game-reward",
+      "pattern": "catalog-game-reward-three-star",
+      "engine": "base",
+      "demoId": "catalog-game-reward-three-star"
+    },
+    {
+      "id": "catalog-game-reward-gacha-pull",
+      "category": "game-reward",
+      "pattern": "catalog-game-reward-gacha-pull",
+      "engine": "base",
+      "demoId": "catalog-game-reward-gacha-pull"
+    },
+    {
+      "id": "catalog-game-reward-new-record",
+      "category": "game-reward",
+      "pattern": "catalog-game-reward-new-record",
+      "engine": "base",
+      "demoId": "catalog-game-reward-new-record"
+    },
+    {
+      "id": "catalog-game-reward-loot-rarity",
+      "category": "game-reward",
+      "pattern": "catalog-game-reward-loot-rarity",
+      "engine": "base",
+      "demoId": "catalog-game-reward-loot-rarity"
+    },
+    {
+      "id": "catalog-game-reward-achievement",
+      "category": "game-reward",
+      "pattern": "catalog-game-reward-achievement",
+      "engine": "base",
+      "demoId": "catalog-game-reward-achievement"
+    },
+    {
+      "id": "catalog-game-reward-daily-bonus",
+      "category": "game-reward",
+      "pattern": "catalog-game-reward-daily-bonus",
+      "engine": "base",
+      "demoId": "catalog-game-reward-daily-bonus"
+    },
+    {
+      "id": "catalog-game-reward-currency-rain",
+      "category": "game-reward",
+      "pattern": "catalog-game-reward-currency-rain",
+      "engine": "base",
+      "demoId": "catalog-game-reward-currency-rain"
+    },
+    {
+      "id": "catalog-game-reward-reward-card",
+      "category": "game-reward",
+      "pattern": "catalog-game-reward-reward-card",
+      "engine": "base",
+      "demoId": "catalog-game-reward-reward-card"
+    },
+    {
+      "id": "catalog-game-progress-quest-banner",
+      "category": "game-progress",
+      "pattern": "catalog-game-progress-quest-banner",
+      "engine": "base",
+      "demoId": "catalog-game-progress-quest-banner"
+    },
+    {
+      "id": "catalog-game-progress-skill-unlock",
+      "category": "game-progress",
+      "pattern": "catalog-game-progress-skill-unlock",
+      "engine": "base",
+      "demoId": "catalog-game-progress-skill-unlock"
+    },
+    {
+      "id": "catalog-game-progress-login-streak",
+      "category": "game-progress",
+      "pattern": "catalog-game-progress-login-streak",
+      "engine": "base",
+      "demoId": "catalog-game-progress-login-streak"
+    },
+    {
+      "id": "catalog-game-progress-energy-refill",
+      "category": "game-progress",
+      "pattern": "catalog-game-progress-energy-refill",
+      "engine": "base",
+      "demoId": "catalog-game-progress-energy-refill"
+    },
+    {
+      "id": "catalog-game-progress-xp-overflow",
+      "category": "game-progress",
+      "pattern": "catalog-game-progress-xp-overflow",
+      "engine": "base",
+      "demoId": "catalog-game-progress-xp-overflow"
+    },
+    {
+      "id": "catalog-game-progress-battle-pass",
+      "category": "game-progress",
+      "pattern": "catalog-game-progress-battle-pass",
+      "engine": "base",
+      "demoId": "catalog-game-progress-battle-pass"
+    },
+    {
+      "id": "catalog-game-progress-mission-step",
+      "category": "game-progress",
+      "pattern": "catalog-game-progress-mission-step",
+      "engine": "base",
+      "demoId": "catalog-game-progress-mission-step"
+    },
+    {
+      "id": "catalog-game-progress-rank-up",
+      "category": "game-progress",
+      "pattern": "catalog-game-progress-rank-up",
+      "engine": "base",
+      "demoId": "catalog-game-progress-rank-up"
+    },
+    {
+      "id": "catalog-game-progress-collection-complete",
+      "category": "game-progress",
+      "pattern": "catalog-game-progress-collection-complete",
+      "engine": "base",
+      "demoId": "catalog-game-progress-collection-complete"
+    },
+    {
+      "id": "catalog-game-cinematic-lucky-roulette",
+      "category": "game-cinematic",
+      "pattern": "catalog-game-cinematic-lucky-roulette",
+      "engine": "base",
+      "demoId": "catalog-game-cinematic-lucky-roulette"
+    },
+    {
+      "id": "catalog-game-cinematic-countdown-go",
+      "category": "game-cinematic",
+      "pattern": "catalog-game-cinematic-countdown-go",
+      "engine": "base",
+      "demoId": "catalog-game-cinematic-countdown-go"
+    },
+    {
+      "id": "catalog-game-cinematic-boss-warning",
+      "category": "game-cinematic",
+      "pattern": "catalog-game-cinematic-boss-warning",
+      "engine": "base",
+      "demoId": "catalog-game-cinematic-boss-warning"
+    },
+    {
+      "id": "catalog-game-cinematic-victory-title",
+      "category": "game-cinematic",
+      "pattern": "catalog-game-cinematic-victory-title",
+      "engine": "base",
+      "demoId": "catalog-game-cinematic-victory-title"
+    },
+    {
+      "id": "catalog-game-cinematic-defeat-dissolve",
+      "category": "game-cinematic",
+      "pattern": "catalog-game-cinematic-defeat-dissolve",
+      "engine": "base",
+      "demoId": "catalog-game-cinematic-defeat-dissolve"
+    },
+    {
+      "id": "catalog-game-cinematic-chapter-intro",
+      "category": "game-cinematic",
+      "pattern": "catalog-game-cinematic-chapter-intro",
+      "engine": "base",
+      "demoId": "catalog-game-cinematic-chapter-intro"
+    },
+    {
+      "id": "catalog-game-cinematic-raid-start",
+      "category": "game-cinematic",
+      "pattern": "catalog-game-cinematic-raid-start",
+      "engine": "base",
+      "demoId": "catalog-game-cinematic-raid-start"
+    },
+    {
+      "id": "catalog-game-cinematic-letterbox-focus",
+      "category": "game-cinematic",
+      "pattern": "catalog-game-cinematic-letterbox-focus",
+      "engine": "base",
+      "demoId": "catalog-game-cinematic-letterbox-focus"
+    },
+    {
+      "id": "catalog-ui-spatial-cursor-depth-pull",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-cursor-depth-pull",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-cursor-depth-pull"
+    },
+    {
+      "id": "catalog-ui-spatial-focus-portal",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-focus-portal",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-focus-portal"
+    },
+    {
+      "id": "catalog-ui-spatial-radial-command-bloom",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-radial-command-bloom",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-radial-command-bloom"
+    },
+    {
+      "id": "catalog-ui-spatial-spatial-breadcrumb",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-spatial-breadcrumb",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-spatial-breadcrumb"
+    },
+    {
+      "id": "catalog-ui-spatial-perspective-dock",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-perspective-dock",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-perspective-dock"
+    },
+    {
+      "id": "catalog-ui-spatial-layer-peel",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-layer-peel",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-layer-peel"
+    },
+    {
+      "id": "catalog-ui-spatial-tooltip-orbit",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-tooltip-orbit",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-tooltip-orbit"
+    },
+    {
+      "id": "catalog-ui-spatial-depth-lens",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-depth-lens",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-depth-lens"
+    },
+    {
+      "id": "catalog-ui-spatial-magnetic-constellation",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-magnetic-constellation",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-magnetic-constellation"
+    },
+    {
+      "id": "catalog-ui-spatial-infinite-canvas-jump",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-infinite-canvas-jump",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-infinite-canvas-jump"
+    },
+    {
+      "id": "catalog-ui-spatial-z-notification",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-z-notification",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-z-notification"
+    },
+    {
+      "id": "catalog-ui-spatial-camera-dolly-ui",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-camera-dolly-ui",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-camera-dolly-ui"
+    },
+    {
+      "id": "catalog-ui-spatial-volumetric-menu",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-volumetric-menu",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-volumetric-menu"
+    },
+    {
+      "id": "catalog-ui-spatial-parallax-inspector",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-parallax-inspector",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-parallax-inspector"
+    },
+    {
+      "id": "catalog-ui-spatial-spatial-search",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-spatial-search",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-spatial-search"
+    },
+    {
+      "id": "catalog-ui-spatial-orbit-context",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-orbit-context",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-orbit-context"
+    },
+    {
+      "id": "catalog-ui-spatial-depth-stack-reorder",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-depth-stack-reorder",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-depth-stack-reorder"
+    },
+    {
+      "id": "catalog-ui-spatial-calendar-fold",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-calendar-fold",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-calendar-fold"
+    },
+    {
+      "id": "catalog-ui-spatial-cursor-raycast",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-cursor-raycast",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-cursor-raycast"
+    },
+    {
+      "id": "catalog-ui-spatial-spatial-audio-locator",
+      "category": "ui-spatial",
+      "pattern": "catalog-ui-spatial-spatial-audio-locator",
+      "engine": "base",
+      "demoId": "catalog-ui-spatial-spatial-audio-locator"
+    },
+    {
+      "id": "catalog-ui-material-liquid-tab-bridge",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-liquid-tab-bridge",
+      "engine": "base",
+      "demoId": "catalog-ui-material-liquid-tab-bridge"
+    },
+    {
+      "id": "catalog-ui-material-gel-button-split",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-gel-button-split",
+      "engine": "base",
+      "demoId": "catalog-ui-material-gel-button-split"
+    },
+    {
+      "id": "catalog-ui-material-glass-refraction",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-glass-refraction",
+      "engine": "base",
+      "demoId": "catalog-ui-material-glass-refraction"
+    },
+    {
+      "id": "catalog-ui-material-ink-adhesion",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-ink-adhesion",
+      "engine": "base",
+      "demoId": "catalog-ui-material-ink-adhesion"
+    },
+    {
+      "id": "catalog-ui-material-metallic-foil",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-metallic-foil",
+      "engine": "base",
+      "demoId": "catalog-ui-material-metallic-foil"
+    },
+    {
+      "id": "catalog-ui-material-soft-body-toggle",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-soft-body-toggle",
+      "engine": "base",
+      "demoId": "catalog-ui-material-soft-body-toggle"
+    },
+    {
+      "id": "catalog-ui-material-viscous-progress",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-viscous-progress",
+      "engine": "base",
+      "demoId": "catalog-ui-material-viscous-progress"
+    },
+    {
+      "id": "catalog-ui-material-chromatic-glass-edge",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-chromatic-glass-edge",
+      "engine": "base",
+      "demoId": "catalog-ui-material-chromatic-glass-edge"
+    },
+    {
+      "id": "catalog-ui-material-paper-fold",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-paper-fold",
+      "engine": "base",
+      "demoId": "catalog-ui-material-paper-fold"
+    },
+    {
+      "id": "catalog-ui-material-cloth-wave",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-cloth-wave",
+      "engine": "base",
+      "demoId": "catalog-ui-material-cloth-wave"
+    },
+    {
+      "id": "catalog-ui-material-bubble-merge",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-bubble-merge",
+      "engine": "base",
+      "demoId": "catalog-ui-material-bubble-merge"
+    },
+    {
+      "id": "catalog-ui-material-frost-melt",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-frost-melt",
+      "engine": "base",
+      "demoId": "catalog-ui-material-frost-melt"
+    },
+    {
+      "id": "catalog-ui-material-membrane-press",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-membrane-press",
+      "engine": "base",
+      "demoId": "catalog-ui-material-membrane-press"
+    },
+    {
+      "id": "catalog-ui-material-sand-dissolve",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-sand-dissolve",
+      "engine": "base",
+      "demoId": "catalog-ui-material-sand-dissolve"
+    },
+    {
+      "id": "catalog-ui-material-oil-slick",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-oil-slick",
+      "engine": "base",
+      "demoId": "catalog-ui-material-oil-slick"
+    },
+    {
+      "id": "catalog-ui-material-magnetic-fluid",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-magnetic-fluid",
+      "engine": "base",
+      "demoId": "catalog-ui-material-magnetic-fluid"
+    },
+    {
+      "id": "catalog-ui-material-glass-crack-recover",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-glass-crack-recover",
+      "engine": "base",
+      "demoId": "catalog-ui-material-glass-crack-recover"
+    },
+    {
+      "id": "catalog-ui-material-neon-tube-draw",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-neon-tube-draw",
+      "engine": "base",
+      "demoId": "catalog-ui-material-neon-tube-draw"
+    },
+    {
+      "id": "catalog-ui-material-chrome-ripple",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-chrome-ripple",
+      "engine": "base",
+      "demoId": "catalog-ui-material-chrome-ripple"
+    },
+    {
+      "id": "catalog-ui-material-clay-icon-morph",
+      "category": "ui-material",
+      "pattern": "catalog-ui-material-clay-icon-morph",
+      "engine": "base",
+      "demoId": "catalog-ui-material-clay-icon-morph"
+    },
+    {
+      "id": "catalog-kinetic-type-glyph-slot-roll",
+      "category": "tx-swap",
+      "pattern": "catalog-kinetic-type-glyph-slot-roll",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-glyph-slot-roll"
+    },
+    {
+      "id": "catalog-kinetic-type-variable-font-pulse",
+      "category": "tx-variable",
+      "pattern": "catalog-kinetic-type-variable-font-pulse",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-variable-font-pulse"
+    },
+    {
+      "id": "catalog-kinetic-type-character-magnetize",
+      "category": "tx-physics",
+      "pattern": "catalog-kinetic-type-character-magnetize",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-character-magnetize"
+    },
+    {
+      "id": "catalog-kinetic-type-line-break-reflow",
+      "category": "tx-layout",
+      "pattern": "catalog-kinetic-type-line-break-reflow",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-line-break-reflow"
+    },
+    {
+      "id": "catalog-kinetic-type-terminal-decode",
+      "category": "tx-typing",
+      "pattern": "catalog-kinetic-type-terminal-decode",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-terminal-decode"
+    },
+    {
+      "id": "catalog-kinetic-type-counterweight-headline",
+      "category": "tx-layout",
+      "pattern": "catalog-kinetic-type-counterweight-headline",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-counterweight-headline"
+    },
+    {
+      "id": "catalog-kinetic-type-echo-caption",
+      "category": "tx-caption",
+      "pattern": "catalog-kinetic-type-echo-caption",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-echo-caption"
+    },
+    {
+      "id": "catalog-kinetic-type-letter-collision",
+      "category": "tx-physics",
+      "pattern": "catalog-kinetic-type-letter-collision",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-letter-collision"
+    },
+    {
+      "id": "catalog-kinetic-type-type-tunnel",
+      "category": "tx-depth",
+      "pattern": "catalog-kinetic-type-type-tunnel",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-type-tunnel"
+    },
+    {
+      "id": "catalog-kinetic-type-chapter-index-scrub",
+      "category": "tx-scroll",
+      "pattern": "catalog-kinetic-type-chapter-index-scrub",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-chapter-index-scrub"
+    },
+    {
+      "id": "catalog-kinetic-type-focus-word-explosion",
+      "category": "tx-emphasis",
+      "pattern": "catalog-kinetic-type-focus-word-explosion",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-focus-word-explosion"
+    },
+    {
+      "id": "catalog-kinetic-type-mono-data-shuffle",
+      "category": "tx-counter",
+      "pattern": "catalog-kinetic-type-mono-data-shuffle",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-mono-data-shuffle"
+    },
+    {
+      "id": "catalog-kinetic-type-headline-ribbon",
+      "category": "tx-title",
+      "pattern": "catalog-kinetic-type-headline-ribbon",
+      "engine": "base",
+      "demoId": "catalog-kinetic-type-headline-ribbon"
+    },
+    {
+      "id": "catalog-game-impact-fx-hit-stop",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-hit-stop",
+      "engine": "base",
+      "demoId": "t-hitstop"
+    },
+    {
+      "id": "catalog-game-impact-fx-shockwave-type",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-shockwave-type",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-shockwave-type"
+    },
+    {
+      "id": "catalog-game-impact-fx-slash-reveal",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-slash-reveal",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-slash-reveal"
+    },
+    {
+      "id": "catalog-game-impact-fx-freeze-color-drain",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-freeze-color-drain",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-freeze-color-drain"
+    },
+    {
+      "id": "catalog-game-impact-fx-combo-heat",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-combo-heat",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-combo-heat"
+    },
+    {
+      "id": "catalog-game-impact-fx-edge-damage",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-edge-damage",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-edge-damage"
+    },
+    {
+      "id": "catalog-game-impact-fx-armor-crack",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-armor-crack",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-armor-crack"
+    },
+    {
+      "id": "catalog-game-impact-fx-critical-compress",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-critical-compress",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-critical-compress"
+    },
+    {
+      "id": "catalog-game-impact-fx-phase-shatter",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-phase-shatter",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-phase-shatter"
+    },
+    {
+      "id": "catalog-game-impact-fx-speedline-tunnel",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-speedline-tunnel",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-speedline-tunnel"
+    },
+    {
+      "id": "catalog-game-impact-fx-parry-time-slice",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-parry-time-slice",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-parry-time-slice"
+    },
+    {
+      "id": "catalog-game-impact-fx-element-burst",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-element-burst",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-element-burst"
+    },
+    {
+      "id": "catalog-game-impact-fx-camera-kick",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-camera-kick",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-camera-kick"
+    },
+    {
+      "id": "catalog-game-impact-fx-afterimage-dash",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-afterimage-dash",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-afterimage-dash"
+    },
+    {
+      "id": "catalog-game-impact-fx-victory-hold",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-victory-hold",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-victory-hold"
+    },
+    {
+      "id": "catalog-game-impact-fx-loot-beam",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-loot-beam",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-loot-beam"
+    },
+    {
+      "id": "catalog-game-impact-fx-warning-stripe",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-warning-stripe",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-warning-stripe"
+    },
+    {
+      "id": "catalog-game-impact-fx-shield-recharge",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-shield-recharge",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-shield-recharge"
+    },
+    {
+      "id": "catalog-game-impact-fx-mission-stamp",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-mission-stamp",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-mission-stamp"
+    },
+    {
+      "id": "catalog-game-impact-fx-finisher-cut",
+      "category": "game-impact-fx",
+      "pattern": "catalog-game-impact-fx-finisher-cut",
+      "engine": "base",
+      "demoId": "catalog-game-impact-fx-finisher-cut"
+    },
+    {
+      "id": "catalog-data-story-sankey-flow",
+      "category": "data-story",
+      "pattern": "catalog-data-story-sankey-flow",
+      "engine": "base",
+      "demoId": "catalog-data-story-sankey-flow"
+    },
+    {
+      "id": "catalog-data-story-odometer-cascade",
+      "category": "data-story",
+      "pattern": "catalog-data-story-odometer-cascade",
+      "engine": "base",
+      "demoId": "catalog-data-story-odometer-cascade"
+    },
+    {
+      "id": "catalog-data-story-threshold-wave",
+      "category": "data-story",
+      "pattern": "catalog-data-story-threshold-wave",
+      "engine": "base",
+      "demoId": "catalog-data-story-threshold-wave"
+    },
+    {
+      "id": "catalog-data-story-confidence-fog",
+      "category": "data-story",
+      "pattern": "catalog-data-story-confidence-fog",
+      "engine": "base",
+      "demoId": "catalog-data-story-confidence-fog"
+    },
+    {
+      "id": "catalog-data-story-signal-pulse-map",
+      "category": "data-story",
+      "pattern": "catalog-data-story-signal-pulse-map",
+      "engine": "base",
+      "demoId": "catalog-data-story-signal-pulse-map"
+    },
+    {
+      "id": "catalog-data-story-delta-split",
+      "category": "data-story",
+      "pattern": "catalog-data-story-delta-split",
+      "engine": "base",
+      "demoId": "catalog-data-story-delta-split"
+    },
+    {
+      "id": "catalog-data-story-timeline-trail",
+      "category": "data-story",
+      "pattern": "catalog-data-story-timeline-trail",
+      "engine": "base",
+      "demoId": "catalog-data-story-timeline-trail"
+    },
+    {
+      "id": "catalog-data-story-topology-bloom",
+      "category": "data-story",
+      "pattern": "catalog-data-story-topology-bloom",
+      "engine": "base",
+      "demoId": "catalog-data-story-topology-bloom"
+    },
+    {
+      "id": "catalog-data-story-milestone-firefly",
+      "category": "data-story",
+      "pattern": "catalog-data-story-milestone-firefly",
+      "engine": "base",
+      "demoId": "catalog-data-story-milestone-firefly"
+    },
+    {
+      "id": "catalog-data-story-heatmap-ripple",
+      "category": "data-story",
+      "pattern": "catalog-data-story-heatmap-ripple",
+      "engine": "base",
+      "demoId": "catalog-data-story-heatmap-ripple"
+    },
+    {
+      "id": "catalog-data-story-stream-breathe",
+      "category": "data-story",
+      "pattern": "catalog-data-story-stream-breathe",
+      "engine": "base",
+      "demoId": "catalog-data-story-stream-breathe"
+    },
+    {
+      "id": "catalog-data-story-rank-ladder",
+      "category": "data-story",
+      "pattern": "catalog-data-story-rank-ladder",
+      "engine": "base",
+      "demoId": "catalog-data-story-rank-ladder"
+    },
+    {
+      "id": "catalog-data-story-cluster-merge",
+      "category": "data-story",
+      "pattern": "catalog-data-story-cluster-merge",
+      "engine": "base",
+      "demoId": "catalog-data-story-cluster-merge"
+    },
+    {
+      "id": "catalog-data-story-event-domino",
+      "category": "data-story",
+      "pattern": "catalog-data-story-event-domino",
+      "engine": "base",
+      "demoId": "catalog-data-story-event-domino"
+    },
+    {
+      "id": "catalog-data-story-kpi-relay",
+      "category": "data-story",
+      "pattern": "catalog-data-story-kpi-relay",
+      "engine": "base",
+      "demoId": "catalog-data-story-kpi-relay"
+    },
+    {
+      "id": "catalog-data-story-budget-bloom",
+      "category": "data-story",
+      "pattern": "catalog-data-story-budget-bloom",
+      "engine": "base",
+      "demoId": "catalog-data-story-budget-bloom"
+    },
+    {
+      "id": "catalog-data-story-calendar-density",
+      "category": "data-story",
+      "pattern": "catalog-data-story-calendar-density",
+      "engine": "base",
+      "demoId": "catalog-data-story-calendar-density"
+    },
+    {
+      "id": "catalog-data-story-queue-compress",
+      "category": "data-story",
+      "pattern": "catalog-data-story-queue-compress",
+      "engine": "base",
+      "demoId": "catalog-data-story-queue-compress"
+    },
+    {
+      "id": "catalog-data-story-sentiment-spectrum",
+      "category": "data-story",
+      "pattern": "catalog-data-story-sentiment-spectrum",
+      "engine": "base",
+      "demoId": "catalog-data-story-sentiment-spectrum"
+    },
+    {
+      "id": "catalog-data-story-goal-projection",
+      "category": "data-story",
+      "pattern": "catalog-data-story-goal-projection",
+      "engine": "base",
+      "demoId": "catalog-data-story-goal-projection"
+    },
+    {
+      "id": "squash",
+      "category": "principles",
+      "pattern": "atlas-squash",
+      "engine": "base",
+      "demoId": "squash"
+    },
+    {
+      "id": "anticipation",
+      "category": "principles",
+      "pattern": "atlas-anticipation",
+      "engine": "base",
+      "demoId": "anticipation"
+    },
+    {
+      "id": "staging",
+      "category": "principles",
+      "pattern": "atlas-staging",
+      "engine": "base",
+      "demoId": "staging"
+    },
+    {
+      "id": "pose",
+      "category": "principles",
+      "pattern": "atlas-pose",
+      "engine": "base",
+      "demoId": "pose"
+    },
+    {
+      "id": "follow",
+      "category": "principles",
+      "pattern": "atlas-follow",
+      "engine": "base",
+      "demoId": "follow"
+    },
+    {
+      "id": "slowinout",
+      "category": "principles",
+      "pattern": "atlas-slowinout",
+      "engine": "base",
+      "demoId": "slowinout"
+    },
+    {
+      "id": "arcs",
+      "category": "principles",
+      "pattern": "atlas-arcs",
+      "engine": "base",
+      "demoId": "arcs"
+    },
+    {
+      "id": "secondary",
+      "category": "principles",
+      "pattern": "atlas-secondary",
+      "engine": "base",
+      "demoId": "secondary"
+    },
+    {
+      "id": "timing-weight",
+      "category": "principles",
+      "pattern": "atlas-timing-weight",
+      "engine": "base",
+      "demoId": "timing-weight"
+    },
+    {
+      "id": "exaggeration",
+      "category": "principles",
+      "pattern": "atlas-exaggeration",
+      "engine": "base",
+      "demoId": "exaggeration"
+    },
+    {
+      "id": "solid",
+      "category": "principles",
+      "pattern": "atlas-solid",
+      "engine": "base",
+      "demoId": "solid"
+    },
+    {
+      "id": "appeal",
+      "category": "principles",
+      "pattern": "atlas-appeal",
+      "engine": "base",
+      "demoId": "appeal"
+    },
+    {
+      "id": "cause",
+      "category": "principles",
+      "pattern": "atlas-cause",
+      "engine": "base",
+      "demoId": "cause"
+    },
+    {
+      "id": "jitter",
+      "category": "principles",
+      "pattern": "atlas-jitter",
+      "engine": "base",
+      "demoId": "jitter"
+    },
+    {
+      "id": "layers3",
+      "category": "principles",
+      "pattern": "atlas-layers3",
+      "engine": "base",
+      "demoId": "layers3"
+    },
+    {
+      "id": "ambient-hold",
+      "category": "principles",
+      "pattern": "atlas-ambient-hold",
+      "engine": "base",
+      "demoId": "ambient-hold"
+    },
+    {
+      "id": "counter",
+      "category": "principles",
+      "pattern": "atlas-counter",
+      "engine": "base",
+      "demoId": "counter"
+    },
+    {
+      "id": "gaze",
+      "category": "principles",
+      "pattern": "atlas-gaze",
+      "engine": "base",
+      "demoId": "gaze"
+    },
+    {
+      "id": "dialect",
+      "category": "principles",
+      "pattern": "atlas-dialect",
+      "engine": "base",
+      "demoId": "dialect"
+    },
+    {
+      "id": "memory",
+      "category": "principles",
+      "pattern": "atlas-memory",
+      "engine": "base",
+      "demoId": "memory"
+    },
+    {
+      "id": "enter-once",
+      "category": "principles",
+      "pattern": "atlas-enter-once",
+      "engine": "base",
+      "demoId": "enter-once"
+    },
+    {
+      "id": "one-step",
+      "category": "principles",
+      "pattern": "atlas-one-step",
+      "engine": "base",
+      "demoId": "one-step"
+    },
+    {
+      "id": "default-final",
+      "category": "principles",
+      "pattern": "atlas-default-final",
+      "engine": "base",
+      "demoId": "default-final"
+    },
+    {
+      "id": "finite-repeat",
+      "category": "principles",
+      "pattern": "atlas-finite-repeat",
+      "engine": "base",
+      "demoId": "finite-repeat"
+    },
+    {
+      "id": "e-linear",
+      "category": "easing",
+      "pattern": "atlas-e-linear",
+      "engine": "base",
+      "demoId": "e-linear"
+    },
+    {
+      "id": "e-outexpo",
+      "category": "easing",
+      "pattern": "atlas-e-outexpo",
+      "engine": "base",
+      "demoId": "e-outexpo"
+    },
+    {
+      "id": "e-inexpo",
+      "category": "easing",
+      "pattern": "atlas-e-inexpo",
+      "engine": "base",
+      "demoId": "e-inexpo"
+    },
+    {
+      "id": "e-inout",
+      "category": "easing",
+      "pattern": "atlas-e-inout",
+      "engine": "base",
+      "demoId": "e-inout"
+    },
+    {
+      "id": "e-house",
+      "category": "easing",
+      "pattern": "atlas-e-house",
+      "engine": "base",
+      "demoId": "e-house"
+    },
+    {
+      "id": "e-whip",
+      "category": "easing",
+      "pattern": "atlas-e-whip",
+      "engine": "base",
+      "demoId": "e-whip"
+    },
+    {
+      "id": "e-glide",
+      "category": "easing",
+      "pattern": "atlas-e-glide",
+      "engine": "base",
+      "demoId": "e-glide"
+    },
+    {
+      "id": "e-quint",
+      "category": "easing",
+      "pattern": "atlas-e-quint",
+      "engine": "base",
+      "demoId": "e-quint"
+    },
+    {
+      "id": "e-md3",
+      "category": "easing",
+      "pattern": "atlas-e-md3",
+      "engine": "base",
+      "demoId": "e-md3"
+    },
+    {
+      "id": "e-md3e",
+      "category": "easing",
+      "pattern": "atlas-e-md3e",
+      "engine": "base",
+      "demoId": "e-md3e"
+    },
+    {
+      "id": "e-md3a",
+      "category": "easing",
+      "pattern": "atlas-e-md3a",
+      "engine": "base",
+      "demoId": "e-md3a"
+    },
+    {
+      "id": "e-apple",
+      "category": "easing",
+      "pattern": "atlas-e-apple",
+      "engine": "base",
+      "demoId": "e-apple"
+    },
+    {
+      "id": "e-outback",
+      "category": "easing",
+      "pattern": "atlas-e-outback",
+      "engine": "base",
+      "demoId": "e-outback"
+    },
+    {
+      "id": "e-inback",
+      "category": "easing",
+      "pattern": "atlas-e-inback",
+      "engine": "base",
+      "demoId": "e-inback"
+    },
+    {
+      "id": "e-inoutback",
+      "category": "easing",
+      "pattern": "atlas-e-inoutback",
+      "engine": "base",
+      "demoId": "e-inoutback"
+    },
+    {
+      "id": "e-sine",
+      "category": "easing",
+      "pattern": "atlas-e-sine",
+      "engine": "base",
+      "demoId": "e-sine"
+    },
+    {
+      "id": "e-circ",
+      "category": "easing",
+      "pattern": "atlas-e-circ",
+      "engine": "base",
+      "demoId": "e-circ"
+    },
+    {
+      "id": "e-elastic",
+      "category": "easing",
+      "pattern": "atlas-e-elastic",
+      "engine": "base",
+      "demoId": "e-elastic"
+    },
+    {
+      "id": "e-bounce",
+      "category": "easing",
+      "pattern": "atlas-e-bounce",
+      "engine": "base",
+      "demoId": "e-bounce"
+    },
+    {
+      "id": "e-steps",
+      "category": "easing",
+      "pattern": "atlas-e-steps",
+      "engine": "base",
+      "demoId": "e-steps"
+    },
+    {
+      "id": "e-slowmo",
+      "category": "easing",
+      "pattern": "atlas-e-slowmo",
+      "engine": "base",
+      "demoId": "e-slowmo"
+    },
+    {
+      "id": "e-rough",
+      "category": "easing",
+      "pattern": "atlas-e-rough",
+      "engine": "base",
+      "demoId": "e-rough"
+    },
+    {
+      "id": "e-expo-scale",
+      "category": "easing",
+      "pattern": "atlas-e-expo-scale",
+      "engine": "base",
+      "demoId": "e-expo-scale"
+    },
+    {
+      "id": "e-wiggle",
+      "category": "easing",
+      "pattern": "atlas-e-wiggle",
+      "engine": "base",
+      "demoId": "e-wiggle"
+    },
+    {
+      "id": "e-custombounce",
+      "category": "easing",
+      "pattern": "atlas-e-custombounce",
+      "engine": "base",
+      "demoId": "e-custombounce"
+    },
+    {
+      "id": "s-snap",
+      "category": "spring",
+      "pattern": "atlas-s-snap",
+      "engine": "base",
+      "demoId": "s-snap"
+    },
+    {
+      "id": "s-bounce",
+      "category": "spring",
+      "pattern": "atlas-s-bounce",
+      "engine": "base",
+      "demoId": "s-bounce"
+    },
+    {
+      "id": "s-smooth",
+      "category": "spring",
+      "pattern": "atlas-s-smooth",
+      "engine": "base",
+      "demoId": "s-smooth"
+    },
+    {
+      "id": "s-heavy",
+      "category": "spring",
+      "pattern": "atlas-s-heavy",
+      "engine": "base",
+      "demoId": "s-heavy"
+    },
+    {
+      "id": "s-rsdefault",
+      "category": "spring",
+      "pattern": "atlas-s-rsdefault",
+      "engine": "base",
+      "demoId": "s-rsdefault"
+    },
+    {
+      "id": "s-wobbly",
+      "category": "spring",
+      "pattern": "atlas-s-wobbly",
+      "engine": "base",
+      "demoId": "s-wobbly"
+    },
+    {
+      "id": "s-molasses",
+      "category": "spring",
+      "pattern": "atlas-s-molasses",
+      "engine": "base",
+      "demoId": "s-molasses"
+    },
+    {
+      "id": "s-framerbouncy",
+      "category": "spring",
+      "pattern": "atlas-s-framerbouncy",
+      "engine": "base",
+      "demoId": "s-framerbouncy"
+    },
+    {
+      "id": "s-modal",
+      "category": "spring",
+      "pattern": "atlas-s-modal",
+      "engine": "base",
+      "demoId": "s-modal"
+    },
+    {
+      "id": "s-critical",
+      "category": "spring",
+      "pattern": "atlas-s-critical",
+      "engine": "base",
+      "demoId": "s-critical"
+    },
+    {
+      "id": "s-track",
+      "category": "spring",
+      "pattern": "atlas-s-track",
+      "engine": "base",
+      "demoId": "s-track"
+    },
+    {
+      "id": "s-split",
+      "category": "spring",
+      "pattern": "atlas-s-split",
+      "engine": "base",
+      "demoId": "s-split"
+    },
+    {
+      "id": "s-vs",
+      "category": "spring",
+      "pattern": "atlas-s-vs",
+      "engine": "base",
+      "demoId": "s-vs"
+    },
+    {
+      "id": "s-budget",
+      "category": "spring",
+      "pattern": "atlas-s-budget",
+      "engine": "base",
+      "demoId": "s-budget"
+    },
+    {
+      "id": "s-inertia",
+      "category": "spring",
+      "pattern": "atlas-s-inertia",
+      "engine": "base",
+      "demoId": "s-inertia"
+    },
+    {
+      "id": "s-projectile",
+      "category": "spring",
+      "pattern": "atlas-s-projectile",
+      "engine": "base",
+      "demoId": "s-projectile"
+    },
+    {
+      "id": "t-size",
+      "category": "timing",
+      "pattern": "atlas-t-size",
+      "engine": "base",
+      "demoId": "t-size"
+    },
+    {
+      "id": "t-distance",
+      "category": "timing",
+      "pattern": "atlas-t-distance",
+      "engine": "base",
+      "demoId": "t-distance"
+    },
+    {
+      "id": "t-exit",
+      "category": "timing",
+      "pattern": "atlas-t-exit",
+      "engine": "base",
+      "demoId": "t-exit"
+    },
+    {
+      "id": "t-stagger-seq",
+      "category": "timing",
+      "pattern": "atlas-t-stagger-seq",
+      "engine": "base",
+      "demoId": "t-stagger-seq"
+    },
+    {
+      "id": "t-stagger-center",
+      "category": "timing",
+      "pattern": "atlas-t-stagger-center",
+      "engine": "base",
+      "demoId": "t-stagger-center"
+    },
+    {
+      "id": "t-stagger-edges",
+      "category": "timing",
+      "pattern": "atlas-t-stagger-edges",
+      "engine": "base",
+      "demoId": "t-stagger-edges"
+    },
+    {
+      "id": "t-stagger-random",
+      "category": "timing",
+      "pattern": "atlas-t-stagger-random",
+      "engine": "base",
+      "demoId": "t-stagger-random"
+    },
+    {
+      "id": "t-stagger-grid",
+      "category": "timing",
+      "pattern": "atlas-t-stagger-grid",
+      "engine": "base",
+      "demoId": "t-stagger-grid"
+    },
+    {
+      "id": "t-twos",
+      "category": "timing",
+      "pattern": "atlas-t-twos",
+      "engine": "base",
+      "demoId": "t-twos"
+    },
+    {
+      "id": "t-snaphold",
+      "category": "timing",
+      "pattern": "atlas-t-snaphold",
+      "engine": "base",
+      "demoId": "t-snaphold"
+    },
+    {
+      "id": "t-beat",
+      "category": "timing",
+      "pattern": "atlas-t-beat",
+      "engine": "base",
+      "demoId": "t-beat"
+    },
+    {
+      "id": "t-ramp",
+      "category": "timing",
+      "pattern": "atlas-t-ramp",
+      "engine": "base",
+      "demoId": "t-ramp"
+    },
+    {
+      "id": "t-overlap",
+      "category": "timing",
+      "pattern": "atlas-t-overlap",
+      "engine": "base",
+      "demoId": "t-overlap"
+    },
+    {
+      "id": "t-read",
+      "category": "timing",
+      "pattern": "atlas-t-read",
+      "engine": "base",
+      "demoId": "t-read"
+    },
+    {
+      "id": "t-energy",
+      "category": "timing",
+      "pattern": "atlas-t-energy",
+      "engine": "base",
+      "demoId": "t-energy"
+    },
+    {
+      "id": "tr-cut",
+      "category": "transitions",
+      "pattern": "atlas-tr-cut",
+      "engine": "base",
+      "demoId": "tr-cut"
+    },
+    {
+      "id": "tr-dissolve",
+      "category": "transitions",
+      "pattern": "atlas-tr-dissolve",
+      "engine": "base",
+      "demoId": "tr-dissolve"
+    },
+    {
+      "id": "tr-blur",
+      "category": "transitions",
+      "pattern": "atlas-tr-blur",
+      "engine": "base",
+      "demoId": "tr-blur"
+    },
+    {
+      "id": "tr-push",
+      "category": "transitions",
+      "pattern": "atlas-tr-push",
+      "engine": "base",
+      "demoId": "tr-push"
+    },
+    {
+      "id": "tr-whip",
+      "category": "transitions",
+      "pattern": "atlas-tr-whip",
+      "engine": "base",
+      "demoId": "tr-whip"
+    },
+    {
+      "id": "tr-wipe",
+      "category": "transitions",
+      "pattern": "atlas-tr-wipe",
+      "engine": "base",
+      "demoId": "tr-wipe"
+    },
+    {
+      "id": "tr-inset",
+      "category": "transitions",
+      "pattern": "atlas-tr-inset",
+      "engine": "base",
+      "demoId": "tr-inset"
+    },
+    {
+      "id": "tr-clock",
+      "category": "transitions",
+      "pattern": "atlas-tr-clock",
+      "engine": "base",
+      "demoId": "tr-clock"
+    },
+    {
+      "id": "tr-iris",
+      "category": "transitions",
+      "pattern": "atlas-tr-iris",
+      "engine": "base",
+      "demoId": "tr-iris"
+    },
+    {
+      "id": "tr-shapeiris",
+      "category": "transitions",
+      "pattern": "atlas-tr-shapeiris",
+      "engine": "base",
+      "demoId": "tr-shapeiris"
+    },
+    {
+      "id": "tr-flood",
+      "category": "transitions",
+      "pattern": "atlas-tr-flood",
+      "engine": "base",
+      "demoId": "tr-flood"
+    },
+    {
+      "id": "tr-zoomthrough",
+      "category": "transitions",
+      "pattern": "atlas-tr-zoomthrough",
+      "engine": "base",
+      "demoId": "tr-zoomthrough"
+    },
+    {
+      "id": "tr-blinds",
+      "category": "transitions",
+      "pattern": "atlas-tr-blinds",
+      "engine": "base",
+      "demoId": "tr-blinds"
+    },
+    {
+      "id": "tr-blocks",
+      "category": "transitions",
+      "pattern": "atlas-tr-blocks",
+      "engine": "base",
+      "demoId": "tr-blocks"
+    },
+    {
+      "id": "tr-pixel",
+      "category": "transitions",
+      "pattern": "atlas-tr-pixel",
+      "engine": "base",
+      "demoId": "tr-pixel"
+    },
+    {
+      "id": "tr-morph",
+      "category": "transitions",
+      "pattern": "atlas-tr-morph",
+      "engine": "base",
+      "demoId": "tr-morph"
+    },
+    {
+      "id": "tr-match",
+      "category": "transitions",
+      "pattern": "atlas-tr-match",
+      "engine": "base",
+      "demoId": "tr-match"
+    },
+    {
+      "id": "tr-glitch",
+      "category": "transitions",
+      "pattern": "atlas-tr-glitch",
+      "engine": "base",
+      "demoId": "tr-glitch"
+    },
+    {
+      "id": "tr-leak",
+      "category": "transitions",
+      "pattern": "atlas-tr-leak",
+      "engine": "base",
+      "demoId": "tr-leak"
+    },
+    {
+      "id": "tr-flip",
+      "category": "transitions",
+      "pattern": "atlas-tr-flip",
+      "engine": "base",
+      "demoId": "tr-flip"
+    },
+    {
+      "id": "tr-brush",
+      "category": "transitions",
+      "pattern": "atlas-tr-brush",
+      "engine": "base",
+      "demoId": "tr-brush"
+    },
+    {
+      "id": "tr-letter",
+      "category": "transitions",
+      "pattern": "atlas-tr-letter",
+      "engine": "base",
+      "demoId": "tr-letter"
+    },
+    {
+      "id": "tr-drop",
+      "category": "transitions",
+      "pattern": "atlas-tr-drop",
+      "engine": "base",
+      "demoId": "tr-drop"
+    },
+    {
+      "id": "tr-streak",
+      "category": "transitions",
+      "pattern": "atlas-tr-streak",
+      "engine": "base",
+      "demoId": "tr-streak"
+    },
+    {
+      "id": "tr-jcut",
+      "category": "transitions",
+      "pattern": "atlas-tr-jcut",
+      "engine": "base",
+      "demoId": "tr-jcut"
+    },
+    {
+      "id": "cam-pushin",
+      "category": "camera",
+      "pattern": "atlas-cam-pushin",
+      "engine": "base",
+      "demoId": "cam-pushin"
+    },
+    {
+      "id": "cam-pullout",
+      "category": "camera",
+      "pattern": "atlas-cam-pullout",
+      "engine": "base",
+      "demoId": "cam-pullout"
+    },
+    {
+      "id": "cam-truck",
+      "category": "camera",
+      "pattern": "atlas-cam-truck",
+      "engine": "base",
+      "demoId": "cam-truck"
+    },
+    {
+      "id": "cam-pan",
+      "category": "camera",
+      "pattern": "atlas-cam-pan",
+      "engine": "base",
+      "demoId": "cam-pan"
+    },
+    {
+      "id": "cam-pedestal",
+      "category": "camera",
+      "pattern": "atlas-cam-pedestal",
+      "engine": "base",
+      "demoId": "cam-pedestal"
+    },
+    {
+      "id": "cam-roll",
+      "category": "camera",
+      "pattern": "atlas-cam-roll",
+      "engine": "base",
+      "demoId": "cam-roll"
+    },
+    {
+      "id": "cam-zoomvsdolly",
+      "category": "camera",
+      "pattern": "atlas-cam-zoomvsdolly",
+      "engine": "base",
+      "demoId": "cam-zoomvsdolly"
+    },
+    {
+      "id": "cam-vertigo",
+      "category": "camera",
+      "pattern": "atlas-cam-vertigo",
+      "engine": "base",
+      "demoId": "cam-vertigo"
+    },
+    {
+      "id": "cam-crane",
+      "category": "camera",
+      "pattern": "atlas-cam-crane",
+      "engine": "base",
+      "demoId": "cam-crane"
+    },
+    {
+      "id": "cam-whip",
+      "category": "camera",
+      "pattern": "atlas-cam-whip",
+      "engine": "base",
+      "demoId": "cam-whip"
+    },
+    {
+      "id": "cam-orbit",
+      "category": "camera",
+      "pattern": "atlas-cam-orbit",
+      "engine": "base",
+      "demoId": "cam-orbit"
+    },
+    {
+      "id": "cam-rack",
+      "category": "camera",
+      "pattern": "atlas-cam-rack",
+      "engine": "base",
+      "demoId": "cam-rack"
+    },
+    {
+      "id": "cam-handheld",
+      "category": "camera",
+      "pattern": "atlas-cam-handheld",
+      "engine": "base",
+      "demoId": "cam-handheld"
+    },
+    {
+      "id": "cam-shake",
+      "category": "camera",
+      "pattern": "atlas-cam-shake",
+      "engine": "base",
+      "demoId": "cam-shake"
+    },
+    {
+      "id": "cam-punch",
+      "category": "camera",
+      "pattern": "atlas-cam-punch",
+      "engine": "base",
+      "demoId": "cam-punch"
+    },
+    {
+      "id": "cam-kenburns",
+      "category": "camera",
+      "pattern": "atlas-cam-kenburns",
+      "engine": "base",
+      "demoId": "cam-kenburns"
+    },
+    {
+      "id": "cam-parallax",
+      "category": "camera",
+      "pattern": "atlas-cam-parallax",
+      "engine": "base",
+      "demoId": "cam-parallax"
+    },
+    {
+      "id": "cam-follow",
+      "category": "camera",
+      "pattern": "atlas-cam-follow",
+      "engine": "base",
+      "demoId": "cam-follow"
+    },
+    {
+      "id": "ty-slam",
+      "category": "tx-emphasis",
+      "pattern": "atlas-ty-slam",
+      "engine": "base",
+      "demoId": "ty-slam"
+    },
+    {
+      "id": "ty-flip",
+      "category": "tx-swap",
+      "pattern": "atlas-ty-flip",
+      "engine": "base",
+      "demoId": "ty-flip"
+    },
+    {
+      "id": "ty-elastic",
+      "category": "tx-emphasis",
+      "pattern": "atlas-ty-elastic",
+      "engine": "base",
+      "demoId": "ty-elastic"
+    },
+    {
+      "id": "ty-ghost",
+      "category": "tx-reveal",
+      "pattern": "atlas-ty-ghost",
+      "engine": "base",
+      "demoId": "ty-ghost"
+    },
+    {
+      "id": "ty-kinetic",
+      "category": "tx-reveal",
+      "pattern": "atlas-ty-kinetic",
+      "engine": "base",
+      "demoId": "ty-kinetic"
+    },
+    {
+      "id": "ty-inertia",
+      "category": "tx-physics",
+      "pattern": "atlas-ty-inertia",
+      "engine": "base",
+      "demoId": "ty-inertia"
+    },
+    {
+      "id": "ui-press",
+      "category": "ui-button",
+      "pattern": "atlas-ui-press",
+      "engine": "base",
+      "demoId": "ui-press"
+    },
+    {
+      "id": "ui-morph",
+      "category": "ui-button",
+      "pattern": "atlas-ui-morph",
+      "engine": "base",
+      "demoId": "ui-morph"
+    },
+    {
+      "id": "ui-modal",
+      "category": "web-layout",
+      "pattern": "atlas-ui-modal",
+      "engine": "base",
+      "demoId": "ui-modal"
+    },
+    {
+      "id": "ui-toast",
+      "category": "ui-feedback",
+      "pattern": "atlas-ui-toast",
+      "engine": "base",
+      "demoId": "ui-toast"
+    },
+    {
+      "id": "ui-fan",
+      "category": "web-interaction",
+      "pattern": "atlas-ui-fan",
+      "engine": "base",
+      "demoId": "ui-fan"
+    },
+    {
+      "id": "ui-island",
+      "category": "ui-feedback",
+      "pattern": "atlas-ui-island",
+      "engine": "base",
+      "demoId": "ui-island"
+    },
+    {
+      "id": "ui-tooltip",
+      "category": "web-interaction",
+      "pattern": "atlas-ui-tooltip",
+      "engine": "base",
+      "demoId": "ui-tooltip"
+    },
+    {
+      "id": "ui-cursorarc",
+      "category": "web-interaction",
+      "pattern": "atlas-ui-cursorarc",
+      "engine": "base",
+      "demoId": "ui-cursorarc"
+    },
+    {
+      "id": "ld-bar",
+      "category": "ui-loading",
+      "pattern": "atlas-ld-bar",
+      "engine": "base",
+      "demoId": "ld-bar"
+    },
+    {
+      "id": "ld-pulse",
+      "category": "ui-loading",
+      "pattern": "atlas-ld-pulse",
+      "engine": "base",
+      "demoId": "ld-pulse"
+    },
+    {
+      "id": "ld-squares",
+      "category": "ui-loading",
+      "pattern": "atlas-ld-squares",
+      "engine": "base",
+      "demoId": "ld-squares"
+    },
+    {
+      "id": "sh-repeater",
+      "category": "svg-path",
+      "pattern": "atlas-sh-repeater",
+      "engine": "base",
+      "demoId": "sh-repeater"
+    },
+    {
+      "id": "sh-blob",
+      "category": "svg-path",
+      "pattern": "atlas-sh-blob",
+      "engine": "base",
+      "demoId": "sh-blob"
+    },
+    {
+      "id": "sh-burst",
+      "category": "svg-path",
+      "pattern": "atlas-sh-burst",
+      "engine": "base",
+      "demoId": "sh-burst"
+    },
+    {
+      "id": "sh-march",
+      "category": "svg-path",
+      "pattern": "atlas-sh-march",
+      "engine": "base",
+      "demoId": "sh-march"
+    },
+    {
+      "id": "svg-diagram-link-draw",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramLinkDraw",
+      "engine": "base",
+      "demoId": "svg-diagram-link-draw"
+    },
+    {
+      "id": "svg-diagram-fan-out",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramFanOut",
+      "engine": "base",
+      "demoId": "svg-diagram-fan-out"
+    },
+    {
+      "id": "svg-diagram-fan-in",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramFanIn",
+      "engine": "base",
+      "demoId": "svg-diagram-fan-in"
+    },
+    {
+      "id": "svg-diagram-self-loop",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramSelfLoop",
+      "engine": "base",
+      "demoId": "svg-diagram-self-loop"
+    },
+    {
+      "id": "svg-diagram-box-chain",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramBoxChain",
+      "engine": "base",
+      "demoId": "svg-diagram-box-chain"
+    },
+    {
+      "id": "svg-diagram-group-frame",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramGroupFrame",
+      "engine": "base",
+      "demoId": "svg-diagram-group-frame"
+    },
+    {
+      "id": "svg-diagram-dual-flow",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramDualFlow",
+      "engine": "base",
+      "demoId": "svg-diagram-dual-flow"
+    },
+    {
+      "id": "svg-diagram-step-badge",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramStepBadge",
+      "engine": "base",
+      "demoId": "svg-diagram-step-badge"
+    },
+    {
+      "id": "svg-diagram-tree",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramTree",
+      "engine": "base",
+      "demoId": "svg-diagram-tree"
+    },
+    {
+      "id": "svg-diagram-radial-hub",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramRadialHub",
+      "engine": "base",
+      "demoId": "svg-diagram-radial-hub"
+    },
+    {
+      "id": "svg-diagram-matrix",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramMatrix",
+      "engine": "base",
+      "demoId": "svg-diagram-matrix"
+    },
+    {
+      "id": "svg-diagram-venn",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramVenn",
+      "engine": "base",
+      "demoId": "svg-diagram-venn"
+    },
+    {
+      "id": "svg-diagram-decision",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramDecision",
+      "engine": "base",
+      "demoId": "svg-diagram-decision"
+    },
+    {
+      "id": "svg-diagram-swimlane",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramSwimlane",
+      "engine": "base",
+      "demoId": "svg-diagram-swimlane"
+    },
+    {
+      "id": "svg-diagram-sequence",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramSequence",
+      "engine": "base",
+      "demoId": "svg-diagram-sequence"
+    },
+    {
+      "id": "svg-diagram-timeline",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramTimeline",
+      "engine": "base",
+      "demoId": "svg-diagram-timeline"
+    },
+    {
+      "id": "svg-diagram-cycle",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramCycle",
+      "engine": "base",
+      "demoId": "svg-diagram-cycle"
+    },
+    {
+      "id": "svg-diagram-state-machine",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramStateMachine",
+      "engine": "base",
+      "demoId": "svg-diagram-state-machine"
+    },
+    {
+      "id": "svg-diagram-event-bus",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramEventBus",
+      "engine": "base",
+      "demoId": "svg-diagram-event-bus"
+    },
+    {
+      "id": "svg-diagram-funnel",
+      "category": "svg-diagram",
+      "pattern": "svgDiagramFunnel",
+      "engine": "base",
+      "demoId": "svg-diagram-funnel"
+    },
+    {
+      "id": "pt-confetti",
+      "category": "particles",
+      "pattern": "atlas-pt-confetti",
+      "engine": "base",
+      "demoId": "pt-confetti"
+    },
+    {
+      "id": "pt-twinkle",
+      "category": "particles",
+      "pattern": "atlas-pt-twinkle",
+      "engine": "base",
+      "demoId": "pt-twinkle"
+    },
+    {
+      "id": "pt-embers",
+      "category": "particles",
+      "pattern": "atlas-pt-embers",
+      "engine": "base",
+      "demoId": "pt-embers"
+    },
+    {
+      "id": "pt-snow",
+      "category": "particles",
+      "pattern": "atlas-pt-snow",
+      "engine": "base",
+      "demoId": "pt-snow"
+    },
+    {
+      "id": "pt-fireworks",
+      "category": "particles",
+      "pattern": "atlas-pt-fireworks",
+      "engine": "base",
+      "demoId": "pt-fireworks"
+    },
+    {
+      "id": "pt-swarm",
+      "category": "particles",
+      "pattern": "atlas-pt-swarm",
+      "engine": "base",
+      "demoId": "pt-swarm"
+    },
+    {
+      "id": "pt-flow",
+      "category": "particles",
+      "pattern": "atlas-pt-flow",
+      "engine": "base",
+      "demoId": "pt-flow"
+    },
+    {
+      "id": "pt-coalesce",
+      "category": "particles",
+      "pattern": "atlas-pt-coalesce",
+      "engine": "base",
+      "demoId": "pt-coalesce"
+    },
+    {
+      "id": "lp-seamless",
+      "category": "loops",
+      "pattern": "atlas-lp-seamless",
+      "engine": "base",
+      "demoId": "lp-seamless"
+    },
+    {
+      "id": "lp-float",
+      "category": "loops",
+      "pattern": "atlas-lp-float",
+      "engine": "base",
+      "demoId": "lp-float"
+    },
+    {
+      "id": "lp-marquee",
+      "category": "loops",
+      "pattern": "atlas-lp-marquee",
+      "engine": "base",
+      "demoId": "lp-marquee"
+    },
+    {
+      "id": "lp-conic",
+      "category": "loops",
+      "pattern": "atlas-lp-conic",
+      "engine": "base",
+      "demoId": "lp-conic"
+    },
+    {
+      "id": "lp-wobble",
+      "category": "loops",
+      "pattern": "atlas-lp-wobble",
+      "engine": "base",
+      "demoId": "lp-wobble"
+    },
+    {
+      "id": "lp-boil",
+      "category": "loops",
+      "pattern": "atlas-lp-boil",
+      "engine": "base",
+      "demoId": "lp-boil"
+    },
+    {
+      "id": "lp-holdcycle",
+      "category": "loops",
+      "pattern": "atlas-lp-holdcycle",
+      "engine": "base",
+      "demoId": "lp-holdcycle"
+    },
+    {
+      "id": "dv-stat",
+      "category": "data-story",
+      "pattern": "atlas-dv-stat",
+      "engine": "base",
+      "demoId": "dv-stat"
+    },
+    {
+      "id": "dv-pins",
+      "category": "data-story",
+      "pattern": "atlas-dv-pins",
+      "engine": "base",
+      "demoId": "dv-pins"
+    },
+    {
+      "id": "dv-scatter",
+      "category": "data-story",
+      "pattern": "atlas-dv-scatter",
+      "engine": "base",
+      "demoId": "dv-scatter"
+    },
+    {
+      "id": "ch-walk",
+      "category": "character",
+      "pattern": "atlas-ch-walk",
+      "engine": "base",
+      "demoId": "ch-walk"
+    },
+    {
+      "id": "ch-jump",
+      "category": "character",
+      "pattern": "atlas-ch-jump",
+      "engine": "base",
+      "demoId": "ch-jump"
+    },
+    {
+      "id": "ch-blink",
+      "category": "character",
+      "pattern": "atlas-ch-blink",
+      "engine": "base",
+      "demoId": "ch-blink"
+    },
+    {
+      "id": "ch-take",
+      "category": "character",
+      "pattern": "atlas-ch-take",
+      "engine": "base",
+      "demoId": "ch-take"
+    },
+    {
+      "id": "ch-turn",
+      "category": "character",
+      "pattern": "atlas-ch-turn",
+      "engine": "base",
+      "demoId": "ch-turn"
+    },
+    {
+      "id": "ch-idle",
+      "category": "character",
+      "pattern": "atlas-ch-idle",
+      "engine": "base",
+      "demoId": "ch-idle"
+    },
+    {
+      "id": "ch-tail",
+      "category": "character",
+      "pattern": "atlas-ch-tail",
+      "engine": "base",
+      "demoId": "ch-tail"
+    },
+    {
+      "id": "lk-grain",
+      "category": "look",
+      "pattern": "atlas-lk-grain",
+      "engine": "base",
+      "demoId": "lk-grain"
+    },
+    {
+      "id": "lk-mblur",
+      "category": "look",
+      "pattern": "atlas-lk-mblur",
+      "engine": "base",
+      "demoId": "lk-mblur"
+    },
+    {
+      "id": "lk-riso",
+      "category": "look",
+      "pattern": "atlas-lk-riso",
+      "engine": "base",
+      "demoId": "lk-riso"
+    },
+    {
+      "id": "lk-halftone",
+      "category": "look",
+      "pattern": "atlas-lk-halftone",
+      "engine": "base",
+      "demoId": "lk-halftone"
+    },
+    {
+      "id": "lk-watercolor",
+      "category": "look",
+      "pattern": "atlas-lk-watercolor",
+      "engine": "base",
+      "demoId": "lk-watercolor"
+    },
+    {
+      "id": "lk-handwrite",
+      "category": "look",
+      "pattern": "atlas-lk-handwrite",
+      "engine": "base",
+      "demoId": "lk-handwrite"
+    },
+    {
+      "id": "lk-papercut",
+      "category": "look",
+      "pattern": "atlas-lk-papercut",
+      "engine": "base",
+      "demoId": "lk-papercut"
+    },
+    {
+      "id": "lk-pixel",
+      "category": "look",
+      "pattern": "atlas-lk-pixel",
+      "engine": "base",
+      "demoId": "lk-pixel"
+    },
+    {
+      "id": "lk-vignette",
+      "category": "look",
+      "pattern": "atlas-lk-vignette",
+      "engine": "base",
+      "demoId": "lk-vignette"
+    },
+    {
+      "id": "lk-crt",
+      "category": "look",
+      "pattern": "atlas-lk-crt",
+      "engine": "base",
+      "demoId": "lk-crt"
+    },
+    {
+      "id": "3d-cube",
+      "category": "depth3d",
+      "pattern": "atlas-3d-cube",
+      "engine": "base",
+      "demoId": "3d-cube"
+    },
+    {
+      "id": "3d-coverflow",
+      "category": "depth3d",
+      "pattern": "atlas-3d-coverflow",
+      "engine": "base",
+      "demoId": "3d-coverflow"
+    },
+    {
+      "id": "3d-depth",
+      "category": "depth3d",
+      "pattern": "atlas-3d-depth",
+      "engine": "base",
+      "demoId": "3d-depth"
+    },
+    {
+      "id": "3d-ring",
+      "category": "depth3d",
+      "pattern": "atlas-3d-ring",
+      "engine": "base",
+      "demoId": "3d-ring"
+    },
+    {
+      "id": "3d-tagcloud",
+      "category": "depth3d",
+      "pattern": "atlas-3d-tagcloud",
+      "engine": "base",
+      "demoId": "3d-tagcloud"
+    },
+    {
+      "id": "3d-globe",
+      "category": "depth3d",
+      "pattern": "atlas-3d-globe",
+      "engine": "base",
+      "demoId": "3d-globe"
+    },
+    {
+      "id": "3d-pageflip",
+      "category": "depth3d",
+      "pattern": "atlas-3d-pageflip",
+      "engine": "base",
+      "demoId": "3d-pageflip"
+    },
+    {
+      "id": "3d-isometric",
+      "category": "depth3d",
+      "pattern": "atlas-3d-isometric",
+      "engine": "base",
+      "demoId": "3d-isometric"
+    },
+    {
+      "id": "3d-zdog",
+      "category": "depth3d",
+      "pattern": "atlas-3d-zdog",
+      "engine": "base",
+      "demoId": "3d-zdog"
+    },
+    {
+      "id": "3d-grid",
+      "category": "depth3d",
+      "pattern": "atlas-3d-grid",
+      "engine": "base",
+      "demoId": "3d-grid"
+    },
+    {
+      "id": "sd-cues",
+      "category": "sound",
+      "pattern": "atlas-sd-cues",
+      "engine": "base",
+      "demoId": "sd-cues"
+    },
+    {
+      "id": "sd-bars",
+      "category": "sound",
+      "pattern": "atlas-sd-bars",
+      "engine": "base",
+      "demoId": "sd-bars"
+    },
+    {
+      "id": "sd-duck",
+      "category": "sound",
+      "pattern": "atlas-sd-duck",
+      "engine": "base",
+      "demoId": "sd-duck"
+    },
+    {
+      "id": "sd-lyric",
+      "category": "sound",
+      "pattern": "atlas-sd-lyric",
+      "engine": "base",
+      "demoId": "sd-lyric"
+    },
+    {
+      "id": "tx-fade-up-chars",
+      "category": "tx-reveal",
+      "pattern": "text-fade-up-chars",
+      "engine": "text",
+      "demoId": "fade-up-chars"
+    },
+    {
+      "id": "tx-fade-up-words",
+      "category": "tx-reveal",
+      "pattern": "text-fade-up-words",
+      "engine": "text",
+      "demoId": "fade-up-words"
+    },
+    {
+      "id": "tx-slide-down-chars",
+      "category": "tx-reveal",
+      "pattern": "text-slide-down-chars",
+      "engine": "text",
+      "demoId": "slide-down-chars"
+    },
+    {
+      "id": "tx-alternating-line-direction",
+      "category": "tx-reveal",
+      "pattern": "text-alternating-line-direction",
+      "engine": "text",
+      "demoId": "alternating-line-direction"
+    },
+    {
+      "id": "tx-stretch-rise",
+      "category": "tx-reveal",
+      "pattern": "text-stretch-rise",
+      "engine": "text",
+      "demoId": "stretch-rise"
+    },
+    {
+      "id": "tx-scale-y-unfold",
+      "category": "tx-reveal",
+      "pattern": "text-scale-y-unfold",
+      "engine": "text",
+      "demoId": "scale-y-unfold"
+    },
+    {
+      "id": "tx-converge-from-spread",
+      "category": "tx-reveal",
+      "pattern": "text-converge-from-spread",
+      "engine": "text",
+      "demoId": "converge-from-spread"
+    },
+    {
+      "id": "tx-center-out-reveal",
+      "category": "tx-reveal",
+      "pattern": "text-center-out-reveal",
+      "engine": "text",
+      "demoId": "center-out-reveal"
+    },
+    {
+      "id": "tx-scatter-assemble",
+      "category": "tx-reveal",
+      "pattern": "text-scatter-assemble",
+      "engine": "text",
+      "demoId": "scatter-assemble"
+    },
+    {
+      "id": "tx-random-tilt-scale-in",
+      "category": "tx-reveal",
+      "pattern": "text-random-tilt-scale-in",
+      "engine": "text",
+      "demoId": "random-tilt-scale-in"
+    },
+    {
+      "id": "tx-smear-stretch-in",
+      "category": "tx-reveal",
+      "pattern": "text-smear-stretch-in",
+      "engine": "text",
+      "demoId": "smear-stretch-in"
+    },
+    {
+      "id": "tx-scale-pop-in",
+      "category": "tx-reveal",
+      "pattern": "text-scale-pop-in",
+      "engine": "text",
+      "demoId": "scale-pop-in"
+    },
+    {
+      "id": "tx-range-soft-wave-reveal",
+      "category": "tx-reveal",
+      "pattern": "text-range-soft-wave-reveal",
+      "engine": "text",
+      "demoId": "range-soft-wave-reveal"
+    },
+    {
+      "id": "tx-random-order-fade",
+      "category": "tx-reveal",
+      "pattern": "text-random-order-fade",
+      "engine": "text",
+      "demoId": "random-order-fade"
+    },
+    {
+      "id": "tx-tracking-in-expand",
+      "category": "tx-reveal",
+      "pattern": "text-tracking-in-expand",
+      "engine": "text",
+      "demoId": "tracking-in-expand"
+    },
+    {
+      "id": "tx-emoji-grapheme-pop",
+      "category": "tx-reveal",
+      "pattern": "text-emoji-grapheme-pop",
+      "engine": "text",
+      "demoId": "emoji-grapheme-pop"
+    },
+    {
+      "id": "tx-char-exit-up",
+      "category": "tx-exit",
+      "pattern": "text-char-exit-up",
+      "engine": "text",
+      "demoId": "char-exit-up"
+    },
+    {
+      "id": "tx-fade-down-out",
+      "category": "tx-exit",
+      "pattern": "text-fade-down-out",
+      "engine": "text",
+      "demoId": "fade-down-out"
+    },
+    {
+      "id": "tx-blur-evaporate-out",
+      "category": "tx-exit",
+      "pattern": "text-blur-evaporate-out",
+      "engine": "text",
+      "demoId": "blur-evaporate-out"
+    },
+    {
+      "id": "tx-explode-scatter-out",
+      "category": "tx-exit",
+      "pattern": "text-explode-scatter-out",
+      "engine": "text",
+      "demoId": "explode-scatter-out"
+    },
+    {
+      "id": "tx-gravity-drop-out",
+      "category": "tx-exit",
+      "pattern": "text-gravity-drop-out",
+      "engine": "text",
+      "demoId": "gravity-drop-out"
+    },
+    {
+      "id": "tx-scale-down-vanish",
+      "category": "tx-exit",
+      "pattern": "text-scale-down-vanish",
+      "engine": "text",
+      "demoId": "scale-down-vanish"
+    },
+    {
+      "id": "tx-reverse-erase",
+      "category": "tx-exit",
+      "pattern": "text-reverse-erase",
+      "engine": "text",
+      "demoId": "reverse-erase"
+    },
+    {
+      "id": "tx-collapse-to-center",
+      "category": "tx-exit",
+      "pattern": "text-collapse-to-center",
+      "engine": "text",
+      "demoId": "collapse-to-center"
+    },
+    {
+      "id": "tx-noise-dissolve-out",
+      "category": "tx-exit",
+      "pattern": "text-noise-dissolve-out",
+      "engine": "text",
+      "demoId": "noise-dissolve-out"
+    },
+    {
+      "id": "tx-bump-wave",
+      "category": "tx-emphasis",
+      "pattern": "text-bump-wave",
+      "engine": "text",
+      "demoId": "bump-wave"
+    },
+    {
+      "id": "tx-jelly-rubber-band",
+      "category": "tx-emphasis",
+      "pattern": "text-jelly-rubber-band",
+      "engine": "text",
+      "demoId": "jelly-rubber-band"
+    },
+    {
+      "id": "tx-keyword-punch",
+      "category": "tx-emphasis",
+      "pattern": "text-keyword-punch",
+      "engine": "text",
+      "demoId": "keyword-punch"
+    },
+    {
+      "id": "tx-wiggly-jitter",
+      "category": "tx-emphasis",
+      "pattern": "text-wiggly-jitter",
+      "engine": "text",
+      "demoId": "wiggly-jitter"
+    },
+    {
+      "id": "tx-marker-highlight",
+      "category": "tx-emphasis",
+      "pattern": "text-marker-highlight",
+      "engine": "text",
+      "demoId": "marker-highlight"
+    },
+    {
+      "id": "tx-underline-draw",
+      "category": "tx-emphasis",
+      "pattern": "text-underline-draw",
+      "engine": "text",
+      "demoId": "underline-draw"
+    },
+    {
+      "id": "tx-scribble-circle",
+      "category": "tx-emphasis",
+      "pattern": "text-scribble-circle",
+      "engine": "text",
+      "demoId": "scribble-circle"
+    },
+    {
+      "id": "tx-crayon-circle",
+      "category": "tx-emphasis",
+      "pattern": "text-crayon-circle",
+      "engine": "text",
+      "demoId": "crayon-circle"
+    },
+    {
+      "id": "tx-crayon-check",
+      "category": "tx-emphasis",
+      "pattern": "text-crayon-check",
+      "engine": "text",
+      "demoId": "crayon-check"
+    },
+    {
+      "id": "tx-crayon-underline",
+      "category": "tx-emphasis",
+      "pattern": "text-crayon-underline",
+      "engine": "text",
+      "demoId": "crayon-underline"
+    },
+    {
+      "id": "tx-crayon-highlight",
+      "category": "tx-emphasis",
+      "pattern": "text-crayon-highlight",
+      "engine": "text",
+      "demoId": "crayon-highlight"
+    },
+    {
+      "id": "tx-crayon-star",
+      "category": "tx-emphasis",
+      "pattern": "text-crayon-star",
+      "engine": "text",
+      "demoId": "crayon-star"
+    },
+    {
+      "id": "tx-crayon-strike",
+      "category": "tx-emphasis",
+      "pattern": "text-crayon-strike",
+      "engine": "text",
+      "demoId": "crayon-strike"
+    },
+    {
+      "id": "tx-strike-correct",
+      "category": "tx-emphasis",
+      "pattern": "text-strike-correct",
+      "engine": "text",
+      "demoId": "strike-correct"
+    },
+    {
+      "id": "tx-attention-bounce",
+      "category": "tx-emphasis",
+      "pattern": "text-attention-bounce",
+      "engine": "text",
+      "demoId": "attention-bounce"
+    },
+    {
+      "id": "tx-pointer-highlight-box",
+      "category": "tx-emphasis",
+      "pattern": "text-pointer-highlight-box",
+      "engine": "text",
+      "demoId": "pointer-highlight-box"
+    },
+    {
+      "id": "tx-comic-pop",
+      "category": "tx-emphasis",
+      "pattern": "text-comic-pop",
+      "engine": "text",
+      "demoId": "comic-pop"
+    },
+    {
+      "id": "tx-split-flap",
+      "category": "tx-swap",
+      "pattern": "text-split-flap",
+      "engine": "text",
+      "demoId": "split-flap"
+    },
+    {
+      "id": "tx-rotating-letters-spring",
+      "category": "tx-swap",
+      "pattern": "text-rotating-letters-spring",
+      "engine": "text",
+      "demoId": "rotating-letters-spring"
+    },
+    {
+      "id": "tx-vertical-word-roll",
+      "category": "tx-swap",
+      "pattern": "text-vertical-word-roll",
+      "engine": "text",
+      "demoId": "vertical-word-roll"
+    },
+    {
+      "id": "tx-flip-words-blur",
+      "category": "tx-swap",
+      "pattern": "text-flip-words-blur",
+      "engine": "text",
+      "demoId": "flip-words-blur"
+    },
+    {
+      "id": "tx-gooey-morph",
+      "category": "tx-swap",
+      "pattern": "text-gooey-morph",
+      "engine": "text",
+      "demoId": "gooey-morph"
+    },
+    {
+      "id": "tx-blur-crossfade",
+      "category": "tx-swap",
+      "pattern": "text-blur-crossfade",
+      "engine": "text",
+      "demoId": "blur-crossfade"
+    },
+    {
+      "id": "tx-cube-rotate-swap",
+      "category": "tx-swap",
+      "pattern": "text-cube-rotate-swap",
+      "engine": "text",
+      "demoId": "cube-rotate-swap"
+    },
+    {
+      "id": "tx-skew-swipe",
+      "category": "tx-swap",
+      "pattern": "text-skew-swipe",
+      "engine": "text",
+      "demoId": "skew-swipe"
+    },
+    {
+      "id": "tx-letter-cascade-swap",
+      "category": "tx-swap",
+      "pattern": "text-letter-cascade-swap",
+      "engine": "text",
+      "demoId": "letter-cascade-swap"
+    },
+    {
+      "id": "tx-diff-retype",
+      "category": "tx-swap",
+      "pattern": "text-diff-retype",
+      "engine": "text",
+      "demoId": "diff-retype"
+    },
+    {
+      "id": "tx-typewriter",
+      "category": "tx-typing",
+      "pattern": "text-typewriter",
+      "engine": "text",
+      "demoId": "typewriter"
+    },
+    {
+      "id": "tx-caret-typewriter",
+      "category": "tx-typing",
+      "pattern": "text-caret-typewriter",
+      "engine": "text",
+      "demoId": "caret-typewriter"
+    },
+    {
+      "id": "tx-typewriter-loop",
+      "category": "tx-typing",
+      "pattern": "text-typewriter-loop",
+      "engine": "text",
+      "demoId": "typewriter-loop"
+    },
+    {
+      "id": "tx-human-typewriter",
+      "category": "tx-typing",
+      "pattern": "text-human-typewriter",
+      "engine": "text",
+      "demoId": "human-typewriter"
+    },
+    {
+      "id": "tx-terminal-typing",
+      "category": "tx-typing",
+      "pattern": "text-terminal-typing",
+      "engine": "text",
+      "demoId": "terminal-typing"
+    },
+    {
+      "id": "tx-scramble-decode",
+      "category": "tx-typing",
+      "pattern": "text-scramble-decode",
+      "engine": "text",
+      "demoId": "scramble-decode"
+    },
+    {
+      "id": "tx-decrypt-center",
+      "category": "tx-typing",
+      "pattern": "text-decrypt-center",
+      "engine": "text",
+      "demoId": "decrypt-center"
+    },
+    {
+      "id": "tx-char-flicker-in",
+      "category": "tx-typing",
+      "pattern": "text-char-flicker-in",
+      "engine": "text",
+      "demoId": "char-flicker-in"
+    },
+    {
+      "id": "tx-slot-shuffle",
+      "category": "tx-typing",
+      "pattern": "text-slot-shuffle",
+      "engine": "text",
+      "demoId": "slot-shuffle"
+    },
+    {
+      "id": "tx-char-code-cycle",
+      "category": "tx-typing",
+      "pattern": "text-char-code-cycle",
+      "engine": "text",
+      "demoId": "char-code-cycle"
+    },
+    {
+      "id": "tx-placeholder-replace",
+      "category": "tx-typing",
+      "pattern": "text-placeholder-replace",
+      "engine": "text",
+      "demoId": "placeholder-replace"
+    },
+    {
+      "id": "tx-drop-bounce-in",
+      "category": "tx-physics",
+      "pattern": "text-drop-bounce-in",
+      "engine": "text",
+      "demoId": "drop-bounce-in"
+    },
+    {
+      "id": "tx-raining-characters",
+      "category": "tx-physics",
+      "pattern": "text-raining-characters",
+      "engine": "text",
+      "demoId": "raining-characters"
+    },
+    {
+      "id": "tx-falling-pile",
+      "category": "tx-physics",
+      "pattern": "text-falling-pile",
+      "engine": "text",
+      "demoId": "falling-pile"
+    },
+    {
+      "id": "tx-pendulum-swing",
+      "category": "tx-physics",
+      "pattern": "text-pendulum-swing",
+      "engine": "text",
+      "demoId": "pendulum-swing"
+    },
+    {
+      "id": "tx-squash-landing",
+      "category": "tx-physics",
+      "pattern": "text-squash-landing",
+      "engine": "text",
+      "demoId": "squash-landing"
+    },
+    {
+      "id": "tx-spring-chain",
+      "category": "tx-physics",
+      "pattern": "text-spring-chain",
+      "engine": "text",
+      "demoId": "spring-chain"
+    },
+    {
+      "id": "tx-zero-gravity-drift",
+      "category": "tx-physics",
+      "pattern": "text-zero-gravity-drift",
+      "engine": "text",
+      "demoId": "zero-gravity-drift"
+    },
+    {
+      "id": "tx-domino-topple",
+      "category": "tx-physics",
+      "pattern": "text-domino-topple",
+      "engine": "text",
+      "demoId": "domino-topple"
+    },
+    {
+      "id": "tx-particle-text",
+      "category": "tx-physics",
+      "pattern": "text-particle-text",
+      "engine": "text",
+      "demoId": "particle-text"
+    },
+    {
+      "id": "tx-circular-text-spin",
+      "category": "tx-path",
+      "pattern": "text-circular-text-spin",
+      "engine": "text",
+      "demoId": "circular-text-spin"
+    },
+    {
+      "id": "tx-curved-loop-marquee",
+      "category": "tx-path",
+      "pattern": "text-curved-loop-marquee",
+      "engine": "text",
+      "demoId": "curved-loop-marquee"
+    },
+    {
+      "id": "tx-text-along-path",
+      "category": "tx-path",
+      "pattern": "text-text-along-path",
+      "engine": "text",
+      "demoId": "text-along-path"
+    },
+    {
+      "id": "tx-path-inertia",
+      "category": "tx-path",
+      "pattern": "text-path-inertia",
+      "engine": "text",
+      "demoId": "path-inertia"
+    },
+    {
+      "id": "tx-outline-draw",
+      "category": "tx-path",
+      "pattern": "text-outline-draw",
+      "engine": "text",
+      "demoId": "outline-draw"
+    },
+    {
+      "id": "tx-handwriting",
+      "category": "tx-path",
+      "pattern": "text-handwriting",
+      "engine": "text",
+      "demoId": "handwriting"
+    },
+    {
+      "id": "tx-spiral-text",
+      "category": "tx-path",
+      "pattern": "text-spiral-text",
+      "engine": "text",
+      "demoId": "spiral-text"
+    },
+    {
+      "id": "tx-morphing-path-ride",
+      "category": "tx-path",
+      "pattern": "text-morphing-path-ride",
+      "engine": "text",
+      "demoId": "morphing-path-ride"
+    },
+    {
+      "id": "tx-shape-contour-text",
+      "category": "tx-path",
+      "pattern": "text-shape-contour-text",
+      "engine": "text",
+      "demoId": "shape-contour-text"
+    },
+    {
+      "id": "tx-line-mask-rise",
+      "category": "tx-mask",
+      "pattern": "text-line-mask-rise",
+      "engine": "text",
+      "demoId": "line-mask-rise"
+    },
+    {
+      "id": "tx-char-mask-rise",
+      "category": "tx-mask",
+      "pattern": "text-char-mask-rise",
+      "engine": "text",
+      "demoId": "char-mask-rise"
+    },
+    {
+      "id": "tx-slide-x-mask",
+      "category": "tx-mask",
+      "pattern": "text-slide-x-mask",
+      "engine": "text",
+      "demoId": "slide-x-mask"
+    },
+    {
+      "id": "tx-split-halves",
+      "category": "tx-mask",
+      "pattern": "text-split-halves",
+      "engine": "text",
+      "demoId": "split-halves"
+    },
+    {
+      "id": "tx-soft-mask-wipe",
+      "category": "tx-mask",
+      "pattern": "text-soft-mask-wipe",
+      "engine": "text",
+      "demoId": "soft-mask-wipe"
+    },
+    {
+      "id": "tx-bar-wipe-reveal",
+      "category": "tx-mask",
+      "pattern": "text-bar-wipe-reveal",
+      "engine": "text",
+      "demoId": "bar-wipe-reveal"
+    },
+    {
+      "id": "tx-iris-reveal",
+      "category": "tx-mask",
+      "pattern": "text-iris-reveal",
+      "engine": "text",
+      "demoId": "iris-reveal"
+    },
+    {
+      "id": "tx-shape-mask-cut",
+      "category": "tx-mask",
+      "pattern": "text-shape-mask-cut",
+      "engine": "text",
+      "demoId": "shape-mask-cut"
+    },
+    {
+      "id": "tx-blinds-reveal",
+      "category": "tx-mask",
+      "pattern": "text-blinds-reveal",
+      "engine": "text",
+      "demoId": "blinds-reveal"
+    },
+    {
+      "id": "tx-diagonal-cut-reveal",
+      "category": "tx-mask",
+      "pattern": "text-diagonal-cut-reveal",
+      "engine": "text",
+      "demoId": "diagonal-cut-reveal"
+    },
+    {
+      "id": "tx-outline-fill-sweep",
+      "category": "tx-mask",
+      "pattern": "text-outline-fill-sweep",
+      "engine": "text",
+      "demoId": "outline-fill-sweep"
+    },
+    {
+      "id": "tx-texture-fill",
+      "category": "tx-mask",
+      "pattern": "text-texture-fill",
+      "engine": "text",
+      "demoId": "texture-fill"
+    },
+    {
+      "id": "tx-shiny-sweep",
+      "category": "tx-color-light",
+      "pattern": "text-shiny-sweep",
+      "engine": "text",
+      "demoId": "shiny-sweep"
+    },
+    {
+      "id": "tx-gradient-flow",
+      "category": "tx-color-light",
+      "pattern": "text-gradient-flow",
+      "engine": "text",
+      "demoId": "gradient-flow"
+    },
+    {
+      "id": "tx-aurora-text",
+      "category": "tx-color-light",
+      "pattern": "text-aurora-text",
+      "engine": "text",
+      "demoId": "aurora-text"
+    },
+    {
+      "id": "tx-conic-spin",
+      "category": "tx-color-light",
+      "pattern": "text-conic-spin",
+      "engine": "text",
+      "demoId": "conic-spin"
+    },
+    {
+      "id": "tx-color-band-sweep",
+      "category": "tx-color-light",
+      "pattern": "text-color-band-sweep",
+      "engine": "text",
+      "demoId": "color-band-sweep"
+    },
+    {
+      "id": "tx-hue-cycle",
+      "category": "tx-color-light",
+      "pattern": "text-hue-cycle",
+      "engine": "text",
+      "demoId": "hue-cycle"
+    },
+    {
+      "id": "tx-random-color-pop",
+      "category": "tx-color-light",
+      "pattern": "text-random-color-pop",
+      "engine": "text",
+      "demoId": "random-color-pop"
+    },
+    {
+      "id": "tx-neon-flicker",
+      "category": "tx-color-light",
+      "pattern": "text-neon-flicker",
+      "engine": "text",
+      "demoId": "neon-flicker"
+    },
+    {
+      "id": "tx-glow-pulse",
+      "category": "tx-color-light",
+      "pattern": "text-glow-pulse",
+      "engine": "text",
+      "demoId": "glow-pulse"
+    },
+    {
+      "id": "tx-line-shadow",
+      "category": "tx-color-light",
+      "pattern": "text-line-shadow",
+      "engine": "text",
+      "demoId": "line-shadow"
+    },
+    {
+      "id": "tx-long-shadow-grow",
+      "category": "tx-color-light",
+      "pattern": "text-long-shadow-grow",
+      "engine": "text",
+      "demoId": "long-shadow-grow"
+    },
+    {
+      "id": "tx-blend-overlap",
+      "category": "tx-color-light",
+      "pattern": "text-blend-overlap",
+      "engine": "text",
+      "demoId": "blend-overlap"
+    },
+    {
+      "id": "tx-text-generate",
+      "category": "tx-blur",
+      "pattern": "text-text-generate",
+      "engine": "text",
+      "demoId": "text-generate"
+    },
+    {
+      "id": "tx-blur-in-3step",
+      "category": "tx-blur",
+      "pattern": "text-blur-in-3step",
+      "engine": "text",
+      "demoId": "blur-in-3step"
+    },
+    {
+      "id": "tx-blur-in-chars",
+      "category": "tx-blur",
+      "pattern": "text-blur-in-chars",
+      "engine": "text",
+      "demoId": "blur-in-chars"
+    },
+    {
+      "id": "tx-blur-random-in",
+      "category": "tx-blur",
+      "pattern": "text-blur-random-in",
+      "engine": "text",
+      "demoId": "blur-random-in"
+    },
+    {
+      "id": "tx-tracking-blur-build",
+      "category": "tx-blur",
+      "pattern": "text-tracking-blur-build",
+      "engine": "text",
+      "demoId": "tracking-blur-build"
+    },
+    {
+      "id": "tx-directional-blur-slide",
+      "category": "tx-blur",
+      "pattern": "text-directional-blur-slide",
+      "engine": "text",
+      "demoId": "directional-blur-slide"
+    },
+    {
+      "id": "tx-scale-blur-zoom",
+      "category": "tx-blur",
+      "pattern": "text-scale-blur-zoom",
+      "engine": "text",
+      "demoId": "scale-blur-zoom"
+    },
+    {
+      "id": "tx-rack-focus",
+      "category": "tx-blur",
+      "pattern": "text-rack-focus",
+      "engine": "text",
+      "demoId": "rack-focus"
+    },
+    {
+      "id": "tx-true-focus",
+      "category": "tx-blur",
+      "pattern": "text-true-focus",
+      "engine": "text",
+      "demoId": "true-focus"
+    },
+    {
+      "id": "tx-rgb-split-glitch",
+      "category": "tx-glitch",
+      "pattern": "text-rgb-split-glitch",
+      "engine": "text",
+      "demoId": "rgb-split-glitch"
+    },
+    {
+      "id": "tx-slice-glitch",
+      "category": "tx-glitch",
+      "pattern": "text-slice-glitch",
+      "engine": "text",
+      "demoId": "slice-glitch"
+    },
+    {
+      "id": "tx-fuzzy-text",
+      "category": "tx-glitch",
+      "pattern": "text-fuzzy-text",
+      "engine": "text",
+      "demoId": "fuzzy-text"
+    },
+    {
+      "id": "tx-turbulence-wobble",
+      "category": "tx-glitch",
+      "pattern": "text-turbulence-wobble",
+      "engine": "text",
+      "demoId": "turbulence-wobble"
+    },
+    {
+      "id": "tx-ascii-render",
+      "category": "tx-glitch",
+      "pattern": "text-ascii-render",
+      "engine": "text",
+      "demoId": "ascii-render"
+    },
+    {
+      "id": "tx-vhs-scanline",
+      "category": "tx-glitch",
+      "pattern": "text-vhs-scanline",
+      "engine": "text",
+      "demoId": "vhs-scanline"
+    },
+    {
+      "id": "tx-pixel-mosaic",
+      "category": "tx-glitch",
+      "pattern": "text-pixel-mosaic",
+      "engine": "text",
+      "demoId": "pixel-mosaic"
+    },
+    {
+      "id": "tx-melt-drip",
+      "category": "tx-glitch",
+      "pattern": "text-melt-drip",
+      "engine": "text",
+      "demoId": "melt-drip"
+    },
+    {
+      "id": "tx-flip-up-3d",
+      "category": "tx-depth",
+      "pattern": "text-flip-up-3d",
+      "engine": "text",
+      "demoId": "flip-up-3d"
+    },
+    {
+      "id": "tx-swing-door",
+      "category": "tx-depth",
+      "pattern": "text-swing-door",
+      "engine": "text",
+      "demoId": "swing-door"
+    },
+    {
+      "id": "tx-z-fly-in",
+      "category": "tx-depth",
+      "pattern": "text-z-fly-in",
+      "engine": "text",
+      "demoId": "z-fly-in"
+    },
+    {
+      "id": "tx-tumble-in",
+      "category": "tx-depth",
+      "pattern": "text-tumble-in",
+      "engine": "text",
+      "demoId": "tumble-in"
+    },
+    {
+      "id": "tx-roll-flip-hover",
+      "category": "tx-depth",
+      "pattern": "text-roll-flip-hover",
+      "engine": "text",
+      "demoId": "roll-flip-hover"
+    },
+    {
+      "id": "tx-cylinder-text",
+      "category": "tx-depth",
+      "pattern": "text-cylinder-text",
+      "engine": "text",
+      "demoId": "cylinder-text"
+    },
+    {
+      "id": "tx-layered-depth",
+      "category": "tx-depth",
+      "pattern": "text-layered-depth",
+      "engine": "text",
+      "demoId": "layered-depth"
+    },
+    {
+      "id": "tx-paper-fold",
+      "category": "tx-depth",
+      "pattern": "text-paper-fold",
+      "engine": "text",
+      "demoId": "paper-fold"
+    },
+    {
+      "id": "tx-motext-falloff",
+      "category": "tx-depth",
+      "pattern": "text-motext-falloff",
+      "engine": "text",
+      "demoId": "motext-falloff"
+    },
+    {
+      "id": "tx-weight-wave",
+      "category": "tx-variable",
+      "pattern": "text-weight-wave",
+      "engine": "text",
+      "demoId": "weight-wave"
+    },
+    {
+      "id": "tx-width-stretch",
+      "category": "tx-variable",
+      "pattern": "text-width-stretch",
+      "engine": "text",
+      "demoId": "width-stretch"
+    },
+    {
+      "id": "tx-weight-breathe",
+      "category": "tx-variable",
+      "pattern": "text-weight-breathe",
+      "engine": "text",
+      "demoId": "weight-breathe"
+    },
+    {
+      "id": "tx-thin-to-bold-in",
+      "category": "tx-variable",
+      "pattern": "text-thin-to-bold-in",
+      "engine": "text",
+      "demoId": "thin-to-bold-in"
+    },
+    {
+      "id": "tx-slant-swing",
+      "category": "tx-variable",
+      "pattern": "text-slant-swing",
+      "engine": "text",
+      "demoId": "slant-swing"
+    },
+    {
+      "id": "tx-width-slant-scroll",
+      "category": "tx-variable",
+      "pattern": "text-width-slant-scroll",
+      "engine": "text",
+      "demoId": "width-slant-scroll"
+    },
+    {
+      "id": "tx-text-pressure",
+      "category": "tx-variable",
+      "pattern": "text-text-pressure",
+      "engine": "text",
+      "demoId": "text-pressure"
+    },
+    {
+      "id": "tx-variable-proximity",
+      "category": "tx-variable",
+      "pattern": "text-variable-proximity",
+      "engine": "text",
+      "demoId": "variable-proximity"
+    },
+    {
+      "id": "tx-scroll-word-highlight",
+      "category": "tx-scroll",
+      "pattern": "text-scroll-word-highlight",
+      "engine": "text",
+      "demoId": "scroll-word-highlight"
+    },
+    {
+      "id": "tx-view-timeline-words",
+      "category": "tx-scroll",
+      "pattern": "text-view-timeline-words",
+      "engine": "text",
+      "demoId": "view-timeline-words"
+    },
+    {
+      "id": "tx-scroll-blur-tilt",
+      "category": "tx-scroll",
+      "pattern": "text-scroll-blur-tilt",
+      "engine": "text",
+      "demoId": "scroll-blur-tilt"
+    },
+    {
+      "id": "tx-scroll-clip-write",
+      "category": "tx-scroll",
+      "pattern": "text-scroll-clip-write",
+      "engine": "text",
+      "demoId": "scroll-clip-write"
+    },
+    {
+      "id": "tx-scroll-velocity-marquee",
+      "category": "tx-scroll",
+      "pattern": "text-scroll-velocity-marquee",
+      "engine": "text",
+      "demoId": "scroll-velocity-marquee"
+    },
+    {
+      "id": "tx-scroll-skew",
+      "category": "tx-scroll",
+      "pattern": "text-scroll-skew",
+      "engine": "text",
+      "demoId": "scroll-skew"
+    },
+    {
+      "id": "tx-horizontal-letter-drop",
+      "category": "tx-scroll",
+      "pattern": "text-horizontal-letter-drop",
+      "engine": "text",
+      "demoId": "horizontal-letter-drop"
+    },
+    {
+      "id": "tx-dual-wave-columns",
+      "category": "tx-scroll",
+      "pattern": "text-dual-wave-columns",
+      "engine": "text",
+      "demoId": "dual-wave-columns"
+    },
+    {
+      "id": "tx-repetition-echo",
+      "category": "tx-scroll",
+      "pattern": "text-repetition-echo",
+      "engine": "text",
+      "demoId": "repetition-echo"
+    },
+    {
+      "id": "tx-text-window-zoom",
+      "category": "tx-scroll",
+      "pattern": "text-text-window-zoom",
+      "engine": "text",
+      "demoId": "text-window-zoom"
+    },
+    {
+      "id": "tx-sticky-shrink-headline",
+      "category": "tx-scroll",
+      "pattern": "text-sticky-shrink-headline",
+      "engine": "text",
+      "demoId": "sticky-shrink-headline"
+    },
+    {
+      "id": "tx-parallax-lines",
+      "category": "tx-scroll",
+      "pattern": "text-parallax-lines",
+      "engine": "text",
+      "demoId": "parallax-lines"
+    },
+    {
+      "id": "tx-magnetic-letters",
+      "category": "tx-pointer",
+      "pattern": "text-magnetic-letters",
+      "engine": "text",
+      "demoId": "magnetic-letters"
+    },
+    {
+      "id": "tx-proximity-repel",
+      "category": "tx-pointer",
+      "pattern": "text-proximity-repel",
+      "engine": "text",
+      "demoId": "proximity-repel"
+    },
+    {
+      "id": "tx-proximity-scramble",
+      "category": "tx-pointer",
+      "pattern": "text-proximity-scramble",
+      "engine": "text",
+      "demoId": "proximity-scramble"
+    },
+    {
+      "id": "tx-clone-roll-hover",
+      "category": "tx-pointer",
+      "pattern": "text-clone-roll-hover",
+      "engine": "text",
+      "demoId": "clone-roll-hover"
+    },
+    {
+      "id": "tx-hover-word-lift",
+      "category": "tx-pointer",
+      "pattern": "text-hover-word-lift",
+      "engine": "text",
+      "demoId": "hover-word-lift"
+    },
+    {
+      "id": "tx-cursor-text-trail",
+      "category": "tx-pointer",
+      "pattern": "text-cursor-text-trail",
+      "engine": "text",
+      "demoId": "cursor-text-trail"
+    },
+    {
+      "id": "tx-spotlight-outline",
+      "category": "tx-pointer",
+      "pattern": "text-spotlight-outline",
+      "engine": "text",
+      "demoId": "spotlight-outline"
+    },
+    {
+      "id": "tx-pointer-reveal-card",
+      "category": "tx-pointer",
+      "pattern": "text-pointer-reveal-card",
+      "engine": "text",
+      "demoId": "pointer-reveal-card"
+    },
+    {
+      "id": "tx-lens-bulge",
+      "category": "tx-pointer",
+      "pattern": "text-lens-bulge",
+      "engine": "text",
+      "demoId": "lens-bulge"
+    },
+    {
+      "id": "tx-count-up",
+      "category": "tx-counter",
+      "pattern": "text-count-up",
+      "engine": "text",
+      "demoId": "count-up"
+    },
+    {
+      "id": "tx-odometer-roll",
+      "category": "tx-counter",
+      "pattern": "text-odometer-roll",
+      "engine": "text",
+      "demoId": "odometer-roll"
+    },
+    {
+      "id": "tx-ticker-flash",
+      "category": "tx-counter",
+      "pattern": "text-ticker-flash",
+      "engine": "text",
+      "demoId": "ticker-flash"
+    },
+    {
+      "id": "tx-score-update",
+      "category": "tx-counter",
+      "pattern": "text-score-update",
+      "engine": "text",
+      "demoId": "score-update"
+    },
+    {
+      "id": "tx-number-scramble",
+      "category": "tx-counter",
+      "pattern": "text-number-scramble",
+      "engine": "text",
+      "demoId": "number-scramble"
+    },
+    {
+      "id": "tx-progress-percent",
+      "category": "tx-counter",
+      "pattern": "text-progress-percent",
+      "engine": "text",
+      "demoId": "progress-percent"
+    },
+    {
+      "id": "tx-countdown-zoom",
+      "category": "tx-counter",
+      "pattern": "text-countdown-zoom",
+      "engine": "text",
+      "demoId": "countdown-zoom"
+    },
+    {
+      "id": "tx-seven-segment",
+      "category": "tx-counter",
+      "pattern": "text-seven-segment",
+      "engine": "text",
+      "demoId": "seven-segment"
+    },
+    {
+      "id": "tx-pop-on-subtitle",
+      "category": "tx-caption",
+      "pattern": "text-pop-on-subtitle",
+      "engine": "text",
+      "demoId": "pop-on-subtitle"
+    },
+    {
+      "id": "tx-paint-on-caption",
+      "category": "tx-caption",
+      "pattern": "text-paint-on-caption",
+      "engine": "text",
+      "demoId": "paint-on-caption"
+    },
+    {
+      "id": "tx-roll-up-caption",
+      "category": "tx-caption",
+      "pattern": "text-roll-up-caption",
+      "engine": "text",
+      "demoId": "roll-up-caption"
+    },
+    {
+      "id": "tx-live-caption-block",
+      "category": "tx-caption",
+      "pattern": "text-live-caption-block",
+      "engine": "text",
+      "demoId": "live-caption-block"
+    },
+    {
+      "id": "tx-word-highlight-caption",
+      "category": "tx-caption",
+      "pattern": "text-word-highlight-caption",
+      "engine": "text",
+      "demoId": "word-highlight-caption"
+    },
+    {
+      "id": "tx-highlight-pill",
+      "category": "tx-caption",
+      "pattern": "text-highlight-pill",
+      "engine": "text",
+      "demoId": "highlight-pill"
+    },
+    {
+      "id": "tx-hormozi-caption",
+      "category": "tx-caption",
+      "pattern": "text-hormozi-caption",
+      "engine": "text",
+      "demoId": "hormozi-caption"
+    },
+    {
+      "id": "tx-caption-spring-pop",
+      "category": "tx-caption",
+      "pattern": "text-caption-spring-pop",
+      "engine": "text",
+      "demoId": "caption-spring-pop"
+    },
+    {
+      "id": "tx-karaoke-fill",
+      "category": "tx-caption",
+      "pattern": "text-karaoke-fill",
+      "engine": "text",
+      "demoId": "karaoke-fill"
+    },
+    {
+      "id": "tx-forced-narrative-fade",
+      "category": "tx-caption",
+      "pattern": "text-forced-narrative-fade",
+      "engine": "text",
+      "demoId": "forced-narrative-fade"
+    },
+    {
+      "id": "tx-rsvp-flash",
+      "category": "tx-caption",
+      "pattern": "text-rsvp-flash",
+      "engine": "text",
+      "demoId": "rsvp-flash"
+    },
+    {
+      "id": "tx-phrase-line-break",
+      "category": "tx-caption",
+      "pattern": "text-phrase-line-break",
+      "engine": "text",
+      "demoId": "phrase-line-break"
+    },
+    {
+      "id": "tx-fit-text-title",
+      "category": "tx-layout",
+      "pattern": "text-fit-text-title",
+      "engine": "text",
+      "demoId": "fit-text-title"
+    },
+    {
+      "id": "tx-stacked-justified",
+      "category": "tx-layout",
+      "pattern": "text-stacked-justified",
+      "engine": "text",
+      "demoId": "stacked-justified"
+    },
+    {
+      "id": "tx-layout-word-insert",
+      "category": "tx-layout",
+      "pattern": "text-layout-word-insert",
+      "engine": "text",
+      "demoId": "layout-word-insert"
+    },
+    {
+      "id": "tx-anagram-flip",
+      "category": "tx-layout",
+      "pattern": "text-anagram-flip",
+      "engine": "text",
+      "demoId": "anagram-flip"
+    },
+    {
+      "id": "tx-balanced-reflow",
+      "category": "tx-layout",
+      "pattern": "text-balanced-reflow",
+      "engine": "text",
+      "demoId": "balanced-reflow"
+    },
+    {
+      "id": "tx-line-spacing-collapse",
+      "category": "tx-layout",
+      "pattern": "text-line-spacing-collapse",
+      "engine": "text",
+      "demoId": "line-spacing-collapse"
+    },
+    {
+      "id": "tx-kinetic-camera",
+      "category": "tx-layout",
+      "pattern": "text-kinetic-camera",
+      "engine": "text",
+      "demoId": "kinetic-camera"
+    },
+    {
+      "id": "tx-expand-truncated",
+      "category": "tx-layout",
+      "pattern": "text-expand-truncated",
+      "engine": "text",
+      "demoId": "expand-truncated"
+    },
+    {
+      "id": "tx-wave-loop",
+      "category": "tx-loop",
+      "pattern": "text-wave-loop",
+      "engine": "text",
+      "demoId": "wave-loop"
+    },
+    {
+      "id": "tx-infinite-marquee",
+      "category": "tx-loop",
+      "pattern": "text-infinite-marquee",
+      "engine": "text",
+      "demoId": "infinite-marquee"
+    },
+    {
+      "id": "tx-scale-breathe",
+      "category": "tx-loop",
+      "pattern": "text-scale-breathe",
+      "engine": "text",
+      "demoId": "scale-breathe"
+    },
+    {
+      "id": "tx-sparkles-text",
+      "category": "tx-loop",
+      "pattern": "text-sparkles-text",
+      "engine": "text",
+      "demoId": "sparkles-text"
+    },
+    {
+      "id": "tx-jump-sequence",
+      "category": "tx-loop",
+      "pattern": "text-jump-sequence",
+      "engine": "text",
+      "demoId": "jump-sequence"
+    },
+    {
+      "id": "tx-y-spin-stagger",
+      "category": "tx-loop",
+      "pattern": "text-y-spin-stagger",
+      "engine": "text",
+      "demoId": "y-spin-stagger"
+    },
+    {
+      "id": "tx-loading-dots",
+      "category": "tx-loop",
+      "pattern": "text-loading-dots",
+      "engine": "text",
+      "demoId": "loading-dots"
+    },
+    {
+      "id": "tx-hanging-sway",
+      "category": "tx-loop",
+      "pattern": "text-hanging-sway",
+      "engine": "text",
+      "demoId": "hanging-sway"
+    },
+    {
+      "id": "tx-chase-lights",
+      "category": "tx-loop",
+      "pattern": "text-chase-lights",
+      "engine": "text",
+      "demoId": "chase-lights"
+    },
+    {
+      "id": "tx-echo-orbit",
+      "category": "tx-loop",
+      "pattern": "text-echo-orbit",
+      "engine": "text",
+      "demoId": "echo-orbit"
+    },
+    {
+      "id": "tx-liquid-slosh",
+      "category": "tx-loop",
+      "pattern": "text-liquid-slosh",
+      "engine": "text",
+      "demoId": "liquid-slosh"
+    },
+    {
+      "id": "tx-satellite-orbit",
+      "category": "tx-loop",
+      "pattern": "text-satellite-orbit",
+      "engine": "text",
+      "demoId": "satellite-orbit"
+    },
+    {
+      "id": "tx-bunsetsu-reveal",
+      "category": "tx-japanese",
+      "pattern": "text-bunsetsu-reveal",
+      "engine": "text",
+      "demoId": "bunsetsu-reveal"
+    },
+    {
+      "id": "tx-yakumono-pause",
+      "category": "tx-japanese",
+      "pattern": "text-yakumono-pause",
+      "engine": "text",
+      "demoId": "yakumono-pause"
+    },
+    {
+      "id": "tx-tategaki-reveal",
+      "category": "tx-japanese",
+      "pattern": "text-tategaki-reveal",
+      "engine": "text",
+      "demoId": "tategaki-reveal"
+    },
+    {
+      "id": "tx-ruby-sync",
+      "category": "tx-japanese",
+      "pattern": "text-ruby-sync",
+      "engine": "text",
+      "demoId": "ruby-sync"
+    },
+    {
+      "id": "tx-ime-conversion",
+      "category": "tx-japanese",
+      "pattern": "text-ime-conversion",
+      "engine": "text",
+      "demoId": "ime-conversion"
+    },
+    {
+      "id": "tx-kanji-stroke-order",
+      "category": "tx-japanese",
+      "pattern": "text-kanji-stroke-order",
+      "engine": "text",
+      "demoId": "kanji-stroke-order"
+    },
+    {
+      "id": "tx-brush-write-on",
+      "category": "tx-japanese",
+      "pattern": "text-brush-write-on",
+      "engine": "text",
+      "demoId": "brush-write-on"
+    },
+    {
+      "id": "tx-onomatopoeia-impact",
+      "category": "tx-japanese",
+      "pattern": "text-onomatopoeia-impact",
+      "engine": "text",
+      "demoId": "onomatopoeia-impact"
+    },
+    {
+      "id": "tx-lyric-tame-tsume",
+      "category": "tx-japanese",
+      "pattern": "text-lyric-tame-tsume",
+      "engine": "text",
+      "demoId": "lyric-tame-tsume"
+    },
+    {
+      "id": "tx-danmaku-comments",
+      "category": "tx-japanese",
+      "pattern": "text-danmaku-comments",
+      "engine": "text",
+      "demoId": "danmaku-comments"
+    },
+    {
+      "id": "tx-eva-mincho-card",
+      "category": "tx-japanese",
+      "pattern": "text-eva-mincho-card",
+      "engine": "text",
+      "demoId": "eva-mincho-card"
+    },
+    {
+      "id": "tx-jp-subtitle-timing",
+      "category": "tx-japanese",
+      "pattern": "text-jp-subtitle-timing",
+      "engine": "text",
+      "demoId": "jp-subtitle-timing"
+    },
+    {
+      "id": "tx-vertical-subtitle",
+      "category": "tx-japanese",
+      "pattern": "text-vertical-subtitle",
+      "engine": "text",
+      "demoId": "vertical-subtitle"
+    },
+    {
+      "id": "tx-cinema-handwritten-subtitle",
+      "category": "tx-japanese",
+      "pattern": "text-cinema-handwritten-subtitle",
+      "engine": "text",
+      "demoId": "cinema-handwritten-subtitle"
+    },
+    {
+      "id": "tx-tracking-in-contract",
+      "category": "tx-title",
+      "pattern": "text-tracking-in-contract",
+      "engine": "text",
+      "demoId": "tracking-in-contract"
+    },
+    {
+      "id": "tx-slow-tracking-expand",
+      "category": "tx-title",
+      "pattern": "text-slow-tracking-expand",
+      "engine": "text",
+      "demoId": "slow-tracking-expand"
+    },
+    {
+      "id": "tx-fade-through-black",
+      "category": "tx-title",
+      "pattern": "text-fade-through-black",
+      "engine": "text",
+      "demoId": "fade-through-black"
+    },
+    {
+      "id": "tx-slam-in-title",
+      "category": "tx-title",
+      "pattern": "text-slam-in-title",
+      "engine": "text",
+      "demoId": "slam-in-title"
+    },
+    {
+      "id": "tx-flash-frame-cut",
+      "category": "tx-title",
+      "pattern": "text-flash-frame-cut",
+      "engine": "text",
+      "demoId": "flash-frame-cut"
+    },
+    {
+      "id": "tx-opening-crawl",
+      "category": "tx-title",
+      "pattern": "text-opening-crawl",
+      "engine": "text",
+      "demoId": "opening-crawl"
+    },
+    {
+      "id": "tx-racing-credits",
+      "category": "tx-title",
+      "pattern": "text-racing-credits",
+      "engine": "text",
+      "demoId": "racing-credits"
+    },
+    {
+      "id": "tx-split-bars-title",
+      "category": "tx-title",
+      "pattern": "text-split-bars-title",
+      "engine": "text",
+      "demoId": "split-bars-title"
+    },
+    {
+      "id": "tx-film-scratch-jitter",
+      "category": "tx-title",
+      "pattern": "text-film-scratch-jitter",
+      "engine": "text",
+      "demoId": "film-scratch-jitter"
+    },
+    {
+      "id": "tx-stamp-cutout",
+      "category": "tx-title",
+      "pattern": "text-stamp-cutout",
+      "engine": "text",
+      "demoId": "stamp-cutout"
+    },
+    {
+      "id": "tx-light-leak-burn",
+      "category": "tx-title",
+      "pattern": "text-light-leak-burn",
+      "engine": "text",
+      "demoId": "light-leak-burn"
+    },
+    {
+      "id": "tx-letterbox-reveal",
+      "category": "tx-title",
+      "pattern": "text-letterbox-reveal",
+      "engine": "text",
+      "demoId": "letterbox-reveal"
+    },
+    {
+      "id": "tx-lower-third",
+      "category": "tx-broadcast",
+      "pattern": "text-lower-third",
+      "engine": "text",
+      "demoId": "lower-third"
+    },
+    {
+      "id": "tx-news-ticker",
+      "category": "tx-broadcast",
+      "pattern": "text-news-ticker",
+      "engine": "text",
+      "demoId": "news-ticker"
+    },
+    {
+      "id": "tx-breaking-banner",
+      "category": "tx-broadcast",
+      "pattern": "text-breaking-banner",
+      "engine": "text",
+      "demoId": "breaking-banner"
+    },
+    {
+      "id": "tx-credits-roll",
+      "category": "tx-broadcast",
+      "pattern": "text-credits-roll",
+      "engine": "text",
+      "demoId": "credits-roll"
+    },
+    {
+      "id": "tx-led-dot-matrix",
+      "category": "tx-broadcast",
+      "pattern": "text-led-dot-matrix",
+      "engine": "text",
+      "demoId": "led-dot-matrix"
+    },
+    {
+      "id": "tx-telop-pop-outline",
+      "category": "tx-broadcast",
+      "pattern": "text-telop-pop-outline",
+      "engine": "text",
+      "demoId": "telop-pop-outline"
+    },
+    {
+      "id": "tx-telop-shake",
+      "category": "tx-broadcast",
+      "pattern": "text-telop-shake",
+      "engine": "text",
+      "demoId": "telop-shake"
+    },
+    {
+      "id": "tx-telop-zabuton",
+      "category": "tx-broadcast",
+      "pattern": "text-telop-zabuton",
+      "engine": "text",
+      "demoId": "telop-zabuton"
+    },
+    {
+      "id": "tx-telop-tsukkomi",
+      "category": "tx-broadcast",
+      "pattern": "text-telop-tsukkomi",
+      "engine": "text",
+      "demoId": "telop-tsukkomi"
+    },
+    {
+      "id": "tx-telop-kirakira",
+      "category": "tx-broadcast",
+      "pattern": "text-telop-kirakira",
+      "engine": "text",
+      "demoId": "telop-kirakira"
+    },
+    {
+      "id": "tx-telop-comment-follow",
+      "category": "tx-broadcast",
+      "pattern": "text-telop-comment-follow",
+      "engine": "text",
+      "demoId": "telop-comment-follow"
+    },
+    {
+      "id": "tx-telop-side-super",
+      "category": "tx-broadcast",
+      "pattern": "text-telop-side-super",
+      "engine": "text",
+      "demoId": "telop-side-super"
+    }
+  ]
+}

@@ -379,7 +379,7 @@ button, a, input, select, textarea, [tabindex] { -webkit-tap-highlight-color: tr
 .klic-chart-controls button:hover { background:var(--klic-component-block-color-selected); }
 .klic-chart-controls input { accent-color:var(--klic-component-block-color-accent); }
 .klic-chart-controls input[type=range] { width:90px; }
-.klic-chart-showcase :focus-visible { outline:2px solid var(--klic-component-block-color-accent); outline-offset:3px; }
+.klic-chart-showcase .kx-bjork :focus-visible { outline:2px solid var(--klic-component-block-color-accent); outline-offset:3px; }
 .klic-chart-stage { min-width:0; padding:10px 6px; border-radius:10px; background:var(--klic-component-block-color-panel); }
 .klic-chart-showcase footer { display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; margin-top:16px; font-size:10px; color:var(--klic-component-block-color-muted); }
 .klic-chart-showcase footer a { text-decoration:underline; text-underline-offset:3px; }

@@ -1,0 +1,2076 @@
+{
+  "schemaVersion": 1,
+  "authorship": {
+    "status": "KLIC-authored",
+    "organization": "KLIC",
+    "basis": "User-confirmed authorship",
+    "archiveRole": "project-delivery-record"
+  },
+  "decomposition": {
+    "unit": "individual motion recipes",
+    "target": "current KLIC motion-source token/runtime format",
+    "rule": "Preserve original source identity and timing; count only effects implemented in the selected renderer. Static illustrations receive no fabricated motion."
+  },
+  "archive": {
+    "path": "docs/flowmotion-gallery-—-interactive-workflow-studio.zip",
+    "sha256": "3720a9dffd3bf3714f131cc3b28488c8ae0539f082ff03bfefa9ff340f547cf7",
+    "hashAlgorithm": "SHA-256",
+    "role": "project-delivery-record"
+  },
+  "sourceModules": [
+    {
+      "path": "src/App.tsx",
+      "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2",
+      "role": "App renderer selection, ambient clock, scenario replay coordinator"
+    },
+    {
+      "path": "src/utils/flowTemplates.ts",
+      "sha256": "84e23cff51bd25bf263250b88390dba48fdab125834a72b7d21b13245d3eabfa",
+      "role": "22 source template identities and original scenarios"
+    },
+    {
+      "path": "src/utils/flowEngine.ts",
+      "sha256": "150d5af130c520ff13f0c0d282f2c25ed008056a295167b739f5b65fce2078cd",
+      "role": "layout types and runtime interpretation of scenario steps and edges"
+    },
+    {
+      "path": "src/index.css",
+      "sha256": "d1223bc89408fcc6d3e65c535a472ba664fcab30e4d0b5e74eee5b3c0b0965f7",
+      "role": "shared animated dashed connector keyframes and reduced-motion rule"
+    },
+    {
+      "path": "src/components/FlowCanvas.tsx",
+      "sha256": "a1052bb0e3a4429ad71043e88dadd53eb00cfc7c4e71a69bcbdbef543e364077",
+      "role": "orthogonal-step renderer"
+    },
+    {
+      "path": "src/components/FlowNodeCard.tsx",
+      "sha256": "ed7ff0164a641244a8ab5f8e2bfda32543ea64300f89344d513996c6889050d1",
+      "role": "FlowCanvas node card and executing indicator"
+    },
+    {
+      "path": "src/components/MultiStyleFlowCanvases.tsx",
+      "sha256": "5e19da471fc3a29496ace9a49b8a37cc7a3a891e6ef52b4fcf6d24d956b9ebb4",
+      "role": "radial, swimlane, cyclic and vertical-tree renderers"
+    },
+    {
+      "path": "src/components/PptInfographicCanvases.tsx",
+      "sha256": "84b52288fc094d490efa1018eda75a54550a9f14d4137d0ba63420275d6e8b73",
+      "role": "five presentation infographic renderers"
+    },
+    {
+      "path": "src/components/CreativeInfographicCanvases.tsx",
+      "sha256": "0321510316b4e526763477fa5131c895efd4a5454335b52109bdc316fa62eb0f",
+      "role": "five creative infographic renderers"
+    },
+    {
+      "path": "src/components/CinematicNodeConnectCanvas.tsx",
+      "sha256": "8dde04f4754897e630e43133ec30d65aed9aec844d855dda87df84537d07a05f",
+      "role": "cinematic renderer, effect switches and sequenced playback"
+    },
+    {
+      "path": "src/components/EditorialMcpSkillCanvas.tsx",
+      "sha256": "ed70fbc81c0b102e7f5b01e76eff92c18939d4f713687e8e9a844205c07665af",
+      "role": "editorial MCP and skill comparison renderer"
+    },
+    {
+      "path": "src/components/ItWorkflowEditorialCanvases.tsx",
+      "sha256": "539ced70446b36e56ff979bb81c0485ff51208abea20c3a11b8de47b3fab0b27",
+      "role": "five IT workflow editorial layout branches"
+    }
+  ],
+  "extraction": {
+    "templateSource": "src/utils/flowTemplates.ts",
+    "method": "Read the source as a TypeScript data literal; convert its sole FlowTemplate type import to import type in a private copy; transpile with Bun.Transpiler; verify zero runtime import lines before importing the private module.",
+    "runtimeImportsAfterTranspile": 0,
+    "sourceWasModified": false
+  },
+  "clocks": {
+    "ambientLoop": {
+      "source": "src/App.tsx",
+      "durationMs": 2400,
+      "progressFormula": "((now - start) % 2400) / 2400",
+      "behavior": "requestAnimationFrame loop runs continuously and feeds ambientProgress to selected renderers, independent of scenario replay state."
+    },
+    "scenarioReplay": {
+      "source": [
+        "src/App.tsx",
+        "src/utils/flowEngine.ts"
+      ],
+      "behavior": "requestAnimationFrame advances elapsedMs from 0 to scenario.totalDurationMs; source step startMs/endMs and activeEdges/skippedEdges determine runtime state where the renderer uses it.",
+      "sourceScenarioTimelines": "Copied verbatim for every template below, including each scenario field and every step field."
+    }
+  },
+  "templates": [
+    {
+      "id": "inbound-lead-routing",
+      "number": "01",
+      "layoutType": "orthogonal-step",
+      "title": "인바운드 엔터프라이즈 리드 라우팅",
+      "rendererRef": "orthogonal-step",
+      "scenarios": [
+        {
+          "id": "reference-timeout",
+          "name": "시나리오 A · Clearbit 조회 실패 (원본 레퍼런스)",
+          "badgeText": "레퍼런스 일치",
+          "description": "데모 신청 폼(0.2초 성공) → 엔터프라이즈 조건(0.1초 성공) → [예] 기업 데이터 보강 조회(8.0초 실패) · 인바운드 딜 생성(대기 중) · [아니오] 슬랙 알림(건너뜀)",
+          "totalDurationMs": 3600,
+          "activeEdges": [
+            "e-demo-branch",
+            "e-branch-yes"
+          ],
+          "skippedEdges": [
+            "e-branch-no"
+          ],
+          "steps": {
+            "demo-submitted": {
+              "nodeId": "demo-submitted",
+              "status": "success",
+              "durationSec": 0.2,
+              "startMs": 100,
+              "endMs": 700
+            },
+            "is-enterprise": {
+              "nodeId": "is-enterprise",
+              "status": "success",
+              "durationSec": 0.1,
+              "startMs": 950,
+              "endMs": 1500
+            },
+            "slack-notify": {
+              "nodeId": "slack-notify",
+              "status": "skipped",
+              "durationSec": null,
+              "startMs": 1650,
+              "endMs": 1850
+            },
+            "clearbit-enrich": {
+              "nodeId": "clearbit-enrich",
+              "status": "failed",
+              "durationSec": 8,
+              "startMs": 1750,
+              "endMs": 3200,
+              "highlightBorder": true
+            },
+            "hubspot-deal": {
+              "nodeId": "hubspot-deal",
+              "status": "pending",
+              "durationSec": null,
+              "startMs": 3250,
+              "endMs": 3500
+            }
+          }
+        },
+        {
+          "id": "enterprise-complete",
+          "name": "시나리오 B · 엔터프라이즈 딜 생성 완주 (예 분기 성공)",
+          "badgeText": "전체 성공",
+          "description": "Clearbit 응답이 정상 수신되어 HubSpot 인바운드 딜 생성까지 전 구간 성공적으로 완료되는 모션입니다.",
+          "totalDurationMs": 4200,
+          "activeEdges": [
+            "e-demo-branch",
+            "e-branch-yes",
+            "e-clearbit-hubspot"
+          ],
+          "skippedEdges": [
+            "e-branch-no"
+          ],
+          "steps": {
+            "demo-submitted": {
+              "nodeId": "demo-submitted",
+              "status": "success",
+              "durationSec": 0.2,
+              "startMs": 100,
+              "endMs": 700
+            },
+            "is-enterprise": {
+              "nodeId": "is-enterprise",
+              "status": "success",
+              "durationSec": 0.1,
+              "startMs": 950,
+              "endMs": 1500
+            },
+            "slack-notify": {
+              "nodeId": "slack-notify",
+              "status": "skipped",
+              "durationSec": null,
+              "startMs": 1650,
+              "endMs": 1850
+            },
+            "clearbit-enrich": {
+              "nodeId": "clearbit-enrich",
+              "status": "success",
+              "durationSec": 1.4,
+              "startMs": 1750,
+              "endMs": 2800
+            },
+            "hubspot-deal": {
+              "nodeId": "hubspot-deal",
+              "status": "success",
+              "durationSec": 0.5,
+              "startMs": 3050,
+              "endMs": 3950,
+              "highlightBorder": true
+            }
+          }
+        },
+        {
+          "id": "smb-slack-route",
+          "name": "시나리오 C · 일반 리드 슬랙 알림 (아니오 분기)",
+          "badgeText": "아니오 분기",
+          "description": "company.size <= 200 조건으로 평가되어 상단 엔터프라이즈 파이프라인을 건너뛰고 세일즈팀 슬랙 알림을 즉시 발송합니다.",
+          "totalDurationMs": 3400,
+          "activeEdges": [
+            "e-demo-branch",
+            "e-branch-no"
+          ],
+          "skippedEdges": [
+            "e-branch-yes",
+            "e-clearbit-hubspot"
+          ],
+          "steps": {
+            "demo-submitted": {
+              "nodeId": "demo-submitted",
+              "status": "success",
+              "durationSec": 0.2,
+              "startMs": 100,
+              "endMs": 700
+            },
+            "is-enterprise": {
+              "nodeId": "is-enterprise",
+              "status": "success",
+              "durationSec": 0.1,
+              "startMs": 950,
+              "endMs": 1500
+            },
+            "clearbit-enrich": {
+              "nodeId": "clearbit-enrich",
+              "status": "skipped",
+              "durationSec": null,
+              "startMs": 1650,
+              "endMs": 1850
+            },
+            "hubspot-deal": {
+              "nodeId": "hubspot-deal",
+              "status": "skipped",
+              "durationSec": null,
+              "startMs": 1850,
+              "endMs": 2000
+            },
+            "slack-notify": {
+              "nodeId": "slack-notify",
+              "status": "success",
+              "durationSec": 0.4,
+              "startMs": 1750,
+              "endMs": 3100,
+              "highlightBorder": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "realtime-ai-scoring-hub",
+      "number": "02",
+      "layoutType": "radial-stream-hub",
+      "title": "실시간 이상·이탈 복합 스코어링 허브",
+      "rendererRef": "radial-stream-hub",
+      "scenarios": [
+        {
+          "id": "stream-all-active",
+          "name": "시나리오 A · 전 채널 실시간 스코어링 (19.1k/s)",
+          "badgeText": "19.1k/s 풀스트림",
+          "description": "3개 입력 스트림이 원형 AI 코어로 팬인되어 FDS 차단(0.4%), VIP 방어(1.4%), 고속 커밋(98.2%) 3갈래로 동시 분기합니다.",
+          "totalDurationMs": 4000,
+          "activeEdges": [
+            "fds",
+            "vip",
+            "normal"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "stream-fds-alert",
+          "name": "시나리오 B · 고위험 FDS 긴급 차단 집중 (위험도 ≥ 85)",
+          "badgeText": "FDS 긴급차단",
+          "description": "원장 출금 스트림에서 이상 패턴이 급증하여 상단 레드 경로(출금 동결 & 보안관제 워룸 호출)가 집중 활성화됩니다.",
+          "totalDurationMs": 3600,
+          "activeEdges": [
+            "fds"
+          ],
+          "skippedEdges": [
+            "vip",
+            "normal"
+          ],
+          "steps": {}
+        },
+        {
+          "id": "stream-vip-retention",
+          "name": "시나리오 C · VIP 이탈 방어 플레이북 가동 (이탈 ≥ 70%)",
+          "badgeText": "VIP 케어 발동",
+          "description": "앱 행동 텔레메트리에서 엔터프라이즈 고객 이탈 징후를 포착하여 중앙 블루 경로(전담 CSM & 리텐션 CRM)를 가동합니다.",
+          "totalDurationMs": 3600,
+          "activeEdges": [
+            "vip"
+          ],
+          "skippedEdges": [
+            "fds"
+          ],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "swimlane-etl-funnel",
+      "number": "03",
+      "layoutType": "swimlane-etl-funnel",
+      "title": "멀티 샤드 데이터 레이크 ETL 스윔레인",
+      "rendererRef": "swimlane-etl-funnel",
+      "scenarios": [
+        {
+          "id": "etl-balanced",
+          "name": "시나리오 A · 3개 샤드 균등 분산 스트리밍",
+          "badgeText": "3-Shard 균등분산",
+          "description": "수집 → 검증 → 3개 병렬 워커 샤드(Shard #1~#3) → BigQuery 및 피처스토어로 전 구간 고속 적재됩니다.",
+          "totalDurationMs": 4200,
+          "activeEdges": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "etl-shard3-throttle",
+          "name": "시나리오 B · GPU 샤드 #03 백프레셔(Backpressure) 감지",
+          "badgeText": "Shard #3 지연",
+          "description": "벡터 임베딩 샤드(#03)의 GPU 메모리 부하로 백프레셔 경고가 발생하고 #01·#02 샤드가 우선 커밋됩니다.",
+          "totalDurationMs": 4000,
+          "activeEdges": [
+            "s1",
+            "s2"
+          ],
+          "skippedEdges": [
+            "s3"
+          ],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "cyclic-agent-ring",
+      "number": "04",
+      "layoutType": "cyclic-agent-ring",
+      "title": "자율형 멀티 에이전트 오케스트레이션 링",
+      "rendererRef": "cyclic-agent-ring",
+      "scenarios": [
+        {
+          "id": "ring-full-cycle",
+          "name": "시나리오 A · 5단계 자율 에이전트 궤도 완주",
+          "badgeText": "궤도 순환 완주",
+          "description": "기획(12시) → 코드합성(2시) → 샌드박스검증(5시) → 보안감사(7시) → 카나리배포(10시)까지 원형 궤도를 따라 순환합니다.",
+          "totalDurationMs": 4500,
+          "activeEdges": [
+            "ring-all"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "ring-self-heal",
+          "name": "시나리오 B · 샌드박스 테스트 실패 → 코드 자가수정 루프",
+          "badgeText": "자가수정 피드백 루프",
+          "description": "03. 샌드박스 에이전트가 엣지케이스 오류를 발견하여 02. 코드 합성 에이전트로 역방향 수정 루프를 실행합니다.",
+          "totalDurationMs": 4200,
+          "activeEdges": [
+            "self-heal"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "vertical-region-tree",
+      "number": "05",
+      "layoutType": "vertical-region-tree",
+      "title": "글로벌 멀티리전 L7 오토 페일오버 트리",
+      "rendererRef": "vertical-region-tree",
+      "scenarios": [
+        {
+          "id": "tree-failover-active",
+          "name": "시나리오 A · 서울 클러스터 B 장애 → 도쿄 자동 우회 (Failover)",
+          "badgeText": "오토 페일오버 가동",
+          "description": "서울 클러스터 B의 서킷 브레이커가 작동하여 도쿄 JP-Standby 클러스터로 우회 아크(Auto-Failover)가 실시간 연결됩니다.",
+          "totalDurationMs": 4000,
+          "activeEdges": [
+            "failover"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "tree-all-healthy",
+          "name": "시나리오 B · 전 리전 정상 로드밸런싱 (Normal)",
+          "badgeText": "전 리전 정상",
+          "description": "서울·도쿄·프랑크푸르트 3개 리전과 모든 하위 파드 클러스터가 100% 정상 상태로 트래픽을 분산 처리합니다.",
+          "totalDurationMs": 3800,
+          "activeEdges": [
+            "healthy"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "ppt-chevron-funnel",
+      "number": "06",
+      "layoutType": "ppt-chevron-funnel",
+      "title": "엔터프라이즈 GTM 세일즈 전환 퍼널",
+      "rendererRef": "ppt-chevron-funnel",
+      "scenarios": [
+        {
+          "id": "chevron-q4-target",
+          "name": "시나리오 A · AI 세일즈 어시스턴트 도입 후 (전환율 9.5%)",
+          "badgeText": "AI 도입 후 (9.5%)",
+          "description": "자동 보안질의 응답과 ROI 계산기 도입으로 PoC~보안심의 구간 이탈을 줄여 최종 전환율 9.5%(₩142억)를 달성합니다.",
+          "totalDurationMs": 4200,
+          "activeEdges": [
+            "boost"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "chevron-legacy-baseline",
+          "name": "시나리오 B · 기존 수동 영업 프로세스 기준선 (전환율 4.8%)",
+          "badgeText": "기존 프로세스 (4.8%)",
+          "description": "보안 심의 및 PoC 구축 지연으로 중간 단계 이탈이 발생하는 도입 전 기준선 퍼널입니다.",
+          "totalDurationMs": 4000,
+          "activeEdges": [
+            "baseline"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "ppt-sequence-flowchart",
+      "number": "07",
+      "layoutType": "ppt-sequence-flowchart",
+      "title": "차세대 원클릭 결제 승인·정산 시퀀스 순서도",
+      "rendererRef": "ppt-sequence-flowchart",
+      "scenarios": [
+        {
+          "id": "seq-happy-path",
+          "name": "시나리오 A · 초저지연 원클릭 승인 완주 (총 77ms)",
+          "badgeText": "정상 승인 (77ms)",
+          "description": "STEP 01부터 STEP 05까지 4개 시스템 레인을 가로지르며 77ms 만에 결제가 완료되는 시퀀스입니다.",
+          "totalDurationMs": 4200,
+          "activeEdges": [
+            "normal"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "seq-rollback-path",
+          "name": "시나리오 B · 카드 한도 초과 → 망취소 롤백 순서도",
+          "badgeText": "한도초과 롤백 분기",
+          "description": "STEP 02 다이아몬드 조건문에서 한도 초과가 감지되어 즉시 망취소 및 대체 결제수단 추천으로 분기합니다.",
+          "totalDurationMs": 3800,
+          "activeEdges": [
+            "rollback"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "ppt-flywheel-infographic",
+      "number": "08",
+      "layoutType": "ppt-flywheel-infographic",
+      "title": "AI 플랫폼 데이터 선순환 플라이휠 (Flywheel)",
+      "rendererRef": "ppt-flywheel-infographic",
+      "scenarios": [
+        {
+          "id": "flywheel-accel",
+          "name": "시나리오 A · 2026 하반기 가속 모멘텀 (NRR 138%)",
+          "badgeText": "가속 모멘텀 (138%)",
+          "description": "4개 분기 아크가 고속 순환하며 모든 코너 KPI 미니 차트가 목표치를 상회하는 성장 시나리오입니다.",
+          "totalDurationMs": 4200,
+          "activeEdges": [
+            "accel"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "flywheel-initial",
+          "name": "시나리오 B · 초기 콜드스타트 점화 단계 (Seed Phase)",
+          "badgeText": "초기 점화 단계",
+          "description": "01번 유입과 02번 데이터 축적 단계에 집중 투자하여 플라이휠의 초기 관성을 만드는 단계입니다.",
+          "totalDurationMs": 4000,
+          "activeEdges": [
+            "seed"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "ppt-asis-tobe-bridge",
+      "number": "09",
+      "layoutType": "ppt-asis-tobe-bridge",
+      "title": "레거시 수동 운영 vs AI 네이티브 전환 인포그래픽",
+      "rendererRef": "ppt-asis-tobe-bridge",
+      "scenarios": [
+        {
+          "id": "bridge-full-impact",
+          "name": "시나리오 A · 전사 전환 완료 후 ROI 임팩트 (-64% 비용 절감)",
+          "badgeText": "전환 완료 임팩트",
+          "description": "AS-IS 병목이 전환 브리지를 통과하며 TO-BE 초저지연 아키텍처와 3대 정량 성과 지표로 변환됩니다.",
+          "totalDurationMs": 4000,
+          "activeEdges": [
+            "tobe"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "bridge-migration-live",
+          "name": "시나리오 B · 무중단 하이브리드 마이그레이션 진행 중 (50:50)",
+          "badgeText": "무중단 이관 중",
+          "description": "트래픽의 50%를 카나리 브리지로 실시간 미러링하며 안정성을 검증하는 이관 단계입니다.",
+          "totalDurationMs": 4000,
+          "activeEdges": [
+            "hybrid"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "ppt-milestone-roadmap",
+      "number": "10",
+      "layoutType": "ppt-milestone-roadmap",
+      "title": "전사 AX(AI 전환) 4분기 마일스톤 & 품질 게이트",
+      "rendererRef": "ppt-milestone-roadmap",
+      "scenarios": [
+        {
+          "id": "roadmap-q4-projection",
+          "name": "시나리오 A · Q1~Q4 전 구간 S-Curve 가치 창출 시뮬레이션",
+          "badgeText": "Q4 ₩210억 달성 궤적",
+          "description": "Q1 기반 구축부터 Q4 자율 운영까지 품질 게이트를 순차 통과하며 하단 S-Curve 누적 가치가 ₩210억으로 상승합니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "q4"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "roadmap-q3-current",
+          "name": "시나리오 B · 현시점(Q3 Gate 3 심의) 집중 점검 뷰",
+          "badgeText": "현재 시점 (Q3 Gate 3)",
+          "description": "Q1·Q2 완료 후 현재 진행 중인 Q3 전사 확산 단계와 Gate 3 평가 지표를 하이라이트합니다.",
+          "totalDurationMs": 3800,
+          "activeEdges": [
+            "q3"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "creative-zigzag-ribbon",
+      "number": "11",
+      "layoutType": "creative-zigzag-ribbon",
+      "title": "4대 경영 혁신 지그재그 리본 전략도",
+      "rendererRef": "creative-zigzag-ribbon",
+      "scenarios": [
+        {
+          "id": "ribbon-wave-flow",
+          "name": "시나리오 A · 4색 지그재그 리본 웨이브 연속 파동",
+          "badgeText": "리본 웨이브 파동",
+          "description": "퍼플 → 스카이블루 → 에메랄드 → 골드 4단 입체 리본을 따라 광원 펄스가 상하 대각선으로 유영합니다.",
+          "totalDurationMs": 4200,
+          "activeEdges": [
+            "all"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "ribbon-kpi-focus",
+          "name": "시나리오 B · 고수익 비즈니스 & 오퍼레이션 집중 강조",
+          "badgeText": "핵심 수익단계 강조",
+          "description": "하단 꼭짓점인 02번 비즈니스 전략과 04번 오퍼레이션 전략의 재무 기여도를 집중 조명합니다.",
+          "totalDurationMs": 3800,
+          "activeEdges": [
+            "even"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "creative-lightbulb-brainstorm",
+      "number": "12",
+      "layoutType": "creative-lightbulb-brainstorm",
+      "title": "신사업 브레인스토밍 전구 방사형 인포그래픽",
+      "rendererRef": "creative-lightbulb-brainstorm",
+      "scenarios": [
+        {
+          "id": "bulb-spark-all",
+          "name": "시나리오 A · 전구 필라멘트 점화 & 6대 아이디어 방사 확산",
+          "badgeText": "6대 아이디어 점화",
+          "description": "중앙 전구 필라멘트가 점등되며 좌우 6개 브레인스토밍 가지로 광원 스파크가 동시 확산됩니다.",
+          "totalDurationMs": 4200,
+          "activeEdges": [
+            "all"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "bulb-top-priority",
+          "name": "시나리오 B · 즉시 상용화 Top 3 과제 집중 셀렉션",
+          "badgeText": "Top 3 상용화 집중",
+          "description": "ROI가 가장 높은 01(다이내믹 프라이싱), 02(비주얼 렌즈), 05(지식그래프 RAG) 과제를 집중 부각합니다.",
+          "totalDurationMs": 3800,
+          "activeEdges": [
+            "top3"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "creative-strategy-pyramid",
+      "number": "13",
+      "layoutType": "creative-strategy-pyramid",
+      "title": "엔터프라이즈 4단 입체 전략 피라미드 & 상승 모션",
+      "rendererRef": "creative-strategy-pyramid",
+      "scenarios": [
+        {
+          "id": "pyramid-ascend",
+          "name": "시나리오 A · 01 기반층 → 04 최정점(Apex) 수직 상승 모션",
+          "badgeText": "01→04 수직 상승",
+          "description": "하단 LEVEL 01 토대에서 시작된 에너지 웨이브가 LEVEL 04 최상단 골드 피라미드 정점까지 순차 상승합니다.",
+          "totalDurationMs": 4200,
+          "activeEdges": [
+            "ascend"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "pyramid-topdown",
+          "name": "시나리오 B · 04 경영 비전 → 01 현업 실행 탑다운(Top-Down) 전파",
+          "badgeText": "04→01 탑다운 전파",
+          "description": "최상단 경영진의 전략적 방향성이 하위 운영·기반 계층으로 일관되게 정렬(Alignment)되는 흐름입니다.",
+          "totalDurationMs": 4000,
+          "activeEdges": [
+            "topdown"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "creative-semicircle-radial-fan",
+      "number": "14",
+      "layoutType": "creative-semicircle-radial-fan",
+      "title": "5대 성장 동력 반원형(180°) 선버스트 팬 인포그래픽",
+      "rendererRef": "creative-semicircle-radial-fan",
+      "scenarios": [
+        {
+          "id": "fan-radar-sweep",
+          "name": "시나리오 A · 180° 반원 게이지 스윕 & 5색 웨지 순차 펄스",
+          "badgeText": "180° 파노라마 스윕",
+          "description": "01번 레드 웨지부터 05번 퍼플 웨지까지 반원 게이지 바늘이 회전하며 외곽 콜아웃 카드를 깨웁니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "sweep"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "fan-core-growth",
+          "name": "시나리오 B · 타겟(03) & 생태계 확장(04) 그로스 엔진 포커스",
+          "badgeText": "그로스 웨지 집중",
+          "description": "반원 상단과 우측의 03번 타겟 세그먼트 및 04번 생태계 확장 구간을 집중 조명합니다.",
+          "totalDurationMs": 3800,
+          "activeEdges": [
+            "growth"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "creative-hexagon-honeycomb",
+      "number": "15",
+      "layoutType": "creative-hexagon-honeycomb",
+      "title": "5연동 육각형(Hexagon) 허니콤 전략 매트릭스",
+      "rendererRef": "creative-hexagon-honeycomb",
+      "scenarios": [
+        {
+          "id": "hex-synapse-wave",
+          "name": "시나리오 A · 5연동 육각 허니콤 회전 & 시냅스 에너지 공명",
+          "badgeText": "5-Hex 허니콤 공명",
+          "description": "5개 컬러 육각형 셀의 외곽 대시 링이 회전하며 인접 셀 간 시냅스 패킷이 지그재그로 교류합니다.",
+          "totalDurationMs": 4200,
+          "activeEdges": [
+            "all"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "hex-core-triad",
+          "name": "시나리오 B · 침투(02)·수직통합(03)·제휴(04) 코어 트라이어드 집중",
+          "badgeText": "코어 트라이어드 집중",
+          "description": "중앙 3개 육각형 셀(시장 침투 · 수직 통합 · 전략적 제휴)의 결합 시너지를 하이라이트합니다.",
+          "totalDurationMs": 3800,
+          "activeEdges": [
+            "triad"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "cinematic-node-connect",
+      "number": "16",
+      "layoutType": "cinematic-node-connect",
+      "title": "시네마틱 카메라 확대 추적 (Node Connect 20 FX)",
+      "rendererRef": "cinematic-node-connect",
+      "scenarios": [
+        {
+          "id": "cam-standard-13x",
+          "name": "시나리오 A · 원본 Node Connect (1.3x 시네마틱 줌 & 20종 FX)",
+          "badgeText": "1.3x 시네마틱 카메라 (원본)",
+          "description": "첨부된 node-connect-slim.html과 동일하게 출발 박스(1.3x 확대) → 엣지 드로잉 추적 → 번개 스파크 & 리플 → 전체 줌아웃 & 골드 글로우가 실행됩니다.",
+          "totalDurationMs": 5600,
+          "activeEdges": [
+            "1.3x"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "cam-macro-16x",
+          "name": "시나리오 B · 1.65x 초근접 매크로 카메라 추적 모드 (Macro Zoom)",
+          "badgeText": "1.65x 초근접 매크로 줌",
+          "description": "각 노드를 1.65배로 깊숙이 클로즈업하여 카드 내부 타이포그래피와 핸들 호흡(Breath), 화살촉 결합 순간을 극적으로 보여주는 매크로 카메라 연출입니다.",
+          "totalDurationMs": 6000,
+          "activeEdges": [
+            "1.65x"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "cam-kor-rag",
+          "name": "시나리오 C · 엔터프라이즈 RAG & 에이전트 파이프라인 (한국어 라벨)",
+          "badgeText": "한국어 RAG 파이프라인 줌",
+          "description": "프롬프트 컨텍스트 · 벡터 DB 검색 · 추론 샘플러가 통합 추론 코어로 수렴하는 엔터프라이즈 한글 시나리오를 시네마틱 카메라 줌으로 추적합니다.",
+          "totalDurationMs": 5600,
+          "activeEdges": [
+            "kor"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "editorial-mcp-skill-compare",
+      "number": "17",
+      "layoutType": "editorial-mcp-skill-compare",
+      "title": "MCP(모델 연결 규격) vs 스킬(일하는 요령) 비교",
+      "rendererRef": "editorial-mcp-skill-compare",
+      "scenarios": [
+        {
+          "id": "mcp-skill-reference",
+          "name": "시나리오 A · 원본 레퍼런스 (MCP 모델 연결 규격 vs 스킬 일하는 요령)",
+          "badgeText": "MCP vs 스킬 원본 비교",
+          "description": "첨부된 레퍼런스 이미지와 동일하게 좌측 MCP 4대 시스템 연결 규격과 우측 스킬(엑셀 만들기 설명서 꺼내 읽기)을 생동감 있는 모션으로 보여줍니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "reference"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "mcp-skill-synergy",
+          "name": "시나리오 B · 스킬 + MCP 연속 협업 시뮬레이션 (요령 읽고 → DB/ERP 호출)",
+          "badgeText": "스킬 숙지 → MCP 실행",
+          "description": "1단계로 우측 [엑셀 만들기] 스킬 카드를 꺼내 읽은 뒤, 2단계로 좌측 [사내 DB · ERP · 파일 서버]를 MCP로 순차 호출하는 통합 작동 흐름입니다.",
+          "totalDurationMs": 4800,
+          "activeEdges": [
+            "synergy"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "mcp-skill-deck-cycle",
+          "name": "시나리오 C · 다중 스킬 카드 덱 넘기기 (엑셀 만들기 · 보고서 작성 · 전표 검증)",
+          "badgeText": "스킬 카드 묶음 전환",
+          "description": "겹쳐진 설명서 묶음(스킬 카드 덱)에서 상황에 맞는 요령 카드를 한 장씩 꺼내 읽는 모션을 시연합니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "deck"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "it-pms-project",
+      "number": "18",
+      "layoutType": "it-pms-project",
+      "title": "PMS 4-Pin 마일스톤 & WBS 간트 차트",
+      "rendererRef": "it-pms-project",
+      "scenarios": [
+        {
+          "id": "pms-ref",
+          "name": "시나리오 A · PMS 연결 규격(MCP) vs 프로젝트 관리 요령(Skill) + 4-Pin 마일스톤",
+          "badgeText": "PMS MCP·스킬 + 4-Pin 공정",
+          "description": "좌측 PMS 4대 시스템 MCP 연결과 우측 WBS 산정·주간보고 스킬 카드, 하단 시안(Cyan) 4-Pin 마일스톤 및 스프린트 바 차트를 동시에 시연합니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "reference"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "pms-synergy",
+          "name": "시나리오 B · 크리티컬 패스 지연 감지 → 리소스 재배치 시뮬레이션",
+          "badgeText": "일정 지연 감지 → 공수 재배치",
+          "description": "1단계로 [크리티컬 패스 점검] 스킬을 읽고, 2단계로 [WBS 간트 · 리소스 풀] MCP를 호출해 병목 구간 인력을 자동 조정합니다.",
+          "totalDurationMs": 4800,
+          "activeEdges": [
+            "synergy"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "pms-deck",
+          "name": "시나리오 C · PM 스킬 덱 순환 (WBS 산정 · 주간보고 양식 · 크리티컬 패스)",
+          "badgeText": "PM 스킬 카드 3종 전환",
+          "description": "프로젝트 단계에 따라 PM 스킬 카드 묶음을 한 장씩 꺼내 읽는 모션을 시연합니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "deck"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "it-design-system",
+      "number": "19",
+      "layoutType": "it-design-system",
+      "title": "디자인 모니터 프리뷰 & 4-폰 핸드오프",
+      "rendererRef": "it-design-system",
+      "scenarios": [
+        {
+          "id": "des-ref",
+          "name": "시나리오 A · 디자인 MCP 규격 vs UI/UX 핸드오프 스킬 + 모니터·디바이스 3종",
+          "badgeText": "디자인 MCP·스킬 + 디바이스 프리뷰",
+          "description": "좌측 Figma 4대 MCP 서버와 우측 8px 그리드·핸드오프 스킬 카드, 하단 모니터 프레임 및 Mobile·Tablet·Desktop 3종 시안(Cyan) 인포그래픽을 보여줍니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "reference"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "des-synergy",
+          "name": "시나리오 B · 핸드오프 명세 스킬 숙지 → Figma 토큰·접근성 일괄 동기화",
+          "badgeText": "스킬 숙지 → 디자인 토큰 추출",
+          "description": "1단계로 [개발 핸드오프 명세] 스킬을 읽고, 2단계로 [Figma 변수 · 컴포넌트 킷 · WCAG 검수] MCP를 순차 호출합니다.",
+          "totalDurationMs": 4800,
+          "activeEdges": [
+            "synergy"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "des-deck",
+          "name": "시나리오 C · 디자인 스킬 덱 순환 (8px 그리드 · 반응형 토큰 · 핸드오프 명세)",
+          "badgeText": "디자인 스킬 카드 3종 전환",
+          "description": "UI 설계·검수·전달 단계별로 필요한 디자인 스킬 카드를 꺼내 읽는 모션을 시연합니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "deck"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "it-slack-chatops",
+      "number": "20",
+      "layoutType": "it-slack-chatops",
+      "title": "슬랙 오버래핑 서클 허브 & Block Kit 결재",
+      "rendererRef": "it-slack-chatops",
+      "scenarios": [
+        {
+          "id": "slk-ref",
+          "name": "시나리오 A · 슬랙 채널 MCP 규격 vs ChatOps 요령(Skill) + 오버래핑 서클 허브",
+          "badgeText": "슬랙 MCP·스킬 + 서클 허브",
+          "description": "좌측 슬랙 4대 채널 MCP 서버와 우측 스레드 요약·결재양식 스킬 카드, 하단 시안(Cyan) 오버래핑 서클 허브 인포그래픽을 시연합니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "reference"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "slk-synergy",
+          "name": "시나리오 B · P1 장애 에스컬레이션 스킬 숙지 → 워룸 개설 & 결재 라우팅",
+          "badgeText": "장애 수칙 숙지 → 워룸·결재 호출",
+          "description": "1단계로 [P1 장애 에스컬레이션] 스킬을 꺼내 읽고, 2단계로 [#장애-워룸 · #결재-라우팅] MCP를 동시에 호출합니다.",
+          "totalDurationMs": 4800,
+          "activeEdges": [
+            "synergy"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "slk-deck",
+          "name": "시나리오 C · 슬랙 스킬 덱 순환 (스레드 3줄 요약 · P1 에스컬레이션 · 블록킷 결재)",
+          "badgeText": "슬랙 스킬 카드 3종 전환",
+          "description": "일상 회의 요약부터 긴급 장애 대응까지 슬랙 스킬 카드를 전환하며 적용하는 모션입니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "deck"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "it-dev-cicd",
+      "number": "21",
+      "layoutType": "it-dev-cicd",
+      "title": "개발 3-Pillar 트라이앵글 & DORA 4분면",
+      "rendererRef": "it-dev-cicd",
+      "scenarios": [
+        {
+          "id": "dev-ref",
+          "name": "시나리오 A · 개발 MCP 연결 규격 vs 엔지니어링 스킬 + 3-Pillar & 4분면 매트릭스",
+          "badgeText": "개발 MCP·스킬 + CI/CD 인포그래픽",
+          "description": "좌측 Git·보안·테스트·K8s MCP와 우측 코드리뷰·롤백 스킬 카드, 하단 시안(Cyan) 3-Pillar 삼각형 및 DORA 4분면 매트릭스를 시연합니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "reference"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "dev-synergy",
+          "name": "시나리오 B · PR 코드리뷰 스킬 숙지 → SAST 보안·E2E 검증 후 카나리 배포",
+          "badgeText": "리뷰 수칙 숙지 → CI/CD 실행",
+          "description": "1단계로 [PR 코드리뷰 체크리스트] 스킬을 읽고, 2단계로 [GitHub PR · SAST · E2E · K8s 카나리] MCP를 순차 호출합니다.",
+          "totalDurationMs": 4800,
+          "activeEdges": [
+            "synergy"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "dev-deck",
+          "name": "시나리오 C · 개발 스킬 덱 순환 (PR 코드리뷰 · 성능 프로파일링 · 카나리 롤백)",
+          "badgeText": "개발 스킬 카드 3종 전환",
+          "description": "코드 작성·성능 최적화·운영 배포 상황에 맞는 개발 스킬 카드를 꺼내 읽는 모션입니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "deck"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    },
+    {
+      "id": "it-si-integration",
+      "number": "22",
+      "layoutType": "it-si-integration",
+      "title": "SI 5단계 A–E 피라미드 & 이관 매트릭스",
+      "rendererRef": "it-si-integration",
+      "scenarios": [
+        {
+          "id": "si-ref",
+          "name": "시나리오 A · SI 통합 MCP 규격 vs 구축·감리 요령(Skill) + A–E 피라미드·테이블",
+          "badgeText": "SI MCP·스킬 + 피라미드·테이블",
+          "description": "좌측 레거시·ERP·대외계·그룹웨어 MCP와 우측 RFP 추적·감리 스킬 카드, 하단 시안(Cyan) 5단계 A–E 피라미드 및 산출물 매트릭스 테이블을 시연합니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "reference"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "si-synergy",
+          "name": "시나리오 B · 레거시 매핑 스킬 숙지 → DB·ERP·대외계 정합성 대사 시뮬레이션",
+          "badgeText": "매핑 요령 숙지 → 이관 대사 실행",
+          "description": "1단계로 [레거시 데이터 매핑] 스킬을 꺼내 읽고, 2단계로 [레거시 DB · SAP ERP · 대외계 전문] MCP를 호출해 건수·금액 정합성을 검증합니다.",
+          "totalDurationMs": 4800,
+          "activeEdges": [
+            "synergy"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        },
+        {
+          "id": "si-deck",
+          "name": "시나리오 C · SI 스킬 덱 순환 (RFP 요구사항 추적표 · 데이터 매핑 · 감리 산출물)",
+          "badgeText": "SI 스킬 카드 3종 전환",
+          "description": "착수·구현·감리 단계별로 SI 아키텍트 스킬 카드를 한 장씩 꺼내 읽는 모션을 시연합니다.",
+          "totalDurationMs": 4400,
+          "activeEdges": [
+            "deck"
+          ],
+          "skippedEdges": [],
+          "steps": {}
+        }
+      ]
+    }
+  ],
+  "rendererCensus": [
+    {
+      "layoutType": "orthogonal-step",
+      "renderer": {
+        "path": "src/components/FlowCanvas.tsx",
+        "export": "FlowCanvas",
+        "sha256": "a1052bb0e3a4429ad71043e88dadd53eb00cfc7c4e71a69bcbdbef543e364077"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "396-407",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "scenario-timeline",
+      "clockRef": "clocks.scenarioReplay",
+      "effects": [
+        {
+          "name": "active/completed connector dash",
+          "source": [
+            "src/components/FlowCanvas.tsx:144-145",
+            "src/index.css:35-52"
+          ],
+          "behavior": "active/completed edges receive animate-flow-dash; dash offset travels from 24 to 0",
+          "timing": "0.75s linear infinite; disabled by the source prefers-reduced-motion rule"
+        },
+        {
+          "name": "executing-node spinner",
+          "source": [
+            "src/components/FlowNodeCard.tsx:138"
+          ],
+          "behavior": "Loader2 uses animate-spin while the runtime node is executing",
+          "timing": "utility class duration is not specified in the archived source"
+        },
+        {
+          "name": "scenario node and edge progression",
+          "source": [
+            "src/App.tsx:117-180",
+            "src/utils/flowEngine.ts:311-443"
+          ],
+          "behavior": "requestAnimationFrame advances elapsedMs against the selected scenario totalDurationMs; source step startMs/endMs and activeEdges/skippedEdges determine node and edge states",
+          "timing": "per-scenario values are preserved verbatim under each template"
+        }
+      ]
+    },
+    {
+      "layoutType": "radial-stream-hub",
+      "renderer": {
+        "path": "src/components/MultiStyleFlowCanvases.tsx",
+        "export": "RadialStreamHubCanvas",
+        "sha256": "5e19da471fc3a29496ace9a49b8a37cc7a3a891e6ef52b4fcf6d24d956b9ebb4"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "408-419",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "fan-in and fan-out signal packets",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:174-207"
+          ],
+          "formula": "tIn=(p+i*0.28)%1; tOut=(p+i*0.22)%1; sinkDotX=898+((p*46)%42)"
+        },
+        {
+          "name": "stream equalizer and throughput values",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:40-47",
+            "src/components/MultiStyleFlowCanvases.tsx:80-82",
+            "src/components/MultiStyleFlowCanvases.tsx:273"
+          ],
+          "formula": "wave=sin(2πp+phaseOffset+i*0.9)*0.25; throughput delta=round(sin(2πp)*18)"
+        },
+        {
+          "name": "hub gauge breathing",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:285-309"
+          ],
+          "formula": "strokeDashoffset=round(sin(2πp)*28)"
+        },
+        {
+          "name": "dashed connectors",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:193",
+            "src/index.css:35-52"
+          ],
+          "timing": "0.75s linear infinite; source reduced-motion rule applies"
+        }
+      ]
+    },
+    {
+      "layoutType": "swimlane-etl-funnel",
+      "renderer": {
+        "path": "src/components/MultiStyleFlowCanvases.tsx",
+        "export": "SwimlaneEtlCanvas",
+        "sha256": "5e19da471fc3a29496ace9a49b8a37cc7a3a891e6ef52b4fcf6d24d956b9ebb4"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "420-431",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "shard fan-in/fan-out packets",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:450-482"
+          ],
+          "formula": "Bezier progress t=(p+i*0.30)%1 on input paths and (p+i*0.25)%1 on output paths"
+        },
+        {
+          "name": "ETL throughput bar",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:523-529"
+          ],
+          "formula": "scaleX=0.68+sin(2πp)*0.06; origin 0 50%"
+        },
+        {
+          "name": "dashed flow connectors",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:450",
+            "src/components/MultiStyleFlowCanvases.tsx:482",
+            "src/index.css:35-52"
+          ],
+          "timing": "0.75s linear infinite; source reduced-motion rule applies"
+        }
+      ]
+    },
+    {
+      "layoutType": "cyclic-agent-ring",
+      "renderer": {
+        "path": "src/components/MultiStyleFlowCanvases.tsx",
+        "export": "CyclicAgentRingCanvas",
+        "sha256": "5e19da471fc3a29496ace9a49b8a37cc7a3a891e6ef52b4fcf6d24d956b9ebb4"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "432-443",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "orbiting orchestration signal",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:712-715"
+          ],
+          "formula": "angle=2πp-π/2; position=center+(cos(angle),sin(angle))*orbitRadius"
+        },
+        {
+          "name": "spoke signal packets",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:756-761"
+          ],
+          "formula": "t=(p+i*0.20)%1 along each spoke"
+        },
+        {
+          "name": "dashed ring connectors",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:756",
+            "src/components/MultiStyleFlowCanvases.tsx:789",
+            "src/index.css:35-52"
+          ],
+          "timing": "0.75s linear infinite; source reduced-motion rule applies"
+        }
+      ]
+    },
+    {
+      "layoutType": "vertical-region-tree",
+      "renderer": {
+        "path": "src/components/MultiStyleFlowCanvases.tsx",
+        "export": "VerticalRegionTreeCanvas",
+        "sha256": "5e19da471fc3a29496ace9a49b8a37cc7a3a891e6ef52b4fcf6d24d956b9ebb4"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "444-455",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "root-to-region pulses",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:916-921"
+          ],
+          "formula": "t=(p+i*0.25)%1; y=112+(184-112)*t; x=rootX+(regionX-rootX)*t^1.2"
+        },
+        {
+          "name": "failover route marker",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:962-967"
+          ],
+          "formula": "x=344+(560-344)*p; y=472+sin(πp)*30"
+        },
+        {
+          "name": "dashed tree links",
+          "source": [
+            "src/components/MultiStyleFlowCanvases.tsx:930",
+            "src/components/MultiStyleFlowCanvases.tsx:948-962",
+            "src/index.css:35-52"
+          ],
+          "timing": "0.75s linear infinite; source reduced-motion rule applies"
+        }
+      ]
+    },
+    {
+      "layoutType": "ppt-chevron-funnel",
+      "renderer": {
+        "path": "src/components/PptInfographicCanvases.tsx",
+        "export": "PptChevronFunnelCanvas",
+        "sha256": "84b52288fc094d490efa1018eda75a54550a9f14d4137d0ba63420275d6e8b73"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "456-465",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "active funnel stage and sweep marker",
+          "source": [
+            "src/components/PptInfographicCanvases.tsx:88",
+            "src/components/PptInfographicCanvases.tsx:182"
+          ],
+          "formula": "activeWaveIndex=floor(5p); markerX=40+1000p"
+        }
+      ]
+    },
+    {
+      "layoutType": "ppt-sequence-flowchart",
+      "renderer": {
+        "path": "src/components/PptInfographicCanvases.tsx",
+        "export": "PptSequenceFlowchartCanvas",
+        "sha256": "84b52288fc094d490efa1018eda75a54550a9f14d4137d0ba63420275d6e8b73"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "466-475",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "active step and route packet",
+          "source": [
+            "src/components/PptInfographicCanvases.tsx:345",
+            "src/components/PptInfographicCanvases.tsx:426"
+          ],
+          "formula": "activeStepIdx=floor(p*steps.length); localT=(p*steps.length)%1"
+        }
+      ]
+    },
+    {
+      "layoutType": "ppt-flywheel-infographic",
+      "renderer": {
+        "path": "src/components/PptInfographicCanvases.tsx",
+        "export": "PptFlywheelInfographicCanvas",
+        "sha256": "84b52288fc094d490efa1018eda75a54550a9f14d4137d0ba63420275d6e8b73"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "476-485",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "flywheel rotation",
+          "source": [
+            "src/components/PptInfographicCanvases.tsx:548"
+          ],
+          "formula": "angle=360p degrees"
+        },
+        {
+          "name": "dashed flow connector",
+          "source": [
+            "src/components/PptInfographicCanvases.tsx:604",
+            "src/index.css:35-52"
+          ],
+          "timing": "0.75s linear infinite; source reduced-motion rule applies"
+        }
+      ]
+    },
+    {
+      "layoutType": "ppt-asis-tobe-bridge",
+      "renderer": {
+        "path": "src/components/PptInfographicCanvases.tsx",
+        "export": "PptAsIsToBeBridgeCanvas",
+        "sha256": "84b52288fc094d490efa1018eda75a54550a9f14d4137d0ba63420275d6e8b73"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "486-495",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "paired migration markers",
+          "source": [
+            "src/components/PptInfographicCanvases.tsx:780-788"
+          ],
+          "formula": "localT=(p+i*0.30)%1; legacyX=340+localT*90; targetX=690+localT*90"
+        },
+        {
+          "name": "dashed migration routes",
+          "source": [
+            "src/components/PptInfographicCanvases.tsx:785-788",
+            "src/index.css:35-52"
+          ],
+          "timing": "0.75s linear infinite; source reduced-motion rule applies"
+        }
+      ]
+    },
+    {
+      "layoutType": "ppt-milestone-roadmap",
+      "renderer": {
+        "path": "src/components/PptInfographicCanvases.tsx",
+        "export": "PptMilestoneRoadmapCanvas",
+        "sha256": "84b52288fc094d490efa1018eda75a54550a9f14d4137d0ba63420275d6e8b73"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "496-505",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "roadmap playhead",
+          "source": [
+            "src/components/PptInfographicCanvases.tsx:986"
+          ],
+          "formula": "timelineT=p*maxT"
+        }
+      ]
+    },
+    {
+      "layoutType": "creative-zigzag-ribbon",
+      "renderer": {
+        "path": "src/components/CreativeInfographicCanvases.tsx",
+        "export": "CreativeZigzagRibbonCanvas",
+        "sha256": "0321510316b4e526763477fa5131c895efd4a5454335b52109bdc316fa62eb0f"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "506-515",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "three phase-shifted wave markers",
+          "source": [
+            "src/components/CreativeInfographicCanvases.tsx:137-139"
+          ],
+          "formula": "wavePoints(p), wavePoints(p+0.33), wavePoints(p+0.66)"
+        },
+        {
+          "name": "active ribbon and progress pulse",
+          "source": [
+            "src/components/CreativeInfographicCanvases.tsx:292",
+            "src/components/CreativeInfographicCanvases.tsx:361"
+          ],
+          "formula": "activeWaveHit=floor(4p)%4; non-active bar scaleX=0.72+sin(2πp+i)*0.18; active scaleX=1"
+        },
+        {
+          "name": "dashed connectors",
+          "source": [
+            "src/components/CreativeInfographicCanvases.tsx:256",
+            "src/index.css:35-52"
+          ],
+          "timing": "0.75s linear infinite; source reduced-motion rule applies"
+        }
+      ]
+    },
+    {
+      "layoutType": "creative-lightbulb-brainstorm",
+      "renderer": {
+        "path": "src/components/CreativeInfographicCanvases.tsx",
+        "export": "CreativeLightbulbBrainstormCanvas",
+        "sha256": "0321510316b4e526763477fa5131c895efd4a5454335b52109bdc316fa62eb0f"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "516-525",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "idea sparks along routed paths",
+          "source": [
+            "src/components/CreativeInfographicCanvases.tsx:526-555"
+          ],
+          "formula": "localT=(p+i*0.16)%1; piecewise interpolation follows anchor→elbow→card endpoint"
+        },
+        {
+          "name": "dashed idea connectors",
+          "source": [
+            "src/components/CreativeInfographicCanvases.tsx:526",
+            "src/components/CreativeInfographicCanvases.tsx:555",
+            "src/index.css:35-52"
+          ],
+          "timing": "0.75s linear infinite; source reduced-motion rule applies"
+        }
+      ]
+    },
+    {
+      "layoutType": "creative-strategy-pyramid",
+      "renderer": {
+        "path": "src/components/CreativeInfographicCanvases.tsx",
+        "export": "CreativeStrategyPyramidCanvas",
+        "sha256": "0321510316b4e526763477fa5131c895efd4a5454335b52109bdc316fa62eb0f"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "526-535",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "active pyramid tier and climbing marker",
+          "source": [
+            "src/components/CreativeInfographicCanvases.tsx:759-765"
+          ],
+          "formula": "activeTier=floor(4p)%4; markerX=95+355p when ascending, otherwise 450-355p"
+        },
+        {
+          "name": "dashed tier connectors",
+          "source": [
+            "src/components/CreativeInfographicCanvases.tsx:840",
+            "src/index.css:35-52"
+          ],
+          "timing": "0.75s linear infinite; source reduced-motion rule applies"
+        }
+      ]
+    },
+    {
+      "layoutType": "creative-semicircle-radial-fan",
+      "renderer": {
+        "path": "src/components/CreativeInfographicCanvases.tsx",
+        "export": "CreativeSemicircleRadialFanCanvas",
+        "sha256": "0321510316b4e526763477fa5131c895efd4a5454335b52109bdc316fa62eb0f"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "536-545",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "semicircle sweep and active wedge",
+          "source": [
+            "src/components/CreativeInfographicCanvases.tsx:1006-1010"
+          ],
+          "formula": "sweepDeg=175-170p; activeWedge=min(4,floor(5p)); needle uses the sweep angle"
+        },
+        {
+          "name": "dashed fan connectors",
+          "source": [
+            "src/components/CreativeInfographicCanvases.tsx:1047",
+            "src/index.css:35-52"
+          ],
+          "timing": "0.75s linear infinite; source reduced-motion rule applies"
+        }
+      ]
+    },
+    {
+      "layoutType": "creative-hexagon-honeycomb",
+      "renderer": {
+        "path": "src/components/CreativeInfographicCanvases.tsx",
+        "export": "CreativeHexagonHoneycombCanvas",
+        "sha256": "0321510316b4e526763477fa5131c895efd4a5454335b52109bdc316fa62eb0f"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "546-555",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "active hex cell and synapse packets",
+          "source": [
+            "src/components/CreativeInfographicCanvases.tsx:1264",
+            "src/components/CreativeInfographicCanvases.tsx:1297-1344"
+          ],
+          "formula": "activeHex=floor(5p)%5; packetT=(2p+i*0.25)%1"
+        },
+        {
+          "name": "dashed honeycomb connectors",
+          "source": [
+            "src/components/CreativeInfographicCanvases.tsx:1311",
+            "src/components/CreativeInfographicCanvases.tsx:1344",
+            "src/index.css:35-52"
+          ],
+          "timing": "0.75s linear infinite; source reduced-motion rule applies"
+        }
+      ]
+    },
+    {
+      "layoutType": "cinematic-node-connect",
+      "renderer": {
+        "path": "src/components/CinematicNodeConnectCanvas.tsx",
+        "export": "CinematicNodeConnectCanvas",
+        "sha256": "8dde04f4754897e630e43133ec30d65aed9aec844d855dda87df84537d07a05f"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "556-564",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "cinematic-sequenced",
+      "clockRef": "cinematic20.playTimeline",
+      "effectsRef": "cinematic20.effectSwitches"
+    },
+    {
+      "layoutType": "editorial-mcp-skill-compare",
+      "renderer": {
+        "path": "src/components/EditorialMcpSkillCanvas.tsx",
+        "export": "EditorialMcpSkillCanvas",
+        "sha256": "ed70fbc81c0b102e7f5b01e76eff92c18939d4f713687e8e9a844205c07665af"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "565-574",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "MCP neural layer emphasis",
+          "source": [
+            "src/components/EditorialMcpSkillCanvas.tsx:31",
+            "src/components/EditorialMcpSkillCanvas.tsx:151"
+          ],
+          "formula": "activeLayer=floor(3p)%3"
+        },
+        {
+          "name": "MCP branch signal packets",
+          "source": [
+            "src/components/EditorialMcpSkillCanvas.tsx:274"
+          ],
+          "formula": "localT=(1.2p+i*0.25)%1"
+        },
+        {
+          "name": "skill packet along quadratic Bézier",
+          "source": [
+            "src/components/EditorialMcpSkillCanvas.tsx:220-236"
+          ],
+          "formula": "packetT=(1.4p)%1; quadratic Bézier interpolation"
+        },
+        {
+          "name": "deck-cycle card selection",
+          "source": [
+            "src/components/EditorialMcpSkillCanvas.tsx:151-159"
+          ],
+          "formula": "when activeEdges includes deck, activeSkillIdx=floor(3p)%3; otherwise manual selection"
+        },
+        {
+          "name": "dashed MCP connectors",
+          "source": [
+            "src/components/EditorialMcpSkillCanvas.tsx:560",
+            "src/index.css:35-52"
+          ],
+          "timing": "0.75s linear infinite; source reduced-motion rule applies"
+        }
+      ]
+    },
+    {
+      "layoutType": "it-pms-project",
+      "renderer": {
+        "path": "src/components/ItWorkflowEditorialCanvases.tsx",
+        "export": "ItWorkflowEditorialCanvases",
+        "sha256": "539ced70446b36e56ff979bb81c0485ff51208abea20c3a11b8de47b3fab0b27",
+        "branch": "it-pms-project"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "575-585",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "milestone timeline playhead",
+          "source": [
+            "src/components/ItWorkflowEditorialCanvases.tsx:150-156"
+          ],
+          "formula": "x=155+780p"
+        }
+      ]
+    },
+    {
+      "layoutType": "it-design-system",
+      "renderer": {
+        "path": "src/components/ItWorkflowEditorialCanvases.tsx",
+        "export": "ItWorkflowEditorialCanvases",
+        "sha256": "539ced70446b36e56ff979bb81c0485ff51208abea20c3a11b8de47b3fab0b27",
+        "branch": "it-design-system"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "575-585",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "static-illustration",
+      "effects": [],
+      "note": "No time-varying effect or ambientProgress use in this branch. “Spring 300ms” is displayed copy; selection and zoom are interactive state, not an authored motion timeline.",
+      "sourceRefs": [
+        "src/components/ItWorkflowEditorialCanvases.tsx:394-662"
+      ]
+    },
+    {
+      "layoutType": "it-slack-chatops",
+      "renderer": {
+        "path": "src/components/ItWorkflowEditorialCanvases.tsx",
+        "export": "ItWorkflowEditorialCanvases",
+        "sha256": "539ced70446b36e56ff979bb81c0485ff51208abea20c3a11b8de47b3fab0b27",
+        "branch": "it-slack-chatops"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "575-585",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "ambient-parametric",
+      "clockRef": "clocks.ambientLoop",
+      "effects": [
+        {
+          "name": "overlapping-circle hub signal packets",
+          "source": [
+            "src/components/ItWorkflowEditorialCanvases.tsx:747"
+          ],
+          "formula": "t=(1.8p+i*0.25)%1"
+        }
+      ]
+    },
+    {
+      "layoutType": "it-dev-cicd",
+      "renderer": {
+        "path": "src/components/ItWorkflowEditorialCanvases.tsx",
+        "export": "ItWorkflowEditorialCanvases",
+        "sha256": "539ced70446b36e56ff979bb81c0485ff51208abea20c3a11b8de47b3fab0b27",
+        "branch": "it-dev-cicd"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "575-585",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "static-illustration",
+      "effects": [],
+      "note": "No time-varying effect or ambientProgress use in this branch; scenario and selected-node data select or highlight static infographic content.",
+      "sourceRefs": [
+        "src/components/ItWorkflowEditorialCanvases.tsx:992-1258"
+      ]
+    },
+    {
+      "layoutType": "it-si-integration",
+      "renderer": {
+        "path": "src/components/ItWorkflowEditorialCanvases.tsx",
+        "export": "ItWorkflowEditorialCanvases",
+        "sha256": "539ced70446b36e56ff979bb81c0485ff51208abea20c3a11b8de47b3fab0b27",
+        "branch": "default SI layout after the explicit renderer branches"
+      },
+      "selectedBy": {
+        "path": "src/App.tsx",
+        "lines": "575-585",
+        "sha256": "56498e20d5c23fc13c094194c989a29e87efbc48f5f3f883b767e1550f7e6dd2"
+      },
+      "motionMode": "static-illustration",
+      "effects": [],
+      "note": "No time-varying effect or ambientProgress use in this branch; selection and zoom remain interactive state.",
+      "sourceRefs": [
+        "src/components/ItWorkflowEditorialCanvases.tsx:1259-1522"
+      ]
+    }
+  ],
+  "cinematic20": {
+    "source": "src/components/CinematicNodeConnectCanvas.tsx",
+    "rendererExport": "CinematicNodeConnectCanvas",
+    "sourceModuleSha256": "8dde04f4754897e630e43133ec30d65aed9aec844d855dda87df84537d07a05f",
+    "defaults": "All 20 effect switches initialize enabled.",
+    "effectSwitches": [
+      {
+        "id": "draw",
+        "label": "엣지 draw-on",
+        "mechanism": "Edge path stroke-dashoffset transition .68s ease; no-draw disables the transition.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:1036-1037",
+          "src/components/CinematicNodeConnectCanvas.tsx:1063"
+        ]
+      },
+      {
+        "id": "glow",
+        "label": "엣지 블러 글로우",
+        "mechanism": "Hides .nc-edge-glow.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:592-593",
+          "src/components/CinematicNodeConnectCanvas.tsx:1064"
+        ]
+      },
+      {
+        "id": "spark",
+        "label": "번개 스파크",
+        "mechanism": "Arrival burst: SVG radius 6→44 over 0.55s; fade begins after 300ms and removal follows 500ms later.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:647-686",
+          "src/components/CinematicNodeConnectCanvas.tsx:869"
+        ]
+      },
+      {
+        "id": "pop",
+        "label": "체크 pop",
+        "mechanism": "Check scales .4→1.3→1 over .35s ease.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:1038-1040",
+          "src/components/CinematicNodeConnectCanvas.tsx:873-874"
+        ]
+      },
+      {
+        "id": "gold",
+        "label": "완료 골드 글로우",
+        "mechanism": "On completion, applies the ncGoldGlow filter to the processing card; this is a completion state effect.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:903-905",
+          "src/components/CinematicNodeConnectCanvas.tsx:1104-1111"
+        ]
+      },
+      {
+        "id": "cam",
+        "label": "시네마틱 카메라",
+        "mechanism": "ViewBox interpolates with easeOutCubic e=1-(1-k)^3; source focus 480ms, target pan 680ms, final full-view pan 760ms. With cam off, zoom calls retain their waits and final wait is 280ms.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:150-204",
+          "src/components/CinematicNodeConnectCanvas.tsx:840-897"
+        ]
+      },
+      {
+        "id": "flow",
+        "label": "대시 흐름",
+        "mechanism": "Flowline dash offset moves -18 over 1s linear infinite.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:1043-1045",
+          "src/components/CinematicNodeConnectCanvas.tsx:1066"
+        ]
+      },
+      {
+        "id": "particle",
+        "label": "이동 입자",
+        "mechanism": "Two particles per edge follow SVG animateMotion for 1.7s indefinitely; second begins 850ms after first.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:700-729",
+          "src/components/CinematicNodeConnectCanvas.tsx:1067"
+        ]
+      },
+      {
+        "id": "arrowpop",
+        "label": "화살촉 pop",
+        "mechanism": "Arrowhead uses ncPop over .4s ease.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:1046",
+          "src/components/CinematicNodeConnectCanvas.tsx:1065"
+        ]
+      },
+      {
+        "id": "breath",
+        "label": "출력 핸들 호흡",
+        "mechanism": "Output handle scales 1→3.4 and fades .8→0 over 2.4s ease-out infinitely.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:534",
+          "src/components/CinematicNodeConnectCanvas.tsx:1047-1048",
+          "src/components/CinematicNodeConnectCanvas.tsx:1068"
+        ]
+      },
+      {
+        "id": "hover",
+        "label": "호버 리프트+링",
+        "mechanism": "Hover reveals .nc-ring at opacity .85; no timed transition is specified.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:1051-1052",
+          "src/components/CinematicNodeConnectCanvas.tsx:1069"
+        ]
+      },
+      {
+        "id": "shine",
+        "label": "카드 빛 스윕",
+        "mechanism": "Shine translates 0→520px over 4.5s ease-in-out infinite, holding at its initial position through 55%; per-node delay is set by --d.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:561",
+          "src/components/CinematicNodeConnectCanvas.tsx:1053-1054",
+          "src/components/CinematicNodeConnectCanvas.tsx:1070"
+        ]
+      },
+      {
+        "id": "grid",
+        "label": "패럴랙스 그리드",
+        "mechanism": "Camera updates translate the grid at 0.6× viewBox x/y; the switch hides #nc-grid-layer.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:129-135",
+          "src/components/CinematicNodeConnectCanvas.tsx:1071",
+          "src/components/CinematicNodeConnectCanvas.tsx:1154-1162"
+        ]
+      },
+      {
+        "id": "dust",
+        "label": "부유 먼지",
+        "mechanism": "32 deterministic-seeded circles drift by per-particle dx/dy, 30px maximum each axis, with a randomized 6–13s ease-in-out period.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:335-356",
+          "src/components/CinematicNodeConnectCanvas.tsx:1055-1056",
+          "src/components/CinematicNodeConnectCanvas.tsx:1072"
+        ]
+      },
+      {
+        "id": "ripple",
+        "label": "도착 리플",
+        "mechanism": "Three rings staggered 0/180/360ms; each scales .2→1 and fades .9→0 over 1.1s ease-out; cleanup timer is 1700ms.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:688-697",
+          "src/components/CinematicNodeConnectCanvas.tsx:1057-1058",
+          "src/components/CinematicNodeConnectCanvas.tsx:1073"
+        ]
+      },
+      {
+        "id": "enter",
+        "label": "순차 등장",
+        "mechanism": "Each node enters from translateY(24px) scale(.96) and opacity 0 over .65s cubic-bezier(.2,.8,.3,1); delay is nodeIndex*120ms.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:358-370",
+          "src/components/CinematicNodeConnectCanvas.tsx:1049-1050",
+          "src/components/CinematicNodeConnectCanvas.tsx:1077"
+        ]
+      },
+      {
+        "id": "type",
+        "label": "상태 타자기",
+        "mechanism": "Status text reveals one character per 40ms interval; duration depends on string length.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:731-749"
+        ]
+      },
+      {
+        "id": "pulse",
+        "label": "완료 펄스+컨페티",
+        "mechanism": "Completion ring pulses opacity .15↔.9 over 1.8s infinitely; 40 confetti pieces animate for randomized 1100–1800ms.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:508-523",
+          "src/components/CinematicNodeConnectCanvas.tsx:765-790",
+          "src/components/CinematicNodeConnectCanvas.tsx:1059-1061",
+          "src/components/CinematicNodeConnectCanvas.tsx:907",
+          "src/components/CinematicNodeConnectCanvas.tsx:1074-1075"
+        ]
+      },
+      {
+        "id": "drag",
+        "label": "드래그 리프트",
+        "mechanism": "The switch exists in EFFECTS_LIST and generates the no-drag class, but no source selector or fxRef.current.drag branch consumes it; preserve as an inert source switch. Independent of this inert toggle, pointer handlers at lines924-1011 implement node movement and canvas pan/zoom; the KLIC drag recipe is explicitly a timed study of that gesture, not an interactive drag API.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:10-31",
+          "src/components/CinematicNodeConnectCanvas.tsx:1020-1024",
+          "src/components/CinematicNodeConnectCanvas.tsx:1062-1077",
+          "src/components/CinematicNodeConnectCanvas.tsx:924-1011"
+        ]
+      },
+      {
+        "id": "bar",
+        "label": "진행 바",
+        "mechanism": "At each arrival, progress width=(processingWidth-44)*(edgeIndex+1)/edgeCount; no-bar hides the bar.",
+        "sourceRefs": [
+          "src/components/CinematicNodeConnectCanvas.tsx:875-880",
+          "src/components/CinematicNodeConnectCanvas.tsx:1076"
+        ]
+      }
+    ],
+    "playTimeline": {
+      "startsAutomaticallyOnMount": true,
+      "edgeCount": 3,
+      "phases": [
+        {
+          "phase": "initial-reset-and-settle",
+          "durationMs": 260,
+          "sourceRef": "src/components/CinematicNodeConnectCanvas.tsx:824-831"
+        },
+        {
+          "phase": "per-edge-source-focus",
+          "repeat": 3,
+          "durationMs": 480,
+          "behavior": "Camera zooms to source node using easeOutCubic; when camera is disabled this duration is slept without viewBox motion.",
+          "sourceRef": "src/components/CinematicNodeConnectCanvas.tsx:840-849"
+        },
+        {
+          "phase": "per-edge-draw-and-target-pan",
+          "repeat": 3,
+          "durationMs": 680,
+          "behavior": "Edge draw (.68s) and camera pan to target run concurrently.",
+          "sourceRef": "src/components/CinematicNodeConnectCanvas.tsx:851-864"
+        },
+        {
+          "phase": "per-edge-arrival-effects-and-dwell",
+          "repeat": 3,
+          "durationMs": 380,
+          "behavior": "Arrow, optional spark/ripple, staggered repeating particles, check pop, progress update and status typing start; overlays continue concurrently after the dwell.",
+          "sourceRef": "src/components/CinematicNodeConnectCanvas.tsx:866-889"
+        },
+        {
+          "phase": "final-camera-return",
+          "durationMs": 760,
+          "conditionalDurationMs": {
+            "cameraDisabled": 280
+          },
+          "behavior": "Returns to full view when camera is enabled; without camera the source waits 280ms.",
+          "sourceRef": "src/components/CinematicNodeConnectCanvas.tsx:892-897"
+        },
+        {
+          "phase": "completion-state",
+          "durationMs": 0,
+          "behavior": "Sets final status, optional gold glow and confetti; pulse ring and particle animations may continue.",
+          "sourceRef": "src/components/CinematicNodeConnectCanvas.tsx:899-909"
+        }
+      ],
+      "nominalScheduledDurationMs": {
+        "cameraEnabled": 5640,
+        "cameraDisabled": 5160
+      },
+      "durationNote": "Derived sum of the programmed phases above; requestAnimationFrame frame boundaries can add frame quantization. Original scenario totalDurationMs values remain separately preserved verbatim and are not overwritten by this renderer-specific sum.",
+      "overlappingEffectTiming": [
+        {
+          "effect": "particles",
+          "durationMs": 1700,
+          "repeat": "indefinite",
+          "staggerMs": 850,
+          "sourceRef": "src/components/CinematicNodeConnectCanvas.tsx:700-729"
+        },
+        {
+          "effect": "ripples",
+          "durationMs": 1100,
+          "staggerMs": 180,
+          "removalTimerMs": 1700,
+          "sourceRef": "src/components/CinematicNodeConnectCanvas.tsx:688-697"
+        },
+        {
+          "effect": "spark",
+          "expansionMs": 550,
+          "fadeStartsMs": 300,
+          "removalAfterFadeMs": 500,
+          "sourceRef": "src/components/CinematicNodeConnectCanvas.tsx:647-686"
+        },
+        {
+          "effect": "confetti",
+          "durationMsRange": [
+            1100,
+            1800
+          ],
+          "pieceCount": 40,
+          "sourceRef": "src/components/CinematicNodeConnectCanvas.tsx:765-790"
+        }
+      ]
+    },
+    "pointerTimeline": {
+      "timing": "User-driven; no fixed duration in the original. KLIC preview duration is illustrative, not a source timing.",
+      "phases": [
+        {
+          "event": "pointerdown on node",
+          "action": "Capture SVG point, original node position and node group; mark dragging."
+        },
+        {
+          "event": "pointermove",
+          "action": "Set node x/y to original position plus SVG-space pointer delta; update node transform and connected geometry."
+        },
+        {
+          "event": "pointerup",
+          "action": "Remove dragging state and clear gesture ownership."
+        }
+      ],
+      "sourceRef": "src/components/CinematicNodeConnectCanvas.tsx:924-1011"
+    }
+  }
+}

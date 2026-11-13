@@ -1,0 +1,2 @@
+<!-- KLIC native HTML example. Styles/interactions: component bundle. KLIC example; preserve bundled per-file license notices. -->
+<div data-klic-component="progress" class="kn-progress"><div data-part="progress-title"><label for="export-progress-default-progress">파일 업로드</label><span data-progress-label>64%</span></div><progress id="export-progress-default-progress" max="100" value="64">64%</progress><div data-part="progress-meta"><span>디자인 에셋.zip</span><button data-action="progress" data-part="btn">진행 <i data-part="icon" data-lucide="arrow-right"></i></button></div></div>

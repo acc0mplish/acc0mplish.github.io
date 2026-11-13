@@ -2,14 +2,17 @@
 
 이 문서는 사이트에 포함된 파일별 출처·라이선스·보존 고지를 찾는 색인입니다. 사이트 전체나 모든 다운로드에 새 단일 라이선스를 부여하는 문서가 아닙니다. 실제로 사용하는 파일과 의존성의 원문 고지를 함께 확인하세요.
 
+KLIC Native 컴포넌트·추가형과 Block Studio 화면·샘플 구현은 KLIC이 작성했습니다. 별도로 통합한 코드·폰트·의존성의 원문 고지는 해당 파일 범위에 적용됩니다.
+
 | 대상 | 원문과 보존한 고지 |
 | --- | --- |
-| 컴포넌트 추가형 | [ReUI·shadcn/ui·Base UI 참고 및 MIT 고지](./component-variants/README.md), 항목별 소스 헤더 |
+| KLIC Native 컴포넌트·추가형 | KLIC 자체 구현, 외부 예제는 디자인 참고만. [저작 범위와 참고 출처](./component-variants/README.md) |
+| ReUI | [MIT 원문 고지](./component-variants/reui-MIT.txt). importer와 upstream 예제는 배포하지 않습니다. |
 | AI·상호작용 예제 | [Affect UI Classic MIT 고지](./klic-interaction-kit/MIT.txt), 각 adopted 소스의 고지 |
-| Björk UI 차트 | [MIT 원문](./bjork-ui-MIT.txt), 각 차트 소스의 고지 |
+| 차트 소스 | [MIT 원문](./bjork-ui-MIT.txt), 각 차트 소스의 고지 |
 | Lucide 아이콘 | [ISC 원문](/LUCIDE-LICENSE) |
 | 폰트 파일 | [파일별 폰트 라이선스와 출처](/fonts/FONT-NOTICES.md) |
-| 블록 소스·의존성 | [내보낸 소스의 출처와 적용 범위](/block-sources/NOTICE.md), 각 소스 헤더와 package.json |
+| KLIC Block Studio 자체 구현·별도 의존성 | [내보낸 소스의 출처와 적용 범위](/block-sources/NOTICE.md), 각 소스 헤더와 package.json |
 
 KLIC은 현재 컴포넌트·블록 데모, CSS/React 모션 레시피, 토큰 레지스트리와 참고 소스 전달을 제공합니다. 공개 디자인 API가 특정 파일의 라이선스를 변경하는 것은 아닙니다. 통합 klic-design npm 패키지 구현과 레지스트리 발행 상태는 제공 계약에서 구분합니다. 블록은 React 실행 예제로, 컴포넌트는 HTML 참고 형태로, 모션은 CSS/React 원본 예제로 구분해 제공합니다.
 
@@ -17,4 +20,4 @@ KLIC은 현재 컴포넌트·블록 데모, CSS/React 모션 레시피, 토큰 �
 
 ## English
 
-This is an index of per-file provenance and preserved notices. It does not grant a new blanket license for the site or every download. Review the actual files, dependencies and original notices included in your source bundle. Public registry access does not relicense source. KLIC provides a token/theme/CLI npm package implementation alongside HTML demonstrations and reference workspaces. Registry publication is tracked separately. This does not declare separate React component exports.
+KLIC authored the Native component catalog, its added variants, and the Block Studio implementation. Separately integrated code, fonts and dependencies retain their file-scoped notices. The ReUI MIT text remains as a standalone notice; its importer and upstream examples are not shipped. This index does not grant a blanket license for the site or every download. Review the actual files, dependencies and original notices included in your source bundle. Public registry access does not relicense source.

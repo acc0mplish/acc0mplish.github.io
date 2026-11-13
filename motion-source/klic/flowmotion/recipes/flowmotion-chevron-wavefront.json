@@ -1,0 +1,318 @@
+{
+  "id": "flowmotion-chevron-wavefront",
+  "category": "data-story",
+  "title": {
+    "ko": "퍼널 단계 웨이브",
+    "en": "Funnel Stage Wavefront"
+  },
+  "summary": {
+    "ko": "다섯 단계 지표 위를 이동하는 원본 신호 펄스를 재생합니다.",
+    "en": "Replays the source signal pulse moving across five funnel stages."
+  },
+  "durationMs": 2400,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "ppt-chevron-funnel"
+    ],
+    "sourceFile": "src/components/PptInfographicCanvases.tsx",
+    "renderer": "PptChevronFunnelCanvas",
+    "effect": "five-chevron-wavefront",
+    "sourceTimeline": {
+      "durationMs": 2400,
+      "description": "PptChevronFunnelCanvas uses five waves and one signal pulse. activeWaveIndex=floor(progress×5); signalX=40+progress×1000, y=38.",
+      "frames": [
+        {
+          "progress": 0,
+          "activeWaveIndex": 0,
+          "sourceX": 40,
+          "x": 28
+        },
+        {
+          "progress": 0.25,
+          "activeWaveIndex": 1,
+          "sourceX": 290,
+          "x": 94
+        },
+        {
+          "progress": 0.5,
+          "activeWaveIndex": 2,
+          "sourceX": 540,
+          "x": 160
+        },
+        {
+          "progress": 0.75,
+          "activeWaveIndex": 3,
+          "sourceX": 790,
+          "x": 226
+        },
+        {
+          "progress": 1,
+          "activeWaveIndex": 4,
+          "sourceX": 1040,
+          "x": 292
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"다섯 단계 퍼널을 가로지르는 신호\"><path class=\"flow\" d=\"M 28 52 H 292\"/><path class=\"node-bg\" d=\"M 34 32 h34 l9 12 -9 12 h-34 l9 -12 z\"/><path class=\"node-bg\" d=\"M 86 32 h34 l9 12 -9 12 h-34 l9 -12 z\"/><path class=\"node-bg\" d=\"M 138 32 h34 l9 12 -9 12 h-34 l9 -12 z\"/><path class=\"node-bg\" d=\"M 190 32 h34 l9 12 -9 12 h-34 l9 -12 z\"/><path class=\"node-bg\" d=\"M 242 32 h34 l9 12 -9 12 h-34 l9 -12 z\"/><circle class=\"packet\" cx=\"28\" cy=\"52\" r=\"5\"/><text class=\"small\" text-anchor=\"middle\" x=\"160\" y=\"91\">01 → 05</text></svg></div>",
+    "duration": 2400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".packet",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "28px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.020833333333333332,
+            "cx": "33.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.041666666666666664,
+            "cx": "39px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.0625,
+            "cx": "44.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "50px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.10416666666666667,
+            "cx": "55.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.125,
+            "cx": "61px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.14583333333333334,
+            "cx": "66.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "72px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.1875,
+            "cx": "77.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.20833333333333334,
+            "cx": "83px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.22916666666666666,
+            "cx": "88.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "94px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.2708333333333333,
+            "cx": "99.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.2916666666666667,
+            "cx": "105px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.3125,
+            "cx": "110.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "116px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.3541666666666667,
+            "cx": "121.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.375,
+            "cx": "127px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.3958333333333333,
+            "cx": "132.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "138px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.4375,
+            "cx": "143.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.4583333333333333,
+            "cx": "149px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.4791666666666667,
+            "cx": "154.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "160px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.5208333333333334,
+            "cx": "165.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.5416666666666666,
+            "cx": "171px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.5625,
+            "cx": "176.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "182px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.6041666666666666,
+            "cx": "187.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.625,
+            "cx": "193px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.6458333333333334,
+            "cx": "198.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "204px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.6875,
+            "cx": "209.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.7083333333333334,
+            "cx": "215px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.7291666666666666,
+            "cx": "220.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "226px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.7708333333333334,
+            "cx": "231.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.7916666666666666,
+            "cx": "237px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.8125,
+            "cx": "242.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "248px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.8541666666666666,
+            "cx": "253.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.875,
+            "cx": "259px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.8958333333333334,
+            "cx": "264.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "270px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.9375,
+            "cx": "275.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.9583333333333334,
+            "cx": "281px",
+            "cy": "52px"
+          },
+          {
+            "offset": 0.9791666666666666,
+            "cx": "286.5px",
+            "cy": "52px"
+          },
+          {
+            "offset": 1,
+            "cx": "292px",
+            "cy": "52px"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

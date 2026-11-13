@@ -1,0 +1,423 @@
+{
+  "id": "flowmotion-chatops-satellite-packet",
+  "category": "particles",
+  "title": {
+    "ko": "ChatOps 위성 패킷",
+    "en": "ChatOps Satellite Packet"
+  },
+  "summary": {
+    "ko": "중앙 허브에서 배포 알림 채널까지 원본 비율로 패킷을 보냅니다.",
+    "en": "Sends a packet from the central hub to the release-alert satellite at the source rate."
+  },
+  "durationMs": 2400,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "it-slack-chatops"
+    ],
+    "sourceFile": "src/components/ItWorkflowEditorialCanvases.tsx",
+    "renderer": "ItWorkflowEditorialCanvases",
+    "effect": "chatops-radiating-packet",
+    "sourceTimeline": {
+      "durationMs": 2400,
+      "description": "Source first satellite=(485,64), hub=(270,215), idx=0. t=(ambientProgress×1.8+idx×0.25)%1; packet x/y interpolates from hub center to satellite.",
+      "frames": [
+        {
+          "progress": 0,
+          "localT": 0,
+          "sourceX": 270,
+          "sourceY": 215,
+          "x": 76,
+          "y": 133
+        },
+        {
+          "progress": 0.25,
+          "localT": 0.45,
+          "sourceX": 366.75,
+          "sourceY": 147.05,
+          "x": 152.5,
+          "y": 97
+        },
+        {
+          "progress": 0.5555555555555556,
+          "localT": 0,
+          "sourceX": 270,
+          "sourceY": 215,
+          "x": 76,
+          "y": 133
+        },
+        {
+          "progress": 0.75,
+          "localT": 0.35,
+          "sourceX": 345.25,
+          "sourceY": 162.15,
+          "x": 135.5,
+          "y": 105
+        },
+        {
+          "progress": 1,
+          "localT": 0.8,
+          "sourceX": 442,
+          "sourceY": 94.2,
+          "x": 212,
+          "y": 69
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"중앙 허브에서 채널 위성으로 이동\"><rect class=\"node-bg\" x=\"36\" y=\"122\" width=\"80\" height=\"34\" rx=\"8\"/><text class=\"label\" x=\"45\" y=\"136\">중앙 허브</text><text class=\"small\" x=\"45\" y=\"149\">조정 봇</text><rect class=\"node-bg\" x=\"221\" y=\"35\" width=\"82\" height=\"34\" rx=\"8\"/><text class=\"label\" x=\"230\" y=\"49\">채널</text><text class=\"small\" x=\"230\" y=\"62\">배포 알림</text><line class=\"flow\" x1=\"76\" y1=\"133\" x2=\"246\" y2=\"53\"/><circle class=\"packet\" cx=\"76\" cy=\"133\" r=\"5\"/></svg></div>",
+    "duration": 2400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 0.5,
+    "tracks": [
+      {
+        "selector": ".packet",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "76px",
+            "cy": "133px"
+          },
+          {
+            "offset": 0.015625,
+            "cx": "80.781px",
+            "cy": "130.75px"
+          },
+          {
+            "offset": 0.03125,
+            "cx": "85.563px",
+            "cy": "128.5px"
+          },
+          {
+            "offset": 0.046875,
+            "cx": "90.344px",
+            "cy": "126.25px"
+          },
+          {
+            "offset": 0.0625,
+            "cx": "95.125px",
+            "cy": "124px"
+          },
+          {
+            "offset": 0.078125,
+            "cx": "99.906px",
+            "cy": "121.75px"
+          },
+          {
+            "offset": 0.09375,
+            "cx": "104.688px",
+            "cy": "119.5px"
+          },
+          {
+            "offset": 0.109375,
+            "cx": "109.469px",
+            "cy": "117.25px"
+          },
+          {
+            "offset": 0.125,
+            "cx": "114.25px",
+            "cy": "115px"
+          },
+          {
+            "offset": 0.140625,
+            "cx": "119.031px",
+            "cy": "112.75px"
+          },
+          {
+            "offset": 0.15625,
+            "cx": "123.813px",
+            "cy": "110.5px"
+          },
+          {
+            "offset": 0.171875,
+            "cx": "128.594px",
+            "cy": "108.25px"
+          },
+          {
+            "offset": 0.1875,
+            "cx": "133.375px",
+            "cy": "106px"
+          },
+          {
+            "offset": 0.203125,
+            "cx": "138.156px",
+            "cy": "103.75px"
+          },
+          {
+            "offset": 0.21875,
+            "cx": "142.938px",
+            "cy": "101.5px"
+          },
+          {
+            "offset": 0.234375,
+            "cx": "147.719px",
+            "cy": "99.25px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "152.5px",
+            "cy": "97px"
+          },
+          {
+            "offset": 0.265625,
+            "cx": "157.281px",
+            "cy": "94.75px"
+          },
+          {
+            "offset": 0.28125,
+            "cx": "162.063px",
+            "cy": "92.5px"
+          },
+          {
+            "offset": 0.296875,
+            "cx": "166.844px",
+            "cy": "90.25px"
+          },
+          {
+            "offset": 0.3125,
+            "cx": "171.625px",
+            "cy": "88px"
+          },
+          {
+            "offset": 0.328125,
+            "cx": "176.406px",
+            "cy": "85.75px"
+          },
+          {
+            "offset": 0.34375,
+            "cx": "181.188px",
+            "cy": "83.5px"
+          },
+          {
+            "offset": 0.359375,
+            "cx": "185.969px",
+            "cy": "81.25px"
+          },
+          {
+            "offset": 0.375,
+            "cx": "190.75px",
+            "cy": "79px"
+          },
+          {
+            "offset": 0.390625,
+            "cx": "195.531px",
+            "cy": "76.75px"
+          },
+          {
+            "offset": 0.40625,
+            "cx": "200.313px",
+            "cy": "74.5px"
+          },
+          {
+            "offset": 0.421875,
+            "cx": "205.094px",
+            "cy": "72.25px"
+          },
+          {
+            "offset": 0.4375,
+            "cx": "209.875px",
+            "cy": "70px"
+          },
+          {
+            "offset": 0.453125,
+            "cx": "214.656px",
+            "cy": "67.75px"
+          },
+          {
+            "offset": 0.46875,
+            "cx": "219.438px",
+            "cy": "65.5px"
+          },
+          {
+            "offset": 0.484375,
+            "cx": "224.219px",
+            "cy": "63.25px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "229px",
+            "cy": "61px"
+          },
+          {
+            "offset": 0.515625,
+            "cx": "233.781px",
+            "cy": "58.75px"
+          },
+          {
+            "offset": 0.53125,
+            "cx": "238.563px",
+            "cy": "56.5px"
+          },
+          {
+            "offset": 0.546875,
+            "cx": "243.344px",
+            "cy": "54.25px"
+          },
+          {
+            "offset": 0.555456,
+            "cx": "245.97px",
+            "cy": "53.014px"
+          },
+          {
+            "offset": 0.555556,
+            "cx": "76px",
+            "cy": "133px"
+          },
+          {
+            "offset": 0.555656,
+            "cx": "76.031px",
+            "cy": "132.986px"
+          },
+          {
+            "offset": 0.5625,
+            "cx": "78.125px",
+            "cy": "132px"
+          },
+          {
+            "offset": 0.578125,
+            "cx": "82.906px",
+            "cy": "129.75px"
+          },
+          {
+            "offset": 0.59375,
+            "cx": "87.688px",
+            "cy": "127.5px"
+          },
+          {
+            "offset": 0.609375,
+            "cx": "92.469px",
+            "cy": "125.25px"
+          },
+          {
+            "offset": 0.625,
+            "cx": "97.25px",
+            "cy": "123px"
+          },
+          {
+            "offset": 0.640625,
+            "cx": "102.031px",
+            "cy": "120.75px"
+          },
+          {
+            "offset": 0.65625,
+            "cx": "106.813px",
+            "cy": "118.5px"
+          },
+          {
+            "offset": 0.671875,
+            "cx": "111.594px",
+            "cy": "116.25px"
+          },
+          {
+            "offset": 0.6875,
+            "cx": "116.375px",
+            "cy": "114px"
+          },
+          {
+            "offset": 0.703125,
+            "cx": "121.156px",
+            "cy": "111.75px"
+          },
+          {
+            "offset": 0.71875,
+            "cx": "125.938px",
+            "cy": "109.5px"
+          },
+          {
+            "offset": 0.734375,
+            "cx": "130.719px",
+            "cy": "107.25px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "135.5px",
+            "cy": "105px"
+          },
+          {
+            "offset": 0.765625,
+            "cx": "140.281px",
+            "cy": "102.75px"
+          },
+          {
+            "offset": 0.78125,
+            "cx": "145.063px",
+            "cy": "100.5px"
+          },
+          {
+            "offset": 0.796875,
+            "cx": "149.844px",
+            "cy": "98.25px"
+          },
+          {
+            "offset": 0.8125,
+            "cx": "154.625px",
+            "cy": "96px"
+          },
+          {
+            "offset": 0.828125,
+            "cx": "159.406px",
+            "cy": "93.75px"
+          },
+          {
+            "offset": 0.84375,
+            "cx": "164.188px",
+            "cy": "91.5px"
+          },
+          {
+            "offset": 0.859375,
+            "cx": "168.969px",
+            "cy": "89.25px"
+          },
+          {
+            "offset": 0.875,
+            "cx": "173.75px",
+            "cy": "87px"
+          },
+          {
+            "offset": 0.890625,
+            "cx": "178.531px",
+            "cy": "84.75px"
+          },
+          {
+            "offset": 0.90625,
+            "cx": "183.313px",
+            "cy": "82.5px"
+          },
+          {
+            "offset": 0.921875,
+            "cx": "188.094px",
+            "cy": "80.25px"
+          },
+          {
+            "offset": 0.9375,
+            "cx": "192.875px",
+            "cy": "78px"
+          },
+          {
+            "offset": 0.953125,
+            "cx": "197.656px",
+            "cy": "75.75px"
+          },
+          {
+            "offset": 0.96875,
+            "cx": "202.438px",
+            "cy": "73.5px"
+          },
+          {
+            "offset": 0.984375,
+            "cx": "207.219px",
+            "cy": "71.25px"
+          },
+          {
+            "offset": 1,
+            "cx": "212px",
+            "cy": "69px"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}

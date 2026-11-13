@@ -16,12 +16,12 @@ export const SITE_METADATA = {
     }
   },
   "toolchain": {
-    "bun": "1.4.2",
+    "bun": "1.4.4",
     "nodeMinimum": "22"
   },
   "package": {
     "name": "klic-design",
-    "version": "0.0.2",
+    "version": "0.0.7",
     "registry": "https://registry.npmjs.org/"
   },
   "versions": {
@@ -67,7 +67,16 @@ export const SITE_METADATA = {
     "mcp": {
       "status": "remote-and-stdio",
       "authentication": "public-design-read-only",
-      "managedAuthentication": "Sites personal plugin"
+      "managedAuthentication": "Sites personal plugin",
+      "chartAuthoring": {
+        "status": "available",
+        "schemaVersion": "1.0",
+        "renderer": "KLIC SVG",
+        "localDataTransport": "stdio",
+        "hostedDataTools": false,
+        "webmcpDataTools": false,
+        "mcpAppMimeType": "text/html;profile=mcp-app"
+      }
     },
     "webmcp": {
       "status": "feature-detected",
@@ -82,7 +91,7 @@ export const SITE_METADATA = {
       "packagePath": "skills/klic-design/SKILL.md",
       "npmPackage": {
         "name": "klic-design",
-        "version": "0.0.2",
+        "version": "0.0.7",
         "registry": "https://registry.npmjs.org/",
         "skillPath": "SKILL.md"
       }
@@ -107,9 +116,9 @@ export const SITE_METADATA = {
   },
   "delivery": {
     "type": "reference-library",
-    "summary": "klic-design 통합 패키지: AI 설계 지침·토큰·테마·폰트·CLI·CSS/React 모션 예제",
-    "enSummary": "Unified klic-design package: Agent Skill, tokens, themes, fonts, CLI and CSS/React motion examples",
-    "sourceDelivery": "Components and ready blocks: standalone reference workspaces via CLI plan/add. Motion recipes: CSS/React code via detail views, API and CLI motion get; include recipe CSS or React dependencies when adopting.",
+    "summary": "klic-design 통합 패키지: AI 설계 지침·토큰·테마·폰트·재사용 차트 엔진·CLI·사용자 제공 모션 소스의 KLIC 각색·공유 런타임 예제",
+    "enSummary": "Unified klic-design package: Agent Skill, tokens, themes, fonts, reusable KLIC chart engine, CLI and KLIC-adapted motion source with shared runtime examples",
+    "sourceDelivery": "Components and ready blocks: standalone reference workspaces via CLI plan/add. Motion: preserve the 884 adopted source patterns and add individual KLIC-authored FlowMotion effects in the same 67 categories, grouped in the existing KLIC navigation. Preserve source id + pattern + engine, choreography, timing, paths, layers, SVG/inline/WAAPI alpha, per-source authorship, copyright and license notices; do not carry old recipes or routes forward as compatibility entries. Adapt color, fonts, surfaces, borders, radius and spacing through existing four-layer KLIC token paths, and scope demo CSS per item. Previews and JavaScript/React delivery use the shared klic-design/motions/runtime and klic-design/motions/runtime.css exports; Canvas playback requires JavaScript and is not reproduced by CSS alone. Motion counts remain separate from component, block and CLI workspace counts. Charts: use KLIC-owned KlicChartSpec and the local npm candidate exports klic-design/charts and klic-design/charts/react; a separate npm release is required before public latest includes them. send chart rows only to local stdio MCP. Hosted HTTP and WebMCP expose metadata only; a guessed HTTP request is rejected with LOCAL_ONLY before chart validation or rendering after the caller's payload reaches the endpoint.",
     "licensing": {
       "mode": "per-file",
       "guide": "/licenses/README.md"

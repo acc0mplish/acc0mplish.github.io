@@ -1,0 +1,2 @@
+<!-- KLIC native HTML example. Styles/interactions: component bundle. KLIC example; preserve bundled per-file license notices. -->
+<div data-klic-component="loading-overlay" class="kn-loading-overlay"><div aria-busy="false" data-part="loading-region"><p>프로젝트 설정을 동기화합니다.</p><span hidden data-part="loading-cover"><span data-part="spinner spin" class="ku-spin"></span> 처리 중</span><button type="button" data-cmp-action="loading"  data-part="btn" class="kv-neutral kv-sm">동기화 시작</button></div><p data-cmp-status role="status" aria-live="polite" data-part="status"></p></div>

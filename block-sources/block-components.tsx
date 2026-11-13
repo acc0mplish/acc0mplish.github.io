@@ -13,6 +13,7 @@ export type BlockComponents = {
 
   AffectShowcaseBlock: ComponentType<ComponentProps<typeof import('./components/blocks/AffectShowcaseBlock').AffectShowcaseBlock>>;
   DistributionChartsBlock: ComponentType<ComponentProps<typeof import('./components/blocks/DistributionChartsBlock').DistributionChartsBlock>>;
+  ReusableChartShowcaseBlock: ComponentType<ComponentProps<typeof import('./components/blocks/ReusableChartShowcaseBlock').ReusableChartShowcaseBlock>>;
   FinancialChartsBlock: ComponentType<ComponentProps<typeof import('./components/blocks/FinancialChartsBlock').FinancialChartsBlock>>;
   CompositionChartsBlock: ComponentType<ComponentProps<typeof import('./components/blocks/CompositionChartsBlock').CompositionChartsBlock>>;
   MatrixChartsBlock: ComponentType<ComponentProps<typeof import('./components/blocks/MatrixChartsBlock').MatrixChartsBlock>>;
@@ -37,6 +38,8 @@ export type BlockComponents = {
   StatusTrackerBlock: ComponentType<ComponentProps<typeof import('./components/blocks/StatusTrackerBlock').StatusTrackerBlock>>;
   EnvironmentPipelineBlock: ComponentType<ComponentProps<typeof import('./components/blocks/EnvironmentPipelineBlock').EnvironmentPipelineBlock>>;
   CapitalInflowsBlock: ComponentType<ComponentProps<typeof import('./components/blocks/CapitalInflowsBlock').CapitalInflowsBlock>>;
+  ThreeDChartShowcaseBlock: ComponentType<ComponentProps<typeof import('./components/blocks/ThreeDChartShowcaseBlock').ThreeDChartShowcaseBlock>>;
+  SplitterShowcaseBlock: ComponentType<ComponentProps<typeof import('./components/blocks/SplitterShowcaseBlock').SplitterShowcaseBlock>>;
   ErrorBudgetBurnBlock: ComponentType<ComponentProps<typeof import('./components/blocks/ErrorBudgetBurnBlock').ErrorBudgetBurnBlock>>;
   GanttChartBlock: ComponentType<ComponentProps<typeof import('./components/blocks/GanttChartBlock').GanttChartBlock>>;
   KanbanBoardBlock: ComponentType<ComponentProps<typeof import('./components/blocks/KanbanBoardBlock').KanbanBoardBlock>>;
@@ -57,6 +60,7 @@ export type BlockComponents = {
   ApplicationTemplatesBlock: ComponentType<ComponentProps<typeof import('./components/blocks/ApplicationTemplatesBlock').ApplicationTemplatesBlock>>;
   SheetShowcaseBlock: ComponentType<ComponentProps<typeof import('./components/blocks/SheetShowcaseBlock').SheetShowcaseBlock>>;
   FlowShowcaseBlock: ComponentType<ComponentProps<typeof import('./components/blocks/FlowShowcaseBlock').FlowShowcaseBlock>>;
+  FlowMotionBlock: ComponentType<ComponentProps<typeof import('./components/blocks/FlowMotionBlock').FlowMotionBlock>>;
   AppShellShowcaseBlock: ComponentType<ComponentProps<typeof import('./components/blocks/AppShellShowcaseBlock').AppShellShowcaseBlock>>;
   RichTextEditorShowcaseBlock: ComponentType<ComponentProps<typeof import('./components/blocks/RichTextEditorShowcaseBlock').RichTextEditorShowcaseBlock>>;
   OnboardingShowcaseBlock: ComponentType<ComponentProps<typeof import('./components/blocks/OnboardingShowcaseBlock').OnboardingShowcaseBlock>>;
@@ -66,6 +70,13 @@ export type BlockComponents = {
   LiveTimelineBlock: ComponentType<ComponentProps<typeof import('./components/blocks/LiveTimelineBlock').LiveTimelineBlock>>;
   TimelineShowcaseBlock: ComponentType<ComponentProps<typeof import('./components/blocks/TimelineShowcaseBlock').TimelineShowcaseBlock>>;
   FormShowcaseBlock: ComponentType<ComponentProps<typeof import('./components/blocks/FormShowcaseBlock').FormShowcaseBlock>>;
+  BasketballUploadBlock: ComponentType<ComponentProps<typeof import('./components/blocks/BasketballUploadBlock').BasketballUploadBlock>>;
+  SoccerGoalUploadBlock: ComponentType<ComponentProps<typeof import('./components/blocks/SoccerGoalUploadBlock').SoccerGoalUploadBlock>>;
+  TrashCanUploadBlock: ComponentType<ComponentProps<typeof import('./components/blocks/TrashCanUploadBlock').TrashCanUploadBlock>>;
+  PlannedApplicationBlock: ComponentType<ComponentProps<typeof import('./components/blocks/PlannedApplicationBlock').PlannedApplicationBlock>>;
+  PlannedWhiteboardBlock: ComponentType<ComponentProps<typeof import('./components/blocks/PlannedWhiteboardBlock').PlannedWhiteboardBlock>>;
+  PlannedChartPreviewBlock: ComponentType<ComponentProps<typeof import('./components/blocks/PlannedChartPreviewBlock').PlannedChartPreviewBlock>>;
+  PlannedDataGridPreviewBlock: ComponentType<ComponentProps<typeof import('./components/blocks/PlannedDataGridPreviewBlock').PlannedDataGridPreviewBlock>>;
 };
 
 export const blockImporters = {
@@ -78,6 +89,7 @@ export const blockImporters = {
 
   AffectShowcaseBlock: () => import('./components/blocks/AffectShowcaseBlock').then(module => ({default: module.AffectShowcaseBlock})),
   DistributionChartsBlock: () => import('./components/blocks/DistributionChartsBlock').then(module => ({default: module.DistributionChartsBlock})),
+  ReusableChartShowcaseBlock: () => import('./components/blocks/ReusableChartShowcaseBlock').then(module => ({default: module.ReusableChartShowcaseBlock})),
   FinancialChartsBlock: () => import('./components/blocks/FinancialChartsBlock').then(module => ({default: module.FinancialChartsBlock})),
   CompositionChartsBlock: () => import('./components/blocks/CompositionChartsBlock').then(module => ({default: module.CompositionChartsBlock})),
   MatrixChartsBlock: () => import('./components/blocks/MatrixChartsBlock').then(module => ({default: module.MatrixChartsBlock})),
@@ -102,6 +114,8 @@ export const blockImporters = {
   StatusTrackerBlock: () => import('./components/blocks/StatusTrackerBlock').then(module => ({default: module.StatusTrackerBlock})),
   EnvironmentPipelineBlock: () => import('./components/blocks/EnvironmentPipelineBlock').then(module => ({default: module.EnvironmentPipelineBlock})),
   CapitalInflowsBlock: () => import('./components/blocks/CapitalInflowsBlock').then(module => ({default: module.CapitalInflowsBlock})),
+  ThreeDChartShowcaseBlock: () => import('./components/blocks/ThreeDChartShowcaseBlock').then(module => ({default: module.ThreeDChartShowcaseBlock})),
+  SplitterShowcaseBlock: () => import('./components/blocks/SplitterShowcaseBlock').then(module => ({default: module.SplitterShowcaseBlock})),
   ErrorBudgetBurnBlock: () => import('./components/blocks/ErrorBudgetBurnBlock').then(module => ({default: module.ErrorBudgetBurnBlock})),
   GanttChartBlock: () => import('./components/blocks/GanttChartBlock').then(module => ({default: module.GanttChartBlock})),
   KanbanBoardBlock: () => import('./components/blocks/KanbanBoardBlock').then(module => ({default: module.KanbanBoardBlock})),
@@ -122,6 +136,7 @@ export const blockImporters = {
   ApplicationTemplatesBlock: () => import('./components/blocks/ApplicationTemplatesBlock').then(module => ({default: module.ApplicationTemplatesBlock})),
   SheetShowcaseBlock: () => import('./components/blocks/SheetShowcaseBlock').then(module => ({default: module.SheetShowcaseBlock})),
   FlowShowcaseBlock: () => import('./components/blocks/FlowShowcaseBlock').then(module => ({default: module.FlowShowcaseBlock})),
+  FlowMotionBlock: () => import('./components/blocks/FlowMotionBlock').then(module => ({default: module.FlowMotionBlock})),
   AppShellShowcaseBlock: () => import('./components/blocks/AppShellShowcaseBlock').then(module => ({default: module.AppShellShowcaseBlock})),
   RichTextEditorShowcaseBlock: () => import('./components/blocks/RichTextEditorShowcaseBlock').then(module => ({default: module.RichTextEditorShowcaseBlock})),
   OnboardingShowcaseBlock: () => import('./components/blocks/OnboardingShowcaseBlock').then(module => ({default: module.OnboardingShowcaseBlock})),
@@ -131,6 +146,13 @@ export const blockImporters = {
   LiveTimelineBlock: () => import('./components/blocks/LiveTimelineBlock').then(module => ({default: module.LiveTimelineBlock})),
   TimelineShowcaseBlock: () => import('./components/blocks/TimelineShowcaseBlock').then(module => ({default: module.TimelineShowcaseBlock})),
   FormShowcaseBlock: () => import('./components/blocks/FormShowcaseBlock').then(module => ({default: module.FormShowcaseBlock})),
+  BasketballUploadBlock: () => import('./components/blocks/BasketballUploadBlock').then(module => ({default: module.BasketballUploadBlock})),
+  SoccerGoalUploadBlock: () => import('./components/blocks/SoccerGoalUploadBlock').then(module => ({default: module.SoccerGoalUploadBlock})),
+  TrashCanUploadBlock: () => import('./components/blocks/TrashCanUploadBlock').then(module => ({default: module.TrashCanUploadBlock})),
+  PlannedApplicationBlock: () => import('./components/blocks/PlannedApplicationBlock').then(module => ({default: module.PlannedApplicationBlock})),
+  PlannedWhiteboardBlock: () => import('./components/blocks/PlannedWhiteboardBlock').then(module => ({default: module.PlannedWhiteboardBlock})),
+  PlannedChartPreviewBlock: () => import('./components/blocks/PlannedChartPreviewBlock').then(module => ({default: module.PlannedChartPreviewBlock})),
+  PlannedDataGridPreviewBlock: () => import('./components/blocks/PlannedDataGridPreviewBlock').then(module => ({default: module.PlannedDataGridPreviewBlock})),
 };
 
 export const lazyBlockComponents: BlockComponents = {
@@ -141,6 +163,7 @@ export const lazyBlockComponents: BlockComponents = {
   ReferenceDashboardBlock: lazy(blockImporters.ReferenceDashboardBlock),
   InteractionReferenceBlock: lazy(blockImporters.InteractionReferenceBlock),
   DistributionChartsBlock: lazy(blockImporters.DistributionChartsBlock),
+  ReusableChartShowcaseBlock: lazy(blockImporters.ReusableChartShowcaseBlock),
   FinancialChartsBlock: lazy(blockImporters.FinancialChartsBlock),
   CompositionChartsBlock: lazy(blockImporters.CompositionChartsBlock),
   MatrixChartsBlock: lazy(blockImporters.MatrixChartsBlock),
@@ -166,6 +189,8 @@ export const lazyBlockComponents: BlockComponents = {
   StatusTrackerBlock: lazy(blockImporters.StatusTrackerBlock),
   EnvironmentPipelineBlock: lazy(blockImporters.EnvironmentPipelineBlock),
   CapitalInflowsBlock: lazy(blockImporters.CapitalInflowsBlock),
+  ThreeDChartShowcaseBlock: lazy(blockImporters.ThreeDChartShowcaseBlock),
+  SplitterShowcaseBlock: lazy(blockImporters.SplitterShowcaseBlock),
   ErrorBudgetBurnBlock: lazy(blockImporters.ErrorBudgetBurnBlock),
   GanttChartBlock: lazy(blockImporters.GanttChartBlock),
   KanbanBoardBlock: lazy(blockImporters.KanbanBoardBlock),
@@ -186,6 +211,7 @@ export const lazyBlockComponents: BlockComponents = {
   ApplicationTemplatesBlock: lazy(blockImporters.ApplicationTemplatesBlock),
   SheetShowcaseBlock: lazy(blockImporters.SheetShowcaseBlock),
   FlowShowcaseBlock: lazy(blockImporters.FlowShowcaseBlock),
+  FlowMotionBlock: lazy(blockImporters.FlowMotionBlock),
   AppShellShowcaseBlock: lazy(blockImporters.AppShellShowcaseBlock),
   RichTextEditorShowcaseBlock: lazy(blockImporters.RichTextEditorShowcaseBlock),
   OnboardingShowcaseBlock: lazy(blockImporters.OnboardingShowcaseBlock),
@@ -195,4 +221,11 @@ export const lazyBlockComponents: BlockComponents = {
   LiveTimelineBlock: lazy(blockImporters.LiveTimelineBlock),
   TimelineShowcaseBlock: lazy(blockImporters.TimelineShowcaseBlock),
   FormShowcaseBlock: lazy(blockImporters.FormShowcaseBlock),
+  BasketballUploadBlock: lazy(blockImporters.BasketballUploadBlock),
+  SoccerGoalUploadBlock: lazy(blockImporters.SoccerGoalUploadBlock),
+  TrashCanUploadBlock: lazy(blockImporters.TrashCanUploadBlock),
+  PlannedApplicationBlock: lazy(blockImporters.PlannedApplicationBlock),
+  PlannedWhiteboardBlock: lazy(blockImporters.PlannedWhiteboardBlock),
+  PlannedChartPreviewBlock: lazy(blockImporters.PlannedChartPreviewBlock),
+  PlannedDataGridPreviewBlock: lazy(blockImporters.PlannedDataGridPreviewBlock),
 };

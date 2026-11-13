@@ -5,7 +5,7 @@ export const MATERIAL_IDS=Object.freeze(['flat','glass','solid-glass','liquid-gl
 export const MATERIAL_LABELS=Object.freeze({flat:'Flat',glass:'Glass','solid-glass':'Solid Glass','liquid-glass':'Liquid Glass'});
 export const normalizeMaterial=value=>MATERIAL_IDS.includes(value)?value:'flat';
 const ROLES=['card','chrome','overlay','field','dense','control'];
-const PRESETS=Object.freeze({flat:{alpha:1,blur:0,shadow:0,rim:0,y:0,spread:0},glass:{alpha:.72,blur:1,shadow:.10,rim:.36,y:.25,spread:1},'solid-glass':{alpha:.92,blur:.75,shadow:.14,rim:.52,y:.375,spread:1.25},'liquid-glass':{alpha:.64,blur:1.5,shadow:.18,rim:.72,y:.5,spread:1.75}});
+const PRESETS=Object.freeze({flat:{alpha:1,blur:0,shadow:0,rim:0,y:0,spread:0},glass:{alpha:.72,blur:1,shadow:.10,rim:.36,y:.25,spread:1},'solid-glass':{alpha:.92,blur:.75,shadow:.17,rim:.60,y:.375,spread:1.25},'liquid-glass':{alpha:.64,blur:1.5,shadow:.18,rim:.72,y:.5,spread:1.75}});
 const alias=(type,path)=>({$type:type,$value:`{${path}}`});
 const dimension=value=>({$type:'dimension',$value:{value,unit:'rem'}});
 const color=(hex,alpha=1)=>({$type:'color',$value:{colorSpace:'srgb',components:[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)/255),alpha}});

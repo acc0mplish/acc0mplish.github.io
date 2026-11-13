@@ -1,34 +1,35 @@
 {
   "version": 1,
-  "kind": "adapted-project-source",
+  "kind": "project-source",
   "sourceRoot": "block-runtime/src",
   "sourceArchive": {
     "filename": "remix-component-library-&-ui-block-studio.zip",
-    "sha256": "90dd1e8e9b4e9c2f5b391fd7e885ed0d003f28239d7908fb09de2dfd9ab95405"
+    "sha256": "90dd1e8e9b4e9c2f5b391fd7e885ed0d003f28239d7908fb09de2dfd9ab95405",
+    "role": "project-delivery-record"
   },
   "notice": "NOTICE.md",
-  "fileCount": 157,
-  "totalBytes": 4723876,
+  "fileCount": 195,
+  "totalBytes": 5714263,
   "catalog": {
-    "implementedEntries": 247,
-    "distinctSourceFiles": 61,
-    "matchedEntries": 247
+    "implementedEntries": 357,
+    "distinctSourceFiles": 72,
+    "matchedEntries": 357
   },
   "files": [
     {
       "path": "BlockApp.tsx",
-      "bytes": 52946,
-      "sha256": "8e320b72af808858e36fec15c66525e1f14460a48830fd638377f20f184954f3"
+      "bytes": 63269,
+      "sha256": "b1460c343d2c0d23829b03ca96d610142618d2a06022f5f7bf8a4730b44d6e11"
     },
     {
       "path": "BlockAppEager.tsx",
-      "bytes": 6690,
-      "sha256": "ca32112de09079bd00452226fc57f42e03d1b829a2a57b6a4f016fcc454d7f93"
+      "bytes": 7892,
+      "sha256": "cd5cdf57ca0e0a4ffd48197f7efefbdf355f388384df013e8e4e18d741cfc565"
     },
     {
       "path": "block-components.tsx",
-      "bytes": 20863,
-      "sha256": "03a6af632921d08ea4cc460d15b0c7779b662612db43fb12aa431fd916d7d3cd"
+      "bytes": 24798,
+      "sha256": "a80a1b9222bf5b0c7b695450934d8c579804ac83bbd362cce0310459948eaa86"
     },
     {
       "path": "components/PersonAvatar.css",
@@ -87,13 +88,13 @@
     },
     {
       "path": "components/blocks/AffectShowcaseBlock.css",
-      "bytes": 4377,
-      "sha256": "995ecaa061d89f52a9ebe03ff502868f61fc3eedb9f8c59e8f2b80d1242209c2"
+      "bytes": 4507,
+      "sha256": "da53a82be4920daedf695d4ce547e68637658f8b9fefd640de82c735520ee96e"
     },
     {
       "path": "components/blocks/AffectShowcaseBlock.tsx",
-      "bytes": 10341,
-      "sha256": "1b391afb0daf4b12ec06d0edc6127c3b908dd88905e5bb372fd7c79990945fea"
+      "bytes": 10545,
+      "sha256": "8fa2467215173a9f2b818cf8e813dc7ac075cd75a8a582863e136ce06023ab58"
     },
     {
       "path": "components/blocks/AppShellShowcaseBlock.tsx",
@@ -116,6 +117,11 @@
       "sha256": "7b76e4a8dc817102ed950d956709eef4e959aff05d52af81bb35f1e53a288fef"
     },
     {
+      "path": "components/blocks/BasketballUploadBlock.tsx",
+      "bytes": 1443,
+      "sha256": "e4b32e5a490839791f9c33280d345aecffb4896ef667c1b1cda08cbab2bf9e8e"
+    },
+    {
       "path": "components/blocks/BillingBlock.tsx",
       "bytes": 5569,
       "sha256": "bdcad23176f014e3536fe646c73fe0965060a5413da339e0bcd2fe5ff07d4c94"
@@ -132,8 +138,8 @@
     },
     {
       "path": "components/blocks/CapitalInflowsBlock.tsx",
-      "bytes": 45686,
-      "sha256": "e9255963cfa5b13042daecf441c589bd55f552496049b645c54f0156388452f9"
+      "bytes": 43306,
+      "sha256": "8679d179ac9cc1731217979028d1538ee8821773d59d3e0a892aaf98373e0cc1"
     },
     {
       "path": "components/blocks/CardShowcaseBlock.tsx",
@@ -144,6 +150,11 @@
       "path": "components/blocks/CatalogBlock.tsx",
       "bytes": 50325,
       "sha256": "c7779ccea630f7d89ed88263f9bc0131d658fe26da0a0ab29c28d90b0cda7937"
+    },
+    {
+      "path": "components/blocks/ChartDataTable.tsx",
+      "bytes": 2073,
+      "sha256": "440204a5ca89da9a4a5ded115c067b4171411fb858397f141131b769d2bcb4e8"
     },
     {
       "path": "components/blocks/CompositionChartsBlock.tsx",
@@ -201,6 +212,11 @@
       "sha256": "aa7325c1a28d84b534402bbb590e4e45d8b89cfc5f8ab2607b06f3a4183cc7cf"
     },
     {
+      "path": "components/blocks/FlowMotionBlock.tsx",
+      "bytes": 9312,
+      "sha256": "cfd0a44b0887892cb9f3783fa819d3d8cc085f18aa4c24920d84ee83aa2d121d"
+    },
+    {
       "path": "components/blocks/FlowShowcaseBlock.tsx",
       "bytes": 146086,
       "sha256": "b05325a7417a536f3e435cad601a7d17c078ce148e4bb01c1a1e8f96d1577a10"
@@ -212,13 +228,18 @@
     },
     {
       "path": "components/blocks/FormShowcaseBlock.tsx",
-      "bytes": 81376,
-      "sha256": "66dfe8c5df4caa1b5e5a541aebeb513b28c55bc842e7bc2f63b978a2de9b2541"
+      "bytes": 81428,
+      "sha256": "27d8c285bb76d8765abb2a6f2499920934c7793faea65bde9f01eca08c23690c"
     },
     {
       "path": "components/blocks/FunnelFlowBlock.tsx",
       "bytes": 62410,
       "sha256": "390adab85bf9e8ec5a73bf66ad1b6b1111e3595266e4d97769d8b04f1a909ade"
+    },
+    {
+      "path": "components/blocks/FunnelSlab3DCanvas.tsx",
+      "bytes": 26653,
+      "sha256": "0443ad2c7c3dec9b5bbbf2773da081b98ed2dff80ca3fcb2e0c3e22bc62957fa"
     },
     {
       "path": "components/blocks/GanttChartBlock.tsx",
@@ -229,6 +250,11 @@
       "path": "components/blocks/GanttExtendedModes.tsx",
       "bytes": 71840,
       "sha256": "df947f80b73cc777c2c0f7ce6cccc86308531581fa2d7e3ef372f9111e8b1281"
+    },
+    {
+      "path": "components/blocks/HourlyVoxel3DCanvas.tsx",
+      "bytes": 21448,
+      "sha256": "93db1e4fe8d4e87a0902fc0b6c02d846b4062787f1a4a73bd85d8f7c3f78d2a9"
     },
     {
       "path": "components/blocks/IntegrationsHubBlock.tsx",
@@ -252,8 +278,8 @@
     },
     {
       "path": "components/blocks/LiveTimelineBlock.tsx",
-      "bytes": 17957,
-      "sha256": "6014ade170e647a03402c51b612e922e28bf825ae594a4df4547a702b0d770e9"
+      "bytes": 17981,
+      "sha256": "95c7b612360497a10a7a90be12f03c2e5a07737eb3d9cd431b6c4c76cf5f21f7"
     },
     {
       "path": "components/blocks/MatrixChartsBlock.tsx",
@@ -266,6 +292,11 @@
       "sha256": "4a1379afbad53c2ba701f63d204e36a94500c6a34e7c98114aa8ec6d56fa5624"
     },
     {
+      "path": "components/blocks/NeonGlass3DCanvas.tsx",
+      "bytes": 25711,
+      "sha256": "09cc73693f72e4be1eadcf1a2dbe06c56628fbedf10cfc916fb271a882fbddc8"
+    },
+    {
       "path": "components/blocks/NotificationShowcaseBlock.tsx",
       "bytes": 76988,
       "sha256": "a89a48e3ef909244f1bde99d9495820b336668bc75ce64a9f37e42837789495e"
@@ -274,6 +305,26 @@
       "path": "components/blocks/OnboardingShowcaseBlock.tsx",
       "bytes": 47210,
       "sha256": "90629d602b385481fd813cec1eff6979949c2c6a605d38d004124e7129ba4a30"
+    },
+    {
+      "path": "components/blocks/PlannedApplicationBlock.tsx",
+      "bytes": 30386,
+      "sha256": "ecd0d9dbec19a7d3127aea740b69e4542903aa403f5f12b400e0d907cb45c506"
+    },
+    {
+      "path": "components/blocks/PlannedChartPreviewBlock.tsx",
+      "bytes": 65363,
+      "sha256": "dffca7f0d769ca2a137eb8a4c68bd37dd44259ba377fd8d3277109bef5a72594"
+    },
+    {
+      "path": "components/blocks/PlannedDataGridPreviewBlock.tsx",
+      "bytes": 72359,
+      "sha256": "889489c5a81c31be83a6f063ce5c32ea8cbbde6f413fec03b21eb80ac0b8d53c"
+    },
+    {
+      "path": "components/blocks/PlannedWhiteboardBlock.tsx",
+      "bytes": 43501,
+      "sha256": "2f5ced0178bffd91dd222f6726dd168b475074298ba2bc0fce61a4fbeae86b74"
     },
     {
       "path": "components/blocks/RadialChartBlock.tsx",
@@ -294,6 +345,11 @@
       "path": "components/blocks/ReportsManagementBlock.tsx",
       "bytes": 66429,
       "sha256": "53cc6adf855e3f29bf93f4839ef05eca2c8a203557eee297e6b55e9d826df067"
+    },
+    {
+      "path": "components/blocks/ReusableChartShowcaseBlock.tsx",
+      "bytes": 3330,
+      "sha256": "65f4c682e6a7d7cf6ca53f8b02134342279185945f622e21a858213aac794287"
     },
     {
       "path": "components/blocks/RevenueBlock.tsx",
@@ -322,8 +378,8 @@
     },
     {
       "path": "components/blocks/SalesAnalyticsDashboardBlock.tsx",
-      "bytes": 28727,
-      "sha256": "7eef6bfcf72303c8503d1a946d9f478645aa881c2e274ce7eca72eb6dc75c54f"
+      "bytes": 28756,
+      "sha256": "20e6706f61ef76da95bc4f973f12cc74a335a8aff0c60df86ea428b643b3d95f"
     },
     {
       "path": "components/blocks/ScheduleBlock.tsx",
@@ -366,6 +422,16 @@
       "sha256": "c532cb8dbabc2ab05c6584f655433e23ed87cab3d8423c4ec580424e5b42e368"
     },
     {
+      "path": "components/blocks/SoccerGoalUploadBlock.tsx",
+      "bytes": 1188,
+      "sha256": "f60cc4bc31e5fbbf78d390e68895764125eded544464ef953514a76c8ec16c66"
+    },
+    {
+      "path": "components/blocks/SplitterShowcaseBlock.tsx",
+      "bytes": 52674,
+      "sha256": "426c985cad69a6dadf7d4519969c5c48b87bdad38df23335423f255f853ddf1d"
+    },
+    {
       "path": "components/blocks/StatsShowcaseBlock.tsx",
       "bytes": 44244,
       "sha256": "8761acf25d54e2fe5ca785b17ccb8053481aac3dfa25ac8fde51f546099f6839"
@@ -401,6 +467,11 @@
       "sha256": "c4dcbd19844796805480e11ea9bdcecc4cdee4c2acf594f2aab38e967d7c1700"
     },
     {
+      "path": "components/blocks/ThreeDChartShowcaseBlock.tsx",
+      "bytes": 18008,
+      "sha256": "faf2986d7772c1fd7179f959eaab810d55699acecf8a395c15ce128c00d74bef"
+    },
+    {
       "path": "components/blocks/TimelineContextScene.tsx",
       "bytes": 16542,
       "sha256": "1d27a0c2a612452bf801526e45f6f537ff764d7b172c03fa2088713370a53d79"
@@ -409,6 +480,11 @@
       "path": "components/blocks/TimelineShowcaseBlock.tsx",
       "bytes": 75971,
       "sha256": "590c00f93119fa954372880edbb9de66f43795db5d11051096c7ad1ffd2dc585"
+    },
+    {
+      "path": "components/blocks/TrashCanUploadBlock.tsx",
+      "bytes": 1422,
+      "sha256": "78a1ca7698501b2eed3a0ff4531ab4857fa49d25e9a93eca5bd50e65ce6682fc"
     },
     {
       "path": "components/blocks/WizardShowcaseBlock.tsx",
@@ -421,6 +497,11 @@
       "sha256": "841bd3a9ddd0dc9a1d188137dc584fcb04718021727eb9e7494adfe4b8a4c08c"
     },
     {
+      "path": "components/blocks/chart3d-motion.ts",
+      "bytes": 1044,
+      "sha256": "d9ff52c58343ab04a0beef985d85d53a40cd26da3bab02a3390b84b880678871"
+    },
+    {
       "path": "components/blocks/customer-inspector-scene.css",
       "bytes": 16578,
       "sha256": "2cf9a2d00944570df28fc205502cd7775b6f90c8a93b748a5b5f2b779944550b"
@@ -429,6 +510,66 @@
       "path": "components/blocks/flow-connectors.css",
       "bytes": 6725,
       "sha256": "6b3f728628f3c29d931b3bd2fe73c44712d4b5e7eb4008948c74ef1fe3ccadb5"
+    },
+    {
+      "path": "components/blocks/flowmotion/components/CinematicNodeConnectCanvas.tsx",
+      "bytes": 52138,
+      "sha256": "4cac270668621e19f8c0122549651a8b1851985294b09e9139c8168fbacfa49b"
+    },
+    {
+      "path": "components/blocks/flowmotion/components/CreativeInfographicCanvases.tsx",
+      "bytes": 49902,
+      "sha256": "f2a10c0f7abae40191f4a138bcd15a910062bc0f216bca304475b2f110f6bd62"
+    },
+    {
+      "path": "components/blocks/flowmotion/components/EditorialMcpSkillCanvas.tsx",
+      "bytes": 23789,
+      "sha256": "73b803c60cacc8c3f1fcf0286df1fc755238b5c94a1182da7dc88e60bba84e9b"
+    },
+    {
+      "path": "components/blocks/flowmotion/components/FlowCanvas.tsx",
+      "bytes": 8869,
+      "sha256": "d630c5311e066103b35e43f132fdf2211f5ade0c80a489830d20f6b61b04c131"
+    },
+    {
+      "path": "components/blocks/flowmotion/components/FlowNodeCard.tsx",
+      "bytes": 8915,
+      "sha256": "22fef06a11b492c6532cc92245968d6c3a3cad15f6c8f15ed9995d9421ce9839"
+    },
+    {
+      "path": "components/blocks/flowmotion/components/ItWorkflowEditorialCanvases.tsx",
+      "bytes": 74168,
+      "sha256": "c8aa055d59d18d6d2bd342938600903bfd31faf7ca7d084cfeb23435e4ab1ce3"
+    },
+    {
+      "path": "components/blocks/flowmotion/components/MultiStyleFlowCanvases.tsx",
+      "bytes": 46100,
+      "sha256": "ef732e3c9715548d0349539cc1b11b72d4537af5a7afe51770ff862a28e8ac37"
+    },
+    {
+      "path": "components/blocks/flowmotion/components/PptInfographicCanvases.tsx",
+      "bytes": 47516,
+      "sha256": "902a76e16c323c2ef83b8f218b2878be481d7a0499b0e30576362c7bffbfedbb"
+    },
+    {
+      "path": "components/blocks/flowmotion/flowmotion.css",
+      "bytes": 6656,
+      "sha256": "1156f05385ff839117eee2a8e828b89250f6f86f0a90349aa308faa2320e5d57"
+    },
+    {
+      "path": "components/blocks/flowmotion/useFlowPlayback.ts",
+      "bytes": 2492,
+      "sha256": "aa2fc0814de75638c57267b091b234f35cca25a8710cf8c71112f06969e769c6"
+    },
+    {
+      "path": "components/blocks/flowmotion/utils/flowEngine.ts",
+      "bytes": 13297,
+      "sha256": "150d5af130c520ff13f0c0d282f2c25ed008056a295167b739f5b65fce2078cd"
+    },
+    {
+      "path": "components/blocks/flowmotion/utils/flowTemplates.ts",
+      "bytes": 101335,
+      "sha256": "84e23cff51bd25bf263250b88390dba48fdab125834a72b7d21b13245d3eabfa"
     },
     {
       "path": "components/blocks/live-timeline.css",
@@ -451,6 +592,41 @@
       "sha256": "5133ece79499073ecd5d35704e43b19ed96d97d540bba828c94eaf4364aaaabc"
     },
     {
+      "path": "components/blocks/shotdrop/BasketballUploadScene.tsx",
+      "bytes": 26772,
+      "sha256": "294f5857043b4d31bc8de195e455a006d236ae0d29686c5f340ef30dedb96571"
+    },
+    {
+      "path": "components/blocks/shotdrop/CrumpledPaperCard.tsx",
+      "bytes": 16032,
+      "sha256": "43b95ae6d8a4c763bdc7a8b843d49245d97339b275d5623012fb24553b60ce25"
+    },
+    {
+      "path": "components/blocks/shotdrop/FileDocumentCard.tsx",
+      "bytes": 4827,
+      "sha256": "8efee309e60703109da68509a830f396a2575b38faa24b0a11ef5492f7e58942"
+    },
+    {
+      "path": "components/blocks/shotdrop/ShotDropBlockShell.tsx",
+      "bytes": 4838,
+      "sha256": "c8e67138bb1abcb1150917bdf047ebc6990901755f0722b0e82756032c4e0040"
+    },
+    {
+      "path": "components/blocks/shotdrop/SoccerGoalUploadScene.tsx",
+      "bytes": 30394,
+      "sha256": "bdef71d1ff356a53957b2986ec251b405b1a17a2a1fe2608ab87caba8ca6be8e"
+    },
+    {
+      "path": "components/blocks/shotdrop/TrashCanUploadScene.tsx",
+      "bytes": 34467,
+      "sha256": "7d7cfd6852ad63e569ffb43f4a807fb093c5c6c04c87eaed9e097715867c3ea7"
+    },
+    {
+      "path": "components/blocks/shotdrop/shotPhysics.ts",
+      "bytes": 17571,
+      "sha256": "7331559452787e24bf87ef57dd8218cc7994f682c00e83e2248cfc7a985087be"
+    },
+    {
       "path": "components/blocks/task-discussion-scene.css",
       "bytes": 16573,
       "sha256": "1c48ad82a158773d7893aefd03856b0d9264da71a1509bad086f99d3abc3a3c6"
@@ -467,8 +643,13 @@
     },
     {
       "path": "components/charts/ChartShowcase.tsx",
-      "bytes": 3113,
-      "sha256": "fdc2464eb1b529ee064113ca5801c256b348ae951bf672666e2cefb722fe6d24"
+      "bytes": 2984,
+      "sha256": "8df4557b92b201078f4854495d1dbd986ee048cad74da4a38851af4b8e97119e"
+    },
+    {
+      "path": "components/charts/KlicChart.tsx",
+      "bytes": 4371,
+      "sha256": "a359f8dc00bae4d8828e4c37752541562ba000e283345089463443f255018818"
     },
     {
       "path": "components/charts/bjork/_core/a11y.tsx",
@@ -662,8 +843,8 @@
     },
     {
       "path": "data/componentsData.ts",
-      "bytes": 190624,
-      "sha256": "842a4b9967e5742377754c573e3941793b327a66fa2b0f8a34a793ab122364cd"
+      "bytes": 196572,
+      "sha256": "ce99378ce181d0b2f7981bb376cc2aed8b446dbf8124db49172826537149b451"
     },
     {
       "path": "data/connectorExamples.ts",
@@ -671,14 +852,19 @@
       "sha256": "b6ce701995a7e2064701f6b26cfa5fd8ecacda383ca8b85230e2fba1650eac3a"
     },
     {
+      "path": "data/plannedPreviewRoutes.ts",
+      "bytes": 10447,
+      "sha256": "65a4230f51231522f65aa8b8891f3587f15c64cd11b2ef1805c4fd4c5366d94d"
+    },
+    {
       "path": "index.css",
-      "bytes": 26638,
-      "sha256": "04f5619d3ae16d3658583e9a8173f461ab5ad5d19ac69602ac89d0582d8078e4"
+      "bytes": 26648,
+      "sha256": "89ab2a6dcaf3adf97a9011c2b5fc29478d579ea302c7edfccc793c5ce9166da3"
     },
     {
       "path": "main.tsx",
-      "bytes": 14499,
-      "sha256": "faa2e632ce971819257ac426b36aa72d6f7516ed25d1ea73c057cf5418982076"
+      "bytes": 15089,
+      "sha256": "8b203730590cf983c4b5a8e232736152043b7e0e158c89a0a428c276c04725a9"
     },
     {
       "path": "types/index.ts",
@@ -744,6 +930,11 @@
       "path": "utils/permissions.ts",
       "bytes": 2164,
       "sha256": "fe4c2ef947778740198642744f7371048a4e17babbbc62d562c205ffd578f7ee"
+    },
+    {
+      "path": "utils/publishing-inspector.ts",
+      "bytes": 9638,
+      "sha256": "d5066d19ce891db7d3150a6de53735b2f993163d050938c07fc80fbb0af133db"
     },
     {
       "path": "utils/releases.ts",

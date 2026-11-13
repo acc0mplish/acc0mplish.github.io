@@ -1,0 +1,44 @@
+<!-- KLIC terminal sample. Transcript is static; no shell or SSH session is started. -->
+<link rel="stylesheet" href="./terminal-components.css">
+<section data-terminal-demo="macos-terminal" data-terminal-instance="klic-example" aria-label="macOS 터미널 샘플 미리보기" data-klic-component="macos-terminal" class="kn-macos-terminal">
+<div data-mcp-terminal-shell data-part="hs-terminal">
+<div data-part="hs-terminal-top">
+<span aria-hidden="true" data-part="hs-window-lights">
+<i data-part="icon">
+</i>
+<i data-part="icon">
+</i>
+<i data-part="icon">
+</i>
+</span>
+<small data-part="hs-terminal-path">
+<i data-lucide="folder" aria-hidden="true" data-part="icon">
+</i>
+<span>~/KLIC</span>
+</small>
+<button type="button" data-hs-copy data-mcp-terminal-copy aria-label="연결 설정 복사" data-part="btn">
+<i data-lucide="copy" aria-hidden="true" data-part="icon">
+</i> 복사</button>
+</div>
+<div role="group" aria-label="개발 도구 선택" data-part="hs-client-tabs">
+<button type="button" data-hs-client="Codex" data-mcp-terminal-client="Codex" aria-pressed="true" data-part="btn">Codex</button>
+<button type="button" data-hs-client="Claude" data-mcp-terminal-client="Claude" aria-pressed="false" data-part="btn">Claude</button>
+<button type="button" data-hs-client="Cursor" data-mcp-terminal-client="Cursor" aria-pressed="false" data-part="btn">Cursor</button>
+<button type="button" data-hs-client="CLI" data-mcp-terminal-client="CLI" aria-pressed="false" data-part="btn">CLI</button>
+<button type="button" data-hs-client="API" data-mcp-terminal-client="API" aria-pressed="false" data-part="btn">API</button>
+</div>
+<pre>
+<code data-hs-code data-mcp-terminal-code>codex mcp add klic --url https://design.klic.co.kr/api/v1/mcp</code>
+</pre>
+<div data-part="hs-terminal-foot">
+<span aria-hidden="true">●</span>
+<p data-hs-client-note>외부 클라이언트용 공개 읽기 전용 MCP입니다. ChatGPT·Claude 조직 연결은 /connect에서 설정하세요. ChatGPT Sites 플러그인은 Sites 인증을 사용하는 별도 경로입니다.</p>
+</div>
+<a href="#docs/integrations" data-part="link">연동 문서에서 자세히 보기 <i data-lucide="arrow-right" aria-hidden="true" data-part="icon">
+</i>
+</a>
+<a href="/connect" data-part="link">조직 연결 안내 <i data-lucide="arrow-right" aria-hidden="true" data-part="icon">
+</i>
+</a>
+</div>
+</section>

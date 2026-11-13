@@ -1,4 +1,5 @@
-/** KLIC chart catalog. Full Björk UI MIT renderers are adapted to KLIC tokens; see docs/charts/BJORK-LICENSE.txt. */
+/** KLIC chart catalog. Chart source files retain their applicable license notices. */
+import {getChartContract} from './chart-contracts.mjs';
 export const CHART_GROUPS=Object.freeze({
   distribution:{id:'chart-distribution',name:'분포와 통계',en:'Distribution and statistics'},
   financial:{id:'chart-financial',name:'가격과 시장',en:'Price and market'},
@@ -63,12 +64,12 @@ const englishDescriptions={
   bullet:'Sample measures, targets and reference ranges compared on a shared linear scale.'
 };
 
-export const CHART_EXAMPLES=Object.freeze(rows.map(([id,title,enTitle,group,variant,sourceComponent,reference,description,geometry])=>Object.freeze({id,title,enTitle,group,variant,sourceComponent,referenceUrl:`https://ui.isaiahbjork.com/charts/${reference}`,description,enDescription:englishDescriptions[variant],geometry})));
+export const CHART_EXAMPLES=Object.freeze(rows.map(([id,title,enTitle,group,variant,sourceComponent,,description,geometry])=>Object.freeze({id,title,enTitle,group,variant,sourceComponent,description,enDescription:englishDescriptions[variant],geometry,chartContract:getChartContract(id)})));
 export const CHART_EXCLUSIONS=Object.freeze([
-  {reference:'animated-radial-chart',existingIds:['cash-inflows-radial','api-health-radial'],reason:'원형 진행·방사형 표현은 기존 래디얼과 게이지에서 제공하므로 장식적 모션만으로 별도 블록을 추가하지 않습니다.'},
-  {reference:'live-line',existingIds:['line-chart','sparkline'],reason:'시간 축의 선형 추세는 기존 라인·스파크라인 표현과 겹칩니다. 샘플 업데이트 모션만으로 별도 형태를 추가하지 않습니다.'},
-  {reference:'route-trace',existingIds:['flow-connector-interaction','flow-connector-state','flow-connector-retry'],reason:'경로 추적·상태 변화는 기존 연결선과 흐름 예제의 역할과 겹칩니다.'},
-  {reference:'slope-chart',existingIds:['arr-growth-slope','error-budget-slope'],reason:'두 상태의 값 비교와 관계 강조는 현재 실제 슬로프 구현에서 제공합니다.'},
-  {reference:'sankey-flow',existingIds:['funnel-flow','trial-flow','b2b-deals-flow'],reason:'정량 리본을 이용한 흐름과 전환은 기존 생키 변형에서 제공합니다.'},
-  {reference:'donut-chart',existingIds:['donut-chart'],reason:'전체 대비 부분 비율의 도넛 표현은 기존 컴포넌트에서 제공합니다.'}
-].map(({reference,...entry})=>Object.freeze({...entry,referenceUrl:`https://ui.isaiahbjork.com/charts/${reference}`})));
+  {id:'animated-radial-chart',existingIds:['cash-inflows-radial','api-health-radial'],reason:'원형 진행·방사형 표현은 기존 래디얼과 게이지에서 제공하므로 장식적 모션만으로 별도 블록을 추가하지 않습니다.'},
+  {id:'live-line',existingIds:['line-chart','sparkline'],reason:'시간 축의 선형 추세는 기존 라인·스파크라인 표현과 겹칩니다. 샘플 업데이트 모션만으로 별도 형태를 추가하지 않습니다.'},
+  {id:'route-trace',existingIds:['flow-connector-interaction','flow-connector-state','flow-connector-retry'],reason:'경로 추적·상태 변화는 기존 연결선과 흐름 예제의 역할과 겹칩니다.'},
+  {id:'slope-chart',existingIds:['arr-growth-slope','error-budget-slope'],reason:'두 상태의 값 비교와 관계 강조는 현재 실제 슬로프 구현에서 제공합니다.'},
+  {id:'sankey-flow',existingIds:['funnel-flow','trial-flow','b2b-deals-flow'],reason:'정량 리본을 이용한 흐름과 전환은 기존 생키 변형에서 제공합니다.'},
+  {id:'donut-chart',existingIds:['donut-chart'],reason:'전체 대비 부분 비율의 도넛 표현은 기존 컴포넌트에서 제공합니다.'}
+].map(entry=>Object.freeze(entry)));

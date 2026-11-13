@@ -5,6 +5,7 @@ import {AutomationOperationsDashboardBlock} from './components/blocks/Automation
 import {ReferenceDashboardBlock} from './components/blocks/ReferenceDashboardBlock';
 import {InteractionReferenceBlock} from './components/blocks/InteractionReferenceBlock';
 import {AffectShowcaseBlock} from './components/blocks/AffectShowcaseBlock';
+import {ReusableChartShowcaseBlock} from './components/blocks/ReusableChartShowcaseBlock';
 /** SPDX-License-Identifier: Apache-2.0 */
 // Build-time only entry for real synchronous SSR thumbnails.
 // Browser code must import BlockApp, never this eager entry.
@@ -37,6 +38,8 @@ import {RadialChartBlock} from './components/blocks/RadialChartBlock';
 import {StatusTrackerBlock} from './components/blocks/StatusTrackerBlock';
 import {EnvironmentPipelineBlock} from './components/blocks/EnvironmentPipelineBlock';
 import {CapitalInflowsBlock} from './components/blocks/CapitalInflowsBlock';
+import {ThreeDChartShowcaseBlock} from './components/blocks/ThreeDChartShowcaseBlock';
+import {SplitterShowcaseBlock} from './components/blocks/SplitterShowcaseBlock';
 import {ErrorBudgetBurnBlock} from './components/blocks/ErrorBudgetBurnBlock';
 import {GanttChartBlock} from './components/blocks/GanttChartBlock';
 import {KanbanBoardBlock} from './components/blocks/KanbanBoardBlock';
@@ -57,6 +60,7 @@ import {BillingBlock} from './components/blocks/BillingBlock';
 import {ApplicationTemplatesBlock} from './components/blocks/ApplicationTemplatesBlock';
 import {SheetShowcaseBlock} from './components/blocks/SheetShowcaseBlock';
 import {FlowShowcaseBlock} from './components/blocks/FlowShowcaseBlock';
+import {FlowMotionBlock} from './components/blocks/FlowMotionBlock';
 import {AppShellShowcaseBlock} from './components/blocks/AppShellShowcaseBlock';
 import {RichTextEditorShowcaseBlock} from './components/blocks/RichTextEditorShowcaseBlock';
 import {OnboardingShowcaseBlock} from './components/blocks/OnboardingShowcaseBlock';
@@ -66,6 +70,13 @@ import {StatsShowcaseBlock} from './components/blocks/StatsShowcaseBlock';
 import {LiveTimelineBlock} from './components/blocks/LiveTimelineBlock';
 import {TimelineShowcaseBlock} from './components/blocks/TimelineShowcaseBlock';
 import {FormShowcaseBlock} from './components/blocks/FormShowcaseBlock';
+import {BasketballUploadBlock} from './components/blocks/BasketballUploadBlock';
+import {SoccerGoalUploadBlock} from './components/blocks/SoccerGoalUploadBlock';
+import {TrashCanUploadBlock} from './components/blocks/TrashCanUploadBlock';
+import {PlannedApplicationBlock} from './components/blocks/PlannedApplicationBlock';
+import {PlannedWhiteboardBlock} from './components/blocks/PlannedWhiteboardBlock';
+import {PlannedChartPreviewBlock} from './components/blocks/PlannedChartPreviewBlock';
+import {PlannedDataGridPreviewBlock} from './components/blocks/PlannedDataGridPreviewBlock';
 const components: BlockComponents = {
   RightSidePanelBlock,
   SalesAnalyticsDashboardBlock,
@@ -78,6 +89,7 @@ const components: BlockComponents = {
   CompositionChartsBlock,
   MatrixChartsBlock,
   AffectShowcaseBlock,
+  ReusableChartShowcaseBlock,
   FlowConnectorBlock,
   ServiceDiagramBlock,
   RoadmapBlock,
@@ -99,6 +111,8 @@ const components: BlockComponents = {
   StatusTrackerBlock,
   EnvironmentPipelineBlock,
   CapitalInflowsBlock,
+  ThreeDChartShowcaseBlock,
+  SplitterShowcaseBlock,
   ErrorBudgetBurnBlock,
   GanttChartBlock,
   KanbanBoardBlock,
@@ -119,6 +133,7 @@ const components: BlockComponents = {
   ApplicationTemplatesBlock,
   SheetShowcaseBlock,
   FlowShowcaseBlock,
+  FlowMotionBlock,
   AppShellShowcaseBlock,
   RichTextEditorShowcaseBlock,
   OnboardingShowcaseBlock,
@@ -127,6 +142,13 @@ const components: BlockComponents = {
   StatsShowcaseBlock,
   TimelineShowcaseBlock,
   LiveTimelineBlock,
-  FormShowcaseBlock
+  FormShowcaseBlock,
+  BasketballUploadBlock,
+  SoccerGoalUploadBlock,
+  TrashCanUploadBlock,
+  PlannedApplicationBlock,
+  PlannedWhiteboardBlock,
+  PlannedChartPreviewBlock,
+  PlannedDataGridPreviewBlock
 };
 export default function BlockAppEager(props: Omit<BlockAppProps,'components'>){return <BlockApp {...props} components={components} />;}

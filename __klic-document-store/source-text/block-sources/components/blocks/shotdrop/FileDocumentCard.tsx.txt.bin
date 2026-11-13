@@ -1,0 +1,112 @@
+/** SPDX-License-Identifier: Apache-2.0 */
+import React from 'react';
+import { type FileTypeBadge } from './shotPhysics';
+
+interface FileDocumentCardProps {
+  name: string;
+  badge: FileTypeBadge;
+  badgeColor: string;
+  isGrabbing?: boolean;
+  isFlying?: boolean;
+  showHandIcon?: 'fist' | 'open' | 'none';
+  scale?: number;
+  rotation?: number;
+  className?: string;
+}
+
+export const FileDocumentCard: React.FC<FileDocumentCardProps> = ({
+  name,
+  badge,
+  badgeColor,
+  isGrabbing = false,
+  isFlying = false,
+  showHandIcon = 'none',
+  scale = 1,
+  rotation = 0,
+  className = '',
+}) => {
+  // Strip extension for clean display like "final fileeeeee" in the reference screenshot
+  const displayName = name.replace(/\.[^/.]+$/, '');
+
+  return (
+    <div
+      className={`inline-flex flex-col items-center select-none pointer-events-none ${className}`}
+      style={{
+        transform: `scale(${scale}) rotate(${rotation}deg)`,
+        transition: isFlying || isGrabbing ? 'none' : 'transform 180ms cubic-bezier(0.16, 1, 0.3, 1)',
+      }}
+    >
+      {/* Document Sheet */}
+      <div className="relative w-[74px] h-[88px] drop-drop-shadow-md">
+        <svg
+          viewBox="0 0 74 88"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+        >
+          {/* Main white page body with folded top-right corner */}
+          <path
+            d="M0 12C0 5.37258 5.37258 0 12 0H48.5C51.1522 0 53.6957 1.05357 55.5711 2.92893L71.0711 18.4289C72.9464 20.3043 74 22.8478 74 25.5V76C74 82.6274 68.6274 88 62 88H12C5.37258 88 0 82.6274 0 76V12Z"
+            fill="var(--klic-component-block-color-panel)"
+          />
+          {/* Subtle border around document */}
+          <path
+            d="M0.5 12C0.5 5.64873 5.64873 0.5 12 0.5H48.5C51.0196 0.5 53.436 1.50089 55.2175 3.28249L70.7175 18.7825C72.4991 20.564 73.5 22.9804 73.5 25.5V76C73.5 82.3513 68.3513 87.5 62 87.5H12C5.64873 87.5 0.5 82.3513 0.5 76V12Z"
+            stroke="var(--klic-component-block-color-border)"
+            strokeOpacity="0.9"
+          />
+          {/* Folded Dog-Ear Flap */}
+          <path
+            d="M50 0.5V15C50 19.9706 54.0294 24 59 24H73.5L50 0.5Z"
+            fill="var(--klic-component-block-color-soft)"
+          />
+          {/* Interior mock text lines */}
+          <rect x="13" y="31" width="38" height="4.5" rx="2.25" fill="var(--klic-component-block-color-border)" />
+          <rect x="13" y="40" width="48" height="4.5" rx="2.25" fill="var(--klic-component-block-color-border)" />
+          <rect x="13" y="49" width="32" height="4.5" rx="2.25" fill="var(--klic-component-block-color-border)" />
+        </svg>
+
+        {/* File Type Badge (e.g. PDF in red) */}
+        <div
+          className="absolute bottom-[10px] left-[10px] px-[7px] py-[2.5px] rounded-md text-[10px] font-bold tracking-wider text-klic-on-emphasis leading-none shadow-xs"
+          style={{ backgroundColor: badgeColor }}
+        >
+          {badge}
+        </div>
+
+        {/* Tactile Hand Cursor Indicator matching reference screenshots */}
+        {showHandIcon !== 'none' && (
+          <div
+            className="absolute left-1/2 -translate-x-1/2 transition-transform duration-150"
+            style={{
+              top: showHandIcon === 'fist' ? '26px' : '92px',
+            }}
+          >
+            {showHandIcon === 'fist' ? (
+              /* Clenched grabbing hand icon from image_a8bb151b.png */
+              <div className="w-7 h-7 rounded-full bg-white/90 shadow-md flex items-center justify-center">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-zinc-900">
+                  <path d="M8.5 7A1.5 1.5 0 0 1 10 8.5V10h.5V7.5a1.5 1.5 0 0 1 3 0V10h.5V8a1.5 1.5 0 0 1 3 0v2.5h.5V9.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-2.5a5.5 5.5 0 0 1-4.8-2.8l-2.3-4.1a1.5 1.5 0 0 1 2.1-2l.9.6V8.5A1.5 1.5 0 0 1 8.5 7Z" />
+                </svg>
+              </div>
+            ) : (
+              /* Open release hand icon from image_9f1f16bb.png */
+              <div className="w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-zinc-900">
+                  <path d="M11.5 2a1.25 1.25 0 0 1 1.25 1.25v6.25h.75V3.75a1.25 1.25 0 0 1 2.5 0v5.75h.75V5.25a1.25 1.25 0 0 1 2.5 0V14.5a6.5 6.5 0 0 1-6.5 6.5h-1.8a6.2 6.2 0 0 1-5.4-3.15l-2.75-4.85a1.35 1.35 0 0 1 2.15-1.68l2.05 1.93V4.25a1.25 1.25 0 0 1 2.5 0v5.25h.75V3.25A1.25 1.25 0 0 1 11.5 2Z" />
+                </svg>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Filename Label underneath */}
+      {!isFlying && (
+        <span className="mt-2 text-[12px] font-medium text-zinc-400 tracking-tight max-w-[115px] truncate">
+          {displayName}
+        </span>
+      )}
+    </div>
+  );
+};

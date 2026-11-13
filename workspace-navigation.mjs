@@ -12,7 +12,7 @@ export function buildBreadcrumbs(route=[],{components=[],categories={},blocks={}
  if(section==='home')return [leaf('디자인 쇼케이스','#home')];
  if(section==='component'){
   const c=components.find(x=>x.id===id);if(!c)return [leaf('컴포넌트','#components'),leaf('항목을 찾을 수 없음')];
-  return [leaf('컴포넌트','#components'),leaf(categories[c.category]||c.category,'#components/'+c.category),leaf(c.name,'#component/'+c.id),leaf(componentTabs[tab]||componentTabs.preview)];
+  return [leaf('컴포넌트','#components'),leaf(categories[c.category]||c.category,'#components/'+c.category),leaf(c.ko||c.name,'#component/'+c.id),leaf(componentTabs[tab]||componentTabs.preview)];
  }
  if(section==='components')return [leaf('컴포넌트','#components'),...(id&&id!=='all'&&categories[id]?[leaf(categories[id])]:[])];
  if(section==='motion')return [leaf('모션 라이브러리')];

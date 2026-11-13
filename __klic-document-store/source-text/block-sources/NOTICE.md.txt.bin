@@ -1,19 +1,27 @@
 # KLIC block source reference
 
-이 디렉터리에는 사용자 제공 remix-component-library-&-ui-block-studio.zip ZIP에서 가져와 KLIC 사이트에 맞춘 실제 프로젝트 소스가 들어 있습니다. 현재 block-runtime/src의 TS·TSX·CSS 파일을 경로와 바이트 그대로 내보냅니다. 테스트·비공개 파일은 포함하지 않습니다.
+이 디렉터리에는 KLIC이 직접 구현한 Block Studio와 사이트 연동 소스가 들어 있습니다. 외부 화면은 디자인 참고로만 사용했으며, Block Studio 구현을 외부 프로젝트에서 가져왔다는 의미가 아닙니다. 사용자 제공 remix-component-library-&-ui-block-studio.zip ZIP은 KLIC 프로젝트의 전달·보관 기록입니다. 현재 block-runtime/src의 TS·TSX·CSS 파일을 경로와 바이트 그대로 내보냅니다. 테스트·비공개 파일은 포함하지 않습니다.
 
-## 출처와 동작 범위
+FlowMotion React 블록은 별도 KLIC 프로젝트 전달 기록인 flowmotion-gallery-—-interactive-workflow-studio.zip에서 옮긴 자체 구현입니다. components/blocks/FlowMotionBlock.tsx와 flowmotion/의 렌더러·시나리오·순수 엔진을 포함하며, 각 경로는 원본22종 중 하나의 화면만 표시합니다. 기존41개 개별 모션 효과와 별도로 전달합니다.
+
+## 자체 구현과 별도 외부 모듈
+
+Block Studio 자체 구현과 이후 별도로 연동한 외부 코드·의존성의 고지는 구분합니다. 아래 고지는 명시한 파일·모듈에만 적용되며 Block Studio 전체의 구현 출처를 뜻하지 않습니다.
 
 - components/adopted/*: Affect UI Classic, Copyright (c) 2026 Florian Höller (adfects). MIT. 전체 고지는 각 파일에 보존되어 있습니다.
 
-- components/charts/bjork의 차트와 공용 도구는 Björk UI의 공개 MIT 소스를 KLIC에 맞춰 적용했습니다. Copyright (c) 2026 Isaiah Bjork. 전체 MIT 고지는 각 소스 파일에 포함되어 있습니다. 출처: https://github.com/isaiahbjork/ui 및 https://ui.isaiahbjork.com/ .
+- components/charts/bjork의 차트와 공용 도구에는 원본 MIT 저작권·라이선스 고지가 각 소스 파일에 포함되어 있습니다. 전체 고지는 components/charts/bjork/LICENSE.bjork에 보존합니다.
 - 이 차트의 원본 렌더링·툴팁·브러시·키보드 동작을 보존하며 KLIC의 토큰·테마·표면 어댑터를 적용했습니다. framer-motion은 package.json에 고정한 실제 런타임 의존성입니다.
 
-- 원본 ZIP SHA-256: 90dd1e8e9b4e9c2f5b391fd7e885ed0d003f28239d7908fb09de2dfd9ab95405
+- 프로젝트 전달 ZIP SHA-256: 90dd1e8e9b4e9c2f5b391fd7e885ed0d003f28239d7908fb09de2dfd9ab95405
 - 파일별 bytes와 SHA-256은 manifest.json에서 확인할 수 있습니다. 이 값은 내보낸 스냅샷의 동일성을 확인하기 위한 정보입니다.
-- KLIC 변경에는 회사 블루, Primitive → Brand → Semantic → Component 토큰 연결, 테마·material·폰트·밀도 문맥과 미리보기 통합이 포함됩니다.
+- KLIC 자체 구현과 사이트 연동에는 회사 블루, Primitive → Brand → Semantic → Component 토큰 연결, 테마·material·폰트·밀도 문맥과 미리보기 통합이 포함됩니다.
 - 예제는 로컬 샘플·mock 상태로 동작합니다. 실제 서버 저장, 결제, 인증 또는 외부 서비스 연동의 완료를 의미하지 않습니다. 재사용 시 각 동작과 데이터 연결을 별도로 구현하고 확인해야 합니다.
-- 원본 파일의 라이선스와 출처 헤더는 그대로 보존합니다. 카탈로그의 여러 항목이 같은 구현 모듈을 공유할 수 있습니다.
+- 파일별 배포 라이선스와 실제 외부 모듈의 저작권·출처 헤더는 보존합니다. 디자인 참고를 외부 코드의 저작권·라이선스로 표시하지 않습니다. 카탈로그의 여러 항목이 같은 구현 모듈을 공유할 수 있습니다.
+
+## English
+
+KLIC authored the original Block Studio implementation. External screens were visual design references, not imported implementation code. The supplied ZIP records delivery of the KLIC project. Separately integrated third-party modules, fonts and dependencies retain their own file-scoped notices; those notices do not describe the authorship of the whole Block Studio. Existing distribution licenses are unchanged.
 
 ## 프로젝트에서 읽기
 

@@ -1,0 +1,79 @@
+{
+  "id": "flowmotion-cinematic-cam",
+  "category": "camera",
+  "title": {
+    "ko": "시네마틱 카메라",
+    "en": "Cinematic camera"
+  },
+  "summary": {
+    "ko": "두 노드를 480ms 확대, 680ms 팬, 760ms 복귀로 연결합니다.",
+    "en": "Focus the source for 480 ms, pan for 680 ms, then return over 760 ms."
+  },
+  "durationMs": 1920,
+  "easing": "cubic-bezier(0,0,.2,1)",
+  "origin": {
+    "templateIds": [
+      "cinematic-node-connect"
+    ],
+    "sourceFile": "src/components/CinematicNodeConnectCanvas.tsx",
+    "renderer": "CinematicNodeConnectCanvas",
+    "effect": "cam",
+    "sourceTimeline": {
+      "durationMs": 1920,
+      "description": "Source zooms to a node in 480 ms, pans while drawing the edge for 680 ms, and restores the full ViewBox in 760 ms.",
+      "frames": [
+        {
+          "atMs": 0,
+          "phase": "full 1160×660 stage"
+        },
+        {
+          "atMs": 480,
+          "phase": "source-node zoom complete at 1.32×"
+        },
+        {
+          "atMs": 1160,
+          "phase": "target pan complete"
+        },
+        {
+          "atMs": 1920,
+          "phase": "full-stage return complete"
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>.fm-root{--fm-blue:var(--klic-semantic-color-accent,#245fc2);--fm-navy:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-component-card-background-default,var(--klic-semantic-color-panel,#fff));--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);--fm-muted:var(--klic-semantic-color-muted,#52657b);--fm-on-blue:var(--klic-semantic-color-on-accent,#fff);--fm-selected:var(--klic-semantic-color-surface-selected,#e4ecfc);box-sizing:border-box;width:100%;height:100%;color:var(--fm-navy);font-family:inherit}.fm-root *{box-sizing:inherit}.fm-root svg{display:block;width:100%;height:100%;overflow:visible;font-family:inherit}.fm-root .fm-surface{fill:var(--fm-surface)}.fm-root .fm-panel{fill:var(--fm-panel);stroke:var(--fm-border)}.fm-root .fm-blue{fill:var(--fm-blue)}.fm-root .fm-blue-stroke{stroke:var(--fm-blue)}.fm-root .fm-ink{fill:var(--fm-navy)}.fm-root .fm-muted{fill:var(--fm-muted)}.fm-root .fm-selected{fill:var(--fm-selected)}.fm-root .fm-on-blue{fill:var(--fm-on-blue)}.fm-root [transform-box]{transform-box:fill-box;transform-origin:center}.fm-root text{font-size:11px;fill:var(--fm-navy)}.fm-root .camera-scene{transform-box:view-box;transform-origin:0 0}</style><div class='fm-root'><svg viewBox='0 0 320 200' role='img' aria-label='Cinematic camera'><rect class='fm-surface' width='320' height='200' rx='14'/><g class='camera-scene'><path d='M 118 100 C 146 100 174 100 202 100' fill='none' stroke='var(--fm-border)' stroke-width='2'/><path d='M 118 100 C 146 100 174 100 202 100' fill='none' stroke='var(--fm-blue)' stroke-width='2' stroke-dasharray='5 5'/><rect x='30' y='76' width='88' height='48' rx='9' fill='var(--fm-panel)' stroke='var(--fm-border)'/><circle cx='48' cy='100' r='5' fill='var(--fm-blue)'/><text x='62' y='104' class='fm-ink'>source</text><rect x='202' y='76' width='88' height='48' rx='9' fill='var(--fm-panel)' stroke='var(--fm-blue)'/><circle cx='272' cy='100' r='5' fill='var(--fm-blue)'/><text x='216' y='104' class='fm-ink'>target</text></g><text x='160' y='166' text-anchor='middle' class='fm-muted'>480 zoom · 680 pan · 760 return</text></svg></div>",
+    "duration": 1920,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".camera-scene",
+        "easing": "linear",
+        "keyframes": [
+          {
+            "offset": 0,
+            "transform": "translate(0px,0px) scale(1)",
+            "easing": "cubic-bezier(0,0,.2,1)"
+          },
+          {
+            "offset": 0.25,
+            "transform": "translate(62.32px,-32px) scale(1.32)",
+            "easing": "cubic-bezier(0,0,.2,1)"
+          },
+          {
+            "offset": 0.604167,
+            "transform": "translate(-164.72px,-32px) scale(1.32)",
+            "easing": "cubic-bezier(0,0,.2,1)"
+          },
+          {
+            "offset": 1,
+            "transform": "translate(0px,0px) scale(1)",
+            "easing": "linear"
+          }
+        ]
+      }
+    ]
+  }
+}

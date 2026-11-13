@@ -1,0 +1,77 @@
+{
+  "id": "flowmotion-cinematic-grid",
+  "category": "camera",
+  "title": {
+    "ko": "패럴랙스 그리드",
+    "en": "Parallax grid"
+  },
+  "summary": {
+    "ko": "카메라 팬에서 장면은 40px, 점 그리드는 24px 이동합니다.",
+    "en": "During one camera pan, the scene moves 40 px while the grid follows at 0.6×."
+  },
+  "durationMs": 680,
+  "easing": "ease-out",
+  "origin": {
+    "templateIds": [
+      "cinematic-node-connect"
+    ],
+    "sourceFile": "src/components/CinematicNodeConnectCanvas.tsx",
+    "renderer": "CinematicNodeConnectCanvas",
+    "effect": "grid",
+    "sourceTimeline": {
+      "durationMs": 680,
+      "description": "Source grid follows camera ViewBox offsets with a .6 multiplier; one 680 ms pan preserves that parallax ratio.",
+      "frames": [
+        {
+          "atMs": 0,
+          "phase": "scene and grid aligned"
+        },
+        {
+          "atMs": 680,
+          "phase": "scene −40 px; grid −24 px"
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>.fm-root{--fm-blue:var(--klic-semantic-color-accent,#245fc2);--fm-navy:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-component-card-background-default,var(--klic-semantic-color-panel,#fff));--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);--fm-muted:var(--klic-semantic-color-muted,#52657b);--fm-on-blue:var(--klic-semantic-color-on-accent,#fff);--fm-selected:var(--klic-semantic-color-surface-selected,#e4ecfc);box-sizing:border-box;width:100%;height:100%;color:var(--fm-navy);font-family:inherit}.fm-root *{box-sizing:inherit}.fm-root svg{display:block;width:100%;height:100%;overflow:visible;font-family:inherit}.fm-root .fm-surface{fill:var(--fm-surface)}.fm-root .fm-panel{fill:var(--fm-panel);stroke:var(--fm-border)}.fm-root .fm-blue{fill:var(--fm-blue)}.fm-root .fm-blue-stroke{stroke:var(--fm-blue)}.fm-root .fm-ink{fill:var(--fm-navy)}.fm-root .fm-muted{fill:var(--fm-muted)}.fm-root .fm-selected{fill:var(--fm-selected)}.fm-root .fm-on-blue{fill:var(--fm-on-blue)}.fm-root [transform-box]{transform-box:fill-box;transform-origin:center}.fm-root text{font-size:11px;fill:var(--fm-navy)}.fm-root .parallax-grid,.fm-root .grid-scene{transform-box:view-box;transform-origin:0 0}</style><div class='fm-root'><svg viewBox='0 0 320 200' role='img' aria-label='Parallax grid'><defs><pattern id='camera-dots' width='40' height='40' patternUnits='userSpaceOnUse'><circle cx='1' cy='1' r='.9' fill='var(--fm-border)'/></pattern></defs><rect class='fm-surface' width='320' height='200' rx='14'/><g class='parallax-grid'><rect x='-80' y='-40' width='480' height='280' fill='url(#camera-dots)'/></g><g class='grid-scene'><path d='M 118 100 h84' stroke='var(--fm-blue)' stroke-width='2'/><rect x='30' y='76' width='88' height='48' rx='9' fill='var(--fm-panel)' stroke='var(--fm-border)'/><text x='48' y='104' class='fm-ink'>source</text><rect x='202' y='76' width='88' height='48' rx='9' fill='var(--fm-panel)' stroke='var(--fm-border)'/><text x='220' y='104' class='fm-ink'>target</text></g></svg></div>",
+    "duration": 680,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".grid-scene",
+        "easing": "linear",
+        "keyframes": [
+          {
+            "offset": 0,
+            "transform": "translate(0px,0px)",
+            "easing": "ease-out"
+          },
+          {
+            "offset": 1,
+            "transform": "translate(-40px,0px)",
+            "easing": "ease-out"
+          }
+        ]
+      },
+      {
+        "selector": ".parallax-grid",
+        "easing": "linear",
+        "keyframes": [
+          {
+            "offset": 0,
+            "transform": "translate(0px,0px)",
+            "easing": "ease-out"
+          },
+          {
+            "offset": 1,
+            "transform": "translate(-24px,0px)",
+            "easing": "ease-out"
+          }
+        ]
+      }
+    ]
+  }
+}

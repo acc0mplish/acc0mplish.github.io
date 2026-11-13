@@ -1,0 +1,323 @@
+{
+  "id": "flowmotion-semicircle-radar",
+  "category": "data-story",
+  "title": {
+    "ko": "반원 레이더 스윕",
+    "en": "Semicircle Radar Sweep"
+  },
+  "summary": {
+    "ko": "175도에서 5도까지 내려오는 원본 바늘과 다섯 구간 인덱스를 재생합니다.",
+    "en": "Replays the source needle sweep from 175° to 5° across five wedges."
+  },
+  "durationMs": 2400,
+  "easing": "linear",
+  "origin": {
+    "templateIds": [
+      "creative-semicircle-radial-fan"
+    ],
+    "sourceFile": "src/components/CreativeInfographicCanvases.tsx",
+    "renderer": "CreativeSemicircleRadialFanCanvas",
+    "effect": "radar-needle-sweep",
+    "sourceTimeline": {
+      "durationMs": 2400,
+      "description": "Source center=(565,445), tip radius=rOuter+14=242. sweepDeg=175−progress×170; x=cx+242×cos(angle), y=cy−242×sin(angle); wedgeIdx=min(4,floor(progress×5)).",
+      "frames": [
+        {
+          "progress": 0,
+          "sweepDeg": 175,
+          "needleX": 323.921,
+          "needleY": 423.908,
+          "activeWedgeIdx": 0
+        },
+        {
+          "progress": 0.25,
+          "sweepDeg": 132.5,
+          "needleX": 401.507,
+          "needleY": 266.579,
+          "activeWedgeIdx": 1
+        },
+        {
+          "progress": 0.5,
+          "sweepDeg": 90,
+          "needleX": 565,
+          "needleY": 203,
+          "activeWedgeIdx": 2
+        },
+        {
+          "progress": 0.75,
+          "sweepDeg": 47.5,
+          "needleX": 728.493,
+          "needleY": 266.579,
+          "activeWedgeIdx": 3
+        },
+        {
+          "progress": 1,
+          "sweepDeg": 5,
+          "needleX": 806.079,
+          "needleY": 423.908,
+          "activeWedgeIdx": 4
+        }
+      ]
+    }
+  },
+  "definition": {
+    "html": "<style>\n.fm-root{--fm-accent:var(--klic-semantic-color-accent,#245FC2);--fm-ink:var(--klic-semantic-color-text,#132c46);--fm-panel:var(--klic-semantic-color-panel,#fff);--fm-surface:var(--klic-semantic-color-surface,#fbfcfe);--fm-border:var(--klic-semantic-color-border,#dfe5ee);box-sizing:border-box;width:100%;height:100%;padding:10px;border:1px solid var(--fm-border);border-radius:var(--klic-component-card-radius-default,12px);background:var(--fm-surface);color:var(--fm-ink);font:500 12px/1.35 var(--klic-component-text-body-font-family,system-ui);overflow:hidden}\n.fm-root svg{display:block;width:100%;height:100%;overflow:hidden}\n.fm-root text{font-family:var(--klic-component-text-body-font-family,system-ui);fill:var(--fm-ink)}\n.fm-root .label{font-size:11px;font-weight:700}.fm-root .small{font-size:9px;fill:var(--klic-semantic-color-muted,#52657b)}\n.fm-root .node-bg{fill:var(--fm-panel);stroke:var(--fm-border);stroke-width:1.5}.fm-root .flow{fill:none;stroke:var(--fm-border);stroke-width:2}\n.fm-root .accent{fill:var(--fm-accent)}.fm-root .accent-line{fill:none;stroke:var(--fm-accent)}.fm-root .ink-line{fill:none;stroke:var(--fm-ink)}\n.fm-root .packet{fill:var(--fm-accent)}.fm-root .danger{fill:var(--klic-semantic-color-danger,#b13c43)}.fm-root .danger-line{fill:none;stroke:var(--klic-semantic-color-danger,#b13c43)}\n.fm-root .bar{transform-box:fill-box;transform-origin:50% 100%}.fm-root .spin{transform-box:view-box;transform-origin:160px 90px}\n</style><div class=\"fm-root\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"반원 지표를 훑는 레이더 바늘\"><path class=\"flow\" d=\"M 70 151 A 90 90 0 0 1 250 151\"/><line class=\"flow\" x1=\"70\" y1=\"151\" x2=\"250\" y2=\"151\"/><line class=\"accent-line\" x1=\"160\" y1=\"151\" x2=\"73\" y2=\"159\" stroke-width=\"2.5\"/><circle class=\"packet\" cx=\"73\" cy=\"159\" r=\"5\"/><text class=\"small\" text-anchor=\"middle\" x=\"160\" y=\"172\">지표 스윕</text></svg></div>",
+    "duration": 2400,
+    "easing": "linear",
+    "segmentEasing": false,
+    "reducedProgress": 1,
+    "tracks": [
+      {
+        "selector": ".packet",
+        "keyframes": [
+          {
+            "offset": 0,
+            "cx": "70.342px",
+            "cy": "143.156px"
+          },
+          {
+            "offset": 0.020833333333333332,
+            "cx": "70.998px",
+            "cy": "137.632px"
+          },
+          {
+            "offset": 0.041666666666666664,
+            "cx": "71.994px",
+            "cy": "132.16px"
+          },
+          {
+            "offset": 0.0625,
+            "cx": "73.326px",
+            "cy": "126.759px"
+          },
+          {
+            "offset": 0.08333333333333333,
+            "cx": "74.989px",
+            "cy": "121.451px"
+          },
+          {
+            "offset": 0.10416666666666667,
+            "cx": "76.977px",
+            "cy": "116.256px"
+          },
+          {
+            "offset": 0.125,
+            "cx": "79.281px",
+            "cy": "111.194px"
+          },
+          {
+            "offset": 0.14583333333333334,
+            "cx": "81.895px",
+            "cy": "106.284px"
+          },
+          {
+            "offset": 0.16666666666666666,
+            "cx": "84.806px",
+            "cy": "101.544px"
+          },
+          {
+            "offset": 0.1875,
+            "cx": "88.005px",
+            "cy": "96.994px"
+          },
+          {
+            "offset": 0.20833333333333334,
+            "cx": "91.479px",
+            "cy": "92.649px"
+          },
+          {
+            "offset": 0.22916666666666666,
+            "cx": "95.214px",
+            "cy": "88.528px"
+          },
+          {
+            "offset": 0.25,
+            "cx": "99.197px",
+            "cy": "84.645px"
+          },
+          {
+            "offset": 0.2708333333333333,
+            "cx": "103.412px",
+            "cy": "81.016px"
+          },
+          {
+            "offset": 0.2916666666666667,
+            "cx": "107.843px",
+            "cy": "77.654px"
+          },
+          {
+            "offset": 0.3125,
+            "cx": "112.474px",
+            "cy": "74.572px"
+          },
+          {
+            "offset": 0.3333333333333333,
+            "cx": "117.286px",
+            "cy": "71.782px"
+          },
+          {
+            "offset": 0.3541666666666667,
+            "cx": "122.261px",
+            "cy": "69.295px"
+          },
+          {
+            "offset": 0.375,
+            "cx": "127.381px",
+            "cy": "67.119px"
+          },
+          {
+            "offset": 0.3958333333333333,
+            "cx": "132.625px",
+            "cy": "65.264px"
+          },
+          {
+            "offset": 0.4166666666666667,
+            "cx": "137.973px",
+            "cy": "63.737px"
+          },
+          {
+            "offset": 0.4375,
+            "cx": "143.406px",
+            "cy": "62.543px"
+          },
+          {
+            "offset": 0.4583333333333333,
+            "cx": "148.902px",
+            "cy": "61.687px"
+          },
+          {
+            "offset": 0.4791666666666667,
+            "cx": "154.44px",
+            "cy": "61.172px"
+          },
+          {
+            "offset": 0.5,
+            "cx": "160px",
+            "cy": "61px"
+          },
+          {
+            "offset": 0.5208333333333334,
+            "cx": "165.56px",
+            "cy": "61.172px"
+          },
+          {
+            "offset": 0.5416666666666666,
+            "cx": "171.098px",
+            "cy": "61.687px"
+          },
+          {
+            "offset": 0.5625,
+            "cx": "176.594px",
+            "cy": "62.543px"
+          },
+          {
+            "offset": 0.5833333333333334,
+            "cx": "182.027px",
+            "cy": "63.737px"
+          },
+          {
+            "offset": 0.6041666666666666,
+            "cx": "187.375px",
+            "cy": "65.264px"
+          },
+          {
+            "offset": 0.625,
+            "cx": "192.619px",
+            "cy": "67.119px"
+          },
+          {
+            "offset": 0.6458333333333334,
+            "cx": "197.739px",
+            "cy": "69.295px"
+          },
+          {
+            "offset": 0.6666666666666666,
+            "cx": "202.714px",
+            "cy": "71.782px"
+          },
+          {
+            "offset": 0.6875,
+            "cx": "207.526px",
+            "cy": "74.572px"
+          },
+          {
+            "offset": 0.7083333333333334,
+            "cx": "212.157px",
+            "cy": "77.654px"
+          },
+          {
+            "offset": 0.7291666666666666,
+            "cx": "216.588px",
+            "cy": "81.016px"
+          },
+          {
+            "offset": 0.75,
+            "cx": "220.803px",
+            "cy": "84.645px"
+          },
+          {
+            "offset": 0.7708333333333334,
+            "cx": "224.786px",
+            "cy": "88.528px"
+          },
+          {
+            "offset": 0.7916666666666666,
+            "cx": "228.521px",
+            "cy": "92.649px"
+          },
+          {
+            "offset": 0.8125,
+            "cx": "231.995px",
+            "cy": "96.994px"
+          },
+          {
+            "offset": 0.8333333333333334,
+            "cx": "235.194px",
+            "cy": "101.544px"
+          },
+          {
+            "offset": 0.8541666666666666,
+            "cx": "238.105px",
+            "cy": "106.284px"
+          },
+          {
+            "offset": 0.875,
+            "cx": "240.719px",
+            "cy": "111.194px"
+          },
+          {
+            "offset": 0.8958333333333334,
+            "cx": "243.023px",
+            "cy": "116.256px"
+          },
+          {
+            "offset": 0.9166666666666666,
+            "cx": "245.011px",
+            "cy": "121.451px"
+          },
+          {
+            "offset": 0.9375,
+            "cx": "246.674px",
+            "cy": "126.759px"
+          },
+          {
+            "offset": 0.9583333333333334,
+            "cx": "248.006px",
+            "cy": "132.16px"
+          },
+          {
+            "offset": 0.9791666666666666,
+            "cx": "249.002px",
+            "cy": "137.632px"
+          },
+          {
+            "offset": 1,
+            "cx": "249.658px",
+            "cy": "143.156px"
+          }
+        ],
+        "easing": "linear"
+      }
+    ]
+  }
+}
